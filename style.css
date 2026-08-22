@@ -607,13 +607,13 @@ html[lang^="zh"] .epigraph .en { display: none; }
 }
 .specimen-artist {
   font-family: var(--font-serif);
-  font-size: 1.02rem; font-weight: 600;
-  color: var(--ink);
+  font-size: .94rem;
+  color: var(--ink-soft);
 }
 .specimen-title {
   font-family: var(--font-serif);
-  font-size: 1.02rem; font-style: italic;
-  color: var(--ink-soft);
+  font-size: 1.08rem; font-weight: 600; font-style: italic;
+  color: var(--ink);
 }
 .specimen-meta {
   margin-top: .1rem;
