@@ -152,14 +152,6 @@
     "en": "Adapting one of these for your school, or curious how it was built? Write to me directly. I reply to everything from teachers.",
     "zh": "想把这些工具用在贵校，或想了解具体的开发过程？欢迎直接来信。来自老师的每一封信，我都会回复。"
   },
-  "footer.built": {
-    "en": "Set by hand: static HTML, CSS and vanilla JavaScript, no framework and no build step. No trackers, no analytics, no cookies.",
-    "zh": "纯手工排版：静态 HTML、CSS 与原生 JavaScript，无框架、无编译流程。无追踪、无分析工具、无 cookie。"
-  },
-  "footer.source": {
-    "en": "Source on GitHub",
-    "zh": "GitHub 源码"
-  },
   "error.dataTitle": {
     "en": "Content could not load",
     "zh": "内容无法载入"

@@ -459,14 +459,9 @@ main > .section + .section { border-top: 1px solid var(--rule); }
   padding-block: 2.2rem 3.2rem;
   font-size: .85rem; color: var(--ink-faint);
 }
-.site-footer .colophon-zh {
-  font-family: var(--font-serif);
-  font-size: .95rem; letter-spacing: .05em;
-  color: var(--ink-soft);
-  margin: 0 0 1.2rem;
-}
+.footer-repo { font-size: .86rem; }
 .site-footer p { margin: .28rem 0; }
-.footer-disclaimer { margin-top: .9rem !important; max-width: 52ch; opacity: .8; }
+.footer-disclaimer { margin-top: .8rem !important; max-width: 52ch; opacity: .85; }
 
 /* ── data-load failure notice ──────────────────────────── */
 .data-error { border: 1px solid var(--rule); border-radius: var(--radius); padding: 1.5rem; background: var(--card); }
