@@ -149,8 +149,8 @@
     "zh": "联系我"
   },
   "contact.subtitle": {
-    "en": "Adapting one of these for your school, or curious how it was built? Write to me directly. I reply to everything from teachers.",
-    "zh": "想把这些工具用在贵校，或想了解具体的开发过程？欢迎直接来信。来自老师的每一封信，我都会回复。"
+    "en": "Write to me if you would like to know more, or if there is something we could build together.",
+    "zh": "若想进一步了解，或有合作的想法，欢迎来信。"
   },
   "error.dataTitle": {
     "en": "Content could not load",
@@ -159,10 +159,6 @@
   "error.dataBody": {
     "en": "This page reads its content from JSON files, which browsers block when a page is opened directly from disk. Serve the folder over HTTP instead: see README.md.",
     "zh": "本页内容从 JSON 档案载入，而浏览器会阻止直接从硬盘打开的页面读取档案。请以 HTTP 方式启动本资料夹：详见 README.md。"
-  },
-  "contact.directory": {
-    "en": "MOE colleagues can also find me through the staff email directory.",
-    "zh": "教育部同侪亦可通过教职员通讯录找到我。"
   },
   "specimen.title": {
     "en": "Public Phone",
@@ -175,10 +171,6 @@
   "specimen.note": {
     "en": "The printmaking runs on the same instinct as the software: look closely at an ordinary thing, find the structure holding it up, then cut away everything that is not that structure. This is the block printing quietly behind every page here.",
     "zh": "版画与软件其实出于同一种本能：仔细观察一件寻常的东西，找出支撑它的结构，然后把不属于那个结构的部分，全部刻去。本站每一页的底纹，正是这块版。"
-  },
-  "footer.disclaimer": {
-    "en": "A personal site. Views are my own and do not represent my school or the Ministry of Education.",
-    "zh": "个人网站。文中观点仅代表本人，不代表所属学校或教育部立场。"
   },
   "specimen.alt": {
     "en": "A sheet of block-printed Singapore payphones repeating across the paper, one of them hand-coloured orange.",

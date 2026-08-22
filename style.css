@@ -469,7 +469,9 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 }
 .contact-email:hover { color: var(--ochre-deep); }
 
-.privacy-note { margin: 1.5rem 0 0; font-size: .84rem; color: var(--ink-faint); max-width: 46ch; }
+.contact-repo { margin: 2.25rem 0 0; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+.contact-repo a { font-size: .86rem; color: var(--ink-faint); text-decoration: none; }
+.contact-repo a:hover { color: var(--ochre-deep); text-decoration: underline; }
 
 /* ── specimen plate ────────────────────────────────────── */
 /* Botanical-plate discipline: the print sits in ruled whitespace and is
@@ -500,21 +502,6 @@ main > .section + .section { border-top: 1px solid var(--rule); }
   color: var(--ink-faint);
 }
 .specimen-note { margin-top: .5rem; font-size: .93rem; color: var(--ink-soft); }
-
-/* ── footer ────────────────────────────────────────────── */
-.site-footer {
-  margin-top: clamp(3rem, 7vw, 5rem);
-  padding-block: 2.2rem 3.2rem;
-  font-size: .85rem; color: var(--ink-faint);
-  /* the footer sits on the print too, so it needs the same scrim */
-  background: color-mix(in srgb, var(--paper) 82%, transparent);
-  -webkit-backdrop-filter: blur(18px) saturate(150%);
-          backdrop-filter: blur(18px) saturate(150%);
-  border-top: 1px solid var(--rule);
-}
-.footer-repo { font-size: .86rem; }
-.site-footer p { margin: .28rem 0; }
-.footer-disclaimer { margin-top: .8rem !important; max-width: 52ch; opacity: .85; }
 
 /* ── data-load failure notice ──────────────────────────── */
 .data-error { border: 1px solid var(--rule); border-radius: var(--radius); padding: 1.5rem; background: var(--card); }

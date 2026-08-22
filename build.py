@@ -72,13 +72,6 @@ __NAV__      </nav>
 TAIL = """\
 
 
-<footer class="site-footer">
-  <div class="wrap wrap-narrow">
-    <p><a class="footer-repo" href="https://github.com/kaixinbuilds/kaixinbuilds.github.io">github.com/kaixinbuilds/kaixinbuilds.github.io</a></p>
-    <p class="footer-disclaimer" data-i18n="footer.disclaimer"></p>
-  </div>
-</footer>
-
 <script src="script.js"></script>
 </body>
 </html>
@@ -178,7 +171,9 @@ PAGES = {
       <p class="contact-direct">
         <a class="contact-email" href="mailto:kai_xin_chun@moe.edu.sg">kai_xin_chun@moe.edu.sg</a>
       </p>
-      <p class="privacy-note" data-i18n="contact.directory"></p>
+      <p class="contact-repo">
+        <a href="https://github.com/kaixinbuilds/kaixinbuilds.github.io">github.com/kaixinbuilds/kaixinbuilds.github.io</a>
+      </p>
     </div>
   </section>"""),
 }
