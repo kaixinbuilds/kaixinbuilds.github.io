@@ -42,7 +42,7 @@ HEAD = """\
 <meta property="og:url" content="__CANONICAL__">
 <meta property="og:image" content="__SHARE_IMAGE__">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <meta name="theme-color" content="#1E2749">
 
 <!-- Spectral for headings and epigraphs, Inter for body and UI. Chinese

@@ -33,23 +33,6 @@
 }
 
 /* Night print: the same block pulled in ink on dark stock. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper:      #171B2C;
-    --paper-sunk: #11141F;
-    --card:       #1E2337;
-    --ink:        #F2EBDB;
-    --ink-soft:   #C0B8A6;
-    --ink-faint:  #8B90A6;
-    --rule:       #333A55;
-    --glass-edge: rgba(255, 255, 255, .10);
-
-    --ochre:      #D98B4E;
-    --ochre-deep: #E9A56B;
-    --ochre-wash: #2A2438;
-  }
-}
-
 /* ── reset ─────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -82,10 +65,6 @@ body::before {
   pointer-events: none;
   background: url("assets/art/prints/payphone-background.jpg") center center / cover no-repeat;
   opacity: .30;
-}
-@media (prefers-color-scheme: dark) {
-  /* inverted, the same block prints cream on ink */
-  body::before { filter: invert(1) brightness(1.05); opacity: .22; }
 }
 a { color: var(--ochre-deep); text-underline-offset: .18em; }
 
