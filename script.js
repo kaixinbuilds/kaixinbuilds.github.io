@@ -95,7 +95,7 @@
         <p class="eyebrow">${esc(t('featured.eyebrow'))}</p>
         <div class="featured-titlerow">
           <h2 class="featured-title">${esc(pick(p.title))}</h2>
-          ${isLive ? '<span class="badge-live">LIVE</span>' : ''}
+          ${isLive ? `<span class="badge-live">${esc(t('status.live'))}</span>` : ''}
         </div>
         <p class="featured-subtitle">${esc(pick(p.subtitle))}</p>
         <p class="featured-summary">${esc(pick(p.summary))}</p>
@@ -156,7 +156,21 @@
 
         // A project with an embed spans the grid and gets a bezel: the only
         // place the 8-bit register is allowed to appear at full size.
-        if (!p.embed) return `<article class="card">${body}</article>`;
+        const shot = (p.screenshots || [])[0];
+        if (!p.embed && !shot) return `<article class="card">${body}</article>`;
+
+        if (!p.embed) return `
+        <article class="card card-wide">
+          <figure class="shot">
+            <div class="screen-bezel">
+              <div class="screen-inner" data-missing="${esc(shot.src)}">
+                <img src="${esc(shot.src)}" alt="${esc(pick(shot.caption))}" decoding="async">
+              </div>
+            </div>
+            <figcaption>${esc(pick(shot.caption))}</figcaption>
+          </figure>
+          ${body}
+        </article>`;
 
         return `
         <article class="card card-wide">
@@ -172,12 +186,14 @@
               </div>
             </div>
             <p class="embed-note">${esc(t('grid.playNote'))}</p>
+            <p class="embed-touch-note">${esc(t('embed.desktopOnly'))}</p>
           </div>
           ${body}
         </article>`;
       }).join('');
 
     wireEmbeds(host);
+    revealLoadedImages(host);
   }
 
   /** Click to load: the game is only fetched when someone asks for it,
@@ -197,36 +213,24 @@
     });
   }
 
-  function renderTalks() {
-    const host = $('#talks-list');
-    if (!host) return;
+  function talkEntry(talk, open) {
+    const status = talk.status === 'upcoming' ? 'upcoming' : 'completed';
+    const body = [
+      `<p class="talk-venue">${esc(pick(talk.venue))}</p>`,
+      talk.summary ? `<p class="talk-summary">${esc(pick(talk.summary))}</p>` : '',
+      talk.award ? `<p class="talk-award">${esc(pick(talk.award))}</p>` : '',
+      (talk.link || (talk.links || []).length)
+        ? `<p class="talk-links">${[
+            talk.link ? `<a class="talk-link" href="${esc(talk.link)}" target="_blank" rel="noopener">${esc(t('talks.viewLink'))} \u2192</a>` : '',
+            ...(talk.links || []).map((l) =>
+              `<a class="talk-link" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(pick(l.label))} \u2192</a>`),
+          ].filter(Boolean).join('')}</p>`
+        : '',
+    ].join('');
 
-    // Newest first, so the freshest talk is the first thing read.
-    const sorted = [...data.talks].sort((a, b) => String(b.date).localeCompare(String(a.date)));
-
-    // Collapsed by default and built on <details>, so the page stays a
-    // scannable list and the disclosure keeps working without JavaScript.
-    // The most recent entry opens on load so it is never a wall of closed rows.
-    host.innerHTML = sorted.map((talk, i) => {
-      const status = talk.status === 'upcoming' ? 'upcoming' : 'completed';
-      const body = [
-        `<p class="talk-venue">${esc(pick(talk.venue))}</p>`,
-        talk.summary ? `<p class="talk-summary">${esc(pick(talk.summary))}</p>` : '',
-        talk.award ? `<p class="talk-award">${esc(pick(talk.award))}</p>` : '',
-        // `link` is the write-up itself; `links` are anything it points at,
-        // such as the resource a post is about.
-        (talk.link || (talk.links || []).length)
-          ? `<p class="talk-links">${[
-              talk.link ? `<a class="talk-link" href="${esc(talk.link)}" target="_blank" rel="noopener">${esc(t('talks.viewLink'))} \u2192</a>` : '',
-              ...(talk.links || []).map((l) =>
-                `<a class="talk-link" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(pick(l.label))} \u2192</a>`),
-            ].filter(Boolean).join('')}</p>`
-          : '',
-      ].join('');
-
-      return `
+    return `
       <li>
-        <details class="talk"${i === 0 ? ' open' : ''}>
+        <details class="talk"${open ? ' open' : ''}>
           <summary class="talk-head">
             <span class="talk-date">${esc(pick(talk.dateLabel) || talk.date)}</span>
             <span class="talk-title">${esc(pick(talk.title))}</span>
@@ -236,7 +240,29 @@
           <div class="talk-body">${body}</div>
         </details>
       </li>`;
-    }).join('');
+  }
+
+  function renderTalks() {
+    const host = $('#talks-list');
+    if (!host) return;
+
+    // Upcoming reads forwards from the next thing happening; completed reads
+    // backwards from the most recent. Sorting everything one way puts the
+    // furthest-off event at the top, which is not how anyone reads a diary.
+    const by = (dir) => (a, b) => dir * String(a.date).localeCompare(String(b.date));
+    const upcoming = data.talks.filter((x) => x.status === 'upcoming').sort(by(1));
+    const completed = data.talks.filter((x) => x.status !== 'upcoming').sort(by(-1));
+
+    const group = (label, items, openFirst) => items.length ? `
+      <section class="talk-group">
+        <h2 class="talk-group-title">${esc(t(label))}</h2>
+        <ol class="talks-list">
+          ${items.map((x, i) => talkEntry(x, openFirst && i === 0)).join('')}
+        </ol>
+      </section>` : '';
+
+    host.innerHTML = group('talks.groupUpcoming', upcoming, true)
+                   + group('talks.groupCompleted', completed, upcoming.length === 0);
   }
 
   function renderAll() {
@@ -267,33 +293,44 @@
   }
 
   function showLoadError(err) {
-    console.error('Content failed to load:', err);
-    const host = $('#featured');
-    if (!host) return;
-    host.innerHTML = `
+    if (err) console.error('Content failed to load:', err);
+    const host = $('#featured') || $('#project-grid') || $('#talks-list');
+    if (!host || host.dataset.errored) return;
+    host.dataset.errored = 'true';
+    host.insertAdjacentHTML('beforebegin', `
       <div class="data-error">
-        <h3>${esc(t('error.dataTitle') === 'error.dataTitle' ? 'Content could not load' : t('error.dataTitle'))}</h3>
-        <p>${esc(t('error.dataBody') === 'error.dataBody'
-          ? 'This page reads its content from JSON files, which browsers block when a page is opened directly from disk. Serve the folder over HTTP instead — see README.md.'
-          : t('error.dataBody'))}</p>
-      </div>`;
+        <h3>${esc(t('error.dataTitle'))}</h3>
+        <p>${esc(t('error.dataBody'))}</p>
+      </div>`);
   }
 
   (async () => {
+    // i18n is the only hard dependency: without it nothing has words. The
+    // content files are loaded independently so that a broken projects.json
+    // cannot leave the community page blank, or vice versa.
     try {
-      const [i18n, projects, talks] = await Promise.all([
-        loadJSON('i18n.json'),
-        loadJSON('projects.json'),
-        loadJSON('talks.json'),
-      ]);
-      data.i18n = i18n;
-      data.projects = projects;
-      data.talks = talks;
-      renderAll();
+      data.i18n = await loadJSON('i18n.json');
     } catch (err) {
       showLoadError(err);
+      initToggle();
+      return;
     }
+
+    const wanted = [
+      $('#featured') || $('#project-grid') ? ['projects', 'projects.json'] : null,
+      $('#talks-list') ? ['talks', 'talks.json'] : null,
+    ].filter(Boolean);
+
+    const results = await Promise.allSettled(wanted.map(([, file]) => loadJSON(file)));
+    results.forEach((result, n) => {
+      const [key, file] = wanted[n];
+      if (result.status === 'fulfilled') data[key] = result.value;
+      else console.error(`${file} failed to load:`, result.reason);
+    });
+
+    renderAll();
     revealLoadedImages();
     initToggle();
-  })();
+    if (results.some((r) => r.status === 'rejected')) showLoadError();
+})();
 })();

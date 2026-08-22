@@ -13,7 +13,7 @@
   --card:       #FCFAF4;
   --ink:        #1E2749;
   --ink-soft:   #4B5578;
-  --ink-faint:  #7C849B;
+  --ink-faint:  #626B86;
   --rule:       #DCD2BE;
   --glass-edge: rgba(255, 255, 255, .70);
 
@@ -250,7 +250,17 @@ html[lang^="zh"] .epigraph .en { display: none; }
   max-width: 44ch;
 }
 .hero-intro { margin: 1.5rem 0 0; color: var(--ink-soft); max-width: 58ch; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin: 2.1rem 0 0; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 2.4rem 0 0; }
+.hero-actions .btn-primary {
+  font-size: 1rem;
+  padding: .9rem 1.9rem;
+}
+.hero-actions .btn-primary::after {
+  content: " \2192";
+  display: inline-block;
+  transition: transform .16s;
+}
+.hero-actions .btn-primary:hover::after { transform: translateX(3px); }
 
 /* ── buttons ───────────────────────────────────────────── */
 .btn {
@@ -391,6 +401,8 @@ html[lang^="zh"] .epigraph .en { display: none; }
 @media (max-width: 760px) { .card-wide { grid-template-columns: 1fr; gap: 1.3rem; } }
 
 .embed .screen-inner { background: #12162A; }
+.card-wide > .shot { margin: 0; }
+.card-wide .screen-inner { aspect-ratio: 16 / 10; }
 .embed-note { margin: .7rem 0 0 !important; font-size: .78rem; color: var(--ink-faint); }
 
 .embed-play {
@@ -411,6 +423,22 @@ html[lang^="zh"] .epigraph .en { display: none; }
 }
 .embed-play:hover .embed-play-icon { border-color: var(--ochre); color: var(--ochre); }
 .embed-play-label { font-size: .88rem; font-weight: 500; letter-spacing: .02em; }
+
+.embed-touch-note { display: none; }
+@media (hover: none) and (pointer: coarse) {
+  .embed-play { display: none; }
+  .embed .screen-inner::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 45%, #2A2F52 0%, #12162A 70%);
+  }
+  .embed-touch-note {
+    display: block;
+    margin: .7rem 0 0;
+    font-size: .82rem;
+    color: var(--ochre-deep);
+  }
+}
 
 .embed-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
 .card p { margin: .7rem 0 1.4rem; color: var(--ink-soft); font-size: .94rem; }
@@ -433,6 +461,15 @@ html[lang^="zh"] .epigraph .en { display: none; }
 /* An accordion rather than a stack: the page reads as a scannable list of
    titles, and a visitor opens only what they came for. Built on <details>
    so it works with the keyboard and without JavaScript. */
+/* Upcoming and completed are separate groups, each in its own order. */
+.talk-group + .talk-group { margin-top: 2.75rem; }
+.talk-group-title {
+  font-family: var(--font-sans);
+  font-size: .7rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: .35rem;
+}
 .talks-list { list-style: none; margin: 0; padding: 0; }
 .talks-list li { border-top: 1px solid var(--rule); }
 .talks-list li:last-child { border-bottom: 1px solid var(--rule); }

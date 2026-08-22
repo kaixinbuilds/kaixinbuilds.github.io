@@ -9,8 +9,8 @@
     "zh": "作品"
   },
   "nav.talks": {
-    "en": "Talks",
-    "zh": "分享"
+    "en": "Community",
+    "zh": "社群"
   },
   "nav.approach": {
     "en": "Approach",
@@ -19,10 +19,6 @@
   "nav.contact": {
     "en": "Contact",
     "zh": "联系"
-  },
-  "nav.menu": {
-    "en": "Menu",
-    "zh": "菜单"
   },
   "lang.switchTo": {
     "en": "切换中文",
@@ -41,12 +37,12 @@
     "zh": "郑凯欣"
   },
   "hero.tagline": {
-    "en": "Chinese Language Teacher · EdTech Independent Developer · HOD/MTL, Bukit View Secondary School",
-    "zh": "华文教师 · 教育科技独立开发者 · 百德中学母语部主任"
+    "en": "Chinese Language Teacher · Independent EdTech Builder · Head of Department, Mother Tongue Languages",
+    "zh": "华文教师 · 独立教育科技开发者 · 百德中学母语部主任"
   },
   "hero.intro": {
-    "en": "My work starts the same way in every medium: I sense a structural gap, then build something to close it. A missing scaffold in how students learn vocabulary, a missing rung between 书山 and 学海. I teach Chinese Language, I lead a Mother Tongue department, and I build the tools that close those gaps. Everything here is in real use with real students.",
-    "zh": "无论在哪一个领域，我的工作都始于同一件事：察觉结构上的缺口，然后动手把它补上。学生学词汇时少了一层脚手架，「书山」与「学海」之间少了一级台阶。我教华文，主持母语部门，也亲手做出补上这些缺口的工具。这里的每一个作品，都在真实课堂中使用。"
+    "en": "My work starts the same way in every medium: I notice a structural gap, then build something to close it. I teach Chinese Language, lead a Mother Tongue department, and design tools around problems that come out of real classrooms.",
+    "zh": "无论在哪一个领域，我的工作都始于同一件事：察觉结构上的缺口，然后动手把它补上。我教华文，主持母语部门，也针对课堂中真实浮现的问题，亲手做出相应的工具。"
   },
   "hero.ctaWork": {
     "en": "See the work",
@@ -89,12 +85,12 @@
     "zh": "校内使用"
   },
   "talks.title": {
-    "en": "Talks & community",
-    "zh": "分享与社群"
+    "en": "Connecting with other teachers",
+    "zh": "与同行连结"
   },
   "talks.subtitle": {
-    "en": "Sharing the process openly, so other teachers can adapt it rather than start from zero.",
-    "zh": "公开分享开发过程，让其他老师可以直接借鉴，而不必从零开始。"
+    "en": "Sharing what I build so other teachers can adapt it rather than start from zero, and finding people to build with along the way.",
+    "zh": "把做出来的东西分享出去，让其他老师可以直接借鉴，而不必从零开始；也在这个过程中，遇到愿意一起做的人。"
   },
   "talks.upcoming": {
     "en": "Upcoming",
@@ -113,8 +109,8 @@
     "zh": "设计理念"
   },
   "approach.body1": {
-    "en": "Every design decision in these tools traces back to two things: Self-Determination Theory, which holds that students need autonomy, competence and relatedness to stay engaged, and Assessment for Learning, where feedback exists to move learning forward rather than to rank students.",
-    "zh": "这些工具的每一个设计决定，都回到两个基点：自我决定理论（SDT）：学生需要自主感、胜任感与归属感，才能持续投入；以及促进学习的评价（AfL）：反馈的意义在于推动学习，而不是给学生排名。"
+    "en": "Two ideas consistently shape my design decisions: Self-Determination Theory, which holds that students need autonomy, competence and relatedness to stay engaged, and Assessment for Learning, where feedback exists to move learning forward rather than to rank students.",
+    "zh": "有两个想法始终影响着我的设计决定：自我决定理论（SDT）认为，学生需要自主感、胜任感与归属感，才能持续投入；以及促进学习的评价（AfL）：反馈的意义在于推动学习，而不是给学生排名。"
   },
   "approach.body2": {
     "en": "That is easy to say and hard to hold onto once you are actually building. The principles below are the ones I refuse to trade away for convenience.",
@@ -125,24 +121,24 @@
     "zh": "历练值不可扣除"
   },
   "approach.principle1Body": {
-    "en": "A wrong answer costs a student nothing they have already earned. Effort accumulates in one direction only. The moment a system can take progress away, students start protecting their score instead of stretching themselves.",
-    "zh": "答错，不会让学生失去任何已经挣得的东西。努力只朝一个方向累积。一旦系统能夺走进度，学生就会开始保护分数，而不再愿意挑战自己。"
+    "en": "A wrong answer does not erase progress already earned. I want attempting something difficult to feel safe: a mistake can interrupt a streak or send a student back for more practice, but it does not undo earlier effort.",
+    "zh": "答错，不会抹去学生已经挣得的进度。我希望尝试难题这件事本身是安全的：失误可以中断连胜，也可以让学生回去多练几遍，但不会否定先前的努力。"
   },
   "approach.principle2Title": {
-    "en": "Difficulty is chosen, not assigned",
-    "zh": "难度由学生自己选择"
+    "en": "Students have meaningful choice over challenge",
+    "zh": "挑战的难度，学生有实质的选择权"
   },
   "approach.principle2Body": {
-    "en": "Students pick which stream and which level to attempt. Being placed into a lane by the system removes autonomy; choosing a lane and finding it hard builds competence.",
-    "zh": "学生自己决定挑战哪一个语文流、哪一个层级。被系统分配，会剥夺自主感；自己选择、并发现它有难度，才能建立胜任感。"
+    "en": "Where meaningful choice is possible, students decide what to practise and how far to stretch. The system can recommend a next step, but it should not turn that recommendation into a fixed lane. The aim is challenge that stays within reach.",
+    "zh": "在可以选择的地方，由学生自己决定练什么、挑战到什么程度。系统可以建议下一步，但不该把建议变成一条固定的轨道。目标是让挑战始终在够得着的范围内。"
   },
   "approach.principle3Title": {
     "en": "Feedback lands before the next attempt",
     "zh": "反馈必须赶在下一次尝试之前"
   },
   "approach.principle3Body": {
-    "en": "Feedback delivered a week later is a grade, not formative assessment. If a tool cannot respond within the same session, the pedagogy it claims is decorative.",
-    "zh": "一周后才给的反馈，是成绩，不是形成性评价。如果一个工具无法在同一堂课内做出回应，它所标榜的教学理念只是装饰。"
+    "en": "In a practice tool, feedback is most useful when a student can act on it straight away. Wherever possible the loop closes within the same session: attempt, feedback, adjustment, another attempt.",
+    "zh": "在练习工具里，反馈最有用的时刻，是学生还能立刻拿它做点什么的时候。只要做得到，这个循环就在同一堂课内完成：尝试、反馈、调整、再试一次。"
   },
   "contact.title": {
     "en": "Get in touch",
@@ -197,8 +193,8 @@
     "zh": "作品 · 郑凯欣"
   },
   "page.talks.title": {
-    "en": "Talks & community · Chun Kai Xin",
-    "zh": "分享与社群 · 郑凯欣"
+    "en": "Community · Chun Kai Xin",
+    "zh": "社群 · 郑凯欣"
   },
   "page.approach.title": {
     "en": "How I design · Chun Kai Xin",
@@ -211,5 +207,21 @@
   "work.intro": {
     "en": "Tools built for specific classroom problems, all of them in real use with real students.",
     "zh": "为具体课堂问题而做的工具，每一个都在真实课堂中使用。"
+  },
+  "status.live": {
+    "en": "LIVE",
+    "zh": "上线中"
+  },
+  "talks.groupUpcoming": {
+    "en": "Upcoming",
+    "zh": "即将进行"
+  },
+  "talks.groupCompleted": {
+    "en": "Completed",
+    "zh": "已完成"
+  },
+  "embed.desktopOnly": {
+    "en": "This game needs a keyboard, so it is best opened on a computer.",
+    "zh": "这个游戏需要键盘操作，建议在电脑上打开。"
   }
 }

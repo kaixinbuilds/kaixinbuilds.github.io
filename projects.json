@@ -11,12 +11,12 @@
       "zh": "中学华文词汇掌握平台"
     },
     "summary": {
-      "en": "3,741 vocabulary items spanning the G1 through Higher Chinese streams, with progression, streaks and self-selected difficulty. Every mechanic is grounded in Self-Determination Theory and Assessment for Learning rather than bolted on afterwards.",
-      "zh": "3,741 个词条，横跨 G1 至高级华文四个语文流，具备进度系统、连续挑战与自选难度。每一项机制都以自我决定理论（SDT）与促进学习的评价（AfL）为设计起点，而非事后附加。"
+      "en": "3,741 vocabulary items across G1, G2, G3 and Higher Chinese, with visible progression, streaks and student-selected challenge. Its core learning mechanics were designed around Self-Determination Theory and Assessment for Learning from the outset.",
+      "zh": "3,741 个词条，涵盖 G1、G2、G3 与高级华文，具备可见的进度、连续挑战与由学生自选的难度。核心学习机制自设计之初，便以自我决定理论（SDT）与促进学习的评价（AfL）为依据。"
     },
     "highlight": {
-      "en": "Designed and built solo, in conversation with an AI agent (Claude Code), on a Firebase backend, with no engineering team, no external funding and no prior coding background.",
-      "zh": "独立完成设计与开发，全程与 AI agent（Claude Code）协作，采用 Firebase 架构：没有开发团队，没有外部资金，也没有任何编程背景。"
+      "en": "Designed and built independently, in conversation with an AI coding agent (Claude Code), on a Firebase backend, without a formal software-engineering background or a development team.",
+      "zh": "独立完成设计与开发，全程与 AI 编程 agent（Claude Code）协作，采用 Firebase 架构，没有软件工程的科班背景，也没有开发团队。"
     },
     "stats": [
       {
@@ -29,8 +29,8 @@
       {
         "value": "4",
         "label": {
-          "en": "language streams",
-          "zh": "语文流"
+          "en": "subject levels",
+          "zh": "科目程度"
         }
       },
       {
@@ -51,10 +51,10 @@
         }
       },
       {
-        "src": "assets/screenshots/vocabsummit-streams.jpg",
+        "src": "assets/screenshots/vocabsummit-levels.jpg",
         "caption": {
-          "en": "The four streams, G1 through Higher Chinese",
-          "zh": "四大语文流 · 从 G1 到高级华文"
+          "en": "Choosing from G1, G2, G3 and Higher Chinese",
+          "zh": "从 G1、G2、G3 与高级华文中选择"
         }
       },
       {
@@ -86,8 +86,8 @@
       "zh": "论证法冒险游戏"
     },
     "summary": {
-      "en": "A platformer that teaches Secondary 3 G3 students to recognise argumentation techniques in two set texts. Six lives instead of three: a deliberate accommodation so lower-readiness students finish rather than give up.",
-      "zh": "以横向卷轴游戏教中三 G3 学生辨识两篇课文中的论证法。生命值设为六条而非三条：这是刻意的调整，让准备度较低的学生能够完成，而不是中途放弃。"
+      "en": "A platformer that teaches Secondary 3 G3 students to recognise argumentation techniques in two set texts. Six lives instead of three lower the cost of early mistakes, so an unfamiliar game mechanic is less likely to become the reason a student stops learning.",
+      "zh": "以横向卷轴游戏教中三 G3 学生辨识两篇课文中的论证法。生命值设为六条而非三条，降低了初期失误的代价：不熟悉游戏操作，就不至于成为学生中途放弃的理由。"
     },
     "link": "https://kaixinbuilds.github.io/S3G3CLArgumentativeAdventure/",
     "tags": [
@@ -108,14 +108,23 @@
       "zh": "百德中学华文资源站"
     },
     "summary": {
-      "en": "Built after asking a student who struggles with Chinese what he does when he gets stuck in class. He shrugged: “stare into space?”, with an iPad in his hands. The hub turns that device into the thing that answers the question he is stuck on: SLS lesson resources sorted by course level and year, past national oral exam videos by topic, reading-aloud and listening practice, graded extensive reading, and a glossary for the Singapore terms no dictionary carries. Colleagues in the department now add to it.",
-      "zh": "起点是一个问题：一名学习吃力的学生被问到课堂上卡住时会做什么，他手里正拿着 iPad，却耸耸肩说「发呆？」。资源站要让那台设备变成解答当下疑问的工具：SLS 课程资源按语文流与年级分类，历年全国会话考试录像按主题整理，另有朗读与听力练习、分级泛读，以及一份字典查不到的新加坡本地词汇表。部门同事目前也陆续加入共建。"
+      "en": "Built after I asked a student what he does when he gets stuck in Chinese class. He shrugged: “stare into space?”, with an iPad already in his hands. That answer became the design brief: turn the device already on the desk into somewhere to go next. Inside are SLS lesson resources by subject level and year, past national oral exam videos by topic, reading-aloud and listening practice, graded extensive reading, and a glossary for the Singapore terms no dictionary carries. Colleagues in the department now add to it.",
+      "zh": "起点是一个提问：一名学生被问到华文课上卡住时会做什么，他手里正拿着 iPad，却耸耸肩说「发呆？」。这个回答成了设计任务：让桌上那台设备，变成他下一步可以去的地方。资源站内有按科目程度与年级整理的 SLS 课程资源、按主题分类的历年全国会话考试录像、朗读与听力练习、分级泛读，以及一份字典查不到的新加坡本地词汇表。部门同事目前也陆续加入共建。"
     },
     "link": "https://sites.google.com/moe.edu.sg/bvss-cl-hub",
     "tags": [
       "resource-hub",
       "live",
       "whole-department"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/cl-hub.png",
+        "caption": {
+          "en": "The hub, organised by subject level and year",
+          "zh": "资源站首页 · 按科目程度与年级整理"
+        }
+      }
     ]
   }
 ]
