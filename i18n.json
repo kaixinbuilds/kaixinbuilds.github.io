@@ -68,14 +68,6 @@
     "en": "Screens",
     "zh": "界面预览"
   },
-  "grid.title": {
-    "en": "Other projects",
-    "zh": "其他作品"
-  },
-  "grid.subtitle": {
-    "en": "Smaller classroom tools, each built for one specific teaching problem.",
-    "zh": "为解决某一个具体教学问题而做的小型课堂工具。"
-  },
   "grid.visit": {
     "en": "Open",
     "zh": "打开"
@@ -201,8 +193,8 @@
     "zh": "联系 · 郑凯欣"
   },
   "work.intro": {
-    "en": "Tools built for specific classroom problems, all of them in real use with real students.",
-    "zh": "为具体课堂问题而做的工具，每一个都在真实课堂中使用。"
+    "en": "Tools, structures and processes built for specific classroom problems, all of them in real use.",
+    "zh": "为具体课堂问题而做的工具、结构与流程，每一项都在真实使用中。"
   },
   "status.live": {
     "en": "LIVE",
