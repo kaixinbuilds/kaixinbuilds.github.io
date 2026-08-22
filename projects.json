@@ -43,21 +43,29 @@
     ],
     "screenshots": [
       {
-        "src": "assets/screenshots/vocabsummit-1.png",
+        "src": "assets/screenshots/vocabsummit-landing.jpg",
+        "wide": true,
+        "caption": {
+          "en": "The title screen, carrying the couplet the project is named from",
+          "zh": "首页 · 项目命名所本的对联"
+        }
+      },
+      {
+        "src": "assets/screenshots/vocabsummit-streams.png",
         "caption": {
           "en": "The four streams, G1 through Higher Chinese",
           "zh": "四大语文流 · 从 G1 到高级华文"
         }
       },
       {
-        "src": "assets/screenshots/vocabsummit-2.png",
+        "src": "assets/screenshots/vocabsummit-mountain.png",
         "caption": {
           "en": "我的词山 · the personal progress map",
           "zh": "我的词山 · 个人进度地图"
         }
       },
       {
-        "src": "assets/screenshots/vocabsummit-3.png",
+        "src": "assets/screenshots/vocabsummit-dashboard.png",
         "caption": {
           "en": "Choosing scope and difficulty, never assigned",
           "zh": "自选范围与难度，而非系统分配"

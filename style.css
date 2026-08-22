@@ -323,6 +323,8 @@ h1, h2, h3 {
   margin-top: clamp(2.5rem, 5vw, 3.5rem);
 }
 .shot { margin: 0; }
+.shot-wide { grid-column: 1 / -1; }
+.shot-wide .screen-inner { aspect-ratio: 1600 / 826; }
 .shot figcaption {
   margin-top: .75rem; padding-top: .5rem;
   border-top: 1px solid var(--rule);

@@ -78,10 +78,10 @@
     const shots = (p.screenshots || []).map((s) => {
       const caption = esc(pick(s.caption));
       return `
-      <figure class="shot">
+      <figure class="shot${s.wide ? ' shot-wide' : ''}">
         <div class="screen-bezel">
           <div class="screen-inner" data-missing="${esc(s.src)}">
-            <img src="${esc(s.src)}" alt="${caption}" loading="lazy" decoding="async">
+            <img src="${esc(s.src)}" alt="${caption}" decoding="async">
           </div>
         </div>
         <figcaption>${caption}</figcaption>
