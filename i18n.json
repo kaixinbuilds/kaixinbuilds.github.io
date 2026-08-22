@@ -1,9 +1,5 @@
 {
   "_comment": "One key = one string. Add a key here, reference it with data-i18n=\"key\" in index.html. Never duplicate markup for a second language.",
-  "site.title": {
-    "en": "Chun Kai Xin · Chinese Language Teacher & EdTech Builder",
-    "zh": "郑凯欣 · 华文教师 · 教育科技开发者"
-  },
   "site.description": {
     "en": "Classroom-grounded learning tools for Chinese Language education, designed and built by a practising teacher.",
     "zh": "由一线华文教师独立设计与开发的课堂学习工具。"
@@ -207,5 +203,29 @@
   "grid.playNote": {
     "en": "Loads the real game, sound included. Arrow keys to move, space to jump.",
     "zh": "将载入实际游戏，含音效。方向键移动，空格键跳跃。"
+  },
+  "page.home.title": {
+    "en": "Chun Kai Xin · Chinese Language Teacher & EdTech Builder",
+    "zh": "郑凯欣 · 华文教师 · 教育科技开发者"
+  },
+  "page.work.title": {
+    "en": "Work · Chun Kai Xin",
+    "zh": "作品 · 郑凯欣"
+  },
+  "page.talks.title": {
+    "en": "Talks & community · Chun Kai Xin",
+    "zh": "分享与社群 · 郑凯欣"
+  },
+  "page.approach.title": {
+    "en": "How I design · Chun Kai Xin",
+    "zh": "设计理念 · 郑凯欣"
+  },
+  "page.contact.title": {
+    "en": "Contact · Chun Kai Xin",
+    "zh": "联系 · 郑凯欣"
+  },
+  "work.intro": {
+    "en": "Tools built for specific classroom problems, all of them in real use with real students.",
+    "zh": "为具体课堂问题而做的工具，每一个都在真实课堂中使用。"
   }
 }

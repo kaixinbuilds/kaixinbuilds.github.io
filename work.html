@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="page.home.title">Chun Kai Xin</title>
+<title data-i18n="page.work.title">Chun Kai Xin</title>
 <meta name="description" data-i18n="site.description" data-i18n-attr="content" content="">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#1E2749">
@@ -25,12 +25,12 @@
 <header class="site-header">
   <div class="wrap">
     <div class="header-inner">
-      <a class="wordmark" href="index.html" aria-current="page">
+      <a class="wordmark" href="index.html">
         <span class="wordmark-text">kaixin<em>builds</em></span>
       </a>
 
       <nav class="site-nav" aria-label="Primary">
-        <a href="work.html" data-i18n="nav.work">Work</a>
+        <a href="work.html" aria-current="page" data-i18n="nav.work">Work</a>
         <a href="talks.html" data-i18n="nav.talks">Talks</a>
         <a href="approach.html" data-i18n="nav.approach">Approach</a>
         <a href="contact.html" data-i18n="nav.contact">Contact</a>
@@ -44,25 +44,19 @@
 </header>
 
 <main id="main">
-  <section class="hero" id="top">
+  <section class="section" id="work">
     <div class="wrap">
-      <!-- The couplet VocabSummit is named from. Both languages always show:
-           the pairing itself is the content, not a translation of it. -->
-      <p class="epigraph">
-        <span class="zh" lang="zh-Hans">书山有路勤为径，学海无涯苦作舟</span>
-        <span class="en" lang="en">On the mountain of books, diligence is the path;
-          on the sea of learning, endurance is the boat.</span>
-        <span class="src" data-i18n="epigraph.source">《增广贤文 · 劝学篇》</span>
-      </p>
+      <h1 class="page-title" data-i18n="nav.work">Work</h1>
+      <p class="page-sub" data-i18n="work.intro"></p>
+      <div id="featured" class="featured" aria-live="polite"></div>
+    </div>
+  </section>
 
-      <p class="eyebrow">kaixinbuilds</p>
-      <h1 class="hero-name" data-i18n="hero.name">Chun Kai Xin</h1>
-      <p class="hero-tagline" data-i18n="hero.tagline"></p>
-      <p class="hero-intro" data-i18n="hero.intro"></p>
-      <p class="hero-actions">
-        <a class="btn btn-primary" href="work.html" data-i18n="hero.ctaWork">See the work</a>
-        <a class="btn btn-ghost" href="contact.html" data-i18n="hero.ctaContact">Get in touch</a>
-      </p>
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title" data-i18n="grid.title">Other projects</h2>
+      <p class="section-sub" data-i18n="grid.subtitle"></p>
+      <div id="project-grid" class="card-grid"></div>
     </div>
   </section>
 </main>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="page.home.title">Chun Kai Xin</title>
+<title data-i18n="page.approach.title">Chun Kai Xin</title>
 <meta name="description" data-i18n="site.description" data-i18n-attr="content" content="">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#1E2749">
@@ -25,14 +25,14 @@
 <header class="site-header">
   <div class="wrap">
     <div class="header-inner">
-      <a class="wordmark" href="index.html" aria-current="page">
+      <a class="wordmark" href="index.html">
         <span class="wordmark-text">kaixin<em>builds</em></span>
       </a>
 
       <nav class="site-nav" aria-label="Primary">
         <a href="work.html" data-i18n="nav.work">Work</a>
         <a href="talks.html" data-i18n="nav.talks">Talks</a>
-        <a href="approach.html" data-i18n="nav.approach">Approach</a>
+        <a href="approach.html" aria-current="page" data-i18n="nav.approach">Approach</a>
         <a href="contact.html" data-i18n="nav.contact">Contact</a>
       </nav>
 
@@ -44,25 +44,41 @@
 </header>
 
 <main id="main">
-  <section class="hero" id="top">
-    <div class="wrap">
-      <!-- The couplet VocabSummit is named from. Both languages always show:
-           the pairing itself is the content, not a translation of it. -->
-      <p class="epigraph">
-        <span class="zh" lang="zh-Hans">书山有路勤为径，学海无涯苦作舟</span>
-        <span class="en" lang="en">On the mountain of books, diligence is the path;
-          on the sea of learning, endurance is the boat.</span>
-        <span class="src" data-i18n="epigraph.source">《增广贤文 · 劝学篇》</span>
-      </p>
+  <section class="section" id="approach">
+    <div class="wrap wrap-narrow">
+      <h1 class="page-title" data-i18n="approach.title">How I design</h1>
+      <p class="page-sub" data-i18n="approach.body2"></p>
 
-      <p class="eyebrow">kaixinbuilds</p>
-      <h1 class="hero-name" data-i18n="hero.name">Chun Kai Xin</h1>
-      <p class="hero-tagline" data-i18n="hero.tagline"></p>
-      <p class="hero-intro" data-i18n="hero.intro"></p>
-      <p class="hero-actions">
-        <a class="btn btn-primary" href="work.html" data-i18n="hero.ctaWork">See the work</a>
-        <a class="btn btn-ghost" href="contact.html" data-i18n="hero.ctaContact">Get in touch</a>
-      </p>
+      <p class="lede" data-i18n="approach.body1"></p>
+
+      <ul class="principles">
+        <li>
+          <h3 data-i18n="approach.principle1Title"></h3>
+          <p data-i18n="approach.principle1Body"></p>
+        </li>
+        <li>
+          <h3 data-i18n="approach.principle2Title"></h3>
+          <p data-i18n="approach.principle2Body"></p>
+        </li>
+        <li>
+          <h3 data-i18n="approach.principle3Title"></h3>
+          <p data-i18n="approach.principle3Body"></p>
+        </li>
+      </ul>
+
+      <!-- A real block print, presented as a labelled specimen rather than
+           as decoration. Hides itself if the image is not there yet. -->
+      <figure class="specimen">
+        <div class="specimen-plate">
+          <img src="assets/art/prints/specimen.png" alt=""
+               data-i18n="specimen.alt" data-i18n-attr="alt" decoding="async">
+        </div>
+        <figcaption>
+          <span class="specimen-title" data-i18n="specimen.title"></span>
+          <span class="specimen-meta" data-i18n="specimen.meta"></span>
+          <span class="specimen-note" data-i18n="specimen.note"></span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 </main>

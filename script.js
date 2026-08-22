@@ -241,24 +241,6 @@
     });
   }
 
-  /* ── frontispiece reveal ─────────────────────────────── */
-
-  function initFrontispiece() {
-    const band = $('.frontispiece');
-    if (!band || !('IntersectionObserver' in window)) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    band.classList.add('will-ink');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-inked');
-        observer.unobserve(entry.target);
-      });
-    }, { threshold: 0, rootMargin: '0px 0px 240px 0px' });
-    observer.observe(band);
-  }
-
   /* ── boot ────────────────────────────────────────────── */
 
   async function loadJSON(path) {
@@ -296,6 +278,5 @@
     }
     revealLoadedImages();
     initToggle();
-    initFrontispiece();
   })();
 })();

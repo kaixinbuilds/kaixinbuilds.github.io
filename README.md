@@ -108,7 +108,11 @@ within about a minute. Run it with no argument and it writes a generic commit me
 ## Structure
 
 ```
-index.html            markup + data-i18n hooks
+index.html            home / title page
+work.html             flagship project + project grid
+talks.html            talks and community
+approach.html         design principles + the specimen plate
+contact.html          the email address
 style.css             design tokens in :root, then components
 script.js             JSON loading, i18n, rendering, form handling
 i18n.json             every UI string, bilingual
