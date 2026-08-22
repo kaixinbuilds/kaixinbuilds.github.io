@@ -698,3 +698,15 @@ html[lang^="zh"] .epigraph .en { display: none; }
 }
 .lightbox-close::before { content: "\00d7"; }
 .lightbox-close:hover { background: rgba(242, 235, 219, .22); }
+
+/* ── measure on the wide panel ─────────────────────────── */
+/* The narrow pages set their measure with .wrap-narrow, so the caps that
+   suit them leave a large empty gutter on the wide Work panel. Let the
+   text fill the panel it is actually sitting in. */
+main > section > .wrap:not(.wrap-narrow) .page-sub,
+main > section > .wrap:not(.wrap-narrow) .section-sub,
+main > section > .wrap:not(.wrap-narrow) .featured-summary,
+main > section > .wrap:not(.wrap-narrow) .featured-subtitle,
+main > section > .wrap:not(.wrap-narrow) .highlight-box {
+  max-width: none;
+}

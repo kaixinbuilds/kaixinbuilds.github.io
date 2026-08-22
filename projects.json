@@ -15,8 +15,8 @@
       "zh": "3,741 个词条，涵盖 G1、G2、G3 与高级华文，具备可见的进度、连续挑战与由学生自选的难度。核心学习机制自设计之初，便以自我决定理论（SDT）与促进学习的评价（AfL）为依据。"
     },
     "highlight": {
-      "en": "Designed and built independently, in conversation with an AI coding agent (Claude Code), on a Firebase backend, without a formal software-engineering background or a development team.",
-      "zh": "独立完成设计与开发，全程与 AI 编程 agent（Claude Code）协作，采用 Firebase 架构，没有软件工程的科班背景，也没有开发团队。"
+      "en": "Designed and built independently, in conversation with an AI coding agent (Claude Code), on a Firebase backend. The whole project was completed without a formal software-engineering background.",
+      "zh": "独立完成设计与开发，全程与 AI 编程 agent（Claude Code）协作，采用 Firebase 架构。在没有软件工程的科班背景下完成项目开发。"
     },
     "stats": [
       {
