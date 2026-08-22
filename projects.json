@@ -45,22 +45,22 @@
       {
         "src": "assets/screenshots/vocabsummit-1.png",
         "caption": {
-          "en": "攀山竞速 · timed climb mode",
-          "zh": "攀山竞速 · 限时闯关模式"
+          "en": "The four streams, G1 through Higher Chinese",
+          "zh": "四大语文流 · 从 G1 到高级华文"
         }
       },
       {
         "src": "assets/screenshots/vocabsummit-2.png",
         "caption": {
-          "en": "我的词山 · personal progress map",
+          "en": "我的词山 · the personal progress map",
           "zh": "我的词山 · 个人进度地图"
         }
       },
       {
         "src": "assets/screenshots/vocabsummit-3.png",
         "caption": {
-          "en": "Stream and difficulty selection",
-          "zh": "语文流与难度选择"
+          "en": "Choosing scope and difficulty, never assigned",
+          "zh": "自选范围与难度，而非系统分配"
         }
       }
     ],
