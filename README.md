@@ -29,6 +29,7 @@ Then open http://localhost:8000. Stop it with `Ctrl-C`.
 | Add a talk or community contribution | `talks.json` |
 | Change any wording on the page | `i18n.json` |
 | Change colours, spacing, typography | `style.css` (the `:root` block at the top) |
+| Redraw the lino illustrations | see **Artwork** below |
 
 Every content file is bilingual. Each string is a `{ "en": "…", "zh": "…" }` pair —
 fill in both sides and the language toggle handles the rest.
@@ -114,21 +115,43 @@ within about a minute. Run it with no argument and it writes a generic commit me
 ## Structure
 
 ```
-index.html      markup + data-i18n hooks
-style.css       design tokens in :root, then components
-script.js       JSON loading, i18n, rendering, form handling
-i18n.json       every UI string, bilingual
-projects.json   project data, bilingual
-talks.json      talks and community contributions, bilingual
+index.html            markup + data-i18n hooks
+style.css             design tokens in :root, then components
+script.js             JSON loading, i18n, rendering, form handling
+i18n.json             every UI string, bilingual
+projects.json         project data, bilingual
+talks.json            talks and community contributions, bilingual
 assets/
-  screenshots/  project images
-publish.sh      commit + push in one command
+  art/
+    mountain-sea.svg  the frontispiece lino block
+    ridge-rule.svg    the carved section divider
+  screenshots/        project images
+publish.sh            commit + push in one command
 ```
+
+## Artwork
+
+`assets/art/` holds two hand-drawn SVG lino blocks: the frontispiece under the hero, and
+the carved ridge used as a section divider. They are plain SVG, so they scale to any
+screen, weigh about 57KB together, and can be edited by hand or swapped outright.
+
+To replace either one with your own scan or a generated image, drop the file into
+`assets/art/` and change the `url(...)` in `style.css` (`.frontispiece` and the
+`.section + .section::before` rule). Nothing else depends on them.
 
 ---
 
 ## Privacy
 
-No analytics, no trackers, no cookies, no third-party fonts or scripts. The only outbound
-request the page makes is the contact form POST to Formspree, and only when someone
-submits it. Language preference is stored in `localStorage` on the visitor's own device.
+No analytics, no trackers, no cookies, no third-party scripts.
+
+Two outbound requests exist, and both are worth knowing about:
+
+- **Google Fonts** serves Spectral and Inter. Google sees visitors' IP addresses. Chinese
+  text deliberately uses the system serif instead, because a webfont with CJK coverage
+  costs megabytes. If you would rather have zero third-party requests, the fix is to
+  self-host both fonts: download the woff2 files, drop them in `assets/fonts/`, and swap
+  the `<link>` in `index.html` for a couple of `@font-face` rules.
+- **Formspree** receives the contact form POST, and only when someone actually submits it.
+
+Language preference is stored in `localStorage` on the visitor's own device.

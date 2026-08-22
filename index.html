@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="site.title">Kaixin Chun — Chinese Language Teacher &amp; EdTech Builder</title>
+<title data-i18n="site.title">Kaixin Chun · Chinese Language Teacher &amp; EdTech Builder</title>
 <meta name="description" data-i18n="site.description" data-i18n-attr="content" content="Classroom-grounded learning tools for Chinese Language education, designed and built by a practising teacher.">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#6C5CE7">
+<meta name="theme-color" content="#1E2749">
 
-<!-- Inter for text, Press Start 2P for the pixel accents only.
-     Chinese falls through to PingFang SC / Microsoft YaHei — neither webfont
-     carries CJK glyphs, which is why pixel type is never used for 中文. -->
+<!-- Spectral for headings and epigraphs, Inter for body and UI. Chinese
+     resolves to the system serif (Songti SC / Source Han Serif): a webfont
+     with CJK coverage would cost megabytes for one page. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'><rect width='16' height='16' fill='%236C5CE7'/><path d='M2 12h12v2H2z' fill='%233D2F9E'/><path d='M4 10h8v2H4zM6 8h4v2H6zM7 6h2v2H7z' fill='%23FFF6D0'/><path d='M11 4h3v3h-3z' fill='%23FF6B57'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F6F1E6'/><circle cx='23' cy='10' r='5' fill='%23C0703A'/><path d='M0 26 L8 14 L14 21 L20 12 L27 22 L32 17 L32 32 L0 32 Z' fill='%231E2749'/></svg>">
 </head>
 <body>
 
@@ -24,13 +24,11 @@
 
 <header class="site-header">
   <div class="wrap">
-    <div class="header-inner glass">
-      <a class="wordmark pixel" href="#top">
-        <svg class="mark" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
-          <path d="M1 13h14v2H1z" fill="#3D2F9E"/>
-          <path d="M3 10h10v3H3zM5 8h6v2H5zM7 5h2v3H7z" fill="#6C5CE7"/>
-          <path d="M7 5h2v2H7z" fill="#FFF6D0"/>
-          <path d="M12 3h3v3h-3z" fill="#FF6B57"/>
+    <div class="header-inner">
+      <a class="wordmark" href="#top">
+        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="24" cy="9" r="4.5" fill="#C0703A"/>
+          <path d="M0 27 L8 14 L14 21 L20 12 L27 23 L32 18 L32 32 L0 32 Z" fill="currentColor"/>
         </svg>
         kaixin<em>builds</em>
       </a>
@@ -53,19 +51,27 @@
 
   <!-- ── Hero ─────────────────────────────────────────────── -->
   <section class="hero" id="top">
-    <div class="hero-bg"></div>
     <div class="wrap">
-      <div class="hero-panel glass">
-        <p class="eyebrow pixel" data-i18n="hero.eyebrow">kaixinbuilds</p>
-        <h1 class="hero-name" data-i18n="hero.name">Kaixin Chun</h1>
-        <p class="hero-tagline" data-i18n="hero.tagline">Chinese Language Teacher · EdTech Independent Developer · HOD/MTL, Pai Chai Secondary</p>
-        <p class="hero-intro" data-i18n="hero.intro">I teach Chinese Language, and I build the tools I wished my students had.</p>
-        <p class="hero-actions">
-          <a class="btn btn-primary" href="#work" data-i18n="hero.ctaWork">See the work</a>
-          <a class="btn btn-ghost" href="#contact" data-i18n="hero.ctaContact">Get in touch</a>
-        </p>
-      </div>
+      <!-- The couplet VocabSummit is named from. Both languages always show:
+           the pairing itself is the content, not a translation of it. -->
+      <p class="epigraph">
+        <span class="zh" lang="zh-Hans">书山有路勤为径，学海无涯苦作舟</span>
+        <span class="en" lang="en">On the mountain of books, diligence is the path;
+          on the sea of learning, endurance is the boat.</span>
+        <span class="src">韩愈 · Han Yu</span>
+      </p>
+
+      <p class="eyebrow" data-i18n="hero.eyebrow">kaixinbuilds</p>
+      <h1 class="hero-name" data-i18n="hero.name">Kaixin Chun</h1>
+      <p class="hero-tagline" data-i18n="hero.tagline">Chinese Language Teacher · EdTech Independent Developer · HOD/MTL, Pai Chai Secondary</p>
+      <p class="hero-intro" data-i18n="hero.intro">I teach Chinese Language, and I build the tools I wished my students had.</p>
+      <p class="hero-actions">
+        <a class="btn btn-primary" href="#work" data-i18n="hero.ctaWork">See the work</a>
+        <a class="btn btn-ghost" href="#contact" data-i18n="hero.ctaContact">Get in touch</a>
+      </p>
     </div>
+    <div class="frontispiece" role="img"
+         aria-label="Lino-cut print of mountain peaks above a carved sea"></div>
   </section>
 
   <!-- ── Section 1 · Featured project ─────────────────────── -->
@@ -89,9 +95,7 @@
     <div class="wrap wrap-narrow">
       <h2 class="section-title" data-i18n="talks.title">Talks &amp; community</h2>
       <p class="section-sub" data-i18n="talks.subtitle">Sharing the process openly.</p>
-      <div class="talks-panel glass">
-        <ol id="talks-list" class="talks-list"></ol>
-      </div>
+      <ol id="talks-list" class="talks-list"></ol>
     </div>
   </section>
 
@@ -100,7 +104,6 @@
     <div class="wrap wrap-narrow">
       <h2 class="section-title" data-i18n="approach.title">How I design</h2>
       <p class="section-sub" data-i18n="approach.body2">That is easy to say and hard to hold onto.</p>
-      <div class="approach-panel glass">
         <p class="lede" data-i18n="approach.body1">Every design decision traces back to SDT and AfL.</p>
         <ul class="principles">
           <li>
@@ -116,7 +119,6 @@
             <p data-i18n="approach.principle3Body"></p>
           </li>
         </ul>
-      </div>
     </div>
   </section>
 
@@ -126,7 +128,6 @@
       <h2 class="section-title" data-i18n="contact.title">Get in touch</h2>
       <p class="section-sub" data-i18n="contact.subtitle">Write to me.</p>
 
-      <div class="contact-panel glass">
         <!--
           SETUP: replace YOUR_FORM_ID below with the id from your Formspree
           dashboard (formspree.io → your form → the endpoint it shows you).
@@ -159,12 +160,11 @@
             <input id="cf-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
           </div>
 
-          <button class="btn btn-coral" type="submit" data-i18n="contact.send">Send message</button>
+          <button class="btn btn-accent" type="submit" data-i18n="contact.send">Send message</button>
           <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
 
         <p class="privacy-note" data-i18n="contact.privacy"></p>
-      </div>
     </div>
   </section>
 
@@ -172,6 +172,7 @@
 
 <footer class="site-footer">
   <div class="wrap wrap-narrow">
+    <p class="colophon-zh" lang="zh-Hans">感于言，成于形。</p>
     <p data-i18n="footer.built"></p>
     <p><a href="https://github.com/kaixinbuilds" data-i18n="footer.source">Source on GitHub</a></p>
   </div>

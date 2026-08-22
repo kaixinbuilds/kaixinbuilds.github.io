@@ -71,7 +71,7 @@
 
     const stats = (p.stats || []).map((s) => `
       <li>
-        <span class="value pixel">${esc(s.value)}</span>
+        <span class="value">${esc(s.value)}</span>
         <span class="label">${esc(pick(s.label))}</span>
       </li>`).join('');
 
@@ -91,11 +91,11 @@
     const isLive = (p.tags || []).includes('live');
 
     host.innerHTML = `
-      <div class="featured-panel glass">
-        <p class="eyebrow pixel">${esc(t('featured.eyebrow'))}</p>
+      <div class="featured-head">
+        <p class="eyebrow">${esc(t('featured.eyebrow'))}</p>
         <div class="featured-titlerow">
           <h2 class="featured-title">${esc(pick(p.title))}</h2>
-          ${isLive ? '<span class="badge-live pixel">LIVE</span>' : ''}
+          ${isLive ? '<span class="badge-live">LIVE</span>' : ''}
         </div>
         <p class="featured-subtitle">${esc(pick(p.subtitle))}</p>
         <p class="featured-summary">${esc(pick(p.summary))}</p>
@@ -134,13 +134,13 @@
       .filter((p) => !p.featured)
       .map((p) => {
         const tags = (p.tags || [])
-          .map((tag, i) => `<li class="tag${i % 2 ? ' coral' : ''}">${esc(tag)}</li>`)
+          .map((tag, i) => `<li class="tag${i === 0 ? ' accent' : ''}">${esc(tag)}</li>`)
           .join('');
         const link = p.link
           ? `<a class="card-link" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(t('grid.visit'))} →</a>`
           : `<span class="card-link" aria-disabled="true">${esc(t('grid.noLink'))}</span>`;
         return `
-        <article class="card glass">
+        <article class="card">
           <h3>${esc(pick(p.title))}</h3>
           <p>${esc(pick(p.summary))}</p>
           <div class="card-foot">
@@ -250,7 +250,7 @@
     const host = $('#featured');
     if (!host) return;
     host.innerHTML = `
-      <div class="data-error glass">
+      <div class="data-error">
         <h3>${esc(t('error.dataTitle') === 'error.dataTitle' ? 'Content could not load' : t('error.dataTitle'))}</h3>
         <p>${esc(t('error.dataBody') === 'error.dataBody'
           ? 'This page reads its content from JSON files, which browsers block when a page is opened directly from disk. Serve the folder over HTTP instead — see README.md.'

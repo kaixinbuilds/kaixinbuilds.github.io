@@ -26,8 +26,8 @@
     "zh": "华文教师 · 教育科技独立开发者 · 百德中学 HOD/MTL"
   },
   "hero.intro": {
-    "en": "I teach Chinese Language, and I build the tools I wished my students had. No engineering background, no dev team: just classroom problems taken seriously enough to ship a solution. Everything here is in real use with real students.",
-    "zh": "我教华文，也亲手做出学生真正需要的工具。没有工程背景，没有开发团队：只是把课堂上的真实问题，认真做到能交付为止。这里的每一个作品，都在真实课堂中使用。"
+    "en": "My work starts the same way in every medium: I sense a structural gap, then build something to close it. A missing scaffold in how students learn vocabulary, a missing rung between 书山 and 学海. I teach Chinese Language, I lead a Mother Tongue department, and I build the tools that close those gaps. Everything here is in real use with real students.",
+    "zh": "无论在哪一个领域，我的工作都始于同一件事：察觉结构上的缺口，然后动手把它补上。学生学词汇时少了一层脚手架，「书山」与「学海」之间少了一级台阶。我教华文，主持母语部门，也亲手做出补上这些缺口的工具。这里的每一个作品，都在真实课堂中使用。"
   },
   "hero.ctaWork": { "en": "See the work", "zh": "查看作品" },
   "hero.ctaContact": { "en": "Get in touch", "zh": "联系我" },
@@ -118,8 +118,8 @@
   },
 
   "footer.built": {
-    "en": "Built by hand: static HTML, CSS and vanilla JavaScript. No trackers, no analytics, no cookies.",
-    "zh": "纯手工搭建：静态 HTML、CSS 与原生 JavaScript。无追踪、无分析工具、无 cookie。"
+    "en": "Set by hand: static HTML, CSS and vanilla JavaScript, no framework and no build step. No trackers, no analytics, no cookies.",
+    "zh": "纯手工排版：静态 HTML、CSS 与原生 JavaScript，无框架、无编译流程。无追踪、无分析工具、无 cookie。"
   },
   "footer.source": { "en": "Source on GitHub", "zh": "GitHub 源码" },
 
