@@ -15,6 +15,7 @@
   --ink-soft:   #4B5578;
   --ink-faint:  #7C849B;
   --rule:       #DCD2BE;
+  --glass-edge: rgba(255, 255, 255, .70);
 
   /* ── the single accent, drawn from the sunrise in the print ── */
   --ochre:      #C0703A;
@@ -41,6 +42,7 @@
     --ink-soft:   #C0B8A6;
     --ink-faint:  #8B90A6;
     --rule:       #333A55;
+    --glass-edge: rgba(255, 255, 255, .10);
 
     --ochre:      #D98B4E;
     --ochre-deep: #E9A56B;
@@ -67,6 +69,24 @@ body {
 }
 
 img, svg { max-width: 100%; display: block; }
+
+/* ── the print, fixed behind every page ────────────────── */
+/* A pseudo-element rather than background-attachment: fixed, which iOS
+   Safari does not honour. It sits behind everything and never scrolls,
+   so the pattern reads as paper stock rather than as content. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url("assets/art/prints/payphone-bg.jpg") center center / cover no-repeat;
+  opacity: .30;
+}
+@media (prefers-color-scheme: dark) {
+  /* inverted, the same block prints cream on ink */
+  body::before { filter: invert(1) brightness(1.05); opacity: .22; }
+}
 a { color: var(--ochre-deep); text-underline-offset: .18em; }
 
 h1, h2, h3 {
@@ -86,6 +106,25 @@ h1, h2, h3 {
   background: var(--ink); color: var(--paper); padding: .6rem 1rem; text-decoration: none;
 }
 .skip-link:focus { left: 0; top: 0; }
+
+/* ── glass ─────────────────────────────────────────────── */
+/* Content floats on frosted panels so the print stays visible behind it
+   without ever competing with the text on top. */
+main > section > .wrap {
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+          backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid var(--glass-edge);
+  border-radius: 16px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  box-shadow: 0 12px 44px -20px rgba(30, 39, 73, .38);
+}
+
+/* Without backdrop-filter the panel would be bare translucency over a busy
+   pattern, so thicken it to near-opaque instead. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  main > section > .wrap { background: color-mix(in srgb, var(--paper) 97%, transparent); }
+}
 
 /* ── layout ────────────────────────────────────────────── */
 .wrap { width: min(100% - 2.5rem, var(--wrap)); margin-inline: auto; }
@@ -119,7 +158,9 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 /* ── header ────────────────────────────────────────────── */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: var(--paper);
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+          backdrop-filter: blur(18px) saturate(150%);
   border-bottom: 1px solid var(--rule);
 }
 .header-inner { display: flex; align-items: center; gap: 1.5rem; min-height: 60px; }
@@ -314,7 +355,7 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
 .card {
   display: flex; flex-direction: column;
-  background: var(--card);
+  background: color-mix(in srgb, var(--card) 92%, transparent);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   padding: 1.6rem;
@@ -462,10 +503,14 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 
 /* ── footer ────────────────────────────────────────────── */
 .site-footer {
-  border-top: 1px solid var(--rule);
   margin-top: clamp(3rem, 7vw, 5rem);
   padding-block: 2.2rem 3.2rem;
   font-size: .85rem; color: var(--ink-faint);
+  /* the footer sits on the print too, so it needs the same scrim */
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+          backdrop-filter: blur(18px) saturate(150%);
+  border-top: 1px solid var(--rule);
 }
 .footer-repo { font-size: .86rem; }
 .site-footer p { margin: .28rem 0; }
