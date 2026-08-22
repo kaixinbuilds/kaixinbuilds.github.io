@@ -1,0 +1,267 @@
+/* ==========================================================
+   kaixinbuilds — site logic
+   Loads content from JSON, renders it, and swaps language
+   without a reload. No dependencies, no build step.
+   ========================================================== */
+
+(() => {
+  'use strict';
+
+  const STORAGE_KEY = 'kb-lang';
+  const LANGS = ['en', 'zh'];
+
+  /** Everything loaded from disk lives here so re-rendering is cheap. */
+  const data = { i18n: {}, projects: [], talks: [] };
+
+  let lang = pickInitialLang();
+
+  /* ── helpers ─────────────────────────────────────────── */
+
+  function pickInitialLang() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (LANGS.includes(saved)) return saved;
+    return navigator.language && navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en';
+  }
+
+  /** Look up a translated string by key; falls back to English, then the key. */
+  const t = (key) => {
+    const entry = data.i18n[key];
+    if (!entry) return key;
+    return entry[lang] ?? entry.en ?? key;
+  };
+
+  /** Pick the right side of a { en, zh } pair coming from projects/talks JSON. */
+  const pick = (pair) => {
+    if (pair == null) return '';
+    if (typeof pair === 'string') return pair;
+    return pair[lang] ?? pair.en ?? '';
+  };
+
+  const esc = (str) => String(str).replace(/[&<>"']/g, (c) => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+  ));
+
+  const $ = (sel) => document.querySelector(sel);
+
+  /* ── i18n application ────────────────────────────────── */
+
+  function applyI18n() {
+    document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+
+    // data-i18n + optional data-i18n-attr ("content", "placeholder", …).
+    // Without data-i18n-attr the string becomes the element's text.
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const value = t(el.dataset.i18n);
+      const attr = el.dataset.i18nAttr;
+      if (attr) el.setAttribute(attr, value);
+      else el.textContent = value;
+    });
+
+    document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
+      el.setAttribute('aria-label', t(el.dataset.i18nAriaLabel));
+    });
+  }
+
+  /* ── rendering ───────────────────────────────────────── */
+
+  function renderFeatured() {
+    const host = $('#featured');
+    const p = data.projects.find((item) => item.featured);
+    if (!host || !p) return;
+
+    const stats = (p.stats || []).map((s) => `
+      <li>
+        <span class="value">${esc(s.value)}</span>
+        <span class="label">${esc(pick(s.label))}</span>
+      </li>`).join('');
+
+    const shots = (p.screenshots || []).map((s) => {
+      const caption = esc(pick(s.caption));
+      return `
+      <figure class="shot" data-missing="${caption} — ${esc(s.src)}">
+        <img src="${esc(s.src)}" alt="${caption}" loading="lazy" decoding="async">
+        <figcaption>${caption}</figcaption>
+      </figure>`;
+    }).join('');
+
+    host.innerHTML = `
+      <div class="featured-head">
+        <p class="eyebrow">${esc(t('featured.eyebrow'))}</p>
+        <h2 class="featured-title">${esc(pick(p.title))}</h2>
+        <p class="featured-subtitle">${esc(pick(p.subtitle))}</p>
+        <p class="featured-summary">${esc(pick(p.summary))}</p>
+        ${stats ? `<ul class="stats">${stats}</ul>` : ''}
+        ${p.highlight ? `
+        <div class="highlight-box">
+          <span class="label">${esc(t('featured.highlightLabel'))}</span>
+          <p>${esc(pick(p.highlight))}</p>
+        </div>` : ''}
+        ${p.link ? `
+        <p class="featured-cta">
+          <a class="btn btn-primary" href="${esc(p.link)}" target="_blank" rel="noopener">
+            ${esc(t('featured.visit'))}
+          </a>
+        </p>` : ''}
+      </div>
+      ${shots ? `<div class="shots">${shots}</div>` : ''}`;
+
+    markMissingImages(host);
+  }
+
+  /** A screenshot that 404s becomes a labelled placeholder, not a broken-image icon. */
+  function markMissingImages(host) {
+    host.querySelectorAll('.shot img').forEach((img) => {
+      const fail = () => img.closest('.shot').classList.add('is-missing');
+      if (img.complete && img.naturalWidth === 0) fail();
+      img.addEventListener('error', fail, { once: true });
+    });
+  }
+
+  function renderGrid() {
+    const host = $('#project-grid');
+    if (!host) return;
+
+    host.innerHTML = data.projects
+      .filter((p) => !p.featured)
+      .map((p) => {
+        const tags = (p.tags || []).map((tag) => `<li>${esc(tag)}</li>`).join('');
+        const link = p.link
+          ? `<a class="card-link" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(t('grid.visit'))} →</a>`
+          : `<span class="card-link" aria-disabled="true">${esc(t('grid.noLink'))}</span>`;
+        return `
+        <article class="card">
+          <h3>${esc(pick(p.title))}</h3>
+          <p>${esc(pick(p.summary))}</p>
+          <div class="card-foot">
+            <ul class="tags">${tags}</ul>
+            ${link}
+          </div>
+        </article>`;
+      }).join('');
+  }
+
+  function renderTalks() {
+    const host = $('#talks-list');
+    if (!host) return;
+
+    // Newest first, so the freshest talk is the first thing read.
+    const sorted = [...data.talks].sort((a, b) => String(b.date).localeCompare(String(a.date)));
+
+    host.innerHTML = sorted.map((talk) => {
+      const status = talk.status === 'upcoming' ? 'upcoming' : 'completed';
+      return `
+      <li>
+        <div class="talk-meta">
+          ${esc(pick(talk.dateLabel) || talk.date)}
+          <span class="talk-status ${status}">${esc(t('talks.' + status))}</span>
+        </div>
+        <div class="talk-body">
+          <h3>${esc(pick(talk.title))}</h3>
+          <p class="talk-venue">${esc(pick(talk.venue))}</p>
+          ${talk.summary ? `<p class="talk-summary">${esc(pick(talk.summary))}</p>` : ''}
+          ${talk.link ? `<p><a class="talk-link" href="${esc(talk.link)}" target="_blank" rel="noopener">${esc(t('talks.viewLink'))} →</a></p>` : ''}
+        </div>
+      </li>`;
+    }).join('');
+  }
+
+  function renderAll() {
+    applyI18n();
+    renderFeatured();
+    renderGrid();
+    renderTalks();
+  }
+
+  /* ── language toggle ─────────────────────────────────── */
+
+  function initToggle() {
+    const btn = $('#lang-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      lang = lang === 'en' ? 'zh' : 'en';
+      localStorage.setItem(STORAGE_KEY, lang);
+      renderAll();
+    });
+  }
+
+  /* ── contact form ────────────────────────────────────── */
+
+  function initForm() {
+    const form = $('#contact-form');
+    const status = $('#form-status');
+    if (!form || !status) return;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (form.action.includes('YOUR_FORM_ID')) {
+        status.className = 'form-status error';
+        status.textContent = 'Form not configured yet — set your Formspree endpoint in index.html.';
+        return;
+      }
+
+      const button = form.querySelector('button[type="submit"]');
+      button.disabled = true;
+      status.className = 'form-status';
+      status.textContent = t('contact.sending');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+
+        form.reset();
+        status.className = 'form-status ok';
+        status.textContent = t('contact.success');
+      } catch (err) {
+        console.error('Contact form submission failed:', err);
+        status.className = 'form-status error';
+        status.textContent = t('contact.error');
+      } finally {
+        button.disabled = false;
+      }
+    });
+  }
+
+  /* ── boot ────────────────────────────────────────────── */
+
+  async function loadJSON(path) {
+    const response = await fetch(path, { cache: 'no-cache' });
+    if (!response.ok) throw new Error(`${path} → HTTP ${response.status}`);
+    return response.json();
+  }
+
+  function showLoadError(err) {
+    console.error('Content failed to load:', err);
+    const host = $('#featured');
+    if (!host) return;
+    host.innerHTML = `
+      <div class="data-error">
+        <h3>${esc(t('error.dataTitle') === 'error.dataTitle' ? 'Content could not load' : t('error.dataTitle'))}</h3>
+        <p>${esc(t('error.dataBody') === 'error.dataBody'
+          ? 'This page reads its content from JSON files, which browsers block when a page is opened directly from disk. Serve the folder over HTTP instead — see README.md.'
+          : t('error.dataBody'))}</p>
+      </div>`;
+  }
+
+  (async () => {
+    try {
+      const [i18n, projects, talks] = await Promise.all([
+        loadJSON('i18n.json'),
+        loadJSON('projects.json'),
+        loadJSON('talks.json'),
+      ]);
+      data.i18n = i18n;
+      data.projects = projects;
+      data.talks = talks;
+      renderAll();
+    } catch (err) {
+      showLoadError(err);
+    }
+    initToggle();
+    initForm();
+  })();
+})();

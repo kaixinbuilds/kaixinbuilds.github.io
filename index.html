@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="site.title">Kaixin Chun — Chinese Language Teacher &amp; EdTech Builder</title>
+<meta name="description" data-i18n="site.description" data-i18n-attr="content" content="Classroom-grounded learning tools for Chinese Language education, designed and built by a practising teacher.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>⛰️</text></svg>">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top">kaixin<span>builds</span></a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#talks" data-i18n="nav.talks">Talks</a>
+      <a href="#approach" data-i18n="nav.approach">Approach</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <button id="lang-toggle" class="lang-toggle" type="button"
+            data-i18n="lang.switchTo"
+            data-i18n-aria-label="lang.ariaLabel">切换中文</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="hero.eyebrow">kaixinbuilds</p>
+      <h1 class="hero-name" data-i18n="hero.name">Kaixin Chun</h1>
+      <p class="hero-tagline" data-i18n="hero.tagline">Chinese Language Teacher · EdTech Independent Developer · HOD/MTL, Pai Chai Secondary</p>
+      <p class="hero-intro" data-i18n="hero.intro">I teach Chinese Language, and I build the tools I wished my students had.</p>
+      <p class="hero-actions">
+        <a class="btn btn-primary" href="#work" data-i18n="hero.ctaWork">See the work</a>
+        <a class="btn btn-ghost" href="#contact" data-i18n="hero.ctaContact">Get in touch</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Section 1 · Featured project ─────────────────────── -->
+  <section class="section featured-section" id="work">
+    <div class="wrap">
+      <div id="featured" class="featured" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ── Section 2 · Project grid ─────────────────────────── -->
+  <section class="section grid-section">
+    <div class="wrap">
+      <h2 class="section-title" data-i18n="grid.title">Other projects</h2>
+      <p class="section-sub" data-i18n="grid.subtitle">Smaller classroom tools.</p>
+      <div id="project-grid" class="card-grid"></div>
+    </div>
+  </section>
+
+  <!-- ── Section 3 · Talks ────────────────────────────────── -->
+  <section class="section talks-section" id="talks">
+    <div class="wrap wrap-narrow">
+      <h2 class="section-title" data-i18n="talks.title">Talks &amp; community</h2>
+      <p class="section-sub" data-i18n="talks.subtitle">Sharing the process openly.</p>
+      <ol id="talks-list" class="talks-list"></ol>
+    </div>
+  </section>
+
+  <!-- ── Section 4 · Approach ─────────────────────────────── -->
+  <section class="section approach-section" id="approach">
+    <div class="wrap wrap-narrow">
+      <h2 class="section-title" data-i18n="approach.title">How I design</h2>
+      <p class="lede" data-i18n="approach.body1">Every design decision traces back to SDT and AfL.</p>
+      <p class="lede" data-i18n="approach.body2">That is easy to say and hard to hold onto.</p>
+
+      <ul class="principles">
+        <li>
+          <h3 data-i18n="approach.principle1Title">Progress points are never deducted</h3>
+          <p data-i18n="approach.principle1Body"></p>
+        </li>
+        <li>
+          <h3 data-i18n="approach.principle2Title">Difficulty is chosen, not assigned</h3>
+          <p data-i18n="approach.principle2Body"></p>
+        </li>
+        <li>
+          <h3 data-i18n="approach.principle3Title">Feedback lands before the next attempt</h3>
+          <p data-i18n="approach.principle3Body"></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Contact ──────────────────────────────────────────── -->
+  <section class="section contact-section" id="contact">
+    <div class="wrap wrap-narrow">
+      <h2 class="section-title" data-i18n="contact.title">Get in touch</h2>
+      <p class="section-sub" data-i18n="contact.subtitle">Write to me.</p>
+
+      <!--
+        SETUP: replace YOUR_FORM_ID below with the id from your Formspree
+        dashboard (formspree.io → your form → the endpoint it shows you).
+        Nothing else needs to change. Your email address never appears here.
+      -->
+      <form id="contact-form" class="contact-form"
+            action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+        <div class="field">
+          <label for="cf-name" data-i18n="contact.nameLabel">Your name</label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name"
+                 data-i18n="contact.namePlaceholder" data-i18n-attr="placeholder" placeholder="Jane Tan">
+        </div>
+
+        <div class="field">
+          <label for="cf-email" data-i18n="contact.emailLabel">Your email</label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email"
+                 data-i18n="contact.emailPlaceholder" data-i18n-attr="placeholder" placeholder="you@school.edu.sg">
+        </div>
+
+        <div class="field">
+          <label for="cf-message" data-i18n="contact.messageLabel">Message</label>
+          <textarea id="cf-message" name="message" rows="6" required
+                    data-i18n="contact.messagePlaceholder" data-i18n-attr="placeholder"></textarea>
+        </div>
+
+        <!-- honeypot: bots fill it, humans never see it -->
+        <div class="gotcha" aria-hidden="true">
+          <label for="cf-gotcha">Leave this field empty</label>
+          <input id="cf-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button class="btn btn-primary" type="submit" data-i18n="contact.send">Send message</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="privacy-note" data-i18n="contact.privacy"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap wrap-narrow">
+    <p data-i18n="footer.built"></p>
+    <p><a href="https://github.com/kaixinbuilds" data-i18n="footer.source">Source on GitHub</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

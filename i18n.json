@@ -1,0 +1,131 @@
+{
+  "_comment": "One key = one string. Add a key here, reference it with data-i18n=\"key\" in index.html. Never duplicate markup for a second language.",
+
+  "site.title": {
+    "en": "Kaixin Chun — Chinese Language Teacher & EdTech Builder",
+    "zh": "春凯欣 — 华文教师 · 教育科技开发者"
+  },
+  "site.description": {
+    "en": "Classroom-grounded learning tools for Chinese Language education, designed and built by a practising teacher.",
+    "zh": "由一线华文教师独立设计与开发的课堂学习工具。"
+  },
+
+  "nav.work": { "en": "Work", "zh": "作品" },
+  "nav.talks": { "en": "Talks", "zh": "分享" },
+  "nav.approach": { "en": "Approach", "zh": "理念" },
+  "nav.contact": { "en": "Contact", "zh": "联系" },
+  "nav.menu": { "en": "Menu", "zh": "菜单" },
+
+  "lang.switchTo": { "en": "切换中文", "zh": "English" },
+  "lang.ariaLabel": { "en": "Switch language to Chinese", "zh": "切换语言至英文" },
+
+  "hero.eyebrow": { "en": "kaixinbuilds", "zh": "kaixinbuilds" },
+  "hero.name": { "en": "Kaixin Chun", "zh": "春凯欣" },
+  "hero.tagline": {
+    "en": "Chinese Language Teacher · EdTech Independent Developer · HOD/MTL, Pai Chai Secondary",
+    "zh": "华文教师 · 教育科技独立开发者 · 百德中学 HOD/MTL"
+  },
+  "hero.intro": {
+    "en": "I teach Chinese Language, and I build the tools I wished my students had. No engineering background, no dev team — just classroom problems taken seriously enough to ship a solution. Everything here is in real use with real students.",
+    "zh": "我教华文，也亲手做出学生真正需要的工具。没有工程背景，没有开发团队 —— 只是把课堂上的真实问题，认真做到能交付为止。这里的每一个作品，都在真实课堂中使用。"
+  },
+  "hero.ctaWork": { "en": "See the work", "zh": "查看作品" },
+  "hero.ctaContact": { "en": "Get in touch", "zh": "联系我" },
+
+  "featured.eyebrow": { "en": "Flagship project", "zh": "旗舰项目" },
+  "featured.highlightLabel": { "en": "How it was built", "zh": "开发方式" },
+  "featured.visit": { "en": "Open the live site", "zh": "打开网站" },
+  "featured.gallery": { "en": "Screens", "zh": "界面预览" },
+
+  "grid.title": { "en": "Other projects", "zh": "其他作品" },
+  "grid.subtitle": {
+    "en": "Smaller classroom tools, each built for one specific teaching problem.",
+    "zh": "为解决某一个具体教学问题而做的小型课堂工具。"
+  },
+  "grid.visit": { "en": "Open", "zh": "打开" },
+  "grid.noLink": { "en": "Internal use", "zh": "校内使用" },
+
+  "talks.title": { "en": "Talks & community", "zh": "分享与社群" },
+  "talks.subtitle": {
+    "en": "Sharing the process openly, so other teachers can adapt it rather than start from zero.",
+    "zh": "公开分享开发过程，让其他老师可以直接借鉴，而不必从零开始。"
+  },
+  "talks.upcoming": { "en": "Upcoming", "zh": "即将进行" },
+  "talks.completed": { "en": "Completed", "zh": "已完成" },
+  "talks.viewLink": { "en": "View", "zh": "查看" },
+
+  "approach.title": { "en": "How I design", "zh": "设计理念" },
+  "approach.body1": {
+    "en": "Every design decision in these tools traces back to two things: Self-Determination Theory — students need autonomy, competence and relatedness to stay engaged — and Assessment for Learning, where feedback exists to move learning forward, not to rank students.",
+    "zh": "这些工具的每一个设计决定，都回到两个基点：自我决定理论（SDT）—— 学生需要自主感、胜任感与归属感，才能持续投入；以及促进学习的评价（AfL）—— 反馈的意义在于推动学习，而不是给学生排名。"
+  },
+  "approach.body2": {
+    "en": "That is easy to say and hard to hold onto once you are actually building. The principles below are the ones I refuse to trade away for convenience.",
+    "zh": "这话说来容易，真正动手开发时却很难守住。以下几条，是我不愿为了方便而妥协的原则。"
+  },
+  "approach.principle1Title": {
+    "en": "Progress points are never deducted",
+    "zh": "历练值不可扣除"
+  },
+  "approach.principle1Body": {
+    "en": "A wrong answer costs a student nothing they have already earned. Effort accumulates in one direction only. The moment a system can take progress away, students start protecting their score instead of stretching themselves.",
+    "zh": "答错，不会让学生失去任何已经挣得的东西。努力只朝一个方向累积。一旦系统能夺走进度，学生就会开始保护分数，而不再愿意挑战自己。"
+  },
+  "approach.principle2Title": {
+    "en": "Difficulty is chosen, not assigned",
+    "zh": "难度由学生自己选择"
+  },
+  "approach.principle2Body": {
+    "en": "Students pick which stream and which level to attempt. Being placed into a lane by the system removes autonomy; choosing a lane and finding it hard builds competence.",
+    "zh": "学生自己决定挑战哪一个语文流、哪一个层级。被系统分配，会剥夺自主感；自己选择、并发现它有难度，才能建立胜任感。"
+  },
+  "approach.principle3Title": {
+    "en": "Feedback lands before the next attempt",
+    "zh": "反馈必须赶在下一次尝试之前"
+  },
+  "approach.principle3Body": {
+    "en": "Feedback delivered a week later is a grade, not formative assessment. If a tool cannot respond within the same session, the pedagogy it claims is decorative.",
+    "zh": "一周后才给的反馈，是成绩，不是形成性评价。如果一个工具无法在同一堂课内做出回应，它所标榜的教学理念只是装饰。"
+  },
+
+  "contact.title": { "en": "Get in touch", "zh": "联系我" },
+  "contact.subtitle": {
+    "en": "Adapting one of these for your school, or curious how it was built? Write to me — I reply to everything from teachers.",
+    "zh": "想把这些工具用在贵校，或想了解具体的开发过程？欢迎来信 —— 来自老师的每一封信，我都会回复。"
+  },
+  "contact.nameLabel": { "en": "Your name", "zh": "您的姓名" },
+  "contact.namePlaceholder": { "en": "Jane Tan", "zh": "陈老师" },
+  "contact.emailLabel": { "en": "Your email", "zh": "您的电邮" },
+  "contact.emailPlaceholder": { "en": "you@school.edu.sg", "zh": "you@school.edu.sg" },
+  "contact.messageLabel": { "en": "Message", "zh": "留言" },
+  "contact.messagePlaceholder": {
+    "en": "Which project, and what would you like to know?",
+    "zh": "关于哪一个项目？想了解些什么？"
+  },
+  "contact.send": { "en": "Send message", "zh": "发送" },
+  "contact.sending": { "en": "Sending…", "zh": "发送中…" },
+  "contact.success": {
+    "en": "Thank you — your message is on its way. I usually reply within a few days.",
+    "zh": "谢谢您的来信，讯息已成功送出。我通常会在几天内回复。"
+  },
+  "contact.error": {
+    "en": "Something went wrong sending that. Please try again in a moment.",
+    "zh": "发送失败，请稍后再试一次。"
+  },
+  "contact.privacy": {
+    "en": "Your details go straight to my inbox and are never published, shared or used for anything else.",
+    "zh": "您的资料仅送达我的信箱，不会被公开、转发或作任何其他用途。"
+  },
+
+  "footer.built": {
+    "en": "Built by hand — static HTML, CSS and vanilla JavaScript. No trackers, no analytics, no cookies.",
+    "zh": "纯手工搭建 —— 静态 HTML、CSS 与原生 JavaScript。无追踪、无分析工具、无 cookie。"
+  },
+  "footer.source": { "en": "Source on GitHub", "zh": "GitHub 源码" },
+
+  "error.dataTitle": { "en": "Content could not load", "zh": "内容无法载入" },
+  "error.dataBody": {
+    "en": "This page reads its content from JSON files, which browsers block when a page is opened directly from disk. Serve the folder over HTTP instead — see README.md.",
+    "zh": "本页内容从 JSON 档案载入，而浏览器会阻止直接从硬盘打开的页面读取档案。请以 HTTP 方式启动本资料夹 —— 详见 README.md。"
+  }
+}

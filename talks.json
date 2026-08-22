@@ -1,0 +1,47 @@
+[
+  {
+    "id": "nlc-2026",
+    "status": "upcoming",
+    "date": "2026-08-28",
+    "dateLabel": { "en": "28 August 2026", "zh": "2026年8月28日" },
+    "title": {
+      "en": "NLC session with Dr Li",
+      "zh": "与李博士的 NLC 分享场次"
+    },
+    "venue": { "en": "Networked Learning Community", "zh": "教师专业学习社群（NLC）" },
+    "summary": {
+      "en": "TODO after 28 Aug — replace this line with what was actually covered, and switch status to \"completed\".",
+      "zh": "8月28日后待更新 —— 请把这行换成实际分享内容，并将 status 改为 \"completed\"。"
+    },
+    "link": ""
+  },
+  {
+    "id": "spmc-2026",
+    "status": "completed",
+    "date": "2026-01-01",
+    "dateLabel": { "en": "2026", "zh": "2026年" },
+    "title": { "en": "SPMC 2026", "zh": "SPMC 2026" },
+    "venue": { "en": "Singapore Chinese Language Teachers' Conference", "zh": "新加坡华文教师大会" },
+    "summary": {
+      "en": "TODO — one line on what was presented. Add a slides or photos URL in \"link\" when available.",
+      "zh": "待补 —— 用一句话说明分享内容。有简报或照片链接后，填入 \"link\" 栏位。"
+    },
+    "link": ""
+  },
+  {
+    "id": "sgldc-post",
+    "status": "completed",
+    "date": "2026-01-01",
+    "dateLabel": { "en": "2026", "zh": "2026年" },
+    "title": {
+      "en": "Writing up the build process for SgLDC",
+      "zh": "为 SgLDC 撰写开发过程分享"
+    },
+    "venue": { "en": "Singapore Learning Designers Circle", "zh": "Singapore Learning Designers Circle" },
+    "summary": {
+      "en": "TODO — one line summary. Paste the post URL into \"link\".",
+      "zh": "待补 —— 一句话摘要。请把贴文网址填入 \"link\"。"
+    },
+    "link": ""
+  }
+]
