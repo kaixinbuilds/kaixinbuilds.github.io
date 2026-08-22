@@ -543,62 +543,127 @@ html[lang^="zh"] .epigraph .en { display: none; }
 
 /* ── approach ──────────────────────────────────────────── */
 .lede { margin: 1.1rem 0 0; color: var(--ink-soft); max-width: 64ch; }
-.principles { list-style: none; margin: 2.6rem 0 0; padding: 0; display: grid; gap: 2rem; }
-.principles h3 { font-size: 1.04rem; }
+.approach .epigraph { margin-bottom: 2rem; }
+
+/* The loop is a real sequence, so it is a real ordered list. */
+.loop {
+  list-style: none;
+  counter-reset: loop;
+  margin: clamp(2.5rem, 6vw, 3.5rem) 0 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(1.9rem, 4vw, 2.6rem);
+}
+.loop li { counter-increment: loop; position: relative; padding-left: 2.9rem; }
+.loop li::before {
+  content: counter(loop);
+  position: absolute; left: 0; top: .1rem;
+  width: 1.9rem; height: 1.9rem;
+  display: grid; place-content: center;
+  border: 1px solid var(--ochre);
+  border-radius: 50%;
+  font-family: var(--font-sans);
+  font-size: .78rem; font-weight: 600;
+  color: var(--ochre-deep);
+}
+/* a line joining the stages, so it reads as one loop rather than five notes */
+.loop li:not(:last-child)::after {
+  content: "";
+  position: absolute; left: .95rem; top: 2.3rem; bottom: -1.5rem;
+  border-left: 1px dashed var(--rule);
+}
+.loop h2 { font-size: 1.08rem; line-height: 1.35; }
+.loop-cycle {
+  margin: .25rem 0 0;
+  font-size: .72rem; letter-spacing: .12em; text-transform: lowercase;
+  font-style: italic;
+  color: var(--ink-faint);
+}
+.loop li > p:last-child { margin: .65rem 0 0; color: var(--ink-soft); font-size: .96rem; }
+
+/* ── the constants, set quieter than the loop ──────────── */
+.constants {
+  margin-top: clamp(2.75rem, 6vw, 4rem);
+  padding-top: clamp(1.75rem, 4vw, 2.25rem);
+  border-top: 1px solid var(--rule);
+}
+.constants-title {
+  font-family: var(--font-sans);
+  font-size: .7rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: .9rem;
+}
+.constants > p { margin: 0; color: var(--ink-soft); font-size: .93rem; max-width: 64ch; }
+
+.principles { list-style: none; margin: 1.9rem 0 0; padding: 0; display: grid; gap: 1.4rem; }
+.principles h3 { font-size: .96rem; }
 .principles h3::before {
   content: "";
   display: inline-block; vertical-align: middle;
   width: 14px; height: 1px; margin-right: .6rem;
   background: var(--ochre);
 }
-.principles p { margin: .5rem 0 0 1.4rem; color: var(--ink-soft); font-size: .95rem; }
+.principles p { margin: .4rem 0 0 1.4rem; color: var(--ink-soft); font-size: .91rem; }
 
-/* ── contact ───────────────────────────────────────────── */
-.contact-direct { margin: 0; }
-.contact-email {
-  font-family: var(--font-serif);
-  font-size: clamp(1.15rem, 3vw, 1.6rem);
-  letter-spacing: -.01em;
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 2px solid var(--ochre);
-  padding-bottom: .1rem;
+/* ── contact layout ───────────────────────────────────── */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 17rem);
+  gap: clamp(1.75rem, 5vw, 3.25rem);
+  align-items: start;
+  margin-top: 2.25rem;
 }
-.contact-email:hover { color: var(--ochre-deep); }
-
+@media (max-width: 720px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .specimen { justify-self: start; max-width: 17rem; }
+}
 .contact-repo { margin: 2.25rem 0 0; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
 .contact-repo a { font-size: .86rem; color: var(--ink-faint); text-decoration: none; }
 .contact-repo a:hover { color: var(--ochre-deep); text-decoration: underline; }
 
-/* ── specimen plate ────────────────────────────────────── */
-/* Botanical-plate discipline: the print sits in ruled whitespace and is
-   labelled like a specimen, never bled to the edge as decoration. */
-.specimen {
-  margin: 3rem 0 0;
-  display: none;
-  grid-template-columns: minmax(0, 300px) 1fr;
-  gap: 1.6rem;
-  align-items: start;
-  padding-top: 2rem;
-  border-top: 1px solid var(--rule);
-}
-.specimen.is-loaded { display: grid; }
-@media (max-width: 620px) { .specimen { grid-template-columns: 1fr; gap: 1.1rem; } }
+/* ── the print, hung and labelled ──────────────────────── */
+/* Gallery conventions: a deep mat, a thin frame, and a wall label naming the
+   artist first. The work is credited, not used as wallpaper. */
+.specimen { display: none; margin: 0; }
+.specimen.is-loaded { display: block; }
 
 .specimen-plate {
+  background: #FFFDF8;
   border: 1px solid var(--rule);
-  padding: .7rem;
-  background: var(--card);
+  padding: clamp(.9rem, 2.5vw, 1.4rem);
+  box-shadow: 0 14px 30px -18px rgba(30, 39, 73, .5);
 }
 .specimen-plate img { width: 100%; height: auto; }
 
-.specimen figcaption { display: grid; gap: .3rem; align-self: center; }
-.specimen-title { font-family: var(--font-serif); font-size: 1.02rem; font-weight: 600; }
+.specimen-label {
+  display: grid;
+  gap: .12rem;
+  margin-top: 1rem;
+  padding-left: .1rem;
+  border-left: 0;
+}
+.specimen-artist {
+  font-family: var(--font-serif);
+  font-size: .95rem; font-weight: 600;
+  color: var(--ink);
+}
+.specimen-title {
+  font-family: var(--font-serif);
+  font-size: .95rem; font-style: italic;
+  color: var(--ink-soft);
+}
 .specimen-meta {
-  font-size: .76rem; letter-spacing: .08em; text-transform: uppercase;
+  margin-top: .1rem;
+  font-size: .74rem; letter-spacing: .08em; text-transform: uppercase;
   color: var(--ink-faint);
 }
-.specimen-note { margin-top: .5rem; font-size: .93rem; color: var(--ink-soft); }
+.specimen-note {
+  margin-top: .7rem;
+  font-size: .82rem; line-height: 1.6;
+  color: var(--ink-faint);
+  max-width: 30ch;
+}
 
 /* ── data-load failure notice ──────────────────────────── */
 .data-error { border: 1px solid var(--rule); border-radius: var(--radius); padding: 1.5rem; background: var(--card); }

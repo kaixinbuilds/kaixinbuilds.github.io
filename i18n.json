@@ -13,7 +13,7 @@
     "zh": "社群"
   },
   "nav.approach": {
-    "en": "Approach",
+    "en": "Practice",
     "zh": "理念"
   },
   "nav.contact": {
@@ -109,36 +109,32 @@
     "zh": "设计理念"
   },
   "approach.body1": {
-    "en": "Two ideas consistently shape my design decisions: Self-Determination Theory, which holds that students need autonomy, competence and relatedness to stay engaged, and Assessment for Learning, where feedback exists to move learning forward rather than to rank students.",
-    "zh": "有两个想法始终影响着我的设计决定：自我决定理论（SDT）认为，学生需要自主感、胜任感与归属感，才能持续投入；以及促进学习的评价（AfL）：反馈的意义在于推动学习，而不是给学生排名。"
-  },
-  "approach.body2": {
-    "en": "That is easy to say and hard to hold onto once you are actually building. The principles below are the ones I refuse to trade away for convenience.",
-    "zh": "这话说来容易，真正动手开发时却很难守住。以下几条，是我不愿为了方便而妥协的原则。"
+    "en": "Two commitments sit underneath every turn of that loop and do not get renegotiated. Self-Determination Theory: students need autonomy, competence and relatedness to stay engaged. Assessment for Learning: feedback exists to move learning forward, not to rank. In practice they come down to three rules I hold in every build.",
+    "zh": "有两项承诺，垫在这个循环的每一圈底下，不参与谈判。自我决定理论（SDT）：学生需要自主感、胜任感与归属感，才能持续投入。促进学习的评价（AfL）：反馈的意义在于推动学习，而不是排名。落到实处，就是我在每一次开发中都守住的三条规则。"
   },
   "approach.principle1Title": {
-    "en": "Progress points are never deducted",
-    "zh": "历练值不可扣除"
+    "en": "Progress only accumulates",
+    "zh": "进度只累积，不倒退"
   },
   "approach.principle1Body": {
-    "en": "A wrong answer does not erase progress already earned. I want attempting something difficult to feel safe: a mistake can interrupt a streak or send a student back for more practice, but it does not undo earlier effort.",
-    "zh": "答错，不会抹去学生已经挣得的进度。我希望尝试难题这件事本身是安全的：失误可以中断连胜，也可以让学生回去多练几遍，但不会否定先前的努力。"
+    "en": "A wrong answer never costs a student something already earned. The moment a system can take progress away, students start protecting a score instead of stretching.",
+    "zh": "答错，绝不会让学生失去已经挣得的东西。一旦系统能夺走进度，学生就会开始保护分数，而不再愿意伸展自己。"
   },
   "approach.principle2Title": {
-    "en": "Students have meaningful choice over challenge",
-    "zh": "挑战的难度，学生有实质的选择权"
+    "en": "Difficulty is chosen, not assigned",
+    "zh": "难度由学生选择，而非被指派"
   },
   "approach.principle2Body": {
-    "en": "Where meaningful choice is possible, students decide what to practise and how far to stretch. The system can recommend a next step, but it should not turn that recommendation into a fixed lane. The aim is challenge that stays within reach.",
-    "zh": "在可以选择的地方，由学生自己决定练什么、挑战到什么程度。系统可以建议下一步，但不该把建议变成一条固定的轨道。目标是让挑战始终在够得着的范围内。"
+    "en": "Being placed in a lane by the system removes autonomy. Choosing a lane and finding it hard builds competence.",
+    "zh": "被系统安排进某一条轨道，会剥夺自主感；自己选定一条，并发现它有难度，才能建立胜任感。"
   },
   "approach.principle3Title": {
     "en": "Feedback lands before the next attempt",
     "zh": "反馈必须赶在下一次尝试之前"
   },
   "approach.principle3Body": {
-    "en": "In a practice tool, feedback is most useful when a student can act on it straight away. Wherever possible the loop closes within the same session: attempt, feedback, adjustment, another attempt.",
-    "zh": "在练习工具里，反馈最有用的时刻，是学生还能立刻拿它做点什么的时候。只要做得到，这个循环就在同一堂课内完成：尝试、反馈、调整、再试一次。"
+    "en": "Feedback delivered a week later is a grade. If a tool cannot respond within the same session, the pedagogy it claims is decorative.",
+    "zh": "一周后才送到的反馈，是成绩。如果一个工具无法在同一堂课内做出回应，它所标榜的教学理念只是装饰。"
   },
   "contact.title": {
     "en": "Get in touch",
@@ -158,15 +154,15 @@
   },
   "specimen.title": {
     "en": "Public Phone",
-    "zh": "公共电话"
+    "zh": "《公共电话》"
   },
   "specimen.meta": {
-    "en": "Lino print, hand-cut block, 2015",
-    "zh": "麻胶版画 · 手工刻版 · 2015"
+    "en": "Linocut on paper, 2015",
+    "zh": "麻胶版画 · 纸本 · 2015"
   },
   "specimen.note": {
-    "en": "The printmaking runs on the same instinct as the software: look closely at an ordinary thing, find the structure holding it up, then cut away everything that is not that structure. This is the block printing quietly behind every page here.",
-    "zh": "版画与软件其实出于同一种本能：仔细观察一件寻常的东西，找出支撑它的结构，然后把不属于那个结构的部分，全部刻去。本站每一页的底纹，正是这块版。"
+    "en": "The block printing quietly behind every page of this site.",
+    "zh": "本站每一页的底纹，正是这块版。"
   },
   "specimen.alt": {
     "en": "A sheet of block-printed Singapore payphones repeating across the paper, one of them hand-coloured orange.",
@@ -223,5 +219,81 @@
   "embed.desktopOnly": {
     "en": "This game needs a keyboard, so it is best opened on a computer.",
     "zh": "这个游戏需要键盘操作，建议在电脑上打开。"
+  },
+  "specimen.artist": {
+    "en": "Chun Kai Xin",
+    "zh": "郑凯欣"
+  },
+  "approach.leadA": {
+    "en": "Design thinking is usually drawn as a tidy five step loop: empathise, define, ideate, prototype, test. In a classroom, only one of those steps ever settles anything. A tool is not good because the thinking behind it was good. It is good because thirty students opened it on a Monday morning and it held.",
+    "zh": "设计思维通常被画成一个工整的五步循环：同理、定义、构思、原型、测试。但在课堂里，真正能定案的只有其中一步。一个工具之所以好，不是因为背后的想法好，而是因为三十个学生在星期一早上打开了它，而它撑住了。"
+  },
+  "approach.leadB": {
+    "en": "So I run the loop, but I run it short and I run it often. The gap comes from a real script or a real mark, not from a survey. The prototype is a working build, not a mockup. The test is a real lesson with students who will abandon anything that wastes their time. And the next version starts that same week, because by then the classroom has already told me what to fix.",
+    "zh": "所以我照样跑这个循环，只是跑得短、跑得勤。缺口来自一份真实的答卷或一个真实的分数，而不是问卷。原型是一个能跑的版本，而不是一张示意图。测试是一堂真实的课，面对的是一群不会容忍浪费时间的学生。下一个版本就在同一周开始，因为课堂那时已经告诉我该改什么了。"
+  },
+  "approach.loop1Title": {
+    "en": "The gap has to be one I actually saw",
+    "zh": "我亲眼看见的缺口"
+  },
+  "approach.loop1Cycle": {
+    "en": "empathise, define",
+    "zh": "同理、定义"
+  },
+  "approach.loop1Body": {
+    "en": "A gap I can point at is a design brief. A gap I assumed is a guess wearing a lanyard. One student's weak comprehension paper is what surfaced a cohort-wide problem for me, and the cohort is what the tool then had to answer to. I find the problem at the level of one student, and define it at the level of the class.",
+    "zh": "能指出来的缺口，是设计任务；靠揣测得来的缺口，只是挂着工作证的猜想。一名学生的理解问答考卷，让我看见了整个级别的问题；而这个工具，此后要交代的对象就是整个级别。问题在一个学生身上被发现，在一个班的层面上被定义。"
+  },
+  "approach.loop2Title": {
+    "en": "Build the thing, not a picture of the thing",
+    "zh": "做出东西，而不是东西的示意图"
+  },
+  "approach.loop2Cycle": {
+    "en": "ideate, prototype",
+    "zh": "构思、原型"
+  },
+  "approach.loop2Body": {
+    "en": "A mockup cannot be evaluated, only admired. A working build can be handed to a student, and a student will tell you in forty seconds what a proposal deck could not tell you in a term. So I skip the polished pitch stage and ship something small that runs.",
+    "zh": "示意图无法被检验，只能被欣赏。能跑的版本可以直接交到学生手上，而学生四十秒内告诉你的事，一份提案简报一个学期也说不出来。所以我跳过打磨提案的阶段，先交付一个小而能跑的东西。"
+  },
+  "approach.loop3Title": {
+    "en": "实践: the classroom is the test, not the demo",
+    "zh": "实践：课堂才是测试，演示不是"
+  },
+  "approach.loop3Cycle": {
+    "en": "test",
+    "zh": "测试"
+  },
+  "approach.loop3Body": {
+    "en": "Colleagues nodding at a demo is not evidence. Students using it unsupervised, in an ordinary lesson, with ordinary levels of patience, is evidence. Everything I have built went in front of real students within days of being usable, and most of what I now believe about the design was learnt there rather than beforehand.",
+    "zh": "同事在演示时点头，不算证据。学生在一堂普通的课上、在无人盯着的情况下、带着普通的耐性使用它，才算证据。我做的每一样东西，在勉强能用的几天内就送到了学生面前；而我今天对设计的多数判断，都是在那里学到的，不是事先想到的。"
+  },
+  "approach.loop4Title": {
+    "en": "Let the evidence write the next version",
+    "zh": "让证据来写下一个版本"
+  },
+  "approach.loop4Cycle": {
+    "en": "iterate",
+    "zh": "迭代"
+  },
+  "approach.loop4Body": {
+    "en": "Which words keep failing. Which screen nobody visits. Which instruction I have to repeat out loud every single time. Those are the design documents. Opinions, including my own, get outranked by them.",
+    "zh": "哪些词一错再错。哪个页面没人去。哪一句指示我每次都得再讲一遍。这些才是设计文档。任何意见，包括我自己的，都排在它们后面。"
+  },
+  "approach.loop5Title": {
+    "en": "The loop does not resolve, it climbs",
+    "zh": "循环不会收束，它只会向上"
+  },
+  "approach.loop5Cycle": {
+    "en": "iterate, again",
+    "zh": "再迭代"
+  },
+  "approach.loop5Body": {
+    "en": "实践、认识、再实践. No version is final and none of them was meant to be. Each turn of the loop begins from a better question than the last one, which is the only kind of progress I actually trust.",
+    "zh": "实践、认识、再实践。没有哪一版是最终版，本来也不打算是。每一圈都从一个比上一圈更好的问题开始，而这是我唯一真正信得过的进展。"
+  },
+  "approach.constantsTitle": {
+    "en": "What stays constant",
+    "zh": "不变的部分"
   }
 }

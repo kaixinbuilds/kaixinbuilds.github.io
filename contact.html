@@ -43,7 +43,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="work.html" data-i18n="nav.work">Work</a>
         <a href="talks.html" data-i18n="nav.talks">Community</a>
-        <a href="approach.html" data-i18n="nav.approach">Approach</a>
+        <a href="approach.html" data-i18n="nav.approach">Practice</a>
         <a href="contact.html" aria-current="page" data-i18n="nav.contact">Contact</a>
       </nav>
 
@@ -60,12 +60,31 @@
       <h1 class="page-title" data-i18n="contact.title">Get in touch</h1>
       <p class="page-sub" data-i18n="contact.subtitle"></p>
 
-      <p class="contact-direct">
-        <a class="contact-email" href="mailto:kai_xin_chun@moe.edu.sg">kai_xin_chun@moe.edu.sg</a>
-      </p>
-      <p class="contact-repo">
-        <a href="https://github.com/kaixinbuilds/kaixinbuilds.github.io">github.com/kaixinbuilds/kaixinbuilds.github.io</a>
-      </p>
+      <div class="contact-layout">
+        <div class="contact-details">
+          <p class="contact-direct">
+            <a class="contact-email" href="mailto:kai_xin_chun@moe.edu.sg">kai_xin_chun@moe.edu.sg</a>
+          </p>
+          <p class="contact-repo">
+            <a href="https://github.com/kaixinbuilds/kaixinbuilds.github.io">github.com/kaixinbuilds/kaixinbuilds.github.io</a>
+          </p>
+        </div>
+
+        <!-- Hung and labelled the way a print would be in a gallery, rather
+             than used as decoration. Hides itself if the image is missing. -->
+        <figure class="specimen">
+          <div class="specimen-plate">
+            <img src="assets/art/prints/payphone-print.png" alt=""
+                 data-i18n="specimen.alt" data-i18n-attr="alt" decoding="async">
+          </div>
+          <figcaption class="specimen-label">
+            <span class="specimen-artist" data-i18n="specimen.artist"></span>
+            <span class="specimen-title" data-i18n="specimen.title"></span>
+            <span class="specimen-meta" data-i18n="specimen.meta"></span>
+            <span class="specimen-note" data-i18n="specimen.note"></span>
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 </main>

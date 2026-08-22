@@ -43,7 +43,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="work.html" data-i18n="nav.work">Work</a>
         <a href="talks.html" data-i18n="nav.talks">Community</a>
-        <a href="approach.html" aria-current="page" data-i18n="nav.approach">Approach</a>
+        <a href="approach.html" aria-current="page" data-i18n="nav.approach">Practice</a>
         <a href="contact.html" data-i18n="nav.contact">Contact</a>
       </nav>
 
@@ -58,38 +58,68 @@
   <section class="section" id="approach">
     <div class="wrap wrap-narrow">
       <h1 class="page-title" data-i18n="approach.title">How I design</h1>
-      <p class="page-sub" data-i18n="approach.body2"></p>
 
-      <p class="lede" data-i18n="approach.body1"></p>
+      <!-- A couplet for the philosophy, in parallel with the one that names
+           the flagship project on the home page. -->
+      <p class="epigraph">
+        <span class="zh" lang="zh-Hans">纸上得来终觉浅，绝知此事要躬行</span>
+        <span class="en" lang="en">What is learnt on paper stays shallow.
+          To truly know a thing, you have to do it yourself.</span>
+        <span class="src">陆游《冬夜读书示子聿》</span>
+      </p>
 
-      <ul class="principles">
+      <p class="lede" data-i18n="approach.leadA"></p>
+      <p class="lede" data-i18n="approach.leadB"></p>
+
+      <ol class="loop">
         <li>
-          <h3 data-i18n="approach.principle1Title"></h3>
-          <p data-i18n="approach.principle1Body"></p>
+          <h2 data-i18n="approach.loop1Title"></h2>
+          <p class="loop-cycle" data-i18n="approach.loop1Cycle"></p>
+          <p data-i18n="approach.loop1Body"></p>
         </li>
         <li>
-          <h3 data-i18n="approach.principle2Title"></h3>
-          <p data-i18n="approach.principle2Body"></p>
+          <h2 data-i18n="approach.loop2Title"></h2>
+          <p class="loop-cycle" data-i18n="approach.loop2Cycle"></p>
+          <p data-i18n="approach.loop2Body"></p>
         </li>
         <li>
-          <h3 data-i18n="approach.principle3Title"></h3>
-          <p data-i18n="approach.principle3Body"></p>
+          <h2 data-i18n="approach.loop3Title"></h2>
+          <p class="loop-cycle" data-i18n="approach.loop3Cycle"></p>
+          <p data-i18n="approach.loop3Body"></p>
         </li>
-      </ul>
+        <li>
+          <h2 data-i18n="approach.loop4Title"></h2>
+          <p class="loop-cycle" data-i18n="approach.loop4Cycle"></p>
+          <p data-i18n="approach.loop4Body"></p>
+        </li>
+        <li>
+          <h2 data-i18n="approach.loop5Title"></h2>
+          <p class="loop-cycle" data-i18n="approach.loop5Cycle"></p>
+          <p data-i18n="approach.loop5Body"></p>
+        </li>
+      </ol>
 
-      <!-- A real block print, presented as a labelled specimen rather than
-           as decoration. Hides itself if the image is not there yet. -->
-      <figure class="specimen">
-        <div class="specimen-plate">
-          <img src="assets/art/prints/payphone-print.png" alt=""
-               data-i18n="specimen.alt" data-i18n-attr="alt" decoding="async">
-        </div>
-        <figcaption>
-          <span class="specimen-title" data-i18n="specimen.title"></span>
-          <span class="specimen-meta" data-i18n="specimen.meta"></span>
-          <span class="specimen-note" data-i18n="specimen.note"></span>
-        </figcaption>
-      </figure>
+      <!-- Deliberately quieter than the loop: the loop is the argument, the
+           constants are the footing it stands on. -->
+      <section class="constants">
+        <h2 class="constants-title" data-i18n="approach.constantsTitle"></h2>
+        <p data-i18n="approach.body1"></p>
+
+        <ul class="principles">
+          <li>
+            <h3 data-i18n="approach.principle1Title"></h3>
+            <p data-i18n="approach.principle1Body"></p>
+          </li>
+          <li>
+            <h3 data-i18n="approach.principle2Title"></h3>
+            <p data-i18n="approach.principle2Body"></p>
+          </li>
+          <li>
+            <h3 data-i18n="approach.principle3Title"></h3>
+            <p data-i18n="approach.principle3Body"></p>
+          </li>
+        </ul>
+      </section>
     </div>
   </section>
 </main>
