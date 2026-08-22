@@ -80,7 +80,7 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: url("assets/art/prints/payphone-bg.jpg") center center / cover no-repeat;
+  background: url("assets/art/prints/payphone-background.jpg") center center / cover no-repeat;
   opacity: .30;
 }
 @media (prefers-color-scheme: dark) {
@@ -111,9 +111,9 @@ h1, h2, h3 {
 /* Content floats on frosted panels so the print stays visible behind it
    without ever competing with the text on top. */
 main > section > .wrap {
-  background: color-mix(in srgb, var(--paper) 82%, transparent);
-  -webkit-backdrop-filter: blur(22px) saturate(150%);
-          backdrop-filter: blur(22px) saturate(150%);
+  background: color-mix(in srgb, var(--paper) 66%, transparent);
+  -webkit-backdrop-filter: blur(26px) saturate(160%);
+          backdrop-filter: blur(26px) saturate(160%);
   border: 1px solid var(--glass-edge);
   border-radius: 16px;
   padding: clamp(1.5rem, 4vw, 3rem);
@@ -217,6 +217,10 @@ main > .section + .section { border-top: 1px solid var(--rule); }
   font-size: .88rem; font-style: italic;
   color: var(--ink-faint);
 }
+/* Chinese readers do not need the couplet glossed back to them, so the
+   English line shows only in the English version. */
+html[lang^="zh"] .epigraph .en { display: none; }
+
 .epigraph .src {
   display: block; margin-top: .5rem;
   font-size: .76rem; line-height: 1.6;
