@@ -71,9 +71,13 @@ HEAD = """\
       <nav class="site-nav" aria-label="Primary">
 __NAV__      </nav>
 
-      <button id="lang-toggle" class="lang-toggle" type="button"
-              data-i18n="lang.switchTo"
-              data-i18n-aria-label="lang.ariaLabel">切换中文</button>
+      <!-- Three modes, like the game: Chinese, both, English. The labels are
+           language names, so they are never themselves translated. -->
+      <div id="lang-switch" class="lang-switch" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang="zh" lang="zh-Hans">华文</button>
+        <button type="button" data-lang="both" lang="zh-Hans">双语</button>
+        <button type="button" data-lang="en" lang="en">English</button>
+      </div>
     </div>
   </div>
 </header>
@@ -206,20 +210,6 @@ PAGES = {
         <h2 class="constants-title" data-i18n="approach.constantsTitle"></h2>
         <p data-i18n="approach.body1"></p>
 
-        <ul class="principles">
-          <li>
-            <h3 data-i18n="approach.principle1Title"></h3>
-            <p data-i18n="approach.principle1Body"></p>
-          </li>
-          <li>
-            <h3 data-i18n="approach.principle2Title"></h3>
-            <p data-i18n="approach.principle2Body"></p>
-          </li>
-          <li>
-            <h3 data-i18n="approach.principle3Title"></h3>
-            <p data-i18n="approach.principle3Body"></p>
-          </li>
-        </ul>
       </section>
     </div>
   </section>"""),

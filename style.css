@@ -188,17 +188,6 @@ main > .section + .section { border-top: 1px solid var(--rule); }
   .site-nav a { font-size: .88rem; }
 }
 
-.lang-toggle {
-  font-family: var(--font-sans); font-size: .82rem; font-weight: 500;
-  color: var(--ink-soft);
-  background: transparent;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  padding: .34rem .8rem;
-  cursor: pointer; white-space: nowrap;
-}
-.lang-toggle:hover { border-color: var(--ochre); color: var(--ochre-deep); }
-
 /* ── hero ──────────────────────────────────────────────── */
 .hero { padding-block: clamp(3.5rem, 10vw, 7rem) clamp(3rem, 8vw, 5rem); }
 
@@ -220,7 +209,7 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 }
 /* Chinese readers do not need the couplet glossed back to them, so the
    English line shows only in the English version. */
-html[lang^="zh"] .epigraph .en { display: none; }
+
 
 .epigraph .src {
   display: block; margin-top: .5rem;
@@ -570,16 +559,6 @@ html[lang^="zh"] .epigraph .en { display: none; }
 }
 .constants > p { margin: 0; color: var(--ink-soft); font-size: .93rem; }
 
-.principles { list-style: none; margin: 1.9rem 0 0; padding: 0; display: grid; gap: 1.4rem; }
-.principles h3 { font-size: .96rem; }
-.principles h3::before {
-  content: "";
-  display: inline-block; vertical-align: middle;
-  width: 14px; height: 1px; margin-right: .6rem;
-  background: var(--ochre);
-}
-.principles p { margin: .4rem 0 0 1.4rem; color: var(--ink-soft); font-size: .91rem; }
-
 /* ── contact layout ───────────────────────────────────── */
 .contact-layout {
   display: grid;
@@ -740,3 +719,50 @@ html[lang^="zh"] .epigraph .en { display: none; }
 }
 .project-url a:hover { color: var(--ochre-deep); border-bottom-color: var(--ochre); }
 .card .project-url { margin: 0 0 1.1rem; }
+
+/* ── three language modes ──────────────────────────────── */
+.lang-switch {
+  display: flex;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  flex: none;
+}
+.lang-switch button {
+  font-family: var(--font-sans);
+  font-size: .8rem;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 0;
+  border-left: 1px solid var(--rule);
+  padding: .36rem .7rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .14s, color .14s;
+}
+.lang-switch button:first-child { border-left: 0; }
+.lang-switch button:hover { color: var(--ink); background: rgba(192, 112, 58, .08); }
+.lang-switch button.is-on {
+  background: var(--ochre);
+  color: #FFF8F0;
+  font-weight: 500;
+}
+
+/* In bilingual mode both languages are shown, Chinese leading and English
+   set quieter beneath it, so neither reads as a caption on the other. */
+.bi-zh, .bi-en { display: block; }
+.bi-en {
+  margin-top: .18em;
+  font-size: .92em;
+  color: var(--ink-faint);
+}
+/* inside a heading the pairing should stay tight */
+h1 .bi-en, h2 .bi-en, h3 .bi-en { font-size: .82em; font-weight: 400; }
+/* small metadata reads better on one line */
+.stats .label .bi-zh, .stats .label .bi-en,
+.talk-date .bi-zh, .talk-date .bi-en,
+.specimen-meta .bi-zh, .specimen-meta .bi-en { display: block; }
+.talk-status .bi-en, .badge-live .bi-en { display: none; }
+
+/* the epigraph gloss hides only in Chinese-only mode */
+html[data-lang-mode="zh"] .epigraph .en { display: none; }

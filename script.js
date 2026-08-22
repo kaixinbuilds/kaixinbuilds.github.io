@@ -8,7 +8,7 @@
   'use strict';
 
   const STORAGE_KEY = 'kb-lang';
-  const LANGS = ['en', 'zh'];
+  const LANGS = ['zh', 'both', 'en'];
 
   /** Everything loaded from disk lives here so re-rendering is cheap. */
   const data = { i18n: {}, projects: [], talks: [] };
@@ -20,21 +20,40 @@
   function pickInitialLang() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (LANGS.includes(saved)) return saved;
-    return navigator.language && navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en';
+    return 'both';          // serves both audiences until someone chooses
   }
 
   /** Look up a translated string by key; falls back to English, then the key. */
   const t = (key) => {
     const entry = data.i18n[key];
     if (!entry) return key;
-    return entry[lang] ?? entry.en ?? key;
+    return pick(entry) || key;
   };
 
-  /** Pick the right side of a { en, zh } pair coming from projects/talks JSON. */
+  /** Escaped markup for a key, both languages in bilingual mode. */
+  const tb = (key) => {
+    const entry = data.i18n[key];
+    return entry ? bi(entry) : esc(key);
+  };
+
+  /** One language only. Used for attributes and <title>, which cannot hold
+      two languages. In bilingual mode this falls back to Chinese. */
   const pick = (pair) => {
     if (pair == null) return '';
     if (typeof pair === 'string') return pair;
+    if (lang === 'both') return pair.zh ?? pair.en ?? '';
     return pair[lang] ?? pair.en ?? '';
+  };
+
+  /** Escaped markup for visible text. In bilingual mode both languages are
+      emitted, Chinese first, so neither reads as a translation of the other. */
+  const bi = (pair) => {
+    if (pair == null) return '';
+    if (typeof pair === 'string') return esc(pair);
+    if (lang !== 'both') return esc(pick(pair));
+    const zh = pair.zh, en = pair.en;
+    if (!zh || !en || zh === en) return esc(zh || en || '');
+    return `<span class="bi-zh">${esc(zh)}</span><span class="bi-en">${esc(en)}</span>`;
   };
 
   const esc = (str) => String(str).replace(/[&<>"']/g, (c) => (
@@ -46,15 +65,18 @@
   /* ── i18n application ────────────────────────────────── */
 
   function applyI18n() {
-    document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+    document.documentElement.lang = lang === 'en' ? 'en' : 'zh-Hans';
+    document.documentElement.dataset.langMode = lang;
 
     // data-i18n + optional data-i18n-attr ("content", "placeholder", …).
-    // Without data-i18n-attr the string becomes the element's text.
+    // Attributes and <title> can only hold one language, so they take pick();
+    // everything visible takes both in bilingual mode.
     document.querySelectorAll('[data-i18n]').forEach((el) => {
-      const value = t(el.dataset.i18n);
+      const key = el.dataset.i18n;
       const attr = el.dataset.i18nAttr;
-      if (attr) el.setAttribute(attr, value);
-      else el.textContent = value;
+      if (attr) { el.setAttribute(attr, t(key)); return; }
+      if (el.tagName === 'TITLE') { el.textContent = t(key); return; }
+      el.innerHTML = tb(key);
     });
 
     document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
@@ -72,16 +94,19 @@
     const stats = (p.stats || []).map((s) => `
       <li>
         <span class="value">${esc(s.value)}</span>
-        <span class="label">${esc(pick(s.label))}</span>
+        <span class="label">${bi(s.label)}</span>
       </li>`).join('');
 
     const shots = (p.screenshots || []).map((s) => {
-      const caption = esc(pick(s.caption));
+      // alt is an attribute and can hold only one language; the caption below
+      // the frame can hold both.
+      const altText = esc(pick(s.caption));
+      const caption = bi(s.caption);
       return `
       <figure class="shot${s.wide ? ' shot-wide' : ''}">
         <div class="screen-bezel">
           <div class="screen-inner" data-missing="${esc(s.src)}">
-            <img src="${esc(s.src)}" alt="${caption}" decoding="async">
+            <img src="${esc(s.src)}" alt="${altText}" decoding="async">
           </div>
         </div>
         <figcaption>${caption}</figcaption>
@@ -92,23 +117,23 @@
 
     host.innerHTML = `
       <div class="featured-head">
-        <p class="eyebrow">${esc(t('featured.eyebrow'))}</p>
+        <p class="eyebrow">${tb('featured.eyebrow')}</p>
         <div class="featured-titlerow">
-          <h2 class="featured-title">${esc(pick(p.title))}</h2>
-          ${isLive ? `<span class="badge-live">${esc(t('status.live'))}</span>` : ''}
+          <h2 class="featured-title">${bi(p.title)}</h2>
+          ${isLive ? `<span class="badge-live">${tb('status.live')}</span>` : ''}
         </div>
-        <p class="featured-subtitle">${esc(pick(p.subtitle))}</p>
-        <p class="featured-summary">${esc(pick(p.summary))}</p>
+        <p class="featured-subtitle">${bi(p.subtitle)}</p>
+        <p class="featured-summary">${bi(p.summary)}</p>
         ${stats ? `<ul class="stats">${stats}</ul>` : ''}
         ${p.highlight ? `
         <div class="highlight-box">
-          <span class="label">${esc(t('featured.highlightLabel'))}</span>
-          <p>${esc(pick(p.highlight))}</p>
+          <span class="label">${tb('featured.highlightLabel')}</span>
+          <p>${bi(p.highlight)}</p>
         </div>` : ''}
         ${p.link ? `
         <p class="featured-cta">
           <a class="btn btn-primary" href="${esc(p.link)}" target="_blank" rel="noopener">
-            ${esc(t('featured.visit'))}
+            ${tb('featured.visit')}
           </a>
         </p>
         <p class="project-url">
@@ -144,13 +169,13 @@
           .map((tag, i) => `<li class="tag${i === 0 ? ' accent' : ''}">${esc(tag)}</li>`)
           .join('');
         const link = p.link
-          ? `<a class="card-link" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(t('grid.visit'))} →</a>`
-          : `<span class="card-link" aria-disabled="true">${esc(t('grid.noLink'))}</span>`;
+          ? `<a class="card-link" href="${esc(p.link)}" target="_blank" rel="noopener">${tb('grid.visit')} →</a>`
+          : `<span class="card-link" aria-disabled="true">${tb('grid.noLink')}</span>`;
 
         const body = `
           <div class="card-body">
-            <h3>${esc(pick(p.title))}</h3>
-            <p>${esc(pick(p.summary))}</p>
+            <h3>${bi(p.title)}</h3>
+            <p>${bi(p.summary)}</p>
             ${p.displayUrl ? `<p class="project-url">
               <a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.displayUrl)}</a>
             </p>` : ''}
@@ -173,7 +198,7 @@
                 <img src="${esc(shot.src)}" alt="${esc(pick(shot.caption))}" decoding="async">
               </div>
             </div>
-            <figcaption>${esc(pick(shot.caption))}</figcaption>
+            <figcaption>${bi(shot.caption)}</figcaption>
           </figure>
           ${body}
         </article>`;
@@ -187,11 +212,11 @@
                         data-embed-src="${esc(p.embed.src)}"
                         data-embed-title="${esc(pick(p.title))}">
                   <span class="embed-play-icon" aria-hidden="true">▶</span>
-                  <span class="embed-play-label">${esc(t('grid.play'))}</span>
+                  <span class="embed-play-label">${tb('grid.play')}</span>
                 </button>
               </div>
             </div>
-            <p class="embed-note">${esc(t('grid.playNote'))}</p>
+            <p class="embed-note">${tb('grid.playNote')}</p>
           </div>
           ${body}
         </article>`;
@@ -222,14 +247,14 @@
   function talkEntry(talk, open) {
     const status = talk.status === 'upcoming' ? 'upcoming' : 'completed';
     const body = [
-      `<p class="talk-venue">${esc(pick(talk.venue))}</p>`,
-      talk.summary ? `<p class="talk-summary">${esc(pick(talk.summary))}</p>` : '',
-      talk.award ? `<p class="talk-award">${esc(pick(talk.award))}</p>` : '',
+      `<p class="talk-venue">${bi(talk.venue)}</p>`,
+      talk.summary ? `<p class="talk-summary">${bi(talk.summary)}</p>` : '',
+      talk.award ? `<p class="talk-award">${bi(talk.award)}</p>` : '',
       (talk.link || (talk.links || []).length)
         ? `<p class="talk-links">${[
-            talk.link ? `<a class="talk-link" href="${esc(talk.link)}" target="_blank" rel="noopener">${esc(t('talks.viewLink'))} \u2192</a>` : '',
+            talk.link ? `<a class="talk-link" href="${esc(talk.link)}" target="_blank" rel="noopener">${tb('talks.viewLink')} \u2192</a>` : '',
             ...(talk.links || []).map((l) =>
-              `<a class="talk-link" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(pick(l.label))} \u2192</a>`),
+              `<a class="talk-link" href="${esc(l.url)}" target="_blank" rel="noopener">${bi(l.label)} \u2192</a>`),
           ].filter(Boolean).join('')}</p>`
         : '',
     ].join('');
@@ -239,7 +264,7 @@
         <details class="talk"${open ? ' open' : ''}>
           <summary class="talk-head">
             <span class="talk-date">${esc(pick(talk.dateLabel) || talk.date)}</span>
-            <span class="talk-title">${esc(pick(talk.title))}</span>
+            <span class="talk-title">${bi(talk.title)}</span>
             <span class="talk-status ${status}">${esc(t('talks.' + status))}</span>
             <span class="talk-chevron" aria-hidden="true"></span>
           </summary>
@@ -291,13 +316,27 @@
   /* ── language toggle ─────────────────────────────────── */
 
   function initToggle() {
-    const btn = $('#lang-toggle');
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-      lang = lang === 'en' ? 'zh' : 'en';
+    const group = $('#lang-switch');
+    if (!group) return;
+
+    const paint = () => {
+      group.querySelectorAll('button').forEach((b) => {
+        const on = b.dataset.lang === lang;
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        b.classList.toggle('is-on', on);
+      });
+    };
+
+    group.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-lang]');
+      if (!button || button.dataset.lang === lang) return;
+      lang = button.dataset.lang;
       localStorage.setItem(STORAGE_KEY, lang);
       renderAll();
+      paint();
     });
+
+    paint();
   }
 
   /* ── lightbox ────────────────────────────────────────── */
@@ -368,8 +407,8 @@
     host.dataset.errored = 'true';
     host.insertAdjacentHTML('beforebegin', `
       <div class="data-error">
-        <h3>${esc(t('error.dataTitle'))}</h3>
-        <p>${esc(t('error.dataBody'))}</p>
+        <h3>${tb('error.dataTitle')}</h3>
+        <p>${tb('error.dataBody')}</p>
       </div>`);
   }
 

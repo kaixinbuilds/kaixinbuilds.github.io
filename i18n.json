@@ -101,32 +101,8 @@
     "zh": "设计理念"
   },
   "approach.body1": {
-    "en": "Two commitments sit underneath every turn of that loop and do not get renegotiated. Self-Determination Theory: students need autonomy, competence and relatedness to stay engaged. Assessment for Learning: feedback exists to move learning forward, not to rank. In practice they come down to three rules I hold in every build.",
-    "zh": "有两项承诺，垫在这个循环的每一圈底下，不参与谈判。自我决定理论（SDT）：学生需要自主感、胜任感与归属感，才能持续投入。促进学习的评价（AfL）：反馈的意义在于推动学习，而不是排名。落到实处，就是我在每一次开发中都守住的三条规则。"
-  },
-  "approach.principle1Title": {
-    "en": "Progress only accumulates",
-    "zh": "进度只累积，不倒退"
-  },
-  "approach.principle1Body": {
-    "en": "A wrong answer never costs a student something already earned. The moment a system can take progress away, students start protecting a score instead of stretching.",
-    "zh": "答错，绝不会让学生失去已经挣得的东西。一旦系统能夺走进度，学生就会开始保护分数，而不再愿意伸展自己。"
-  },
-  "approach.principle2Title": {
-    "en": "Difficulty is chosen, not assigned",
-    "zh": "难度由学生选择，而非被指派"
-  },
-  "approach.principle2Body": {
-    "en": "Being placed in a lane by the system removes autonomy. Choosing a lane and finding it hard builds competence.",
-    "zh": "被系统安排进某一条轨道，会剥夺自主感；自己选定一条，并发现它有难度，才能建立胜任感。"
-  },
-  "approach.principle3Title": {
-    "en": "Feedback lands before the next attempt",
-    "zh": "反馈必须赶在下一次尝试之前"
-  },
-  "approach.principle3Body": {
-    "en": "Feedback delivered a week later is a grade. If a tool cannot respond within the same session, the pedagogy it claims is decorative.",
-    "zh": "一周后才送到的反馈，是成绩。如果一个工具无法在同一堂课内做出回应，它所标榜的教学理念只是装饰。"
+    "en": "Two commitments sit underneath every turn of that loop and do not get renegotiated. Self-Determination Theory: students need autonomy, competence and relatedness to stay engaged. Assessment for Learning: feedback exists to move learning forward, not to rank. How they show up depends on what is being built, and each tool has to work that out for itself.",
+    "zh": "有两项承诺，垫在这个循环的每一圈底下，不参与谈判。自我决定理论（SDT）：学生需要自主感、胜任感与归属感，才能持续投入。促进学习的评价（AfL）：反馈的意义在于推动学习，而不是排名。至于它们如何落地，则取决于所做的是什么；每一个工具都得自己想清楚。"
   },
   "contact.title": {
     "en": "Get in touch",

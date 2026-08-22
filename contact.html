@@ -48,9 +48,13 @@
         <a href="contact.html" aria-current="page" data-i18n="nav.contact">Contact</a>
       </nav>
 
-      <button id="lang-toggle" class="lang-toggle" type="button"
-              data-i18n="lang.switchTo"
-              data-i18n-aria-label="lang.ariaLabel">切换中文</button>
+      <!-- Three modes, like the game: Chinese, both, English. The labels are
+           language names, so they are never themselves translated. -->
+      <div id="lang-switch" class="lang-switch" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang="zh" lang="zh-Hans">华文</button>
+        <button type="button" data-lang="both" lang="zh-Hans">双语</button>
+        <button type="button" data-lang="en" lang="en">English</button>
+      </div>
     </div>
   </div>
 </header>
