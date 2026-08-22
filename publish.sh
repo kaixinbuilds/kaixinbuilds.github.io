@@ -6,22 +6,28 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-# Nothing staged and nothing changed → don't create an empty commit.
-if [ -z "$(git status --porcelain)" ]; then
-  echo "Nothing to publish — working tree is clean."
-  exit 0
-fi
+# Rebuild the pages first, so the committed HTML can never drift from the
+# shell in build.py. This runs before the clean-tree check on purpose: a
+# stale page is exactly the case that check would otherwise let through.
+python3 build.py > /dev/null || { echo "build.py failed, nothing published."; exit 1; }
+echo "pages built"
 
 # Validate the JSON before it can reach the live site. A stray comma here
 # would blank out the whole page, and Pages has no way to warn you.
 for f in projects.json talks.json i18n.json; do
   if ! python3 -m json.tool "$f" > /dev/null 2>&1; then
-    echo "✗ $f is not valid JSON — fix it before publishing."
+    echo "$f is not valid JSON. Nothing published."
     python3 -m json.tool "$f" > /dev/null || true
     exit 1
   fi
 done
-echo "✓ JSON files valid"
+echo "JSON valid"
+
+# Nothing changed after building, so there is nothing to commit.
+if [ -z "$(git status --porcelain)" ]; then
+  echo "Nothing to publish: working tree is clean."
+  exit 0
+fi
 
 MESSAGE="${1:-content update}"
 
@@ -30,5 +36,5 @@ git commit -m "$MESSAGE"
 git push origin main
 
 echo
-echo "✓ Pushed. GitHub Pages usually redeploys within a minute:"
+echo "Pushed. GitHub Pages usually redeploys within a minute:"
 echo "  https://kaixinbuilds.github.io"

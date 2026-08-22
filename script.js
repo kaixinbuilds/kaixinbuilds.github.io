@@ -216,6 +216,7 @@
           <h3>${esc(pick(talk.title))}</h3>
           <p class="talk-venue">${esc(pick(talk.venue))}</p>
           ${talk.summary ? `<p class="talk-summary">${esc(pick(talk.summary))}</p>` : ''}
+          ${talk.award ? `<p class="talk-award">${esc(pick(talk.award))}</p>` : ''}
           ${talk.link ? `<p><a class="talk-link" href="${esc(talk.link)}" target="_blank" rel="noopener">${esc(t('talks.viewLink'))} →</a></p>` : ''}
         </div>
       </li>`;

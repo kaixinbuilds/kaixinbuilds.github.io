@@ -395,6 +395,14 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 .talk-summary { margin: .5rem 0 0; color: var(--ink-soft); font-size: .94rem; }
 .talk-link { font-size: .89rem; }
 
+/* Recognition earned by a talk, set apart from its description. */
+.talk-award {
+  margin: .55rem 0 0;
+  font-size: .84rem; font-weight: 500;
+  color: var(--ochre-deep);
+}
+.talk-award::before { content: "◆"; margin-right: .45rem; font-size: .7em; vertical-align: .1em; }
+
 /* ── approach ──────────────────────────────────────────── */
 .lede { margin: 1.1rem 0 0; color: var(--ink-soft); max-width: 64ch; }
 .principles { list-style: none; margin: 2.6rem 0 0; padding: 0; display: grid; gap: 2rem; }

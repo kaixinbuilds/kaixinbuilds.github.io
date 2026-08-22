@@ -3,12 +3,18 @@
     "id": "nlc-2026",
     "status": "upcoming",
     "date": "2026-08-28",
-    "dateLabel": { "en": "28 August 2026", "zh": "2026年8月28日" },
+    "dateLabel": {
+      "en": "28 August 2026",
+      "zh": "2026年8月28日"
+    },
     "title": {
       "en": "NLC session with Dr Li",
       "zh": "与李博士的 NLC 分享场次"
     },
-    "venue": { "en": "Networked Learning Community", "zh": "教师专业学习社群（NLC）" },
+    "venue": {
+      "en": "Networked Learning Community",
+      "zh": "教师专业学习社群（NLC）"
+    },
     "summary": {
       "en": "TODO after 28 Aug: replace this line with what was actually covered, and switch status to \"completed\".",
       "zh": "8月28日后待更新：请把这行换成实际分享内容，并将 status 改为 \"completed\"。"
@@ -17,31 +23,50 @@
   },
   {
     "id": "spmc-2026",
-    "status": "completed",
-    "date": "2026-01-01",
-    "dateLabel": { "en": "2026", "zh": "2026年" },
-    "title": { "en": "SPMC 2026", "zh": "SPMC 2026" },
-    "venue": { "en": "Singapore Chinese Language Teachers' Conference", "zh": "新加坡华文教师大会" },
+    "status": "upcoming",
+    "date": "2026-08-26",
+    "dateLabel": {
+      "en": "26 August 2026",
+      "zh": "2026年8月26日"
+    },
+    "title": {
+      "en": "Sharing at SPMC",
+      "zh": "校务规划与管理委员会分享"
+    },
+    "venue": {
+      "en": "School Planning and Management Committee, Bukit View Secondary School",
+      "zh": "百德中学 校务规划与管理委员会（SPMC）"
+    },
     "summary": {
-      "en": "TODO: one line on what was presented. Add a slides or photos URL in \"link\" when available.",
-      "zh": "待补：用一句话说明分享内容。有简报或照片链接后，填入 \"link\" 栏位。"
+      "en": "A session for the school's leadership: School Leaders, HODs and equivalents, Subject Heads and equivalents, and Teacher Leaders. TOPIC STILL NEEDED.",
+      "zh": "面向校方领导层的分享：校领导、部门主任及同等职级、科目主任及同等职级，以及教师领导。分享主题待补。"
     },
     "link": ""
   },
   {
     "id": "sgldc-post",
     "status": "completed",
-    "date": "2026-01-01",
-    "dateLabel": { "en": "2026", "zh": "2026年" },
+    "date": "2026-02-03",
+    "dateLabel": {
+      "en": "3 February 2026",
+      "zh": "2026年2月3日"
+    },
     "title": {
-      "en": "Writing up the build process for SgLDC",
-      "zh": "为 SgLDC 撰写开发过程分享"
+      "en": "The philosopher chatbot lesson, written up for SgLDC",
+      "zh": "「哲学家聊天机器人」教学设计 · SgLDC 分享"
     },
-    "venue": { "en": "Singapore Learning Designers Circle", "zh": "Singapore Learning Designers Circle" },
+    "venue": {
+      "en": "Singapore Learning Designers Circle",
+      "zh": "Singapore Learning Designers Circle"
+    },
     "summary": {
-      "en": "TODO: one line summary. Paste the post URL into \"link\".",
-      "zh": "待补：一句话摘要。请把贴文网址填入 \"link\"。"
+      "en": "A Secondary 4 Higher Chinese lesson in which students debate a hawker's decision to raise prices with Confucius, Laozi and Mozi, each built as a chatbot persona in EdCafe.AI and delivered through SLS. The write-up earned the SgLDC Designer Badge from ETD.",
+      "zh": "中四高级华文课例：学生就「小贩涨价」的道德两难，分别与孔子、老子、墨子对话辩证。三位思想家以 EdCafe.AI 建构人格化聊天机器人，通过 SLS 推送。此分享获教育技术司（ETD）颁发 SgLDC Designer Badge。"
     },
-    "link": ""
+    "link": "",
+    "award": {
+      "en": "SgLDC Designer Badge, awarded by ETD",
+      "zh": "SgLDC Designer Badge · 教育技术司（ETD）颁发"
+    }
   }
 ]
