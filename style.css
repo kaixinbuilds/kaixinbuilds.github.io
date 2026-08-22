@@ -151,7 +151,10 @@ main > .section + .section { border-top: 1px solid var(--rule); }
   font-family: var(--font-serif);
   font-size: 1.05rem; font-weight: 600; letter-spacing: -.01em;
 }
-.wordmark .mark { width: 22px; height: 22px; flex: none; }
+.wordmark .mark {
+  width: 22px; height: 22px; flex: none;
+  border-radius: 3px;
+}
 .wordmark-text { white-space: nowrap; }
 .wordmark em { font-style: normal; color: var(--ochre-deep); }
 
@@ -581,10 +584,6 @@ html[lang^="zh"] .epigraph .en { display: none; }
   .contact-layout { grid-template-columns: 1fr; }
   .specimen { justify-self: start; max-width: 17rem; }
 }
-.contact-repo { margin: 2.25rem 0 0; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
-.contact-repo a { font-size: .86rem; color: var(--ink-faint); text-decoration: none; }
-.contact-repo a:hover { color: var(--ochre-deep); text-decoration: underline; }
-
 /* ── the print, hung and labelled ──────────────────────── */
 /* Gallery conventions: a deep mat, a thin frame, and a wall label naming the
    artist first. The work is credited, not used as wallpaper. */

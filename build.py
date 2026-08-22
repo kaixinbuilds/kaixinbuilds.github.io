@@ -64,6 +64,7 @@ HEAD = """\
   <div class="wrap">
     <div class="header-inner">
       <a class="wordmark" href="index.html"__HOME__>
+        <img class="mark" src="favicon.png" alt="" width="22" height="22" decoding="async">
         <span class="wordmark-text">kaixin<em>builds</em></span>
       </a>
 
@@ -231,10 +232,8 @@ PAGES = {
       <div class="contact-layout">
         <div class="contact-details">
           <p class="contact-direct">
+            <span class="contact-label" data-i18n="contact.emailLabel"></span>
             <a class="contact-email" href="mailto:kai_xin_chun@moe.edu.sg">kai_xin_chun@moe.edu.sg</a>
-          </p>
-          <p class="contact-repo">
-            <a href="https://github.com/kaixinbuilds/kaixinbuilds.github.io">github.com/kaixinbuilds/kaixinbuilds.github.io</a>
           </p>
         </div>
 
@@ -280,7 +279,27 @@ def render(page):
         + '<main id="main">\n' + body + "\n</main>" + TAIL
 
 
+def write_sitemap():
+    """A sitemap and a robots.txt, so search engines can find every page and
+    know where the sitemap lives. No lastmod: it would change on every build
+    whether or not the content did, for no real benefit."""
+    urls = "\n".join(
+        "  <url><loc>%s</loc><priority>%s</priority></url>"
+        % (SITE + "/" + ("" if p == "index.html" else p), "1.0" if p == "index.html" else "0.8")
+        for p in PAGES)
+    pathlib.Path("sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + urls + "\n</urlset>\n")
+    pathlib.Path("robots.txt").write_text(
+        "User-agent: *\n"
+        "Allow: /\n\n"
+        "Sitemap: %s/sitemap.xml\n" % SITE)
+
+
 if __name__ == "__main__":
     for page in PAGES:
         pathlib.Path(page).write_text(render(page))
         print("built", page)
+    write_sitemap()
+    print("built sitemap.xml and robots.txt")

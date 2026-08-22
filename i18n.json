@@ -130,11 +130,11 @@
   },
   "contact.title": {
     "en": "Get in touch",
-    "zh": "联系我"
+    "zh": "联系方式"
   },
   "contact.subtitle": {
-    "en": "Write to me if you would like to know more, or if there is something we could build together.",
-    "zh": "若想进一步了解，或有合作的想法，欢迎来信。"
+    "en": "Write to me if you would like to know more about the work, or if there is something we could build together 😄",
+    "zh": "若想进一步了解我的作品，或希望一起合作，欢迎来信😄"
   },
   "error.dataTitle": {
     "en": "Content could not load",
@@ -190,7 +190,7 @@
   },
   "page.contact.title": {
     "en": "Contact · Chun Kai Xin",
-    "zh": "联系 · 郑凯欣"
+    "zh": "联系方式 · 郑凯欣"
   },
   "work.intro": {
     "en": "Tools, structures and processes built for specific classroom problems, all of them in real use.",
@@ -291,5 +291,9 @@
   "lightbox.hint": {
     "en": "Click the image to view it full screen",
     "zh": "点击图片可全屏查看"
+  },
+  "contact.emailLabel": {
+    "en": "Email:",
+    "zh": "电邮："
   }
 }

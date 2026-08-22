@@ -1,0 +1,23 @@
+Copyright (c) 2026 Chun Kai Xin 郑凯欣
+
+All rights reserved.
+
+This repository is public because GitHub Pages serves the site from it. It is
+not published as a template, a starting point, or an invitation to reuse.
+
+Not licensed for reuse, adaptation or redistribution:
+
+  - the linocut prints in assets/art/prints/ and every derivative of them,
+    including the site background and the favicon
+  - the screenshots in assets/screenshots/
+  - the written content in i18n.json, projects.json and talks.json,
+    in both English and Chinese
+  - the design and layout of the site itself
+
+The teaching materials linked from this site are a separate matter and carry
+their own terms. Several of them are explicitly free to copy and adapt, and
+where that is stated it applies there, not here.
+
+If you would like to use anything in this repository, or to adapt the
+structure for your own school, please write to kai_xin_chun@moe.edu.sg. The
+answer is very often yes.
