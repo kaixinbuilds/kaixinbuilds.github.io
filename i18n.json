@@ -1,6 +1,5 @@
 {
   "_comment": "One key = one string. Add a key here, reference it with data-i18n=\"key\" in index.html. Never duplicate markup for a second language.",
-
   "site.title": {
     "en": "Kaixin Chun · Chinese Language Teacher & EdTech Builder",
     "zh": "春凯欣 · 华文教师 · 教育科技开发者"
@@ -9,18 +8,42 @@
     "en": "Classroom-grounded learning tools for Chinese Language education, designed and built by a practising teacher.",
     "zh": "由一线华文教师独立设计与开发的课堂学习工具。"
   },
-
-  "nav.work": { "en": "Work", "zh": "作品" },
-  "nav.talks": { "en": "Talks", "zh": "分享" },
-  "nav.approach": { "en": "Approach", "zh": "理念" },
-  "nav.contact": { "en": "Contact", "zh": "联系" },
-  "nav.menu": { "en": "Menu", "zh": "菜单" },
-
-  "lang.switchTo": { "en": "切换中文", "zh": "English" },
-  "lang.ariaLabel": { "en": "Switch language to Chinese", "zh": "切换语言至英文" },
-
-  "hero.eyebrow": { "en": "kaixinbuilds", "zh": "kaixinbuilds" },
-  "hero.name": { "en": "Kaixin Chun", "zh": "春凯欣" },
+  "nav.work": {
+    "en": "Work",
+    "zh": "作品"
+  },
+  "nav.talks": {
+    "en": "Talks",
+    "zh": "分享"
+  },
+  "nav.approach": {
+    "en": "Approach",
+    "zh": "理念"
+  },
+  "nav.contact": {
+    "en": "Contact",
+    "zh": "联系"
+  },
+  "nav.menu": {
+    "en": "Menu",
+    "zh": "菜单"
+  },
+  "lang.switchTo": {
+    "en": "切换中文",
+    "zh": "English"
+  },
+  "lang.ariaLabel": {
+    "en": "Switch language to Chinese",
+    "zh": "切换语言至英文"
+  },
+  "hero.eyebrow": {
+    "en": "kaixinbuilds",
+    "zh": "kaixinbuilds"
+  },
+  "hero.name": {
+    "en": "Kaixin Chun",
+    "zh": "春凯欣"
+  },
   "hero.tagline": {
     "en": "Chinese Language Teacher · EdTech Independent Developer · HOD/MTL, Pai Chai Secondary",
     "zh": "华文教师 · 教育科技独立开发者 · 百德中学 HOD/MTL"
@@ -29,32 +52,70 @@
     "en": "My work starts the same way in every medium: I sense a structural gap, then build something to close it. A missing scaffold in how students learn vocabulary, a missing rung between 书山 and 学海. I teach Chinese Language, I lead a Mother Tongue department, and I build the tools that close those gaps. Everything here is in real use with real students.",
     "zh": "无论在哪一个领域，我的工作都始于同一件事：察觉结构上的缺口，然后动手把它补上。学生学词汇时少了一层脚手架，「书山」与「学海」之间少了一级台阶。我教华文，主持母语部门，也亲手做出补上这些缺口的工具。这里的每一个作品，都在真实课堂中使用。"
   },
-  "hero.ctaWork": { "en": "See the work", "zh": "查看作品" },
-  "hero.ctaContact": { "en": "Get in touch", "zh": "联系我" },
-
-  "featured.eyebrow": { "en": "Flagship project", "zh": "旗舰项目" },
-  "featured.highlightLabel": { "en": "How it was built", "zh": "开发方式" },
-  "featured.visit": { "en": "Open the live site", "zh": "打开网站" },
-  "featured.gallery": { "en": "Screens", "zh": "界面预览" },
-
-  "grid.title": { "en": "Other projects", "zh": "其他作品" },
+  "hero.ctaWork": {
+    "en": "See the work",
+    "zh": "查看作品"
+  },
+  "hero.ctaContact": {
+    "en": "Get in touch",
+    "zh": "联系我"
+  },
+  "featured.eyebrow": {
+    "en": "Flagship project",
+    "zh": "旗舰项目"
+  },
+  "featured.highlightLabel": {
+    "en": "How it was built",
+    "zh": "开发方式"
+  },
+  "featured.visit": {
+    "en": "Open the live site",
+    "zh": "打开网站"
+  },
+  "featured.gallery": {
+    "en": "Screens",
+    "zh": "界面预览"
+  },
+  "grid.title": {
+    "en": "Other projects",
+    "zh": "其他作品"
+  },
   "grid.subtitle": {
     "en": "Smaller classroom tools, each built for one specific teaching problem.",
     "zh": "为解决某一个具体教学问题而做的小型课堂工具。"
   },
-  "grid.visit": { "en": "Open", "zh": "打开" },
-  "grid.noLink": { "en": "Internal use", "zh": "校内使用" },
-
-  "talks.title": { "en": "Talks & community", "zh": "分享与社群" },
+  "grid.visit": {
+    "en": "Open",
+    "zh": "打开"
+  },
+  "grid.noLink": {
+    "en": "Internal use",
+    "zh": "校内使用"
+  },
+  "talks.title": {
+    "en": "Talks & community",
+    "zh": "分享与社群"
+  },
   "talks.subtitle": {
     "en": "Sharing the process openly, so other teachers can adapt it rather than start from zero.",
     "zh": "公开分享开发过程，让其他老师可以直接借鉴，而不必从零开始。"
   },
-  "talks.upcoming": { "en": "Upcoming", "zh": "即将进行" },
-  "talks.completed": { "en": "Completed", "zh": "已完成" },
-  "talks.viewLink": { "en": "View", "zh": "查看" },
-
-  "approach.title": { "en": "How I design", "zh": "设计理念" },
+  "talks.upcoming": {
+    "en": "Upcoming",
+    "zh": "即将进行"
+  },
+  "talks.completed": {
+    "en": "Completed",
+    "zh": "已完成"
+  },
+  "talks.viewLink": {
+    "en": "View",
+    "zh": "查看"
+  },
+  "approach.title": {
+    "en": "How I design",
+    "zh": "设计理念"
+  },
   "approach.body1": {
     "en": "Every design decision in these tools traces back to two things: Self-Determination Theory, which holds that students need autonomy, competence and relatedness to stay engaged, and Assessment for Learning, where feedback exists to move learning forward rather than to rank students.",
     "zh": "这些工具的每一个设计决定，都回到两个基点：自我决定理论（SDT）：学生需要自主感、胜任感与归属感，才能持续投入；以及促进学习的评价（AfL）：反馈的意义在于推动学习，而不是给学生排名。"
@@ -87,45 +148,48 @@
     "en": "Feedback delivered a week later is a grade, not formative assessment. If a tool cannot respond within the same session, the pedagogy it claims is decorative.",
     "zh": "一周后才给的反馈，是成绩，不是形成性评价。如果一个工具无法在同一堂课内做出回应，它所标榜的教学理念只是装饰。"
   },
-
-  "contact.title": { "en": "Get in touch", "zh": "联系我" },
+  "contact.title": {
+    "en": "Get in touch",
+    "zh": "联系我"
+  },
   "contact.subtitle": {
-    "en": "Adapting one of these for your school, or curious how it was built? Write to me: I reply to everything from teachers.",
-    "zh": "想把这些工具用在贵校，或想了解具体的开发过程？欢迎来信：来自老师的每一封信，我都会回复。"
+    "en": "Adapting one of these for your school, or curious how it was built? Write to me directly. I reply to everything from teachers.",
+    "zh": "想把这些工具用在贵校，或想了解具体的开发过程？欢迎直接来信。来自老师的每一封信，我都会回复。"
   },
-  "contact.nameLabel": { "en": "Your name", "zh": "您的姓名" },
-  "contact.namePlaceholder": { "en": "Jane Tan", "zh": "陈老师" },
-  "contact.emailLabel": { "en": "Your email", "zh": "您的电邮" },
-  "contact.emailPlaceholder": { "en": "you@school.edu.sg", "zh": "you@school.edu.sg" },
-  "contact.messageLabel": { "en": "Message", "zh": "留言" },
-  "contact.messagePlaceholder": {
-    "en": "Which project, and what would you like to know?",
-    "zh": "关于哪一个项目？想了解些什么？"
-  },
-  "contact.send": { "en": "Send message", "zh": "发送" },
-  "contact.sending": { "en": "Sending…", "zh": "发送中…" },
-  "contact.success": {
-    "en": "Thank you, your message is on its way. I usually reply within a few days.",
-    "zh": "谢谢您的来信，讯息已成功送出。我通常会在几天内回复。"
-  },
-  "contact.error": {
-    "en": "Something went wrong sending that. Please try again in a moment.",
-    "zh": "发送失败，请稍后再试一次。"
-  },
-  "contact.privacy": {
-    "en": "Your details go straight to my inbox and are never published, shared or used for anything else.",
-    "zh": "您的资料仅送达我的信箱，不会被公开、转发或作任何其他用途。"
-  },
-
   "footer.built": {
     "en": "Set by hand: static HTML, CSS and vanilla JavaScript, no framework and no build step. No trackers, no analytics, no cookies.",
     "zh": "纯手工排版：静态 HTML、CSS 与原生 JavaScript，无框架、无编译流程。无追踪、无分析工具、无 cookie。"
   },
-  "footer.source": { "en": "Source on GitHub", "zh": "GitHub 源码" },
-
-  "error.dataTitle": { "en": "Content could not load", "zh": "内容无法载入" },
+  "footer.source": {
+    "en": "Source on GitHub",
+    "zh": "GitHub 源码"
+  },
+  "error.dataTitle": {
+    "en": "Content could not load",
+    "zh": "内容无法载入"
+  },
   "error.dataBody": {
     "en": "This page reads its content from JSON files, which browsers block when a page is opened directly from disk. Serve the folder over HTTP instead: see README.md.",
     "zh": "本页内容从 JSON 档案载入，而浏览器会阻止直接从硬盘打开的页面读取档案。请以 HTTP 方式启动本资料夹：详见 README.md。"
+  },
+  "contact.directory": {
+    "en": "MOE colleagues can also find me through the staff email directory.",
+    "zh": "教育部同侪亦可通过教职员通讯录找到我。"
+  },
+  "specimen.title": {
+    "en": "Public Phone",
+    "zh": "公共电话"
+  },
+  "specimen.meta": {
+    "en": "Lino print, hand-cut block, 2015",
+    "zh": "麻胶版画 · 手工刻版 · 2015"
+  },
+  "specimen.note": {
+    "en": "The printmaking runs on the same instinct as the software: look closely at an ordinary thing, find the structure holding it up, then cut away everything that is not that structure.",
+    "zh": "版画与软件其实出于同一种本能：仔细观察一件寻常的东西，找出支撑它的结构，然后把不属于那个结构的部分，全部刻去。"
+  },
+  "footer.disclaimer": {
+    "en": "A personal site. Views are my own and do not represent my school or the Ministry of Education.",
+    "zh": "个人网站。文中观点仅代表本人，不代表所属学校或教育部立场。"
   }
 }

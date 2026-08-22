@@ -231,9 +231,10 @@ h1, h2, h3 {
   background: #12162A;
   aspect-ratio: 16 / 10;
 }
-.screen-inner img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
-.shot.is-missing .screen-inner img { display: none; }
-.shot.is-missing .screen-inner::after {
+.screen-inner img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; display: none; }
+.shot.is-loaded .screen-inner img { display: block; }
+.shot.is-loaded .screen-inner::after { content: none; }
+.screen-inner::after {
   content: attr(data-missing);
   position: absolute; inset: 0;
   display: grid; place-items: center; text-align: center;
@@ -369,28 +370,49 @@ h1, h2, h3 {
 .principles p { margin: .5rem 0 0 1.4rem; color: var(--ink-soft); font-size: .95rem; }
 
 /* ── contact ───────────────────────────────────────────── */
-.contact-form { display: grid; gap: 1.2rem; max-width: 33rem; }
-.field { display: grid; gap: .35rem; }
-.field label { font-size: .85rem; font-weight: 500; color: var(--ink-soft); }
-.field input, .field textarea {
-  font: inherit; font-size: .95rem;
+.contact-direct { margin: 0; }
+.contact-email {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 3vw, 1.6rem);
+  letter-spacing: -.01em;
   color: var(--ink);
-  background: var(--card);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  padding: .68rem .85rem; width: 100%; resize: vertical;
+  text-decoration: none;
+  border-bottom: 2px solid var(--ochre);
+  padding-bottom: .1rem;
 }
-.field input:focus, .field textarea:focus { border-color: var(--ochre); }
-.field input::placeholder, .field textarea::placeholder { color: var(--ink-faint); }
-.contact-form .btn { justify-self: start; }
-.gotcha { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+.contact-email:hover { color: var(--ochre-deep); }
 
-.form-status { margin: 0; font-size: .9rem; min-height: 1.4em; }
-.form-status.ok { color: var(--ochre-deep); }
-.form-status.error { color: #A8342A; }
-@media (prefers-color-scheme: dark) { .form-status.error { color: #EE8A7D; } }
+.privacy-note { margin: 1.5rem 0 0; font-size: .84rem; color: var(--ink-faint); max-width: 46ch; }
 
-.privacy-note { margin: 1.4rem 0 0; font-size: .82rem; color: var(--ink-faint); max-width: 46ch; }
+/* ── specimen plate ────────────────────────────────────── */
+/* Botanical-plate discipline: the print sits in ruled whitespace and is
+   labelled like a specimen, never bled to the edge as decoration. */
+.specimen {
+  margin: 3rem 0 0;
+  display: none;
+  grid-template-columns: minmax(0, 220px) 1fr;
+  gap: 1.6rem;
+  align-items: start;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+.specimen.is-loaded { display: grid; }
+@media (max-width: 620px) { .specimen { grid-template-columns: 1fr; gap: 1.1rem; } }
+
+.specimen-plate {
+  border: 1px solid var(--rule);
+  padding: .7rem;
+  background: var(--card);
+}
+.specimen-plate img { width: 100%; height: auto; }
+
+.specimen figcaption { display: grid; gap: .3rem; align-self: center; }
+.specimen-title { font-family: var(--font-serif); font-size: 1.02rem; font-weight: 600; }
+.specimen-meta {
+  font-size: .76rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.specimen-note { margin-top: .5rem; font-size: .93rem; color: var(--ink-soft); }
 
 /* ── footer ────────────────────────────────────────────── */
 .site-footer {
@@ -406,6 +428,7 @@ h1, h2, h3 {
   margin: 0 0 1.2rem;
 }
 .site-footer p { margin: .28rem 0; }
+.footer-disclaimer { margin-top: .9rem !important; max-width: 52ch; opacity: .8; }
 
 /* ── data-load failure notice ──────────────────────────── */
 .data-error { border: 1px solid var(--rule); border-radius: var(--radius); padding: 1.5rem; background: var(--card); }

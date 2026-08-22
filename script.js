@@ -114,15 +114,19 @@
       </div>
       ${shots ? `<div class="shots">${shots}</div>` : ''}`;
 
-    markMissingImages(host);
+    revealLoadedImages(host);
   }
 
-  /** A screenshot that 404s becomes a labelled placeholder, not a broken-image icon. */
-  function markMissingImages(host) {
-    host.querySelectorAll('.shot img').forEach((img) => {
-      const fail = () => img.closest('.shot').classList.add('is-missing');
-      if (img.complete && img.naturalWidth === 0) fail();
-      img.addEventListener('error', fail, { once: true });
+  /** Figures start in their fallback state and are revealed only once the
+      image actually loads. Inverted deliberately: a lazy-loaded image that is
+      missing never fires an error, so "hide on error" would leave an empty
+      frame on the page forever. */
+  function revealLoadedImages(root = document) {
+    root.querySelectorAll('.shot img, .specimen img').forEach((img) => {
+      const figure = img.closest('.shot, .specimen');
+      const ready = () => figure.classList.add('is-loaded');
+      if (img.complete && img.naturalWidth > 0) ready();
+      else img.addEventListener('load', ready, { once: true });
     });
   }
 
@@ -195,48 +199,6 @@
     });
   }
 
-  /* ── contact form ────────────────────────────────────── */
-
-  function initForm() {
-    const form = $('#contact-form');
-    const status = $('#form-status');
-    if (!form || !status) return;
-
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-
-      if (form.action.includes('YOUR_FORM_ID')) {
-        status.className = 'form-status error';
-        status.textContent = 'Form not configured yet — set your Formspree endpoint in index.html.';
-        return;
-      }
-
-      const button = form.querySelector('button[type="submit"]');
-      button.disabled = true;
-      status.className = 'form-status';
-      status.textContent = t('contact.sending');
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { Accept: 'application/json' },
-        });
-        if (!response.ok) throw new Error('HTTP ' + response.status);
-
-        form.reset();
-        status.className = 'form-status ok';
-        status.textContent = t('contact.success');
-      } catch (err) {
-        console.error('Contact form submission failed:', err);
-        status.className = 'form-status error';
-        status.textContent = t('contact.error');
-      } finally {
-        button.disabled = false;
-      }
-    });
-  }
-
   /* ── boot ────────────────────────────────────────────── */
 
   async function loadJSON(path) {
@@ -272,7 +234,7 @@
     } catch (err) {
       showLoadError(err);
     }
+    revealLoadedImages();
     initToggle();
-    initForm();
   })();
 })();

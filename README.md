@@ -81,25 +81,18 @@ you which file it wanted — the layout never breaks.
 
 ---
 
-## Contact form (Formspree)
+## Contact
 
-The form posts to Formspree so **no email address appears anywhere in this repo or on the
-page**. One-time setup:
+The contact section shows a plain `mailto:` link to `kai_xin_chun@moe.edu.sg`, set
+directly in `index.html`. There is no form and no third-party form service.
 
-1. Create a free account at https://formspree.io
-2. New form → name it "kaixinbuilds portfolio" → copy the endpoint it gives you
-   (looks like `https://formspree.io/f/abcdwxyz`)
-3. In `index.html`, replace `YOUR_FORM_ID` in the `<form action="…">` with your id
-4. Submit the form once yourself — Formspree emails you a confirmation link to click
+A visible address will be picked up by address-harvesting bots, which is the accepted
+trade for being reachable in one click. It is a school address behind institutional
+spam filtering and already listed in the MOE staff directory, so the exposure adds
+little that was not already public.
 
-Until step 3 is done the form deliberately refuses to submit and says so, rather than
-silently swallowing messages.
-
-The free tier allows 50 submissions/month, which is comfortably above what a portfolio
-site attracts. A hidden `_gotcha` honeypot field catches most spam bots before they count
-against that quota.
-
----
+Do not put a personal address here. If the school address ever changes, it appears in
+exactly one place: search `index.html` for `mailto:`.
 
 ## Publishing
 
@@ -129,14 +122,24 @@ assets/
 publish.sh            commit + push in one command
 ```
 
+## Prints
+
+`assets/art/prints/specimen.png` is the block print shown beside the "How I design"
+section, labelled like a specimen plate. It is hidden entirely until the file exists,
+so nothing breaks while it is missing.
+
+Export the artwork itself, cropped to the paper edge: not an Instagram screenshot, which
+carries app chrome, like counts and other people's profile pictures. Around 1600px on the
+long side, under ~400KB. To use a different print, replace the file and edit the
+`specimen.title` and `specimen.meta` keys in `i18n.json`.
+
 ## Artwork
 
 `assets/art/` holds two hand-drawn SVG lino blocks: the frontispiece under the hero, and
 the carved ridge used as a section divider. They are plain SVG, so they scale to any
 screen, weigh about 57KB together, and can be edited by hand or swapped outright.
 
-To replace either one with your own scan or a generated image, drop the file into
-`assets/art/` and change the `url(...)` in `style.css` (`.frontispiece` and the
+To replace either one with your own scan, drop the file into `assets/art/` and change the `url(...)` in `style.css` (`.frontispiece` and the
 `.section + .section::before` rule). Nothing else depends on them.
 
 ---

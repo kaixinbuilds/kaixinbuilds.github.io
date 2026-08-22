@@ -119,6 +119,19 @@
             <p data-i18n="approach.principle3Body"></p>
           </li>
         </ul>
+
+        <!-- A real block print, presented as a labelled specimen rather than
+             as decoration. Hides itself if the image is not there yet. -->
+        <figure class="specimen">
+          <div class="specimen-plate">
+            <img src="assets/art/prints/specimen.png" alt="" loading="lazy" decoding="async">
+          </div>
+          <figcaption>
+            <span class="specimen-title" data-i18n="specimen.title">Public Phone</span>
+            <span class="specimen-meta" data-i18n="specimen.meta">Lino print, hand-cut block, 2015</span>
+            <span class="specimen-note" data-i18n="specimen.note"></span>
+          </figcaption>
+        </figure>
     </div>
   </section>
 
@@ -128,43 +141,11 @@
       <h2 class="section-title" data-i18n="contact.title">Get in touch</h2>
       <p class="section-sub" data-i18n="contact.subtitle">Write to me.</p>
 
-        <!--
-          SETUP: replace YOUR_FORM_ID below with the id from your Formspree
-          dashboard (formspree.io → your form → the endpoint it shows you).
-          Nothing else needs to change. Your email address never appears here.
-        -->
-        <form id="contact-form" class="contact-form"
-              action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <p class="contact-direct">
+        <a class="contact-email" href="mailto:kai_xin_chun@moe.edu.sg">kai_xin_chun@moe.edu.sg</a>
+      </p>
+      <p class="privacy-note" data-i18n="contact.directory"></p>
 
-          <div class="field">
-            <label for="cf-name" data-i18n="contact.nameLabel">Your name</label>
-            <input id="cf-name" name="name" type="text" required autocomplete="name"
-                   data-i18n="contact.namePlaceholder" data-i18n-attr="placeholder" placeholder="Jane Tan">
-          </div>
-
-          <div class="field">
-            <label for="cf-email" data-i18n="contact.emailLabel">Your email</label>
-            <input id="cf-email" name="email" type="email" required autocomplete="email"
-                   data-i18n="contact.emailPlaceholder" data-i18n-attr="placeholder" placeholder="you@school.edu.sg">
-          </div>
-
-          <div class="field">
-            <label for="cf-message" data-i18n="contact.messageLabel">Message</label>
-            <textarea id="cf-message" name="message" rows="6" required
-                      data-i18n="contact.messagePlaceholder" data-i18n-attr="placeholder"></textarea>
-          </div>
-
-          <!-- honeypot: bots fill it, humans never see it -->
-          <div class="gotcha" aria-hidden="true">
-            <label for="cf-gotcha">Leave this field empty</label>
-            <input id="cf-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
-          </div>
-
-          <button class="btn btn-accent" type="submit" data-i18n="contact.send">Send message</button>
-          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-        </form>
-
-        <p class="privacy-note" data-i18n="contact.privacy"></p>
     </div>
   </section>
 
@@ -175,6 +156,7 @@
     <p class="colophon-zh" lang="zh-Hans">感于言，成于形。</p>
     <p data-i18n="footer.built"></p>
     <p><a href="https://github.com/kaixinbuilds" data-i18n="footer.source">Source on GitHub</a></p>
+    <p class="footer-disclaimer" data-i18n="footer.disclaimer"></p>
   </div>
 </footer>
 
