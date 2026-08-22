@@ -169,7 +169,7 @@
     "zh": "满纸重复印刷的新加坡公用电话版画，其中一台以手工上了橙色。"
   },
   "epigraph.source": {
-    "en": "From the 劝学 chapter of 《增广贤文》, a Ming dynasty compilation of proverbs and maxims.",
+    "en": "From Zengguang Xianwen, a Ming dynasty compilation of proverbs and maxims, in its chapter on the encouragement of learning.",
     "zh": "《增广贤文 · 劝学篇》，明代辑录的格言集。"
   },
   "grid.play": {
@@ -257,7 +257,7 @@
     "zh": "示意图无法被检验，只能被欣赏。能跑的版本可以直接交到学生手上，而学生四十秒内告诉你的事，一份提案简报一个学期也说不出来。所以我跳过打磨提案的阶段，先交付一个小而能跑的东西。"
   },
   "approach.loop3Title": {
-    "en": "实践: the classroom is the test, not the demo",
+    "en": "实践 shíjiàn, putting it into practice: the classroom is the test, not the demo",
     "zh": "实践：课堂才是测试，演示不是"
   },
   "approach.loop3Cycle": {
@@ -289,7 +289,7 @@
     "zh": "再迭代"
   },
   "approach.loop5Body": {
-    "en": "实践、认识、再实践. No version is final and none of them was meant to be. Each turn of the loop begins from a better question than the last one, which is the only kind of progress I actually trust.",
+    "en": "实践、认识、再实践: practise, understand, practise again. No version is final and none of them was meant to be. Each turn of the loop begins from a better question than the last one, which is the only kind of progress I actually trust.",
     "zh": "实践、认识、再实践。没有哪一版是最终版，本来也不打算是。每一圈都从一个比上一圈更好的问题开始，而这是我唯一真正信得过的进展。"
   },
   "approach.constantsTitle": {

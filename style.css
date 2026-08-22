@@ -120,11 +120,11 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 .page-sub {
   margin: .85rem 0 clamp(2.25rem, 5vw, 3.25rem);
   color: var(--ink-soft);
-  max-width: 52ch;
+
   font-size: 1.04rem;
 }
 .section-title { font-size: clamp(1.5rem, 3.2vw, 1.95rem); }
-.section-sub { margin: .7rem 0 2.5rem; color: var(--ink-soft); max-width: 48ch; }
+.section-sub { margin: .7rem 0 2.5rem; color: var(--ink-soft); }
 
 .eyebrow {
   margin: 0 0 .9rem;
@@ -193,7 +193,7 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 
 /* The couplet the flagship project is named from. Both languages always
    show: the pairing is the content, not a translation of it. */
-.epigraph { margin: 0 0 2.25rem; max-width: 46ch; }
+.epigraph { margin: 0 0 2.25rem; }
 .epigraph .zh {
   display: block;
   font-family: var(--font-serif);
@@ -215,7 +215,7 @@ html[lang^="zh"] .epigraph .en { display: none; }
   display: block; margin-top: .5rem;
   font-size: .76rem; line-height: 1.6;
   color: var(--ink-faint);
-  max-width: 52ch;
+
 }
 
 .hero-name {
@@ -226,9 +226,9 @@ html[lang^="zh"] .epigraph .en { display: none; }
   margin: .85rem 0 0;
   font-size: clamp(.98rem, 2vw, 1.1rem);
   color: var(--ochre-deep); font-weight: 500;
-  max-width: 44ch;
+
 }
-.hero-intro { margin: 1.5rem 0 0; color: var(--ink-soft); max-width: 58ch; }
+.hero-intro { margin: 1.5rem 0 0; color: var(--ink-soft); }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 2.4rem 0 0; }
 .hero-actions .btn-primary {
   font-size: 1rem;
@@ -293,7 +293,7 @@ html[lang^="zh"] .epigraph .en { display: none; }
 .featured-titlerow { display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap; }
 .featured-title { font-size: clamp(1.75rem, 4vw, 2.35rem); letter-spacing: -.025em; }
 .featured-subtitle { margin: .45rem 0 0; color: var(--ink-soft); font-size: 1.04rem; }
-.featured-summary { margin: 1.35rem 0 0; color: var(--ink-soft); max-width: 64ch; }
+.featured-summary { margin: 1.35rem 0 0; color: var(--ink-soft); }
 
 .badge-live {
   font-family: var(--font-sans);
@@ -328,7 +328,7 @@ html[lang^="zh"] .epigraph .en { display: none; }
   margin: 2.1rem 0 0;
   padding-left: 1.2rem;
   border-left: 2px solid var(--ochre);
-  max-width: 64ch;
+
 }
 .highlight-box .label {
   display: block;
@@ -521,7 +521,7 @@ html[lang^="zh"] .epigraph .en { display: none; }
 }
 
 /* ── approach ──────────────────────────────────────────── */
-.lede { margin: 1.1rem 0 0; color: var(--ink-soft); max-width: 64ch; }
+.lede { margin: 1.1rem 0 0; color: var(--ink-soft); }
 .approach .epigraph { margin-bottom: 2rem; }
 
 /* The loop is a real sequence, so it is a real ordered list. */
@@ -573,7 +573,7 @@ html[lang^="zh"] .epigraph .en { display: none; }
   color: var(--ink-faint);
   margin-bottom: .9rem;
 }
-.constants > p { margin: 0; color: var(--ink-soft); font-size: .93rem; max-width: 64ch; }
+.constants > p { margin: 0; color: var(--ink-soft); font-size: .93rem; }
 
 .principles { list-style: none; margin: 1.9rem 0 0; padding: 0; display: grid; gap: 1.4rem; }
 .principles h3 { font-size: .96rem; }
@@ -699,14 +699,3 @@ html[lang^="zh"] .epigraph .en { display: none; }
 .lightbox-close::before { content: "\00d7"; }
 .lightbox-close:hover { background: rgba(242, 235, 219, .22); }
 
-/* ── measure on the wide panel ─────────────────────────── */
-/* The narrow pages set their measure with .wrap-narrow, so the caps that
-   suit them leave a large empty gutter on the wide Work panel. Let the
-   text fill the panel it is actually sitting in. */
-main > section > .wrap:not(.wrap-narrow) .page-sub,
-main > section > .wrap:not(.wrap-narrow) .section-sub,
-main > section > .wrap:not(.wrap-narrow) .featured-summary,
-main > section > .wrap:not(.wrap-narrow) .featured-subtitle,
-main > section > .wrap:not(.wrap-narrow) .highlight-box {
-  max-width: none;
-}
