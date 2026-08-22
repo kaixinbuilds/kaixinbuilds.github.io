@@ -2,8 +2,8 @@
   "_comment": "One key = one string. Add a key here, reference it with data-i18n=\"key\" in index.html. Never duplicate markup for a second language.",
 
   "site.title": {
-    "en": "Kaixin Chun — Chinese Language Teacher & EdTech Builder",
-    "zh": "春凯欣 — 华文教师 · 教育科技开发者"
+    "en": "Kaixin Chun · Chinese Language Teacher & EdTech Builder",
+    "zh": "春凯欣 · 华文教师 · 教育科技开发者"
   },
   "site.description": {
     "en": "Classroom-grounded learning tools for Chinese Language education, designed and built by a practising teacher.",
@@ -26,8 +26,8 @@
     "zh": "华文教师 · 教育科技独立开发者 · 百德中学 HOD/MTL"
   },
   "hero.intro": {
-    "en": "I teach Chinese Language, and I build the tools I wished my students had. No engineering background, no dev team — just classroom problems taken seriously enough to ship a solution. Everything here is in real use with real students.",
-    "zh": "我教华文，也亲手做出学生真正需要的工具。没有工程背景，没有开发团队 —— 只是把课堂上的真实问题，认真做到能交付为止。这里的每一个作品，都在真实课堂中使用。"
+    "en": "I teach Chinese Language, and I build the tools I wished my students had. No engineering background, no dev team: just classroom problems taken seriously enough to ship a solution. Everything here is in real use with real students.",
+    "zh": "我教华文，也亲手做出学生真正需要的工具。没有工程背景，没有开发团队：只是把课堂上的真实问题，认真做到能交付为止。这里的每一个作品，都在真实课堂中使用。"
   },
   "hero.ctaWork": { "en": "See the work", "zh": "查看作品" },
   "hero.ctaContact": { "en": "Get in touch", "zh": "联系我" },
@@ -56,8 +56,8 @@
 
   "approach.title": { "en": "How I design", "zh": "设计理念" },
   "approach.body1": {
-    "en": "Every design decision in these tools traces back to two things: Self-Determination Theory — students need autonomy, competence and relatedness to stay engaged — and Assessment for Learning, where feedback exists to move learning forward, not to rank students.",
-    "zh": "这些工具的每一个设计决定，都回到两个基点：自我决定理论（SDT）—— 学生需要自主感、胜任感与归属感，才能持续投入；以及促进学习的评价（AfL）—— 反馈的意义在于推动学习，而不是给学生排名。"
+    "en": "Every design decision in these tools traces back to two things: Self-Determination Theory, which holds that students need autonomy, competence and relatedness to stay engaged, and Assessment for Learning, where feedback exists to move learning forward rather than to rank students.",
+    "zh": "这些工具的每一个设计决定，都回到两个基点：自我决定理论（SDT）：学生需要自主感、胜任感与归属感，才能持续投入；以及促进学习的评价（AfL）：反馈的意义在于推动学习，而不是给学生排名。"
   },
   "approach.body2": {
     "en": "That is easy to say and hard to hold onto once you are actually building. The principles below are the ones I refuse to trade away for convenience.",
@@ -90,8 +90,8 @@
 
   "contact.title": { "en": "Get in touch", "zh": "联系我" },
   "contact.subtitle": {
-    "en": "Adapting one of these for your school, or curious how it was built? Write to me — I reply to everything from teachers.",
-    "zh": "想把这些工具用在贵校，或想了解具体的开发过程？欢迎来信 —— 来自老师的每一封信，我都会回复。"
+    "en": "Adapting one of these for your school, or curious how it was built? Write to me: I reply to everything from teachers.",
+    "zh": "想把这些工具用在贵校，或想了解具体的开发过程？欢迎来信：来自老师的每一封信，我都会回复。"
   },
   "contact.nameLabel": { "en": "Your name", "zh": "您的姓名" },
   "contact.namePlaceholder": { "en": "Jane Tan", "zh": "陈老师" },
@@ -105,7 +105,7 @@
   "contact.send": { "en": "Send message", "zh": "发送" },
   "contact.sending": { "en": "Sending…", "zh": "发送中…" },
   "contact.success": {
-    "en": "Thank you — your message is on its way. I usually reply within a few days.",
+    "en": "Thank you, your message is on its way. I usually reply within a few days.",
     "zh": "谢谢您的来信，讯息已成功送出。我通常会在几天内回复。"
   },
   "contact.error": {
@@ -118,14 +118,14 @@
   },
 
   "footer.built": {
-    "en": "Built by hand — static HTML, CSS and vanilla JavaScript. No trackers, no analytics, no cookies.",
-    "zh": "纯手工搭建 —— 静态 HTML、CSS 与原生 JavaScript。无追踪、无分析工具、无 cookie。"
+    "en": "Built by hand: static HTML, CSS and vanilla JavaScript. No trackers, no analytics, no cookies.",
+    "zh": "纯手工搭建：静态 HTML、CSS 与原生 JavaScript。无追踪、无分析工具、无 cookie。"
   },
   "footer.source": { "en": "Source on GitHub", "zh": "GitHub 源码" },
 
   "error.dataTitle": { "en": "Content could not load", "zh": "内容无法载入" },
   "error.dataBody": {
-    "en": "This page reads its content from JSON files, which browsers block when a page is opened directly from disk. Serve the folder over HTTP instead — see README.md.",
-    "zh": "本页内容从 JSON 档案载入，而浏览器会阻止直接从硬盘打开的页面读取档案。请以 HTTP 方式启动本资料夹 —— 详见 README.md。"
+    "en": "This page reads its content from JSON files, which browsers block when a page is opened directly from disk. Serve the folder over HTTP instead: see README.md.",
+    "zh": "本页内容从 JSON 档案载入，而浏览器会阻止直接从硬盘打开的页面读取档案。请以 HTTP 方式启动本资料夹：详见 README.md。"
   }
 }

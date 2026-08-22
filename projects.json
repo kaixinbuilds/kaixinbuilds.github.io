@@ -12,8 +12,8 @@
       "zh": "3,741 个词条，横跨 G1 至高级华文四个语文流，具备进度系统、连续挑战与自选难度。每一项机制都以自我决定理论（SDT）与促进学习的评价（AfL）为设计起点，而非事后附加。"
     },
     "highlight": {
-      "en": "Designed and built solo, in conversation with an AI agent (Claude Code), on a Firebase backend — no engineering team, no external funding, no prior coding background.",
-      "zh": "独立完成设计与开发，全程与 AI agent（Claude Code）协作，采用 Firebase 架构 —— 没有开发团队，没有外部资金，也没有任何编程背景。"
+      "en": "Designed and built solo, in conversation with an AI agent (Claude Code), on a Firebase backend, with no engineering team, no external funding and no prior coding background.",
+      "zh": "独立完成设计与开发，全程与 AI agent（Claude Code）协作，采用 Firebase 架构：没有开发团队，没有外部资金，也没有任何编程背景。"
     },
     "stats": [
       { "value": "3,741", "label": { "en": "vocabulary items", "zh": "词条总数" } },
@@ -23,11 +23,11 @@
     "screenshots": [
       {
         "src": "assets/screenshots/vocabsummit-1.png",
-        "caption": { "en": "攀山竞速 — timed climb mode", "zh": "攀山竞速 —— 限时闯关模式" }
+        "caption": { "en": "攀山竞速 · timed climb mode", "zh": "攀山竞速 · 限时闯关模式" }
       },
       {
         "src": "assets/screenshots/vocabsummit-2.png",
-        "caption": { "en": "我的词山 — personal progress map", "zh": "我的词山 —— 个人进度地图" }
+        "caption": { "en": "我的词山 · personal progress map", "zh": "我的词山 · 个人进度地图" }
       },
       {
         "src": "assets/screenshots/vocabsummit-3.png",
@@ -42,8 +42,8 @@
     "featured": false,
     "title": { "en": "Argumentative Adventure", "zh": "论证法冒险游戏" },
     "summary": {
-      "en": "A platformer that teaches Secondary 3 G3 students to recognise argumentation techniques in two set texts. Six lives instead of three — a deliberate accommodation so lower-readiness students finish rather than give up.",
-      "zh": "以横向卷轴游戏教中三 G3 学生辨识两篇课文中的论证法。生命值设为六条而非三条 —— 这是刻意的调整，让准备度较低的学生能够完成，而不是中途放弃。"
+      "en": "A platformer that teaches Secondary 3 G3 students to recognise argumentation techniques in two set texts. Six lives instead of three: a deliberate accommodation so lower-readiness students finish rather than give up.",
+      "zh": "以横向卷轴游戏教中三 G3 学生辨识两篇课文中的论证法。生命值设为六条而非三条：这是刻意的调整，让准备度较低的学生能够完成，而不是中途放弃。"
     },
     "link": "https://kaixinbuilds.github.io/S3G3CLArgumentativeAdventure/",
     "tags": ["game", "argumentative-writing", "sls-ready"]

@@ -10,8 +10,8 @@
     },
     "venue": { "en": "Networked Learning Community", "zh": "教师专业学习社群（NLC）" },
     "summary": {
-      "en": "TODO after 28 Aug — replace this line with what was actually covered, and switch status to \"completed\".",
-      "zh": "8月28日后待更新 —— 请把这行换成实际分享内容，并将 status 改为 \"completed\"。"
+      "en": "TODO after 28 Aug: replace this line with what was actually covered, and switch status to \"completed\".",
+      "zh": "8月28日后待更新：请把这行换成实际分享内容，并将 status 改为 \"completed\"。"
     },
     "link": ""
   },
@@ -23,8 +23,8 @@
     "title": { "en": "SPMC 2026", "zh": "SPMC 2026" },
     "venue": { "en": "Singapore Chinese Language Teachers' Conference", "zh": "新加坡华文教师大会" },
     "summary": {
-      "en": "TODO — one line on what was presented. Add a slides or photos URL in \"link\" when available.",
-      "zh": "待补 —— 用一句话说明分享内容。有简报或照片链接后，填入 \"link\" 栏位。"
+      "en": "TODO: one line on what was presented. Add a slides or photos URL in \"link\" when available.",
+      "zh": "待补：用一句话说明分享内容。有简报或照片链接后，填入 \"link\" 栏位。"
     },
     "link": ""
   },
@@ -39,8 +39,8 @@
     },
     "venue": { "en": "Singapore Learning Designers Circle", "zh": "Singapore Learning Designers Circle" },
     "summary": {
-      "en": "TODO — one line summary. Paste the post URL into \"link\".",
-      "zh": "待补 —— 一句话摘要。请把贴文网址填入 \"link\"。"
+      "en": "TODO: one line summary. Paste the post URL into \"link\".",
+      "zh": "待补：一句话摘要。请把贴文网址填入 \"link\"。"
     },
     "link": ""
   }
