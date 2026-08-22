@@ -142,6 +142,14 @@ main > .section + .section { border-top: 1px solid var(--rule); }
           backdrop-filter: blur(18px) saturate(150%);
   border-bottom: 1px solid var(--rule);
 }
+/* The bar spans the window while the content panels stay centred at 1080px,
+   so the wordmark sits at the left edge and the nav at the right instead of
+   both bunching into the middle of a wide screen. */
+.site-header .wrap {
+  width: 100%;
+  max-width: none;
+  padding-inline: clamp(1.25rem, 3vw, 2.5rem);
+}
 .header-inner { display: flex; align-items: center; gap: 1.5rem; min-height: 60px; }
 
 .wordmark {
