@@ -169,8 +169,8 @@
     "zh": "在此试玩"
   },
   "grid.playNote": {
-    "en": "Loads the real game, sound included. Arrow keys to move, space to jump.",
-    "zh": "将载入实际游戏，含音效。方向键移动，空格键跳跃。"
+    "en": "Loads the real game, sound included. Works on phone, tablet and computer.",
+    "zh": "将载入实际游戏，含音效。手机、平板与电脑皆可游玩。"
   },
   "page.home.title": {
     "en": "Chun Kai Xin · Chinese Language Teacher & EdTech Builder",
@@ -207,10 +207,6 @@
   "talks.groupCompleted": {
     "en": "Completed",
     "zh": "已完成"
-  },
-  "embed.desktopOnly": {
-    "en": "This game needs a keyboard, so it is best opened on a computer.",
-    "zh": "这个游戏需要键盘操作，建议在电脑上打开。"
   },
   "specimen.artist": {
     "en": "Chun Kai Xin",

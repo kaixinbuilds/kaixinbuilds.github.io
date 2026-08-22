@@ -72,11 +72,12 @@
         }
       }
     ],
-    "link": "https://btvssclunit.github.io/VocabSummit",
+    "link": "https://for.edu.sg/vocabsummit",
     "tags": [
       "flagship",
       "live"
-    ]
+    ],
+    "displayUrl": "for.edu.sg/vocabsummit"
   },
   {
     "id": "s3g3-argumentative-adventure",
@@ -96,9 +97,10 @@
       "sls-ready"
     ],
     "embed": {
-      "src": "https://kaixinbuilds.github.io/S3G3CLArgumentativeAdventure/",
+      "src": "https://kaixinbuilds.github.io/S3G3CLArgumentativeAdventure/game.html",
       "aspect": "16 / 10"
-    }
+    },
+    "displayUrl": "kaixinbuilds.github.io/S3G3CLArgumentativeAdventure"
   },
   {
     "id": "bvss-cl-hub",
@@ -125,6 +127,7 @@
           "zh": "资源站首页 · 按科目程度与年级整理"
         }
       }
-    ]
+    ],
+    "displayUrl": "sites.google.com/moe.edu.sg/bvss-cl-hub"
   }
 ]

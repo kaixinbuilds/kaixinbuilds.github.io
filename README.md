@@ -150,6 +150,7 @@ No analytics, no trackers, no cookies, no third-party scripts.
   To remove this dependency entirely, self-host both fonts and swap the `<link>` in
   `build.py` for `@font-face` rules.
 - **The S3G3 game** is embedded from the same origin and only loads when someone presses
-  play. It needs a keyboard, so the play button is hidden on touch-only devices.
+  play. The embed points at `game.html`, not the repo root, which is a landing page. The
+  game has on-screen touch controls, so it works on phones as well as computers.
 
 Language preference is stored in `localStorage` on the visitor's own device.

@@ -110,6 +110,9 @@
           <a class="btn btn-primary" href="${esc(p.link)}" target="_blank" rel="noopener">
             ${esc(t('featured.visit'))}
           </a>
+        </p>
+        <p class="project-url">
+          <a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.displayUrl || p.link)}</a>
         </p>` : ''}
       </div>
       ${shots ? `<div class="shots">${shots}</div>` : ''}`;
@@ -148,6 +151,9 @@
           <div class="card-body">
             <h3>${esc(pick(p.title))}</h3>
             <p>${esc(pick(p.summary))}</p>
+            ${p.displayUrl ? `<p class="project-url">
+              <a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.displayUrl)}</a>
+            </p>` : ''}
             <div class="card-foot">
               <ul class="tags">${tags}</ul>
               ${link}
@@ -186,7 +192,6 @@
               </div>
             </div>
             <p class="embed-note">${esc(t('grid.playNote'))}</p>
-            <p class="embed-touch-note">${esc(t('embed.desktopOnly'))}</p>
           </div>
           ${body}
         </article>`;

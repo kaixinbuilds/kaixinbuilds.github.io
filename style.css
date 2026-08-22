@@ -403,22 +403,6 @@ html[lang^="zh"] .epigraph .en { display: none; }
 .embed-play:hover .embed-play-icon { border-color: var(--ochre); color: var(--ochre); }
 .embed-play-label { font-size: .88rem; font-weight: 500; letter-spacing: .02em; }
 
-.embed-touch-note { display: none; }
-@media (hover: none) and (pointer: coarse) {
-  .embed-play { display: none; }
-  .embed .screen-inner::after {
-    content: "";
-    position: absolute; inset: 0;
-    background: radial-gradient(circle at 50% 45%, #2A2F52 0%, #12162A 70%);
-  }
-  .embed-touch-note {
-    display: block;
-    margin: .7rem 0 0;
-    font-size: .82rem;
-    color: var(--ochre-deep);
-  }
-}
-
 .embed-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
 .card p { margin: .7rem 0 1.4rem; color: var(--ink-soft); font-size: .94rem; }
 .card-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
@@ -699,3 +683,20 @@ html[lang^="zh"] .epigraph .en { display: none; }
 .lightbox-close::before { content: "\00d7"; }
 .lightbox-close:hover { background: rgba(242, 235, 219, .22); }
 
+
+/* ── the canonical URL, shown in full ──────────────────── */
+/* Visible and linked, so the address is both readable to a person and a
+   real signal pointing search engines at the project itself. */
+.project-url {
+  margin: .9rem 0 0;
+  font-size: .82rem;
+  word-break: break-word;
+}
+.project-url a {
+  color: var(--ink-faint);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: .1rem;
+}
+.project-url a:hover { color: var(--ochre-deep); border-bottom-color: var(--ochre); }
+.card .project-url { margin: 0 0 1.1rem; }
