@@ -309,7 +309,7 @@ html[lang^="zh"] .epigraph .en { display: none; }
 
 /* specimen-label discipline: figures stated plainly, ruled, not boxed */
 .stats {
-  display: flex; flex-wrap: wrap; gap: 2.5rem;
+  display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem;
   margin: 2.1rem 0 0; padding: 1.3rem 0 0;
   border-top: 1px solid var(--rule);
   list-style: none;
@@ -635,7 +635,47 @@ html[lang^="zh"] .epigraph .en { display: none; }
 /* ── lightbox ──────────────────────────────────────────── */
 /* <dialog> so the browser supplies the focus trap, the Escape key and the
    inertness of everything behind it. */
+/* An always-visible control, not just a hover cursor: on a touch screen
+   there is no hover, so the affordance has to be drawn. */
 .shot img, .specimen img { cursor: zoom-in; }
+.shot img:focus-visible, .specimen img:focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; }
+
+.screen-bezel, .specimen-plate { position: relative; }
+
+.screen-bezel::after,
+.specimen-plate::after {
+  content: "\2921\FE0E";           /* diagonal arrows */
+  position: absolute;
+  right: .85rem; bottom: .85rem;
+  width: 1.85rem; height: 1.85rem;
+  display: grid; place-content: center;
+  border-radius: 5px;
+  font-size: .82rem; line-height: 1;
+  pointer-events: none;
+  transition: opacity .16s, transform .16s;
+}
+/* dark device frame: light chip */
+.screen-bezel::after {
+  color: #F2EBDB;
+  background: rgba(242, 235, 219, .16);
+  border: 1px solid rgba(242, 235, 219, .32);
+  opacity: .85;
+}
+/* light gallery mat: ink chip */
+.specimen-plate::after {
+  right: .55rem; bottom: .55rem;
+  color: var(--ink);
+  background: rgba(30, 39, 73, .07);
+  border: 1px solid rgba(30, 39, 73, .18);
+  opacity: .8;
+}
+.shot:hover .screen-bezel::after,
+.specimen:hover .specimen-plate::after {
+  opacity: 1;
+  transform: scale(1.08);
+}
+/* the play button owns that corner instead */
+.embed .screen-bezel::after { content: none; }
 
 .lightbox {
   border: 0;

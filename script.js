@@ -199,6 +199,7 @@
 
     wireEmbeds(host);
     revealLoadedImages(host);
+    labelZoomables(host);
   }
 
   /** Click to load: the game is only fetched when someone asks for it,
@@ -270,11 +271,21 @@
                    + group('talks.groupCompleted', completed, upcoming.length === 0);
   }
 
+  /* The images are controls, so they need a name and a focus stop. */
+  function labelZoomables(root = document) {
+    root.querySelectorAll('.shot img, .specimen img').forEach((img) => {
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', `${img.alt || ''} ${t('lightbox.hint')}`.trim());
+    });
+  }
+
   function renderAll() {
     applyI18n();
     renderFeatured();
     renderGrid();
     renderTalks();
+    labelZoomables();
   }
 
   /* ── language toggle ─────────────────────────────────── */

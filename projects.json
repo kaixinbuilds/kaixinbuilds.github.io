@@ -34,6 +34,20 @@
         }
       },
       {
+        "value": "3",
+        "label": {
+          "en": "classes beta tested it",
+          "zh": "个班级参与测试"
+        }
+      },
+      {
+        "value": "47",
+        "label": {
+          "en": "students gave feedback",
+          "zh": "名学生提供反馈"
+        }
+      },
+      {
         "value": "1",
         "label": {
           "en": "person building it",
@@ -96,11 +110,16 @@
       "argumentative-writing",
       "sls-ready"
     ],
-    "embed": {
-      "src": "https://kaixinbuilds.github.io/S3G3CLArgumentativeAdventure/game.html",
-      "aspect": "16 / 10"
-    },
-    "displayUrl": "kaixinbuilds.github.io/S3G3CLArgumentativeAdventure"
+    "displayUrl": "kaixinbuilds.github.io/S3G3CLArgumentativeAdventure",
+    "screenshots": [
+      {
+        "src": "assets/screenshots/argumentative-adventure.jpg",
+        "caption": {
+          "en": "Level one, with on-screen controls for touch devices",
+          "zh": "第一关 · 触屏设备可用屏幕控制键"
+        }
+      }
+    ]
   },
   {
     "id": "bvss-cl-hub",
