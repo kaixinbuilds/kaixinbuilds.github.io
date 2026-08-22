@@ -204,21 +204,29 @@
     // Newest first, so the freshest talk is the first thing read.
     const sorted = [...data.talks].sort((a, b) => String(b.date).localeCompare(String(a.date)));
 
-    host.innerHTML = sorted.map((talk) => {
+    // Collapsed by default and built on <details>, so the page stays a
+    // scannable list and the disclosure keeps working without JavaScript.
+    // The most recent entry opens on load so it is never a wall of closed rows.
+    host.innerHTML = sorted.map((talk, i) => {
       const status = talk.status === 'upcoming' ? 'upcoming' : 'completed';
+      const body = [
+        `<p class="talk-venue">${esc(pick(talk.venue))}</p>`,
+        talk.summary ? `<p class="talk-summary">${esc(pick(talk.summary))}</p>` : '',
+        talk.award ? `<p class="talk-award">${esc(pick(talk.award))}</p>` : '',
+        talk.link ? `<p><a class="talk-link" href="${esc(talk.link)}" target="_blank" rel="noopener">${esc(t('talks.viewLink'))} \u2192</a></p>` : '',
+      ].join('');
+
       return `
       <li>
-        <div class="talk-meta">
-          ${esc(pick(talk.dateLabel) || talk.date)}
-          <span class="talk-status ${status}">${esc(t('talks.' + status))}</span>
-        </div>
-        <div class="talk-body">
-          <h3>${esc(pick(talk.title))}</h3>
-          <p class="talk-venue">${esc(pick(talk.venue))}</p>
-          ${talk.summary ? `<p class="talk-summary">${esc(pick(talk.summary))}</p>` : ''}
-          ${talk.award ? `<p class="talk-award">${esc(pick(talk.award))}</p>` : ''}
-          ${talk.link ? `<p><a class="talk-link" href="${esc(talk.link)}" target="_blank" rel="noopener">${esc(t('talks.viewLink'))} →</a></p>` : ''}
-        </div>
+        <details class="talk"${i === 0 ? ' open' : ''}>
+          <summary class="talk-head">
+            <span class="talk-date">${esc(pick(talk.dateLabel) || talk.date)}</span>
+            <span class="talk-title">${esc(pick(talk.title))}</span>
+            <span class="talk-status ${status}">${esc(t('talks.' + status))}</span>
+            <span class="talk-chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="talk-body">${body}</div>
+        </details>
       </li>`;
     }).join('');
   }
