@@ -213,7 +213,15 @@
         `<p class="talk-venue">${esc(pick(talk.venue))}</p>`,
         talk.summary ? `<p class="talk-summary">${esc(pick(talk.summary))}</p>` : '',
         talk.award ? `<p class="talk-award">${esc(pick(talk.award))}</p>` : '',
-        talk.link ? `<p><a class="talk-link" href="${esc(talk.link)}" target="_blank" rel="noopener">${esc(t('talks.viewLink'))} \u2192</a></p>` : '',
+        // `link` is the write-up itself; `links` are anything it points at,
+        // such as the resource a post is about.
+        (talk.link || (talk.links || []).length)
+          ? `<p class="talk-links">${[
+              talk.link ? `<a class="talk-link" href="${esc(talk.link)}" target="_blank" rel="noopener">${esc(t('talks.viewLink'))} \u2192</a>` : '',
+              ...(talk.links || []).map((l) =>
+                `<a class="talk-link" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(pick(l.label))} \u2192</a>`),
+            ].filter(Boolean).join('')}</p>`
+          : '',
       ].join('');
 
       return `

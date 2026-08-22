@@ -12,8 +12,8 @@
       "zh": "挥舞AI之斧开天辟地 —— 词山学海的创作现场"
     },
     "venue": {
-      "en": "Networked Learning Community, with Dr Li",
-      "zh": "教师专业学习社群（NLC）· 与李博士"
+      "en": "2026 AI in Sec CL NLC, a networked learning community on AI in the teaching and learning of Secondary Chinese Language",
+      "zh": "【2026 AI in Sec CL NLC】AI 促进中学华文教与学相联系学习社群"
     },
     "summary": {
       "en": "A behind-the-scenes account of how VocabSummit was actually built: what it looks like when a teacher with no engineering background designs and ships a working product in conversation with an AI agent.",
@@ -34,8 +34,8 @@
       "zh": "当学习成为一座你愿意攀登的山 —— 自主学习中的动机设计"
     },
     "venue": {
-      "en": "School Planning and Management Committee, Bukit View Secondary School",
-      "zh": "百德中学 校务规划与管理委员会（SPMC）"
+      "en": "BVSS SPMC, the School Planning and Management Committee of Bukit View Secondary School",
+      "zh": "百德中学校务规划与管理委员会（BVSS SPMC）"
     },
     "summary": {
       "en": "For the school's leadership: School Leaders, HODs and equivalents, Subject Heads and equivalents, and Teacher Leaders. On designing self-directed learning so that motivation is built into the structure rather than asked for.",
@@ -56,8 +56,8 @@
       "zh": "古代哲学家若穿越到现代，会如何给我们提供人生建议？"
     },
     "venue": {
-      "en": "Singapore Learning Designers Circle",
-      "zh": "Singapore Learning Designers Circle"
+      "en": "SgLDC, the Singapore Learning Designers Circle",
+      "zh": "新加坡学习设计师社群（SgLDC）"
     },
     "summary": {
       "en": "A Secondary 4 Higher Chinese lesson from the Chapter 2 Cultural Station, in which students take the part of a hawker deciding whether to raise prices as rent and ingredient costs climb, then think it through with Confucius, Laozi and Mozi. Each philosopher is a chatbot persona built in EdCafe.AI and delivered through SLS. Students pick which one to consult, take the hot seat to defend that school of thought against their peers, and finally weigh all three to justify a decision.",
@@ -82,8 +82,8 @@
       "zh": "给华文课一个百宝袋"
     },
     "venue": {
-      "en": "Singapore Learning Designers Circle",
-      "zh": "Singapore Learning Designers Circle"
+      "en": "SgLDC, the Singapore Learning Designers Circle",
+      "zh": "新加坡学习设计师社群（SgLDC）"
     },
     "summary": {
       "en": "On building the school's Chinese Language resource hub, and why the structure transfers to any subject: students get stuck and reach for their devices anyway, so the device may as well hold what they need. Curating for your own students is itself a pedagogical act, since it makes explicit what the department thinks is worth knowing, and a shared hub turns out to be an easy thing for colleagues to start contributing to.",
@@ -93,6 +93,15 @@
     "award": {
       "en": "SgLDC Connector Badge for EdTech insights and tools, July 2026, awarded by ETD",
       "zh": "SgLDC Connector Badge · 教育科技洞见与工具类别 · 2026年7月 · 教育技术司（ETD）颁发"
-    }
+    },
+    "links": [
+      {
+        "label": {
+          "en": "Open the hub",
+          "zh": "打开资源站"
+        },
+        "url": "https://sites.google.com/moe.edu.sg/bvss-cl-hub"
+      }
+    ]
   }
 ]
