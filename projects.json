@@ -65,10 +65,10 @@
         }
       },
       {
-        "src": "assets/screenshots/vocabsummit-dashboard.png",
+        "src": "assets/screenshots/vocabsummit-dashboard.jpg",
         "caption": {
-          "en": "Choosing scope and difficulty, never assigned",
-          "zh": "自选范围与难度，而非系统分配"
+          "en": "Choosing scope and difficulty, never assigned. Every label carries pinyin and English.",
+          "zh": "自选范围与难度，而非系统分配。每个标签同时提供拼音与英文。"
         }
       }
     ],
