@@ -45,8 +45,8 @@
     "zh": "郑凯欣"
   },
   "hero.tagline": {
-    "en": "Chinese Language Teacher · EdTech Independent Developer · HOD/MTL, Pai Chai Secondary",
-    "zh": "华文教师 · 教育科技独立开发者 · 百德中学 HOD/MTL"
+    "en": "Chinese Language Teacher · EdTech Independent Developer · HOD/MTL, Bukit View Secondary School",
+    "zh": "华文教师 · 教育科技独立开发者 · 百德中学母语部主任"
   },
   "hero.intro": {
     "en": "My work starts the same way in every medium: I sense a structural gap, then build something to close it. A missing scaffold in how students learn vocabulary, a missing rung between 书山 and 学海. I teach Chinese Language, I lead a Mother Tongue department, and I build the tools that close those gaps. Everything here is in real use with real students.",
@@ -191,5 +191,21 @@
   "footer.disclaimer": {
     "en": "A personal site. Views are my own and do not represent my school or the Ministry of Education.",
     "zh": "个人网站。文中观点仅代表本人，不代表所属学校或教育部立场。"
+  },
+  "specimen.alt": {
+    "en": "A sheet of block-printed Singapore payphones repeating across the paper, one of them hand-coloured orange.",
+    "zh": "满纸重复印刷的新加坡公用电话版画，其中一台以手工上了橙色。"
+  },
+  "epigraph.source": {
+    "en": "韩愈 Han Yu (768–824), Tang dynasty essayist and poet, who led the Classical Prose Movement and is counted first among the Eight Great Prose Masters of the Tang and Song.",
+    "zh": "韩愈（768–824），唐代文学家、诗人，古文运动倡导者，位列「唐宋八大家」之首。"
+  },
+  "grid.play": {
+    "en": "Play it here",
+    "zh": "在此试玩"
+  },
+  "grid.playNote": {
+    "en": "Loads the real game, sound included. Arrow keys to move, space to jump.",
+    "zh": "将载入实际游戏，含音效。方向键移动，空格键跳跃。"
   }
 }

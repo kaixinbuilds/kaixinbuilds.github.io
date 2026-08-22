@@ -2,7 +2,10 @@
   {
     "id": "vocabsummit",
     "featured": true,
-    "title": { "en": "VocabSummit", "zh": "词山学海" },
+    "title": {
+      "en": "VocabSummit",
+      "zh": "词山学海"
+    },
     "subtitle": {
       "en": "A vocabulary mastery platform for Secondary Chinese Language",
       "zh": "中学华文词汇掌握平台"
@@ -16,36 +19,77 @@
       "zh": "独立完成设计与开发，全程与 AI agent（Claude Code）协作，采用 Firebase 架构：没有开发团队，没有外部资金，也没有任何编程背景。"
     },
     "stats": [
-      { "value": "3,741", "label": { "en": "vocabulary items", "zh": "词条总数" } },
-      { "value": "4", "label": { "en": "language streams", "zh": "语文流" } },
-      { "value": "1", "label": { "en": "person building it", "zh": "开发者人数" } }
+      {
+        "value": "3,741",
+        "label": {
+          "en": "vocabulary items",
+          "zh": "词条总数"
+        }
+      },
+      {
+        "value": "4",
+        "label": {
+          "en": "language streams",
+          "zh": "语文流"
+        }
+      },
+      {
+        "value": "1",
+        "label": {
+          "en": "person building it",
+          "zh": "开发者人数"
+        }
+      }
     ],
     "screenshots": [
       {
         "src": "assets/screenshots/vocabsummit-1.png",
-        "caption": { "en": "攀山竞速 · timed climb mode", "zh": "攀山竞速 · 限时闯关模式" }
+        "caption": {
+          "en": "攀山竞速 · timed climb mode",
+          "zh": "攀山竞速 · 限时闯关模式"
+        }
       },
       {
         "src": "assets/screenshots/vocabsummit-2.png",
-        "caption": { "en": "我的词山 · personal progress map", "zh": "我的词山 · 个人进度地图" }
+        "caption": {
+          "en": "我的词山 · personal progress map",
+          "zh": "我的词山 · 个人进度地图"
+        }
       },
       {
         "src": "assets/screenshots/vocabsummit-3.png",
-        "caption": { "en": "Stream and difficulty selection", "zh": "语文流与难度选择" }
+        "caption": {
+          "en": "Stream and difficulty selection",
+          "zh": "语文流与难度选择"
+        }
       }
     ],
     "link": "https://btvssclunit.github.io/VocabSummit",
-    "tags": ["flagship", "live"]
+    "tags": [
+      "flagship",
+      "live"
+    ]
   },
   {
     "id": "s3g3-argumentative-adventure",
     "featured": false,
-    "title": { "en": "Argumentative Adventure", "zh": "论证法冒险游戏" },
+    "title": {
+      "en": "Argumentative Adventure",
+      "zh": "论证法冒险游戏"
+    },
     "summary": {
       "en": "A platformer that teaches Secondary 3 G3 students to recognise argumentation techniques in two set texts. Six lives instead of three: a deliberate accommodation so lower-readiness students finish rather than give up.",
       "zh": "以横向卷轴游戏教中三 G3 学生辨识两篇课文中的论证法。生命值设为六条而非三条：这是刻意的调整，让准备度较低的学生能够完成，而不是中途放弃。"
     },
     "link": "https://kaixinbuilds.github.io/S3G3CLArgumentativeAdventure/",
-    "tags": ["game", "argumentative-writing", "sls-ready"]
+    "tags": [
+      "game",
+      "argumentative-writing",
+      "sls-ready"
+    ],
+    "embed": {
+      "src": "https://kaixinbuilds.github.io/S3G3CLArgumentativeAdventure/",
+      "aspect": "16 / 10"
+    }
   }
 ]

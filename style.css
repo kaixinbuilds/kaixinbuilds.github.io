@@ -131,6 +131,7 @@ h1, h2, h3 {
   font-size: 1.05rem; font-weight: 600; letter-spacing: -.01em;
 }
 .wordmark .mark { width: 22px; height: 22px; flex: none; }
+.wordmark-text { white-space: nowrap; }
 .wordmark em { font-style: normal; color: var(--ochre-deep); }
 
 .site-nav { display: flex; gap: 1.6rem; }
@@ -173,7 +174,12 @@ h1, h2, h3 {
   font-size: .88rem; font-style: italic;
   color: var(--ink-faint);
 }
-.epigraph .src { display: block; margin-top: .35rem; font-size: .74rem; color: var(--ink-faint); letter-spacing: .04em; }
+.epigraph .src {
+  display: block; margin-top: .5rem;
+  font-size: .76rem; line-height: 1.6;
+  color: var(--ink-faint);
+  max-width: 52ch;
+}
 
 .hero-name {
   font-size: clamp(2.3rem, 6.5vw, 3.5rem);
@@ -196,6 +202,18 @@ h1, h2, h3 {
      carries the only ochre on the page and has to survive every width. */
   aspect-ratio: 160 / 46;
   background: url("assets/art/mountain-sea.svg") center bottom / 100% 100% no-repeat;
+}
+
+/* Revealed upward on first sight, the way a print lifts off the block.
+   The clip is applied by script, so with JavaScript off the image simply
+   shows, and it is skipped outright when reduced motion is requested. */
+.frontispiece.will-ink { clip-path: inset(100% 0 0 0); }
+.frontispiece.is-inked {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1100ms cubic-bezier(.22, .61, .36, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .frontispiece.will-ink, .frontispiece.is-inked { clip-path: none; transition: none; }
 }
 @media (prefers-color-scheme: dark) { .frontispiece { filter: invert(1) hue-rotate(180deg) brightness(.92); } }
 
@@ -231,8 +249,12 @@ h1, h2, h3 {
   background: #12162A;
   aspect-ratio: 16 / 10;
 }
-.screen-inner img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; display: none; }
-.shot.is-loaded .screen-inner img { display: block; }
+.screen-inner img {
+  width: 100%; height: 100%;
+  object-fit: cover; image-rendering: pixelated;
+  opacity: 0; transition: opacity .2s;
+}
+.shot.is-loaded .screen-inner img { opacity: 1; }
 .shot.is-loaded .screen-inner::after { content: none; }
 .screen-inner::after {
   content: attr(data-missing);
@@ -318,7 +340,42 @@ h1, h2, h3 {
   transition: border-color .15s;
 }
 .card:hover { border-color: var(--ink); }
+.card-body { display: flex; flex-direction: column; flex: 1; }
 .card h3 { font-size: 1.16rem; }
+
+/* A project with a playable embed spans the whole grid row. */
+.card-wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1.8rem;
+  align-items: center;
+}
+@media (max-width: 760px) { .card-wide { grid-template-columns: 1fr; gap: 1.3rem; } }
+
+.embed .screen-inner { background: #12162A; }
+.embed-note { margin: .7rem 0 0 !important; font-size: .78rem; color: var(--ink-faint); }
+
+.embed-play {
+  position: absolute; inset: 0;
+  display: grid; place-content: center; gap: .7rem; justify-items: center;
+  width: 100%; height: 100%;
+  border: 0; cursor: pointer;
+  font-family: var(--font-sans); color: #F2EBDB;
+  background: radial-gradient(circle at 50% 45%, #2A2F52 0%, #12162A 70%);
+  transition: background .2s;
+}
+.embed-play:hover { background: radial-gradient(circle at 50% 45%, #353B66 0%, #12162A 70%); }
+.embed-play-icon {
+  display: grid; place-content: center;
+  width: 54px; height: 54px; border-radius: 50%;
+  border: 1px solid rgba(242, 235, 219, .45);
+  font-size: 1.1rem; padding-left: 4px;
+}
+.embed-play:hover .embed-play-icon { border-color: var(--ochre); color: var(--ochre); }
+.embed-play-label { font-size: .88rem; font-weight: 500; letter-spacing: .02em; }
+
+.embed-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
 .card p { margin: .7rem 0 1.4rem; color: var(--ink-soft); font-size: .94rem; }
 .card-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 
@@ -390,7 +447,7 @@ h1, h2, h3 {
 .specimen {
   margin: 3rem 0 0;
   display: none;
-  grid-template-columns: minmax(0, 220px) 1fr;
+  grid-template-columns: minmax(0, 300px) 1fr;
   gap: 1.6rem;
   align-items: start;
   padding-top: 2rem;

@@ -143,16 +143,58 @@
         const link = p.link
           ? `<a class="card-link" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(t('grid.visit'))} →</a>`
           : `<span class="card-link" aria-disabled="true">${esc(t('grid.noLink'))}</span>`;
+
+        const body = `
+          <div class="card-body">
+            <h3>${esc(pick(p.title))}</h3>
+            <p>${esc(pick(p.summary))}</p>
+            <div class="card-foot">
+              <ul class="tags">${tags}</ul>
+              ${link}
+            </div>
+          </div>`;
+
+        // A project with an embed spans the grid and gets a bezel: the only
+        // place the 8-bit register is allowed to appear at full size.
+        if (!p.embed) return `<article class="card">${body}</article>`;
+
         return `
-        <article class="card">
-          <h3>${esc(pick(p.title))}</h3>
-          <p>${esc(pick(p.summary))}</p>
-          <div class="card-foot">
-            <ul class="tags">${tags}</ul>
-            ${link}
+        <article class="card card-wide">
+          <div class="embed">
+            <div class="screen-bezel">
+              <div class="screen-inner" style="aspect-ratio: ${esc(p.embed.aspect || '16 / 10')}">
+                <button class="embed-play" type="button"
+                        data-embed-src="${esc(p.embed.src)}"
+                        data-embed-title="${esc(pick(p.title))}">
+                  <span class="embed-play-icon" aria-hidden="true">▶</span>
+                  <span class="embed-play-label">${esc(t('grid.play'))}</span>
+                </button>
+              </div>
+            </div>
+            <p class="embed-note">${esc(t('grid.playNote'))}</p>
           </div>
+          ${body}
         </article>`;
       }).join('');
+
+    wireEmbeds(host);
+  }
+
+  /** Click to load: the game is only fetched when someone asks for it,
+      so the page costs nothing to visitors who scroll past. */
+  function wireEmbeds(host) {
+    host.querySelectorAll('.embed-play').forEach((button) => {
+      button.addEventListener('click', () => {
+        const frame = document.createElement('iframe');
+        frame.className = 'embed-frame';
+        frame.src = button.dataset.embedSrc;
+        frame.title = button.dataset.embedTitle;
+        frame.loading = 'lazy';
+        frame.allow = 'autoplay; fullscreen';
+        button.replaceWith(frame);
+        frame.focus();
+      }, { once: true });
+    });
   }
 
   function renderTalks() {
@@ -199,6 +241,24 @@
     });
   }
 
+  /* ── frontispiece reveal ─────────────────────────────── */
+
+  function initFrontispiece() {
+    const band = $('.frontispiece');
+    if (!band || !('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    band.classList.add('will-ink');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-inked');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px 240px 0px' });
+    observer.observe(band);
+  }
+
   /* ── boot ────────────────────────────────────────────── */
 
   async function loadJSON(path) {
@@ -236,5 +296,6 @@
     }
     revealLoadedImages();
     initToggle();
+    initFrontispiece();
   })();
 })();
