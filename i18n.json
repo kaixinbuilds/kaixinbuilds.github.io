@@ -217,8 +217,8 @@
     "zh": "设计思维通常被画成一个工整的五步循环：同理、定义、构思、原型、测试。但在课堂里，真正能定案的只有其中一步。一个工具之所以好，不是因为背后的想法好，而是因为三十个学生在星期一早上打开了它，而它撑住了。"
   },
   "approach.leadB": {
-    "en": "So I run the loop, but I run it short and I run it often. The gap comes from a real script or a real mark, not from a survey. The prototype is a working build, not a mockup. The test is a real lesson with students who will abandon anything that wastes their time. And the next version starts that same week, because by then the classroom has already told me what to fix.",
-    "zh": "所以我照样跑这个循环，只是跑得短、跑得勤。缺口来自一份真实的答卷或一个真实的分数，而不是问卷。原型是一个能跑的版本，而不是一张示意图。测试是一堂真实的课，面对的是一群不会容忍浪费时间的学生。下一个版本就在同一周开始，因为课堂那时已经告诉我该改什么了。"
+    "en": "So I run the loop, but I run it short and I run it often. The gap comes from evidence: a real script, a real mark, what students say when I ask them. The prototype is a working build, not a mockup. The test is a real lesson with students who will abandon anything that wastes their time. And the next version starts that same week, because by then the classroom has already told me what to fix.",
+    "zh": "所以我照样跑这个循环，只是跑得短、跑得勤。缺口来自证据：一份真实的答卷、一个真实的分数、学生被问到时给出的回答。原型是一个能跑的版本，而不是一张示意图。测试是一堂真实的课，面对的是一群不会容忍浪费时间的学生。下一个版本就在同一周开始，因为课堂那时已经告诉我该改什么了。"
   },
   "approach.loop1Title": {
     "en": "The gap has to be one I actually saw",
