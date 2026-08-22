@@ -1,8 +1,8 @@
 {
   "_comment": "One key = one string. Add a key here, reference it with data-i18n=\"key\" in index.html. Never duplicate markup for a second language.",
   "site.title": {
-    "en": "Kaixin Chun · Chinese Language Teacher & EdTech Builder",
-    "zh": "春凯欣 · 华文教师 · 教育科技开发者"
+    "en": "Chun Kai Xin · Chinese Language Teacher & EdTech Builder",
+    "zh": "郑凯欣 · 华文教师 · 教育科技开发者"
   },
   "site.description": {
     "en": "Classroom-grounded learning tools for Chinese Language education, designed and built by a practising teacher.",
@@ -41,8 +41,8 @@
     "zh": "kaixinbuilds"
   },
   "hero.name": {
-    "en": "Kaixin Chun",
-    "zh": "春凯欣"
+    "en": "Chun Kai Xin",
+    "zh": "郑凯欣"
   },
   "hero.tagline": {
     "en": "Chinese Language Teacher · EdTech Independent Developer · HOD/MTL, Pai Chai Secondary",

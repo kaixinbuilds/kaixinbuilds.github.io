@@ -1,6 +1,6 @@
 # kaixinbuilds.github.io
 
-Personal portfolio for **Kaixin Chun** — Chinese Language teacher, HOD/MTL, and independent EdTech builder.
+Personal portfolio for **Chun Kai Xin 郑凯欣**: Chinese Language teacher, HOD/MTL, and independent EdTech builder.
 
 Static HTML, CSS and vanilla JavaScript. No framework, no build step, no dependencies.
 Live at **https://kaixinbuilds.github.io**
