@@ -44,7 +44,7 @@
     "link": ""
   },
   {
-    "id": "sgldc-post",
+    "id": "sgldc-philosophers",
     "status": "completed",
     "date": "2026-02-03",
     "dateLabel": {
@@ -52,21 +52,43 @@
       "zh": "2026年2月3日"
     },
     "title": {
-      "en": "The philosopher chatbot lesson, written up for SgLDC",
-      "zh": "「哲学家聊天机器人」教学设计 · SgLDC 分享"
+      "en": "If ancient philosophers were alive today, how would they advise us?",
+      "zh": "古代哲学家若穿越到现代，会如何给我们提供人生建议？"
     },
     "venue": {
       "en": "Singapore Learning Designers Circle",
       "zh": "Singapore Learning Designers Circle"
     },
     "summary": {
-      "en": "A Secondary 4 Higher Chinese lesson in which students debate a hawker's decision to raise prices with Confucius, Laozi and Mozi, each built as a chatbot persona in EdCafe.AI and delivered through SLS. The write-up earned the SgLDC Designer Badge from ETD.",
-      "zh": "中四高级华文课例：学生就「小贩涨价」的道德两难，分别与孔子、老子、墨子对话辩证。三位思想家以 EdCafe.AI 建构人格化聊天机器人，通过 SLS 推送。此分享获教育技术司（ETD）颁发 SgLDC Designer Badge。"
+      "en": "A Secondary 4 Higher Chinese lesson from the Chapter 2 Cultural Station, in which students take the part of a hawker deciding whether to raise prices as rent and ingredient costs climb, then think it through with Confucius, Laozi and Mozi. Each philosopher is a chatbot persona built in EdCafe.AI and delivered through SLS. Students pick which one to consult, take the hot seat to defend that school of thought against their peers, and finally weigh all three to justify a decision.",
+      "zh": "中四高级华文单元二文化站课例《儒家·道家·墨家的人生智慧》。学生代入一位需供养年迈父母的中年小贩，在租金与原材料价格上涨之际，思考是否应该涨价，并分别与孔子、老子、墨子对话辩证。三位思想家以 EdCafe.AI 建构成聊天机器人，通过 SLS 推送。学生自主选择想请教的哲学家，进入「角色热座」为该家思想辩护，最后综合三家观点，作出有理有据的抉择。"
     },
-    "link": "",
+    "link": "https://www.facebook.com/share/p/19H8PA4W8e/",
     "award": {
       "en": "SgLDC Designer Badge, awarded by ETD",
       "zh": "SgLDC Designer Badge · 教育技术司（ETD）颁发"
     }
+  },
+  {
+    "id": "sgldc-cl-hub",
+    "status": "completed",
+    "date": "2026-07-03",
+    "dateLabel": {
+      "en": "3 July 2026",
+      "zh": "2026年7月3日"
+    },
+    "title": {
+      "en": "A Doraemon's pocket for Chinese Language",
+      "zh": "给华文课一个百宝袋"
+    },
+    "venue": {
+      "en": "Singapore Learning Designers Circle",
+      "zh": "Singapore Learning Designers Circle"
+    },
+    "summary": {
+      "en": "On building the school's Chinese Language resource hub, and why the structure transfers to any subject: students get stuck and reach for their devices anyway, so the device may as well hold what they need. Curating for your own students is itself a pedagogical act, since it makes explicit what the department thinks is worth knowing, and a shared hub turns out to be an easy thing for colleagues to start contributing to.",
+      "zh": "分享校内华文资源站的建构过程，以及为何这套结构适用于任何科目：学生卡住时本来就会去拿设备，那不如让设备里就有他们需要的东西。为自己的学生做资源筛选本身就是一种教学行为，它把「什么值得学」这件事明确说了出来；而一个共用的平台，也让同事更容易参与共建。"
+    },
+    "link": "https://www.facebook.com/share/p/1L9dq5XU4q/"
   }
 ]

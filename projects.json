@@ -99,5 +99,23 @@
       "src": "https://kaixinbuilds.github.io/S3G3CLArgumentativeAdventure/",
       "aspect": "16 / 10"
     }
+  },
+  {
+    "id": "bvss-cl-hub",
+    "featured": false,
+    "title": {
+      "en": "BVSS Chinese Language Resource Hub",
+      "zh": "百德中学华文资源站"
+    },
+    "summary": {
+      "en": "Built after asking a student who struggles with Chinese what he does when he gets stuck in class. He shrugged: “stare into space?”, with an iPad in his hands. The hub turns that device into the thing that answers the question he is stuck on: SLS lesson resources sorted by course level and year, past national oral exam videos by topic, reading-aloud and listening practice, graded extensive reading, and a glossary for the Singapore terms no dictionary carries. Colleagues in the department now add to it.",
+      "zh": "起点是一个问题：一名学习吃力的学生被问到课堂上卡住时会做什么，他手里正拿着 iPad，却耸耸肩说「发呆？」。资源站要让那台设备变成解答当下疑问的工具：SLS 课程资源按语文流与年级分类，历年全国会话考试录像按主题整理，另有朗读与听力练习、分级泛读，以及一份字典查不到的新加坡本地词汇表。部门同事目前也陆续加入共建。"
+    },
+    "link": "https://sites.google.com/moe.edu.sg/bvss-cl-hub",
+    "tags": [
+      "resource-hub",
+      "live",
+      "whole-department"
+    ]
   }
 ]
