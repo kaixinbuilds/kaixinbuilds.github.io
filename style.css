@@ -575,14 +575,14 @@ html[lang^="zh"] .epigraph .en { display: none; }
 /* ── contact layout ───────────────────────────────────── */
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr minmax(0, 17rem);
-  gap: clamp(1.75rem, 5vw, 3.25rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
-  margin-top: 2.25rem;
+  margin-top: clamp(2rem, 5vw, 3rem);
 }
-@media (max-width: 720px) {
+@media (max-width: 860px) {
   .contact-layout { grid-template-columns: 1fr; }
-  .specimen { justify-self: start; max-width: 17rem; }
+  .specimen { justify-self: start; max-width: 30rem; }
 }
 /* ── the print, hung and labelled ──────────────────────── */
 /* Gallery conventions: a deep mat, a thin frame, and a wall label naming the
@@ -607,12 +607,12 @@ html[lang^="zh"] .epigraph .en { display: none; }
 }
 .specimen-artist {
   font-family: var(--font-serif);
-  font-size: .95rem; font-weight: 600;
+  font-size: 1.02rem; font-weight: 600;
   color: var(--ink);
 }
 .specimen-title {
   font-family: var(--font-serif);
-  font-size: .95rem; font-style: italic;
+  font-size: 1.02rem; font-style: italic;
   color: var(--ink-soft);
 }
 .specimen-meta {
@@ -620,13 +620,6 @@ html[lang^="zh"] .epigraph .en { display: none; }
   font-size: .74rem; letter-spacing: .08em; text-transform: uppercase;
   color: var(--ink-faint);
 }
-.specimen-note {
-  margin-top: .7rem;
-  font-size: .82rem; line-height: 1.6;
-  color: var(--ink-faint);
-  max-width: 30ch;
-}
-
 /* ── data-load failure notice ──────────────────────────── */
 .data-error { border: 1px solid var(--rule); border-radius: var(--radius); padding: 1.5rem; background: var(--card); }
 .data-error h3 { font-size: 1rem; margin-bottom: .5rem; }

@@ -225,7 +225,7 @@ PAGES = {
   </section>"""),
     "contact.html": ("page.contact.title", """\
   <section class="section" id="contact">
-    <div class="wrap wrap-narrow">
+    <div class="wrap">
       <h1 class="page-title" data-i18n="contact.title">Get in touch</h1>
       <p class="page-sub" data-i18n="contact.subtitle"></p>
 
@@ -248,7 +248,6 @@ PAGES = {
             <span class="specimen-artist" data-i18n="specimen.artist"></span>
             <span class="specimen-title" data-i18n="specimen.title"></span>
             <span class="specimen-meta" data-i18n="specimen.meta"></span>
-            <span class="specimen-note" data-i18n="specimen.note"></span>
           </figcaption>
         </figure>
       </div>
