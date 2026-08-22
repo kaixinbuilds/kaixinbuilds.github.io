@@ -284,6 +284,59 @@
     });
   }
 
+  /* ── lightbox ────────────────────────────────────────── */
+
+  /* One delegated handler for every image on the site, so images added later
+     need no wiring. Built on <dialog> for the focus trap and Escape handling
+     the browser already implements. */
+  function initLightbox() {
+    const dialog = document.createElement('dialog');
+    dialog.className = 'lightbox';
+    dialog.innerHTML = `
+      <button class="lightbox-close" type="button" aria-label=""></button>
+      <img alt="">
+      <p class="lightbox-caption"></p>`;
+    document.body.appendChild(dialog);
+
+    const image = dialog.querySelector('img');
+    const caption = dialog.querySelector('.lightbox-caption');
+    const close = dialog.querySelector('.lightbox-close');
+    close.setAttribute('aria-label', t('lightbox.close'));
+
+    const open = (src, alt, text) => {
+      image.src = src;
+      image.alt = alt || '';
+      caption.textContent = text || '';
+      caption.hidden = !text;
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+    };
+
+    document.addEventListener('click', (event) => {
+      const img = event.target.closest('.shot img, .specimen img');
+      if (!img || !img.closest('.is-loaded')) return;
+      event.preventDefault();
+      const figure = img.closest('figure');
+      const label = figure && figure.querySelector('figcaption, .specimen-title');
+      open(img.currentSrc || img.src, img.alt, label ? label.textContent.trim() : '');
+    });
+
+    // keyboard: the figure itself is the control, so give it a real one
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      const img = event.target.closest && event.target.closest('.shot img, .specimen img');
+      if (!img) return;
+      event.preventDefault();
+      img.click();
+    });
+
+    close.addEventListener('click', () => dialog.close());
+    // clicking the backdrop, meaning anywhere that is not the image itself
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', () => { image.src = ''; });
+  }
+
   /* ── boot ────────────────────────────────────────────── */
 
   async function loadJSON(path) {
@@ -331,6 +384,7 @@
     renderAll();
     revealLoadedImages();
     initToggle();
+    initLightbox();
     if (results.some((r) => r.status === 'rejected')) showLoadError();
 })();
 })();

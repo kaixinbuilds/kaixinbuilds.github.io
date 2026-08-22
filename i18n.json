@@ -295,5 +295,13 @@
   "approach.constantsTitle": {
     "en": "What stays constant",
     "zh": "不变的部分"
+  },
+  "lightbox.close": {
+    "en": "Close",
+    "zh": "关闭"
+  },
+  "lightbox.hint": {
+    "en": "Click the image to view it full screen",
+    "zh": "点击图片可全屏查看"
   }
 }
