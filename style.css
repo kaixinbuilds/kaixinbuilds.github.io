@@ -1,5 +1,5 @@
 /* ==========================================================
-   kaixinbuilds — lino print on paper
+   kaixinbuilds — block print on paper
    One ink tone on a warm paper ground, one ochre accent used
    sparingly. Tone comes from carved line, never from gradient.
    The playful 16-bit register is quoted, never worn: it only
@@ -624,8 +624,8 @@ html[lang^="zh"] .epigraph .en { display: none; }
   color: var(--ink);
 }
 .specimen-meta {
-  margin-top: .1rem;
-  font-size: .74rem; letter-spacing: .08em; text-transform: uppercase;
+  margin-top: .2rem;
+  font-size: .82rem;
   color: var(--ink-faint);
 }
 /* ── data-load failure notice ──────────────────────────── */

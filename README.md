@@ -1,17 +1,18 @@
 # kaixinbuilds.github.io
 
 Personal portfolio for **Chun Kai Xin 郑凯欣**: Chinese Language teacher, Head of Department
-(Mother Tongue Languages) at Bukit View Secondary School, and independent EdTech builder.
+(Mother Tongue Languages) at Bukit View Secondary School, and EdTech builder.
 
-Static HTML, CSS and vanilla JavaScript. No framework, no dependencies.
+Static HTML, CSS and vanilla JavaScript. No framework, no dependencies, no analytics.
 Live at **https://kaixinbuilds.github.io**
 
 ---
 
 ## ⚠️ The HTML files are generated
 
-`index.html`, `work.html`, `talks.html`, `approach.html` and `contact.html` are **output**.
-Editing them directly does nothing lasting: the next build overwrites your changes.
+`index.html`, `work.html`, `talks.html`, `approach.html` and `contact.html` are **output**,
+along with `sitemap.xml` and `robots.txt`. Editing them directly does nothing lasting: the
+next build overwrites your changes. Each generated page carries a banner saying so.
 
 Edit `build.py`, then:
 
@@ -20,7 +21,7 @@ python3 build.py
 ```
 
 `publish.sh` runs this before every commit, so what is committed is always the generator's
-output. Each generated file carries a banner saying so.
+output.
 
 ---
 
@@ -49,7 +50,12 @@ Then open http://localhost:8000.
 | Change the contact email | `build.py`, search for `mailto:` |
 
 Every content string is bilingual: `{ "en": "…", "zh": "…" }`. Fill in both sides and the
-language toggle handles the rest.
+language toggle handles the rest. The toggle stores the choice in `localStorage`, so it
+persists across pages.
+
+**Keep Chinese characters out of the English strings.** English readers cannot parse them.
+Romanise or translate instead, except for the language toggle itself, which is deliberately
+in the language it switches to.
 
 ### Adding a project
 
@@ -62,22 +68,31 @@ Append one object to `projects.json`:
   "title":   { "en": "My New Tool", "zh": "新工具" },
   "summary": { "en": "One or two sentences.", "zh": "一两句话说明。" },
   "link": "https://…",
+  "displayUrl": "example.com/my-new-tool",
   "tags": ["live"]
 }
 ```
 
-`"featured": true` puts a project in the large block at the top of the Work page and unlocks
-`subtitle`, `stats`, `highlight` and `screenshots`. Exactly one project should be featured.
-
-An optional `"embed": { "src": "…", "aspect": "16 / 10" }` renders a click-to-load iframe
-inside a screen bezel, spanning the full grid width.
+- `"featured": true` puts a project in the large block at the top of the Work page and
+  unlocks `subtitle`, `stats`, `highlight` and `screenshots`. Exactly one should be featured.
+- `"displayUrl"` shows the address in full, as a visible link. This is deliberate: it is
+  readable to a person and a real signal pointing search engines at the project.
+- `"screenshots"` is an array of `{ src, caption, wide }`. A card with screenshots renders
+  wide, with the first one framed beside the text. `"wide": true` on a featured screenshot
+  makes it span the full row.
+- `"embed": { "src": "…", "aspect": "16 / 10" }` renders a click-to-load iframe instead of a
+  screenshot. Currently unused: the S3G3 game needs roughly 800px to be playable and the
+  embed slot gives it about 470, so it links out instead. The support remains if a future
+  project suits it.
 
 ### Adding a talk or post
 
-Append one object to `talks.json`. `"status"` is `"upcoming"` or `"completed"`; upcoming
-entries list nearest-first, completed newest-first, under separate headings. Optional
-fields: `"award"` for recognition, `"link"` for the write-up itself, and `"links"` (an
-array of `{label, url}`) for anything the write-up points at.
+Append one object to `talks.json`. `"status"` is `"upcoming"` or `"completed"`. Upcoming
+entries list nearest-first and completed newest-first, under separate headings. Optional:
+
+- `"award"` for recognition, rendered as its own ochre line
+- `"link"` for the write-up itself
+- `"links"`, an array of `{ label, url }`, for anything the write-up points at
 
 ---
 
@@ -90,14 +105,30 @@ array of `{label, url}`) for anything the write-up points at.
 
 ## Artwork
 
-`assets/art/prints/` holds the block prints and their masters. There is no other decorative
-art on the site: generated illustrations were removed so that the visual language comes from
-real work rather than an imitation of it. See the README in that folder before adding files,
-particularly the note about case-insensitive filenames.
+`assets/art/prints/` holds the block prints and their masters. They are carved on **rubber**,
+not lino. There is no other decorative art: generated illustrations were removed so the
+visual language comes from real work rather than an imitation of it. Read the README in that
+folder before adding files, particularly the note about case-insensitive filenames.
 
-- `payphone-background.jpg` — recoloured to ink and ochre, fixed behind every page
-- `payphone-print.png` — the payphone block, shown as a specimen on the Approach page
-- `diskette-print.png` — master for `favicon.png` and `apple-touch-icon.png`
+- `payphone-background.jpg` — recoloured to ink and ochre, fixed behind every page at 30%
+- `payphone-block-print.png` — the payphone block, framed on the contact page
+- `diskette-block-print.png` — master for `favicon.png` and `apple-touch-icon.png`
+
+Every image on the site opens full screen when clicked. Each carries a ⤢ chip so the
+affordance is visible on touch as well as on hover, and each is keyboard reachable.
+
+---
+
+## Design notes
+
+- **One appearance.** There is no dark mode. The palette is warm paper and indigo ink in all
+  conditions, and `color-scheme: light` stops browsers darkening form controls underneath it.
+- **Glass panels.** Content sits on frosted panels over the fixed print. If the print ever
+  feels too present, `opacity` on `body::before` is the single dial.
+- **Measure.** Text fills its panel. The panels themselves bound the line length: 1080px on
+  Work and Contact, 660px elsewhere.
+- **Fonts.** Spectral and Inter come from Google Fonts. Chinese deliberately uses the system
+  serif, because a webfont with CJK coverage costs megabytes.
 
 ---
 
@@ -125,32 +156,36 @@ and Pages gives no warning.
 ## Structure
 
 ```
-build.py              generates the five HTML pages from one shared shell
-style.css             design tokens in :root, then components
-script.js             JSON loading, i18n, rendering, disclosure, embeds
-i18n.json             every UI string, bilingual
-projects.json         project data, bilingual
-talks.json            talks and community contributions, bilingual
-favicon.png           the diskette print
-apple-touch-icon.png  the same, for iOS home screens
+build.py                generates the pages, sitemap.xml and robots.txt
+style.css               design tokens in :root, then components
+script.js               JSON loading, i18n, rendering, disclosure, lightbox
+i18n.json               every UI string, bilingual
+projects.json           project data, bilingual
+talks.json              talks and community contributions, bilingual
+favicon.png             the diskette block print
+apple-touch-icon.png    the same, for iOS home screens
+LICENSE                 all rights reserved; see below
 assets/
-  art/prints/         block prints and their masters
-  screenshots/        project screenshots
-publish.sh            build, validate, commit, push
+  art/prints/           block prints and their masters
+  screenshots/          project screenshots
+publish.sh              build, validate, commit, push
 ```
 
 ---
 
-## Privacy and third parties
+## Licence
 
-No analytics, no trackers, no cookies, no third-party scripts.
+All rights reserved. See `LICENSE`. The repository is public because GitHub Pages serves the
+site from it, not as an invitation to reuse. The teaching materials linked from the site are
+a separate matter and carry their own terms.
 
-- **Google Fonts** serves Spectral and Inter, so Google sees visitors' IP addresses. Chinese
-  deliberately uses the system serif, because a webfont with CJK coverage costs megabytes.
-  To remove this dependency entirely, self-host both fonts and swap the `<link>` in
-  `build.py` for `@font-face` rules.
-- **The S3G3 game** is embedded from the same origin and only loads when someone presses
-  play. The embed points at `game.html`, not the repo root, which is a landing page. The
-  game has on-screen touch controls, so it works on phones as well as computers.
+---
 
-Language preference is stored in `localStorage` on the visitor's own device.
+## Search
+
+`sitemap.xml` and `robots.txt` are generated by `build.py`, so new pages appear in them
+automatically. Static titles, descriptions, Open Graph and canonical tags are written into
+each page at build time, because link-preview crawlers read the delivered HTML rather than
+the state after client-side translation has run.
+
+Not yet done: verifying the site in Google Search Console and submitting the sitemap.
