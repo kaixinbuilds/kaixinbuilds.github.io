@@ -213,8 +213,8 @@
     "zh": "郑凯欣"
   },
   "approach.leadA": {
-    "en": "Design thinking is usually drawn as a tidy five step loop: empathise, define, ideate, prototype, test. In a classroom, only one of those steps ever settles anything. A tool is not good because the thinking behind it was good. It is good because thirty students opened it on a Monday morning and it held.",
-    "zh": "设计思维通常被画成一个工整的五步循环：同理、定义、构思、原型、测试。但在课堂里，真正能定案的只有其中一步。一个工具之所以好，不是因为背后的想法好，而是因为三十个学生在星期一早上打开了它，而它撑住了。"
+    "en": "Design thinking is usually drawn as a tidy five step loop: empathise, define, ideate, prototype, test. In a classroom, only the test settles anything. A tool is not good because the thinking behind it was good. It is good because thirty students opened it on a Monday morning and it held.",
+    "zh": "设计思维通常被画成一个工整的五步循环：同理、定义、构思、原型、测试。但在课堂里，真正能定案的只有「测试」这一步。一个工具之所以好，不是因为背后的想法好，而是因为三十个学生在星期一早上打开了它，而它撑住了。"
   },
   "approach.leadB": {
     "en": "So I run the loop, but I run it short and I run it often. The gap comes from evidence: a real script, a real mark, what students say when I ask them. The prototype is a working build, not a mockup. The test is a real lesson with students who will abandon anything that wastes their time. And the next version starts that same week, because by then the classroom has already told me what to fix.",
