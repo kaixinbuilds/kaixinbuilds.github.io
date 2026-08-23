@@ -179,6 +179,9 @@
             ${p.displayUrl ? `<p class="project-url">
               <a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.displayUrl)}</a>
             </p>` : ''}
+            ${(p.links || []).length ? `<p class="project-links">${(p.links || []).map((l) =>
+              `<a href="${esc(l.url)}" target="_blank" rel="noopener">${bi(l.label)} \u2192</a>`
+            ).join('')}</p>` : ''}
             <div class="card-foot">
               <ul class="tags">${tags}</ul>
               ${link}

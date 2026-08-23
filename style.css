@@ -703,7 +703,15 @@ main > .section + .section { border-top: 1px solid var(--rule); }
   padding-bottom: .1rem;
 }
 .project-url a:hover { color: var(--ochre-deep); border-bottom-color: var(--ochre); }
-.card .project-url { margin: 0 0 1.1rem; }
+.card .project-url { margin: 0 0 .6rem; }
+
+.project-links { display: grid; gap: .35rem; margin: 0 0 1.2rem; }
+.project-links a {
+  font-size: .86rem;
+  color: var(--ochre-deep);
+  text-decoration: none;
+}
+.project-links a:hover { text-decoration: underline; }
 
 /* ── three language modes ──────────────────────────────── */
 .lang-switch {

@@ -67,7 +67,16 @@
     "award": {
       "en": "SgLDC Designer Badge, awarded by ETD",
       "zh": "SgLDC Designer Badge · 教育技术司（ETD）颁发"
-    }
+    },
+    "links": [
+      {
+        "label": {
+          "en": "SLS Community Gallery: Sec 4 HCL Chapter 2 Cultural Station",
+          "zh": "SLS 社群展示馆：中四高华单元二文化站"
+        },
+        "url": "https://vle.learning.moe.edu.sg/community-gallery/module/view/4233cb1d-f481-40c4-a165-4c1afa1bef2a"
+      }
+    ]
   },
   {
     "id": "sgldc-cl-hub",
@@ -78,8 +87,8 @@
       "zh": "2026年7月3日"
     },
     "title": {
-      "en": "A Doraemon's pocket for Chinese Language Learning — 百德中学华文资源站",
-      "zh": "中学华文的百宝袋 —— Bukit View Secondary School Chinese Language Resource Hub"
+      "en": "A Doraemon's pocket for Chinese Language Learning — Bukit View Secondary School Chinese Language Resource Hub",
+      "zh": "中学华文的百宝袋 —— 百德中学华文资源站"
     },
     "venue": {
       "en": "SgLDC, the Singapore Learning Designers Circle",
