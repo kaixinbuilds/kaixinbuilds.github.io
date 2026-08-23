@@ -436,13 +436,14 @@ main > .section + .section { border-top: 1px solid var(--rule); }
    titles, and a visitor opens only what they came for. Built on <details>
    so it works with the keyboard and without JavaScript. */
 /* Upcoming and completed are separate groups, each in its own order. */
-.talk-group + .talk-group { margin-top: 2.75rem; }
+#talks-list > .talk-group:first-child { margin-top: clamp(2rem, 5vw, 3rem); }
+.talk-group + .talk-group { margin-top: 3.25rem; }
 .talk-group-title {
   font-family: var(--font-sans);
   font-size: .7rem; font-weight: 600;
   letter-spacing: .18em; text-transform: uppercase;
   color: var(--ink-faint);
-  margin-bottom: .35rem;
+  margin-bottom: .6rem;
 }
 .talks-list { list-style: none; margin: 0; padding: 0; }
 .talks-list li { border-top: 1px solid var(--rule); }
