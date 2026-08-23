@@ -544,21 +544,6 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 }
 .loop li > p:last-child { margin: .65rem 0 0; color: var(--ink-soft); font-size: .96rem; }
 
-/* ── the constants, set quieter than the loop ──────────── */
-.constants {
-  margin-top: clamp(2.75rem, 6vw, 4rem);
-  padding-top: clamp(1.75rem, 4vw, 2.25rem);
-  border-top: 1px solid var(--rule);
-}
-.constants-title {
-  font-family: var(--font-sans);
-  font-size: .7rem; font-weight: 600;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-bottom: .9rem;
-}
-.constants > p { margin: 0; color: var(--ink-soft); font-size: .93rem; }
-
 /* ── contact layout ───────────────────────────────────── */
 .contact-layout {
   display: grid;

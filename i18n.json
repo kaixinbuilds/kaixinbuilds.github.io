@@ -9,8 +9,8 @@
     "zh": "作品"
   },
   "nav.talks": {
-    "en": "Community",
-    "zh": "社群"
+    "en": "Connect",
+    "zh": "并肩同行"
   },
   "nav.approach": {
     "en": "Practice",
@@ -77,12 +77,8 @@
     "zh": "校内使用"
   },
   "talks.title": {
-    "en": "Connecting with other teachers",
-    "zh": "与同行连结"
-  },
-  "talks.subtitle": {
-    "en": "Sharing what I build so other teachers can adapt it rather than start from zero, and finding people to build with along the way.",
-    "zh": "把做出来的东西分享出去，让其他老师可以直接借鉴，而不必从零开始；也在这个过程中，遇到愿意一起做的人。"
+    "en": "Connect",
+    "zh": "并肩同行"
   },
   "talks.upcoming": {
     "en": "Upcoming",
@@ -99,10 +95,6 @@
   "approach.title": {
     "en": "How I design",
     "zh": "设计理念"
-  },
-  "approach.body1": {
-    "en": "Two commitments sit underneath every turn of that loop and do not get renegotiated. Self-Determination Theory: students need autonomy, competence and relatedness to stay engaged. Assessment for Learning: feedback exists to move learning forward, not to rank. How they show up depends on what is being built, and each tool has to work that out for itself.",
-    "zh": "有两项承诺，垫在这个循环的每一圈底下，不参与谈判。自我决定理论（SDT）：学生需要自主感、胜任感与归属感，才能持续投入。促进学习的评价（AfL）：反馈的意义在于推动学习，而不是排名。至于它们如何落地，则取决于所做的是什么；每一个工具都得自己想清楚。"
   },
   "contact.title": {
     "en": "Get in touch",
@@ -153,8 +145,8 @@
     "zh": "作品 · 郑凯欣"
   },
   "page.talks.title": {
-    "en": "Community · Chun Kai Xin",
-    "zh": "社群 · 郑凯欣"
+    "en": "Connect · Chun Kai Xin",
+    "zh": "并肩同行 · 郑凯欣"
   },
   "page.approach.title": {
     "en": "How I design · Chun Kai Xin",
@@ -251,10 +243,6 @@
   "approach.loop5Body": {
     "en": "Practise, understand, practise again. No version is final and none of them was meant to be. Each turn of the loop begins from a better question than the last one, which is the only kind of progress I actually trust.",
     "zh": "实践、认识、再实践。没有哪一版是最终版，本来也不打算是。每一圈都从一个比上一圈更好的问题开始，而这是我唯一真正信得过的进展。"
-  },
-  "approach.constantsTitle": {
-    "en": "What stays constant",
-    "zh": "不变的部分"
   },
   "lightbox.close": {
     "en": "Close",
