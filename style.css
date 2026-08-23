@@ -164,6 +164,15 @@ main > .section + .section { border-top: 1px solid var(--rule); }
   border-radius: 3px;
 }
 .wordmark-text { white-space: nowrap; }
+.wordmark-text :lang(zh-Hans) { letter-spacing: .04em; }
+.wordmark-latin {
+  margin-left: .55rem;
+  font-family: var(--font-sans);
+  font-size: .72rem;
+  font-weight: 400;
+  letter-spacing: .04em;
+  color: var(--ink-faint);
+}
 .wordmark em { font-style: normal; color: var(--ochre-deep); }
 
 .site-nav { display: flex; gap: 1.6rem; }

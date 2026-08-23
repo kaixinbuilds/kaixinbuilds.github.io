@@ -255,5 +255,17 @@
   "contact.emailLabel": {
     "en": "Email:",
     "zh": "电邮："
+  },
+  "brand.a": {
+    "en": "kaixin",
+    "zh": "观象"
+  },
+  "brand.b": {
+    "en": "builds",
+    "zh": "制器"
+  },
+  "brand.full": {
+    "en": "kaixinbuilds",
+    "zh": "观象制器"
   }
 }

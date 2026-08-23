@@ -80,6 +80,19 @@
       el.innerHTML = tb(key);
     });
 
+    // The wordmark is a brand, not copy: it shows one form, not a stacked
+    // pair. In bilingual mode the Chinese name leads and the latin one
+    // follows quietly, since the address is still kaixinbuilds.
+    const wordmark = $('#wordmark-text');
+    if (wordmark && data.i18n['brand.a']) {
+      const a = data.i18n['brand.a'], b = data.i18n['brand.b'];
+      const form = (l) => `${esc(a[l])}<em>${esc(b[l])}</em>`;
+      wordmark.innerHTML = lang === 'en'
+        ? form('en')
+        : `<span lang="zh-Hans">${form('zh')}</span>`
+          + (lang === 'both' ? `<span class="wordmark-latin">${esc(a.en + b.en)}</span>` : '');
+    }
+
     document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
       el.setAttribute('aria-label', t(el.dataset.i18nAriaLabel));
     });

@@ -65,7 +65,7 @@ HEAD = """\
     <div class="header-inner">
       <a class="wordmark" href="index.html"__HOME__>
         <img class="mark" src="favicon.png" alt="" width="22" height="22" decoding="async">
-        <span class="wordmark-text">kaixin<em>builds</em></span>
+        <span class="wordmark-text" id="wordmark-text">kaixin<em>builds</em></span>
       </a>
 
       <nav class="site-nav" aria-label="Primary">
@@ -128,7 +128,7 @@ PAGES = {
         <span class="src" data-i18n="epigraph.source">《增广贤文 · 劝学篇》</span>
       </p>
 
-      <p class="eyebrow">kaixinbuilds</p>
+      <p class="eyebrow" data-i18n="brand.full">kaixinbuilds</p>
       <h1 class="hero-name" data-i18n="hero.name">Chun Kai Xin</h1>
       <p class="hero-tagline" data-i18n="hero.tagline"></p>
       <p class="hero-intro" data-i18n="hero.intro"></p>
