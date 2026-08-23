@@ -20,18 +20,6 @@
     "en": "Contact",
     "zh": "联系"
   },
-  "lang.switchTo": {
-    "en": "切换中文",
-    "zh": "English"
-  },
-  "lang.ariaLabel": {
-    "en": "Switch language to Chinese",
-    "zh": "切换语言至英文"
-  },
-  "hero.eyebrow": {
-    "en": "kaixinbuilds",
-    "zh": "kaixinbuilds"
-  },
   "hero.name": {
     "en": "Chun Kai Xin",
     "zh": "郑凯欣"
@@ -63,10 +51,6 @@
   "featured.visit": {
     "en": "Open the live site",
     "zh": "打开网站"
-  },
-  "featured.gallery": {
-    "en": "Screens",
-    "zh": "界面预览"
   },
   "grid.visit": {
     "en": "Open",
