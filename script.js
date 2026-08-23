@@ -174,7 +174,6 @@
 
         const body = `
           <div class="card-body">
-            <h3>${bi(p.title)}</h3>
             <p>${bi(p.summary)}</p>
             ${p.displayUrl ? `<p class="project-url">
               <a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.displayUrl)}</a>
@@ -188,25 +187,11 @@
             </div>
           </div>`;
 
+        const shot = (p.screenshots || [])[0];
+
         // A project with an embed spans the grid and gets a bezel: the only
         // place the 8-bit register is allowed to appear at full size.
-        const shot = (p.screenshots || [])[0];
-        if (!p.embed && !shot) return `<article class="card">${body}</article>`;
-
-        if (!p.embed) return `
-        <article class="card card-wide">
-          <figure class="shot">
-            <div class="screen-bezel">
-              <div class="screen-inner" data-missing="${esc(shot.src)}">
-                <img src="${esc(shot.src)}" alt="${esc(pick(shot.caption))}" decoding="async">
-              </div>
-            </div>
-            <figcaption>${bi(shot.caption)}</figcaption>
-          </figure>
-          ${body}
-        </article>`;
-
-        return `
+        if (p.embed) return `
         <article class="card card-wide">
           <div class="embed">
             <div class="screen-bezel">
@@ -221,8 +206,27 @@
             </div>
             <p class="embed-note">${tb('grid.playNote')}</p>
           </div>
+          <h3>${bi(p.title)}</h3>
           ${body}
         </article>`;
+
+        // With a screenshot the card reads top to bottom: name, then the
+        // thing itself, then the details.
+        if (shot) return `
+        <article class="card card-media">
+          <h3>${bi(p.title)}</h3>
+          <figure class="shot">
+            <div class="screen-bezel">
+              <div class="screen-inner" data-missing="${esc(shot.src)}">
+                <img src="${esc(shot.src)}" alt="${esc(pick(shot.caption))}" decoding="async">
+              </div>
+            </div>
+            <figcaption>${bi(shot.caption)}</figcaption>
+          </figure>
+          ${body}
+        </article>`;
+
+        return `<article class="card"><h3>${bi(p.title)}</h3>${body}</article>`;
       }).join('');
 
     wireEmbeds(host);
