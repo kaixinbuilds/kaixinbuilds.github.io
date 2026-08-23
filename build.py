@@ -122,10 +122,9 @@ PAGES = {
       <!-- The couplet VocabSummit is named from. Both languages always show:
            the pairing itself is the content, not a translation of it. -->
       <p class="epigraph">
-        <span class="zh" lang="zh-Hans">书山有路勤为径，学海无涯苦作舟</span>
-        <span class="en" lang="en">On the mountain of books, diligence is the path;
-          on the sea of learning, endurance is the boat.</span>
-        <span class="src" data-i18n="epigraph.source">《增广贤文 · 劝学篇》</span>
+        <span class="zh" lang="zh-Hans">不满足是向上的齿轮</span>
+        <span class="en" lang="en">Dissatisfaction is the gear that turns us upward.</span>
+        <span class="src" data-i18n="epigraph.source">鲁迅</span>
       </p>
 
       <p class="eyebrow" data-i18n="brand.full">kaixinbuilds</p>

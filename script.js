@@ -85,12 +85,12 @@
     // follows quietly, since the address is still kaixinbuilds.
     const wordmark = $('#wordmark-text');
     if (wordmark && data.i18n['brand.a']) {
+      // Both names, always: the Chinese name carries the meaning and the
+      // latin one is the address people type, so neither can be hidden.
       const a = data.i18n['brand.a'], b = data.i18n['brand.b'];
-      const form = (l) => `${esc(a[l])}<em>${esc(b[l])}</em>`;
-      wordmark.innerHTML = lang === 'en'
-        ? form('en')
-        : `<span lang="zh-Hans">${form('zh')}</span>`
-          + (lang === 'both' ? `<span class="wordmark-latin">${esc(a.en + b.en)}</span>` : '');
+      wordmark.innerHTML =
+        `<span lang="zh-Hans">${esc(a.zh)}<em>${esc(b.zh)}</em></span>`
+        + `<span class="wordmark-latin">${esc(a.en + b.en)}</span>`;
     }
 
     document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {

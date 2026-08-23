@@ -41,8 +41,8 @@
     "zh": "华文教师 · 教育科技开发者 · 百德中学母语部主任"
   },
   "hero.intro": {
-    "en": "Across my work I tend to start the same way: I notice a structural gap, then build something to close it. I teach Chinese Language, I lead a Mother Tongue department, and the tools, structures and processes I make come out of problems that show up in class.",
-    "zh": "不管做什么，起点通常都一样：看见一个缺口，就动手补上。我教华文，也带母语部；做出来的工具、机制和流程，都是从课堂上真的会碰到的问题来的。"
+    "en": "Across my work I tend to start the same way: I notice a structural gap, then build something to close it.",
+    "zh": "不管做什么，起点通常都一样：看见一个缺口，就动手补上。"
   },
   "hero.ctaWork": {
     "en": "See the work",
@@ -125,8 +125,8 @@
     "zh": "满纸重复印刷的新加坡公用电话版画，其中一台手工上了橙色。"
   },
   "epigraph.source": {
-    "en": "From Zengguang Xianwen, a Ming dynasty compilation of proverbs and maxims, in its chapter on the encouragement of learning.",
-    "zh": "《增广贤文 · 劝学篇》，明代辑录的格言集。"
+    "en": "Lu Xun",
+    "zh": "鲁迅"
   },
   "grid.play": {
     "en": "Play it here",
