@@ -266,7 +266,9 @@
   function talkEntry(talk, open) {
     const status = talk.status === 'upcoming' ? 'upcoming' : 'completed';
     const body = [
-      `<p class="talk-venue">${bi(talk.venue)}</p>`,
+      talk.venueUrl
+        ? `<p class="talk-venue"><a href="${esc(talk.venueUrl)}" target="_blank" rel="noopener">${bi(talk.venue)}</a></p>`
+        : `<p class="talk-venue">${bi(talk.venue)}</p>`,
       talk.summary ? `<p class="talk-summary">${bi(talk.summary)}</p>` : '',
       talk.award ? `<p class="talk-award">${bi(talk.award)}</p>` : '',
       (talk.link || (talk.links || []).length)
