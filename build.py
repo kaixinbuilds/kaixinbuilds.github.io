@@ -132,7 +132,7 @@ PAGES = {
       <p class="hero-tagline" data-i18n="hero.tagline"></p>
       <p class="hero-intro" data-i18n="hero.intro"></p>
       <p class="hero-actions">
-        <a class="btn btn-primary" href="work.html" data-i18n="hero.ctaWork">See the work</a>
+        <a class="btn btn-primary" href="work.html" data-i18n="hero.ctaWork">See my work</a>
         <a class="btn btn-ghost" href="contact.html" data-i18n="hero.ctaContact">Get in touch</a>
       </p>
     </div>
@@ -174,33 +174,59 @@ PAGES = {
       <p class="lede" data-i18n="approach.leadA"></p>
       <p class="lede" data-i18n="approach.leadB"></p>
 
+      <!-- The five steps of the design thinking cycle, kept separate rather
+           than paired up, each one answered by what actually happened while
+           building VocabSummit. Point form on purpose: the stages are notes
+           from practice, not an essay about practice. -->
       <ol class="loop">
         <li>
           <h2 data-i18n="approach.loop1Title"></h2>
           <p class="loop-cycle" data-i18n="approach.loop1Cycle"></p>
-          <p data-i18n="approach.loop1Body"></p>
+          <ul class="loop-points">
+            <li data-i18n="approach.loop1P1"></li>
+            <li data-i18n="approach.loop1P2"></li>
+            <li data-i18n="approach.loop1P3"></li>
+          </ul>
         </li>
         <li>
           <h2 data-i18n="approach.loop2Title"></h2>
           <p class="loop-cycle" data-i18n="approach.loop2Cycle"></p>
-          <p data-i18n="approach.loop2Body"></p>
+          <ul class="loop-points">
+            <li data-i18n="approach.loop2P1"></li>
+            <li data-i18n="approach.loop2P2"></li>
+            <li data-i18n="approach.loop2P3"></li>
+          </ul>
         </li>
         <li>
           <h2 data-i18n="approach.loop3Title"></h2>
           <p class="loop-cycle" data-i18n="approach.loop3Cycle"></p>
-          <p data-i18n="approach.loop3Body"></p>
+          <ul class="loop-points">
+            <li data-i18n="approach.loop3P1"></li>
+            <li data-i18n="approach.loop3P2"></li>
+            <li data-i18n="approach.loop3P3"></li>
+          </ul>
         </li>
         <li>
           <h2 data-i18n="approach.loop4Title"></h2>
           <p class="loop-cycle" data-i18n="approach.loop4Cycle"></p>
-          <p data-i18n="approach.loop4Body"></p>
+          <ul class="loop-points">
+            <li data-i18n="approach.loop4P1"></li>
+            <li data-i18n="approach.loop4P2"></li>
+            <li data-i18n="approach.loop4P3"></li>
+          </ul>
         </li>
         <li>
           <h2 data-i18n="approach.loop5Title"></h2>
           <p class="loop-cycle" data-i18n="approach.loop5Cycle"></p>
-          <p data-i18n="approach.loop5Body"></p>
+          <ul class="loop-points">
+            <li data-i18n="approach.loop5P1"></li>
+            <li data-i18n="approach.loop5P2"></li>
+            <li data-i18n="approach.loop5P3"></li>
+          </ul>
         </li>
       </ol>
+
+      <p class="loop-close" data-i18n="approach.loopClose"></p>
 
     </div>
   </section>"""),
@@ -232,6 +258,16 @@ PAGES = {
           </figcaption>
         </figure>
       </div>
+
+      <!-- The name, glossed. 观象制器 carries an allusion not every reader
+           will catch, so the last page states it plainly. Same device as the
+           epigraphs, set as a colophon: it closes a page instead of opening
+           one. -->
+      <p class="epigraph colophon">
+        <span class="zh" lang="zh-Hans">观象制器</span>
+        <span class="en" lang="en">Observe the pattern, then make the tool.</span>
+        <span class="src" data-i18n="colophon.source"></span>
+      </p>
     </div>
   </section>"""),
 }

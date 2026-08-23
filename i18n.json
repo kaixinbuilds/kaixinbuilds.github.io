@@ -45,8 +45,8 @@
     "zh": "不管做什么，起点通常都一样：发现缺口，动手补上。"
   },
   "hero.ctaWork": {
-    "en": "See the work",
-    "zh": "查看作品"
+    "en": "See my work",
+    "zh": "查看我的作品"
   },
   "hero.ctaContact": {
     "en": "Get in touch",
@@ -101,8 +101,8 @@
     "zh": "联系方式"
   },
   "contact.subtitle": {
-    "en": "Write to me if you would like to know more about the work, or if there is something we could build together 😄",
-    "zh": "若想进一步了解我的作品，或希望一起合作，欢迎来信😄"
+    "en": "Write to me if you would like to know more about my work, or if there is something we could build together.",
+    "zh": "若想进一步了解我的作品，或希望一起合作，欢迎来信。"
   },
   "error.dataTitle": {
     "en": "Content could not load",
@@ -177,72 +177,116 @@
     "zh": "郑凯欣"
   },
   "approach.leadA": {
-    "en": "Design thinking is usually drawn as a tidy five step loop: empathise, define, ideate, prototype, test. In a classroom, only the test settles anything. A tool is not good because the thinking behind it was good. It is good because thirty students opened it on a Monday morning and it held.",
-    "zh": "设计思维常被画成一个工整的五步循环：同理、定义、构思、原型、测试。但在课堂里，真正说了算的只有「测试」。工具好不好，不看背后的想法有多好，而看三十个学生星期一早上打开它，它撑不撑得住。"
+    "en": "Design thinking is a five step cycle. In a classroom, only the test settles anything.",
+    "zh": "设计思维是一个五步循环。但在课堂里，真正说了算的只有「测试」。"
   },
   "approach.leadB": {
-    "en": "So I run the loop, but I run it short and I run it often. The gap comes from evidence: a real script, a real mark, what students say when I ask them. The prototype is a working build, not a mockup. The test is a real lesson with students who will not humour anything that wastes their time. And the next version starts that same week, because by then the classroom has already told me what to fix.",
-    "zh": "这个循环我照跑，只是跑得短、跑得勤。缺口来自证据：一份考卷、一个分数、问学生时他们怎么说。原型是能跑的版本，不是示意图。测试是一堂真实的课，学生觉得浪费时间就不会买账。下一版通常同一周就动工，因为课堂那时已经告诉我要改什么。"
+    "en": "VocabSummit has been round this loop many times. One pass, in point form:",
+    "zh": "「词山学海」已经跑过很多轮。以下是其中一轮，用要点列出："
   },
   "approach.loop1Title": {
-    "en": "The gap has to be one I actually saw",
-    "zh": "我亲眼看见的缺口"
+    "en": "Start from something I actually saw",
+    "zh": "从我亲眼看见的东西开始"
   },
   "approach.loop1Cycle": {
-    "en": "empathise, define",
-    "zh": "同理、定义"
+    "en": "empathise",
+    "zh": "同理"
   },
-  "approach.loop1Body": {
-    "en": "A gap I can point at is a design brief. A gap I assumed is a guess wearing a lanyard. One student's comprehension paper is what showed me a problem across the whole cohort, and the cohort is what the tool then had to answer to.",
-    "zh": "指得出来的缺口，才是设计任务；靠揣测来的，不过是挂着工作证的猜想。一个学生的理解问答考卷，让我看见整个级别的问题；工具后来要应付的，也就是整个级别。"
+  "approach.loop1P1": {
+    "en": "A student's comprehension paper: the passage was understood, the words were not.",
+    "zh": "一份理解问答考卷：文章看懂了，词语没过关。"
+  },
+  "approach.loop1P2": {
+    "en": "The same gap turned up across the whole cohort, not one class.",
+    "zh": "同样的缺口出现在整个级别，不只一个班。"
+  },
+  "approach.loop1P3": {
+    "en": "Students will not humour anything that wastes their time. That is the real constraint.",
+    "zh": "学生不会迁就浪费他们时间的东西。这才是真正的限制。"
   },
   "approach.loop2Title": {
+    "en": "Name the gap in one sentence",
+    "zh": "用一句话说清楚缺口"
+  },
+  "approach.loop2Cycle": {
+    "en": "define",
+    "zh": "定义"
+  },
+  "approach.loop2P1": {
+    "en": "The problem is vocabulary, not comprehension.",
+    "zh": "问题在词汇，不在理解。"
+  },
+  "approach.loop2P2": {
+    "en": "It has to cover G1, G2, G3 and Higher Chinese, at different depths.",
+    "zh": "必须覆盖 G1、G2、G3 与高级华文，深浅不同。"
+  },
+  "approach.loop2P3": {
+    "en": "It works if a student practises without being told to.",
+    "zh": "成功的标准：没人叫他，学生也会去练。"
+  },
+  "approach.loop3Title": {
+    "en": "Design the motivation, not just the content",
+    "zh": "设计的是动机，不只是内容"
+  },
+  "approach.loop3Cycle": {
+    "en": "ideate",
+    "zh": "构思"
+  },
+  "approach.loop3P1": {
+    "en": "Motivation built into the structure from the start: Self-Determination Theory, Assessment for Learning.",
+    "zh": "动机一开始就放进结构里：自我决定理论（SDT）、促进学习的评价（AfL）。"
+  },
+  "approach.loop3P2": {
+    "en": "Students choose scope and difficulty. Nothing is assigned.",
+    "zh": "范围和难度由学生自己选，不由系统分配。"
+  },
+  "approach.loop3P3": {
+    "en": "The name carries the design: a mountain you can see yourself climbing. Visible progress, streaks, a personal map.",
+    "zh": "名字本身就是设计：一座看得见自己在爬的山。进度看得见，有连续挑战，有个人地图。"
+  },
+  "approach.loop4Title": {
     "en": "Build the thing, not a picture of it",
     "zh": "做出东西来，而不是画一张示意图"
   },
-  "approach.loop2Cycle": {
-    "en": "ideate, prototype",
-    "zh": "构思、原型"
+  "approach.loop4Cycle": {
+    "en": "prototype",
+    "zh": "原型"
   },
-  "approach.loop2Body": {
-    "en": "A mockup can test an idea. A working build tells me what happens in class. A student will tell you in forty seconds what a proposal deck could not tell you in a term, so I skip the polished pitch and ship something small that runs.",
-    "zh": "示意图能试想法，能跑的版本才告诉我课堂上会发生什么。学生四十秒里说的，一份提案简报一个学期也说不出来。所以我跳过打磨提案，先做一个小而能跑的东西。"
+  "approach.loop4P1": {
+    "en": "A working build on Firebase, not a mockup, with no formal software engineering training behind it.",
+    "zh": "一个真能跑的版本，后端用 Firebase，不是示意图；做的人没受过软件工程的正规训练。"
   },
-  "approach.loop3Title": {
-    "en": "Putting it into practice: the classroom is the test, not the demo",
-    "zh": "实践：课堂才是测试，演示不是"
+  "approach.loop4P2": {
+    "en": "3,741 vocabulary entries, vetted by hand, one at a time.",
+    "zh": "3,741 个词条，逐条人工审核。"
   },
-  "approach.loop3Cycle": {
+  "approach.loop4P3": {
+    "en": "In front of students within days of being usable, not at the end of a term.",
+    "zh": "勉强能用就送到学生面前，几天之内，而不是等到学期末。"
+  },
+  "approach.loop5Title": {
+    "en": "The classroom is the test, not the demo",
+    "zh": "课堂才是测试，演示不是"
+  },
+  "approach.loop5Cycle": {
     "en": "test",
     "zh": "测试"
   },
-  "approach.loop3Body": {
-    "en": "Colleagues nodding at a demo is not evidence. Students using it independently, in an ordinary lesson, without step-by-step prompting from me, is evidence. Everything I have built went in front of students within days of being usable, and most of what I now think about the design I learnt there.",
-    "zh": "同事在演示时点头，不算证据。学生在一堂普通的课上自己用，不用我一句一句提示，才算。我做的东西，勉强能用就送到学生面前；今天对设计的判断，多半是在那里学到的，不是事先想好的。"
+  "approach.loop5P1": {
+    "en": "Three classes beta tested it. 47 students gave feedback.",
+    "zh": "三个班参与测试，47 名学生给了反馈。"
   },
-  "approach.loop4Title": {
-    "en": "Let the evidence write the next version",
-    "zh": "让证据来写下一个版本"
+  "approach.loop5P2": {
+    "en": "Colleagues nodding at a demo is not evidence. Students working independently in an ordinary lesson is.",
+    "zh": "同事在演示时点头，不算证据；学生在一堂普通的课上自己用，才算。"
   },
-  "approach.loop4Cycle": {
-    "en": "iterate",
-    "zh": "迭代"
+  "approach.loop5P3": {
+    "en": "Which words keep failing, which screen nobody visits, which instruction I repeat every time. Those are the design documents.",
+    "zh": "哪些词一错再错，哪个页面没人去，哪一句指示我每次都得再讲一遍。这些才是设计文档。"
   },
-  "approach.loop4Body": {
-    "en": "Which words keep failing. Which screen nobody visits. Which instruction I have to repeat out loud every single time. Those are the design documents. Opinions, including my own, get outranked by them.",
-    "zh": "哪些词一错再错。哪个页面没人去。哪一句指示我每次都得再讲一遍。这些才是设计文档。任何意见，包括我自己的，都排在它们后面。"
-  },
-  "approach.loop5Title": {
-    "en": "The loop does not resolve, it climbs",
-    "zh": "循环不会收束，它只会向上"
-  },
-  "approach.loop5Cycle": {
-    "en": "iterate, again",
-    "zh": "再迭代"
-  },
-  "approach.loop5Body": {
-    "en": "Practise, understand, practise again. No version is final and none of them was meant to be. Each turn of the loop begins from a better question than the last one, which is the only kind of progress I trust.",
-    "zh": "实践、认识、再实践。没有哪一版是最终版，本来也不打算是。每一圈都从一个比上一圈更好的问题开始，这是我唯一信得过的进展。"
+  "approach.loopClose": {
+    "en": "Then round again, from the top. Every version of VocabSummit so far came out of one more pass, and each pass starts from a better question than the last.",
+    "zh": "然后再从头跑一遍。「词山学海」的每一个版本，都是又跑了一圈的结果；每一圈的起点，都是一个比上一圈更好的问题。"
   },
   "lightbox.close": {
     "en": "Close",
@@ -255,6 +299,10 @@
   "contact.emailLabel": {
     "en": "Email:",
     "zh": "电邮："
+  },
+  "colophon.source": {
+    "en": "The Chinese name of this site, from the Book of Changes, Great Commentary",
+    "zh": "本站中文名，语出《易经 · 系辞》"
   },
   "brand.a": {
     "en": "kaixin",
