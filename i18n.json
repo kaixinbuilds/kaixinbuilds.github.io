@@ -1,8 +1,8 @@
 {
   "_comment": "One key = one string. Add a key here, reference it with data-i18n=\"key\" in index.html. Never duplicate markup for a second language.",
   "site.description": {
-    "en": "Classroom learning tools for Chinese Language, made by a practising teacher.",
-    "zh": "一线华文教师做的课堂学习工具。"
+    "en": "Classroom learning tools for Chinese Language, designed and built by a practising teacher.",
+    "zh": "一线教师设计并动手做出来的华文课堂学习工具。"
   },
   "nav.work": {
     "en": "Work",
@@ -37,8 +37,8 @@
     "zh": "郑凯欣"
   },
   "hero.tagline": {
-    "en": "Chinese Language Teacher · EdTech Builder · Head of Department, Mother Tongue Languages",
-    "zh": "华文教师 · 教育科技开发者 · 百德中学母语部主任"
+    "en": "Learning Designer · Head of Department, Mother Tongue Languages, Bukit View Secondary School",
+    "zh": "学习设计师 · 百德中学母语部主任"
   },
   "hero.intro": {
     "en": "Across my work I tend to start the same way: I notice a structural gap, then build something to close it.",
@@ -137,8 +137,8 @@
     "zh": "点了会载入真正的游戏，有音效。手机、平板、电脑都能玩。"
   },
   "page.home.title": {
-    "en": "Chun Kai Xin · Chinese Language Teacher & EdTech Builder",
-    "zh": "郑凯欣 · 华文教师 · 教育科技开发者"
+    "en": "Chun Kai Xin · Learning Designer",
+    "zh": "郑凯欣 · 学习设计师"
   },
   "page.work.title": {
     "en": "Work · Chun Kai Xin",

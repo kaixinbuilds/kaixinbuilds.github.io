@@ -98,7 +98,7 @@ SHARE_IMAGE = SITE + "/assets/social-card.jpg"
 # (static <title>, static description) shipped in the HTML before any script
 # runs. The language toggle still rewrites the visible title afterwards.
 META = {
-    "index.html": ("Chun Kai Xin - Chinese Language Teacher and EdTech Builder",
+    "index.html": ("Chun Kai Xin - Learning Designer",
                    "Classroom-grounded Chinese Language learning tools, designed and built by "
                    "a practising Singapore teacher."),
     "work.html": ("Work - Chun Kai Xin",
