@@ -93,7 +93,7 @@ TAIL = """\
 """
 
 SITE = "https://kaixinbuilds.github.io"
-SHARE_IMAGE = SITE + "/assets/screenshots/vocabsummit-landing.jpg"
+SHARE_IMAGE = SITE + "/assets/social-card.jpg"
 
 # (static <title>, static description) shipped in the HTML before any script
 # runs. The language toggle still rewrites the visible title afterwards.
@@ -107,9 +107,9 @@ META = {
     "talks.html": ("Connect - Chun Kai Xin",
                    "Talks, write-ups and shared resources for other teachers, including two "
                    "SgLDC badges awarded by MOE's Educational Technology Division."),
-    "approach.html": ("How I design - Chun Kai Xin",
-                      "Design commitments drawn from Self-Determination Theory and Assessment "
-                      "for Learning, and the block printing behind them."),
+    "approach.html": ("Practice - Chun Kai Xin",
+                      "How a classroom tool actually gets designed: a short loop where the "
+                      "deciding step is students using it in a real lesson."),
     "contact.html": ("Contact - Chun Kai Xin",
                      "Get in touch about adapting any of these tools, or about building "
                      "something together."),
@@ -161,7 +161,7 @@ PAGES = {
   </section>"""),
     "approach.html": ("page.approach.title", """  <section class="section" id="approach">
     <div class="wrap wrap-narrow">
-      <h1 class="page-title" data-i18n="approach.title">How I design</h1>
+      <h1 class="page-title" data-i18n="approach.title">Practice</h1>
 
       <!-- A couplet for the philosophy, in parallel with the one that names
            the flagship project on the home page. -->

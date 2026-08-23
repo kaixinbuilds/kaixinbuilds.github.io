@@ -16,8 +16,8 @@
       "zh": "【2026 AI in Sec CL NLC】AI 促进中学华文教与学相联系学习社群"
     },
     "summary": {
-      "en": "A behind-the-scenes account of how VocabSummit was actually built: what it looks like when a teacher with no coding background designs and ships a working product in conversation with an AI agent.",
-      "zh": "词山学海的创作现场：一个没有编码背景的教师，如何与 AI agent 协作，把一个真正能用的产品从零做出来。"
+      "en": "How VocabSummit actually got built: what it looks like when a teacher with no coding background designs and ships a working product in conversation with an AI agent.",
+      "zh": "词山学海是怎么做出来的：一个没有编码背景的教师，怎么跟 AI agent 一起，把一个真正能用的东西做出来。"
     },
     "link": ""
   },
@@ -38,8 +38,8 @@
       "zh": "百德中学校务规划与管理委员会（BVSS SPMC）"
     },
     "summary": {
-      "en": "A sharing for school and teacher leaders on designing self-directed learning so that motivation is built into the structure, rather than simply expected from students.",
-      "zh": "面向校方与教师领导的分享：如何在自主学习的设计中，把学习动机内建于结构之中，而不是理所当然地期待学生自发。"
+      "en": "A sharing for school and teacher leaders on designing self-directed learning so that motivation is built into the structure rather than expected from students.",
+      "zh": "面向校方与教师领导的分享：自主学习要怎么设计，才能把动机放进结构里，而不是指望学生自己有。"
     },
     "link": ""
   },
@@ -60,8 +60,8 @@
       "zh": "新加坡学习设计师社群（SgLDC）"
     },
     "summary": {
-      "en": "A Secondary 4 Higher Chinese lesson from the Chapter 2 Cultural Station, in which students take the part of a hawker deciding whether to raise prices as rent and ingredient costs climb, then think it through with Confucius, Laozi and Mozi. Each philosopher is a chatbot persona built in EdCafe.AI and delivered through SLS. Students pick which one to consult, take the hot seat to defend that school of thought against their peers, and finally weigh all three to justify a decision.",
-      "zh": "中四高级华文单元二文化站课例《儒家·道家·墨家的人生智慧》。学生代入一位需供养年迈父母的中年小贩，在租金与原材料价格上涨之际，思考是否应该涨价，并分别与孔子、老子、墨子对话辩证。三位思想家以 EdCafe.AI 建构成聊天机器人，通过 SLS 推送。学生自主选择想请教的哲学家，进入「角色热座」为该家思想辩护，最后综合三家观点，作出有理有据的抉择。"
+      "en": "A Secondary 4 Higher Chinese lesson from the Chapter 2 Cultural Station. Students play a hawker deciding whether to raise prices as costs climb, then think it through with Confucius, Laozi and Mozi, each built as a chatbot in EdCafe.AI and delivered through SLS. They pick which one to consult, defend that school of thought in the hot seat, then weigh all three to justify a decision.",
+      "zh": "中四高级华文单元二文化站的课例。学生扮演一个小贩：成本上涨，要不要涨价？然后分别去问孔子、老子、墨子。三位思想家用 EdCafe.AI 做成聊天机器人，通过 SLS 推送。学生自己选想请教谁，坐上「热座」替那一家辩护，最后综合三家，给出自己的决定。"
     },
     "link": "https://www.facebook.com/share/p/19H8PA4W8e/",
     "award": {
@@ -95,8 +95,8 @@
       "zh": "新加坡学习设计师社群（SgLDC）"
     },
     "summary": {
-      "en": "On building the school's Chinese Language resource hub, and why the structure transfers to any subject: students get stuck and reach for their devices anyway, so the device may as well hold what they need. Curating for your own students is itself a pedagogical act, since it makes explicit what the department thinks is worth knowing, and a shared hub turns out to be an easy thing for colleagues to start contributing to.",
-      "zh": "分享校内华文资源站的建构过程，以及为何这套结构适用于任何科目：学生卡住时本来就会去拿设备，那不如让设备里就有他们需要的东西。为自己的学生做资源筛选本身就是一种教学行为，它把「什么值得学」这件事明确说了出来；而一个共用的平台，也让同事更容易参与共建。"
+      "en": "On building the school's Chinese Language resource hub, and why the structure transfers to any subject: students reach for their devices anyway, so the device may as well hold what they need. A shared hub also turns out to be an easy thing for colleagues to start adding to.",
+      "zh": "讲校内华文资源站是怎么建起来的，以及这套做法为什么换个科目也用得上：学生卡住时本来就会去拿设备，那就让设备里有他们要的东西。而一个共用的平台，同事也比较容易开始往里面加。"
     },
     "link": "https://www.facebook.com/share/p/1L9dq5XU4q/",
     "award": {

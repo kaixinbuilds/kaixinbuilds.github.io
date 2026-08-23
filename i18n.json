@@ -1,8 +1,8 @@
 {
   "_comment": "One key = one string. Add a key here, reference it with data-i18n=\"key\" in index.html. Never duplicate markup for a second language.",
   "site.description": {
-    "en": "Classroom-grounded learning tools for Chinese Language education, designed and built by a practising teacher.",
-    "zh": "由一线华文教师独立设计与开发的课堂学习工具。"
+    "en": "Classroom learning tools for Chinese Language, made by a practising teacher.",
+    "zh": "一线华文教师做的课堂学习工具。"
   },
   "nav.work": {
     "en": "Work",
@@ -14,7 +14,7 @@
   },
   "nav.approach": {
     "en": "Practice",
-    "zh": "理念"
+    "zh": "实践"
   },
   "nav.contact": {
     "en": "Contact",
@@ -41,8 +41,8 @@
     "zh": "华文教师 · 教育科技开发者 · 百德中学母语部主任"
   },
   "hero.intro": {
-    "en": "My work starts the same way in every medium: I notice a structural gap, then build something to close it. I teach Chinese Language, lead a Mother Tongue department, and design tools, structures and processes around problems that surface in real classrooms.",
-    "zh": "无论在哪一个领域，我的工作都始于同一件事：察觉结构上的缺口，然后动手把它补上。我教华文，主持母语部门，也针对课堂中真实浮现的问题，做出相应的工具、结构与流程。"
+    "en": "Across my work I tend to start the same way: I notice a structural gap, then build something to close it. I teach Chinese Language, I lead a Mother Tongue department, and the tools, structures and processes I make come out of problems that show up in class.",
+    "zh": "不管做什么，起点通常都一样：看见一个缺口，就动手补上。我教华文，也带母语部；做出来的工具、机制和流程，都是从课堂上真的会碰到的问题来的。"
   },
   "hero.ctaWork": {
     "en": "See the work",
@@ -93,8 +93,8 @@
     "zh": "查看"
   },
   "approach.title": {
-    "en": "How I design",
-    "zh": "设计理念"
+    "en": "Practice",
+    "zh": "实践"
   },
   "contact.title": {
     "en": "Get in touch",
@@ -110,7 +110,7 @@
   },
   "error.dataBody": {
     "en": "This page reads its content from JSON files, which browsers block when a page is opened directly from disk. Serve the folder over HTTP instead: see README.md.",
-    "zh": "本页内容从 JSON 档案载入，而浏览器会阻止直接从硬盘打开的页面读取档案。请以 HTTP 方式启动本资料夹：详见 README.md。"
+    "zh": "本页内容从 JSON 文件载入，浏览器会阻止直接从硬盘打开的页面读取文件。请以 HTTP 方式打开本文件夹：详见 README.md。"
   },
   "specimen.title": {
     "en": "Public Phone",
@@ -121,8 +121,8 @@
     "zh": "橡胶版画 · 2015"
   },
   "specimen.alt": {
-    "en": "A sheet of block-printed Singapore payphones repeating across the paper, one of them hand-coloured orange.",
-    "zh": "满纸重复印刷的新加坡公用电话版画，其中一台以手工上了橙色。"
+    "en": "A sheet of block-printed Singapore payphones repeating across the paper, one of them coloured orange by hand.",
+    "zh": "满纸重复印刷的新加坡公用电话版画，其中一台手工上了橙色。"
   },
   "epigraph.source": {
     "en": "From Zengguang Xianwen, a Ming dynasty compilation of proverbs and maxims, in its chapter on the encouragement of learning.",
@@ -134,7 +134,7 @@
   },
   "grid.playNote": {
     "en": "Loads the real game, sound included. Works on phone, tablet and computer.",
-    "zh": "将载入实际游戏，含音效。手机、平板与电脑皆可游玩。"
+    "zh": "点了会载入真正的游戏，有音效。手机、平板、电脑都能玩。"
   },
   "page.home.title": {
     "en": "Chun Kai Xin · Chinese Language Teacher & EdTech Builder",
@@ -149,16 +149,16 @@
     "zh": "并肩同行 · 郑凯欣"
   },
   "page.approach.title": {
-    "en": "How I design · Chun Kai Xin",
-    "zh": "设计理念 · 郑凯欣"
+    "en": "Practice · Chun Kai Xin",
+    "zh": "实践 · 郑凯欣"
   },
   "page.contact.title": {
     "en": "Contact · Chun Kai Xin",
     "zh": "联系方式 · 郑凯欣"
   },
   "work.intro": {
-    "en": "Tools, structures and processes built for specific classroom problems, all of them in real use.",
-    "zh": "为具体课堂问题而做的工具、结构与流程，每一项都在真实使用中。"
+    "en": "Tools, structures and processes built for specific classroom problems, all of them in use.",
+    "zh": "为具体的课堂问题而做的工具、机制和流程，目前都在使用中。"
   },
   "status.live": {
     "en": "LIVE",
@@ -178,11 +178,11 @@
   },
   "approach.leadA": {
     "en": "Design thinking is usually drawn as a tidy five step loop: empathise, define, ideate, prototype, test. In a classroom, only the test settles anything. A tool is not good because the thinking behind it was good. It is good because thirty students opened it on a Monday morning and it held.",
-    "zh": "设计思维通常被画成一个工整的五步循环：同理、定义、构思、原型、测试。但在课堂里，真正能定案的只有「测试」这一步。一个工具之所以好，不是因为背后的想法好，而是因为三十个学生在星期一早上打开了它，而它撑住了。"
+    "zh": "设计思维常被画成一个工整的五步循环：同理、定义、构思、原型、测试。但在课堂里，真正说了算的只有「测试」。工具好不好，不看背后的想法有多好，而看三十个学生星期一早上打开它，它撑不撑得住。"
   },
   "approach.leadB": {
-    "en": "So I run the loop, but I run it short and I run it often. The gap comes from evidence: a real script, a real mark, what students say when I ask them. The prototype is a working build, not a mockup. The test is a real lesson with students who will abandon anything that wastes their time. And the next version starts that same week, because by then the classroom has already told me what to fix.",
-    "zh": "所以我照样跑这个循环，只是跑得短、跑得勤。缺口来自证据：一份真实的答卷、一个真实的分数、学生被问到时给出的回答。原型是一个能跑的版本，而不是一张示意图。测试是一堂真实的课，面对的是一群不会容忍浪费时间的学生。下一个版本就在同一周开始，因为课堂那时已经告诉我该改什么了。"
+    "en": "So I run the loop, but I run it short and I run it often. The gap comes from evidence: a real script, a real mark, what students say when I ask them. The prototype is a working build, not a mockup. The test is a real lesson with students who will not humour anything that wastes their time. And the next version starts that same week, because by then the classroom has already told me what to fix.",
+    "zh": "这个循环我照跑，只是跑得短、跑得勤。缺口来自证据：一份考卷、一个分数、问学生时他们怎么说。原型是能跑的版本，不是示意图。测试是一堂真实的课，学生觉得浪费时间就不会买账。下一版通常同一周就动工，因为课堂那时已经告诉我要改什么。"
   },
   "approach.loop1Title": {
     "en": "The gap has to be one I actually saw",
@@ -193,20 +193,20 @@
     "zh": "同理、定义"
   },
   "approach.loop1Body": {
-    "en": "A gap I can point at is a design brief. A gap I assumed is a guess wearing a lanyard. One student's weak comprehension paper is what surfaced a cohort-wide problem for me, and the cohort is what the tool then had to answer to. I find the problem at the level of one student, and define it at the level of the class.",
-    "zh": "能指出来的缺口，是设计任务；靠揣测得来的缺口，只是挂着工作证的猜想。一名学生的理解问答考卷，让我看见了整个级别的问题；而这个工具，此后要交代的对象就是整个级别。问题在一个学生身上被发现，在一个班的层面上被定义。"
+    "en": "A gap I can point at is a design brief. A gap I assumed is a guess wearing a lanyard. One student's comprehension paper is what showed me a problem across the whole cohort, and the cohort is what the tool then had to answer to.",
+    "zh": "指得出来的缺口，才是设计任务；靠揣测来的，不过是挂着工作证的猜想。一个学生的理解问答考卷，让我看见整个级别的问题；工具后来要应付的，也就是整个级别。"
   },
   "approach.loop2Title": {
-    "en": "Build the thing, not a picture of the thing",
-    "zh": "做出东西，而不是东西的示意图"
+    "en": "Build the thing, not a picture of it",
+    "zh": "做出东西来，而不是画一张示意图"
   },
   "approach.loop2Cycle": {
     "en": "ideate, prototype",
     "zh": "构思、原型"
   },
   "approach.loop2Body": {
-    "en": "A mockup cannot be evaluated, only admired. A working build can be handed to a student, and a student will tell you in forty seconds what a proposal deck could not tell you in a term. So I skip the polished pitch stage and ship something small that runs.",
-    "zh": "示意图无法被检验，只能被欣赏。能跑的版本可以直接交到学生手上，而学生四十秒内告诉你的事，一份提案简报一个学期也说不出来。所以我跳过打磨提案的阶段，先交付一个小而能跑的东西。"
+    "en": "A mockup can test an idea. A working build tells me what happens in class. A student will tell you in forty seconds what a proposal deck could not tell you in a term, so I skip the polished pitch and ship something small that runs.",
+    "zh": "示意图能试想法，能跑的版本才告诉我课堂上会发生什么。学生四十秒里说的，一份提案简报一个学期也说不出来。所以我跳过打磨提案，先做一个小而能跑的东西。"
   },
   "approach.loop3Title": {
     "en": "Putting it into practice: the classroom is the test, not the demo",
@@ -217,8 +217,8 @@
     "zh": "测试"
   },
   "approach.loop3Body": {
-    "en": "Colleagues nodding at a demo is not evidence. Students using it unsupervised, in an ordinary lesson, with ordinary levels of patience, is evidence. Everything I have built went in front of real students within days of being usable, and most of what I now believe about the design was learnt there rather than beforehand.",
-    "zh": "同事在演示时点头，不算证据。学生在一堂普通的课上、在无人盯着的情况下、带着普通的耐性使用它，才算证据。我做的每一样东西，在勉强能用的几天内就送到了学生面前；而我今天对设计的多数判断，都是在那里学到的，不是事先想到的。"
+    "en": "Colleagues nodding at a demo is not evidence. Students using it independently, in an ordinary lesson, without step-by-step prompting from me, is evidence. Everything I have built went in front of students within days of being usable, and most of what I now think about the design I learnt there.",
+    "zh": "同事在演示时点头，不算证据。学生在一堂普通的课上自己用，不用我一句一句提示，才算。我做的东西，勉强能用就送到学生面前；今天对设计的判断，多半是在那里学到的，不是事先想好的。"
   },
   "approach.loop4Title": {
     "en": "Let the evidence write the next version",
@@ -241,8 +241,8 @@
     "zh": "再迭代"
   },
   "approach.loop5Body": {
-    "en": "Practise, understand, practise again. No version is final and none of them was meant to be. Each turn of the loop begins from a better question than the last one, which is the only kind of progress I actually trust.",
-    "zh": "实践、认识、再实践。没有哪一版是最终版，本来也不打算是。每一圈都从一个比上一圈更好的问题开始，而这是我唯一真正信得过的进展。"
+    "en": "Practise, understand, practise again. No version is final and none of them was meant to be. Each turn of the loop begins from a better question than the last one, which is the only kind of progress I trust.",
+    "zh": "实践、认识、再实践。没有哪一版是最终版，本来也不打算是。每一圈都从一个比上一圈更好的问题开始，这是我唯一信得过的进展。"
   },
   "lightbox.close": {
     "en": "Close",

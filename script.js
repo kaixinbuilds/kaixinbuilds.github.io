@@ -53,7 +53,8 @@
     if (lang !== 'both') return esc(pick(pair));
     const zh = pair.zh, en = pair.en;
     if (!zh || !en || zh === en) return esc(zh || en || '');
-    return `<span class="bi-zh">${esc(zh)}</span><span class="bi-en">${esc(en)}</span>`;
+    return `<span class="bi-zh" lang="zh-Hans">${esc(zh)}</span>`
+         + `<span class="bi-en" lang="en">${esc(en)}</span>`;
   };
 
   const esc = (str) => String(str).replace(/[&<>"']/g, (c) => (
@@ -165,9 +166,8 @@
     host.innerHTML = data.projects
       .filter((p) => !p.featured)
       .map((p) => {
-        const tags = (p.tags || [])
-          .map((tag, i) => `<li class="tag${i === 0 ? ' accent' : ''}">${esc(tag)}</li>`)
-          .join('');
+        // Tags stay in projects.json as metadata but are not shown: raw
+        // slugs like "sls-ready" read as internals leaking into the page.
         const link = p.link
           ? `<a class="card-link" href="${esc(p.link)}" target="_blank" rel="noopener">${tb('grid.visit')} →</a>`
           : `<span class="card-link" aria-disabled="true">${tb('grid.noLink')}</span>`;
@@ -182,7 +182,6 @@
               `<a href="${esc(l.url)}" target="_blank" rel="noopener">${bi(l.label)} \u2192</a>`
             ).join('')}</p>` : ''}
             <div class="card-foot">
-              <ul class="tags">${tags}</ul>
               ${link}
             </div>
           </div>`;
