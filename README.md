@@ -162,6 +162,7 @@ script.js               JSON loading, i18n, rendering, disclosure, lightbox
 i18n.json               every UI string, bilingual
 projects.json           project data, bilingual
 talks.json              talks and community contributions, bilingual
+googleb99ff….html       Google Search Console verification; never delete, see Search below
 favicon.png             the diskette block print
 apple-touch-icon.png    the same, for iOS home screens
 LICENSE                 all rights reserved; see below
@@ -188,4 +189,15 @@ automatically. Static titles, descriptions, Open Graph and canonical tags are wr
 each page at build time, because link-preview crawlers read the delivered HTML rather than
 the state after client-side translation has run.
 
-Not yet done: verifying the site in Google Search Console and submitting the sitemap.
+The site is verified in Google Search Console as a URL-prefix property,
+`https://kaixinbuilds.github.io/`. Verification is by the HTML file method, so
+`googleb99ffca0f59d4b02.html` must stay in the repository root. Google re-checks it
+periodically and deleting it un-verifies the property. `build.py` writes only its own five
+pages plus the sitemap and robots.txt, so a rebuild never touches it.
+
+A Domain property is not an option here: it needs a DNS record, and DNS for `github.io`
+belongs to GitHub.
+
+Submitting `sitemap.xml` is a one-time action in the Sitemaps panel of Search Console. Since
+`build.py` regenerates the sitemap in place at the same URL, new pages are picked up on
+Google's own recrawl with nothing to resubmit.
