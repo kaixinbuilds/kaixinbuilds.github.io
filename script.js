@@ -100,10 +100,9 @@
 
   /* ── rendering ───────────────────────────────────────── */
 
-  function renderFeatured() {
-    const host = $('#featured');
-    const p = data.projects.find((item) => item.featured);
-    if (!host || !p) return;
+  /** The body of one project, used for every panel. */
+  function projectPanel(p) {
+    const isLive = (p.tags || []).includes('live');
 
     const stats = (p.stats || []).map((s) => `
       <li>
@@ -112,10 +111,7 @@
       </li>`).join('');
 
     const shots = (p.screenshots || []).map((s) => {
-      // alt is an attribute and can hold only one language; the caption below
-      // the frame can hold both.
       const altText = esc(pick(s.caption));
-      const caption = bi(s.caption);
       return `
       <figure class="shot${s.wide ? ' shot-wide' : ''}">
         <div class="screen-bezel">
@@ -123,20 +119,22 @@
             <img src="${esc(s.src)}" alt="${altText}" decoding="async">
           </div>
         </div>
-        <figcaption>${caption}</figcaption>
+        <figcaption>${bi(s.caption)}</figcaption>
       </figure>`;
     }).join('');
 
-    const isLive = (p.tags || []).includes('live');
+    const links = (p.links || []).map((l) =>
+      `<a href="${esc(l.url)}" target="_blank" rel="noopener">${bi(l.label)} \u2192</a>`
+    ).join('');
 
-    host.innerHTML = `
-      <div class="featured-head">
-        <p class="eyebrow">${tb('featured.eyebrow')}</p>
+    return `
+      <article class="project-panel" id="${esc(p.id)}" data-project="${esc(p.id)}">
+        ${p.featured ? `<p class="eyebrow">${tb('featured.eyebrow')}</p>` : ''}
         <div class="featured-titlerow">
           <h2 class="featured-title">${bi(p.title)}</h2>
           ${isLive ? `<span class="badge-live">${tb('status.live')}</span>` : ''}
         </div>
-        <p class="featured-subtitle">${bi(p.subtitle)}</p>
+        ${p.subtitle ? `<p class="featured-subtitle">${bi(p.subtitle)}</p>` : ''}
         <p class="featured-summary">${bi(p.summary)}</p>
         ${stats ? `<ul class="stats">${stats}</ul>` : ''}
         ${p.highlight ? `
@@ -153,10 +151,51 @@
         <p class="project-url">
           <a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.displayUrl || p.link)}</a>
         </p>` : ''}
-      </div>
-      ${shots ? `<div class="shots">${shots}</div>` : ''}`;
+        ${links ? `<p class="project-links">${links}</p>` : ''}
+        ${shots ? `<div class="shots">${shots}</div>` : ''}
+      </article>`;
+  }
 
-    revealLoadedImages(host);
+  function renderProjects() {
+    const nav = $('#project-nav');
+    const detail = $('#project-detail');
+    if (!nav || !detail) return;
+
+    // flagship first, then the rest in the order they appear in the file
+    const list = [...data.projects].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+
+    nav.innerHTML = `<ul>${list.map((p) => `
+      <li><a href="#${esc(p.id)}" data-project-link="${esc(p.id)}">${bi(p.title)}</a></li>`
+    ).join('')}</ul>`;
+
+    detail.innerHTML = list.map(projectPanel).join('');
+
+    const show = (id, push) => {
+      const target = list.some((p) => p.id === id) ? id : list[0] && list[0].id;
+      if (!target) return;
+      detail.querySelectorAll('.project-panel').forEach((el) => {
+        el.hidden = el.dataset.project !== target;
+      });
+      nav.querySelectorAll('[data-project-link]').forEach((a) => {
+        const on = a.dataset.projectLink === target;
+        a.classList.toggle('is-on', on);
+        if (on) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+      if (push && history.replaceState) history.replaceState(null, '', '#' + target);
+      revealLoadedImages(detail);
+      labelZoomables(detail);
+    };
+
+    nav.addEventListener('click', (event) => {
+      const a = event.target.closest('[data-project-link]');
+      if (!a) return;
+      event.preventDefault();
+      show(a.dataset.projectLink, true);
+    });
+
+    window.addEventListener('hashchange', () => show(location.hash.slice(1), false));
+    show(location.hash.slice(1), false);
   }
 
   /** Figures start in their fallback state and are revealed only once the
@@ -170,80 +209,6 @@
       if (img.complete && img.naturalWidth > 0) ready();
       else img.addEventListener('load', ready, { once: true });
     });
-  }
-
-  function renderGrid() {
-    const host = $('#project-grid');
-    if (!host) return;
-
-    host.innerHTML = data.projects
-      .filter((p) => !p.featured)
-      .map((p) => {
-        // Tags stay in projects.json as metadata but are not shown: raw
-        // slugs like "sls-ready" read as internals leaking into the page.
-        const link = p.link
-          ? `<a class="card-link" href="${esc(p.link)}" target="_blank" rel="noopener">${tb('grid.visit')} →</a>`
-          : `<span class="card-link" aria-disabled="true">${tb('grid.noLink')}</span>`;
-
-        const body = `
-          <div class="card-body">
-            <p>${bi(p.summary)}</p>
-            ${p.displayUrl ? `<p class="project-url">
-              <a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.displayUrl)}</a>
-            </p>` : ''}
-            ${(p.links || []).length ? `<p class="project-links">${(p.links || []).map((l) =>
-              `<a href="${esc(l.url)}" target="_blank" rel="noopener">${bi(l.label)} \u2192</a>`
-            ).join('')}</p>` : ''}
-            <div class="card-foot">
-              ${link}
-            </div>
-          </div>`;
-
-        const shot = (p.screenshots || [])[0];
-
-        // A project with an embed spans the grid and gets a bezel: the only
-        // place the 8-bit register is allowed to appear at full size.
-        if (p.embed) return `
-        <article class="card card-wide">
-          <div class="embed">
-            <div class="screen-bezel">
-              <div class="screen-inner" style="aspect-ratio: ${esc(p.embed.aspect || '16 / 10')}">
-                <button class="embed-play" type="button"
-                        data-embed-src="${esc(p.embed.src)}"
-                        data-embed-title="${esc(pick(p.title))}">
-                  <span class="embed-play-icon" aria-hidden="true">▶</span>
-                  <span class="embed-play-label">${tb('grid.play')}</span>
-                </button>
-              </div>
-            </div>
-            <p class="embed-note">${tb('grid.playNote')}</p>
-          </div>
-          <h3>${bi(p.title)}</h3>
-          ${body}
-        </article>`;
-
-        // With a screenshot the card reads top to bottom: name, then the
-        // thing itself, then the details.
-        if (shot) return `
-        <article class="card card-media">
-          <h3>${bi(p.title)}</h3>
-          <figure class="shot">
-            <div class="screen-bezel">
-              <div class="screen-inner" data-missing="${esc(shot.src)}">
-                <img src="${esc(shot.src)}" alt="${esc(pick(shot.caption))}" decoding="async">
-              </div>
-            </div>
-            <figcaption>${bi(shot.caption)}</figcaption>
-          </figure>
-          ${body}
-        </article>`;
-
-        return `<article class="card"><h3>${bi(p.title)}</h3>${body}</article>`;
-      }).join('');
-
-    wireEmbeds(host);
-    revealLoadedImages(host);
-    labelZoomables(host);
   }
 
   /** Click to load: the game is only fetched when someone asks for it,
@@ -328,8 +293,7 @@
 
   function renderAll() {
     applyI18n();
-    renderFeatured();
-    renderGrid();
+    renderProjects();
     renderTalks();
     labelZoomables();
   }
@@ -423,7 +387,7 @@
 
   function showLoadError(err) {
     if (err) console.error('Content failed to load:', err);
-    const host = $('#featured') || $('#project-grid') || $('#talks-list');
+    const host = $('#project-detail') || $('#talks-list');
     if (!host || host.dataset.errored) return;
     host.dataset.errored = 'true';
     host.insertAdjacentHTML('beforebegin', `
@@ -446,7 +410,7 @@
     }
 
     const wanted = [
-      $('#featured') || $('#project-grid') ? ['projects', 'projects.json'] : null,
+      $('#project-detail') ? ['projects', 'projects.json'] : null,
       $('#talks-list') ? ['talks', 'talks.json'] : null,
     ].filter(Boolean);
 

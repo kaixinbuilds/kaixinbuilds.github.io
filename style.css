@@ -808,3 +808,41 @@ h1 .bi-en, h2 .bi-en, h3 .bi-en { font-size: .82em; font-weight: 400; }
 
 /* the epigraph gloss hides only in Chinese-only mode */
 html[data-lang-mode="zh"] .epigraph .en { display: none; }
+
+/* ── work page: an index beside one open project ───────── */
+.work-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 13rem) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: start;
+}
+@media (max-width: 820px) {
+  .work-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+.project-nav { position: sticky; top: 5.5rem; }
+@media (max-width: 820px) { .project-nav { position: static; } }
+
+.project-nav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .1rem; }
+.project-nav a {
+  display: block;
+  padding: .55rem .7rem;
+  border-left: 2px solid var(--rule);
+  color: var(--ink-soft);
+  font-size: .92rem;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color .14s, border-color .14s, background .14s;
+}
+.project-nav a:hover { color: var(--ink); background: color-mix(in srgb, var(--ochre) 7%, transparent); }
+.project-nav a.is-on {
+  color: var(--ink);
+  border-left-color: var(--ochre);
+  background: color-mix(in srgb, var(--ochre) 10%, transparent);
+  font-weight: 500;
+}
+.project-nav .bi-en { font-size: .84em; }
+
+.project-panel[hidden] { display: none; }
+.project-panel > .eyebrow { margin-top: 0; }
+.project-detail .shots { margin-top: clamp(2rem, 4vw, 2.75rem); }

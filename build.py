@@ -142,13 +142,13 @@ PAGES = {
     <div class="wrap">
       <h1 class="page-title" data-i18n="nav.work">Work</h1>
       <p class="page-sub" data-i18n="work.intro"></p>
-      <div id="featured" class="featured" aria-live="polite"></div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div id="project-grid" class="card-grid"></div>
+      <div class="work-layout">
+        <!-- An index of everything, and one project open at a time. Without
+             JavaScript every panel simply shows, stacked. -->
+        <nav id="project-nav" class="project-nav" aria-label="Projects"></nav>
+        <div id="project-detail" class="project-detail"></div>
+      </div>
     </div>
   </section>"""),
     "talks.html": ("page.talks.title", """\
