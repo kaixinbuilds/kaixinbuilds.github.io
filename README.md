@@ -141,6 +141,19 @@ institutional filtering and already in the MOE staff directory.
 
 ---
 
+## Proofreading the copy
+
+```bash
+python3 export-text.py
+```
+
+Writes every visible string, English beside Chinese, to
+`~/Downloads/kaixinbuilds-all-text.md`, ordered the way a visitor reads the site. Pass a
+path as an argument to write it somewhere else. It parses what the built pages actually
+render, so it cannot drift out of step with the site.
+
+---
+
 ## Publishing
 
 ```bash
@@ -170,6 +183,7 @@ assets/
   art/prints/           block prints and their masters
   screenshots/          project screenshots
 publish.sh              build, validate, commit, push
+export-text.py          dump all copy to one bilingual markdown file for proofreading
 ```
 
 ---
