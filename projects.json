@@ -157,5 +157,33 @@
       }
     ],
     "displayUrl": "sites.google.com/moe.edu.sg/bvss-cl-hub"
+  },
+  {
+    "id": "s3g3-chapter5-revision",
+    "featured": false,
+    "title": {
+      "en": "Unit 5 Revision · Learning Never Ends",
+      "zh": "单元五复习《学无止境》· 书山登顶"
+    },
+    "summary": {
+      "en": "A drag-and-drop revision game for Secondary 3 G3. Both texts in the unit run on argument by contrast, but in opposite orders: one negative then positive, the other positive then negative. That reversal is what the closing screen points out. A wrong card springs back and costs nothing, so every student finishes, but the mark records the first judgement, which is what makes the figure in the SLS gradebook worth reading.",
+      "zh": "为中三 G3 做的拖曳式复习游戏。单元里两篇课文用的都是对比论证，顺序却相反：一篇先反后正，一篇先正后反 —— 收关时才点破，这个对调本身就是学习点。放错的卡片弹回原位，不扣分，所以人人走得完；但分数记的是第一次的判断，SLS 教师后台那个数字才有诊断价值。"
+    },
+    "link": "https://kaixinbuilds.github.io/S3G3CLChapter5Revision/",
+    "displayUrl": "kaixinbuilds.github.io/S3G3CLChapter5Revision",
+    "tags": [
+      "game",
+      "argumentative-writing",
+      "sls-scored"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/chapter5-revision.png",
+        "caption": {
+          "en": "Level three: sorting evidence for and against",
+          "zh": "第三关 · 正反例证分类"
+        }
+      }
+    ]
   }
 ]
