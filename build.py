@@ -311,12 +311,15 @@ PAGES = {
 
           <div class="doc-block" id="goals">
             <h2 class="section-title" data-i18n="nlc26.goalsTitle"></h2>
-            <!-- Numbered, because two targets in order is what a sprint is.
+            <!-- Numbered, because four targets in order is what a sprint is.
+                 1 and 2 frame; 3 and 4 are the prototype-then-iterate pair.
                  An <ol> here rather than the big circled .loop: at the top of
                  the page these are the goal, not a procedure to work through. -->
             <ol class="loop-points loop-points-num">
               <li data-i18n="nlc26.goal1"></li>
               <li data-i18n="nlc26.goal2"></li>
+              <li data-i18n="nlc26.goal3"></li>
+              <li data-i18n="nlc26.goal4"></li>
             </ol>
           </div>
 
