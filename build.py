@@ -551,22 +551,29 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
             <li data-i18n="nlc26.b3P1"></li>
             <li data-i18n="nlc26.b3P2"></li>
             <li data-i18n="nlc26.b3P3"></li>
+            <li data-i18n="nlc26.b3P4"></li>
           </ul>
 
+          <!-- No starter folder at this tier, on purpose: this is the one that
+               simulates being alone with the agent. The prompt is a shape rather
+               than a script, and it is mostly blanks, because the move being
+               taught is problem first, options before building. It is the same
+               move as the transcript at the top of this page. -->
           <div class="copy-block">
-            <span class="cap" data-i18n="nlc26.promptCap"></span>
-            <pre lang="zh-Hans">我已经把这个游戏的整个资料夹上传到这个 Project 里了。
+            <span class="cap" data-i18n="nlc26.promptCapB3"></span>
+            <pre lang="zh-Hans">我是中学华文老师，不会编码。
 
-我想换掉它的玩法，但是有一条不能破：my-words.js 的格式不准动。
-词语表还是 { word: "…", def: "…" }，我下个单元还要照样用同一份表。
+我班上遇到的问题是：〔用两三句话说清楚，先别说你要什么工具〕
+我的学生是：〔中几、什么程度〕
+我手上现成的材料有：〔词表？课文？考卷？录音？图片？〕
 
-请把「四选一、答对就往上爬一格」改成：
-〔说清楚你要什么，例如：把左边的词语拖到右边对应的释义上，全部配对完就过关〕
+请先别动手做。先给我三个不一样的做法，每一个用三四句话说明：
+学生会看到什么、要做什么、你为什么觉得这个做法对得上我的问题。
 
-请先用三四句话告诉我你打算怎么改、会动到哪几个地方，等我说「可以」再动手。
-改好之后给我一整个 index.html 让我下载。
+我挑好了再告诉你，那时候才开始做。
+做出来的东西要能直接放上 GitHub Pages，跟我今天做的那个一样。
 
-如果我要的玩法在手机上按不动，或者会让某些词语永远出不来，请先告诉我。</pre>
+我不会编码。任何要我自己动手的地方，请写清楚点哪里、贴哪一段。</pre>
           </div>
         </li>
             </ol>

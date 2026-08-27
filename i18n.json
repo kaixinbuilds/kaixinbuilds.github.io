@@ -933,8 +933,8 @@
     "zh": "网址已经活了。接下来换点别的。"
   },
   "nlc26.bonusLede": {
-    "en": "Everyone finishes the first one. The next two are for whoever still has time, and they are not a test of anything.",
-    "zh": "第一样人人都做完。后面两样，谁还有时间谁做，不考谁，也不比谁。"
+    "en": "Everyone finishes the first one. The other two are for whoever still has time, and they are not a test of anything.",
+    "zh": "第一样人人都做完。另外两样，谁还有时间谁做，不考谁，也不比谁。"
   },
   "nlc26.bonusSafeLabel": {
     "en": "Why this is safe to try",
@@ -953,8 +953,8 @@
     "zh": "换词语"
   },
   "nlc26.b1Cycle": {
-    "en": "everyone",
-    "zh": "人人都做"
+    "en": "core",
+    "zh": "核心"
   },
   "nlc26.b1P1": {
     "en": "This is steps 3 to 6, which you have already done. Only my-words.js ever changes.",
@@ -969,8 +969,8 @@
     "zh": "换外观"
   },
   "nlc26.b2Cycle": {
-    "en": "if you have time",
-    "zh": "有时间就试"
+    "en": "consolidation",
+    "zh": "巩固"
   },
   "nlc26.b2P1": {
     "en": "Six colours sit at the very top of index.html, each with a Chinese comment saying what it does. Dark panel, light text, accent, correct, wrong, button surface.",
@@ -989,23 +989,31 @@
     "zh": "换玩法"
   },
   "nlc26.b3Cycle": {
-    "en": "the hard one",
-    "zh": "最难的一样"
+    "en": "advanced",
+    "zh": "进阶"
   },
   "nlc26.b3P1": {
-    "en": "One rule holds everything together: my-words.js does not change. The vocabulary sheet stays 词语 and 释义, so next term the same sheet still drops in.",
-    "zh": "有一条不能破：my-words.js 的格式不动。词语表还是「词语、释义」两栏，下个学期同一份表照样能用。"
+    "en": "No starter folder this time, and nothing of mine to build on. This tier is what next term looks like, when I am not standing here.",
+    "zh": "这一关不给底稿，也不给我的东西让你改。这一关模拟的，是下个学期我不在旁边的时候。"
   },
   "nlc26.b3P2": {
-    "en": "Everything else is open. Drag each word onto its meaning. Type the word from its definition. Sort them against the clock. The climb is only one way of asking.",
-    "zh": "别的都可以换。把词语拖到对应的释义上；看释义把词语打出来；限时把它们分类。爬山只是提问的其中一种方式。"
+    "en": "Open a new Project, empty. Do not open with what you want built. Open with where your class is stuck, who the students are, and what material you already have.",
+    "zh": "开一个新的 Project，空的。别一上来就说你要做什么，先说你班上哪里卡住、学生是谁、你手上现成有什么材料。"
   },
   "nlc26.b3P3": {
-    "en": "That is the real point, and it is the same one VocabSummit runs on: the word list outlives the interaction. Design the sheet once, and it can be asked for in any number of ways.",
-    "zh": "这才是重点，也是「词山学海」在做的同一件事：词表活得比玩法长。表设计好一次，就能用无数种方式去问。"
+    "en": "Then ask for three different approaches before it builds anything, and pick one. Choosing between three is a far better use of it than accepting the first thing it offers.",
+    "zh": "然后先让它给三个不一样的做法，别急着让它动手，再从三个里挑一个。让它给你三个选择、你来挑，比接受它端出来的第一样东西有用得多。"
   },
   "nlc26.bonusClose": {
     "en": "None of this is a test. Anyone who leaves with their own words on a link students can open has done the whole thing.",
     "zh": "这些都不考。带着一个学生打得开的网址、里头是你自己的词语走出这个房间，就是全部做完了。"
+  },
+  "nlc26.promptCapB3": {
+    "en": "A shape, not a script. Write over it.",
+    "zh": "这只是个架子，照你自己的情况改"
+  },
+  "nlc26.b3P4": {
+    "en": "Publishing is the same six steps you already did. And this is exactly how VocabSummit started: a problem, a link, and the sentence I do not know how to start. That message is at the top of this page, unedited.",
+    "zh": "做出来之后，发布还是你刚走过的那六步。「词山学海」当初就是这么开始的：一个问题、一个网址、一句「我不知道怎么开始」。那则讯息就在这一页最上面，一字没改。"
   }
 }
