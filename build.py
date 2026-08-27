@@ -111,7 +111,7 @@ META = {
                       "How a classroom tool actually gets designed: a short loop where the "
                       "deciding step is students using it in a real lesson."),
     "2026AIinSecCLNLC.html": ("2026 AI in Sec CL NLC - Chun Kai Xin",
-                              "Resources for the 28 August 2026 AI in Sec CL NLC workshop: the four pieces of technology behind VocabSummit, and a starter game to adapt for your own unit."),
+                              "Resources for the 28 August 2026 AI in Sec CL NLC workshop: the five pieces of technology behind VocabSummit, and a starter game to adapt for your own unit."),
     "contact.html": ("Contact - Chun Kai Xin",
                      "Get in touch about adapting any of these tools, or about building "
                      "something together."),
