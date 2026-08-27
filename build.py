@@ -420,40 +420,97 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           </ul>
         </li>
         <li>
-          <h3 data-i18n="nlc26.p2Title"></h3>
+          <div class="tool-head">
+            <h3 data-i18n="nlc26.p2Title"></h3>
+            <a class="tool-link" href="https://claude.ai"
+               target="_blank" rel="noopener">claude.ai</a>
+          </div>
           <p class="loop-cycle" data-i18n="nlc26.p2Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p2A"></li>
           </ul>
+          <details class="tool-guide">
+            <summary><span data-i18n="nlc26.guideLabel"></span></summary>
+            <p class="tool-guide-body">
+              <a href="https://support.claude.com/en/articles/9517075-what-are-projects"
+                 target="_blank" rel="noopener" data-i18n="nlc26.p2Guide"></a>
+            </p>
+          </details>
         </li>
         <li>
-          <h3 data-i18n="nlc26.p3Title"></h3>
+          <div class="tool-head">
+            <h3 data-i18n="nlc26.p3Title"></h3>
+            <a class="tool-link" href="https://claude.com/product/claude-code"
+               target="_blank" rel="noopener">claude.com/claude-code</a>
+          </div>
           <p class="loop-cycle" data-i18n="nlc26.p3Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p3A"></li>
           </ul>
+          <details class="tool-guide">
+            <summary><span data-i18n="nlc26.guideLabel"></span></summary>
+            <p class="tool-guide-body">
+              <a href="https://docs.claude.com/en/docs/claude-code/quickstart"
+                 target="_blank" rel="noopener" data-i18n="nlc26.p3Guide"></a>
+            </p>
+          </details>
         </li>
         <li>
-          <h3 data-i18n="nlc26.p4Title"></h3>
+          <div class="tool-head">
+            <h3 data-i18n="nlc26.p4Title"></h3>
+            <a class="tool-link" href="https://chatgpt.com"
+               target="_blank" rel="noopener">chatgpt.com</a>
+          </div>
           <p class="loop-cycle" data-i18n="nlc26.p4Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p4A"></li>
           </ul>
+          <details class="tool-guide">
+            <summary><span data-i18n="nlc26.guideLabel"></span></summary>
+            <p class="tool-guide-body">
+              <a href="https://help.openai.com/en/articles/8932459-creating-images-in-chatgpt"
+                 target="_blank" rel="noopener" data-i18n="nlc26.p4Guide"></a>
+            </p>
+          </details>
         </li>
         <li>
-          <h3 data-i18n="nlc26.p5Title"></h3>
+          <div class="tool-head">
+            <h3 data-i18n="nlc26.p5Title"></h3>
+            <a class="tool-link" href="https://github.com"
+               target="_blank" rel="noopener">github.com</a>
+            <a class="tool-link" href="https://pages.github.com"
+               target="_blank" rel="noopener">pages.github.com</a>
+          </div>
           <p class="loop-cycle" data-i18n="nlc26.p5Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p5A"></li>
             <li data-i18n="nlc26.p5B"></li>
           </ul>
+          <details class="tool-guide">
+            <summary><span data-i18n="nlc26.guideLabel"></span></summary>
+            <p class="tool-guide-body">
+              <a href="https://docs.github.com/en/pages/quickstart"
+                 target="_blank" rel="noopener" data-i18n="nlc26.p5Guide"></a>
+            </p>
+          </details>
         </li>
         <li>
-          <h3 data-i18n="nlc26.p6Title"></h3>
+          <div class="tool-head">
+            <h3 data-i18n="nlc26.p6Title"></h3>
+            <a class="tool-link" href="https://firebase.google.com"
+               target="_blank" rel="noopener">firebase.google.com</a>
+          </div>
           <p class="loop-cycle" data-i18n="nlc26.p6Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p6A"></li>
           </ul>
+          <details class="tool-guide">
+            <summary><span data-i18n="nlc26.guideLabel"></span></summary>
+            <p class="tool-guide-body">
+              <a href="https://firebase.google.com/docs/auth/web/start"
+                 target="_blank" rel="noopener" data-i18n="nlc26.p6Guide"></a>
+            </p>
+          </details>
         </li>
             </ol>
           </div>
@@ -479,11 +536,37 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
         <li>
           <h3 data-i18n="nlc26.s1Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.s1Cycle"></p>
+          <!-- Every step that names a page carries the page: a teacher
+               following along on a laptop should never have to retype a
+               URL, and the upload step is shown rather than described. -->
           <ul class="loop-points">
-            <li data-i18n="nlc26.s1P1"></li>
-            <li data-i18n="nlc26.s1P2"></li>
-            <li data-i18n="nlc26.s1P3"></li>
-            <li data-i18n="nlc26.s1P4"></li>
+            <li class="step-item">
+              <span data-i18n="nlc26.s1P1"></span>
+              <a class="tool-link" href="https://github.com/signup"
+                 target="_blank" rel="noopener">github.com/signup</a>
+            </li>
+            <li class="step-item">
+              <span data-i18n="nlc26.s1P2"></span>
+              <a class="tool-link" href="https://github.com/new"
+                 target="_blank" rel="noopener">github.com/new</a>
+            </li>
+            <li class="step-item">
+              <span data-i18n="nlc26.s1P3"></span>
+              <a class="tool-link" href="https://github.com/kaixinbuilds/VocabClimbStarter"
+                 target="_blank" rel="noopener">github.com/kaixinbuilds/VocabClimbStarter</a>
+            </li>
+            <li>
+              <span data-i18n="nlc26.s1P4"></span>
+              <figure class="shot step-shot">
+                <div class="screen-bezel">
+                  <div class="screen-inner" data-missing="assets/screenshots/github-upload-files.png">
+                    <img src="assets/screenshots/github-upload-files.png" alt=""
+                         data-i18n="nlc26.s1Shot" data-i18n-attr="alt" decoding="async">
+                  </div>
+                </div>
+                <figcaption data-i18n="nlc26.s1Shot"></figcaption>
+              </figure>
+            </li>
             <li data-i18n="nlc26.s1P5"></li>
             <li data-i18n="nlc26.s1P6"></li>
           </ul>

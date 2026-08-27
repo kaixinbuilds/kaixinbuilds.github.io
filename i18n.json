@@ -332,6 +332,10 @@
     "en": "Founder · me",
     "zh": "创办人 · 我"
   },
+  "nlc26.guideLabel": {
+    "en": "Tutorial",
+    "zh": "教程（英文）"
+  },
   "nlc26.p1Cycle": {
     "en": "decides what to build, and what counts as built well",
     "zh": "决定做什么、什么算做好"
@@ -352,6 +356,10 @@
     "en": "Decisions, notes and word lists in one Project, so you never explain twice.",
     "zh": "设计决定、教学笔记、词表都放同一个 Project，不必每次重讲。"
   },
+  "nlc26.p2Guide": {
+    "en": "What are Projects? · Anthropic support",
+    "zh": "什么是 Project · Anthropic 帮助中心"
+  },
   "nlc26.p3Title": {
     "en": "Engineer · Claude Code",
     "zh": "工程师 · Claude Code"
@@ -364,6 +372,10 @@
     "en": "It reads the files itself, edits, runs them, then checks its own work.",
     "zh": "它自己读文件、动手改、跑起来，再看对不对。"
   },
+  "nlc26.p3Guide": {
+    "en": "Claude Code quickstart · Anthropic docs",
+    "zh": "Claude Code 快速上手 · Anthropic 文档"
+  },
   "nlc26.p4Title": {
     "en": "Designer · ChatGPT",
     "zh": "设计师 · ChatGPT"
@@ -375,6 +387,10 @@
   "nlc26.p4A": {
     "en": "The cliff, the landscape, the climber: all generated.",
     "zh": "游戏里的山壁、风景、角色，全是生成的。"
+  },
+  "nlc26.p4Guide": {
+    "en": "Creating images in ChatGPT · OpenAI help",
+    "zh": "在 ChatGPT 里出图 · OpenAI 帮助中心"
   },
   "nlc26.vsTitle": {
     "en": "VocabSummit",
@@ -696,6 +712,10 @@
     "en": "GitHub Pages turns it into a link for nothing.",
     "zh": "GitHub Pages 免费把它变成网址。"
   },
+  "nlc26.p5Guide": {
+    "en": "GitHub Pages quickstart · GitHub docs",
+    "zh": "GitHub Pages 快速上手 · GitHub 文档"
+  },
   "nlc26.handsFloor": {
     "en": "Which of these will you take on today?",
     "zh": "今天你希望接下哪些挑战呢？"
@@ -709,20 +729,24 @@
     "zh": "生活空间"
   },
   "nlc26.s1P1": {
-    "en": "github.com → Sign up. A personal email is fine. Free, and no card.",
-    "zh": "github.com → Sign up。用个人邮箱就行。免费，不必给信用卡。"
+    "en": "github.com → Sign up. A free account.",
+    "zh": "github.com → Sign up。免费账号。"
   },
   "nlc26.s1P2": {
-    "en": "github.com/new → name it VocabClimbStarter, the same as everyone else in the room → Public → Create repository.",
-    "zh": "github.com/new → 仓库名用 VocabClimbStarter，全场统一 → 选 Public → Create repository。"
+    "en": "github.com/new → name it VocabClimbStarter, or anything you like → Public → Create repository.",
+    "zh": "github.com/new → 仓库名用 VocabClimbStarter，亦可自定义 → 选 Public → Create repository。"
   },
   "nlc26.s1P3": {
-    "en": "Open my starter → green Code button → Download ZIP → unzip. About 540KB. On a slow network, take it off a thumb drive instead.",
-    "zh": "打开我的示范项目 → 绿色的 Code 按钮 → Download ZIP → 解压。约 540KB，网络慢就用随身碟拷。"
+    "en": "Open my starter → green Code button → Download ZIP → unzip.",
+    "zh": "打开我的示范项目 → 绿色的 Code 按钮 → Download ZIP → 解压。"
   },
   "nlc26.s1P4": {
-    "en": "Back in your empty repository → uploading an existing file → drag in everything you unzipped, art folder included → Commit changes.",
-    "zh": "回到你的空仓库 → 点 uploading an existing file → 把解压后的东西全部拖进去，art 资料夹也要 → Commit changes。"
+    "en": "Back in your repository → the + button beside the green Code button → Upload files → drag in everything you unzipped, art folder included → scroll to the bottom and Commit changes.",
+    "zh": "回到你的仓库 → 绿色 Code 按钮左边的「+」→ Upload files → 把解压后的东西全部拖进去，art 资料夹也要 → 拉到页面最下面按 Commit changes。"
+  },
+  "nlc26.s1Shot": {
+    "en": "The + sits just left of the green Code button. Upload files is inside it.",
+    "zh": "「+」就在绿色 Code 按钮的左边，点开就有 Upload files。"
   },
   "nlc26.s1P5": {
     "en": "Settings → Pages → Deploy from a branch → main → / (root) → Save. Wait a minute or two.",
@@ -741,12 +765,12 @@
     "zh": "核心"
   },
   "nlc26.s2P1": {
-    "en": "The folder has an .xlsx template and a .csv. Two columns: the word, and its meaning. Row 1 stays as it is. Eight entries or more, and you never write wrong answers: distractors come from your other entries.",
-    "zh": "资料夹里有「词语表模板.xlsx」和一份 .csv。两栏：词语、释义。第一行不需修改。8 个以上，错误选项不用你写，程序会从你其他词语的释义里抓。"
+    "en": "The folder has an .xlsx template and a .csv. Two columns: the word, and its meaning. Row 1 stays as it is. Eight entries or more, and you never write the wrong answers yourself: the game generates the distractors from your own list.",
+    "zh": "资料夹里有「词语表模板.xlsx」和一份 .csv。两栏：词语、释义。第一行不需修改。8 个以上，错误选项不用自己写，程序会参考词语表自动生成干扰项。"
   },
   "nlc26.s2P2": {
-    "en": "claude.ai → Projects → new one. Upload the whole folder and your filled-in sheet. The folder matters: it is how Claude sees the format it has to match.",
-    "zh": "claude.ai → Projects → 新建一个。把整个资料夹和你填好的词语表都上传进去。资料夹一定要传：Claude 得看见原本的格式，才知道要照着什么写。"
+    "en": "claude.ai → Projects → new one. Upload the whole folder and your filled-in sheet. Claude has to see the original format to know what it is matching.",
+    "zh": "claude.ai → Projects → 新建一个。把整个资料夹和你填好的词语表都上传进去。Claude 得看见原本的格式，才知道要照着什么写。"
   },
   "nlc26.s2P3": {
     "en": "Put Claude's my-words.js back in the folder, replacing the old one. Double-click index.html and play a round. This checking step is the actual skill.",
@@ -811,6 +835,10 @@
   "nlc26.p6A": {
     "en": "Keeps the user records.",
     "zh": "存好用户记录"
+  },
+  "nlc26.p6Guide": {
+    "en": "Get started with Firebase Authentication · Firebase docs",
+    "zh": "Firebase 身份验证入门 · Firebase 文档"
   },
   "talks.groupVocabSummit": {
     "en": "VocabSummit",

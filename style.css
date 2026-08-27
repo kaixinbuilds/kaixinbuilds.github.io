@@ -615,6 +615,72 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 }
 @media (max-width: 480px) { .loop-close { padding-left: 0; } }
 
+/* ── the tools behind a role ────────────────────────────── */
+/* Each hired role names a real product, so the name carries a way to reach
+   it: the link sits beside the heading, in the open. The tutorial is one
+   step further out, folded away, because six open guides would bury the
+   six roles they belong to. */
+.tool-head {
+  display: flex; flex-wrap: wrap;
+  align-items: baseline;
+  gap: .4rem .6rem;
+}
+.tool-link {
+  font-family: var(--font-sans);
+  font-size: .72rem; font-weight: 600;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  color: var(--ochre-deep);
+  text-decoration: none;
+  padding: .18rem .55rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  transition: background .15s, border-color .15s;
+}
+.tool-link:hover { background: var(--ochre-wash); border-color: var(--ochre); }
+.tool-link:focus-visible { outline: 2px solid var(--ochre); outline-offset: 2px; }
+
+/* Folded, so the list still reads as six roles rather than twelve links. */
+.tool-guide { margin: .6rem 0 0; }
+.tool-guide > summary {
+  display: inline-flex; align-items: center; gap: .4rem;
+  cursor: pointer; list-style: none;
+  font-family: var(--font-sans);
+  font-size: .68rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.tool-guide > summary::-webkit-details-marker { display: none; }
+.tool-guide > summary::before {
+  content: "";
+  flex: none;
+  width: 6px; height: 6px;
+  border-right: 1.5px solid var(--ink-faint);
+  border-bottom: 1.5px solid var(--ink-faint);
+  transform: rotate(-45deg) translate(-1px, -1px);
+  transition: transform .2s;
+}
+.tool-guide[open] > summary::before { transform: rotate(45deg) translate(-1px, -1px); }
+.tool-guide > summary:hover { color: var(--ochre-deep); }
+.tool-guide > summary:focus-visible { outline: 2px solid var(--ochre); outline-offset: 2px; }
+.tool-guide-body { margin: .45rem 0 0; font-size: .9rem; }
+.tool-guide-body a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+.tool-guide-body a:hover { color: var(--ochre-deep); border-bottom-color: var(--ochre); }
+
+/* A step that names a page carries the page, on its own line under the
+   instruction so the sentence still reads as a sentence. */
+.step-item .tool-link { display: inline-block; margin-top: .35rem; }
+
+/* Screenshots of somebody else's interface are evidence, not artwork:
+   shown whole rather than cropped to a tidy ratio. */
+.step-shot { max-width: 30rem; margin: 1rem 0 .25rem; }
+.step-shot .screen-inner { aspect-ratio: auto; background: var(--paper); }
+.step-shot .screen-inner img { height: auto; object-fit: contain; image-rendering: auto; }
+
 /* The second half of the Practice page: what the loop is aimed at.
    Deliberately not numbered. The loop is a sequence and reads as one; the
    three needs are simultaneous, so they are set as three plates side by side
