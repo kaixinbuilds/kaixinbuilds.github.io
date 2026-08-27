@@ -59,14 +59,21 @@ SLUG="${REMOTE##*:}"      # owner/repo.git
 SLUG="${SLUG##*github.com/}"
 SLUG="${SLUG%.git}"
 
-echo -n "waiting for the Pages build"
+# Ask the pages-build-deployment workflow, NOT the repos/:slug/pages/builds
+# API. That API reported "errored" for commits whose workflow had plainly
+# succeeded and whose content was already live, so it cannot be trusted to
+# gate anything. The workflow run for this exact SHA is the real answer.
+echo -n "waiting for the Pages deploy"
 STATUS=""
 for _ in $(seq 1 40); do          # 40 x 15s = up to 10 minutes
-  BUILD="$(gh api "repos/$SLUG/pages/builds" \
-             --jq ".[] | select(.commit == \"$SHA\") | .status" 2>/dev/null | head -1 || true)"
-  case "$BUILD" in
-    built)   STATUS=built;   break ;;
-    errored) STATUS=errored; break ;;
+  RUN="$(gh run list --repo "$SLUG" --workflow pages-build-deployment \
+           --json headSha,status,conclusion --limit 20 \
+           --jq "[.[] | select(.headSha == \"$SHA\")] | first | \
+                 select(.status == \"completed\") | .conclusion" 2>/dev/null || true)"
+  case "$RUN" in
+    success)   STATUS=success;   break ;;
+    failure|timed_out) STATUS=failure; break ;;
+    cancelled) STATUS=cancelled; break ;;
   esac
   echo -n "."
   sleep 15
@@ -74,25 +81,30 @@ done
 echo
 
 case "$STATUS" in
-  built)
-    echo "Pages build succeeded. Live now:"
+  success)
+    echo "Deployed. Live now:"
     echo "  https://kaixinbuilds.github.io"
     ;;
-  errored)
-    echo "PAGES BUILD FAILED for $(git rev-parse --short HEAD)."
+  cancelled)
+    # Normal when you push twice quickly: the newer push supersedes this one.
+    echo "This deploy was superseded by a later push. Check that the newer one landed:"
+    echo "  https://github.com/$SLUG/deployments"
+    ;;
+  failure)
+    echo "PAGES DEPLOY FAILED for $(git rev-parse --short HEAD)."
     echo "The push went through, but the live site is STILL SERVING THE PREVIOUS COMMIT."
     echo "Visitors see no error; the site just does not update."
     echo
-    gh api "repos/$SLUG/pages/builds" \
-      --jq ".[] | select(.commit == \"$SHA\") | .error.message" 2>/dev/null | head -1 || true
+    echo "Before believing this, confirm it against the live site itself:"
+    echo "  curl -s https://kaixinbuilds.github.io/i18n.json | grep <something you just changed>"
     echo
-    echo "First thing to check: .nojekyll is still in the repository root."
-    echo "build.py writes it, and without it Pages runs Jekyll and can fail this way."
-    echo "  https://github.com/$SLUG/deployments"
+    echo "If it really is stale: check .nojekyll is still in the repository root,"
+    echo "then read the run log at"
+    echo "  https://github.com/$SLUG/actions/workflows/pages/pages-build-deployment"
     exit 1
     ;;
   *)
-    echo "Still building after 10 minutes, which is unusual. Check it yourself:"
+    echo "Still deploying after 10 minutes, which is unusual. Check it yourself:"
     echo "  https://github.com/$SLUG/deployments"
     ;;
 esac

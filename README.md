@@ -177,16 +177,31 @@ nobody. The site carries on serving the last commit that built, so the pages qui
 updating while `git push` and this script both report success. An hour went into staring at
 a correct repository and a stale site.
 
-So `publish.sh` now polls the build and exits non-zero if it errored. If you ever see
+So `publish.sh` now waits for the deploy and exits non-zero if it failed.
+
+It asks the **`pages-build-deployment` workflow run for that exact commit**, not the
+`repos/:owner/:repo/pages/builds` API. That API reported `errored` for commits whose
+workflow had plainly succeeded and whose content was already live on the site, so it cannot
+be trusted to gate anything. Do not "simplify" the check back onto it.
+
+If you see
 
 ```
-PAGES BUILD FAILED
+PAGES DEPLOY FAILED
 ```
 
-check first that `.nojekyll` is still in the repository root. `build.py` writes it, and
-without it Pages runs Jekyll over finished HTML that does not need it, which is exactly how
-that failure happened. Builds can also be watched at
+confirm it against the live site before believing it:
+
+```bash
+curl -s https://kaixinbuilds.github.io/i18n.json | grep "something you just changed"
+```
+
+If the site really is stale, check that `.nojekyll` is still in the repository root, then
+read the run log. Deploys can be watched at
 https://github.com/kaixinbuilds/kaixinbuilds.github.io/deployments.
+
+A `cancelled` run is not a failure: pushing twice in quick succession supersedes the earlier
+deploy, and the script says so rather than crying wolf.
 
 The check needs the `gh` CLI. Without it the script says so and exits successfully, rather
 than pretending it verified something it could not.
