@@ -721,24 +721,24 @@
     "zh": "这一切是怎么开始的"
   },
   "nlc26.storyLede": {
-    "en": "Not with a plan or a specification. With one message, typed in plain Chinese.",
-    "zh": "不是从一份计划书或规格开始的。就是打了一段话，用平常说话的中文。"
+    "en": "Not with a specification. With a problem, a link to a manual I didn't understand, and the sentence I don't know how to start.",
+    "zh": "不是从一份规格书开始的。是一个问题、一个我看不懂的说明网址，加上一句「我不知道怎么开始」。"
   },
   "nlc26.storyCap": {
-    "en": "The first thing I typed",
-    "zh": "我打的第一句"
+    "en": "The first message I sent, word for word",
+    "zh": "我发出去的第一则讯息，一字不改"
   },
   "nlc26.storyP1": {
-    "en": "No flowchart, no requirements document, no meeting. It was talked into existence, one exchange at a time.",
-    "zh": "没有流程图，没有需求书，没有开会。就是一来一往，一句一句聊出来的。"
+    "en": "Notice what it is not: no flowchart, no requirements, no meeting. A problem, and a link so it knew what I was working inside.",
+    "zh": "看看它不是什么：没有流程图，没有需求书，没有开会。只有一个问题，加一个网址让它知道我在什么环境里做事。"
   },
   "nlc26.storyP2": {
-    "en": "It writes, I look. Wrong is fine: you say what's wrong and it goes again. That loop is the whole method.",
-    "zh": "它写，我看。不对就说哪里不对，再来一次。这个来回，就是全部的方法。"
+    "en": "And notice that what I asked for is not what exists today. I asked for an SLS package. It turned out the idea would not fit inside SLS's existing structure, so it grew into a platform of its own. The first plan changing is normal, not a failure.",
+    "zh": "再看看：我当初要的，跟今天存在的东西不一样。我要的本来是一个 SLS 教材包，做下去才发现这个构想装不进 SLS 现有的架构里，于是它长成了一个独立的平台。最初的构想会变，这是常态，不是失败。"
   },
   "nlc26.storyP3": {
-    "en": "The rounds that changed it most were the ones right after students said something. That part is not the AI's job.",
-    "zh": "改动最大的几轮，都发生在学生说了什么之后。那一部分，不是 AI 的工作。"
+    "en": "It writes, I look, I say what's wrong. The rounds that changed it most came right after students said something. That part was never the AI's job.",
+    "zh": "它写，我看，我说哪里不对。改动最大的几轮，都紧接在学生说了什么之后。那一部分，从来不是 AI 的工作。"
   },
   "nlc26.statWords": {
     "en": "vocabulary items",
