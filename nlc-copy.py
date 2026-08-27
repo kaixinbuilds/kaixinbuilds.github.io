@@ -53,9 +53,9 @@ def entries():
 
 def block_titles(i18n):
     """Section names for the export, taken from the sidebar labels."""
-    nav = ["navSession", "navStory", "navHands", "navStack",
+    nav = ["navSession", "navStory", "navHands", "navBonus", "navStack",
            "navVs", "navQ", "navPost", "navAfter"]
-    ids = ["session", "how-it-started", "hands-on", "stack",
+    ids = ["session", "how-it-started", "hands-on", "bonus", "stack",
            "vocabsummit", "concerns", "post", "after"]
     return {b: i18n.get("nlc26." + n, {}).get("zh", b) for b, n in zip(ids, nav)}
 

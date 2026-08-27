@@ -302,6 +302,7 @@ PAGES = {
             <li><a href="#session" data-i18n="nlc26.navSession"></a></li>
             <li><a href="#how-it-started" data-i18n="nlc26.navStory"></a></li>
             <li><a href="#hands-on" data-i18n="nlc26.navHands"></a></li>
+            <li><a href="#bonus" data-i18n="nlc26.navBonus"></a></li>
             <li><a href="#stack" data-i18n="nlc26.navStack"></a></li>
             <li><a href="#vocabsummit" data-i18n="nlc26.navVs"></a></li>
             <li><a href="#concerns" data-i18n="nlc26.navQ"></a></li>
@@ -489,6 +490,89 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
                 <li data-i18n="nlc26.stuck3"></li>
                 <li data-i18n="nlc26.stuck4"></li>
               </ul>
+            </div>
+          </div>
+
+          <!-- Differentiated instruction for the room: everyone ships the floor
+               task, and the fast finishers keep going. Deliberately placed after
+               step 6, because the commit from step 6 is the safety net: anything
+               tried here can be reverted from GitHub's own history. The tiers are
+               named for what changes, not for who is doing it. Each carries its
+               own prompt, because writing the prompt is the skill on offer. -->
+          <div class="doc-block" id="bonus">
+            <h2 class="section-title" data-i18n="nlc26.bonusTitle"></h2>
+            <p class="section-sub" data-i18n="nlc26.bonusLede"></p>
+
+            <div class="highlight-box">
+              <span class="label" data-i18n="nlc26.bonusSafeLabel"></span>
+              <ul class="loop-points">
+                <li data-i18n="nlc26.bonusSafe1"></li>
+                <li data-i18n="nlc26.bonusSafe2"></li>
+              </ul>
+            </div>
+
+            <ol class="loop">
+        <li>
+          <h3 data-i18n="nlc26.b1Title"></h3>
+          <p class="loop-cycle" data-i18n="nlc26.b1Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.b1P1"></li>
+            <li data-i18n="nlc26.b1P2"></li>
+          </ul>
+        </li>
+        <li>
+          <h3 data-i18n="nlc26.b2Title"></h3>
+          <p class="loop-cycle" data-i18n="nlc26.b2Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.b2P1"></li>
+            <li data-i18n="nlc26.b2P2"></li>
+            <li data-i18n="nlc26.b2P3"></li>
+          </ul>
+
+          <div class="copy-block">
+            <span class="cap" data-i18n="nlc26.promptCap"></span>
+            <pre lang="zh-Hans">我已经把这个游戏的整个资料夹上传到这个 Project 里了。
+
+我想换掉它的外观，内容和玩法都不要动：
+1. index.html 最上面的 :root 里有六个颜色。请照〔说说你要的感觉，
+   例如：水墨、夜市、海边、我校的校色〕，给我一整段改好的 :root 贴回去。
+2. 告诉我 art 资料夹里那三张图（landscape.jpg、wall.jpg、climber.png）
+   分别是做什么用的、该做多大，我想自己换掉。
+
+给我可以直接贴回去的完整段落，不要只说「把某某改成某某」。
+
+如果我要的感觉会让字看不清楚，请先告诉我，不要照做。</pre>
+          </div>
+        </li>
+        <li>
+          <h3 data-i18n="nlc26.b3Title"></h3>
+          <p class="loop-cycle" data-i18n="nlc26.b3Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.b3P1"></li>
+            <li data-i18n="nlc26.b3P2"></li>
+            <li data-i18n="nlc26.b3P3"></li>
+          </ul>
+
+          <div class="copy-block">
+            <span class="cap" data-i18n="nlc26.promptCap"></span>
+            <pre lang="zh-Hans">我已经把这个游戏的整个资料夹上传到这个 Project 里了。
+
+我想换掉它的玩法，但是有一条不能破：my-words.js 的格式不准动。
+词语表还是 { word: "…", def: "…" }，我下个单元还要照样用同一份表。
+
+请把「四选一、答对就往上爬一格」改成：
+〔说清楚你要什么，例如：把左边的词语拖到右边对应的释义上，全部配对完就过关〕
+
+请先用三四句话告诉我你打算怎么改、会动到哪几个地方，等我说「可以」再动手。
+改好之后给我一整个 index.html 让我下载。
+
+如果我要的玩法在手机上按不动，或者会让某些词语永远出不来，请先告诉我。</pre>
+          </div>
+        </li>
+            </ol>
+
+            <div class="highlight-box">
+              <p data-i18n="nlc26.bonusClose"></p>
             </div>
           </div>
 

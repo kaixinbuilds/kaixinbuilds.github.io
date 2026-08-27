@@ -923,5 +923,89 @@
   "nlc26.step6P3": {
     "en": "Next unit: repeat steps 3 to 6. You never make another repository.",
     "zh": "下个单元：重复第三步到第六步。仓库不必再建。"
+  },
+  "nlc26.navBonus": {
+    "en": "If you finish early",
+    "zh": "还有时间"
+  },
+  "nlc26.bonusTitle": {
+    "en": "Your link works. Now change something else.",
+    "zh": "网址已经活了。接下来换点别的。"
+  },
+  "nlc26.bonusLede": {
+    "en": "Everyone finishes the first one. The next two are for whoever still has time, and they are not a test of anything.",
+    "zh": "第一样人人都做完。后面两样，谁还有时间谁做，不考谁，也不比谁。"
+  },
+  "nlc26.bonusSafeLabel": {
+    "en": "Why this is safe to try",
+    "zh": "为什么可以放心乱试"
+  },
+  "nlc26.bonusSafe1": {
+    "en": "Step 6 committed a working version to GitHub. That commit is your checkpoint.",
+    "zh": "第六步已经把一个能跑的版本存进 GitHub 了。那一次 commit 就是你的存档点。"
+  },
+  "nlc26.bonusSafe2": {
+    "en": "If anything below breaks it: in your repository, History → the last version that worked → Revert. Two clicks, and you are back. This is the whole reason the code lives on GitHub instead of on your desktop.",
+    "zh": "下面这些要是把它弄坏了：进你的仓库，History → 找到上一个还能跑的版本 → Revert。两下就回来了。代码放 GitHub 而不是放桌面，为的就是这个。"
+  },
+  "nlc26.b1Title": {
+    "en": "Change the words",
+    "zh": "换词语"
+  },
+  "nlc26.b1Cycle": {
+    "en": "everyone",
+    "zh": "人人都做"
+  },
+  "nlc26.b1P1": {
+    "en": "This is steps 3 to 6, which you have already done. Only my-words.js ever changes.",
+    "zh": "就是你刚做完的第三步到第六步。从头到尾只动 my-words.js 一个文件。"
+  },
+  "nlc26.b1P2": {
+    "en": "Next unit, next term, next level: same six steps, same Project, same repository. Nothing below is needed to use this with a class.",
+    "zh": "下个单元、下个学期、下个程度：同样六步，同一个 Project，同一个仓库。要拿去上课，下面两样一样都不必做。"
+  },
+  "nlc26.b2Title": {
+    "en": "Change the look",
+    "zh": "换外观"
+  },
+  "nlc26.b2Cycle": {
+    "en": "if you have time",
+    "zh": "有时间就试"
+  },
+  "nlc26.b2P1": {
+    "en": "Six colours sit at the very top of index.html, each with a Chinese comment saying what it does. Dark panel, light text, accent, correct, wrong, button surface.",
+    "zh": "index.html 最上面有六个颜色，每一个后面都有中文注解写明它管什么：深色底、浅色字、强调色、答对、答错、按钮底。"
+  },
+  "nlc26.b2P2": {
+    "en": "Three pictures in the art folder: landscape.jpg behind everything, wall.jpg for the cliff, climber.png for the climber. Swap the files and keep the names, and it just works.",
+    "zh": "art 资料夹里三张图：landscape.jpg 是远景，wall.jpg 是崖壁，climber.png 是攀登者。换掉文件、名字不变，就换好了。"
+  },
+  "nlc26.b2P3": {
+    "en": "Ask for a school-colours version, or an ink-painting one. Then read it on your own phone: contrast is where this goes wrong, and only you can judge whether your students can read it.",
+    "zh": "让它做一版校色的，或者一版水墨的。做好后拿自己的手机看一看：这一步最容易出问题的是对比度，而学生看不看得清，只有你判断得了。"
+  },
+  "nlc26.b3Title": {
+    "en": "Change the game",
+    "zh": "换玩法"
+  },
+  "nlc26.b3Cycle": {
+    "en": "the hard one",
+    "zh": "最难的一样"
+  },
+  "nlc26.b3P1": {
+    "en": "One rule holds everything together: my-words.js does not change. The vocabulary sheet stays 词语 and 释义, so next term the same sheet still drops in.",
+    "zh": "有一条不能破：my-words.js 的格式不动。词语表还是「词语、释义」两栏，下个学期同一份表照样能用。"
+  },
+  "nlc26.b3P2": {
+    "en": "Everything else is open. Drag each word onto its meaning. Type the word from its definition. Sort them against the clock. The climb is only one way of asking.",
+    "zh": "别的都可以换。把词语拖到对应的释义上；看释义把词语打出来；限时把它们分类。爬山只是提问的其中一种方式。"
+  },
+  "nlc26.b3P3": {
+    "en": "That is the real point, and it is the same one VocabSummit runs on: the word list outlives the interaction. Design the sheet once, and it can be asked for in any number of ways.",
+    "zh": "这才是重点，也是「词山学海」在做的同一件事：词表活得比玩法长。表设计好一次，就能用无数种方式去问。"
+  },
+  "nlc26.bonusClose": {
+    "en": "None of this is a test. Anyone who leaves with their own words on a link students can open has done the whole thing.",
+    "zh": "这些都不考。带着一个学生打得开的网址、里头是你自己的词语走出这个房间，就是全部做完了。"
   }
 }
