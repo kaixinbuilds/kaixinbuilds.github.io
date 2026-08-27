@@ -2,6 +2,7 @@
   {
     "id": "nlc-2026",
     "status": "upcoming",
+    "category": "vocabsummit",
     "date": "2026-08-28",
     "dateLabel": {
       "en": "28 August 2026",
@@ -32,6 +33,7 @@
   {
     "id": "spmc-2026",
     "status": "completed",
+    "category": "vocabsummit",
     "date": "2026-08-26",
     "dateLabel": {
       "en": "26 August 2026",
@@ -70,13 +72,14 @@
   {
     "id": "spmc-2026-cl-hub",
     "status": "completed",
+    "category": "hub",
     "date": "2026-08-26",
     "dateLabel": {
       "en": "26 August 2026",
       "zh": "2026年8月26日"
     },
     "title": {
-      "en": "A Doraemon's pocket for CL Learning — the BVSS Chinese Language Resource Hub",
+      "en": "A Doraemon's pocket for Chinese Language learning — the BVSS Chinese Language Resource Hub",
       "zh": "华文学习的百宝袋 —— 百德中学华文资源站"
     },
     "venue": {
@@ -108,6 +111,7 @@
   {
     "id": "sgldc-philosophers",
     "status": "completed",
+    "category": "lesson",
     "date": "2026-02-03",
     "dateLabel": {
       "en": "3 February 2026",
@@ -144,14 +148,15 @@
   {
     "id": "sgldc-cl-hub",
     "status": "completed",
+    "category": "hub",
     "date": "2026-07-03",
     "dateLabel": {
       "en": "3 July 2026",
       "zh": "2026年7月3日"
     },
     "title": {
-      "en": "A Doraemon's pocket for Chinese Language Learning — Bukit View Secondary School Chinese Language Resource Hub",
-      "zh": "中学华文的百宝袋 —— 百德中学华文资源站"
+      "en": "A Doraemon's pocket for Chinese Language learning — the BVSS Chinese Language Resource Hub",
+      "zh": "华文学习的百宝袋 —— 百德中学华文资源站"
     },
     "venue": {
       "en": "Post shared with SgLDC, the Singapore Learning Designers Circle: a group of over 22,000 educators run by MOE's Educational Technology Division, for teachers designing technology-enabled learning",

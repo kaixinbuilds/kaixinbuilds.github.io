@@ -851,5 +851,21 @@
   "nlc26.p6B": {
     "en": "The cost is that the data becomes yours to answer for. Not hired today.",
     "zh": "代价是数据要你负责。今天不请。"
+  },
+  "talks.groupVocabSummit": {
+    "en": "VocabSummit",
+    "zh": "词山学海"
+  },
+  "talks.groupHub": {
+    "en": "The Resource Hub",
+    "zh": "华文资源站"
+  },
+  "talks.groupLesson": {
+    "en": "Classroom design",
+    "zh": "课堂设计"
+  },
+  "talks.groupOther": {
+    "en": "Elsewhere",
+    "zh": "其他"
   }
 }

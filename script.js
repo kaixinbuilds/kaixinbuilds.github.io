@@ -23,17 +23,21 @@
     return 'both';          // serves both audiences until someone chooses
   }
 
-  /** Look up a translated string by key; falls back to English, then the key. */
+  /** Look up a translated string by key; falls back to English, then nothing.
+      Never the key itself: a page cached from an older deploy can ask for a
+      string this build no longer carries, and a reader must not be shown
+      "nlc26.p1C" where a sentence belongs. */
   const t = (key) => {
     const entry = data.i18n[key];
-    if (!entry) return key;
-    return pick(entry) || key;
+    if (!entry) { console.warn('i18n: no string for', key); return ''; }
+    return pick(entry) || '';
   };
 
   /** Escaped markup for a key, both languages in bilingual mode. */
   const tb = (key) => {
     const entry = data.i18n[key];
-    return entry ? bi(entry) : esc(key);
+    if (!entry) { console.warn('i18n: no string for', key); return ''; }
+    return bi(entry);
   };
 
   /** One language only. Used for attributes and <title>, which cannot hold
@@ -75,8 +79,18 @@
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.dataset.i18n;
       const attr = el.dataset.i18nAttr;
-      if (attr) { el.setAttribute(attr, t(key)); return; }
-      if (el.tagName === 'TITLE') { el.textContent = t(key); return; }
+      const known = Object.prototype.hasOwnProperty.call(data.i18n, key);
+      // Cached HTML and a freshly fetched i18n.json are two separate requests
+      // with two separate caches, so a visitor can hold a page that references
+      // a string this build has dropped. Take the element out rather than
+      // leaving an empty bullet behind it.
+      if (!known && !attr && el.tagName !== 'TITLE') {
+        console.warn('i18n: no string for', key, '- element removed');
+        el.remove();
+        return;
+      }
+      if (attr) { if (known) el.setAttribute(attr, t(key)); return; }
+      if (el.tagName === 'TITLE') { if (known) el.textContent = t(key); return; }
       el.innerHTML = tb(key);
     });
 
@@ -263,26 +277,44 @@
     const host = $('#talks-list');
     if (!host) return;
 
-    // Upcoming reads forwards from the next thing happening; completed reads
-    // backwards from the most recent. Sorting everything one way puts the
-    // furthest-off event at the top, which is not how anyone reads a diary.
-    const by = (dir) => (a, b) => dir * String(a.date).localeCompare(String(b.date));
-    const upcoming = data.talks.filter((x) => x.status === 'upcoming').sort(by(1));
-    const completed = data.talks.filter((x) => x.status !== 'upcoming').sort(by(-1));
+    // Grouped by body of work, not by date. Chronology says almost nothing
+    // across a handful of entries, whereas grouping shows the thing that
+    // matters: the same piece of work taken to several different audiences.
+    // The upcoming/completed distinction survives as the badge on each entry.
+    const ORDER = ['vocabsummit', 'hub', 'lesson'];
+    const LABEL = {
+      vocabsummit: 'talks.groupVocabSummit',
+      hub:         'talks.groupHub',
+      lesson:      'talks.groupLesson',
+    };
 
-    const group = (label, items, openFirst) => items.length ? `
+    // Within a group: anything still to come first, then most recent back.
+    const rank = (x) => (x.status === 'upcoming' ? 0 : 1);
+    const within = (a, b) => rank(a) - rank(b) ||
+      (rank(a) === 0 ? 1 : -1) * String(a.date).localeCompare(String(b.date));
+
+    const seen = new Set(ORDER);
+    const groups = ORDER
+      .map((key) => [key, data.talks.filter((x) => x.category === key).sort(within)])
+      // Anything with a category nobody listed, or none at all, still has to
+      // appear: silently dropping an entry is worse than an odd heading.
+      .concat([['other', data.talks
+        .filter((x) => !seen.has(x.category)).sort(within)]])
+      .filter(([, items]) => items.length);
+
+    const group = (key, items, openFirst) => `
       <section class="talk-group">
-        <h2 class="talk-group-title">${esc(t(label))}</h2>
+        <h2 class="talk-group-title">${esc(t(LABEL[key] || 'talks.groupOther'))}</h2>
         <ol class="talks-list">
           ${items.map((x, i) => talkEntry(x, openFirst && i === 0)).join('')}
         </ol>
-      </section>` : '';
+      </section>`;
 
-    host.innerHTML = group('talks.groupUpcoming', upcoming, true)
-                   + group('talks.groupCompleted', completed, upcoming.length === 0);
+    host.innerHTML = groups
+      .map(([key, items], i) => group(key, items, i === 0)).join('');
 
-    // The same standing index the Work page has. Upcoming first, so the
-    // next thing happening is the first thing you can jump to.
+    // The standing index mirrors the groups, so the sidebar and the page
+    // read in the same order.
     const nav = $('#talk-nav');
     if (!nav) return;
     const entry = (x) => `
@@ -290,7 +322,9 @@
         <span class="nav-date">${esc(pick(x.dateLabel) || x.date)}</span>
         ${bi(x.title)}
       </a></li>`;
-    nav.innerHTML = `<ul>${[...upcoming, ...completed].map(entry).join('')}</ul>`;
+    nav.innerHTML = groups.map(([key, items]) => `
+      <p class="nav-group">${esc(t(LABEL[key] || 'talks.groupOther'))}</p>
+      <ul>${items.map(entry).join('')}</ul>`).join('');
   }
 
   /* A jump from the index has to open the talk it lands on, otherwise it
