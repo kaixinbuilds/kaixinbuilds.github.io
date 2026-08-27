@@ -237,8 +237,6 @@ PAGES = {
     <div class="wrap wrap-narrow">
       <p class="eyebrow" data-i18n="nlc26.eyebrow">2026 AI in Sec CL NLC</p>
       <h1 class="page-title" data-i18n="nlc26.title">Splitting heaven and earth with an AI axe</h1>
-      <p class="lede" data-i18n="nlc26.role"></p>
-
       <ul class="loop-points">
         <li data-i18n="nlc26.dDate"></li>
         <li data-i18n="nlc26.dTime"></li>
