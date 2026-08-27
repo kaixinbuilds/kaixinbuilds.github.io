@@ -892,6 +892,10 @@ html[data-lang-mode="zh"] .epigraph .en { display: none; }
   grid-template-columns: minmax(0, 13rem) minmax(0, 1fr);
   gap: clamp(1.75rem, 4vw, 3rem);
   align-items: start;
+  /* The page title sits directly above this on both pages that use it, and
+     a two-line bilingual title needs air under it before the index and the
+     content start. Without this the whole layout crowds the masthead. */
+  margin-top: clamp(2.25rem, 5vw, 3.5rem);
 }
 @media (max-width: 820px) {
   .work-layout { grid-template-columns: 1fr; gap: 1.5rem; }
