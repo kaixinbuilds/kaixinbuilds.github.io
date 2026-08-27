@@ -341,40 +341,40 @@
     "zh": "GitHub Pages 是 404：按了 Save 之后要等一两分钟。然后强制刷新（Cmd+Shift+R / Ctrl+F5）。"
   },
   "nlc26.stackTitle": {
-    "en": "How it is actually built: five pieces",
-    "zh": "具体技术实现：五件事"
+    "en": "The crew behind it",
+    "zh": "幕后班底"
   },
   "nlc26.stackLede": {
-    "en": "Five things, each covering one stretch. They are independent, and using only one of them is fine.",
-    "zh": "五样东西各管一段，彼此独立，只用其中一样也可以。"
+    "en": "A one-person department with a crew of five. Each covers one stretch, they work independently, and taking on only one of them is fine.",
+    "zh": "一个人的部门，一个五人的班底。各管一段，彼此独立，只请其中一位也行。"
   },
   "nlc26.p1Title": {
-    "en": "Claude Project · the project's memory",
-    "zh": "Claude Project · 项目记忆"
+    "en": "Claude Project · the research assistant",
+    "zh": "Claude Project · 资料员"
   },
   "nlc26.p1Cycle": {
-    "en": "holds the context",
-    "zh": "存脉络"
+    "en": "keeps the context",
+    "zh": "记着来龙去脉"
   },
   "nlc26.p1A": {
     "en": "Design decisions, pedagogy notes and word lists all live in one Project. It remembers, so you do not explain yourself again every time.",
     "zh": "设计决定、教学笔记、词表，全放在同一个 Project 里。它记得住，你不必每次重讲一遍。"
   },
   "nlc26.p1B": {
-    "en": "This is the one you use today: upload the folder and the sheet, then use that one Project all year.",
-    "zh": "你今天动手用的就是这一样：资料夹加词语表传进去，一个 Project 用一整年。"
+    "en": "This is the one you work with today: upload the folder and the sheet, then use that one Project all year.",
+    "zh": "你今天动手用的就是这一位：资料夹加词语表传进去，一个 Project 用一整年。"
   },
   "nlc26.p1C": {
-    "en": "The easiest of the five to start with, and the one most often skipped.",
-    "zh": "五件事里最容易开始的一件，也是最常被跳过的一件。"
+    "en": "The easiest of the five to take on, and the one most often left out.",
+    "zh": "班底里最容易请的一位，也是最常被漏掉的一位。"
   },
   "nlc26.p2Title": {
-    "en": "Claude Code · an agent that writes code",
-    "zh": "Claude Code · 智能体编码"
+    "en": "Claude Code · the programmer",
+    "zh": "Claude Code · 程序员"
   },
   "nlc26.p2Cycle": {
     "en": "writes the code",
-    "zh": "写代码"
+    "zh": "动手写代码"
   },
   "nlc26.p2A": {
     "en": "Not a chatbot that hands you a snippet to paste. It reads the files in your project, edits them, runs them, then checks its own work.",
@@ -389,12 +389,12 @@
     "zh": "讲清楚比讲漂亮重要：这东西要做什么、给谁用、怎样才算做对了。跟给学生写一份好的作业指示，是同一回事。"
   },
   "nlc26.p3Title": {
-    "en": "ChatGPT · AI image generation",
-    "zh": "ChatGPT · AI 图像生成"
+    "en": "ChatGPT · the graphics person",
+    "zh": "ChatGPT · 美工"
   },
   "nlc26.p3Cycle": {
-    "en": "makes the artwork",
-    "zh": "做美术素材"
+    "en": "draws it",
+    "zh": "画图"
   },
   "nlc26.p3A": {
     "en": "The cliff, the landscape and the climbing character in today’s game were all generated. Not one of them was bought.",
@@ -405,16 +405,16 @@
     "zh": "生成图像不是许愿，是写规格。一张角色动作图必须说死：六格横向并排、每一格等宽等高、角色朝右、纯洋红色背景、画面上不准出现任何文字或数字。"
   },
   "nlc26.p3C": {
-    "en": "Get the specification wrong and the image simply will not fit into the game. Of the five, this is the one that transfers most easily to everyday teaching.",
-    "zh": "规格说不清楚，图就是拼不进游戏里。五件事当中，这一件最容易迁移到日常教学。"
+    "en": "Get the specification wrong and the image simply will not fit into the game. Of the five, this is the one whose skill transfers most easily to everyday teaching.",
+    "zh": "规格说不清楚，图就是拼不进游戏里。班底里，这一位的本事最容易迁移到日常教学。"
   },
   "nlc26.p4Title": {
-    "en": "GitHub · where the code lives",
-    "zh": "GitHub · 源代码托管"
+    "en": "GitHub · the scribe",
+    "zh": "GitHub · 书记"
   },
   "nlc26.p4Cycle": {
-    "en": "stores and publishes",
-    "zh": "存放与发布"
+    "en": "records every change",
+    "zh": "记下每一次改动"
   },
   "nlc26.p4A": {
     "en": "Every change leaves a record, and a change that breaks something can be rolled back. What makes hosting worth it is not the storage, it is that history.",
@@ -429,8 +429,8 @@
     "zh": "有些学校的网络会挡 github.com。解决办法是手机热点，但真正重要的是事先知道有这回事，别站在班上才发现。"
   },
   "nlc26.stackClose": {
-    "en": "The ones you use today are the first and the fourth. The second is what I am in daily on VocabSummit. The third is optional. The fifth we only talk about.",
-    "zh": "你今天动手用到的是第一样和第四样。第二样是我做「词山学海」时天天在用的。第三样选做。第五样只谈，不做。"
+    "en": "The two you work with today are the research assistant and the scribe. The programmer is who I am in daily on VocabSummit. The graphics person is optional. Personnel we only talk about; we do not take them on.",
+    "zh": "你今天动手用到的是资料员和书记。程序员是我做「词山学海」时天天在用的。美工选做。人事今天只谈，不请。"
   },
   "nlc26.vsTitle": {
     "en": "VocabSummit",
@@ -617,8 +617,8 @@
     "zh": "动手环节"
   },
   "nlc26.navStack": {
-    "en": "The five pieces",
-    "zh": "五件事"
+    "en": "The crew",
+    "zh": "班底"
   },
   "nlc26.navVs": {
     "en": "VocabSummit",
@@ -761,12 +761,12 @@
     "zh": "想清楚哪些事可以交给 AI，哪些事只有你判断得了。"
   },
   "nlc26.p5Title": {
-    "en": "Firebase · user management",
-    "zh": "Firebase · 用户管理"
+    "en": "Firebase · personnel",
+    "zh": "Firebase · 人事"
   },
   "nlc26.p5Cycle": {
-    "en": "accounts and data",
-    "zh": "账号与数据"
+    "en": "knows who is who",
+    "zh": "管谁是谁"
   },
   "nlc26.p5A": {
     "en": "This is the piece that knows who is who: students sign in, progress is saved, it survives a change of computer, and only then can there be a leaderboard.",
