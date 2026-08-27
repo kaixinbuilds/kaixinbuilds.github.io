@@ -245,8 +245,8 @@
     "zh": "哪些词一错再错、哪个页面没人去，这些才是设计文档。"
   },
   "approach.loopClose": {
-    "en": "Then round again, from the top. Every version of VocabSummit so far came out of one more pass, and each pass starts from a better question than the last.",
-    "zh": "然后再从头跑一遍。「词山学海」的每一个版本，都是又跑了一圈的结果；每一圈的起点，都是一个比上一圈更好的问题。"
+    "en": "Then round again from the top. Every version of VocabSummit came out this way, and each lap starts from a better question than the last.",
+    "zh": "然后从头再跑一遍。「词山学海」每一个版本都是这样跑出来的，而每一圈的起点，都是一个比上一圈更好的问题。"
   },
   "lightbox.close": {
     "en": "Close",
@@ -609,12 +609,12 @@
     "zh": "勉强能用就送到学生面前。"
   },
   "approach.needsTitle": {
-    "en": "Motivation is designed, not requested",
-    "zh": "动机是设计出来的，不是要求来的"
+    "en": "Motivation has to be designed, not hoped for",
+    "zh": "动机要设计，不能光指望学生自觉"
   },
   "approach.needsLead": {
-    "en": "Self-Determination Theory turns the vague question into three answerable ones. Every feature below exists to answer one of them, and each of the three starts from a sentence students actually say.",
-    "zh": "自我决定理论把一个含糊的问题，换成三个答得上来的问题。下面每一个功能，都是在回答其中一个；而这三个问题的起点，都是学生真的会说出口的一句话。"
+    "en": "Self-Determination Theory turns one vague question into three you can actually answer. Each of the three starts from something students really say, and every feature below is an answer to one of them.",
+    "zh": "自我决定理论把一个含糊的问题，拆成三个答得上来的问题。三个问题都是从学生真会说出口的一句话来的，下面每一个功能，都在回答其中一个。"
   },
   "approach.need1Name": {
     "en": "Autonomy",
@@ -625,24 +625,24 @@
     "zh": "「我是被逼学母语的。」"
   },
   "approach.need1Q": {
-    "en": "How would a student feel in charge?",
-    "zh": "怎样才能让学生觉得，这件事由他做主？"
+    "en": "How does a student feel they are the one deciding?",
+    "zh": "怎样让学生觉得这件事是自己做主？"
   },
   "approach.need1P1": {
-    "en": "Twelve zodiac climbers, free at registration. Every student picks one. Nothing is assigned.",
-    "zh": "十二生肖攀登者，注册时免费选。人人自己挑一个，没有分配。"
+    "en": "Twelve zodiac climbers, free when you register. Everyone picks their own. Nothing is assigned.",
+    "zh": "十二生肖攀登者，注册就免费挑一个。人人自己选，不分配。"
   },
   "approach.need1P2": {
-    "en": "Five story climbers cost 300 to 600, in a currency that comes only from practising and winning. Four mythic beasts carry no price at all: one is released for each annual trial cleared, Secondary 1 through Secondary 4.",
-    "zh": "五个故事角色，售价 300 至 600，而那笔货币只能靠练习和获胜赚到。四头神兽则完全不标价：中一到中四，每通过一次年度试炼，就放出一头。"
+    "en": "Five story climbers cost 300 to 600 in game currency, and that currency only comes from practising and winning. Four mythic beasts have no price: clear one annual trial, unlock one, Secondary 1 through 4.",
+    "zh": "五个故事角色，300 到 600 不等；那是游戏币，只能靠练习和赢回来。四头神兽不标价：中一到中四，每通过一次年度试炼就解锁一头。"
   },
   "approach.need1P3": {
-    "en": "Learn mode is plain self-study: own pace, no clock, no score. Game mode meets the same words in challenges and races. A student switches across at any time.",
-    "zh": "学习模式就是朴素的自学：自己的节奏，不计时，不计分。游戏模式用挑战和竞速去碰同样那批词。学生随时可以换过去。"
+    "en": "Learn mode is pure self-study: your own pace, no timer, no score. Game mode takes the same words into challenges and races. Switch between them whenever you like.",
+    "zh": "学习模式就是纯自学：自己的节奏，不计时，不计分。游戏模式是同样的词，换成挑战和竞速来练。两边随时可以换。"
   },
   "approach.need1P4": {
-    "en": "Scope is chosen at the start of every session: which words, and when.",
-    "zh": "每次使用，学习范围都由学生自己定：练哪些词，什么时候练。"
+    "en": "Which words, and when: the student sets that every time they open it.",
+    "zh": "每次进来，练哪些词、什么时候练，都是学生自己定。"
   },
   "approach.need2Name": {
     "en": "Competence",
@@ -653,24 +653,24 @@
     "zh": "「母语我一直考不好。」"
   },
   "approach.need2Q": {
-    "en": "How do they find out they are succeeding, often enough to believe it?",
-    "zh": "怎样让他们知道自己做得到，而且知道得够频繁，频繁到肯相信？"
+    "en": "How do they see themselves managing it, often enough to believe it?",
+    "zh": "怎样让他们常常看见自己做得到，常到自己都信？"
   },
   "approach.need2P1": {
-    "en": "Experience points are never deducted. A wrong answer costs nothing already earned.",
-    "zh": "经验值只加不减。答错了，已经赚到的一分也不扣。"
+    "en": "Experience points only go up. A wrong answer costs nothing you have earned.",
+    "zh": "经验值只加不减，答错也不倒扣，赚到的分一分不少。"
   },
   "approach.need2P2": {
-    "en": "One badge per chapter component: everyday life, core, consolidation, advanced, culture. Earned by finishing the component, not by scoring well on it.",
-    "zh": "每个单元板块一枚徽章：生活用语、核心、巩固、增益、文化。徽章靠做完这个板块的词汇学习拿到，不靠考得好。"
+    "en": "One badge per chapter component: everyday life, core, consolidation, advanced, culture. Finish the component and it is yours, however well you scored.",
+    "zh": "每个单元板块一枚徽章：生活用语、核心、巩固、增益、文化。一个板块练完就有，不看你考得好不好。"
   },
   "approach.need2P3": {
-    "en": "Powerups are bought with currency the student earned by practising: an extra life, a combo shield, five seconds off the clock, a first mistake that does not count, one wrong option removed. Each is named after an object with a story behind it.",
-    "zh": "道具用练习赚来的货币买：多一条命、连击护盾、冻结计时五秒、第一次答错不算、去掉一个错误选项。每一件都以一样有来历的物件命名。"
+    "en": "Powerups cost game currency, and that only comes from practising: an extra life, a combo shield, five seconds off the clock, a first mistake that does not count, one wrong option removed. Each is named after an object with a story behind it.",
+    "zh": "道具要花游戏币，而游戏币只能练出来：多一条命、连击护盾、冻结计时五秒、第一次答错不算、去掉一个错误选项。每一件都取自一样有典故的物件。"
   },
   "approach.need2P4": {
-    "en": "3,889 entries across G1, G2, G3, Higher Chinese and the beginner pier. The same motivation design serves every level of readiness.",
-    "zh": "3,889 个词条，涵盖 G1、G2、G3、高级华文与出发码头。同一套动机设计，服务所有起点不同的学生。"
+    "en": "3,889 entries across G1, G2, G3, Higher Chinese and the beginner pier. Wherever a student starts, the motivation design is the same one.",
+    "zh": "3,889 个词条，涵盖 G1、G2、G3、高级华文与出发码头。起点在哪里都一样，用的是同一套动机设计。"
   },
   "approach.need3Name": {
     "en": "Relatedness",
@@ -681,24 +681,24 @@
     "zh": "「我身边的人，下了课没人用母语。」"
   },
   "approach.need3Q": {
-    "en": "How does practising stop being something done alone?",
+    "en": "How does practising stop being something you do on your own?",
     "zh": "怎样让练习不再是一个人的事？"
   },
   "approach.need3P1": {
-    "en": "Classroom climbs, started by a teacher or by the students themselves.",
+    "en": "Classroom climbs, started by the teacher or by the students themselves.",
     "zh": "课堂共攀：老师可以发起，学生自己也可以发起。"
   },
   "approach.need3P2": {
-    "en": "Peer challenges between friends, on the words they are both working on.",
-    "zh": "同伴对战：朋友之间，就着两人都在练的词较量。"
+    "en": "Peer challenges: two friends go at the words they are both working on.",
+    "zh": "同伴对战：朋友之间，用两人都在练的词比一场。"
   },
   "approach.need3P3": {
-    "en": "A live leaderboard while a climb is running, and a badge for placing on it.",
-    "zh": "攀登进行时有实时排行榜，上榜有名次徽章。"
+    "en": "A live leaderboard while the climb is running, and a badge for placing on it.",
+    "zh": "爬的时候有实时排行榜，上榜有名次徽章。"
   },
   "approach.needsClose": {
-    "en": "This is the argument I took to the school leadership in August 2026.",
-    "zh": "这就是 2026 年 8 月我向校方领导层讲的那套论证。"
+    "en": "This is the argument I put to the school leadership in August 2026.",
+    "zh": "这就是 2026 年 8 月我跟校领导讲的那一套。"
   },
   "approach.needsLink": {
     "en": "The slides are on Connect",
