@@ -741,8 +741,8 @@
     "zh": "打开我的示范项目 → 绿色的 Code 按钮 → Download ZIP → 解压。"
   },
   "nlc26.s1P4": {
-    "en": "Back in your repository → the + button beside the green Code button → Upload files → drag in everything you unzipped, art folder included → scroll to the bottom and Commit changes.",
-    "zh": "回到你的仓库 → 绿色 Code 按钮左边的「+」→ Upload files → 把解压后的东西全部拖进去，art 资料夹也要 → 拉到页面最下面按 Commit changes。"
+    "en": "Back in your repository → uploading an existing file (once it has files in it, use the + beside the green Code button → Upload files) → drag in everything you unzipped, art folder included → scroll to the bottom and Commit changes.",
+    "zh": "回到你的仓库 → 点 uploading an existing file（仓库里已经有东西了，就点绿色 Code 按钮左边的「+」→ Upload files）→ 把解压后的东西全部拖进去，art 资料夹也要 → 拉到页面最下面按 Commit changes。"
   },
   "nlc26.s1Shot": {
     "en": "The + sits just left of the green Code button. Upload files is inside it.",
