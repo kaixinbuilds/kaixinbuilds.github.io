@@ -572,6 +572,18 @@
     "en": "Common concerns",
     "zh": "常见顾虑"
   },
+  "nlc26.navFb": {
+    "en": "Feedback form",
+    "zh": "反馈表"
+  },
+  "nlc26.fbTitle": {
+    "en": "Feedback form",
+    "zh": "反馈表"
+  },
+  "nlc26.fbCta": {
+    "en": "Open the feedback form",
+    "zh": "填写反馈表单"
+  },
   "approach.loop2P4": {
     "en": "It works if they practise without being told to.",
     "zh": "没人叫他也会去练，才算成功。"

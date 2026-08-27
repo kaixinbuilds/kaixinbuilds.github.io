@@ -304,6 +304,7 @@ PAGES = {
             <li><a href="#stack" data-i18n="nlc26.navStack"></a></li>
             <li><a href="#hands-on" data-i18n="nlc26.navHands"></a></li>
             <li><a href="#concerns" data-i18n="nlc26.navQ"></a></li>
+            <li><a href="#feedback" data-i18n="nlc26.navFb"></a></li>
           </ul>
         </nav>
 
@@ -685,9 +686,23 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
         </li>
             </ol>
 
+          </div>
+
+          <!-- Last block on the page, and deliberately so: the ask comes after
+               the concerns have been answered, not before. A heading and one
+               button: the form states its own terms on the first screen, so
+               repeating them here would only delay the tap. -->
+          <div class="doc-block" id="feedback">
+            <h2 class="section-title" data-i18n="nlc26.fbTitle"></h2>
+
+            <p class="featured-cta">
+              <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdx0yJJJ5u6PAiAwNQQ-1_y4BrDkbNJyNMgMFDphnFu42w6vA/viewform"
+                 data-i18n="nlc26.fbCta" target="_blank" rel="noopener">Open the feedback form</a>
+            </p>
+
             <!-- The community's own motto, quoted back to it, set as a colophon.
-                 It closed the page when there was an "afterwards" section; with
-                 that gone it closes the page directly. -->
+                 It closes the page, so it moves with the last block rather than
+                 staying with the concerns. -->
             <p class="epigraph colophon">
               <span class="zh" lang="zh-Hans">地上本无路，走的人多了，便成了路</span>
               <span class="en" lang="en">The earth had no roads to begin with. When enough
