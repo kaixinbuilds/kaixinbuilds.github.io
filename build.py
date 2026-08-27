@@ -110,6 +110,8 @@ META = {
     "approach.html": ("Practice - Chun Kai Xin",
                       "How a classroom tool actually gets designed: a short loop where the "
                       "deciding step is students using it in a real lesson."),
+    "2026AIinSecCLNLC.html": ("2026 AI in Sec CL NLC - Chun Kai Xin",
+                              "Resources for the 28 August 2026 AI in Sec CL NLC workshop: the four pieces of technology behind VocabSummit, and a starter game to adapt for your own unit."),
     "contact.html": ("Contact - Chun Kai Xin",
                      "Get in touch about adapting any of these tools, or about building "
                      "something together."),
@@ -228,6 +230,224 @@ PAGES = {
 
       <p class="loop-close" data-i18n="approach.loopClose"></p>
 
+    </div>
+  </section>"""),
+    "2026AIinSecCLNLC.html": ("page.nlc26.title", """\
+  <section class="section" id="nlc-top">
+    <div class="wrap wrap-narrow">
+      <p class="eyebrow" data-i18n="nlc26.eyebrow">2026 AI in Sec CL NLC</p>
+      <h1 class="page-title" data-i18n="nlc26.title">Splitting heaven and earth with an AI axe</h1>
+      <p class="page-sub" data-i18n="nlc26.meta"></p>
+
+      <!-- The community's own motto, quoted back to it. -->
+      <p class="epigraph">
+        <span class="zh" lang="zh-Hans">地上本无路，走的人多了，便成了路</span>
+        <span class="en" lang="en">The earth had no roads to begin with. When enough
+          people walk the same way, a road appears.</span>
+        <span class="src" data-i18n="nlc26.epigraphSrc"></span>
+      </p>
+
+      <p class="lede" data-i18n="nlc26.lede"></p>
+    </div>
+  </section>
+
+  <!-- 动手环节 first: people read this mid-session, so it cannot sit under narrative. -->
+  <section class="section" id="hands-on">
+    <div class="wrap wrap-narrow">
+      <h2 class="section-title" data-i18n="nlc26.handsTitle"></h2>
+      <p class="section-sub" data-i18n="nlc26.handsLede"></p>
+
+      <p class="featured-cta">
+        <a class="btn btn-primary" href="https://github.com/kaixinbuilds/VocabClimbStarter" data-i18n="nlc26.handsCta"
+           target="_blank" rel="noopener">Open the starter project</a>
+      </p>
+
+      <ol class="loop">
+        <li>
+          <h2 data-i18n="nlc26.step1Title"></h2>
+          <p class="loop-cycle" data-i18n="nlc26.step1Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.step1P1"></li>
+            <li data-i18n="nlc26.step1P2"></li>
+          </ul>
+        </li>
+        <li>
+          <h2 data-i18n="nlc26.step2Title"></h2>
+          <p class="loop-cycle" data-i18n="nlc26.step2Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.step2P1"></li>
+            <li data-i18n="nlc26.step2P2"></li>
+          </ul>
+        </li>
+        <li>
+          <h2 data-i18n="nlc26.step3Title"></h2>
+          <p class="loop-cycle" data-i18n="nlc26.step3Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.step3P1"></li>
+            <li data-i18n="nlc26.step3P2"></li>
+            <li data-i18n="nlc26.step3P3"></li>
+          </ul>
+        </li>
+        <li>
+          <h2 data-i18n="nlc26.step4Title"></h2>
+          <p class="loop-cycle" data-i18n="nlc26.step4Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.step4P1"></li>
+            <li data-i18n="nlc26.step4P2"></li>
+          </ul>
+        </li>
+        <li>
+          <h2 data-i18n="nlc26.step5Title"></h2>
+          <p class="loop-cycle" data-i18n="nlc26.step5Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.step5P1"></li>
+            <li data-i18n="nlc26.step5P2"></li>
+            <li data-i18n="nlc26.step5P3"></li>
+            <li data-i18n="nlc26.step5P4"></li>
+          </ul>
+        </li>
+      </ol>
+
+      <!-- The three failure points, stated before they happen rather than after. -->
+      <div class="highlight-box">
+        <span class="label" data-i18n="nlc26.stuckLabel"></span>
+        <ul class="loop-points">
+          <li data-i18n="nlc26.stuck1"></li>
+          <li data-i18n="nlc26.stuck2"></li>
+          <li data-i18n="nlc26.stuck3"></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- The four pieces the NLC asked for, one block each. -->
+  <section class="section" id="stack">
+    <div class="wrap wrap-narrow">
+      <h2 class="section-title" data-i18n="nlc26.stackTitle"></h2>
+      <p class="section-sub" data-i18n="nlc26.stackLede"></p>
+
+      <ol class="loop">
+        <li>
+          <h2 data-i18n="nlc26.p1Title"></h2>
+          <p class="loop-cycle" data-i18n="nlc26.p1Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.p1A"></li>
+            <li data-i18n="nlc26.p1B"></li>
+            <li data-i18n="nlc26.p1C"></li>
+          </ul>
+        </li>
+        <li>
+          <h2 data-i18n="nlc26.p2Title"></h2>
+          <p class="loop-cycle" data-i18n="nlc26.p2Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.p2A"></li>
+            <li data-i18n="nlc26.p2B"></li>
+            <li data-i18n="nlc26.p2C"></li>
+          </ul>
+        </li>
+        <li>
+          <h2 data-i18n="nlc26.p3Title"></h2>
+          <p class="loop-cycle" data-i18n="nlc26.p3Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.p3A"></li>
+            <li data-i18n="nlc26.p3B"></li>
+            <li data-i18n="nlc26.p3C"></li>
+          </ul>
+        </li>
+        <li>
+          <h2 data-i18n="nlc26.p4Title"></h2>
+          <p class="loop-cycle" data-i18n="nlc26.p4Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.p4A"></li>
+            <li data-i18n="nlc26.p4B"></li>
+            <li data-i18n="nlc26.p4C"></li>
+          </ul>
+        </li>
+      </ol>
+
+      <p class="loop-close" data-i18n="nlc26.stackClose"></p>
+    </div>
+  </section>
+
+  <section class="section" id="vocabsummit">
+    <div class="wrap wrap-narrow">
+      <h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>
+      <p class="lede" data-i18n="nlc26.vsBodyA"></p>
+      <p class="lede" data-i18n="nlc26.vsBodyB"></p>
+
+      <p class="featured-cta">
+        <a class="btn btn-primary" href="https://btvssclunit.github.io/VocabSummit"
+           data-i18n="nlc26.vsCta" target="_blank" rel="noopener">Open VocabSummit</a>
+        <a class="btn btn-ghost" href="work.html" data-i18n="nlc26.vsWork">The project write-up</a>
+        <a class="btn btn-ghost" href="approach.html" data-i18n="nlc26.vsApproach">How it was designed</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="concerns">
+    <div class="wrap wrap-narrow">
+      <h2 class="section-title" data-i18n="nlc26.qTitle"></h2>
+      <p class="section-sub" data-i18n="nlc26.qLede"></p>
+
+      <ol class="loop">
+        <li>
+          <h2 data-i18n="nlc26.q1"></h2>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.q1A"></li>
+            <li data-i18n="nlc26.q1B"></li>
+            <li data-i18n="nlc26.q1C"></li>
+          </ul>
+        </li>
+        <li>
+          <h2 data-i18n="nlc26.q2"></h2>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.q2A"></li>
+            <li data-i18n="nlc26.q2B"></li>
+            <li data-i18n="nlc26.q2C"></li>
+          </ul>
+        </li>
+        <li>
+          <h2 data-i18n="nlc26.q3"></h2>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.q3A"></li>
+            <li data-i18n="nlc26.q3B"></li>
+            <li data-i18n="nlc26.q3C"></li>
+          </ul>
+        </li>
+        <li>
+          <h2 data-i18n="nlc26.q4"></h2>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.q4A"></li>
+            <li data-i18n="nlc26.q4B"></li>
+            <li data-i18n="nlc26.q4C"></li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- The NLC's board is a closed community space, so it is named, never linked. -->
+  <section class="section" id="post">
+    <div class="wrap wrap-narrow">
+      <h2 class="section-title" data-i18n="nlc26.padletTitle"></h2>
+      <p class="lede" data-i18n="nlc26.padletLede"></p>
+      <ul class="loop-points">
+        <li data-i18n="nlc26.padletP1"></li>
+        <li data-i18n="nlc26.padletP2"></li>
+        <li data-i18n="nlc26.padletP3"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="after">
+    <div class="wrap wrap-narrow">
+      <h2 class="section-title" data-i18n="nlc26.afterTitle"></h2>
+      <p class="lede" data-i18n="nlc26.afterBody"></p>
+      <p class="lede" data-i18n="nlc26.afterLicense"></p>
+
+      <p class="featured-cta">
+        <a class="btn btn-primary" href="contact.html" data-i18n="nlc26.afterCta">Get in touch</a>
+      </p>
     </div>
   </section>"""),
     "contact.html": ("page.contact.title", """\

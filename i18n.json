@@ -299,5 +299,373 @@
   "brand.full": {
     "en": "kaixinbuilds",
     "zh": "观象制器"
+  },
+  "page.nlc26.title": {
+    "en": "2026 AI in Sec CL NLC - Chun Kai Xin",
+    "zh": "2026 AI in Sec CL NLC · 郑凯欣"
+  },
+  "nlc26.eyebrow": {
+    "en": "2026 AI in Sec CL NLC",
+    "zh": "2026 AI in Sec CL NLC"
+  },
+  "nlc26.title": {
+    "en": "Splitting heaven and earth with an AI axe — how VocabSummit got built",
+    "zh": "挥舞AI之斧开天辟地 —— 词山学海的创作现场"
+  },
+  "nlc26.meta": {
+    "en": "28 August 2026 · Chung Cheng High School (Main) · a networked learning community of 18 Chinese Language teachers from 16 schools across 13 clusters",
+    "zh": "2026年8月28日 · 中正总校 · 由13个学区、16所学校、18位华文教师组成的相联系学习社群"
+  },
+  "nlc26.epigraphSrc": {
+    "en": "Lu Xun, My Old Home · this community's own motto",
+    "zh": "鲁迅《故乡》· 本学习社群的题词"
+  },
+  "nlc26.lede": {
+    "en": "This page is not a slide dump. It is the part you take back to school. The hands-on comes first because you need it during the session; then the four pieces of technology behind VocabSummit; then the questions you will actually run into afterwards.",
+    "zh": "这一页不是投影片的存档，是给你带回学校用的。动手环节放在最前面，因为分享当中就要用；接着是词山学海背后的四样技术；最后是你回去之后大概真的会碰到的问题。"
+  },
+  "nlc26.handsTitle": {
+    "en": "Hands-on: put your own words in",
+    "zh": "动手环节：把词语换成你自己的"
+  },
+  "nlc26.handsLede": {
+    "en": "No account to register, nothing to install, and no internet needed once it is downloaded. Within about ten minutes you will see your own unit's vocabulary inside a game that works.",
+    "zh": "不必注册账号，不必安装任何软件，下载之后连网络都不需要。大约十分钟后，你会看见自己单元的词语出现在一个真的能玩的游戏里。"
+  },
+  "nlc26.handsCta": {
+    "en": "Open the starter project",
+    "zh": "打开示范项目"
+  },
+  "nlc26.step1Title": {
+    "en": "Download the starter",
+    "zh": "下载示范项目"
+  },
+  "nlc26.step1Cycle": {
+    "en": "download",
+    "zh": "下载"
+  },
+  "nlc26.step1P1": {
+    "en": "Open the link above, click the green Code button, choose Download ZIP.",
+    "zh": "打开上面的链接，点绿色的 Code 按钮，选 Download ZIP。"
+  },
+  "nlc26.step1P2": {
+    "en": "Unzip it. You get a folder with one index.html, one my-words.js, and an art folder.",
+    "zh": "解压出来是一个文件夹，里面有 index.html、my-words.js，和一个 art 文件夹。"
+  },
+  "nlc26.step2Title": {
+    "en": "Open my-words.js",
+    "zh": "打开 my-words.js"
+  },
+  "nlc26.step2Cycle": {
+    "en": "open",
+    "zh": "打开"
+  },
+  "nlc26.step2P1": {
+    "en": "Notepad on Windows, TextEdit on a Mac. Right-click and choose Open With rather than double-clicking, so it does not open in something unexpected.",
+    "zh": "Windows 用记事本，Mac 用「文本编辑」。建议右键选「打开方式」，别直接双击，免得被别的程序接手。"
+  },
+  "nlc26.step2P2": {
+    "en": "This is the only file you touch. Everything else in the folder stays as it is.",
+    "zh": "整个文件夹里，你只需要动这一个文件。其他的都不用碰。"
+  },
+  "nlc26.step3Title": {
+    "en": "Replace the word list",
+    "zh": "换成你自己的词语"
+  },
+  "nlc26.step3Cycle": {
+    "en": "edit",
+    "zh": "修改"
+  },
+  "nlc26.step3P1": {
+    "en": "Every line looks like this: { word: \"词语\", def: \"释义\" }, and each line ends with a comma.",
+    "zh": "每一行都长这样：{ word: \"词语\", def: \"释义\" }，行尾要有逗号。"
+  },
+  "nlc26.step3P2": {
+    "en": "You never write wrong answers. The three distractors are pulled from your other entries at runtime, so a longer list makes harder questions.",
+    "zh": "错误选项不用你写。程序会从你其他词语的释义里自动抓三个当干扰项，所以词语越多，题目越有挑战性。"
+  },
+  "nlc26.step3P3": {
+    "en": "Four entries is the minimum. Eight or more is better.",
+    "zh": "最少 4 个词语才跑得起来，建议 8 个以上。"
+  },
+  "nlc26.step4Title": {
+    "en": "Double-click index.html",
+    "zh": "双击 index.html"
+  },
+  "nlc26.step4Cycle": {
+    "en": "run",
+    "zh": "运行"
+  },
+  "nlc26.step4P1": {
+    "en": "It runs in your browser. No server, no internet, no install.",
+    "zh": "直接在浏览器里跑起来。不需要服务器，不需要网络，不需要安装。"
+  },
+  "nlc26.step4P2": {
+    "en": "After each edit, go back to the browser and refresh (Cmd+R or Ctrl+R) to see the change.",
+    "zh": "每改一次，回到浏览器刷新一下（Mac 是 Cmd+R，Windows 是 Ctrl+R）就看得到。"
+  },
+  "nlc26.step5Title": {
+    "en": "Want to give students a link? (optional)",
+    "zh": "想发给学生？（进阶，可跳过）"
+  },
+  "nlc26.step5Cycle": {
+    "en": "deploy",
+    "zh": "部署"
+  },
+  "nlc26.step5P1": {
+    "en": "Fork the starter on GitHub and give it your own repository name.",
+    "zh": "在 GitHub 上 Fork 这个项目，取一个自己的 repo 名字。"
+  },
+  "nlc26.step5P2": {
+    "en": "In your fork: Settings → Pages → Deploy from a branch → main → / (root) → Save.",
+    "zh": "进你自己的 repo：Settings → Pages → Deploy from a branch → 选 main → 选 /(root) → Save。"
+  },
+  "nlc26.step5P3": {
+    "en": "Wait a minute or two, then open https://yourusername.github.io/yourreponame/ and send that link to students. Free, no ad, no limit on how many play.",
+    "zh": "等一两分钟，打开 https://你的用户名.github.io/你的repo名/ ，这个网址就能发给学生。免费，没有广告，不限人数。"
+  },
+  "nlc26.step5P4": {
+    "en": "This step needs a GitHub account. If you do not have one, that is fine. Steps 1 to 4 are already a complete, working tool.",
+    "zh": "这一步需要 GitHub 账号。没有也完全没关系，前面四步做出来的已经是一个能用的完整工具。"
+  },
+  "nlc26.stuckLabel": {
+    "en": "Stuck?",
+    "zh": "卡住了？"
+  },
+  "nlc26.stuck1": {
+    "en": "Blank page, or an on-screen message about the word list: the message names the line that is wrong. Nine times out of ten it is a missing comma at the end of a line, a missing quotation mark, or a missing curly brace.",
+    "zh": "页面空白，或跳出「词语表好像有点问题」：提示会写第几行出错。九成是行尾少了逗号、引号少了一边，或者大括号少了一边。"
+  },
+  "nlc26.stuck2": {
+    "en": "GitHub Pages shows 404: it takes a minute or two after you switch Pages on. Wait, then hard refresh with Cmd+Shift+R or Ctrl+F5.",
+    "zh": "GitHub Pages 打开是 404：刚开启要等一两分钟才生效。等一下，然后强制刷新（Mac 是 Cmd+Shift+R，Windows 是 Ctrl+F5）。"
+  },
+  "nlc26.stuck3": {
+    "en": "The school network blocks github.com: use your phone hotspot. Steps 1 to 4 need no network at all, so the hands-on itself is never blocked.",
+    "zh": "学校网络挡住 github.com：用手机热点。前面四步完全不需要网络，所以动手环节本身不会被挡。"
+  },
+  "nlc26.stackTitle": {
+    "en": "The four pieces",
+    "zh": "具体技术实现：四件事"
+  },
+  "nlc26.stackLede": {
+    "en": "VocabSummit was not built with one tool. Four things each handle one part of the job. They are independent enough that you can use just one of them and stop there.",
+    "zh": "词山学海不是靠一个工具做出来的，是四样东西各管一段。它们彼此独立，你完全可以只用其中一样，用完就停。"
+  },
+  "nlc26.p1Title": {
+    "en": "Claude Code · agentic coding",
+    "zh": "Claude Code · 智能体编码"
+  },
+  "nlc26.p1Cycle": {
+    "en": "writing the code",
+    "zh": "写代码"
+  },
+  "nlc26.p1A": {
+    "en": "It is not a chatbot that hands you a snippet to paste. It reads the files in your project, edits them, runs the result, and checks whether it worked.",
+    "zh": "它不是给你一段代码让你贴的聊天机器人。它会直接读你项目里的文件、动手改、跑起来，再自己看对不对。"
+  },
+  "nlc26.p1B": {
+    "en": "Your job shifts from writing code to saying clearly what you want, then judging whether what came back is right. That second half is what teachers are already good at.",
+    "zh": "你的工作从「写代码」变成「说清楚要什么」加「判断做出来的对不对」。后面那半，正是教师本来就擅长的事。"
+  },
+  "nlc26.p1C": {
+    "en": "Saying it clearly beats saying it elegantly. What is it for, who uses it, and what counts as working. Same three questions as a good task instruction.",
+    "zh": "讲清楚比讲漂亮重要：这东西要做什么、给谁用、怎样才算做对了。跟给学生写一份好的作业指示，是同一回事。"
+  },
+  "nlc26.p2Title": {
+    "en": "ChatGPT · AI image generation",
+    "zh": "ChatGPT · AI 图像生成"
+  },
+  "nlc26.p2Cycle": {
+    "en": "making the art",
+    "zh": "做美术素材"
+  },
+  "nlc26.p2A": {
+    "en": "The rock face, the landscape and the climbing character in today's game were all generated. None of it was bought or licensed.",
+    "zh": "今天这个游戏里的山壁、风景、会爬的角色，全都是生成出来的，没有一样是买的。"
+  },
+  "nlc26.p2B": {
+    "en": "Generating art is not wishing, it is writing a specification. A character strip has to be stated exactly: six frames in a row, every cell the same width and height, facing right, plain magenta background, and no text or numbers anywhere.",
+    "zh": "生成图像不是许愿，是写规格。一张角色动作图必须说死：六格横向并排、每一格等宽等高、角色朝右、纯洋红色背景、画面上不准出现任何文字或数字。"
+  },
+  "nlc26.p2C": {
+    "en": "Get the specification wrong and the image simply will not fit into the game. This is the single most transferable habit of the four.",
+    "zh": "规格说不清楚，图就是拼不进游戏里。四件事当中，这一件最容易迁移到日常教学。"
+  },
+  "nlc26.p3Title": {
+    "en": "GitHub · source hosting",
+    "zh": "GitHub · 源代码托管"
+  },
+  "nlc26.p3Cycle": {
+    "en": "storing and publishing",
+    "zh": "存放与发布"
+  },
+  "nlc26.p3A": {
+    "en": "Every change is recorded, so a change that breaks something can be rolled back. That history, not the storage, is what hosting is actually worth.",
+    "zh": "每一次改动都留下记录，改坏了可以退回去。托管真正值钱的不是「存着」，是这份历史。"
+  },
+  "nlc26.p3B": {
+    "en": "GitHub Pages turns the repository into a web address for free. No ads, no cap on how many students open it, nothing for them to install.",
+    "zh": "GitHub Pages 免费把它变成一个网址。没有广告，不限多少学生打开，学生那边什么都不用装。"
+  },
+  "nlc26.p3C": {
+    "en": "Some school networks block github.com. The workaround is a phone hotspot, but the thing that matters is knowing about it before you are standing in front of a class.",
+    "zh": "有些学校的网络会挡 github.com。解决办法是手机热点，但真正重要的是事先知道有这回事，别站在班上才发现。"
+  },
+  "nlc26.p4Title": {
+    "en": "Firebase · accounts and data",
+    "zh": "Firebase · 用户管理"
+  },
+  "nlc26.p4Cycle": {
+    "en": "who is who",
+    "zh": "账号与数据"
+  },
+  "nlc26.p4A": {
+    "en": "This is the part that knows who is who: students sign in, progress is saved, it follows them to another device, and a leaderboard becomes possible.",
+    "zh": "这一块管的是「谁是谁」：学生登录、进度存下来、换一台电脑还在、排行榜也才做得起来。"
+  },
+  "nlc26.p4B": {
+    "en": "The cost is that you now own something. Where the data sits, who can see it, what school and ministry policy says, and who maintains it after you.",
+    "zh": "代价是你多了一样要负责的东西：数据存在哪里、谁看得到、学校和教育部的规定怎么说、以后由谁来维护。"
+  },
+  "nlc26.p4C": {
+    "en": "We are not building this today, on purpose. Most classroom tools do not need accounts at all. Build the version that needs no login first, and add this only when you genuinely need it.",
+    "zh": "今天故意不动手做这一块。大部分课堂工具其实根本不需要账号。先做不用登录的版本，真的需要了再加。"
+  },
+  "nlc26.stackClose": {
+    "en": "You do not need all four. The game you are editing today uses only the first and, if you choose to deploy it, the third.",
+    "zh": "四样不必都用。今天你动手改的这个游戏，只用到第一样；如果你决定发布，才用到第三样。"
+  },
+  "nlc26.vsTitle": {
+    "en": "VocabSummit",
+    "zh": "词山学海"
+  },
+  "nlc26.vsBodyA": {
+    "en": "VocabSummit is a Secondary Chinese Language vocabulary platform where students climb, answer, and unlock characters. 攀山快答, the mode you are adapting today, was rewritten from scratch as a single readable file so that a teacher can change it.",
+    "zh": "词山学海是一个中学华文词语平台：学生在里头爬山、答题、解锁角色。今天你动手改的「攀山快答」是里面的一个模式，为了让老师改得动，重新写成了一个看得懂的单一文件。"
+  },
+  "nlc26.vsBodyB": {
+    "en": "It did not start from a feature list. It started from one comprehension paper: the passage had been understood, the words had not.",
+    "zh": "它不是先想好一张功能表才做的。它从一份理解问答考卷开始：文章看懂了，词语没过关。"
+  },
+  "nlc26.vsCta": {
+    "en": "Open VocabSummit",
+    "zh": "打开词山学海"
+  },
+  "nlc26.vsWork": {
+    "en": "The project write-up",
+    "zh": "项目完整说明"
+  },
+  "nlc26.vsApproach": {
+    "en": "How it was designed",
+    "zh": "设计过程"
+  },
+  "nlc26.qTitle": {
+    "en": "Questions that come up",
+    "zh": "常见顾虑"
+  },
+  "nlc26.qLede": {
+    "en": "Four things that get asked every time, answered as honestly as I can. Where the real answer is it depends, it says so.",
+    "zh": "每次都会被问到的四件事，尽量老实回答。答案真的是「看情况」的，就写「看情况」。"
+  },
+  "nlc26.q1": {
+    "en": "Where does student data go? Is this compliant?",
+    "zh": "学生数据放在哪里？合规吗？"
+  },
+  "nlc26.q1A": {
+    "en": "It depends on what you build. Today's game collects nothing at all: no login, no server, nothing left behind when a student closes the tab. That version raises no data question.",
+    "zh": "看你做什么。今天这个游戏什么都不收：没有登录、没有服务器，学生关掉网页就什么都不留。这种版本没有数据问题。"
+  },
+  "nlc26.q1B": {
+    "en": "The moment you add accounts and saved progress, data sits on a third party's servers. Which region it sits in, who can read it, and how long it is kept all have to follow school and ministry rules.",
+    "zh": "一旦加上账号和进度储存，数据就落在第三方的服务器上。存在哪个地区、谁读得到、保存多久，都要照学校和教育部的规定走。"
+  },
+  "nlc26.q1C": {
+    "en": "The order that works: build the version that collects nothing, use it, and only take on the compliance conversation once you genuinely need to track progress. Doing it the other way round stalls for months.",
+    "zh": "行得通的顺序是：先做不收数据的版本，先用起来，等到真的需要追踪进度了，再去谈合规。反过来做，往往一拖好几个月。"
+  },
+  "nlc26.q2": {
+    "en": "With no IT support, who maintains it?",
+    "zh": "没有 IT 支援，以后谁来维护？"
+  },
+  "nlc26.q2A": {
+    "en": "A static page, which is HTML plus images, needs almost no maintenance. On GitHub Pages it can sit untouched for years and still work.",
+    "zh": "一个静态网页（就是 HTML 加图片）几乎不用维护。放在 GitHub Pages 上，几年不动它也照样能开。"
+  },
+  "nlc26.q2B": {
+    "en": "What needs maintaining is the other kind: accounts, databases, logins. Which is the practical argument for not adding them unless you must.",
+    "zh": "需要维护的是另一类：有账号、有数据库、要登录的。这正是「能不加就不加」的现实理由。"
+  },
+  "nlc26.q2C": {
+    "en": "Because the code lives on GitHub rather than on your laptop, a colleague can pick it up if you move schools. That is safer than the folder on your desktop.",
+    "zh": "代码放在 GitHub 上而不是你的手提电脑里，你调职了同事也接得下去。这比存在自己桌面上的文件夹安全得多。"
+  },
+  "nlc26.q3": {
+    "en": "Will the school-issued laptop do?",
+    "zh": "学校发的电脑做得到吗？"
+  },
+  "nlc26.q3A": {
+    "en": "For today's hands-on, yes. It needs a browser and a plain text editor, and every machine already has both.",
+    "zh": "今天的动手环节可以。只需要一个浏览器和一个纯文本编辑器，这两样每台电脑本来就有。"
+  },
+  "nlc26.q3B": {
+    "en": "The step that installs software, running Claude Code locally, may be restricted on a managed device. There is a browser version, or you can use your own machine.",
+    "zh": "要安装软件的那一步（在本机跑 Claude Code）在受管制的设备上可能装不了。可以改用网页版，或者用自己的设备。"
+  },
+  "nlc26.q3C": {
+    "en": "github.com is sometimes blocked on the school network. Knowing that in advance is the difference between a workaround and a panic.",
+    "zh": "学校网络有时候会挡 github.com。事先知道，就只是换个方法；当场才发现，就会慌。"
+  },
+  "nlc26.q4": {
+    "en": "I cannot code at all. Can I really do this?",
+    "zh": "我完全不会编码，真的做得到吗？"
+  },
+  "nlc26.q4A": {
+    "en": "Today's hands-on, yes. It was designed from the start around someone who does not code.",
+    "zh": "今天这个动手环节可以。它从一开始就是照着「不会编码的人」来设计的。"
+  },
+  "nlc26.q4B": {
+    "en": "Building something the size of VocabSummit does not need coding ability either. It needs the patience to keep saying clearly what you want, and the judgement to tell whether what came back is right. Teachers do both of those every day.",
+    "zh": "做一个像词山学海那样规模的东西，需要的也不是编码能力，而是「愿意反复把要什么讲清楚」加上「判断做出来的东西对不对」。这两件事教师每天都在做。"
+  },
+  "nlc26.q4C": {
+    "en": "It would be dishonest to make it sound effortless. It takes time, you will get stuck, and some evenings produce nothing. It is about the same order of work as preparing a whole new unit from scratch.",
+    "zh": "但也不必美化：会花时间，会卡住，会有几个晚上什么都做不出来。这跟从零备一套全新的单元，工作量差不多。"
+  },
+  "nlc26.padletTitle": {
+    "en": "Where to post",
+    "zh": "互动区"
+  },
+  "nlc26.padletLede": {
+    "en": "We are using the NLC's own shared Padlet, the link to which you already have. Find the section named 20260828 百德中学「词山学海」工作坊 and comment under the three prompts inside it.",
+    "zh": "我们用 NLC 本身的共享 Padlet，网址各位手上都有。请找到「20260828 百德中学『词山学海』工作坊」这个栏目，在里面的三则帖子下留言。"
+  },
+  "nlc26.padletP1": {
+    "en": "What I built: post a screenshot of your word list, or your live URL if you deployed it.",
+    "zh": "我的成果：把你的词语表截图贴上来；如果你部署了，就贴网址。"
+  },
+  "nlc26.padletP2": {
+    "en": "Where I am stuck: paste the error message or a screenshot. No need to wait to be called on.",
+    "zh": "卡住的地方：把错误讯息或截图贴上来，不必等举手。"
+  },
+  "nlc26.padletP3": {
+    "en": "What I would try back at school: one line is enough. We will use these in the discussion.",
+    "zh": "回校后想试什么：一句话就够，讨论环节会用到。"
+  },
+  "nlc26.afterTitle": {
+    "en": "Afterwards",
+    "zh": "后续"
+  },
+  "nlc26.afterBody": {
+    "en": "If you build something back at school, I would like to see it. If you get stuck halfway, ask then rather than after you have given up.",
+    "zh": "回学校做出了什么，欢迎让我看看。做到一半卡住了也可以直接问，别等到放弃了才说。"
+  },
+  "nlc26.afterLicense": {
+    "en": "The starter is MIT licensed: adapt it, use it in class, rework it for another subject entirely. Just keep the attribution. The art assets are included for teaching use and adaptation, and replacing them with your own is encouraged rather than required.",
+    "zh": "示范项目采用 MIT 许可：自由改编、自由用在课堂上、拿去改成别的科目都行，保留署名即可。里面的美术素材也一并提供给老师使用和改编；换成自己的当然更好，但不是必须。"
+  },
+  "nlc26.afterCta": {
+    "en": "Get in touch",
+    "zh": "联系我"
   }
 }

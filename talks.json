@@ -19,7 +19,15 @@
       "en": "How VocabSummit actually got built: what it looks like when a teacher with no coding background designs and ships a working product in conversation with an AI agent.",
       "zh": "词山学海是怎么做出来的：一个没有编码背景的教师，怎么跟 AI agent 一起，把一个真正能用的东西做出来。"
     },
-    "link": ""
+    "links": [
+      {
+        "label": {
+          "en": "Session resources and hands-on",
+          "zh": "分享会资源与动手环节"
+        },
+        "url": "https://kaixinbuilds.github.io/2026AIinSecCLNLC.html"
+      }
+    ]
   },
   {
     "id": "spmc-2026",
