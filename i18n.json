@@ -785,24 +785,16 @@
     "zh": "进阶"
   },
   "nlc26.s4P1": {
-    "en": "No starter folder at this stage, and nothing of mine to build on. It simulates next term, when I am not standing here.",
-    "zh": "这一阶段不给底稿，也不给我的东西让你改。模拟的是下个学期我不在旁边的时候。"
+    "en": "Open a new Project. Start with who your students are, what material you already have, and the learning goal you are after.",
+    "zh": "开一个新的 Project。先说你学生是谁、你手上现成有什么材料、你希望达到的学习目标。"
   },
   "nlc26.s4P2": {
-    "en": "Open a new Project, empty. Do not open with what you want built. Open with where your class is stuck, who the students are, and what material you already have.",
-    "zh": "开一个新的 Project，空的。别一上来就说你要做什么，先说你班上哪里卡住、学生是谁、你手上现成有什么材料。"
+    "en": "Ask for three different approaches before it builds anything, then pick one of the three.",
+    "zh": "先让它给三个不一样的做法，别急着让它动手，再从三个里挑一个。"
   },
   "nlc26.s4P3": {
-    "en": "Ask for three different approaches before it builds anything, then pick one. Choosing between three is a far better use of it than accepting the first thing it offers.",
-    "zh": "先让它给三个不一样的做法，别急着让它动手，再从三个里挑一个。让它给你三个选择、你来挑，比接受它端出来的第一样东西有用得多。"
-  },
-  "nlc26.s4P4": {
-    "en": "Publishing is the same steps as stage 1. And this is exactly how VocabSummit started: a problem, a link, and the sentence I do not know how to start. That message is further up this page, unedited.",
-    "zh": "做出来之后，发布还是第一阶段那几步。「词山学海」当初就是这么开始的：一个问题、一个网址、一句「我不知道怎么开始」。那则讯息就在这一页上面，一字没改。"
-  },
-  "nlc26.promptCapS4": {
-    "en": "A shape, not a script. Write over it.",
-    "zh": "这只是个架子，照你自己的情况改"
+    "en": "Keep refining until you are happy with it.",
+    "zh": "继续优化到满意为止"
   },
   "nlc26.stuck5": {
     "en": "Broke it: in your repository, History → the last version that worked → Revert. Two clicks and you are back. This is the whole reason the code lives on GitHub instead of on your desktop.",
