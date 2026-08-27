@@ -237,17 +237,15 @@ PAGES = {
     <div class="wrap wrap-narrow">
       <p class="eyebrow" data-i18n="nlc26.eyebrow">2026 AI in Sec CL NLC</p>
       <h1 class="page-title" data-i18n="nlc26.title">Splitting heaven and earth with an AI axe</h1>
-      <p class="page-sub" data-i18n="nlc26.meta"></p>
+      <p class="lede" data-i18n="nlc26.role"></p>
 
-      <!-- The community's own motto, quoted back to it. -->
-      <p class="epigraph">
-        <span class="zh" lang="zh-Hans">地上本无路，走的人多了，便成了路</span>
-        <span class="en" lang="en">The earth had no roads to begin with. When enough
-          people walk the same way, a road appears.</span>
-        <span class="src" data-i18n="nlc26.epigraphSrc"></span>
-      </p>
-
-      <p class="lede" data-i18n="nlc26.lede"></p>
+      <ul class="loop-points">
+        <li data-i18n="nlc26.dDate"></li>
+        <li data-i18n="nlc26.dTime"></li>
+        <li data-i18n="nlc26.dVenue"></li>
+        <li data-i18n="nlc26.dAudience"></li>
+        <li data-i18n="nlc26.dSpeaker"></li>
+      </ul>
     </div>
   </section>
 
@@ -372,8 +370,11 @@ PAGES = {
   <section class="section" id="vocabsummit">
     <div class="wrap wrap-narrow">
       <h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>
-      <p class="lede" data-i18n="nlc26.vsBodyA"></p>
-      <p class="lede" data-i18n="nlc26.vsBodyB"></p>
+      <ul class="loop-points">
+        <li data-i18n="nlc26.vsP1"></li>
+        <li data-i18n="nlc26.vsP2"></li>
+        <li data-i18n="nlc26.vsP3"></li>
+      </ul>
 
       <p class="featured-cta">
         <a class="btn btn-primary" href="https://btvssclunit.github.io/VocabSummit"
@@ -387,7 +388,6 @@ PAGES = {
   <section class="section" id="concerns">
     <div class="wrap wrap-narrow">
       <h2 class="section-title" data-i18n="nlc26.qTitle"></h2>
-      <p class="section-sub" data-i18n="nlc26.qLede"></p>
 
       <ol class="loop">
         <li>
@@ -430,7 +430,7 @@ PAGES = {
   <section class="section" id="post">
     <div class="wrap wrap-narrow">
       <h2 class="section-title" data-i18n="nlc26.padletTitle"></h2>
-      <p class="lede" data-i18n="nlc26.padletLede"></p>
+      <p class="section-sub" data-i18n="nlc26.padletLede"></p>
       <ul class="loop-points">
         <li data-i18n="nlc26.padletP1"></li>
         <li data-i18n="nlc26.padletP2"></li>
@@ -442,11 +442,22 @@ PAGES = {
   <section class="section" id="after">
     <div class="wrap wrap-narrow">
       <h2 class="section-title" data-i18n="nlc26.afterTitle"></h2>
-      <p class="lede" data-i18n="nlc26.afterBody"></p>
-      <p class="lede" data-i18n="nlc26.afterLicense"></p>
+      <ul class="loop-points">
+        <li data-i18n="nlc26.afterP1"></li>
+        <li data-i18n="nlc26.afterP2"></li>
+        <li data-i18n="nlc26.afterP3"></li>
+      </ul>
 
       <p class="featured-cta">
         <a class="btn btn-primary" href="contact.html" data-i18n="nlc26.afterCta">Get in touch</a>
+      </p>
+
+      <!-- The community's own motto, quoted back to it, set as a colophon. -->
+      <p class="epigraph colophon">
+        <span class="zh" lang="zh-Hans">地上本无路，走的人多了，便成了路</span>
+        <span class="en" lang="en">The earth had no roads to begin with. When enough
+          people walk the same way, a road appears.</span>
+        <span class="src" data-i18n="nlc26.epigraphSrc"></span>
       </p>
     </div>
   </section>"""),

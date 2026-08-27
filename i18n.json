@@ -312,25 +312,17 @@
     "en": "Splitting heaven and earth with an AI axe — how VocabSummit got built",
     "zh": "挥舞AI之斧开天辟地 —— 词山学海的创作现场"
   },
-  "nlc26.meta": {
-    "en": "28 August 2026 · Chung Cheng High School (Main) · a networked learning community of 18 Chinese Language teachers from 16 schools across 13 clusters",
-    "zh": "2026年8月28日 · 中正总校 · 由13个学区、16所学校、18位华文教师组成的相联系学习社群"
-  },
   "nlc26.epigraphSrc": {
     "en": "Lu Xun, My Old Home · this community's own motto",
     "zh": "鲁迅《故乡》· 本学习社群的题词"
-  },
-  "nlc26.lede": {
-    "en": "This page is not a slide dump. It is the part you take back to school. The hands-on comes first because you need it during the session; then the four pieces of technology behind VocabSummit; then the questions you will actually run into afterwards.",
-    "zh": "这一页不是投影片的存档，是给你带回学校用的。动手环节放在最前面，因为分享当中就要用；接着是词山学海背后的四样技术；最后是你回去之后大概真的会碰到的问题。"
   },
   "nlc26.handsTitle": {
     "en": "Hands-on: put your own words in",
     "zh": "动手环节：把词语换成你自己的"
   },
   "nlc26.handsLede": {
-    "en": "No account to register, nothing to install, and no internet needed once it is downloaded. Within about ten minutes you will see your own unit's vocabulary inside a game that works.",
-    "zh": "不必注册账号，不必安装任何软件，下载之后连网络都不需要。大约十分钟后，你会看见自己单元的词语出现在一个真的能玩的游戏里。"
+    "en": "No account, nothing to install, no internet once downloaded. About ten minutes.",
+    "zh": "不必注册账号，不必安装软件，下载后不需要网络。约十分钟。"
   },
   "nlc26.handsCta": {
     "en": "Open the starter project",
@@ -449,8 +441,8 @@
     "zh": "具体技术实现：四件事"
   },
   "nlc26.stackLede": {
-    "en": "VocabSummit was not built with one tool. Four things each handle one part of the job. They are independent enough that you can use just one of them and stop there.",
-    "zh": "词山学海不是靠一个工具做出来的，是四样东西各管一段。它们彼此独立，你完全可以只用其中一样，用完就停。"
+    "en": "Four things, each handling one part. Independent: you can use only one.",
+    "zh": "四样东西各管一段，彼此独立，只用其中一样也可以。"
   },
   "nlc26.p1Title": {
     "en": "Claude Code · agentic coding",
@@ -540,14 +532,6 @@
     "en": "VocabSummit",
     "zh": "词山学海"
   },
-  "nlc26.vsBodyA": {
-    "en": "VocabSummit is a Secondary Chinese Language vocabulary platform where students climb, answer, and unlock characters. 攀山快答, the mode you are adapting today, was rewritten from scratch as a single readable file so that a teacher can change it.",
-    "zh": "词山学海是一个中学华文词语平台：学生在里头爬山、答题、解锁角色。今天你动手改的「攀山快答」是里面的一个模式，为了让老师改得动，重新写成了一个看得懂的单一文件。"
-  },
-  "nlc26.vsBodyB": {
-    "en": "It did not start from a feature list. It started from one comprehension paper: the passage had been understood, the words had not.",
-    "zh": "它不是先想好一张功能表才做的。它从一份理解问答考卷开始：文章看懂了，词语没过关。"
-  },
   "nlc26.vsCta": {
     "en": "Open VocabSummit",
     "zh": "打开词山学海"
@@ -563,10 +547,6 @@
   "nlc26.qTitle": {
     "en": "Questions that come up",
     "zh": "常见顾虑"
-  },
-  "nlc26.qLede": {
-    "en": "Four things that get asked every time, answered as honestly as I can. Where the real answer is it depends, it says so.",
-    "zh": "每次都会被问到的四件事，尽量老实回答。答案真的是「看情况」的，就写「看情况」。"
   },
   "nlc26.q1": {
     "en": "Where does student data go? Is this compliant?",
@@ -637,8 +617,8 @@
     "zh": "互动区"
   },
   "nlc26.padletLede": {
-    "en": "We are using the NLC's own shared Padlet, the link to which you already have. Find the section named 20260828 百德中学「词山学海」工作坊 and comment under the three prompts inside it.",
-    "zh": "我们用 NLC 本身的共享 Padlet，网址各位手上都有。请找到「20260828 百德中学『词山学海』工作坊」这个栏目，在里面的三则帖子下留言。"
+    "en": "On the NLC's own shared Padlet, the link to which you already have. Find the section named 20260828 百德中学「词山学海」工作坊.",
+    "zh": "在 NLC 本身的共享 Padlet 上，网址各位手上都有。请找「20260828 百德中学『词山学海』工作坊」这个栏目。"
   },
   "nlc26.padletP1": {
     "en": "What I built: post a screenshot of your word list, or your live URL if you deployed it.",
@@ -656,16 +636,56 @@
     "en": "Afterwards",
     "zh": "后续"
   },
-  "nlc26.afterBody": {
-    "en": "If you build something back at school, I would like to see it. If you get stuck halfway, ask then rather than after you have given up.",
-    "zh": "回学校做出了什么，欢迎让我看看。做到一半卡住了也可以直接问，别等到放弃了才说。"
-  },
-  "nlc26.afterLicense": {
-    "en": "The starter is MIT licensed: adapt it, use it in class, rework it for another subject entirely. Just keep the attribution. The art assets are included for teaching use and adaptation, and replacing them with your own is encouraged rather than required.",
-    "zh": "示范项目采用 MIT 许可：自由改编、自由用在课堂上、拿去改成别的科目都行，保留署名即可。里面的美术素材也一并提供给老师使用和改编；换成自己的当然更好，但不是必须。"
-  },
   "nlc26.afterCta": {
     "en": "Get in touch",
     "zh": "联系我"
+  },
+  "nlc26.role": {
+    "en": "An invited workshop. Chun Kai Xin speaking at the request of the 2026 AI in Sec CL NLC.",
+    "zh": "应「2026 AI in Sec CL NLC」学习社群之邀主讲的工作坊。"
+  },
+  "nlc26.dDate": {
+    "en": "Date · 28 August 2026 (Friday)",
+    "zh": "日期 · 2026年8月28日（星期五）"
+  },
+  "nlc26.dTime": {
+    "en": "Time · 1430 to 1630",
+    "zh": "时间 · 1430 至 1630"
+  },
+  "nlc26.dVenue": {
+    "en": "Venue · Chung Cheng High School (Main)",
+    "zh": "地点 · 中正中学（总校）"
+  },
+  "nlc26.dAudience": {
+    "en": "Audience · the 2026 AI in Sec CL NLC: 18 Secondary Chinese Language teachers, 16 schools, 13 clusters",
+    "zh": "对象 · 2026 AI in Sec CL NLC：13个学区、16所学校、18位中学华文教师"
+  },
+  "nlc26.dSpeaker": {
+    "en": "Speaker · Chun Kai Xin, Head of Mother Tongue, Bukit View Secondary School",
+    "zh": "主讲 · 郑凯欣，百德中学母语部主任"
+  },
+  "nlc26.vsP1": {
+    "en": "A Secondary Chinese Language vocabulary platform: students climb, answer, and unlock characters.",
+    "zh": "中学华文词语平台：学生爬山、答题、解锁角色。"
+  },
+  "nlc26.vsP2": {
+    "en": "攀山快答, the mode you adapt today, was rewritten as one readable file so a teacher can change it.",
+    "zh": "今天动手改的「攀山快答」是其中一个模式，重写成单一文件，让老师改得动。"
+  },
+  "nlc26.vsP3": {
+    "en": "It began with one comprehension paper: the passage understood, the words not.",
+    "zh": "起点是一份理解问答考卷：文章看懂了，词语没过关。"
+  },
+  "nlc26.afterP1": {
+    "en": "Built something back at school? Send it to me.",
+    "zh": "回校做出了什么，发给我看看。"
+  },
+  "nlc26.afterP2": {
+    "en": "Stuck halfway? Ask then, not after you have given up.",
+    "zh": "做到一半卡住，当下就问，别等放弃了才说。"
+  },
+  "nlc26.afterP3": {
+    "en": "The starter is MIT licensed: adapt it, use it in class, rework it for another subject. Keep the attribution. Art assets included.",
+    "zh": "示范项目 MIT 许可：自由改编、用于课堂、改成别科皆可，保留署名即可。美术素材一并提供。"
   }
 }
