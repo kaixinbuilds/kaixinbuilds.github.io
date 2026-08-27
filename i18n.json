@@ -715,5 +715,65 @@
   "nlc26.stuck4": {
     "en": "School network blocks github.com or claude.ai: phone hotspot, or do it at home. The offline path above still works.",
     "zh": "学校网络挡住 github.com 或 claude.ai：用手机热点，或回家再弄。上面那条离线的路照样能走。"
+  },
+  "nlc26.storyTitle": {
+    "en": "How this actually started",
+    "zh": "这一切是怎么开始的"
+  },
+  "nlc26.storyLede": {
+    "en": "Not with a plan or a specification. With one message, typed in plain Chinese.",
+    "zh": "不是从一份计划书或规格开始的。就是打了一段话，用平常说话的中文。"
+  },
+  "nlc26.storyCap": {
+    "en": "The first thing I typed",
+    "zh": "我打的第一句"
+  },
+  "nlc26.storyP1": {
+    "en": "No flowchart, no requirements document, no meeting. It was talked into existence, one exchange at a time.",
+    "zh": "没有流程图，没有需求书，没有开会。就是一来一往，一句一句聊出来的。"
+  },
+  "nlc26.storyP2": {
+    "en": "It writes, I look. Wrong is fine: you say what's wrong and it goes again. That loop is the whole method.",
+    "zh": "它写，我看。不对就说哪里不对，再来一次。这个来回，就是全部的方法。"
+  },
+  "nlc26.storyP3": {
+    "en": "The rounds that changed it most were the ones right after students said something. That part is not the AI's job.",
+    "zh": "改动最大的几轮，都发生在学生说了什么之后。那一部分，不是 AI 的工作。"
+  },
+  "nlc26.statWords": {
+    "en": "vocabulary items",
+    "zh": "词条总数"
+  },
+  "nlc26.statClasses": {
+    "en": "classes tested it",
+    "zh": "个班级试用"
+  },
+  "nlc26.statStudents": {
+    "en": "students gave feedback",
+    "zh": "名学生给了反馈"
+  },
+  "nlc26.statPeople": {
+    "en": "person building it",
+    "zh": "个人在做"
+  },
+  "nlc26.shot1": {
+    "en": "The title screen, and where the name 词山学海 comes from",
+    "zh": "首页 · 「词山学海」这个名字的由来"
+  },
+  "nlc26.shot2": {
+    "en": "The climb: every unit is a stretch of mountain, and progress is a height",
+    "zh": "攀登 · 每个单元是一段山路，进度就是海拔"
+  },
+  "nlc26.shot3": {
+    "en": "What it grew into: 23 units, streaks, badges, a leaderboard",
+    "zh": "后来长成的样子：23 个单元、连续答对、徽章、排行榜"
+  },
+  "nlc26.storyClose": {
+    "en": "That took months. What you are about to do takes ten minutes, and it is the same move: say what you want, look at what comes back, say what's wrong.",
+    "zh": "那个做了几个月。你等一下要做的，十分钟就够，但动作是同一个：说清楚要什么，看它做出什么，再说哪里不对。"
+  },
+  "nlc26.storyJump": {
+    "en": "Straight to the hands-on",
+    "zh": "直接到动手环节"
   }
 }

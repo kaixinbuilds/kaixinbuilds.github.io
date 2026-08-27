@@ -247,6 +247,75 @@ PAGES = {
     </div>
   </section>
 
+  <!-- A transition, and a disarming one: the project started as one typed sentence. -->
+  <section class="section" id="how-it-started">
+    <div class="wrap wrap-narrow">
+      <h2 class="section-title" data-i18n="nlc26.storyTitle"></h2>
+      <p class="section-sub" data-i18n="nlc26.storyLede"></p>
+
+      <!-- Hardcoded, not translated: it is a transcript, not copy. -->
+      <div class="copy-block">
+        <span class="cap" data-i18n="nlc26.storyCap"></span>
+        <pre lang="zh-Hans">我教中三华文。
+学生理解问答做得还行，可是词语一直过不了关。
+我想做一个游戏让他们练词语，答对就往上爬一格。
+
+我不会编码。你可以帮我吗？</pre>
+      </div>
+
+      <ul class="loop-points">
+        <li data-i18n="nlc26.storyP1"></li>
+        <li data-i18n="nlc26.storyP2"></li>
+        <li data-i18n="nlc26.storyP3"></li>
+      </ul>
+
+      <ul class="stats">
+        <li><span class="value">3,889</span><span class="label" data-i18n="nlc26.statWords"></span></li>
+        <li><span class="value">3</span><span class="label" data-i18n="nlc26.statClasses"></span></li>
+        <li><span class="value">47</span><span class="label" data-i18n="nlc26.statStudents"></span></li>
+        <li><span class="value">1</span><span class="label" data-i18n="nlc26.statPeople"></span></li>
+      </ul>
+
+      <div class="shots">
+        <figure class="shot shot-wide">
+          <div class="screen-bezel">
+            <div class="screen-inner" data-missing="assets/screenshots/vocabsummit-landing.jpg">
+              <img src="assets/screenshots/vocabsummit-landing.jpg" alt=""
+                   data-i18n="nlc26.shot1" data-i18n-attr="alt" decoding="async">
+            </div>
+          </div>
+          <figcaption data-i18n="nlc26.shot1"></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="screen-bezel">
+            <div class="screen-inner" data-missing="assets/screenshots/vocabsummit-mountain.jpg">
+              <img src="assets/screenshots/vocabsummit-mountain.jpg" alt=""
+                   data-i18n="nlc26.shot2" data-i18n-attr="alt" decoding="async">
+            </div>
+          </div>
+          <figcaption data-i18n="nlc26.shot2"></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="screen-bezel">
+            <div class="screen-inner" data-missing="assets/screenshots/vocabsummit-dashboard.jpg">
+              <img src="assets/screenshots/vocabsummit-dashboard.jpg" alt=""
+                   data-i18n="nlc26.shot3" data-i18n-attr="alt" decoding="async">
+            </div>
+          </div>
+          <figcaption data-i18n="nlc26.shot3"></figcaption>
+        </figure>
+      </div>
+
+      <div class="highlight-box">
+        <p data-i18n="nlc26.storyClose"></p>
+      </div>
+
+      <p class="featured-cta">
+        <a class="btn btn-primary" href="#hands-on" data-i18n="nlc26.storyJump">Straight to the hands-on</a>
+      </p>
+    </div>
+  </section>
+
   <!-- 动手环节 first: people read this mid-session, so it cannot sit under narrative. -->
   <section class="section" id="hands-on">
     <div class="wrap wrap-narrow">
