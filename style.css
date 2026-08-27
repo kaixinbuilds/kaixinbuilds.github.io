@@ -601,6 +601,10 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 }
 .loop-points li { padding-left: .15rem; }
 .loop-points li::marker { color: var(--ochre); }
+/* Numbers need more room than a bullet does, and read better held apart
+   from the text with the figures aligned. */
+.loop-points-num { padding-left: 1.6rem; }
+.loop-points-num li::marker { font-variant-numeric: tabular-nums; font-weight: 600; }
 
 /* The loop has no last stage, so the list is closed by a line saying so. */
 .loop-close {

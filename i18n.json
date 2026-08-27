@@ -737,28 +737,20 @@
     "zh": "幻灯片在「并肩同行」页"
   },
   "nlc26.navGoals": {
-    "en": "What this is for",
+    "en": "The targets",
     "zh": "目标"
   },
   "nlc26.goalsTitle": {
-    "en": "What these two hours are for",
-    "zh": "这两个小时要做到的事"
+    "en": "The 120-minute sprint",
+    "zh": "120 分钟冲刺目标"
   },
   "nlc26.goal1": {
-    "en": "See how a classroom tool actually grows: from one message to 3,889 vocabulary entries.",
-    "zh": "看清楚一个课堂工具是怎么长出来的：从一则讯息，到 3,889 个词条。"
+    "en": "Get to know Claude and GitHub.",
+    "zh": "结识 Claude 与 GitHub"
   },
   "nlc26.goal2": {
-    "en": "Build one yourself, and leave today with a link your students can open.",
-    "zh": "自己动手做一个，今天就带一个学生打得开的网址回去。"
-  },
-  "nlc26.goal3": {
-    "en": "Learn the move you can repeat: say what you want, look at what it made, then say what needs adjusting.",
-    "zh": "学会那个可以重复的动作：说清楚要什么，看它做出什么，再说哪里要调整。"
-  },
-  "nlc26.goal4": {
-    "en": "Work out what can be handed to the AI, and what only you can judge.",
-    "zh": "想清楚哪些事可以交给 AI，哪些事只有你判断得了。"
+    "en": "Create your own GitHub Page, and publish a learning game on it.",
+    "zh": "创建自己的 GitHub Page，发布一款学习小游戏"
   },
   "nlc26.p5Title": {
     "en": "Firebase · personnel",
