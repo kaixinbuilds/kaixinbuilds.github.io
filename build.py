@@ -339,12 +339,6 @@ PAGES = {
 
           <div class="doc-block" id="vocabsummit">
             <h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>
-            <ul class="loop-points">
-              <li data-i18n="nlc26.vsP1"></li>
-              <li data-i18n="nlc26.vsP2"></li>
-              <li data-i18n="nlc26.vsP3"></li>
-            </ul>
-
             <ul class="stats">
               <li><span class="value">3,889</span><span class="label" data-i18n="nlc26.statWords"></span></li>
               <li><span class="value">3</span><span class="label" data-i18n="nlc26.statClasses"></span></li>
@@ -459,6 +453,18 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
             <li data-i18n="nlc26.p5A"></li>
             <li data-i18n="nlc26.p5B"></li>
             <li data-i18n="nlc26.p5C"></li>
+          </ul>
+        </li>
+        <!-- The sixth is a person, and the lede asks who it is so that this
+             entry answers it. Listing yourself among the credits is a joke
+             only until you read what the role actually covers. -->
+        <li>
+          <h3 data-i18n="nlc26.p6Title"></h3>
+          <p class="loop-cycle" data-i18n="nlc26.p6Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.p6A"></li>
+            <li data-i18n="nlc26.p6B"></li>
+            <li data-i18n="nlc26.p6C"></li>
           </ul>
         </li>
             </ol>

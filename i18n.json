@@ -173,8 +173,8 @@
     "zh": "同理"
   },
   "approach.loop1P1": {
-    "en": "A student's comprehension paper: the passage was understood, the words were not.",
-    "zh": "一份理解问答考卷：文章看懂了，词语没过关。"
+    "en": "Vocabulary the students had been taught did not stay with them, and reading was a struggle because of it.",
+    "zh": "学生学过的词留不住，一读文章就吃力。"
   },
   "approach.loop1P2": {
     "en": "The same gap turned up across the whole cohort, not one class.",
@@ -345,16 +345,16 @@
     "zh": "幕后功臣"
   },
   "nlc26.stackLede": {
-    "en": "A one-person department, with five behind it. Each covers one stretch, they work independently, and taking on only one of them is fine.",
-    "zh": "一个人的部门，背后五位功臣。各管一段，彼此独立，只请其中一位也行。"
+    "en": "A one-person department with six to thank. Five of them are tools. Who is the sixth?",
+    "zh": "一个人的部门，六位功臣。五位是工具，第六位是谁？"
   },
   "nlc26.p1Title": {
-    "en": "Claude Project · the research assistant",
-    "zh": "Claude Project · 资料员"
+    "en": "Product manager · Claude Project",
+    "zh": "产品经理 · Claude Project"
   },
   "nlc26.p1Cycle": {
-    "en": "keeps the context",
-    "zh": "记着来龙去脉"
+    "en": "works out what is being built, and writes it down",
+    "zh": "理清来龙去脉，写下规格"
   },
   "nlc26.p1A": {
     "en": "Design decisions, pedagogy notes and word lists all live in one Project. It remembers, so you do not explain yourself again every time.",
@@ -365,12 +365,12 @@
     "zh": "你今天动手用的就是这一位：资料夹加词语表传进去，一个 Project 用一整年。"
   },
   "nlc26.p1C": {
-    "en": "The easiest of the five to take on, and the one most often left out.",
-    "zh": "五位里最容易请的一位，也是最常被漏掉的一位。"
+    "en": "The easiest of them to take on, and the one most often left out.",
+    "zh": "最容易请的一位，也是最常被漏掉的一位。"
   },
   "nlc26.p2Title": {
-    "en": "Claude Code · the programmer",
-    "zh": "Claude Code · 程序员"
+    "en": "Engineer · Claude Code",
+    "zh": "工程师 · Claude Code"
   },
   "nlc26.p2Cycle": {
     "en": "writes the code",
@@ -389,12 +389,12 @@
     "zh": "讲清楚比讲漂亮重要：这东西要做什么、给谁用、怎样才算做对了。跟给学生写一份好的作业指示，是同一回事。"
   },
   "nlc26.p3Title": {
-    "en": "ChatGPT · the graphics person",
-    "zh": "ChatGPT · 美工"
+    "en": "Designer · ChatGPT",
+    "zh": "设计师 · ChatGPT"
   },
   "nlc26.p3Cycle": {
-    "en": "draws it",
-    "zh": "画图"
+    "en": "draws it, and makes the artwork",
+    "zh": "出图、出美术"
   },
   "nlc26.p3A": {
     "en": "The cliff, the landscape and the climbing character in today’s game were all generated. Not one of them was bought.",
@@ -405,12 +405,12 @@
     "zh": "生成图像不是许愿，是写规格。一张角色动作图必须说死：六格横向并排、每一格等宽等高、角色朝右、纯洋红色背景、画面上不准出现任何文字或数字。"
   },
   "nlc26.p3C": {
-    "en": "Get the specification wrong and the image simply will not fit into the game. Of the five, this is the one whose skill transfers most easily to everyday teaching.",
-    "zh": "规格说不清楚，图就是拼不进游戏里。五位当中，这一位的本事最容易迁移到日常教学。"
+    "en": "Get the specification wrong and the image simply will not fit into the game. This is the skill that transfers most easily to everyday teaching.",
+    "zh": "规格说不清楚，图就是拼不进游戏里。这一位的本事，最容易迁移到日常教学。"
   },
   "nlc26.p4Title": {
-    "en": "GitHub · the scribe",
-    "zh": "GitHub · 书记"
+    "en": "Archivist · GitHub",
+    "zh": "档案管理员 · GitHub"
   },
   "nlc26.p4Cycle": {
     "en": "records every change",
@@ -429,8 +429,8 @@
     "zh": "有些学校的网络会挡 github.com。解决办法是手机热点，但真正重要的是事先知道有这回事，别站在班上才发现。"
   },
   "nlc26.stackClose": {
-    "en": "The two you work with today are the research assistant and the scribe. The programmer is who I am in daily on VocabSummit. The graphics person is optional. Personnel we only talk about; we do not take them on.",
-    "zh": "你今天动手用到的是资料员和书记。程序员是我做「词山学海」时天天在用的。美工选做。人事今天只谈，不请。"
+    "en": "Today you work with the product manager and the archivist; the engineer and the designer are optional; the HR manager we only talk about. The sixth is not optional: however capable the other five are, somebody still has to say what to make.",
+    "zh": "你今天动手用到的是产品经理和档案管理员，工程师和设计师选做，人事经理只谈不请。第六位没得选：前面五位再能干，也得先有人开口说要做什么。"
   },
   "nlc26.vsTitle": {
     "en": "VocabSummit",
@@ -535,18 +535,6 @@
   "nlc26.dSpeaker": {
     "en": "Speaker · Chun Kai Xin, Head of Mother Tongue, Bukit View Secondary School",
     "zh": "主讲 · 郑凯欣，百德中学母语部主任"
-  },
-  "nlc26.vsP1": {
-    "en": "A Secondary Chinese Language vocabulary platform: students climb, answer, and unlock climbers.",
-    "zh": "中学华文词语平台：学生爬山、答题、解锁角色。"
-  },
-  "nlc26.vsP2": {
-    "en": "The one you will change today is one of its modes, rewritten as a single file so a teacher can edit it.",
-    "zh": "今天动手改的「攀山快答」是其中一个模式，重写成单一文件，让老师改得动。"
-  },
-  "nlc26.vsP3": {
-    "en": "It started with one comprehension paper: the passage was understood, the words were not.",
-    "zh": "起点是一份理解问答考卷：文章看懂了，词语没过关。"
   },
   "nlc26.handsClaude": {
     "en": "Open claude.ai",
@@ -753,8 +741,8 @@
     "zh": "创建自己的 GitHub Page，发布一款学习小游戏"
   },
   "nlc26.p5Title": {
-    "en": "Firebase · personnel",
-    "zh": "Firebase · 人事"
+    "en": "HR manager · Firebase",
+    "zh": "人事经理 · Firebase"
   },
   "nlc26.p5Cycle": {
     "en": "knows who is who",
@@ -887,5 +875,25 @@
   "nlc26.stuck6": {
     "en": "The starter is MIT licensed: adapt it, use it in class, rebuild it for another subject. Keep the attribution. The artwork comes with it.",
     "zh": "示范项目 MIT 许可：自由改编、用于课堂、改成别科都可以，保留署名即可。美术素材一并提供。"
+  },
+  "nlc26.p6Title": {
+    "en": "Founder · me",
+    "zh": "创办人 · 我"
+  },
+  "nlc26.p6Cycle": {
+    "en": "decides what to build, and what counts as built well",
+    "zh": "决定做什么、什么算做好"
+  },
+  "nlc26.p6A": {
+    "en": "Deciding what to build, who it is for, and what counts as getting it right. Not one of the five above will decide any of that for you.",
+    "zh": "决定做什么、给谁用、怎样才算做对了。上面五位，一件也不会替你决定。"
+  },
+  "nlc26.p6B": {
+    "en": "Judging what comes back. Which words keep failing, which screen nobody visits, which instruction I repeat every lesson. Only someone standing in the classroom can see any of it.",
+    "zh": "判断做出来的对不对：哪些词一错再错、哪个页面没人去、哪句指示我每堂课都得再讲一遍。这些只有站在课室里的人看得见。"
+  },
+  "nlc26.p6C": {
+    "en": "This is the role that does not come with a subscription, and the one the whole thing rests on.",
+    "zh": "这个岗位没得订阅，而整件事就架在它上面。"
   }
 }
