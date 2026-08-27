@@ -11,8 +11,8 @@
       "zh": "中学华文词汇平台"
     },
     "summary": {
-      "en": "3,741 vocabulary items across G1, G2, G3 and Higher Chinese, with visible progression, streaks and student-selected challenge. The core learning mechanics were designed around Self-Determination Theory and Assessment for Learning from the outset.",
-      "zh": "3,741 个词条，涵盖 G1、G2、G3 与高级华文，有看得见的进度、连续挑战，难度由学生自己选。核心的学习机制，一开始就是照着自我决定理论（SDT）与促进学习的评价（AfL）来设计的。"
+      "en": "3,889 vocabulary items across G1, G2, G3, Higher Chinese and the beginner pier, with visible progression, streaks and student-selected challenge. The core learning mechanics were designed around Self-Determination Theory and Assessment for Learning from the outset.",
+      "zh": "3,889 个词条，涵盖 G1、G2、G3、高级华文与出发码头，有看得见的进度、连续挑战，难度由学生自己选。核心的学习机制，一开始就是照着自我决定理论（SDT）与促进学习的评价（AfL）来设计的。"
     },
     "highlight": {
       "en": "Built without formal software-engineering training, in conversation with an AI coding agent (Claude Code), on a Firebase backend. The scene artwork was generated with ChatGPT; the vocabulary bank was vetted by hand, entry by entry.",
@@ -20,17 +20,17 @@
     },
     "stats": [
       {
-        "value": "3,741",
+        "value": "3,889",
         "label": {
           "en": "vocabulary items",
           "zh": "词条总数"
         }
       },
       {
-        "value": "4",
+        "value": "5",
         "label": {
-          "en": "subject levels",
-          "zh": "科目程度"
+          "en": "areas of the map",
+          "zh": "学海区域"
         }
       },
       {
@@ -67,8 +67,8 @@
       {
         "src": "assets/screenshots/vocabsummit-levels.jpg",
         "caption": {
-          "en": "Choosing from G1, G2, G3 and Higher Chinese",
-          "zh": "从 G1、G2、G3 与高级华文中选择"
+          "en": "Choosing from G1, G2, G3, Higher Chinese and the beginner pier",
+          "zh": "从 G1、G2、G3、高级华文与出发码头中选择"
         }
       },
       {
@@ -91,7 +91,16 @@
       "flagship",
       "live"
     ],
-    "displayUrl": "for.edu.sg/vocabsummit"
+    "displayUrl": "for.edu.sg/vocabsummit",
+    "links": [
+      {
+        "label": {
+          "en": "The design talked through, slide by slide (SPMC, August 2026)",
+          "zh": "把设计逐页讲一遍（SPMC · 2026年8月）"
+        },
+        "url": "assets/slides/spmc-2026-vocabsummit.pdf"
+      }
+    ]
   },
   {
     "id": "s3g3-argumentative-adventure",
@@ -156,7 +165,16 @@
         }
       }
     ],
-    "displayUrl": "sites.google.com/moe.edu.sg/bvss-cl-hub"
+    "displayUrl": "sites.google.com/moe.edu.sg/bvss-cl-hub",
+    "links": [
+      {
+        "label": {
+          "en": "What's inside it, slide by slide (SPMC, August 2026)",
+          "zh": "里面装了什么，逐页看（SPMC · 2026年8月）"
+        },
+        "url": "assets/slides/spmc-2026-cl-hub.pdf"
+      }
+    ]
   },
   {
     "id": "s3g3-chapter5-revision",

@@ -23,7 +23,7 @@
   },
   {
     "id": "spmc-2026",
-    "status": "upcoming",
+    "status": "completed",
     "date": "2026-08-26",
     "dateLabel": {
       "en": "26 August 2026",
@@ -38,10 +38,64 @@
       "zh": "面向百德中学校务规划与管理委员会（BVSS SPMC）的分享"
     },
     "summary": {
-      "en": "A sharing for school and teacher leaders on designing self-directed learning so that motivation is built into the structure rather than expected from students.",
-      "zh": "面向校方与教师领导的分享：自主学习要怎么设计，才能把动机放进结构里，而不是指望学生自己有。"
+      "en": "A sharing for school and teacher leaders on designing self-directed learning so that motivation is built into the structure rather than expected from students. Self-Determination Theory supplies the three questions: autonomy, competence, relatedness. VocabSummit is the worked case, and every design decision in the platform traces back to one of them.",
+      "zh": "面向校方与教师领导的分享：自主学习要怎么设计，才能把动机放进结构里，而不是指望学生自己有。自我决定理论给出三个问题：自主、胜任、关联。词山学海就是那个做完的例子，平台上每一个设计决定，都能对回其中一个。"
     },
-    "link": ""
+    "link": "",
+    "links": [
+      {
+        "label": {
+          "en": "The slides (PDF)",
+          "zh": "分享幻灯片（PDF）"
+        },
+        "url": "assets/slides/spmc-2026-vocabsummit.pdf"
+      },
+      {
+        "label": {
+          "en": "Open VocabSummit",
+          "zh": "打开词山学海"
+        },
+        "url": "https://for.edu.sg/vocabsummit"
+      }
+    ]
+  },
+  {
+    "id": "spmc-2026-cl-hub",
+    "status": "completed",
+    "date": "2026-08-26",
+    "dateLabel": {
+      "en": "26 August 2026",
+      "zh": "2026年8月26日"
+    },
+    "title": {
+      "en": "A Doraemon's pocket for CL Learning — the BVSS Chinese Language Resource Hub",
+      "zh": "华文学习的百宝袋 —— 百德中学华文资源站"
+    },
+    "venue": {
+      "en": "Department practice sharing with BVSS SPMC, the School Planning and Management Committee of Bukit View Secondary School",
+      "zh": "面向百德中学校务规划与管理委员会（BVSS SPMC）的部门实践分享"
+    },
+    "summary": {
+      "en": "The second half of the same session, on the department's one-stop hub: SLS lesson resources by level and year, past national oral exam videos by topic, reading aloud and listening, graded extensive reading, news links students can actually open, the tools worth teaching them to use, and a glossary for the Singapore terms no dictionary carries. The structure transfers to any subject, and a shared space turns out to be an easy thing for colleagues to start adding to.",
+      "zh": "同一场分享的下半场，讲部门的一站式资源站：按程度与年级整理的 SLS 课堂资源、按主题分类的历年会话考试录像、朗读与听力、分级泛读、学生真的打得开的时事链接、值得教他们用的工具，还有一份字典查不到的新加坡本地词汇表。这套结构换个科目也用得上；而一个共用的空间，同事也比较容易开始往里面加东西。"
+    },
+    "link": "",
+    "links": [
+      {
+        "label": {
+          "en": "The slides (PDF)",
+          "zh": "分享幻灯片（PDF）"
+        },
+        "url": "assets/slides/spmc-2026-cl-hub.pdf"
+      },
+      {
+        "label": {
+          "en": "Open the hub",
+          "zh": "打开资源站"
+        },
+        "url": "https://sites.google.com/moe.edu.sg/bvss-cl-hub"
+      }
+    ]
   },
   {
     "id": "sgldc-philosophers",

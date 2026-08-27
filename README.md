@@ -94,6 +94,13 @@ entries list nearest-first and completed newest-first, under separate headings. 
 - `"link"` for the write-up itself
 - `"links"`, an array of `{ label, url }`, for anything the write-up points at
 
+Slide decks go in `assets/slides/` as PDF, named after the talk's `id`. Export from
+PowerPoint or Keynote rather than committing the `.pptx`: a PDF opens in the browser,
+carries no speaker notes and no embedded originals of the images. **Check every slide for
+identifiable students before exporting**, and delete those slides from the copy you
+publish. Both SPMC 2026 decks were published that way; the beta-tester photo slide is in
+the deck as delivered and not in the PDF on the site.
+
 ---
 
 ## Content that needs periodic updating
@@ -182,6 +189,7 @@ LICENSE                 all rights reserved; see below
 assets/
   art/prints/           block prints and their masters
   screenshots/          project screenshots
+  slides/               talk decks as PDF, named after the talk's id in talks.json
 publish.sh              build, validate, commit, push
 export-text.py          dump all copy to one bilingual markdown file for proofreading
 ```
