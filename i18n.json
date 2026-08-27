@@ -164,10 +164,6 @@
     "en": "Design thinking is a five step cycle. In a classroom, only the test settles anything.",
     "zh": "设计思维是一个五步循环。但在课堂里，真正说了算的只有「测试」。"
   },
-  "approach.leadB": {
-    "en": "VocabSummit has been round this loop many times. One pass, in point form:",
-    "zh": "「词山学海」已经跑过很多轮。以下是其中一轮，用要点列出："
-  },
   "approach.loop1Title": {
     "en": "Start from something I actually saw",
     "zh": "从我亲眼看见的东西开始"
@@ -185,8 +181,8 @@
     "zh": "同样的缺口出现在整个级别，不只一个班。"
   },
   "approach.loop1P3": {
-    "en": "Students will not humour anything that wastes their time. That is the real constraint.",
-    "zh": "学生不会迁就浪费他们时间的东西。这才是真正的限制。"
+    "en": "Vocabulary is the building block, and it is learnt by repetition. Repetition is exactly the mode students resist. That is the real constraint.",
+    "zh": "词汇是语言的基本单位，而词汇要靠重复来学。学生最抗拒的，恰恰就是重复。这才是真正的限制。"
   },
   "approach.loop2Title": {
     "en": "Name the gap in one sentence",
@@ -201,12 +197,12 @@
     "zh": "问题在词汇，不在理解。"
   },
   "approach.loop2P2": {
-    "en": "It has to cover G1, G2, G3 and Higher Chinese, at different depths.",
-    "zh": "必须覆盖 G1、G2、G3 与高级华文，深浅不同。"
+    "en": "And the question is not how to make vocabulary fun. It is how to make a student choose to practise it.",
+    "zh": "而问题也不是怎么让词汇变得有趣，是怎么让学生自己选择去练。"
   },
   "approach.loop2P3": {
-    "en": "It works if a student practises without being told to.",
-    "zh": "成功的标准：没人叫他，学生也会去练。"
+    "en": "It has to cover G1, G2, G3, Higher Chinese and the beginner pier, at different depths.",
+    "zh": "必须覆盖 G1、G2、G3、高级华文与出发码头，深浅不同。"
   },
   "approach.loop3Title": {
     "en": "Design the motivation, not just the content",
@@ -217,16 +213,16 @@
     "zh": "构思"
   },
   "approach.loop3P1": {
-    "en": "Motivation built into the structure from the start: Self-Determination Theory, Assessment for Learning.",
-    "zh": "动机一开始就放进结构里：自我决定理论（SDT）、促进学习的评价（AfL）。"
+    "en": "Self-Determination Theory names the target: autonomy, competence, relatedness. Motivation goes into the structure, not into a pep talk.",
+    "zh": "自我决定理论（SDT）指出了要瞄准的东西：自主、胜任、关联。动机是放进结构里的，不是放进一番动员的话里。"
   },
   "approach.loop3P2": {
-    "en": "Students choose scope and difficulty. Nothing is assigned.",
-    "zh": "范围和难度由学生自己选，不由系统分配。"
+    "en": "Game elements are not motivating in themselves. Different elements answer different needs, so each one is picked for the need it serves.",
+    "zh": "游戏元素本身并不产生动机。不同的元素满足不同的心理需求，所以每一个元素，都是照着它要服务的那个需求来挑的。"
   },
   "approach.loop3P3": {
-    "en": "The name carries the design: a mountain you can see yourself climbing. Visible progress, streaks, a personal map.",
-    "zh": "名字本身就是设计：一座看得见自己在爬的山。进度看得见，有连续挑战，有个人地图。"
+    "en": "Retrieving a word after a delay is what makes it stick, and a word is never simply known or unknown: form, sound, meaning and use each grow separately. So one word list runs through several modes.",
+    "zh": "隔一段时间再把词提取出来，词才记得住；而一个词也不是「会」或「不会」两种状态：字形、读音、意思、用法，各长各的。所以同一份词表，要跑好几种模式。"
   },
   "approach.loop4Title": {
     "en": "Build the thing, not a picture of it",
@@ -237,16 +233,16 @@
     "zh": "原型"
   },
   "approach.loop4P1": {
-    "en": "A working build on Firebase, not a mockup, with no formal software engineering training behind it.",
-    "zh": "一个真能跑的版本，后端用 Firebase，不是示意图；做的人没受过软件工程的正规训练。"
+    "en": "A working build, not a mockup, from someone with no formal software engineering training.",
+    "zh": "一个真能跑的版本，不是示意图；做的人没受过软件工程的正规训练。"
   },
   "approach.loop4P2": {
-    "en": "3,741 vocabulary entries, vetted by hand, one at a time.",
-    "zh": "3,741 个词条，逐条人工审核。"
+    "en": "Five tools and no vendor: a Claude Project holding the design decisions, pedagogy notes and word lists; Claude Code writing the platform code straight into the repository; ChatGPT for a second opinion on item wording; GitHub for version history, so any change can be undone; Firebase for hosting, student sign-in and progress data.",
+    "zh": "五个工具，没有外包商：Claude Project 存放设计决定、教学笔记与词表；Claude Code 直接把平台代码写进代码库；ChatGPT 在题目措辞上给第二意见；GitHub 保留版本历史，任何改动都退得回去；Firebase 负责托管、学生登录与进度数据。"
   },
   "approach.loop4P3": {
-    "en": "In front of students within days of being usable, not at the end of a term.",
-    "zh": "勉强能用就送到学生面前，几天之内，而不是等到学期末。"
+    "en": "3,889 vocabulary entries, vetted by hand, one at a time.",
+    "zh": "3,889 个词条，逐条人工审核。"
   },
   "approach.loop5Title": {
     "en": "The classroom is the test, not the demo",
@@ -318,103 +314,103 @@
   },
   "nlc26.handsTitle": {
     "en": "Hands-on: your spreadsheet to a live link",
-    "zh": "动手环节：从你的词语表到一个网址"
+    "zh": "动手环节：把手上的资源变成互动游戏"
   },
   "nlc26.handsLede": {
     "en": "Excel → Claude → GitHub Pages. All in the browser. No install, no terminal, no coding.",
-    "zh": "Excel → Claude → GitHub Pages。全程在浏览器里，不必装东西，不必碰终端机，不必会编码。"
+    "zh": "Excel → Claude → GitHub Pages。（零编码基础可操作！）"
   },
   "nlc26.handsCta": {
-    "en": "Download the starter",
-    "zh": "下载示范项目"
+    "en": "Open the starter",
+    "zh": "打开示范项目"
   },
   "nlc26.step1Title": {
-    "en": "Fill in the vocabulary sheet",
-    "zh": "填一份词语表"
+    "en": "Get a GitHub account and your own copy of the game",
+    "zh": "先有 GitHub 账号，再把游戏复制到自己名下"
   },
   "nlc26.step1Cycle": {
-    "en": "your content",
-    "zh": "你的内容"
+    "en": "sign up",
+    "zh": "开户"
   },
   "nlc26.step1P1": {
-    "en": "The starter has 词语表模板.xlsx and a .csv. Two columns, 词语 and 释义. Leave row 1 alone.",
-    "zh": "示范项目里有「词语表模板.xlsx」和一份 .csv。两栏：词语、释义。第一行不要动。"
+    "en": "github.com → Sign up. A personal email is fine. Free, and no card.",
+    "zh": "github.com → Sign up。用个人邮箱就行。免费，不必给信用卡。"
   },
   "nlc26.step1P2": {
-    "en": "Eight entries or more. You never write wrong answers: distractors come from your other entries.",
-    "zh": "8 个以上。错误选项不用你写，程序会从你其他词语的释义里抓。"
+    "en": "Open the starter, then the green Use this template → Create a new repository.",
+    "zh": "打开示范项目，点绿色的 Use this template → Create a new repository。"
   },
   "nlc26.step2Title": {
-    "en": "Download the game",
-    "zh": "下载游戏"
+    "en": "Turn the link on before you have any content",
+    "zh": "先把网址开起来，再谈内容"
   },
   "nlc26.step2Cycle": {
-    "en": "download",
-    "zh": "下载"
-  },
-  "nlc26.step2P1": {
-    "en": "Green Code button → Download ZIP → unzip.",
-    "zh": "绿色的 Code 按钮 → Download ZIP → 解压。"
-  },
-  "nlc26.step2P2": {
-    "en": "About 540KB. On a slow network, take it off a thumb drive instead.",
-    "zh": "大约 540KB。网络慢的话，直接用随身碟拷。"
-  },
-  "nlc26.step3Title": {
-    "en": "Give both to a Claude Project",
-    "zh": "把两样都交给 Claude Project"
-  },
-  "nlc26.step3Cycle": {
-    "en": "the agent",
-    "zh": "智能体"
-  },
-  "nlc26.step3P1": {
-    "en": "claude.ai → Projects → new one. Upload the whole game folder AND your spreadsheet.",
-    "zh": "claude.ai → Projects → 新建一个。把整个游戏资料夹和你的词语表都上传进去。"
-  },
-  "nlc26.step3P2": {
-    "en": "A Project keeps those files. Next term, same Project, one sentence, done.",
-    "zh": "Project 会把文件留着。下个单元回到同一个 Project 说一句就行，不必重传。"
-  },
-  "nlc26.step3P3": {
-    "en": "Paste the prompt below. The last line is the important one: you want it to report problems, not paper over them.",
-    "zh": "把下面这段贴进去。最后一句最要紧：你要它先报告问题，而不是替你蒙混过去。"
-  },
-  "nlc26.step4Title": {
-    "en": "Swap the file in and look at it",
-    "zh": "换回去，打开看看"
-  },
-  "nlc26.step4Cycle": {
-    "en": "judge it",
-    "zh": "判断"
-  },
-  "nlc26.step4P1": {
-    "en": "Put Claude's my-words.js back in the folder, replacing the old one. Double-click index.html.",
-    "zh": "把 Claude 给你的 my-words.js 放回资料夹，覆盖原来那个。双击 index.html。"
-  },
-  "nlc26.step4P2": {
-    "en": "Play one round and read your own questions. This checking step is the actual skill.",
-    "zh": "玩一局，看看自己出的题。这一步的检查，才是真正要学的本事。"
-  },
-  "nlc26.step5Title": {
-    "en": "Publish it as a link for students",
-    "zh": "变成一个网址，发给学生"
-  },
-  "nlc26.step5Cycle": {
     "en": "publish",
     "zh": "发布"
   },
+  "nlc26.step2P1": {
+    "en": "In your own repository: Settings → Pages → Deploy from a branch → main → / (root) → Save.",
+    "zh": "在你自己的仓库里：Settings → Pages → Deploy from a branch → 选 main → 选 /(root) → Save。"
+  },
+  "nlc26.step2P2": {
+    "en": "Wait a minute or two, then open https://yourusername.github.io/VocabClimbStarter/. It works already, with the sample words in it.",
+    "zh": "等一两分钟，打开 https://你的用户名.github.io/VocabClimbStarter/。它现在就能玩了，里面是示范词语。"
+  },
+  "nlc26.step3Title": {
+    "en": "Download your copy and fill in the vocabulary sheet",
+    "zh": "把你那份下载下来，填词语表"
+  },
+  "nlc26.step3Cycle": {
+    "en": "your content",
+    "zh": "你的内容"
+  },
+  "nlc26.step3P1": {
+    "en": "In your repository: green Code button → Download ZIP → unzip. About 540KB. On a slow network, take it off a thumb drive instead.",
+    "zh": "在你的仓库里：绿色的 Code 按钮 → Download ZIP → 解压。约 540KB。网络慢的话，直接用随身碟拷。"
+  },
+  "nlc26.step3P2": {
+    "en": "The folder has 词语表模板.xlsx and a .csv. Two columns, 词语 and 释义. Row 1 stays as it is.",
+    "zh": "资料夹里有「词语表模板.xlsx」和一份 .csv。两栏：词语、释义。第一行不需修改。"
+  },
+  "nlc26.step3P3": {
+    "en": "Eight entries or more. You never write wrong answers: distractors come from your other entries.",
+    "zh": "8 个以上。错误选项不用你写，程序会从你其他词语的释义里抓。"
+  },
+  "nlc26.step4Title": {
+    "en": "Give the whole folder to a Claude Project",
+    "zh": "把整个资料夹交给 Claude Project"
+  },
+  "nlc26.step4Cycle": {
+    "en": "the agent",
+    "zh": "智能体"
+  },
+  "nlc26.step4P1": {
+    "en": "claude.ai → Projects → new one. Upload the whole unzipped folder AND your filled-in sheet. The folder matters: it is how Claude sees the format it has to match.",
+    "zh": "claude.ai → Projects → 新建一个。把解压后的整个资料夹和你填好的词语表都上传进去。资料夹一定要传：Claude 得看见原本的格式，才知道要照着什么写。"
+  },
+  "nlc26.step4P2": {
+    "en": "A Project keeps those files. Next term, same Project, one sentence, done.",
+    "zh": "Project 会把文件留着。下个单元回到同一个 Project 说一句就行，不必重传。"
+  },
+  "nlc26.step5Title": {
+    "en": "Swap the file in and play a round yourself",
+    "zh": "换回去，先自己玩一局"
+  },
+  "nlc26.step5Cycle": {
+    "en": "judge it",
+    "zh": "判断"
+  },
   "nlc26.step5P1": {
-    "en": "github.com/new → name it → Public → Create repository.",
-    "zh": "github.com/new → 取个名字 → 选 Public → Create repository。"
+    "en": "Put Claude's my-words.js back in the folder, replacing the old one. Double-click index.html.",
+    "zh": "把 Claude 给你的 my-words.js 放回资料夹，覆盖原来那个。双击 index.html。"
   },
   "nlc26.step5P2": {
-    "en": "Click uploading an existing file, then drag your whole folder in, art folder included. Commit changes. No Git, no terminal.",
-    "zh": "点 uploading an existing file，把整个资料夹拖进去，连 art 资料夹一起。Commit changes。不必装 Git，不必用终端机。"
+    "en": "Play one round and read your own questions. This checking step is the actual skill.",
+    "zh": "玩一局，看看自己出的题。这一步的检查，才是真正要学的本事。"
   },
   "nlc26.step5P3": {
-    "en": "Settings → Pages → Deploy from a branch → main → / (root) → Save. Wait a minute or two.",
-    "zh": "Settings → Pages → Deploy from a branch → 选 main → 选 /(root) → Save。等一两分钟。"
+    "en": "Want more changed? Keep talking to it: title, colours, timer, the gap between ledges.",
+    "zh": "还想改别的就接着说：标题、颜色、秒数、落脚点之间的高度。"
   },
   "nlc26.step5P4": {
     "en": "https://yourusername.github.io/yourreponame/ — free, no ads, no cap. To change words later, edit my-words.js on the GitHub page itself.",
@@ -433,8 +429,8 @@
     "zh": "找不到 Claude 给的文件：看「下载 / Downloads」资料夹，再拖回游戏资料夹。"
   },
   "nlc26.stuck3": {
-    "en": "GitHub Pages shows 404: it needs a minute or two. Then hard refresh, Cmd+Shift+R or Ctrl+F5.",
-    "zh": "GitHub Pages 是 404：要等一两分钟。然后强制刷新（Cmd+Shift+R / Ctrl+F5）。"
+    "en": "GitHub Pages shows 404: it needs a minute or two after Save. Then hard refresh, Cmd+Shift+R or Ctrl+F5.",
+    "zh": "GitHub Pages 是 404：按了 Save 之后要等一两分钟。然后强制刷新（Cmd+Shift+R / Ctrl+F5）。"
   },
   "nlc26.stackTitle": {
     "en": "The four pieces",
@@ -693,8 +689,8 @@
     "zh": "把这段贴进去"
   },
   "nlc26.step4P3": {
-    "en": "Want more changed? Keep talking to it: title, colours, timer, the gap between ledges.",
-    "zh": "还想改别的就接着说：标题、颜色、秒数、落脚点之间的高度。"
+    "en": "Paste the prompt below. The last line is the important one: you want it to report problems, not paper over them.",
+    "zh": "把下面这段贴进去。最后一句最要紧：你要它先报告问题，而不是替你蒙混过去。"
   },
   "nlc26.fallbackLabel": {
     "en": "No account, or the network is blocked?",
@@ -709,8 +705,8 @@
     "zh": "这条路不需要账号，也不需要网络，做出来的游戏一模一样。"
   },
   "nlc26.fallback3": {
-    "en": "Only step 5, the public link, truly needs an account. Everything before it runs on your own laptop.",
-    "zh": "只有第五步（公开网址）真的需要账号。前面全都在你自己的电脑上跑。"
+    "en": "The account is needed from step 1, because the account is what holds the link. Everything from step 3 to step 5 runs on your own laptop with no network at all.",
+    "zh": "账号从第一步就要用，因为网址是挂在账号底下的。第三步到第五步全都在你自己的电脑上跑，完全不必联网。"
   },
   "nlc26.stuck4": {
     "en": "School network blocks github.com or claude.ai: phone hotspot, or do it at home. The offline path above still works.",
@@ -718,27 +714,15 @@
   },
   "nlc26.storyTitle": {
     "en": "How this actually started",
-    "zh": "这一切是怎么开始的"
-  },
-  "nlc26.storyLede": {
-    "en": "Not with a specification. With a problem, a link to a manual I didn't understand, and the sentence I don't know how to start.",
-    "zh": "不是从一份规格书开始的。是一个问题、一个我看不懂的说明网址，加上一句「我不知道怎么开始」。"
+    "zh": "在一片混沌中开天辟地。在什么都不会的时候，到底怎么开始？"
   },
   "nlc26.storyCap": {
     "en": "The first message I sent, word for word",
-    "zh": "我发出去的第一则讯息，一字不改"
-  },
-  "nlc26.storyP1": {
-    "en": "Notice what it is not: no flowchart, no requirements, no meeting. A problem, and a link so it knew what I was working inside.",
-    "zh": "看看它不是什么：没有流程图，没有需求书，没有开会。只有一个问题，加一个网址让它知道我在什么环境里做事。"
+    "zh": "我给Claude发的第一则讯息："
   },
   "nlc26.storyP2": {
     "en": "And notice that what I asked for is not what exists today. I asked for an SLS package. It turned out the idea would not fit inside SLS's existing structure, so it grew into a platform of its own. The first plan changing is normal, not a failure.",
-    "zh": "再看看：我当初要的，跟今天存在的东西不一样。我要的本来是一个 SLS 教材包，做下去才发现这个构想装不进 SLS 现有的架构里，于是它长成了一个独立的平台。最初的构想会变，这是常态，不是失败。"
-  },
-  "nlc26.storyP3": {
-    "en": "It writes, I look, I say what's wrong. The rounds that changed it most came right after students said something. That part was never the AI's job.",
-    "zh": "它写，我看，我说哪里不对。改动最大的几轮，都紧接在学生说了什么之后。那一部分，从来不是 AI 的工作。"
+    "zh": "我要的本来是一个 SLS HTML5 互动课件，却边做边发现这个构想装不进 SLS 现有的架构里。于是它一步一步，长成了今天的“词山学海”。"
   },
   "nlc26.statWords": {
     "en": "vocabulary items",
@@ -746,7 +730,7 @@
   },
   "nlc26.statClasses": {
     "en": "classes tested it",
-    "zh": "个班级试用"
+    "zh": "个班级测试平台"
   },
   "nlc26.statStudents": {
     "en": "students gave feedback",
@@ -754,7 +738,7 @@
   },
   "nlc26.statPeople": {
     "en": "person building it",
-    "zh": "个人在做"
+    "zh": "位疯狂的教师"
   },
   "nlc26.shot1": {
     "en": "The title screen, and where the name 词山学海 comes from",
@@ -762,7 +746,7 @@
   },
   "nlc26.shot2": {
     "en": "The climb: every unit is a stretch of mountain, and progress is a height",
-    "zh": "攀登 · 每个单元是一段山路，进度就是海拔"
+    "zh": "攀登 · 每个单元是一段山路，进度则是海拔"
   },
   "nlc26.shot3": {
     "en": "What it grew into: 23 units, streaks, badges, a leaderboard",
@@ -770,7 +754,7 @@
   },
   "nlc26.storyClose": {
     "en": "That took months. What you are about to do takes ten minutes, and it is the same move: say what you want, look at what comes back, say what's wrong.",
-    "zh": "那个做了几个月。你等一下要做的，十分钟就够，但动作是同一个：说清楚要什么，看它做出什么，再说哪里不对。"
+    "zh": "反复的动作：说清楚要什么，看它做出什么，再说哪里要调整。"
   },
   "nlc26.navSession": {
     "en": "This session",
@@ -803,5 +787,141 @@
   "nlc26.navAfter": {
     "en": "Afterwards",
     "zh": "后续"
+  },
+  "approach.loop2P4": {
+    "en": "It works if a student practises without being told to.",
+    "zh": "成功的标准：没人叫他，学生也会去练。"
+  },
+  "approach.loop3P4": {
+    "en": "The name carries the design: a mountain you can see yourself climbing. Visible progress, streaks, a personal map.",
+    "zh": "名字本身就是设计：一座看得见自己在爬的山。进度看得见，有连续挑战，有个人地图。"
+  },
+  "approach.loop4P4": {
+    "en": "In front of students within days of being usable, not at the end of a term.",
+    "zh": "勉强能用就送到学生面前，几天之内，而不是等到学期末。"
+  },
+  "approach.needsTitle": {
+    "en": "Motivation is designed, not requested",
+    "zh": "动机是设计出来的，不是要求来的"
+  },
+  "approach.needsLead": {
+    "en": "Self-Determination Theory turns the vague question into three answerable ones. Every feature below exists to answer one of them, and each of the three starts from a sentence students actually say.",
+    "zh": "自我决定理论把一个含糊的问题，换成三个答得上来的问题。下面每一个功能，都是在回答其中一个；而这三个问题的起点，都是学生真的会说出口的一句话。"
+  },
+  "approach.need1Name": {
+    "en": "Autonomy",
+    "zh": "自主"
+  },
+  "approach.need1Voice": {
+    "en": "“I am forced to learn Mother Tongue.”",
+    "zh": "「我是被逼学母语的。」"
+  },
+  "approach.need1Q": {
+    "en": "How would a student feel in charge?",
+    "zh": "怎样才能让学生觉得，这件事由他做主？"
+  },
+  "approach.need1P1": {
+    "en": "Twelve zodiac climbers, free at registration. Every student picks one. Nothing is assigned.",
+    "zh": "十二生肖攀登者，注册时免费选。人人自己挑一个，没有分配。"
+  },
+  "approach.need1P2": {
+    "en": "Five story climbers cost 300 to 600, in a currency that comes only from practising and winning. Four mythic beasts carry no price at all: one is released for each annual trial cleared, Secondary 1 through Secondary 4.",
+    "zh": "五个故事角色，售价 300 至 600，而那笔货币只能靠练习和获胜赚到。四头神兽则完全不标价：中一到中四，每通过一次年度试炼，就放出一头。"
+  },
+  "approach.need1P3": {
+    "en": "Learn mode is plain self-study: own pace, no clock, no score. Game mode meets the same words in challenges and races. A student switches across at any time.",
+    "zh": "学习模式就是朴素的自学：自己的节奏，不计时，不计分。游戏模式用挑战和竞速去碰同样那批词。学生随时可以换过去。"
+  },
+  "approach.need1P4": {
+    "en": "Scope is chosen at the start of every session: which words, and when.",
+    "zh": "每次使用，学习范围都由学生自己定：练哪些词，什么时候练。"
+  },
+  "approach.need2Name": {
+    "en": "Competence",
+    "zh": "胜任"
+  },
+  "approach.need2Voice": {
+    "en": "“I keep doing badly in Mother Tongue.”",
+    "zh": "「母语我一直考不好。」"
+  },
+  "approach.need2Q": {
+    "en": "How do they find out they are succeeding, often enough to believe it?",
+    "zh": "怎样让他们知道自己做得到，而且知道得够频繁，频繁到肯相信？"
+  },
+  "approach.need2P1": {
+    "en": "Experience points are never deducted. A wrong answer costs nothing already earned.",
+    "zh": "经验值只加不减。答错了，已经赚到的一分也不扣。"
+  },
+  "approach.need2P2": {
+    "en": "One badge per chapter component: everyday life, core, consolidation, advanced, culture. Earned by finishing the component, not by scoring well on it.",
+    "zh": "每个单元板块一枚徽章：生活用语、核心、巩固、增益、文化。徽章靠做完这个板块的词汇学习拿到，不靠考得好。"
+  },
+  "approach.need2P3": {
+    "en": "Powerups are bought with currency the student earned by practising: an extra life, a combo shield, five seconds off the clock, a first mistake that does not count, one wrong option removed. Each is named after an object with a story behind it.",
+    "zh": "道具用练习赚来的货币买：多一条命、连击护盾、冻结计时五秒、第一次答错不算、去掉一个错误选项。每一件都以一样有来历的物件命名。"
+  },
+  "approach.need2P4": {
+    "en": "3,889 entries across G1, G2, G3, Higher Chinese and the beginner pier. The same motivation design serves every level of readiness.",
+    "zh": "3,889 个词条，涵盖 G1、G2、G3、高级华文与出发码头。同一套动机设计，服务所有起点不同的学生。"
+  },
+  "approach.need3Name": {
+    "en": "Relatedness",
+    "zh": "关联"
+  },
+  "approach.need3Voice": {
+    "en": "“Nobody close to me uses Mother Tongue outside class.”",
+    "zh": "「我身边的人，下了课没人用母语。」"
+  },
+  "approach.need3Q": {
+    "en": "How does practising stop being something done alone?",
+    "zh": "怎样让练习不再是一个人的事？"
+  },
+  "approach.need3P1": {
+    "en": "Classroom climbs, started by a teacher or by the students themselves.",
+    "zh": "课堂共攀：老师可以发起，学生自己也可以发起。"
+  },
+  "approach.need3P2": {
+    "en": "Peer challenges between friends, on the words they are both working on.",
+    "zh": "同伴对战：朋友之间，就着两人都在练的词较量。"
+  },
+  "approach.need3P3": {
+    "en": "A live leaderboard while a climb is running, and a badge for placing on it.",
+    "zh": "攀登进行时有实时排行榜，上榜有名次徽章。"
+  },
+  "approach.needsClose": {
+    "en": "This is the argument I took to the school leadership in August 2026.",
+    "zh": "这就是 2026 年 8 月我向校方领导层讲的那套论证。"
+  },
+  "approach.needsLink": {
+    "en": "The slides are on Connect",
+    "zh": "幻灯片在「并肩同行」页"
+  },
+  "nlc26.step1P3": {
+    "en": "Name it VocabClimbStarter, the same as everyone else in the room. Choose Public, then Create. The whole game is now in your account. Nothing to download, nothing to upload.",
+    "zh": "仓库名就用 VocabClimbStarter，全场统一。选 Public，Create。整个游戏就到你账号底下了：不必下载，也不必上传。"
+  },
+  "nlc26.step2P3": {
+    "en": "Having the link first means every later change is one refresh away from being visible.",
+    "zh": "网址先有，后面每改一次，刷新一下就看得见。"
+  },
+  "nlc26.step6Title": {
+    "en": "Put the one file back and send the link to students",
+    "zh": "把那一个文件传回去，网址发给学生"
+  },
+  "nlc26.step6Cycle": {
+    "en": "go live",
+    "zh": "上线"
+  },
+  "nlc26.step6P1": {
+    "en": "In your repository, open my-words.js → the pencil icon → select all, delete, paste in what Claude gave you → Commit changes. One file. No Git, no terminal.",
+    "zh": "回到你的仓库，点开 my-words.js → 铅笔图标 → 全选删掉 → 把 Claude 给你的内容整段贴上 → Commit changes。只动这一个文件。不必装 Git，不必用终端机。"
+  },
+  "nlc26.step6P2": {
+    "en": "Refresh the link from step 2. Free, no ads, no cap on how many students open it.",
+    "zh": "刷新第二步那个网址。免费，没广告，多少学生打开都行。"
+  },
+  "nlc26.step6P3": {
+    "en": "Next unit: repeat steps 3 to 6. You never make another repository.",
+    "zh": "下个单元：重复第三步到第六步。仓库不必再建。"
   }
 }

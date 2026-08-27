@@ -179,12 +179,12 @@ PAGES = {
       </p>
 
       <p class="lede" data-i18n="approach.leadA"></p>
-      <p class="lede" data-i18n="approach.leadB"></p>
 
       <!-- The five steps of the design thinking cycle, kept separate rather
            than paired up, each one answered by what actually happened while
            building VocabSummit. Point form on purpose: the stages are notes
-           from practice, not an essay about practice. -->
+           from practice, not an essay about practice. The point counts differ
+           by stage because the stages differ; a stage is not padded to three. -->
       <ol class="loop">
         <li>
           <h2 data-i18n="approach.loop1Title"></h2>
@@ -202,6 +202,7 @@ PAGES = {
             <li data-i18n="approach.loop2P1"></li>
             <li data-i18n="approach.loop2P2"></li>
             <li data-i18n="approach.loop2P3"></li>
+            <li data-i18n="approach.loop2P4"></li>
           </ul>
         </li>
         <li>
@@ -211,6 +212,7 @@ PAGES = {
             <li data-i18n="approach.loop3P1"></li>
             <li data-i18n="approach.loop3P2"></li>
             <li data-i18n="approach.loop3P3"></li>
+            <li data-i18n="approach.loop3P4"></li>
           </ul>
         </li>
         <li>
@@ -220,6 +222,7 @@ PAGES = {
             <li data-i18n="approach.loop4P1"></li>
             <li data-i18n="approach.loop4P2"></li>
             <li data-i18n="approach.loop4P3"></li>
+            <li data-i18n="approach.loop4P4"></li>
           </ul>
         </li>
         <li>
@@ -234,6 +237,56 @@ PAGES = {
       </ol>
 
       <p class="loop-close" data-i18n="approach.loopClose"></p>
+
+      <!-- The loop above is how the thing gets made. This is what it is aimed
+           at, and it is the spine of the SPMC sharing: Self-Determination
+           Theory turns "make vocabulary fun" into three answerable questions,
+           and every feature listed here exists to answer one of them. Each
+           need opens with the student sentence it is a reply to. -->
+      <section class="needs-block" aria-labelledby="needs-title">
+        <h2 class="section-title" id="needs-title" data-i18n="approach.needsTitle"></h2>
+        <p class="lede" data-i18n="approach.needsLead"></p>
+
+        <div class="needs">
+          <article class="need">
+            <p class="need-name" data-i18n="approach.need1Name"></p>
+            <p class="need-voice" data-i18n="approach.need1Voice"></p>
+            <h3 data-i18n="approach.need1Q"></h3>
+            <ul class="loop-points need-points">
+              <li data-i18n="approach.need1P1"></li>
+              <li data-i18n="approach.need1P2"></li>
+              <li data-i18n="approach.need1P3"></li>
+              <li data-i18n="approach.need1P4"></li>
+            </ul>
+          </article>
+          <article class="need">
+            <p class="need-name" data-i18n="approach.need2Name"></p>
+            <p class="need-voice" data-i18n="approach.need2Voice"></p>
+            <h3 data-i18n="approach.need2Q"></h3>
+            <ul class="loop-points need-points">
+              <li data-i18n="approach.need2P1"></li>
+              <li data-i18n="approach.need2P2"></li>
+              <li data-i18n="approach.need2P3"></li>
+              <li data-i18n="approach.need2P4"></li>
+            </ul>
+          </article>
+          <article class="need">
+            <p class="need-name" data-i18n="approach.need3Name"></p>
+            <p class="need-voice" data-i18n="approach.need3Voice"></p>
+            <h3 data-i18n="approach.need3Q"></h3>
+            <ul class="loop-points need-points">
+              <li data-i18n="approach.need3P1"></li>
+              <li data-i18n="approach.need3P2"></li>
+              <li data-i18n="approach.need3P3"></li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="needs-close">
+          <span data-i18n="approach.needsClose"></span>
+          <a href="talks.html" data-i18n="approach.needsLink"></a>
+        </p>
+      </section>
 
     </div>
   </section>"""),
@@ -272,8 +325,6 @@ PAGES = {
           <!-- A transition, and a disarming one: it began as one message. -->
           <div class="doc-block" id="how-it-started">
             <h2 class="section-title" data-i18n="nlc26.storyTitle"></h2>
-            <p class="section-sub" data-i18n="nlc26.storyLede"></p>
-
             <!-- Hardcoded, not translated: a transcript, not copy. -->
             <div class="copy-block">
               <span class="cap" data-i18n="nlc26.storyCap"></span>
@@ -287,9 +338,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
             </div>
 
             <ul class="loop-points">
-              <li data-i18n="nlc26.storyP1"></li>
               <li data-i18n="nlc26.storyP2"></li>
-              <li data-i18n="nlc26.storyP3"></li>
             </ul>
 
             <ul class="stats">
@@ -338,11 +387,18 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
 
             <p class="featured-cta">
               <a class="btn btn-primary" href="https://github.com/kaixinbuilds/VocabClimbStarter"
-                 data-i18n="nlc26.handsCta" target="_blank" rel="noopener">Download the starter</a>
+                 data-i18n="nlc26.handsCta" target="_blank" rel="noopener">Open the starter</a>
               <a class="btn btn-ghost" href="https://claude.ai" data-i18n="nlc26.handsClaude"
                  target="_blank" rel="noopener">claude.ai</a>
             </p>
 
+            <!-- The starter is a GitHub template repository, so step 1 copies the
+                 whole game into the teacher's own account in one click: nothing to
+                 upload, and the repository name is fixed so everyone in the room is
+                 looking at the same address. Pages goes on before any content, so
+                 there is a live link to refresh from step 2 onwards. Only one file
+                 ever changes after that, which is why Claude is asked for one file
+                 rather than a zip: GitHub's web uploader does not unpack zips. -->
             <ol class="loop">
         <li>
           <h3 data-i18n="nlc26.step1Title"></h3>
@@ -350,6 +406,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           <ul class="loop-points">
             <li data-i18n="nlc26.step1P1"></li>
             <li data-i18n="nlc26.step1P2"></li>
+            <li data-i18n="nlc26.step1P3"></li>
           </ul>
         </li>
         <li>
@@ -358,6 +415,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           <ul class="loop-points">
             <li data-i18n="nlc26.step2P1"></li>
             <li data-i18n="nlc26.step2P2"></li>
+            <li data-i18n="nlc26.step2P3"></li>
           </ul>
         </li>
         <li>
@@ -368,11 +426,20 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
             <li data-i18n="nlc26.step3P2"></li>
             <li data-i18n="nlc26.step3P3"></li>
           </ul>
+        </li>
+        <li>
+          <h3 data-i18n="nlc26.step4Title"></h3>
+          <p class="loop-cycle" data-i18n="nlc26.step4Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.step4P1"></li>
+            <li data-i18n="nlc26.step4P2"></li>
+            <li data-i18n="nlc26.step4P3"></li>
+          </ul>
 
           <div class="copy-block">
             <span class="cap" data-i18n="nlc26.promptCap"></span>
             <pre lang="zh-Hans">我是中学华文老师，不会编码。
-我已经把一个小游戏的资料夹和一份词语表格上传到这个 Project 里。
+我已经把一个小游戏的整个资料夹和一份词语表格上传到这个 Project 里。
 
 请帮我做三件事：
 1. 读我上传的表格，把里面的词语和释义，照 my-words.js 原本的格式
@@ -386,22 +453,21 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           </div>
         </li>
         <li>
-          <h3 data-i18n="nlc26.step4Title"></h3>
-          <p class="loop-cycle" data-i18n="nlc26.step4Cycle"></p>
-          <ul class="loop-points">
-            <li data-i18n="nlc26.step4P1"></li>
-            <li data-i18n="nlc26.step4P2"></li>
-            <li data-i18n="nlc26.step4P3"></li>
-          </ul>
-        </li>
-        <li>
           <h3 data-i18n="nlc26.step5Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.step5Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.step5P1"></li>
             <li data-i18n="nlc26.step5P2"></li>
             <li data-i18n="nlc26.step5P3"></li>
-            <li data-i18n="nlc26.step5P4"></li>
+          </ul>
+        </li>
+        <li>
+          <h3 data-i18n="nlc26.step6Title"></h3>
+          <p class="loop-cycle" data-i18n="nlc26.step6Cycle"></p>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.step6P1"></li>
+            <li data-i18n="nlc26.step6P2"></li>
+            <li data-i18n="nlc26.step6P3"></li>
           </ul>
         </li>
             </ol>

@@ -611,6 +611,54 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 }
 @media (max-width: 480px) { .loop-close { padding-left: 0; } }
 
+/* The second half of the Practice page: what the loop is aimed at.
+   Deliberately not numbered. The loop is a sequence and reads as one; the
+   three needs are simultaneous, so they are set as three plates side by side
+   in the reading order, each held by a left rule rather than a counter. */
+.needs-block {
+  margin: clamp(3.25rem, 7vw, 4.75rem) 0 0;
+  padding-top: clamp(2.5rem, 6vw, 3.5rem);
+  border-top: 1px solid var(--rule);
+}
+.needs {
+  display: grid;
+  gap: clamp(2rem, 4vw, 2.75rem);
+  margin: clamp(2rem, 5vw, 2.75rem) 0 0;
+}
+.need {
+  padding-left: clamp(1.1rem, 3vw, 1.5rem);
+  border-left: 2px solid var(--rule);
+}
+.need-name {
+  margin: 0 0 .55rem;
+  font-family: var(--font-sans);
+  font-size: .68rem; font-weight: 600;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ochre-deep);
+}
+/* The student's own sentence, quoted. It is the thing being answered, so it
+   is set as speech rather than as body copy. */
+.need-voice {
+  margin: 0 0 .5rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.06rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.need h3 { margin: 0; font-size: 1.02rem; line-height: 1.4; color: var(--ink-soft); }
+.need-points { margin-top: .85rem; }
+.needs-close {
+  margin: clamp(2rem, 4vw, 2.6rem) 0 0;
+  color: var(--ink-faint);
+  font-size: .9rem;
+}
+
+/* Chinese does not italicise, so the quoted line leans on the corner brackets
+   the copy already carries and drops the slant. */
+html[data-lang-mode="zh"] .need-voice,
+.need-voice .bi-zh { font-style: normal; }
+
 /* ── contact layout ───────────────────────────────────── */
 .contact-layout {
   display: grid;
