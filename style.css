@@ -349,6 +349,35 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 
 .featured-cta { margin: 2rem 0 0; }
 
+/* A prompt meant to be copied out verbatim rather than read as prose, so it
+   is set in mono on the card ground and allowed to scroll on its own. */
+.copy-block {
+  margin: 1.3rem 0 0;
+  padding: 1rem 1.15rem;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+.copy-block pre {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+               "PingFang SC", "Microsoft YaHei", monospace;
+  font-size: .86rem;
+  line-height: 1.75;
+  white-space: pre-wrap;      /* long Chinese lines wrap instead of scrolling */
+  word-break: break-word;
+  color: var(--ink);
+}
+.copy-block .cap {
+  display: block;
+  margin-bottom: .6rem;
+  font-family: var(--font-sans);
+  font-size: .68rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ochre-deep);
+}
+
 /* screenshots read as captured artifacts: plenty of air, ruled captions */
 .shots {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

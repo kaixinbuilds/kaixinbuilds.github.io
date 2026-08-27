@@ -317,124 +317,124 @@
     "zh": "鲁迅《故乡》· 本学习社群的题词"
   },
   "nlc26.handsTitle": {
-    "en": "Hands-on: put your own words in",
-    "zh": "动手环节：把词语换成你自己的"
+    "en": "Hands-on: your spreadsheet to a live link",
+    "zh": "动手环节：从你的词语表到一个网址"
   },
   "nlc26.handsLede": {
-    "en": "No account, nothing to install, no internet once downloaded. About ten minutes.",
-    "zh": "不必注册账号，不必安装软件，下载后不需要网络。约十分钟。"
+    "en": "Excel → Claude → GitHub Pages. All in the browser. No install, no terminal, no coding.",
+    "zh": "Excel → Claude → GitHub Pages。全程在浏览器里，不必装东西，不必碰终端机，不必会编码。"
   },
   "nlc26.handsCta": {
-    "en": "Open the starter project",
-    "zh": "打开示范项目"
-  },
-  "nlc26.step1Title": {
     "en": "Download the starter",
     "zh": "下载示范项目"
   },
+  "nlc26.step1Title": {
+    "en": "Fill in the vocabulary sheet",
+    "zh": "填一份词语表"
+  },
   "nlc26.step1Cycle": {
+    "en": "your content",
+    "zh": "你的内容"
+  },
+  "nlc26.step1P1": {
+    "en": "The starter has 词语表模板.xlsx and a .csv. Two columns, 词语 and 释义. Leave row 1 alone.",
+    "zh": "示范项目里有「词语表模板.xlsx」和一份 .csv。两栏：词语、释义。第一行不要动。"
+  },
+  "nlc26.step1P2": {
+    "en": "Eight entries or more. You never write wrong answers: distractors come from your other entries.",
+    "zh": "8 个以上。错误选项不用你写，程序会从你其他词语的释义里抓。"
+  },
+  "nlc26.step2Title": {
+    "en": "Download the game",
+    "zh": "下载游戏"
+  },
+  "nlc26.step2Cycle": {
     "en": "download",
     "zh": "下载"
   },
-  "nlc26.step1P1": {
-    "en": "Open the link above, click the green Code button, choose Download ZIP.",
-    "zh": "打开上面的链接，点绿色的 Code 按钮，选 Download ZIP。"
-  },
-  "nlc26.step1P2": {
-    "en": "Unzip it. You get a folder with one index.html, one my-words.js, and an art folder.",
-    "zh": "解压出来是一个文件夹，里面有 index.html、my-words.js，和一个 art 文件夹。"
-  },
-  "nlc26.step2Title": {
-    "en": "Open my-words.js",
-    "zh": "打开 my-words.js"
-  },
-  "nlc26.step2Cycle": {
-    "en": "open",
-    "zh": "打开"
-  },
   "nlc26.step2P1": {
-    "en": "Notepad on Windows, TextEdit on a Mac. Right-click and choose Open With rather than double-clicking, so it does not open in something unexpected.",
-    "zh": "Windows 用记事本，Mac 用「文本编辑」。建议右键选「打开方式」，别直接双击，免得被别的程序接手。"
+    "en": "Green Code button → Download ZIP → unzip.",
+    "zh": "绿色的 Code 按钮 → Download ZIP → 解压。"
   },
   "nlc26.step2P2": {
-    "en": "This is the only file you touch. Everything else in the folder stays as it is.",
-    "zh": "整个文件夹里，你只需要动这一个文件。其他的都不用碰。"
+    "en": "About 540KB. On a slow network, take it off a thumb drive instead.",
+    "zh": "大约 540KB。网络慢的话，直接用随身碟拷。"
   },
   "nlc26.step3Title": {
-    "en": "Replace the word list",
-    "zh": "换成你自己的词语"
+    "en": "Give both to a Claude Project",
+    "zh": "把两样都交给 Claude Project"
   },
   "nlc26.step3Cycle": {
-    "en": "edit",
-    "zh": "修改"
+    "en": "the agent",
+    "zh": "智能体"
   },
   "nlc26.step3P1": {
-    "en": "Every line looks like this: { word: \"词语\", def: \"释义\" }, and each line ends with a comma.",
-    "zh": "每一行都长这样：{ word: \"词语\", def: \"释义\" }，行尾要有逗号。"
+    "en": "claude.ai → Projects → new one. Upload the whole game folder AND your spreadsheet.",
+    "zh": "claude.ai → Projects → 新建一个。把整个游戏资料夹和你的词语表都上传进去。"
   },
   "nlc26.step3P2": {
-    "en": "You never write wrong answers. The three distractors are pulled from your other entries at runtime, so a longer list makes harder questions.",
-    "zh": "错误选项不用你写。程序会从你其他词语的释义里自动抓三个当干扰项，所以词语越多，题目越有挑战性。"
+    "en": "A Project keeps those files. Next term, same Project, one sentence, done.",
+    "zh": "Project 会把文件留着。下个单元回到同一个 Project 说一句就行，不必重传。"
   },
   "nlc26.step3P3": {
-    "en": "Four entries is the minimum. Eight or more is better.",
-    "zh": "最少 4 个词语才跑得起来，建议 8 个以上。"
+    "en": "Paste the prompt below. The last line is the important one: you want it to report problems, not paper over them.",
+    "zh": "把下面这段贴进去。最后一句最要紧：你要它先报告问题，而不是替你蒙混过去。"
   },
   "nlc26.step4Title": {
-    "en": "Double-click index.html",
-    "zh": "双击 index.html"
+    "en": "Swap the file in and look at it",
+    "zh": "换回去，打开看看"
   },
   "nlc26.step4Cycle": {
-    "en": "run",
-    "zh": "运行"
+    "en": "judge it",
+    "zh": "判断"
   },
   "nlc26.step4P1": {
-    "en": "It runs in your browser. No server, no internet, no install.",
-    "zh": "直接在浏览器里跑起来。不需要服务器，不需要网络，不需要安装。"
+    "en": "Put Claude's my-words.js back in the folder, replacing the old one. Double-click index.html.",
+    "zh": "把 Claude 给你的 my-words.js 放回资料夹，覆盖原来那个。双击 index.html。"
   },
   "nlc26.step4P2": {
-    "en": "After each edit, go back to the browser and refresh (Cmd+R or Ctrl+R) to see the change.",
-    "zh": "每改一次，回到浏览器刷新一下（Mac 是 Cmd+R，Windows 是 Ctrl+R）就看得到。"
+    "en": "Play one round and read your own questions. This checking step is the actual skill.",
+    "zh": "玩一局，看看自己出的题。这一步的检查，才是真正要学的本事。"
   },
   "nlc26.step5Title": {
-    "en": "Want to give students a link? (optional)",
-    "zh": "想发给学生？（进阶，可跳过）"
+    "en": "Publish it as a link for students",
+    "zh": "变成一个网址，发给学生"
   },
   "nlc26.step5Cycle": {
-    "en": "deploy",
-    "zh": "部署"
+    "en": "publish",
+    "zh": "发布"
   },
   "nlc26.step5P1": {
-    "en": "Fork the starter on GitHub and give it your own repository name.",
-    "zh": "在 GitHub 上 Fork 这个项目，取一个自己的 repo 名字。"
+    "en": "github.com/new → name it → Public → Create repository.",
+    "zh": "github.com/new → 取个名字 → 选 Public → Create repository。"
   },
   "nlc26.step5P2": {
-    "en": "In your fork: Settings → Pages → Deploy from a branch → main → / (root) → Save.",
-    "zh": "进你自己的 repo：Settings → Pages → Deploy from a branch → 选 main → 选 /(root) → Save。"
+    "en": "Click uploading an existing file, then drag your whole folder in, art folder included. Commit changes. No Git, no terminal.",
+    "zh": "点 uploading an existing file，把整个资料夹拖进去，连 art 资料夹一起。Commit changes。不必装 Git，不必用终端机。"
   },
   "nlc26.step5P3": {
-    "en": "Wait a minute or two, then open https://yourusername.github.io/yourreponame/ and send that link to students. Free, no ad, no limit on how many play.",
-    "zh": "等一两分钟，打开 https://你的用户名.github.io/你的repo名/ ，这个网址就能发给学生。免费，没有广告，不限人数。"
+    "en": "Settings → Pages → Deploy from a branch → main → / (root) → Save. Wait a minute or two.",
+    "zh": "Settings → Pages → Deploy from a branch → 选 main → 选 /(root) → Save。等一两分钟。"
   },
   "nlc26.step5P4": {
-    "en": "This step needs a GitHub account. If you do not have one, that is fine. Steps 1 to 4 are already a complete, working tool.",
-    "zh": "这一步需要 GitHub 账号。没有也完全没关系，前面四步做出来的已经是一个能用的完整工具。"
+    "en": "https://yourusername.github.io/yourreponame/ — free, no ads, no cap. To change words later, edit my-words.js on the GitHub page itself.",
+    "zh": "https://你的用户名.github.io/你的仓库名/ — 免费，没广告，不限人数。以后要换词语，直接在 GitHub 网页上改 my-words.js。"
   },
   "nlc26.stuckLabel": {
     "en": "Stuck?",
     "zh": "卡住了？"
   },
   "nlc26.stuck1": {
-    "en": "Blank page, or an on-screen message about the word list: the message names the line that is wrong. Nine times out of ten it is a missing comma at the end of a line, a missing quotation mark, or a missing curly brace.",
-    "zh": "页面空白，或跳出「词语表好像有点问题」：提示会写第几行出错。九成是行尾少了逗号、引号少了一边，或者大括号少了一边。"
+    "en": "Blank page, or 词语表好像有点问题: the message names the line. Almost always a missing comma, quote, or brace.",
+    "zh": "页面空白，或跳出「词语表好像有点问题」：提示会写第几行。九成是少了逗号、引号或大括号。"
   },
   "nlc26.stuck2": {
-    "en": "GitHub Pages shows 404: it takes a minute or two after you switch Pages on. Wait, then hard refresh with Cmd+Shift+R or Ctrl+F5.",
-    "zh": "GitHub Pages 打开是 404：刚开启要等一两分钟才生效。等一下，然后强制刷新（Mac 是 Cmd+Shift+R，Windows 是 Ctrl+F5）。"
+    "en": "Can't find Claude's file: look in Downloads, then drag it back into the game folder.",
+    "zh": "找不到 Claude 给的文件：看「下载 / Downloads」资料夹，再拖回游戏资料夹。"
   },
   "nlc26.stuck3": {
-    "en": "The school network blocks github.com: use your phone hotspot. Steps 1 to 4 need no network at all, so the hands-on itself is never blocked.",
-    "zh": "学校网络挡住 github.com：用手机热点。前面四步完全不需要网络，所以动手环节本身不会被挡。"
+    "en": "GitHub Pages shows 404: it needs a minute or two. Then hard refresh, Cmd+Shift+R or Ctrl+F5.",
+    "zh": "GitHub Pages 是 404：要等一两分钟。然后强制刷新（Cmd+Shift+R / Ctrl+F5）。"
   },
   "nlc26.stackTitle": {
     "en": "The four pieces",
@@ -525,8 +525,8 @@
     "zh": "今天故意不动手做这一块。大部分课堂工具其实根本不需要账号。先做不用登录的版本，真的需要了再加。"
   },
   "nlc26.stackClose": {
-    "en": "You do not need all four. The game you are editing today uses only the first and, if you choose to deploy it, the third.",
-    "zh": "四样不必都用。今天你动手改的这个游戏，只用到第一样；如果你决定发布，才用到第三样。"
+    "en": "You just used the first and the third by doing them. The second is one optional step inside the same Project. The fourth we only talk about.",
+    "zh": "第一样和第三样，你刚才动手用过了。第二样是同一个 Project 里的一个选做步骤。第四样今天只谈，不做。"
   },
   "nlc26.vsTitle": {
     "en": "VocabSummit",
@@ -687,5 +687,37 @@
   "nlc26.afterP3": {
     "en": "The starter is MIT licensed: adapt it, use it in class, rework it for another subject. Keep the attribution. Art assets included.",
     "zh": "示范项目 MIT 许可：自由改编、用于课堂、改成别科皆可，保留署名即可。美术素材一并提供。"
+  },
+  "nlc26.handsClaude": {
+    "en": "Open claude.ai",
+    "zh": "打开 claude.ai"
+  },
+  "nlc26.promptCap": {
+    "en": "Paste this",
+    "zh": "把这段贴进去"
+  },
+  "nlc26.step4P3": {
+    "en": "Want more changed? Keep talking to it: title, colours, timer, the gap between ledges.",
+    "zh": "还想改别的就接着说：标题、颜色、秒数、落脚点之间的高度。"
+  },
+  "nlc26.fallbackLabel": {
+    "en": "No account, or the network is blocked?",
+    "zh": "没有账号？网络被挡？"
+  },
+  "nlc26.fallback1": {
+    "en": "You do not need Claude for this. Open my-words.js in Notepad or TextEdit and type your words straight in.",
+    "zh": "不必用 Claude 也行。用记事本或「文本编辑」打开 my-words.js，直接把词语打进去。"
+  },
+  "nlc26.fallback2": {
+    "en": "That path needs no account and no network at all, and gives you exactly the same working game.",
+    "zh": "这条路不需要账号，也不需要网络，做出来的游戏一模一样。"
+  },
+  "nlc26.fallback3": {
+    "en": "Only step 5, the public link, truly needs an account. Everything before it runs on your own laptop.",
+    "zh": "只有第五步（公开网址）真的需要账号。前面全都在你自己的电脑上跑。"
+  },
+  "nlc26.stuck4": {
+    "en": "School network blocks github.com or claude.ai: phone hotspot, or do it at home. The offline path above still works.",
+    "zh": "学校网络挡住 github.com 或 claude.ai：用手机热点，或回家再弄。上面那条离线的路照样能走。"
   }
 }

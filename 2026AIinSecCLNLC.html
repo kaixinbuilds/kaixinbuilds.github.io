@@ -83,8 +83,10 @@
       <p class="section-sub" data-i18n="nlc26.handsLede"></p>
 
       <p class="featured-cta">
-        <a class="btn btn-primary" href="https://github.com/kaixinbuilds/VocabClimbStarter" data-i18n="nlc26.handsCta"
-           target="_blank" rel="noopener">Open the starter project</a>
+        <a class="btn btn-primary" href="https://github.com/kaixinbuilds/VocabClimbStarter"
+           data-i18n="nlc26.handsCta" target="_blank" rel="noopener">Open the starter project</a>
+        <a class="btn btn-ghost" href="https://claude.ai" data-i18n="nlc26.handsClaude"
+           target="_blank" rel="noopener">claude.ai</a>
       </p>
 
       <ol class="loop">
@@ -112,6 +114,23 @@
             <li data-i18n="nlc26.step3P2"></li>
             <li data-i18n="nlc26.step3P3"></li>
           </ul>
+
+          <!-- Hardcoded, not translated: it is text to paste, not text to read. -->
+          <div class="copy-block">
+            <span class="cap" data-i18n="nlc26.promptCap"></span>
+            <pre lang="zh-Hans">我是中学华文老师，不会编码。
+我已经把一个小游戏的资料夹和一份词语表格上传到这个 Project 里。
+
+请帮我做三件事：
+1. 读我上传的表格，把里面的词语和释义，照 my-words.js 原本的格式
+   重新写成一个完整的 my-words.js 给我下载。格式不要动，只换内容。
+2. 把 UNIT_NAME 改成：〔你的单元名称〕
+3. 把 SECONDS 改成：〔90〕
+
+改好之后直接给我可以下载的 my-words.js，并告诉我放回哪个位置。
+
+如果我的表格有问题（缺了释义、词语重复、少于 8 个），请先告诉我，不要自己猜。</pre>
+          </div>
         </li>
         <li>
           <h2 data-i18n="nlc26.step4Title"></h2>
@@ -119,6 +138,7 @@
           <ul class="loop-points">
             <li data-i18n="nlc26.step4P1"></li>
             <li data-i18n="nlc26.step4P2"></li>
+            <li data-i18n="nlc26.step4P3"></li>
           </ul>
         </li>
         <li>
@@ -133,13 +153,23 @@
         </li>
       </ol>
 
-      <!-- The three failure points, stated before they happen rather than after. -->
+      <!-- Every account-dependent step has to have a floor under it. -->
+      <div class="highlight-box">
+        <span class="label" data-i18n="nlc26.fallbackLabel"></span>
+        <ul class="loop-points">
+          <li data-i18n="nlc26.fallback1"></li>
+          <li data-i18n="nlc26.fallback2"></li>
+          <li data-i18n="nlc26.fallback3"></li>
+        </ul>
+      </div>
+
       <div class="highlight-box">
         <span class="label" data-i18n="nlc26.stuckLabel"></span>
         <ul class="loop-points">
           <li data-i18n="nlc26.stuck1"></li>
           <li data-i18n="nlc26.stuck2"></li>
           <li data-i18n="nlc26.stuck3"></li>
+          <li data-i18n="nlc26.stuck4"></li>
         </ul>
       </div>
     </div>
