@@ -167,16 +167,36 @@ render, so it cannot drift out of step with the site.
 ./publish.sh "what you changed"
 ```
 
-Rebuilds the pages, validates all three JSON files, then commits and pushes. GitHub Pages
-redeploys within about a minute. The JSON check matters: a stray comma would blank the page
-and Pages gives no warning.
+Rebuilds the pages, validates all three JSON files, commits, pushes, **then waits for the
+GitHub Pages build and tells you whether it actually deployed.** The JSON check matters: a
+stray comma would blank the page and Pages gives no warning.
+
+That last step exists because of a real failure on 27 August 2026. A successful push is not
+a successful deploy: Pages builds every commit, and a build that fails is announced to
+nobody. The site carries on serving the last commit that built, so the pages quietly stop
+updating while `git push` and this script both report success. An hour went into staring at
+a correct repository and a stale site.
+
+So `publish.sh` now polls the build and exits non-zero if it errored. If you ever see
+
+```
+PAGES BUILD FAILED
+```
+
+check first that `.nojekyll` is still in the repository root. `build.py` writes it, and
+without it Pages runs Jekyll over finished HTML that does not need it, which is exactly how
+that failure happened. Builds can also be watched at
+https://github.com/kaixinbuilds/kaixinbuilds.github.io/deployments.
+
+The check needs the `gh` CLI. Without it the script says so and exits successfully, rather
+than pretending it verified something it could not.
 
 ---
 
 ## Structure
 
 ```
-build.py                generates the pages, sitemap.xml and robots.txt
+build.py                generates the pages, sitemap.xml, robots.txt and .nojekyll
 style.css               design tokens in :root, then components
 script.js               JSON loading, i18n, rendering, disclosure, lightbox
 i18n.json               every UI string, bilingual
@@ -190,7 +210,7 @@ assets/
   art/prints/           block prints and their masters
   screenshots/          project screenshots
   slides/               talk decks as PDF, named after the talk's id in talks.json
-publish.sh              build, validate, commit, push
+publish.sh              build, validate, commit, push, then verify the Pages build
 export-text.py          dump all copy to one bilingual markdown file for proofreading
 ```
 
