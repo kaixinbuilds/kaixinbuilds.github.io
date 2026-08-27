@@ -165,31 +165,23 @@
     "zh": "设计思维是一个五步循环。但在课堂里，真正说了算的只有「测试」。"
   },
   "approach.loop1Title": {
-    "en": "Start from something I actually saw",
-    "zh": "从我亲眼看见的东西开始"
-  },
-  "approach.loop1Cycle": {
-    "en": "empathise",
+    "en": "Empathise",
     "zh": "同理"
   },
   "approach.loop1P1": {
-    "en": "Vocabulary the students had been taught did not stay with them, and reading was a struggle because of it.",
-    "zh": "学生学过的词留不住，一读文章就吃力。"
+    "en": "Students could not hold on to vocabulary, and a passage left them defeated.",
+    "zh": "学生记不得词语，看到篇章就感到挫败。"
   },
   "approach.loop1P2": {
-    "en": "The same gap turned up across the whole cohort, not one class.",
-    "zh": "同样的缺口出现在整个级别，不只一个班。"
+    "en": "The whole cohort, not one class.",
+    "zh": "整个级别都这样，不只一个班。"
   },
   "approach.loop1P3": {
-    "en": "Vocabulary is the building block, and it is learnt by repetition. Repetition is exactly the mode students resist. That is the real constraint.",
-    "zh": "词汇是语言的基本单位，而词汇要靠重复来学。学生最抗拒的，恰恰就是重复。这才是真正的限制。"
+    "en": "Vocabulary is learnt by repetition, and repetition is what they resist most.",
+    "zh": "词汇要靠重复来学，而重复正是他们最抗拒的。"
   },
   "approach.loop2Title": {
-    "en": "Name the gap in one sentence",
-    "zh": "用一句话说清楚缺口"
-  },
-  "approach.loop2Cycle": {
-    "en": "define",
+    "en": "Define",
     "zh": "定义"
   },
   "approach.loop2P1": {
@@ -197,72 +189,60 @@
     "zh": "问题在词汇，不在理解。"
   },
   "approach.loop2P2": {
-    "en": "And the question is not how to make vocabulary fun. It is how to make a student choose to practise it.",
-    "zh": "而问题也不是怎么让词汇变得有趣，是怎么让学生自己选择去练。"
+    "en": "Not how to make it fun. How to make them choose to practise.",
+    "zh": "不是怎么让词汇变有趣，是怎么让学生自己选择去练。"
   },
   "approach.loop2P3": {
-    "en": "It has to cover G1, G2, G3, Higher Chinese and the beginner pier, at different depths.",
-    "zh": "必须覆盖 G1、G2、G3、高级华文与出发码头，深浅不同。"
+    "en": "It has to cover G1, G2, G3, Higher Chinese and the beginner pier.",
+    "zh": "要覆盖 G1、G2、G3、高级华文与出发码头。"
   },
   "approach.loop3Title": {
-    "en": "Design the motivation, not just the content",
-    "zh": "设计的是动机，不只是内容"
-  },
-  "approach.loop3Cycle": {
-    "en": "ideate",
+    "en": "Ideate",
     "zh": "构思"
   },
   "approach.loop3P1": {
-    "en": "Self-Determination Theory names the target: autonomy, competence, relatedness. Motivation goes into the structure, not into a pep talk.",
-    "zh": "自我决定理论（SDT）指出了要瞄准的东西：自主、胜任、关联。动机是放进结构里的，不是放进一番动员的话里。"
+    "en": "Motivation goes into the structure: autonomy, competence, relatedness.",
+    "zh": "动机放进结构里：自主、胜任、关联。"
   },
   "approach.loop3P2": {
-    "en": "Game elements are not motivating in themselves. Different elements answer different needs, so each one is picked for the need it serves.",
-    "zh": "游戏元素本身并不产生动机。不同的元素满足不同的心理需求，所以每一个元素，都是照着它要服务的那个需求来挑的。"
+    "en": "Game elements do not motivate by themselves. Each is picked for the need it serves.",
+    "zh": "游戏元素本身不产生动机，每一个都照它要服务的需求来挑。"
   },
   "approach.loop3P3": {
-    "en": "Retrieving a word after a delay is what makes it stick, and a word is never simply known or unknown: form, sound, meaning and use each grow separately. So one word list runs through several modes.",
-    "zh": "隔一段时间再把词提取出来，词才记得住；而一个词也不是「会」或「不会」两种状态：字形、读音、意思、用法，各长各的。所以同一份词表，要跑好几种模式。"
+    "en": "Ask again after a delay, and run one word list through several modes.",
+    "zh": "隔一阵子再考，同一份词表跑几种模式。"
   },
   "approach.loop4Title": {
-    "en": "Build the thing, not a picture of it",
-    "zh": "做出东西来，而不是画一张示意图"
-  },
-  "approach.loop4Cycle": {
-    "en": "prototype",
+    "en": "Prototype",
     "zh": "原型"
   },
   "approach.loop4P1": {
-    "en": "A working build, not a mockup, from someone with no formal software engineering training.",
-    "zh": "一个真能跑的版本，不是示意图；做的人没受过软件工程的正规训练。"
+    "en": "A build that runs, not a mockup.",
+    "zh": "真能跑的版本，不是示意图。"
   },
   "approach.loop4P2": {
-    "en": "Five tools and no vendor: a Claude Project holding the design decisions, pedagogy notes and word lists; Claude Code writing the platform code straight into the repository; ChatGPT for a second opinion on item wording; GitHub for version history, so any change can be undone; Firebase for hosting, student sign-in and progress data.",
-    "zh": "五个工具，没有外包商：Claude Project 存放设计决定、教学笔记与词表；Claude Code 直接把平台代码写进代码库；ChatGPT 在题目措辞上给第二意见；GitHub 保留版本历史，任何改动都退得回去；Firebase 负责托管、学生登录与进度数据。"
+    "en": "Five tools, no vendor.",
+    "zh": "五个工具，没有外包商。"
   },
   "approach.loop4P3": {
-    "en": "3,889 vocabulary entries, vetted by hand, one at a time.",
+    "en": "3,889 entries, vetted by hand.",
     "zh": "3,889 个词条，逐条人工审核。"
   },
   "approach.loop5Title": {
-    "en": "The classroom is the test, not the demo",
-    "zh": "课堂才是测试，演示不是"
-  },
-  "approach.loop5Cycle": {
-    "en": "test",
+    "en": "Test",
     "zh": "测试"
   },
   "approach.loop5P1": {
-    "en": "Three classes beta tested it. 47 students gave feedback.",
-    "zh": "三个班参与测试，47 名学生给了反馈。"
+    "en": "Three classes, 47 students, real feedback.",
+    "zh": "三个班，47 名学生给了反馈。"
   },
   "approach.loop5P2": {
-    "en": "Colleagues nodding at a demo is not evidence. Students working independently in an ordinary lesson is.",
-    "zh": "同事在演示时点头，不算证据；学生在一堂普通的课上自己用，才算。"
+    "en": "Colleagues nodding is not evidence. Students using it alone is.",
+    "zh": "同事点头不算证据，学生自己用才算。"
   },
   "approach.loop5P3": {
-    "en": "Which words keep failing, which screen nobody visits, which instruction I repeat every time. Those are the design documents.",
-    "zh": "哪些词一错再错，哪个页面没人去，哪一句指示我每次都得再讲一遍。这些才是设计文档。"
+    "en": "Which words keep failing, which screen nobody opens: those are the design documents.",
+    "zh": "哪些词一错再错、哪个页面没人去，这些才是设计文档。"
   },
   "approach.loopClose": {
     "en": "Then round again, from the top. Every version of VocabSummit so far came out of one more pass, and each pass starts from a better question than the last.",
@@ -617,16 +597,16 @@
     "zh": "常见顾虑"
   },
   "approach.loop2P4": {
-    "en": "It works if a student practises without being told to.",
-    "zh": "成功的标准：没人叫他，学生也会去练。"
+    "en": "It works if they practise without being told to.",
+    "zh": "没人叫他也会去练，才算成功。"
   },
   "approach.loop3P4": {
-    "en": "The name carries the design: a mountain you can see yourself climbing. Visible progress, streaks, a personal map.",
-    "zh": "名字本身就是设计：一座看得见自己在爬的山。进度看得见，有连续挑战，有个人地图。"
+    "en": "The name is the design: a mountain you can see yourself climbing.",
+    "zh": "名字就是设计：一座看得见自己在爬的山。"
   },
   "approach.loop4P4": {
-    "en": "In front of students within days of being usable, not at the end of a term.",
-    "zh": "勉强能用就送到学生面前，几天之内，而不是等到学期末。"
+    "en": "In front of students the moment it was usable.",
+    "zh": "勉强能用就送到学生面前。"
   },
   "approach.needsTitle": {
     "en": "Motivation is designed, not requested",

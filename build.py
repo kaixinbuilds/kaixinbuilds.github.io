@@ -180,15 +180,14 @@ PAGES = {
 
       <p class="lede" data-i18n="approach.leadA"></p>
 
-      <!-- The five steps of the design thinking cycle, kept separate rather
-           than paired up, each one answered by what actually happened while
-           building VocabSummit. Point form on purpose: the stages are notes
-           from practice, not an essay about practice. The point counts differ
-           by stage because the stages differ; a stage is not padded to three. -->
+      <!-- The five stages of the design thinking cycle, named and nothing
+           more: the heading is the stage, and what happened while building
+           VocabSummit is answered underneath in the fewest words that carry
+           it. The point counts differ by stage because the stages differ; a
+           stage is not padded to match its neighbours. -->
       <ol class="loop">
         <li>
           <h2 data-i18n="approach.loop1Title"></h2>
-          <p class="loop-cycle" data-i18n="approach.loop1Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="approach.loop1P1"></li>
             <li data-i18n="approach.loop1P2"></li>
@@ -197,7 +196,6 @@ PAGES = {
         </li>
         <li>
           <h2 data-i18n="approach.loop2Title"></h2>
-          <p class="loop-cycle" data-i18n="approach.loop2Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="approach.loop2P1"></li>
             <li data-i18n="approach.loop2P2"></li>
@@ -207,7 +205,6 @@ PAGES = {
         </li>
         <li>
           <h2 data-i18n="approach.loop3Title"></h2>
-          <p class="loop-cycle" data-i18n="approach.loop3Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="approach.loop3P1"></li>
             <li data-i18n="approach.loop3P2"></li>
@@ -217,7 +214,6 @@ PAGES = {
         </li>
         <li>
           <h2 data-i18n="approach.loop4Title"></h2>
-          <p class="loop-cycle" data-i18n="approach.loop4Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="approach.loop4P1"></li>
             <li data-i18n="approach.loop4P2"></li>
@@ -227,7 +223,6 @@ PAGES = {
         </li>
         <li>
           <h2 data-i18n="approach.loop5Title"></h2>
-          <p class="loop-cycle" data-i18n="approach.loop5Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="approach.loop5P1"></li>
             <li data-i18n="approach.loop5P2"></li>
