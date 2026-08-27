@@ -769,16 +769,12 @@
     "zh": "巩固"
   },
   "nlc26.s3P1": {
-    "en": "Six colours sit at the very top of index.html, each with a comment saying what it controls: dark panel, light text, accent, correct, wrong, button surface.",
-    "zh": "index.html 最上面有六个颜色，每一个后面都有中文注解写明它管什么：深色底、浅色字、强调色、答对、答错、按钮底。"
-  },
-  "nlc26.s3P2": {
     "en": "Three pictures in the art folder: landscape.jpg behind everything, wall.jpg for the cliff, climber.png for the climber. Swap the files, keep the names, and it just works.",
     "zh": "art 资料夹里三张图：landscape.jpg 是远景，wall.jpg 是崖壁，climber.png 是攀登者。换掉文件、名字不变，就换好了。"
   },
-  "nlc26.s3P3": {
-    "en": "Ask for a school-colours version, or an ink-painting one. Then read it on your own phone: contrast is where this goes wrong, and whether your students can read it is a judgment only you can make.",
-    "zh": "让它做一版校色的，或者一版水墨的。做好后拿自己的手机看一看：这一步最容易出问题的是对比度，而学生看不看得清，只有你判断得了。"
+  "nlc26.s3P2": {
+    "en": "Then look at it on your own phone. Whether your students can make it out is a judgment only you can make.",
+    "zh": "换好后拿自己的手机看一看：学生看不看得清，只有你判断得了。"
   },
   "nlc26.s4Title": {
     "en": "Change the game",
