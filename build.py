@@ -407,13 +407,16 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
             <!-- The founder leads, because the ordering is the argument:
                  the five that follow are hired, and not one of them decides
                  anything. Two lines each, no more. -->
+            <!-- The founder leads, because the ordering is the argument:
+                 the five that follow are hired, and not one of them decides
+                 anything. One line each: the role and the who are already in
+                 the heading, so the line only has to say what they do. -->
             <ol class="loop">
         <li>
           <h3 data-i18n="nlc26.p1Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.p1Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p1A"></li>
-            <li data-i18n="nlc26.p1B"></li>
           </ul>
         </li>
         <li>
@@ -421,7 +424,6 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           <p class="loop-cycle" data-i18n="nlc26.p2Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p2A"></li>
-            <li data-i18n="nlc26.p2B"></li>
           </ul>
         </li>
         <li>
@@ -429,7 +431,6 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           <p class="loop-cycle" data-i18n="nlc26.p3Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p3A"></li>
-            <li data-i18n="nlc26.p3B"></li>
           </ul>
         </li>
         <li>
@@ -437,7 +438,6 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           <p class="loop-cycle" data-i18n="nlc26.p4Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p4A"></li>
-            <li data-i18n="nlc26.p4B"></li>
           </ul>
         </li>
         <li>
@@ -453,11 +453,9 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           <p class="loop-cycle" data-i18n="nlc26.p6Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p6A"></li>
-            <li data-i18n="nlc26.p6B"></li>
           </ul>
         </li>
             </ol>
-            <p class="loop-close" data-i18n="nlc26.stackClose"></p>
           </div>
 
           <!-- Four stages, not six steps. Stage 1 is the floor everyone leaves

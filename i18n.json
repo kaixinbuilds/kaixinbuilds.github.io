@@ -340,10 +340,6 @@
     "en": "What to build, who it is for, and what counts as getting it right.",
     "zh": "做什么、给谁用、怎样才算做对了。"
   },
-  "nlc26.p1B": {
-    "en": "Judging what comes back. Only someone standing in the classroom can.",
-    "zh": "判断做出来的对不对。只有站在课室里的人看得见。"
-  },
   "nlc26.p2Title": {
     "en": "Product manager · Claude Project",
     "zh": "产品经理 · Claude Project"
@@ -355,10 +351,6 @@
   "nlc26.p2A": {
     "en": "Decisions, notes and word lists in one Project, so you never explain twice.",
     "zh": "设计决定、教学笔记、词表都放同一个 Project，不必每次重讲。"
-  },
-  "nlc26.p2B": {
-    "en": "The one you work with today. One Project lasts a year.",
-    "zh": "你今天用的就是这一位。一个 Project 用一整年。"
   },
   "nlc26.p3Title": {
     "en": "Engineer · Claude Code",
@@ -372,10 +364,6 @@
     "en": "It reads the files itself, edits, runs them, then checks its own work.",
     "zh": "它自己读文件、动手改、跑起来，再看对不对。"
   },
-  "nlc26.p3B": {
-    "en": "Your job becomes two things: say what you want, judge what comes back.",
-    "zh": "你的活变成两件：说清楚要什么，判断做出来的对不对。"
-  },
   "nlc26.p4Title": {
     "en": "Designer · ChatGPT",
     "zh": "设计师 · ChatGPT"
@@ -385,16 +373,8 @@
     "zh": "出图、出美术"
   },
   "nlc26.p4A": {
-    "en": "The cliff, the landscape, the climber: all generated, none bought.",
-    "zh": "游戏里的山壁、风景、角色，全是生成的，没一样是买的。"
-  },
-  "nlc26.p4B": {
-    "en": "Generating an image is writing a specification: how many frames, what size, facing where, what background.",
-    "zh": "生成图像不是许愿，是写规格：几格、多大、朝哪边、什么背景。"
-  },
-  "nlc26.stackClose": {
-    "en": "The first one cannot be subscribed to. Without it, not one of the other five runs.",
-    "zh": "排第一的那位没得订阅。少了他，后面五位一个都跑不起来。"
+    "en": "The cliff, the landscape, the climber: all generated.",
+    "zh": "游戏里的山壁、风景、角色，全是生成的。"
   },
   "nlc26.vsTitle": {
     "en": "VocabSummit",
@@ -717,12 +697,12 @@
     "zh": "每一次改动都留下记录，改坏了退得回去。"
   },
   "nlc26.p5B": {
-    "en": "GitHub Pages turns it into a link for nothing, with nothing for students to install.",
-    "zh": "GitHub Pages 免费把它变成网址，学生那边什么都不用装。"
+    "en": "GitHub Pages turns it into a link for nothing.",
+    "zh": "GitHub Pages 免费把它变成网址。"
   },
   "nlc26.handsFloor": {
-    "en": "Four stages. Everyone finishes the first. How far you get after that is up to you.",
-    "zh": "四个阶段。第一个人人都要做完，后面三个，做得到哪里算哪里。"
+    "en": "Which of these will you take on today?",
+    "zh": "今天你希望接下哪些挑战呢？"
   },
   "nlc26.s1Title": {
     "en": "Make yourself a home",
@@ -845,12 +825,8 @@
     "zh": "管谁是谁"
   },
   "nlc26.p6A": {
-    "en": "Students sign in, progress is saved, and it survives a change of computer.",
-    "zh": "学生登录、进度存下来、换台电脑还在。"
-  },
-  "nlc26.p6B": {
-    "en": "The cost is that the data becomes yours to answer for. Not hired today.",
-    "zh": "代价是数据要你负责。今天不请。"
+    "en": "Keeps the user records.",
+    "zh": "存好用户记录"
   },
   "talks.groupVocabSummit": {
     "en": "VocabSummit",
