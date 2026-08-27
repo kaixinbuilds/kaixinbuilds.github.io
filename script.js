@@ -246,7 +246,7 @@
     ].join('');
 
     return `
-      <li>
+      <li id="talk-${esc(talk.id)}">
         <details class="talk"${open ? ' open' : ''}>
           <summary class="talk-head">
             <span class="talk-date">${esc(pick(talk.dateLabel) || talk.date)}</span>
@@ -280,6 +280,56 @@
 
     host.innerHTML = group('talks.groupUpcoming', upcoming, true)
                    + group('talks.groupCompleted', completed, upcoming.length === 0);
+
+    // The same standing index the Work page has. Upcoming first, so the
+    // next thing happening is the first thing you can jump to.
+    const nav = $('#talk-nav');
+    if (!nav) return;
+    const entry = (x) => `
+      <li><a href="#talk-${esc(x.id)}">
+        <span class="nav-date">${esc(pick(x.dateLabel) || x.date)}</span>
+        ${bi(x.title)}
+      </a></li>`;
+    nav.innerHTML = `<ul>${[...upcoming, ...completed].map(entry).join('')}</ul>`;
+  }
+
+  /* A jump from the index has to open the talk it lands on, otherwise it
+     scrolls to a closed row and looks broken. */
+  function wireTalkNav() {
+    const nav = $('#talk-nav');
+    if (!nav) return;
+    nav.addEventListener('click', (event) => {
+      const link = event.target.closest('a[href^="#talk-"]');
+      if (!link) return;
+      const row = document.getElementById(link.getAttribute('href').slice(1));
+      const details = row && row.querySelector('details');
+      if (details) details.open = true;
+    });
+  }
+
+  /* Highlight whichever block of a long page is currently in view. */
+  function wireDocSpy() {
+    const links = [...document.querySelectorAll('.project-nav a[href^="#"]')];
+    const blocks = [...document.querySelectorAll('.doc-block')];
+    if (!links.length || !blocks.length || !('IntersectionObserver' in window)) return;
+
+    const seen = new Map();
+    const paint = () => {
+      let best = null;
+      blocks.forEach((b) => {
+        if (seen.get(b.id) && (!best || b.getBoundingClientRect().top < best.rect)) {
+          best = { id: b.id, rect: b.getBoundingClientRect().top };
+        }
+      });
+      links.forEach((a) => a.classList.toggle(
+        'is-on', !!best && a.getAttribute('href') === '#' + best.id));
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => seen.set(e.target.id, e.isIntersecting));
+      paint();
+    }, { rootMargin: '-25% 0px -60% 0px' });
+    blocks.forEach((b) => io.observe(b));
   }
 
   /* The images are controls, so they need a name and a focus stop. */
@@ -423,6 +473,8 @@
 
     renderAll();
     revealLoadedImages();
+    wireTalkNav();
+    wireDocSpy();
     initToggle();
     initLightbox();
     if (results.some((r) => r.status === 'rejected')) showLoadError();

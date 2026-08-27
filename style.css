@@ -872,6 +872,25 @@ html[data-lang-mode="zh"] .epigraph .en { display: none; }
 }
 .project-nav .bi-en { font-size: .84em; }
 
+/* A long reference page reads as one document with a standing index, so the
+   blocks are ruled apart rather than boxed. */
+.doc-block + .doc-block {
+  margin-top: clamp(2.75rem, 6vw, 4rem);
+  padding-top: clamp(2.75rem, 6vw, 4rem);
+  border-top: 1px solid var(--rule);
+}
+.doc-block > .section-title { scroll-margin-top: 6rem; }
+.doc-block .loop h3 { font-size: 1.08rem; line-height: 1.35; font-family: var(--font-serif); font-weight: 600; }
+.doc-block { scroll-margin-top: 5.5rem; }
+
+/* Talks carry a date above the title in the index. */
+.project-nav .nav-date {
+  display: block;
+  font-size: .72rem; letter-spacing: .04em;
+  color: var(--ink-faint);
+  margin-bottom: .1rem;
+}
+
 .project-panel[hidden] { display: none; }
 .project-panel > .eyebrow { margin-top: 0; }
 .project-detail .shots { margin-top: clamp(2rem, 4vw, 2.75rem); }

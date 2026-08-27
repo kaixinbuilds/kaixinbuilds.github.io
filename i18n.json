@@ -772,8 +772,36 @@
     "en": "That took months. What you are about to do takes ten minutes, and it is the same move: say what you want, look at what comes back, say what's wrong.",
     "zh": "那个做了几个月。你等一下要做的，十分钟就够，但动作是同一个：说清楚要什么，看它做出什么，再说哪里不对。"
   },
-  "nlc26.storyJump": {
-    "en": "Straight to the hands-on",
-    "zh": "直接到动手环节"
+  "nlc26.navSession": {
+    "en": "This session",
+    "zh": "场次"
+  },
+  "nlc26.navStory": {
+    "en": "How it started",
+    "zh": "缘起"
+  },
+  "nlc26.navHands": {
+    "en": "Hands-on",
+    "zh": "动手环节"
+  },
+  "nlc26.navStack": {
+    "en": "The four pieces",
+    "zh": "四件事"
+  },
+  "nlc26.navVs": {
+    "en": "VocabSummit",
+    "zh": "词山学海"
+  },
+  "nlc26.navQ": {
+    "en": "Questions",
+    "zh": "常见顾虑"
+  },
+  "nlc26.navPost": {
+    "en": "Where to post",
+    "zh": "互动区"
+  },
+  "nlc26.navAfter": {
+    "en": "Afterwards",
+    "zh": "后续"
   }
 }

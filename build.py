@@ -155,9 +155,14 @@ PAGES = {
   </section>"""),
     "talks.html": ("page.talks.title", """\
   <section class="section" id="talks">
-    <div class="wrap wrap-narrow">
+    <div class="wrap">
       <h1 class="page-title" data-i18n="talks.title">Connect</h1>
-      <ol id="talks-list" class="talks-list"></ol>
+
+      <div class="work-layout">
+        <!-- Built by script.js from talks.json, same shape as the Work index. -->
+        <nav id="talk-nav" class="project-nav" aria-label="Talks"></nav>
+        <div id="talks-list"></div>
+      </div>
     </div>
   </section>"""),
     "approach.html": ("page.approach.title", """  <section class="section" id="approach">
@@ -233,57 +238,72 @@ PAGES = {
     </div>
   </section>"""),
     "2026AIinSecCLNLC.html": ("page.nlc26.title", """\
-  <section class="section" id="nlc-top">
-    <div class="wrap wrap-narrow">
+  <section class="section" id="nlc">
+    <div class="wrap">
       <p class="eyebrow" data-i18n="nlc26.eyebrow">2026 AI in Sec CL NLC</p>
       <h1 class="page-title" data-i18n="nlc26.title">Splitting heaven and earth with an AI axe</h1>
-      <ul class="loop-points">
-        <li data-i18n="nlc26.dDate"></li>
-        <li data-i18n="nlc26.dTime"></li>
-        <li data-i18n="nlc26.dVenue"></li>
-        <li data-i18n="nlc26.dAudience"></li>
-        <li data-i18n="nlc26.dSpeaker"></li>
-      </ul>
-    </div>
-  </section>
 
-  <!-- A transition, and a disarming one: the project started as one typed sentence. -->
-  <section class="section" id="how-it-started">
-    <div class="wrap wrap-narrow">
-      <h2 class="section-title" data-i18n="nlc26.storyTitle"></h2>
-      <p class="section-sub" data-i18n="nlc26.storyLede"></p>
+      <div class="work-layout">
+        <nav class="project-nav" aria-label="On this page">
+          <ul>
+            <li><a href="#session" data-i18n="nlc26.navSession"></a></li>
+            <li><a href="#how-it-started" data-i18n="nlc26.navStory"></a></li>
+            <li><a href="#hands-on" data-i18n="nlc26.navHands"></a></li>
+            <li><a href="#stack" data-i18n="nlc26.navStack"></a></li>
+            <li><a href="#vocabsummit" data-i18n="nlc26.navVs"></a></li>
+            <li><a href="#concerns" data-i18n="nlc26.navQ"></a></li>
+            <li><a href="#post" data-i18n="nlc26.navPost"></a></li>
+            <li><a href="#after" data-i18n="nlc26.navAfter"></a></li>
+          </ul>
+        </nav>
 
-      <!-- Hardcoded, not translated: it is a transcript, not copy. -->
-      <div class="copy-block">
-        <span class="cap" data-i18n="nlc26.storyCap"></span>
-        <pre lang="en">I want to build a powerful secondary school revision tool on SLS
+        <div class="project-detail">
+
+          <div class="doc-block" id="session">
+            <ul class="loop-points">
+              <li data-i18n="nlc26.dDate"></li>
+              <li data-i18n="nlc26.dTime"></li>
+              <li data-i18n="nlc26.dVenue"></li>
+              <li data-i18n="nlc26.dAudience"></li>
+              <li data-i18n="nlc26.dSpeaker"></li>
+            </ul>
+          </div>
+
+          <!-- A transition, and a disarming one: it began as one message. -->
+          <div class="doc-block" id="how-it-started">
+            <h2 class="section-title" data-i18n="nlc26.storyTitle"></h2>
+            <p class="section-sub" data-i18n="nlc26.storyLede"></p>
+
+            <!-- Hardcoded, not translated: a transcript, not copy. -->
+            <div class="copy-block">
+              <span class="cap" data-i18n="nlc26.storyCap"></span>
+              <pre lang="en">I want to build a powerful secondary school revision tool on SLS
 (student learning space) for students to revise all CL vocab covered
 over 4 years, and for it to be trackable to let them see their progress,
 so that they can revisit the vocab that they have yet to master.
 
 I don't know how to start, could you help me?
 https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-development/</pre>
-      </div>
+            </div>
 
-      <ul class="loop-points">
-        <li data-i18n="nlc26.storyP1"></li>
-        <li data-i18n="nlc26.storyP2"></li>
-        <li data-i18n="nlc26.storyP3"></li>
-      </ul>
+            <ul class="loop-points">
+              <li data-i18n="nlc26.storyP1"></li>
+              <li data-i18n="nlc26.storyP2"></li>
+              <li data-i18n="nlc26.storyP3"></li>
+            </ul>
 
-      <ul class="stats">
-        <li><span class="value">3,889</span><span class="label" data-i18n="nlc26.statWords"></span></li>
-        <li><span class="value">3</span><span class="label" data-i18n="nlc26.statClasses"></span></li>
-        <li><span class="value">47</span><span class="label" data-i18n="nlc26.statStudents"></span></li>
-        <li><span class="value">1</span><span class="label" data-i18n="nlc26.statPeople"></span></li>
-      </ul>
+            <ul class="stats">
+              <li><span class="value">3,889</span><span class="label" data-i18n="nlc26.statWords"></span></li>
+              <li><span class="value">3</span><span class="label" data-i18n="nlc26.statClasses"></span></li>
+              <li><span class="value">47</span><span class="label" data-i18n="nlc26.statStudents"></span></li>
+              <li><span class="value">1</span><span class="label" data-i18n="nlc26.statPeople"></span></li>
+            </ul>
 
-      <div class="shots">
+            <div class="shots">
         <figure class="shot shot-wide">
           <div class="screen-bezel">
             <div class="screen-inner" data-missing="assets/screenshots/vocabsummit-landing.jpg">
-              <img src="assets/screenshots/vocabsummit-landing.jpg" alt=""
-                   data-i18n="nlc26.shot1" data-i18n-attr="alt" decoding="async">
+              <img src="assets/screenshots/vocabsummit-landing.jpg" alt="" data-i18n="nlc26.shot1" data-i18n-attr="alt" decoding="async">
             </div>
           </div>
           <figcaption data-i18n="nlc26.shot1"></figcaption>
@@ -291,8 +311,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
         <figure class="shot">
           <div class="screen-bezel">
             <div class="screen-inner" data-missing="assets/screenshots/vocabsummit-mountain.jpg">
-              <img src="assets/screenshots/vocabsummit-mountain.jpg" alt=""
-                   data-i18n="nlc26.shot2" data-i18n-attr="alt" decoding="async">
+              <img src="assets/screenshots/vocabsummit-mountain.jpg" alt="" data-i18n="nlc26.shot2" data-i18n-attr="alt" decoding="async">
             </div>
           </div>
           <figcaption data-i18n="nlc26.shot2"></figcaption>
@@ -300,40 +319,33 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
         <figure class="shot">
           <div class="screen-bezel">
             <div class="screen-inner" data-missing="assets/screenshots/vocabsummit-dashboard.jpg">
-              <img src="assets/screenshots/vocabsummit-dashboard.jpg" alt=""
-                   data-i18n="nlc26.shot3" data-i18n-attr="alt" decoding="async">
+              <img src="assets/screenshots/vocabsummit-dashboard.jpg" alt="" data-i18n="nlc26.shot3" data-i18n-attr="alt" decoding="async">
             </div>
           </div>
           <figcaption data-i18n="nlc26.shot3"></figcaption>
         </figure>
-      </div>
+            </div>
 
-      <div class="highlight-box">
-        <p data-i18n="nlc26.storyClose"></p>
-      </div>
+            <div class="highlight-box">
+              <p data-i18n="nlc26.storyClose"></p>
+            </div>
+          </div>
 
-      <p class="featured-cta">
-        <a class="btn btn-primary" href="#hands-on" data-i18n="nlc26.storyJump">Straight to the hands-on</a>
-      </p>
-    </div>
-  </section>
+          <!-- The hands-on: people read this mid-session, so it stays scannable. -->
+          <div class="doc-block" id="hands-on">
+            <h2 class="section-title" data-i18n="nlc26.handsTitle"></h2>
+            <p class="section-sub" data-i18n="nlc26.handsLede"></p>
 
-  <!-- 动手环节 first: people read this mid-session, so it cannot sit under narrative. -->
-  <section class="section" id="hands-on">
-    <div class="wrap wrap-narrow">
-      <h2 class="section-title" data-i18n="nlc26.handsTitle"></h2>
-      <p class="section-sub" data-i18n="nlc26.handsLede"></p>
+            <p class="featured-cta">
+              <a class="btn btn-primary" href="https://github.com/kaixinbuilds/VocabClimbStarter"
+                 data-i18n="nlc26.handsCta" target="_blank" rel="noopener">Download the starter</a>
+              <a class="btn btn-ghost" href="https://claude.ai" data-i18n="nlc26.handsClaude"
+                 target="_blank" rel="noopener">claude.ai</a>
+            </p>
 
-      <p class="featured-cta">
-        <a class="btn btn-primary" href="https://github.com/kaixinbuilds/VocabClimbStarter"
-           data-i18n="nlc26.handsCta" target="_blank" rel="noopener">Open the starter project</a>
-        <a class="btn btn-ghost" href="https://claude.ai" data-i18n="nlc26.handsClaude"
-           target="_blank" rel="noopener">claude.ai</a>
-      </p>
-
-      <ol class="loop">
+            <ol class="loop">
         <li>
-          <h2 data-i18n="nlc26.step1Title"></h2>
+          <h3 data-i18n="nlc26.step1Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.step1Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.step1P1"></li>
@@ -341,7 +353,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           </ul>
         </li>
         <li>
-          <h2 data-i18n="nlc26.step2Title"></h2>
+          <h3 data-i18n="nlc26.step2Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.step2Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.step2P1"></li>
@@ -349,7 +361,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           </ul>
         </li>
         <li>
-          <h2 data-i18n="nlc26.step3Title"></h2>
+          <h3 data-i18n="nlc26.step3Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.step3Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.step3P1"></li>
@@ -357,7 +369,6 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
             <li data-i18n="nlc26.step3P3"></li>
           </ul>
 
-          <!-- Hardcoded, not translated: it is text to paste, not text to read. -->
           <div class="copy-block">
             <span class="cap" data-i18n="nlc26.promptCap"></span>
             <pre lang="zh-Hans">我是中学华文老师，不会编码。
@@ -375,7 +386,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           </div>
         </li>
         <li>
-          <h2 data-i18n="nlc26.step4Title"></h2>
+          <h3 data-i18n="nlc26.step4Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.step4Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.step4P1"></li>
@@ -384,7 +395,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           </ul>
         </li>
         <li>
-          <h2 data-i18n="nlc26.step5Title"></h2>
+          <h3 data-i18n="nlc26.step5Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.step5Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.step5P1"></li>
@@ -393,39 +404,34 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
             <li data-i18n="nlc26.step5P4"></li>
           </ul>
         </li>
-      </ol>
+            </ol>
 
-      <!-- Every account-dependent step has to have a floor under it. -->
-      <div class="highlight-box">
-        <span class="label" data-i18n="nlc26.fallbackLabel"></span>
-        <ul class="loop-points">
-          <li data-i18n="nlc26.fallback1"></li>
-          <li data-i18n="nlc26.fallback2"></li>
-          <li data-i18n="nlc26.fallback3"></li>
-        </ul>
-      </div>
+            <div class="highlight-box">
+              <span class="label" data-i18n="nlc26.fallbackLabel"></span>
+              <ul class="loop-points">
+                <li data-i18n="nlc26.fallback1"></li>
+                <li data-i18n="nlc26.fallback2"></li>
+                <li data-i18n="nlc26.fallback3"></li>
+              </ul>
+            </div>
 
-      <div class="highlight-box">
-        <span class="label" data-i18n="nlc26.stuckLabel"></span>
-        <ul class="loop-points">
-          <li data-i18n="nlc26.stuck1"></li>
-          <li data-i18n="nlc26.stuck2"></li>
-          <li data-i18n="nlc26.stuck3"></li>
-          <li data-i18n="nlc26.stuck4"></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+            <div class="highlight-box">
+              <span class="label" data-i18n="nlc26.stuckLabel"></span>
+              <ul class="loop-points">
+                <li data-i18n="nlc26.stuck1"></li>
+                <li data-i18n="nlc26.stuck2"></li>
+                <li data-i18n="nlc26.stuck3"></li>
+                <li data-i18n="nlc26.stuck4"></li>
+              </ul>
+            </div>
+          </div>
 
-  <!-- The four pieces the NLC asked for, one block each. -->
-  <section class="section" id="stack">
-    <div class="wrap wrap-narrow">
-      <h2 class="section-title" data-i18n="nlc26.stackTitle"></h2>
-      <p class="section-sub" data-i18n="nlc26.stackLede"></p>
-
-      <ol class="loop">
+          <div class="doc-block" id="stack">
+            <h2 class="section-title" data-i18n="nlc26.stackTitle"></h2>
+            <p class="section-sub" data-i18n="nlc26.stackLede"></p>
+            <ol class="loop">
         <li>
-          <h2 data-i18n="nlc26.p1Title"></h2>
+          <h3 data-i18n="nlc26.p1Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.p1Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p1A"></li>
@@ -434,7 +440,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           </ul>
         </li>
         <li>
-          <h2 data-i18n="nlc26.p2Title"></h2>
+          <h3 data-i18n="nlc26.p2Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.p2Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p2A"></li>
@@ -443,7 +449,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           </ul>
         </li>
         <li>
-          <h2 data-i18n="nlc26.p3Title"></h2>
+          <h3 data-i18n="nlc26.p3Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.p3Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p3A"></li>
@@ -452,7 +458,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           </ul>
         </li>
         <li>
-          <h2 data-i18n="nlc26.p4Title"></h2>
+          <h3 data-i18n="nlc26.p4Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.p4Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p4A"></li>
@@ -460,37 +466,30 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
             <li data-i18n="nlc26.p4C"></li>
           </ul>
         </li>
-      </ol>
+            </ol>
+            <p class="loop-close" data-i18n="nlc26.stackClose"></p>
+          </div>
 
-      <p class="loop-close" data-i18n="nlc26.stackClose"></p>
-    </div>
-  </section>
+          <div class="doc-block" id="vocabsummit">
+            <h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>
+            <ul class="loop-points">
+              <li data-i18n="nlc26.vsP1"></li>
+              <li data-i18n="nlc26.vsP2"></li>
+              <li data-i18n="nlc26.vsP3"></li>
+            </ul>
+            <p class="featured-cta">
+              <a class="btn btn-primary" href="https://btvssclunit.github.io/VocabSummit"
+                 data-i18n="nlc26.vsCta" target="_blank" rel="noopener">Open VocabSummit</a>
+              <a class="btn btn-ghost" href="work.html" data-i18n="nlc26.vsWork">The project write-up</a>
+              <a class="btn btn-ghost" href="approach.html" data-i18n="nlc26.vsApproach">How it was designed</a>
+            </p>
+          </div>
 
-  <section class="section" id="vocabsummit">
-    <div class="wrap wrap-narrow">
-      <h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>
-      <ul class="loop-points">
-        <li data-i18n="nlc26.vsP1"></li>
-        <li data-i18n="nlc26.vsP2"></li>
-        <li data-i18n="nlc26.vsP3"></li>
-      </ul>
-
-      <p class="featured-cta">
-        <a class="btn btn-primary" href="https://btvssclunit.github.io/VocabSummit"
-           data-i18n="nlc26.vsCta" target="_blank" rel="noopener">Open VocabSummit</a>
-        <a class="btn btn-ghost" href="work.html" data-i18n="nlc26.vsWork">The project write-up</a>
-        <a class="btn btn-ghost" href="approach.html" data-i18n="nlc26.vsApproach">How it was designed</a>
-      </p>
-    </div>
-  </section>
-
-  <section class="section" id="concerns">
-    <div class="wrap wrap-narrow">
-      <h2 class="section-title" data-i18n="nlc26.qTitle"></h2>
-
-      <ol class="loop">
+          <div class="doc-block" id="concerns">
+            <h2 class="section-title" data-i18n="nlc26.qTitle"></h2>
+            <ol class="loop">
         <li>
-          <h2 data-i18n="nlc26.q1"></h2>
+          <h3 data-i18n="nlc26.q1"></h3>
           <ul class="loop-points">
             <li data-i18n="nlc26.q1A"></li>
             <li data-i18n="nlc26.q1B"></li>
@@ -498,7 +497,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           </ul>
         </li>
         <li>
-          <h2 data-i18n="nlc26.q2"></h2>
+          <h3 data-i18n="nlc26.q2"></h3>
           <ul class="loop-points">
             <li data-i18n="nlc26.q2A"></li>
             <li data-i18n="nlc26.q2B"></li>
@@ -506,7 +505,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           </ul>
         </li>
         <li>
-          <h2 data-i18n="nlc26.q3"></h2>
+          <h3 data-i18n="nlc26.q3"></h3>
           <ul class="loop-points">
             <li data-i18n="nlc26.q3A"></li>
             <li data-i18n="nlc26.q3B"></li>
@@ -514,50 +513,49 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           </ul>
         </li>
         <li>
-          <h2 data-i18n="nlc26.q4"></h2>
+          <h3 data-i18n="nlc26.q4"></h3>
           <ul class="loop-points">
             <li data-i18n="nlc26.q4A"></li>
             <li data-i18n="nlc26.q4B"></li>
             <li data-i18n="nlc26.q4C"></li>
           </ul>
         </li>
-      </ol>
-    </div>
-  </section>
+            </ol>
+          </div>
 
-  <!-- The NLC's board is a closed community space, so it is named, never linked. -->
-  <section class="section" id="post">
-    <div class="wrap wrap-narrow">
-      <h2 class="section-title" data-i18n="nlc26.padletTitle"></h2>
-      <p class="section-sub" data-i18n="nlc26.padletLede"></p>
-      <ul class="loop-points">
-        <li data-i18n="nlc26.padletP1"></li>
-        <li data-i18n="nlc26.padletP2"></li>
-        <li data-i18n="nlc26.padletP3"></li>
-      </ul>
-    </div>
-  </section>
+          <!-- The NLC's board is a closed community space: named, never linked. -->
+          <div class="doc-block" id="post">
+            <h2 class="section-title" data-i18n="nlc26.padletTitle"></h2>
+            <p class="section-sub" data-i18n="nlc26.padletLede"></p>
+            <ul class="loop-points">
+              <li data-i18n="nlc26.padletP1"></li>
+              <li data-i18n="nlc26.padletP2"></li>
+              <li data-i18n="nlc26.padletP3"></li>
+            </ul>
+          </div>
 
-  <section class="section" id="after">
-    <div class="wrap wrap-narrow">
-      <h2 class="section-title" data-i18n="nlc26.afterTitle"></h2>
-      <ul class="loop-points">
-        <li data-i18n="nlc26.afterP1"></li>
-        <li data-i18n="nlc26.afterP2"></li>
-        <li data-i18n="nlc26.afterP3"></li>
-      </ul>
+          <div class="doc-block" id="after">
+            <h2 class="section-title" data-i18n="nlc26.afterTitle"></h2>
+            <ul class="loop-points">
+              <li data-i18n="nlc26.afterP1"></li>
+              <li data-i18n="nlc26.afterP2"></li>
+              <li data-i18n="nlc26.afterP3"></li>
+            </ul>
+            <p class="featured-cta">
+              <a class="btn btn-primary" href="contact.html" data-i18n="nlc26.afterCta">Get in touch</a>
+            </p>
 
-      <p class="featured-cta">
-        <a class="btn btn-primary" href="contact.html" data-i18n="nlc26.afterCta">Get in touch</a>
-      </p>
+            <!-- The community's own motto, quoted back to it, set as a colophon. -->
+            <p class="epigraph colophon">
+              <span class="zh" lang="zh-Hans">地上本无路，走的人多了，便成了路</span>
+              <span class="en" lang="en">The earth had no roads to begin with. When enough
+                people walk the same way, a road appears.</span>
+              <span class="src" data-i18n="nlc26.epigraphSrc"></span>
+            </p>
+          </div>
 
-      <!-- The community's own motto, quoted back to it, set as a colophon. -->
-      <p class="epigraph colophon">
-        <span class="zh" lang="zh-Hans">地上本无路，走的人多了，便成了路</span>
-        <span class="en" lang="en">The earth had no roads to begin with. When enough
-          people walk the same way, a road appears.</span>
-        <span class="src" data-i18n="nlc26.epigraphSrc"></span>
-      </p>
+        </div>
+      </div>
     </div>
   </section>"""),
     "contact.html": ("page.contact.title", """\
