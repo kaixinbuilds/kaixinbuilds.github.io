@@ -341,12 +341,12 @@
     "zh": "GitHub Pages 是 404：按了 Save 之后要等一两分钟。然后强制刷新（Cmd+Shift+R / Ctrl+F5）。"
   },
   "nlc26.stackTitle": {
-    "en": "The crew behind it",
-    "zh": "幕后班底"
+    "en": "The unsung heroes",
+    "zh": "幕后功臣"
   },
   "nlc26.stackLede": {
-    "en": "A one-person department with a crew of five. Each covers one stretch, they work independently, and taking on only one of them is fine.",
-    "zh": "一个人的部门，一个五人的班底。各管一段，彼此独立，只请其中一位也行。"
+    "en": "A one-person department, with five behind it. Each covers one stretch, they work independently, and taking on only one of them is fine.",
+    "zh": "一个人的部门，背后五位功臣。各管一段，彼此独立，只请其中一位也行。"
   },
   "nlc26.p1Title": {
     "en": "Claude Project · the research assistant",
@@ -366,7 +366,7 @@
   },
   "nlc26.p1C": {
     "en": "The easiest of the five to take on, and the one most often left out.",
-    "zh": "班底里最容易请的一位，也是最常被漏掉的一位。"
+    "zh": "五位里最容易请的一位，也是最常被漏掉的一位。"
   },
   "nlc26.p2Title": {
     "en": "Claude Code · the programmer",
@@ -406,7 +406,7 @@
   },
   "nlc26.p3C": {
     "en": "Get the specification wrong and the image simply will not fit into the game. Of the five, this is the one whose skill transfers most easily to everyday teaching.",
-    "zh": "规格说不清楚，图就是拼不进游戏里。班底里，这一位的本事最容易迁移到日常教学。"
+    "zh": "规格说不清楚，图就是拼不进游戏里。五位当中，这一位的本事最容易迁移到日常教学。"
   },
   "nlc26.p4Title": {
     "en": "GitHub · the scribe",
@@ -617,8 +617,8 @@
     "zh": "动手环节"
   },
   "nlc26.navStack": {
-    "en": "The crew",
-    "zh": "班底"
+    "en": "The unsung heroes",
+    "zh": "幕后功臣"
   },
   "nlc26.navVs": {
     "en": "VocabSummit",
