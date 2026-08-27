@@ -404,6 +404,9 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           <div class="doc-block" id="stack">
             <h2 class="section-title" data-i18n="nlc26.stackTitle"></h2>
             <p class="section-sub" data-i18n="nlc26.stackLede"></p>
+            <!-- The founder leads, because the ordering is the argument:
+                 the five that follow are hired, and not one of them decides
+                 anything. Two lines each, no more. -->
             <ol class="loop">
         <li>
           <h3 data-i18n="nlc26.p1Title"></h3>
@@ -411,7 +414,6 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           <ul class="loop-points">
             <li data-i18n="nlc26.p1A"></li>
             <li data-i18n="nlc26.p1B"></li>
-            <li data-i18n="nlc26.p1C"></li>
           </ul>
         </li>
         <li>
@@ -420,7 +422,6 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           <ul class="loop-points">
             <li data-i18n="nlc26.p2A"></li>
             <li data-i18n="nlc26.p2B"></li>
-            <li data-i18n="nlc26.p2C"></li>
           </ul>
         </li>
         <li>
@@ -429,7 +430,6 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           <ul class="loop-points">
             <li data-i18n="nlc26.p3A"></li>
             <li data-i18n="nlc26.p3B"></li>
-            <li data-i18n="nlc26.p3C"></li>
           </ul>
         </li>
         <li>
@@ -438,7 +438,6 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           <ul class="loop-points">
             <li data-i18n="nlc26.p4A"></li>
             <li data-i18n="nlc26.p4B"></li>
-            <li data-i18n="nlc26.p4C"></li>
           </ul>
         </li>
         <li>
@@ -447,19 +446,14 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
           <ul class="loop-points">
             <li data-i18n="nlc26.p5A"></li>
             <li data-i18n="nlc26.p5B"></li>
-            <li data-i18n="nlc26.p5C"></li>
           </ul>
         </li>
-        <!-- The sixth is a person, and the lede asks who it is so that this
-             entry answers it. Listing yourself among the credits is a joke
-             only until you read what the role actually covers. -->
         <li>
           <h3 data-i18n="nlc26.p6Title"></h3>
           <p class="loop-cycle" data-i18n="nlc26.p6Cycle"></p>
           <ul class="loop-points">
             <li data-i18n="nlc26.p6A"></li>
             <li data-i18n="nlc26.p6B"></li>
-            <li data-i18n="nlc26.p6C"></li>
           </ul>
         </li>
             </ol>

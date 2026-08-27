@@ -321,96 +321,80 @@
     "zh": "GitHub Pages 是 404：按了 Save 之后要等一两分钟。然后强制刷新（Cmd+Shift+R / Ctrl+F5）。"
   },
   "nlc26.stackTitle": {
-    "en": "The unsung heroes",
-    "zh": "幕后功臣"
+    "en": "The team behind it",
+    "zh": "幕后团队"
   },
   "nlc26.stackLede": {
-    "en": "A one-person department with six to thank. Five of them are tools. Who is the sixth?",
-    "zh": "一个人的部门，六位功臣。五位是工具，第六位是谁？"
+    "en": "A one-person department. So how does it run six roles?",
+    "zh": "一个人的部门，怎么会有六个岗位？"
   },
   "nlc26.p1Title": {
+    "en": "Founder · me",
+    "zh": "创办人 · 我"
+  },
+  "nlc26.p1Cycle": {
+    "en": "decides what to build, and what counts as built well",
+    "zh": "决定做什么、什么算做好"
+  },
+  "nlc26.p1A": {
+    "en": "What to build, who it is for, and what counts as getting it right.",
+    "zh": "做什么、给谁用、怎样才算做对了。"
+  },
+  "nlc26.p1B": {
+    "en": "Judging what comes back. Only someone standing in the classroom can.",
+    "zh": "判断做出来的对不对。只有站在课室里的人看得见。"
+  },
+  "nlc26.p2Title": {
     "en": "Product manager · Claude Project",
     "zh": "产品经理 · Claude Project"
   },
-  "nlc26.p1Cycle": {
+  "nlc26.p2Cycle": {
     "en": "works out what is being built, and writes it down",
     "zh": "理清来龙去脉，写下规格"
   },
-  "nlc26.p1A": {
-    "en": "Design decisions, pedagogy notes and word lists all live in one Project. It remembers, so you do not explain yourself again every time.",
-    "zh": "设计决定、教学笔记、词表，全放在同一个 Project 里。它记得住，你不必每次重讲一遍。"
+  "nlc26.p2A": {
+    "en": "Decisions, notes and word lists in one Project, so you never explain twice.",
+    "zh": "设计决定、教学笔记、词表都放同一个 Project，不必每次重讲。"
   },
-  "nlc26.p1B": {
-    "en": "This is the one you work with today: upload the folder and the sheet, then use that one Project all year.",
-    "zh": "你今天动手用的就是这一位：资料夹加词语表传进去，一个 Project 用一整年。"
+  "nlc26.p2B": {
+    "en": "The one you work with today. One Project lasts a year.",
+    "zh": "你今天用的就是这一位。一个 Project 用一整年。"
   },
-  "nlc26.p1C": {
-    "en": "The easiest of them to take on, and the one most often left out.",
-    "zh": "最容易请的一位，也是最常被漏掉的一位。"
-  },
-  "nlc26.p2Title": {
+  "nlc26.p3Title": {
     "en": "Engineer · Claude Code",
     "zh": "工程师 · Claude Code"
   },
-  "nlc26.p2Cycle": {
+  "nlc26.p3Cycle": {
     "en": "writes the code",
     "zh": "动手写代码"
   },
-  "nlc26.p2A": {
-    "en": "Not a chatbot that hands you a snippet to paste. It reads the files in your project, edits them, runs them, then checks its own work.",
-    "zh": "它不是给你一段代码让你贴的聊天机器人。它会直接读你项目里的文件、动手改、跑起来，再自己看对不对。"
+  "nlc26.p3A": {
+    "en": "It reads the files itself, edits, runs them, then checks its own work.",
+    "zh": "它自己读文件、动手改、跑起来，再看对不对。"
   },
-  "nlc26.p2B": {
-    "en": "Your job shifts from writing code to saying clearly what you want, and judging whether what came back is right. That second half is what teachers are already good at.",
-    "zh": "你的工作从「写代码」变成「说清楚要什么」加「判断做出来的对不对」。后面那半，正是教师本来就擅长的事。"
+  "nlc26.p3B": {
+    "en": "Your job becomes two things: say what you want, judge what comes back.",
+    "zh": "你的活变成两件：说清楚要什么，判断做出来的对不对。"
   },
-  "nlc26.p2C": {
-    "en": "Clear beats elegant: what it has to do, who it is for, and what counts as getting it right. The same skill as writing a good set of task instructions for students.",
-    "zh": "讲清楚比讲漂亮重要：这东西要做什么、给谁用、怎样才算做对了。跟给学生写一份好的作业指示，是同一回事。"
-  },
-  "nlc26.p3Title": {
+  "nlc26.p4Title": {
     "en": "Designer · ChatGPT",
     "zh": "设计师 · ChatGPT"
   },
-  "nlc26.p3Cycle": {
+  "nlc26.p4Cycle": {
     "en": "draws it, and makes the artwork",
     "zh": "出图、出美术"
   },
-  "nlc26.p3A": {
-    "en": "The cliff, the landscape and the climbing character in today’s game were all generated. Not one of them was bought.",
-    "zh": "今天这个游戏里的山壁、风景、会爬的角色，全都是生成出来的，没有一样是买的。"
-  },
-  "nlc26.p3B": {
-    "en": "Generating an image is writing a specification, not making a wish. A character sprite has to be pinned down: six frames in a row, every frame the same width and height, character facing right, pure magenta background, and no text or numbers anywhere in the picture.",
-    "zh": "生成图像不是许愿，是写规格。一张角色动作图必须说死：六格横向并排、每一格等宽等高、角色朝右、纯洋红色背景、画面上不准出现任何文字或数字。"
-  },
-  "nlc26.p3C": {
-    "en": "Get the specification wrong and the image simply will not fit into the game. This is the skill that transfers most easily to everyday teaching.",
-    "zh": "规格说不清楚，图就是拼不进游戏里。这一位的本事，最容易迁移到日常教学。"
-  },
-  "nlc26.p4Title": {
-    "en": "Archivist · GitHub",
-    "zh": "档案管理员 · GitHub"
-  },
-  "nlc26.p4Cycle": {
-    "en": "records every change",
-    "zh": "记下每一次改动"
-  },
   "nlc26.p4A": {
-    "en": "Every change leaves a record, and a change that breaks something can be rolled back. What makes hosting worth it is not the storage, it is that history.",
-    "zh": "每一次改动都留下记录，改坏了可以退回去。托管真正值钱的不是「存着」，是这份历史。"
+    "en": "The cliff, the landscape, the climber: all generated, none bought.",
+    "zh": "游戏里的山壁、风景、角色，全是生成的，没一样是买的。"
   },
   "nlc26.p4B": {
-    "en": "GitHub Pages turns it into a web address for nothing. No ads, no cap on how many students open it, and nothing for them to install.",
-    "zh": "GitHub Pages 免费把它变成一个网址。没有广告，不限多少学生打开，学生那边什么都不用装。"
-  },
-  "nlc26.p4C": {
-    "en": "Some school networks block github.com. The fix is a phone hotspot, but what matters is knowing beforehand rather than finding out in front of a class.",
-    "zh": "有些学校的网络会挡 github.com。解决办法是手机热点，但真正重要的是事先知道有这回事，别站在班上才发现。"
+    "en": "Generating an image is writing a specification: how many frames, what size, facing where, what background.",
+    "zh": "生成图像不是许愿，是写规格：几格、多大、朝哪边、什么背景。"
   },
   "nlc26.stackClose": {
-    "en": "Today you work with the product manager and the archivist; the engineer and the designer are optional; the HR manager we only talk about. The sixth is not optional: however capable the other five are, somebody still has to say what to make.",
-    "zh": "你今天动手用到的是产品经理和档案管理员，工程师和设计师选做，人事经理只谈不请。第六位没得选：前面五位再能干，也得先有人开口说要做什么。"
+    "en": "The first one cannot be subscribed to. Without it, not one of the other five runs.",
+    "zh": "排第一的那位没得订阅。少了他，后面五位一个都跑不起来。"
   },
   "nlc26.vsTitle": {
     "en": "VocabSummit",
@@ -585,8 +569,8 @@
     "zh": "动手环节"
   },
   "nlc26.navStack": {
-    "en": "The unsung heroes",
-    "zh": "幕后功臣"
+    "en": "The team",
+    "zh": "幕后团队"
   },
   "nlc26.navVs": {
     "en": "VocabSummit",
@@ -721,24 +705,20 @@
     "zh": "创建自己的 GitHub Page，发布一款学习小游戏"
   },
   "nlc26.p5Title": {
-    "en": "HR manager · Firebase",
-    "zh": "人事经理 · Firebase"
+    "en": "Archivist · GitHub",
+    "zh": "档案管理员 · GitHub"
   },
   "nlc26.p5Cycle": {
-    "en": "knows who is who",
-    "zh": "管谁是谁"
+    "en": "records every change",
+    "zh": "记下每一次改动"
   },
   "nlc26.p5A": {
-    "en": "This is the piece that knows who is who: students sign in, progress is saved, it survives a change of computer, and only then can there be a leaderboard.",
-    "zh": "这一块管的是「谁是谁」：学生登录、进度存下来、换一台电脑还在、排行榜也才做得起来。"
+    "en": "Every change leaves a record, and a bad one can be rolled back.",
+    "zh": "每一次改动都留下记录，改坏了退得回去。"
   },
   "nlc26.p5B": {
-    "en": "The cost is one more thing you are answerable for: where the data sits, who can see it, what the school and MOE rules say, and who maintains it later.",
-    "zh": "代价是你多了一样要负责的东西：数据存在哪里、谁看得到、学校和教育部的规定怎么说、以后由谁来维护。"
-  },
-  "nlc26.p5C": {
-    "en": "We deliberately do not touch this one today. Most classroom tools need no accounts at all. Build the version without sign-in first, and add it only if you truly need it.",
-    "zh": "今天故意不动手做这一块。大部分课堂工具其实根本不需要账号。先做不用登录的版本，真的需要了再加。"
+    "en": "GitHub Pages turns it into a link for nothing, with nothing for students to install.",
+    "zh": "GitHub Pages 免费把它变成网址，学生那边什么都不用装。"
   },
   "nlc26.handsFloor": {
     "en": "Four stages. Everyone finishes the first. How far you get after that is up to you.",
@@ -857,23 +837,19 @@
     "zh": "示范项目 MIT 许可：自由改编、用于课堂、改成别科都可以，保留署名即可。美术素材一并提供。"
   },
   "nlc26.p6Title": {
-    "en": "Founder · me",
-    "zh": "创办人 · 我"
+    "en": "HR manager · Firebase",
+    "zh": "人事经理 · Firebase"
   },
   "nlc26.p6Cycle": {
-    "en": "decides what to build, and what counts as built well",
-    "zh": "决定做什么、什么算做好"
+    "en": "knows who is who",
+    "zh": "管谁是谁"
   },
   "nlc26.p6A": {
-    "en": "Deciding what to build, who it is for, and what counts as getting it right. Not one of the five above will decide any of that for you.",
-    "zh": "决定做什么、给谁用、怎样才算做对了。上面五位，一件也不会替你决定。"
+    "en": "Students sign in, progress is saved, and it survives a change of computer.",
+    "zh": "学生登录、进度存下来、换台电脑还在。"
   },
   "nlc26.p6B": {
-    "en": "Judging what comes back. Which words keep failing, which screen nobody visits, which instruction I repeat every lesson. Only someone standing in the classroom can see any of it.",
-    "zh": "判断做出来的对不对：哪些词一错再错、哪个页面没人去、哪句指示我每堂课都得再讲一遍。这些只有站在课室里的人看得见。"
-  },
-  "nlc26.p6C": {
-    "en": "This is the role that does not come with a subscription, and the one the whole thing rests on.",
-    "zh": "这个岗位没得订阅，而整件事就架在它上面。"
+    "en": "The cost is that the data becomes yours to answer for. Not hired today.",
+    "zh": "代价是数据要你负责。今天不请。"
   }
 }
