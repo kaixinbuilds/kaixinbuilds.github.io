@@ -727,6 +727,11 @@ def write_sitemap():
         "User-agent: *\n"
         "Allow: /\n\n"
         "Sitemap: %s/sitemap.xml\n" % SITE)
+    # Every page here is finished HTML. Jekyll has nothing to contribute, and
+    # a Jekyll build that fails takes the whole deploy down with it, silently:
+    # Pages keeps serving the last good commit and the site simply stops
+    # updating. This empty file turns Jekyll off, so Pages just serves files.
+    pathlib.Path(".nojekyll").write_text("")
 
 
 if __name__ == "__main__":
@@ -734,4 +739,4 @@ if __name__ == "__main__":
         pathlib.Path(page).write_text(render(page))
         print("built", page)
     write_sitemap()
-    print("built sitemap.xml and robots.txt")
+    print("built sitemap.xml, robots.txt and .nojekyll")
