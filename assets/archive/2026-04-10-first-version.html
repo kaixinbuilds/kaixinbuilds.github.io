@@ -1,0 +1,4963 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>华文词语温习</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="词语温习">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="theme-color" content="#1a1a2e">
+<style>
+:root {
+  --ink:#1a1a2e; --ink-soft:#3d3d5c; --ink-mute:#7a7a9a;
+  --paper:#fafaf8; --paper-2:#f0efe9; --paper-3:#e4e2d8;
+  --red:#c0392b; --red-soft:#fae8e6;
+  --green:#1a7a4a; --green-soft:#d0eadc;
+  --amber:#c47c00; --amber-soft:#faefd5;
+  --blue:#2660a4; --blue-soft:#d5e4f5;
+  --purple:#6b35a8; --purple-soft:#e8dcf5;
+  --shadow-sm:0 1px 4px rgba(0,0,0,.10);
+  --shadow-md:0 4px 16px rgba(0,0,0,.12);
+  --shadow-lg:0 8px 32px rgba(0,0,0,.15);
+  --r:12px; --r-sm:8px; --t:.2s ease;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Georgia','Noto Serif SC','STSong',serif;background:var(--paper);color:var(--ink);min-height:100vh;font-size:16px;line-height:1.6;}
+.screen{display:none;width:100%;min-height:100vh;}
+.screen.active{display:flex;flex-direction:column;}
+
+/* HOME */
+#home-screen{background:linear-gradient(160deg,#1a1a2e 0%,#2d2d5a 50%,#1a3a5c 100%);color:white;overflow-y:auto;}
+.home-header{padding:1.8rem 1.2rem 1rem;text-align:center;}
+.home-title{font-size:clamp(1.5rem,5vw,2rem);color:#f0e6c8;letter-spacing:.08em;text-shadow:0 2px 12px rgba(0,0,0,.4);}
+.home-subtitle{font-size:.78rem;color:rgba(255,255,255,.5);letter-spacing:.12em;font-family:sans-serif;text-transform:uppercase;margin-top:.2rem;}
+.progress-wrap{padding:0 1.2rem .8rem;max-width:480px;margin:0 auto;width:100%;}
+.overview-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--r);padding:.9rem 1.1rem;backdrop-filter:blur(8px);}
+.overview-card h3{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);font-family:sans-serif;margin-bottom:.5rem;}
+.stat-row{display:flex;gap:.8rem;justify-content:space-between;}
+.stat-item{text-align:center;flex:1;}
+.stat-num{font-size:1.6rem;font-weight:bold;color:#f0e6c8;line-height:1;}
+.stat-label{font-size:.65rem;color:rgba(255,255,255,.45);font-family:sans-serif;margin-top:.2rem;}
+.global-bar{background:rgba(255,255,255,.12);border-radius:4px;height:5px;margin:.7rem 0 .2rem;overflow:hidden;}
+.global-bar-fill{height:100%;background:linear-gradient(90deg,#f0e6c8,#b8860b);border-radius:4px;transition:width .6s ease;}
+.global-bar-label{font-size:.65rem;color:rgba(255,255,255,.4);font-family:sans-serif;text-align:right;}
+.levels-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;padding:0 1.2rem 1rem;max-width:480px;margin:0 auto;width:100%;}
+.level-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:.9rem;cursor:pointer;transition:all var(--t);text-align:left;position:relative;overflow:hidden;}
+.level-card:hover,.level-card:focus{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);transform:translateY(-2px);box-shadow:var(--shadow-md);outline:none;}
+.level-card-accent{position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--r) var(--r) 0 0;}
+.acc-1{background:linear-gradient(90deg,#e74c3c,#c0392b);}
+.acc-2{background:linear-gradient(90deg,#2980b9,#1a5276);}
+.acc-3{background:linear-gradient(90deg,#27ae60,#1a7a4a);}
+.acc-4{background:linear-gradient(90deg,#d35400,#a04000);}
+.level-name{font-size:1rem;color:#f0e6c8;margin-bottom:.15rem;}
+.level-count{font-size:.68rem;color:rgba(255,255,255,.4);font-family:sans-serif;}
+.level-mini-bar{background:rgba(255,255,255,.12);border-radius:3px;height:4px;margin-top:.5rem;overflow:hidden;}
+.level-mini-fill{height:100%;background:rgba(255,255,255,.5);border-radius:3px;transition:width .5s ease;}
+.level-mastery-pct{font-size:.62rem;color:rgba(255,255,255,.38);font-family:sans-serif;margin-top:.2rem;}
+.weak-btn{display:flex;align-items:center;gap:.7rem;background:rgba(192,57,43,.22);border:1px solid rgba(192,57,43,.38);border-radius:var(--r);padding:.8rem 1.1rem;cursor:pointer;width:calc(100% - 2.4rem);max-width:calc(480px - 2.4rem);margin:0 auto .7rem;transition:all var(--t);color:white;}
+.weak-btn:hover{background:rgba(192,57,43,.38);transform:translateY(-1px);}
+.weak-btn-icon{font-size:1.3rem;}
+.weak-btn-text{flex:1;text-align:left;}
+.weak-btn-title{font-size:.88rem;color:#f5c6c0;}
+.weak-btn-sub{font-size:.68rem;color:rgba(255,255,255,.4);font-family:sans-serif;}
+.weak-btn-count{font-size:1.2rem;font-weight:bold;color:#f5c6c0;font-family:sans-serif;}
+
+/* LEVEL SCREEN */
+#level-screen{background:var(--paper);overflow-y:auto;}
+.top-bar{display:flex;align-items:center;gap:.7rem;padding:.7rem .9rem;border-bottom:1px solid var(--paper-3);background:white;position:sticky;top:0;z-index:10;box-shadow:var(--shadow-sm);}
+.back-btn{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--ink-soft);padding:.2rem .4rem;border-radius:6px;transition:background var(--t);line-height:1;}
+.back-btn:hover{background:var(--paper-2);}
+.top-bar-title{font-size:1rem;color:var(--ink);flex:1;}
+.units-list{padding:.7rem;max-width:520px;margin:0 auto;}
+.unit-group{margin-bottom:1rem;}
+.unit-group-label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-family:sans-serif;padding:.3rem .4rem;margin-bottom:.3rem;}
+.unit-btn{display:flex;align-items:center;gap:.7rem;width:100%;padding:.75rem .9rem;background:white;border:1px solid var(--paper-3);border-radius:var(--r-sm);cursor:pointer;margin-bottom:.35rem;transition:all var(--t);text-align:left;}
+.unit-btn:hover{border-color:var(--blue);box-shadow:var(--shadow-sm);transform:translateX(2px);}
+.unit-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.dot-none{background:var(--paper-3);} .dot-some{background:var(--amber);} .dot-most{background:var(--blue);} .dot-all{background:var(--green);}
+.unit-btn-info{flex:1;min-width:0;}
+.unit-btn-name{font-size:.88rem;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.unit-btn-sub{font-size:.68rem;color:var(--ink-mute);font-family:sans-serif;margin-top:.1rem;}
+.unit-mastery-bar{width:56px;background:var(--paper-2);border-radius:3px;height:4px;overflow:hidden;flex-shrink:0;}
+.unit-mastery-fill{height:100%;border-radius:3px;transition:width .4s ease;}
+.fill-none{background:var(--paper-3);} .fill-some{background:var(--amber);} .fill-most{background:var(--blue);} .fill-all{background:var(--green);}
+
+/* STUDY SCREEN */
+#study-screen{background:var(--paper);}
+.study-header{padding:.6rem .9rem;border-bottom:1px solid var(--paper-3);background:white;}
+.study-nav{display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;}
+.study-title{font-size:.88rem;color:var(--ink-soft);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mode-tabs{display:flex;background:var(--paper-2);border-radius:20px;padding:3px;gap:2px;overflow-x:auto;}
+.mode-tab{padding:.28rem .6rem;border-radius:16px;border:none;background:none;font-size:.68rem;font-family:sans-serif;color:var(--ink-mute);cursor:pointer;transition:all var(--t);white-space:nowrap;flex-shrink:0;}
+.mode-tab.active{background:white;color:var(--ink);box-shadow:var(--shadow-sm);font-weight:600;}
+.study-progress-bar{height:3px;background:var(--paper-2);border-radius:2px;overflow:hidden;margin-top:.4rem;}
+.study-progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--green));border-radius:2px;transition:width .3s ease;}
+
+/* FLASHCARD */
+#flashcard-mode{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem;gap:.8rem;}
+.card-counter{font-size:.72rem;color:var(--ink-mute);font-family:sans-serif;text-align:center;}
+.flashcard{width:100%;max-width:380px;min-height:200px;background:white;border-radius:var(--r);box-shadow:var(--shadow-md);border:1px solid var(--paper-3);cursor:pointer;position:relative;transition:box-shadow var(--t);}
+.flashcard:hover{box-shadow:var(--shadow-lg);}
+.card-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.4rem;border-radius:var(--r);transition:opacity .18s ease;}
+.card-back{opacity:0;}
+.flashcard.flipped .card-front{opacity:0;pointer-events:none;}
+.flashcard.flipped .card-back{opacity:1;}
+.card-tag{position:absolute;top:.7rem;right:.8rem;font-size:.6rem;font-family:sans-serif;color:var(--ink-mute);letter-spacing:.08em;text-transform:uppercase;}
+.card-tap-hint{position:absolute;bottom:.7rem;font-size:.62rem;color:var(--ink-mute);font-family:sans-serif;opacity:.7;}
+.word-display{font-size:clamp(2rem,8vw,2.8rem);color:var(--ink);text-align:center;line-height:1.2;letter-spacing:.05em;}
+.word-context{font-size:.7rem;color:var(--ink-mute);font-family:sans-serif;margin-top:.3rem;}
+.def-word{font-size:clamp(1.3rem,5vw,1.8rem);color:var(--ink);margin-bottom:.5rem;letter-spacing:.05em;text-align:center;}
+.def-meaning{font-size:.86rem;color:var(--ink-soft);line-height:1.5;max-width:280px;text-align:center;}
+.def-example{font-size:.76rem;color:var(--ink-mute);margin-top:.45rem;font-style:italic;line-height:1.5;max-width:280px;text-align:center;}
+.self-mark-btns{display:flex;gap:.6rem;width:100%;max-width:380px;}
+.mark-btn{flex:1;padding:.75rem;border:none;border-radius:var(--r-sm);font-size:.86rem;cursor:pointer;font-family:inherit;transition:all var(--t);display:flex;align-items:center;justify-content:center;gap:.3rem;font-weight:600;}
+.mark-known{background:var(--green-soft);color:var(--green);}
+.mark-known:hover{background:var(--green);color:white;transform:translateY(-1px);}
+.mark-unknown{background:var(--red-soft);color:var(--red);}
+.mark-unknown:hover{background:var(--red);color:white;transform:translateY(-1px);}
+.flip-hint{font-size:.7rem;color:var(--ink-mute);font-family:sans-serif;text-align:center;}
+
+/* MCQ (shared by meaning-mcq, english-mcq) */
+.mcq-wrap{flex:1;display:flex;flex-direction:column;padding:.9rem;gap:.7rem;max-width:480px;margin:0 auto;width:100%;overflow-y:auto;}
+.mcq-question-card{background:white;border:1px solid var(--paper-3);border-radius:var(--r);padding:1.3rem 1.1rem;text-align:center;box-shadow:var(--shadow-sm);}
+.mcq-prompt-label{font-size:.65rem;font-family:sans-serif;color:var(--ink-mute);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;}
+.mcq-word{font-size:clamp(1.6rem,6vw,2.2rem);color:var(--ink);letter-spacing:.05em;}
+.mcq-context{font-size:.7rem;color:var(--ink-mute);font-family:sans-serif;margin-top:.25rem;}
+.mcq-options{display:flex;flex-direction:column;gap:.45rem;}
+.mcq-option{padding:.8rem .9rem;background:white;border:1.5px solid var(--paper-3);border-radius:var(--r-sm);cursor:pointer;font-size:.86rem;text-align:left;transition:all var(--t);font-family:inherit;color:var(--ink);line-height:1.4;display:flex;align-items:flex-start;gap:.55rem;}
+.mcq-option:hover:not(:disabled){border-color:var(--blue);background:var(--blue-soft);}
+.mcq-option:disabled{cursor:default;}
+.mcq-option.correct{border-color:var(--green);background:var(--green-soft);color:var(--green);}
+.mcq-option.wrong{border-color:var(--red);background:var(--red-soft);color:var(--red);}
+.mcq-option.reveal-correct{border-color:var(--green);background:var(--green-soft);color:var(--green);opacity:.7;}
+.option-letter{width:20px;height:20px;border-radius:50%;background:var(--paper-2);display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:bold;flex-shrink:0;font-family:sans-serif;margin-top:.05rem;}
+.mcq-option.correct .option-letter{background:var(--green);color:white;}
+.mcq-option.wrong .option-letter{background:var(--red);color:white;}
+.mcq-option.reveal-correct .option-letter{background:var(--green);color:white;}
+.mcq-feedback{text-align:center;font-size:.8rem;font-family:sans-serif;padding:.55rem;border-radius:var(--r-sm);font-weight:600;display:none;}
+.mcq-feedback.show{display:block;}
+.mcq-feedback.correct{background:var(--green-soft);color:var(--green);}
+.mcq-feedback.wrong{background:var(--red-soft);color:var(--red);}
+.next-btn{padding:.78rem;background:var(--ink);color:white;border:none;border-radius:var(--r-sm);font-size:.88rem;cursor:pointer;font-family:inherit;transition:all var(--t);display:none;width:100%;font-weight:600;}
+.next-btn.show{display:block;}
+.next-btn:hover{background:var(--ink-soft);transform:translateY(-1px);}
+
+/* CLOZE (MCQ-style) */
+.cloze-wrap{flex:1;display:flex;flex-direction:column;padding:.9rem;gap:.7rem;max-width:480px;margin:0 auto;width:100%;overflow-y:auto;}
+.cloze-card{background:white;border:1px solid var(--paper-3);border-radius:var(--r);padding:1.3rem 1.1rem;box-shadow:var(--shadow-sm);}
+.cloze-label{font-size:.65rem;font-family:sans-serif;color:var(--ink-mute);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;}
+.cloze-sentence{font-size:1rem;color:var(--ink);line-height:1.9;word-break:break-all;}
+.cloze-blank{display:inline-block;border-bottom:2px solid var(--ink);min-width:64px;text-align:center;margin:0 .15em;padding:0 .25em;color:var(--blue);font-weight:bold;transition:color var(--t),border-color var(--t);}
+.cloze-blank.correct{color:var(--green);border-color:var(--green);}
+.cloze-blank.wrong{color:var(--red);border-color:var(--red);}
+/* Cloze uses same .mcq-options / .mcq-option styles */
+.cloze-feedback{text-align:center;font-size:.8rem;font-family:sans-serif;padding:.55rem;border-radius:var(--r-sm);font-weight:600;display:none;}
+.cloze-feedback.show{display:block;}
+.cloze-feedback.correct{background:var(--green-soft);color:var(--green);}
+.cloze-feedback.wrong{background:var(--red-soft);color:var(--red);}
+
+/* ENGLISH MCQ badge */
+.eng-badge{display:inline-block;background:var(--purple-soft);color:var(--purple);font-size:.62rem;font-family:sans-serif;border-radius:10px;padding:.15rem .55rem;margin-bottom:.5rem;font-weight:600;letter-spacing:.04em;}
+
+/* RESULTS */
+#results-screen{background:var(--paper);align-items:center;justify-content:flex-start;padding:1.2rem;overflow-y:auto;}
+.results-card{background:white;border-radius:var(--r);box-shadow:var(--shadow-lg);padding:1.6rem 1.3rem;width:100%;max-width:400px;text-align:center;margin:0 auto;}
+.results-emoji{font-size:2.2rem;margin-bottom:.4rem;}
+.results-title{font-size:1.2rem;color:var(--ink);margin-bottom:.2rem;}
+.results-subtitle{font-size:.75rem;color:var(--ink-mute);font-family:sans-serif;margin-bottom:1.2rem;}
+.score-ring{width:90px;height:90px;margin:0 auto 1.2rem;position:relative;}
+.score-ring svg{transform:rotate(-90deg);}
+.score-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.score-num{font-size:1.4rem;font-weight:bold;color:var(--ink);line-height:1;}
+.score-label{font-size:.6rem;color:var(--ink-mute);font-family:sans-serif;margin-top:.1rem;}
+.results-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.45rem;margin-bottom:1.2rem;}
+.res-stat{background:var(--paper);border-radius:var(--r-sm);padding:.55rem .3rem;text-align:center;}
+.res-stat-num{font-size:1.1rem;font-weight:bold;}
+.res-stat-label{font-size:.6rem;color:var(--ink-mute);font-family:sans-serif;}
+.col-green{color:var(--green);} .col-red{color:var(--red);} .col-blue{color:var(--blue);}
+.weak-preview{background:var(--red-soft);border-radius:var(--r-sm);padding:.7rem;margin-bottom:1rem;text-align:left;display:none;}
+.weak-preview.show{display:block;}
+.weak-preview-title{font-size:.7rem;font-family:sans-serif;color:var(--red);font-weight:600;margin-bottom:.35rem;}
+.weak-words-chips{display:flex;flex-wrap:wrap;gap:.28rem;}
+.weak-chip{font-size:.8rem;background:white;color:var(--red);border:1px solid rgba(192,57,43,.22);border-radius:12px;padding:.12rem .55rem;}
+.results-actions{display:flex;flex-direction:column;gap:.5rem;}
+.action-btn{padding:.82rem;border:none;border-radius:var(--r-sm);font-size:.86rem;cursor:pointer;font-family:inherit;transition:all var(--t);font-weight:600;}
+.action-primary{background:var(--ink);color:white;}
+.action-primary:hover{background:var(--ink-soft);transform:translateY(-1px);}
+.action-secondary{background:var(--paper-2);color:var(--ink-soft);}
+.action-secondary:hover{background:var(--paper-3);}
+.action-weak{background:var(--red-soft);color:var(--red);border:1px solid rgba(192,57,43,.18);display:none;}
+.action-weak.show{display:block;}
+.action-weak:hover{background:var(--red);color:white;}
+
+/* PROGRESS HISTORY panel */
+.history-badge{display:inline-flex;align-items:center;gap:.35rem;background:var(--blue-soft);color:var(--blue);font-size:.68rem;font-family:sans-serif;border-radius:10px;padding:.18rem .6rem;margin-bottom:.9rem;cursor:pointer;border:none;font-weight:600;}
+.history-badge:hover{background:var(--blue);color:white;}
+.history-panel{background:var(--paper);border:1px solid var(--paper-3);border-radius:var(--r-sm);padding:.8rem;margin-bottom:1rem;display:none;text-align:left;}
+.history-panel.show{display:block;}
+.history-title{font-size:.7rem;font-family:sans-serif;font-weight:600;color:var(--ink-soft);margin-bottom:.5rem;letter-spacing:.05em;text-transform:uppercase;}
+.history-row{display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid var(--paper-2);font-size:.75rem;font-family:sans-serif;}
+.history-row:last-child{border-bottom:none;}
+.history-score{font-weight:bold;}
+.score-good{color:var(--green);} .score-mid{color:var(--amber);} .score-low{color:var(--red);}
+
+/* TOAST */
+.toast{position:fixed;bottom:1.4rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:white;padding:.55rem 1.1rem;border-radius:20px;font-size:.8rem;font-family:sans-serif;box-shadow:var(--shadow-md);transition:transform .3s ease;z-index:100;white-space:nowrap;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+@media(max-width:360px){.levels-grid{grid-template-columns:1fr;}.mode-tab{padding:.22rem .45rem;font-size:.62rem;}}
+
+  /* ── SAVE/RESTORE MODAL ──────────────────────────── */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;display:none;align-items:center;justify-content:center;padding:1rem;}
+  .modal-overlay.show{display:flex;}
+  .modal{background:white;border-radius:var(--r);padding:1.4rem;width:100%;max-width:380px;box-shadow:var(--shadow-lg);}
+  .modal-title{font-size:1rem;color:var(--ink);margin-bottom:.3rem;}
+  .modal-sub{font-size:.75rem;color:var(--ink-mute);font-family:sans-serif;margin-bottom:1rem;line-height:1.5;}
+  .code-box{width:100%;padding:.75rem;background:var(--paper-2);border:1.5px solid var(--paper-3);border-radius:var(--r-sm);font-family:monospace;font-size:.72rem;color:var(--ink);resize:none;height:80px;line-height:1.5;outline:none;}
+  .code-box:focus{border-color:var(--blue);}
+  .modal-actions{display:flex;gap:.5rem;margin-top:.8rem;}
+  .modal-btn{flex:1;padding:.72rem;border:none;border-radius:var(--r-sm);font-size:.84rem;cursor:pointer;font-family:inherit;font-weight:600;transition:all var(--t);}
+  .modal-btn-primary{background:var(--ink);color:white;}
+  .modal-btn-primary:hover{background:var(--ink-soft);}
+  .modal-btn-secondary{background:var(--paper-2);color:var(--ink-soft);}
+  .modal-btn-secondary:hover{background:var(--paper-3);}
+  .modal-btn-success{background:var(--green);color:white;}
+  /* ── INSTALL BANNER ──────────────────────────────── */
+  .install-banner{background:linear-gradient(135deg,#2d2d5a,#1a3a5c);border-radius:var(--r);padding:.8rem 1rem;display:flex;align-items:center;gap:.8rem;margin:0 1.2rem .7rem;max-width:calc(480px - 2.4rem);margin-left:auto;margin-right:auto;cursor:pointer;border:1px solid rgba(255,255,255,.15);display:none;}
+  .install-banner.show{display:flex;}
+  .install-icon{font-size:1.5rem;flex-shrink:0;}
+  .install-text{flex:1;}
+  .install-title{font-size:.84rem;color:#f0e6c8;font-weight:bold;}
+  .install-sub{font-size:.68rem;color:rgba(255,255,255,.5);font-family:sans-serif;margin-top:.1rem;}
+  .install-close{color:rgba(255,255,255,.4);font-size:1.1rem;padding:.2rem;cursor:pointer;flex-shrink:0;}
+  /* ── SAVE PROGRESS BUTTON (home screen) ─────────── */
+  .save-restore-row{display:flex;gap:.5rem;padding:0 1.2rem .6rem;max-width:480px;margin:0 auto;width:100%;}
+  .save-btn,.restore-btn{flex:1;padding:.65rem;border:1px solid rgba(255,255,255,.18);border-radius:var(--r-sm);background:rgba(255,255,255,.07);color:rgba(255,255,255,.8);font-size:.78rem;cursor:pointer;font-family:inherit;transition:all var(--t);display:flex;align-items:center;justify-content:center;gap:.35rem;}
+  .save-btn:hover,.restore-btn:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);}
+  /* ── SYNC INDICATOR ──────────────────────────────── */
+  .sync-dot{width:7px;height:7px;border-radius:50%;background:var(--amber);display:inline-block;margin-left:.3rem;vertical-align:middle;}
+  .sync-dot.synced{background:var(--green);}
+  .sync-dot.error{background:var(--red);}
+
+
+@keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ── WELCOME SCREEN ──────────────────────────────────── */
+  #welcome-screen {
+    background: linear-gradient(160deg, #1a1a2e 0%, #2d2d5a 50%, #1a3a5c 100%);
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    min-height: 100vh;
+  }
+  .welcome-card {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: var(--r);
+    padding: 2rem 1.5rem;
+    width: 100%;
+    max-width: 380px;
+    backdrop-filter: blur(8px);
+    text-align: center;
+  }
+  .welcome-logo {
+    font-size: 3rem;
+    margin-bottom: .8rem;
+  }
+  .welcome-title {
+    font-size: 1.4rem;
+    color: #f0e6c8;
+    letter-spacing: .06em;
+    margin-bottom: .3rem;
+  }
+  .welcome-sub {
+    font-size: .78rem;
+    color: rgba(255,255,255,.5);
+    font-family: sans-serif;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+  }
+  .welcome-label {
+    font-size: .78rem;
+    color: rgba(255,255,255,.6);
+    font-family: sans-serif;
+    text-align: left;
+    margin-bottom: .4rem;
+    display: block;
+  }
+  .welcome-input {
+    width: 100%;
+    padding: .85rem 1rem;
+    background: rgba(255,255,255,.1);
+    border: 1.5px solid rgba(255,255,255,.2);
+    border-radius: var(--r-sm);
+    color: white;
+    font-size: .95rem;
+    font-family: sans-serif;
+    outline: none;
+    transition: border-color var(--t);
+    margin-bottom: 1rem;
+  }
+  .welcome-input::placeholder { color: rgba(255,255,255,.3); }
+  .welcome-input:focus { border-color: #f0e6c8; }
+  .welcome-input.error { border-color: #e74c3c; }
+  .welcome-error {
+    font-size: .75rem;
+    color: #f5c6c0;
+    font-family: sans-serif;
+    margin-top: -.6rem;
+    margin-bottom: .8rem;
+    text-align: left;
+    display: none;
+  }
+  .welcome-error.show { display: block; }
+  .welcome-btn {
+    width: 100%;
+    padding: .9rem;
+    background: #f0e6c8;
+    color: #1a1a2e;
+    border: none;
+    border-radius: var(--r-sm);
+    font-size: .95rem;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all var(--t);
+    margin-bottom: 1rem;
+  }
+  .welcome-btn:hover { background: white; transform: translateY(-1px); }
+  .welcome-note {
+    font-size: .68rem;
+    color: rgba(255,255,255,.35);
+    font-family: sans-serif;
+    line-height: 1.5;
+  }
+  /* ── TEACHER MODE BANNER ─────────────────────────────── */
+  .teacher-banner {
+    background: rgba(38,96,164,.25);
+    border: 1px solid rgba(38,96,164,.4);
+    border-radius: var(--r-sm);
+    padding: .5rem 1rem;
+    font-size: .75rem;
+    font-family: sans-serif;
+    color: #a8c8f0;
+    text-align: center;
+    margin: .4rem 1.2rem .2rem;
+    max-width: calc(480px - 2.4rem);
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+  }
+  .teacher-banner.show { display: block; }
+  /* ── USER PILL (top of home screen) ─────────────────── */
+  .user-pill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .4rem 1.2rem .2rem;
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .user-email {
+    font-size: .7rem;
+    color: rgba(255,255,255,.45);
+    font-family: sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+  }
+  .user-signout {
+    font-size: .68rem;
+    color: rgba(255,255,255,.3);
+    font-family: sans-serif;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: .2rem .4rem;
+    border-radius: 4px;
+    transition: color var(--t);
+  }
+  .user-signout:hover { color: rgba(255,255,255,.7); }
+
+</style>
+</head>
+<body>
+
+
+
+<!-- WELCOME / LOGIN SCREEN -->
+<div id="welcome-screen" class="screen active">
+  <div class="welcome-card">
+    <div class="welcome-logo">📖</div>
+    <div class="welcome-title">华文词语温习</div>
+    <div class="welcome-sub">S1–4 Express Chinese · Vocabulary Revision</div>
+    <label class="welcome-label">请输入你的学校电邮地址</label>
+    <input
+      class="welcome-input"
+      id="welcome-email"
+      type="email"
+      placeholder="e.g. name@students.edu.sg"
+      autocomplete="email"
+      autocapitalize="none"
+      onkeydown="if(event.key==='Enter') submitWelcome()"
+    >
+    <div class="welcome-error" id="welcome-error"></div>
+    <button class="welcome-btn" onclick="submitWelcome()">开始学习 →</button>
+    <div class="welcome-note">
+      你的电邮地址只用于记录学习进度。<br>
+      首次输入后，无需再次登录。
+    </div>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="home-screen" class="screen">
+  <div class="home-header">
+    <div class="home-title">华文词语温习</div>
+    <div class="home-subtitle">S1–4 Express Chinese · Vocabulary Revision</div>
+  </div>
+
+  <!-- User identity pill -->
+  <div class="user-pill">
+    <span class="user-email" id="user-email-display"></span>
+    <button class="user-signout" onclick="signOut()">退出登录</button>
+  </div>
+  <!-- Teacher mode banner -->
+  <div class="teacher-banner" id="teacher-banner">
+    👩‍🏫 教师模式 — 学习记录不会被保存到数据表
+  </div>
+
+  <div class="progress-wrap">
+    <div class="overview-card">
+      <h3>总体进度</h3>
+      <div class="stat-row">
+        <div class="stat-item"><div class="stat-num" id="stat-total">992</div><div class="stat-label">词语</div></div>
+        <div class="stat-item"><div class="stat-num" id="stat-mastered">0</div><div class="stat-label">已掌握</div></div>
+        <div class="stat-item"><div class="stat-num" id="stat-learning">0</div><div class="stat-label">学习中</div></div>
+      </div>
+      <div class="global-bar"><div class="global-bar-fill" id="global-bar-fill" style="width:0%"></div></div>
+      <div class="global-bar-label" id="global-bar-label">0% 已掌握</div>
+    </div>
+  </div>
+
+
+<!-- Data loading indicator -->
+<div id="data-loader" style="display:none;align-items:center;justify-content:center;
+  gap:.6rem;background:rgba(255,255,255,.1);border-radius:8px;padding:.6rem 1rem;
+  margin:.3rem 1.2rem .5rem;max-width:calc(480px - 2.4rem);margin-left:auto;margin-right:auto;">
+  <div style="width:16px;height:16px;border:2px solid rgba(255,255,255,.3);
+    border-top-color:#f0e6c8;border-radius:50%;animation:spin .8s linear infinite;flex-shrink:0;"></div>
+  <div class="loader-msg" style="font-size:.75rem;color:rgba(255,255,255,.7);font-family:sans-serif;">
+    正在加载…
+  </div>
+</div>
+
+  <!-- Install banner (shown if installable) -->
+  <div class="install-banner" id="install-banner" onclick="triggerInstall()">
+    <div class="install-icon">📲</div>
+    <div class="install-text">
+      <div class="install-title">安装为应用程序</div>
+      <div class="install-sub">添加到主屏幕，随时使用，进度永久保存</div>
+    </div>
+    <div class="install-close" onclick="event.stopPropagation();dismissInstall()">✕</div>
+  </div>
+  <!-- Save / Restore row -->
+  <div class="save-restore-row">
+    <button class="save-btn" onclick="showSaveModal()">💾 保存进度</button>
+    <button class="restore-btn" onclick="showRestoreModal()">🔄 恢复进度</button>
+  </div>
+
+  <button class="weak-btn" id="weak-words-btn" onclick="startWeakWords()" style="display:none">
+    <div class="weak-btn-icon">⚠️</div>
+    <div class="weak-btn-text">
+      <div class="weak-btn-title">复习薄弱词语</div>
+      <div class="weak-btn-sub">专门练习你还不认识的词</div>
+    </div>
+    <div class="weak-btn-count" id="weak-count-badge">0</div>
+  </button>
+  <div class="levels-grid">
+    <button class="level-card" onclick="showLevel('中一')"><div class="level-card-accent acc-1"></div><div class="level-name">中一</div><div class="level-count" id="count-中一">280 词语</div><div class="level-mini-bar"><div class="level-mini-fill" id="bar-中一" style="width:0%"></div></div><div class="level-mastery-pct" id="pct-中一">0% 掌握</div></button>
+    <button class="level-card" onclick="showLevel('中二')"><div class="level-card-accent acc-2"></div><div class="level-name">中二</div><div class="level-count" id="count-中二">261 词语</div><div class="level-mini-bar"><div class="level-mini-fill" id="bar-中二" style="width:0%"></div></div><div class="level-mastery-pct" id="pct-中二">0% 掌握</div></button>
+    <button class="level-card" onclick="showLevel('中三')"><div class="level-card-accent acc-3"></div><div class="level-name">中三</div><div class="level-count" id="count-中三">269 词语</div><div class="level-mini-bar"><div class="level-mini-fill" id="bar-中三" style="width:0%"></div></div><div class="level-mastery-pct" id="pct-中三">0% 掌握</div></button>
+    <button class="level-card" onclick="showLevel('中四')"><div class="level-card-accent acc-4"></div><div class="level-name">中四</div><div class="level-count" id="count-中四">182 词语</div><div class="level-mini-bar"><div class="level-mini-fill" id="bar-中四" style="width:0%"></div></div><div class="level-mastery-pct" id="pct-中四">0% 掌握</div></button>
+  </div>
+</div>
+
+<!-- LEVEL -->
+<div id="level-screen" class="screen">
+  <div class="top-bar">
+    <button class="back-btn" onclick="showScreen('home-screen')">‹</button>
+    <div class="top-bar-title" id="level-screen-title">中一</div>
+  </div>
+  <div class="units-list" id="units-list"></div>
+</div>
+
+<!-- STUDY -->
+<div id="study-screen" class="screen">
+  <div class="study-header">
+    <div class="study-nav">
+      <button class="back-btn" onclick="exitStudy()">‹</button>
+      <div class="study-title" id="study-title"></div>
+    </div>
+    <div class="mode-tabs">
+      <button class="mode-tab active" data-mode="flashcard" onclick="switchMode('flashcard')">闪卡</button>
+      <button class="mode-tab" data-mode="mcq" onclick="switchMode('mcq')">中文选择</button>
+      <button class="mode-tab" data-mode="cloze" onclick="switchMode('cloze')">填空选择</button>
+      <button class="mode-tab" data-mode="english" onclick="switchMode('english')">英文翻译</button>
+    </div>
+    <div class="study-progress-bar"><div class="study-progress-fill" id="study-progress-fill" style="width:0%"></div></div>
+  </div>
+
+  <!-- Flashcard -->
+  <div id="flashcard-mode" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem;gap:.8rem;">
+    <div class="card-counter" id="fc-counter">1 / 20</div>
+    <div class="flashcard" id="flashcard" onclick="flipCard()">
+      <div class="card-face card-front">
+        <span class="card-tag">词语</span>
+        <div class="word-display" id="fc-word"></div>
+        <div class="word-context" id="fc-context"></div>
+        <div class="card-tap-hint">点击翻转 ▾</div>
+      </div>
+      <div class="card-face card-back">
+        <span class="card-tag">释义</span>
+        <div class="def-word" id="fc-back-word"></div>
+        <div class="def-meaning" id="fc-meaning"></div>
+        <div class="def-example" id="fc-example"></div>
+      </div>
+    </div>
+    <div class="self-mark-btns" id="self-mark-btns" style="display:none">
+      <button class="mark-btn mark-unknown" onclick="markWord(false)">✗ 还不认识</button>
+      <button class="mark-btn mark-known" onclick="markWord(true)">✓ 认识了</button>
+    </div>
+    <div class="flip-hint" id="fc-hint">先想想这个词的意思，再翻开查看</div>
+  </div>
+
+  <!-- MCQ: Chinese meaning -->
+  <div class="mcq-wrap" id="mcq-mode" style="display:none">
+    <div class="mcq-question-card">
+      <div class="mcq-prompt-label">这个词语是什么意思？</div>
+      <div class="mcq-word" id="mcq-word"></div>
+      <div class="mcq-context" id="mcq-context"></div>
+    </div>
+    <div class="mcq-options" id="mcq-options"></div>
+    <div class="mcq-feedback" id="mcq-feedback"></div>
+    <button class="next-btn" id="mcq-next" onclick="nextQuestion()">下一题 →</button>
+  </div>
+
+  <!-- Cloze: sentence + MCQ options -->
+  <div class="cloze-wrap" id="cloze-mode" style="display:none">
+    <div class="cloze-card">
+      <div class="cloze-label">选出正确的词语填入空格</div>
+      <div class="cloze-sentence" id="cloze-sentence"></div>
+    </div>
+    <div class="mcq-options" id="cloze-options"></div>
+    <div class="cloze-feedback" id="cloze-feedback"></div>
+    <button class="next-btn" id="cloze-next" onclick="nextQuestion()">下一题 →</button>
+  </div>
+
+  <!-- English translation MCQ -->
+  <div class="mcq-wrap" id="english-mode" style="display:none">
+    <div class="mcq-question-card">
+      <div class="eng-badge">🇬🇧 English Translation</div>
+      <div class="mcq-prompt-label">Which is the correct English meaning?</div>
+      <div class="mcq-word" id="eng-word"></div>
+      <div class="mcq-context" id="eng-context"></div>
+    </div>
+    <div class="mcq-options" id="eng-options"></div>
+    <div class="mcq-feedback" id="eng-feedback"></div>
+    <button class="next-btn" id="eng-next" onclick="nextQuestion()">Next →</button>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div id="results-screen" class="screen">
+  <div class="results-card" style="margin:1rem auto 0;">
+    <div class="results-emoji" id="res-emoji">🎉</div>
+    <div class="results-title" id="res-title">练习完成！</div>
+    <div class="results-subtitle" id="res-subtitle"></div>
+    <div class="score-ring">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <circle cx="45" cy="45" r="36" fill="none" stroke="#e4e2d8" stroke-width="7"/>
+        <circle cx="45" cy="45" r="36" fill="none" stroke="#1a7a4a" stroke-width="7"
+                stroke-dasharray="226" id="score-ring-circle" stroke-dashoffset="226"
+                stroke-linecap="round"/>
+      </svg>
+      <div class="score-text">
+        <div class="score-num" id="res-score-num">0%</div>
+        <div class="score-label">正确率</div>
+      </div>
+    </div>
+    <div class="results-stats">
+      <div class="res-stat"><div class="res-stat-num col-green" id="res-correct">0</div><div class="res-stat-label">答对</div></div>
+      <div class="res-stat"><div class="res-stat-num col-red" id="res-wrong">0</div><div class="res-stat-label">答错</div></div>
+      <div class="res-stat"><div class="res-stat-num col-blue" id="res-total-q">0</div><div class="res-stat-label">共</div></div>
+    </div>
+    <!-- Progress history -->
+    <button class="history-badge" onclick="toggleHistory()">📊 查看历史成绩</button>
+    <div class="history-panel" id="history-panel">
+      <div class="history-title">本单元历史记录</div>
+      <div id="history-rows">暂无记录</div>
+    </div>
+    <div class="weak-preview" id="weak-preview">
+      <div class="weak-preview-title">⚠️ 需要继续练习的词语</div>
+      <div class="weak-words-chips" id="weak-chips"></div>
+    </div>
+    <div class="results-actions">
+      <button class="action-btn action-weak" id="btn-retry-weak" onclick="retryWeak()">🔁 只练习错误的词语</button>
+      <button class="action-btn action-primary" onclick="retryAll()">重新练习全部</button>
+      <button class="action-btn action-secondary" onclick="exitStudy()">返回词语列表</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- SAVE MODAL -->
+<div class="modal-overlay" id="save-modal">
+  <div class="modal">
+    <div class="modal-title">💾 保存进度</div>
+    <div class="modal-sub">复制下方的进度码，粘贴到你的备忘录或发邮件给自己。下次打开时用「恢复进度」输入此码，即可还原所有学习记录。</div>
+    <textarea class="code-box" id="save-code-box" readonly></textarea>
+    <div class="modal-actions">
+      <button class="modal-btn modal-btn-primary" id="copy-btn" onclick="copyCode()">📋 复制进度码</button>
+      <button class="modal-btn modal-btn-secondary" onclick="closeSaveModal()">关闭</button>
+    </div>
+  </div>
+</div>
+<!-- RESTORE MODAL -->
+<div class="modal-overlay" id="restore-modal">
+  <div class="modal">
+    <div class="modal-title">🔄 恢复进度</div>
+    <div class="modal-sub">将之前保存的进度码粘贴到下方，然后点击「恢复」。</div>
+    <textarea class="code-box" id="restore-code-box" placeholder="在此粘贴进度码…"></textarea>
+    <div class="modal-actions">
+      <button class="modal-btn modal-btn-primary" onclick="restoreFromCode()">✓ 恢复进度</button>
+      <button class="modal-btn modal-btn-secondary" onclick="closeRestoreModal()">取消</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const VOCAB = {
+  "中一": {
+    "单元一 生活空间": ["淘气","惹","两肋插刀","赵","科技","来者不拒","口头禅","小事一桩","人缘","性格","直率","得罪","别扭","争辩","即使","冤枉","推荐","有福同享，有难同当","助人为快乐之本","健将","内向","系列"],
+    "单元一 核心": ["捣乱","瞬间","兴致勃勃","粘","蛋液","狼狈","讥讽","赌气","嚷","小心翼翼","荧光笔","抵挡","拉扯","手足无措","布置","体会","服气","证明","居然","恨不得"],
+    "单元一 巩固": ["审案","律师","振振有词","心虚","哑口无言","判决","泄","既然","辩护","报复","错误"],
+    "单元二 生活空间": ["葡萄","象征","风俗","辞旧迎新","燃放","瓶瓶罐罐","厄运","前夕","碗碟","预示","兆头","忙碌","遥远","恭敬","万事大吉","元旦","除夕"],
+    "单元二 核心": ["贼","鱼尾纹","装饰","圣诞","格格不入","结婚","嫁","视讯","沉默寡言","副","酷","承诺","歉意","围炉","蒸腾","叽叽喳喳","缺席","悦耳","闹别扭","吞吞吐吐"],
+    "单元二 巩固": ["红枣","儿媳妇","莫名其妙","疑惑","大吉大利"],
+    "单元三 生活空间": ["魅力","博物馆","悠久","遗产","巴刹","同胞","融合","皇宫","城堡","时尚","彩绘","流连忘返","娱乐","探索","娘惹","拍摄","平均","繁忙","闪耀","文明","品尝","安详","休闲"],
+    "单元三 核心": ["横梁","覆盖","玻璃","瀑布","循环","谷","株","设施","蹦跳","甚至","主题","别具一格"],
+    "单元三 巩固": ["投降","自治","栏","棕色","氧化","陌生","宁静","属于","面积","天花板"],
+    "单元四 生活空间": ["坚持不懈","开卷有益","以礼待人","新颖","戏剧","工作坊","尴尬","维护","友谊","一帆风顺","有效","策略","嘉宾","辅导员","一诺千金","言出必行","起码"],
+    "单元四 核心": ["赖床","滋味","催促","哀求","硬着头皮","藤鞭","抡","挨打","女佣","雨蓬","泪痕","猛","嗓子眼","允许","早晨","毛病","不得了","居然","情愿","缘故"],
+    "单元四 巩固": ["相貌","讲究","何必","记账","亏","撇","慢条斯理","起航","焦急","记性","精明"],
+    "单元五 生活空间": ["剩","牙膏","橡皮擦","薯条","番茄酱","偶尔","评委","晋级","奖励","获得","企业","创新"],
+    "单元五 核心": ["牧场","潜水","艘","屁股","翘","潜水艇","仿佛","确切","浑身","基因","一哄而散","手势","颁布","泛","泡沫","腾空而起","降落","打量"],
+    "单元五 巩固": ["伤脑筋","拜访","中央","漫步","绞尽脑汁","华侨","银行","由衷","摩天大楼","薄薄的","抨击","挫折","打交道","而已"],
+    "单元六 生活空间": ["油漆","栏杆","宿舍","凭","欣慰","订购","塔台","范围","特殊","警惕","失误","不堪设想","脂肪","及时","一旦","心满意足"],
+    "单元六 核心": ["截至","行驶","延误","稳定","幕后","贡献","明知山有虎，偏向虎山行","漏夜","轨道","凌晨","就绪","隧道","扫描","裂痕","顺畅","全力以赴","职业","故障","岗位","维修","确保","投入","默默无闻"],
+    "单元六 巩固": ["新谣","芝麻","朗朗上口","奉献","繁荣","平凡","光芒","微不足道","敬业乐业"]
+  },
+  "中二": {
+    "单元一 生活空间": ["犹豫","不分青红皂白","教训","叛逆","委屈","内疚","不妨","匿名","监督","代沟","上瘾","疏远","迎刃而解","体谅","无可厚非"],
+    "单元一 核心": ["称赞","崇拜","爱不释手","碰钉子","泼冷水","抽屉","精疲力竭","衰老","抑郁","寂寞","启齿","打退堂鼓","懊恼","伺机","心不在焉","破天荒","仓促","打理","家务"],
+    "单元一 巩固": ["严肃","安抚","干脆","风筝","挣脱","惊讶","斑","缠绕","搂"],
+    "单元二 生活空间": ["捐款","拯救","医疗","研究","优惠","券","四肢","敏捷","穿梭","友善","辨识","害羞","馋","调皮","摔跤","推出","亲切","大摇大摆","独一无二","凶猛"],
+    "单元二 核心": ["尤其","愧疚","光泽","懒懒地","妻子","啾啾","仰","凝望","鸟笼","隔","愤怒","畏罪潜逃","喵","衔","搞","失踪","估计","活泼"],
+    "单元二 巩固": ["丰富","褐","盘旋","丝毫","面面相觑","愣","傻","急促"],
+    "单元三 生活空间": ["因素","水喉","资源","艰巨","昂贵","消耗","干旱","扩大","蓄水池","洗澡","浴室","趋势","开源节流"],
+    "单元三 核心": ["媒体","塑料","吨","廉价","提供","铺","污染","焚烧","烟尘","土壤","遏制","倡导","逐渐","威胁","煞费苦心"],
+    "单元三 巩固": ["统计","选择","泛滥","寿命","途径","缺乏","亿","遗憾","谨慎","妥善"],
+    "单元四 生活空间": ["自卑","身材","羡慕","抗拒","诱惑","毅力","戒","茫然","瞌睡","嫌","逼","烹饪","符合","选修"],
+    "单元四 核心": ["憋","委婉","彻底","缝","掩","恐惧","走廊","锁","熄灯","颤抖","隐约","瑟瑟","恐怖","通宵","惊悚","和谐","冤家","误会"],
+    "单元四 巩固": ["脖子","社交媒体","缺陷","姿势","拘束","嘈杂","沮丧","若有所思","模糊","敏感","掩饰","摄影","谷底"],
+    "单元五 生活空间": ["简陋","政府","开辟","市镇","宗教","综合","诊疗所","经济","蓬勃","富裕","变迁","障碍","驰名","屡次","荣誉"],
+    "单元五 核心": ["姿态","接触","翠绿","心旷神怡","合拢","林荫","樟宜","耸立","温馨","欣赏","粗糙","婆娑","撑","同甘共苦","茁壮","移民","接纳","无怨无悔","千姿百态","空旷"],
+    "单元五 巩固": ["患","失智症","寻找","流逝","嬉戏","咖喱卜","俏皮","鲜艳","承载","沉重"],
+    "单元六 生活空间": ["贸易","丝绸","陆地","奢侈","瓷器","仪式","秉持","枢纽","港口","致力","勾勒","高瞻远瞩","运输","传承"],
+    "单元六 核心": ["可谓","岛屿","海峡","历史","挖掘","区域","汇集","赋予","海纳百川","椰浆饭","黄姜饭","发芽","兼容并蓄","携手","辉煌","得天独厚","给予","婉转","瞩目","求同存异"],
+    "单元六 巩固": ["皇帝","典型","普及","真伪","步伐","询问","人云亦云","免疫","凝聚力","辨别"]
+  },
+  "中三": {
+    "单元一 生活空间": ["良好","人际","坦率","隐瞒","粗鲁","分歧","矛盾","磋商","彼此","融洽","诀窍","聆听","死党","强迫"],
+    "单元一 核心": ["橱窗","狭窄","铅笔盒","拧","抿","肺炎","纸屑","肿瘤","癌症","徒劳无功","擦拭","某","苍白","鼓掌","忠实","异乎寻常","痊愈","清晰"],
+    "单元一 巩固": ["调剂","目睹","鄙夷","流淌","窗帘","提心吊胆","封","古董","衡量","纯洁","歧途"],
+    "单元二 生活空间": ["蔬菜","麦片","蛋白质","睡眠","体魄","频率","韵律","汲取","敞开","心扉","缔造","聊天","郊外","淋漓","手札","抒发","休憩","均衡","享受"],
+    "单元二 核心": ["饮茶","唐","磨","葱","橘子","宋","鼎盛","柴","醋","沸水","调匀","搅拌","步骤","鉴赏","消暑","菌","所谓","源远流长","异军突起","五花八门"],
+    "单元二 巩固": ["舞蹈","节奏","霹雳舞","肌肉","风靡","掀起","热潮","雨后春笋","爆发力","默契","焕发"],
+    "单元三 生活空间": ["真挚","名额","链接","师傅","擅长","裁缝","编织","匠人","烘焙","讲述","黎明","苏醒","禽","晚霞","添砖加瓦","族裔","鲜为人知","宵夜"],
+    "单元三 核心": ["唇齿相依","亲戚","援手","侥幸","慷慨解囊","渡","篱笆","心力交瘁","雪中送炭","恰好","弥补","谚语","和睦","冷漠","挑剔"],
+    "单元三 巩固": ["网络","开销","锯子","遛","拴","渠道","弊端","划算","久而久之"],
+    "单元四 生活空间": ["培训","阐述","铿锵","雅俗","抑扬顿挫","僵硬","言简意赅","啰唆","遐想","枯燥","筛选","欲","浏览","沟通","举手投足","乏味"],
+    "单元四 核心": ["润滑剂","不胜枚举","扼腕","体恤","氛围","谦虚","裨益","严峻","流言蜚语","扰乱","甚嚣尘上","基础","涵盖","畅所欲言","尊重","广泛","导致"],
+    "单元四 巩固": ["崛起","颠覆","报刊","书籍","传播","拨","限制","天涯","屏幕","按钮","疆界","庞大","前所未有","创建"],
+    "单元五 生活空间": ["阶段","同侪","撰写","筹备","募捐","实践","震撼","循规蹈矩","融会贯通","腼腆","咨询","数据","分析","冰淇淋","充实","贯穿","勇于"],
+    "单元五 核心": ["雄鹰","渺小","坐井观天","自鸣得意","孤陋寡闻","奥妙","寓言","桨","浅尝辄止","哲学","比喻","热忱","持之以恒","清澈","干涸","浇灌","九牛一毛"],
+    "单元五 巩固": ["落伍","楷模","孜孜不倦","敷衍","逆水行舟","淘汰","佐证","平庸","岂","层出不穷"],
+    "单元六 生活空间": ["诠释","抛锚","郁闷","叼","逗","挑战","绊","攀登","雀跃","山脉","宇宙","体验","信任","依赖"],
+    "单元六 核心": ["跋涉","牵挂","唤","喉咙","绽放","绷","一般","无奈","寺庙","幽静","诧异","贱","哽咽","眼眶","咀嚼","搬迁","孝顺","探望","谅解"],
+    "单元六 巩固": ["隆重","诅咒","洋溢","慈祥","潭","教授","割舍","神圣","介意","演奏"]
+  },
+  "中四": {
+    "单元一 生活空间": ["责无旁贷","分忧","残障","聘请","同工同酬","权利","雇主","纠纷","小贩","摊位","呵护","缓解"],
+    "单元一 核心": ["乞丐","跪","肮脏","贫穷","赤裸裸","祈求","距离","慈悲","阻挡","肆无忌惮","褴褛","革履","侦探","仁慈","叩头","残疾"],
+    "单元一 巩固": ["质朴","大概","晓得","蓦然","推心置腹","否则","感恩","匆匆","婴儿","翅膀"],
+    "单元二 生活空间": ["呈献","扣人心弦","爱恋","唏嘘","著名","兴旺","负荷","反映","岔路口","惆怅","紧凑","小卒","兴衰"],
+    "单元二 核心": ["轿子","何况","耻笑","搀扶","罢了","姊妹","顽劣","溺爱","颈项","鬓","桃","瓣","重逢","稀罕","拜见","面善","大吃一惊"],
+    "单元二 巩固": ["三顾茅庐","争霸","足智多谋","起伏","斥责","严寒","恳请","心直口快"],
+    "单元三 生活空间": ["酿","涌","繁殖","饲料","佳肴","啃","入侵","盎然","砍伐","栖息","牢记","勿","惩罚","平衡","珍稀"],
+    "单元三 核心": ["茂密","恶劣","浸泡","牺牲","锐减","保育","储存","身躯","侵蚀","空隙","堤","貌不惊人"],
+    "单元三 巩固": ["窥视","宣布","狩猎","饥饿","糟蹋","毁灭","罪魁祸首","竞争","袭击","违背","拼搏","面目全非","举措"],
+    "单元四 生活空间": ["联盟","迄今","蜿蜒","辽阔","诸多","古迹","雕刻","啧啧称奇","赞叹","底蕴","灿烂","金碧辉煌","绚丽","高耸"],
+    "单元四 核心": ["颇","独树一帜","赋税","揭竿而起","暴虐","葬送","推卸","停滞","趾高气扬","谦逊","梦寐以求","昌盛","自知之明","忍无可忍","一无是处"],
+    "单元四 巩固": ["协作","论坛","毋庸讳言","棘手","肆虐","谋求"],
+    "单元五 生活空间": ["里程碑","开拓","先驱","气馁","出类拔萃","韧性","浩瀚","天方夜谭","百折不挠","研发","畅销"],
+    "单元五 核心": ["贬","粮食","豁达","满腔","霜","遣","挽","豪迈","慷慨激昂","勉励","朝廷","笔锋"],
+    "单元五 巩固": ["扎","喧腾","感悟","崭新","迥然","奋斗","崎岖","抵达"]
+  }
+};
+
+const DEFS_FALLBACK = {
+  "淘气": "顽皮，不听话",
+  "惹": "引起，招来（麻烦等）",
+  "两肋插刀": "比喻讲义气，为朋友不惜冒险",
+  "赵": "姓赵，中文常见姓氏之一",
+  "科技": "科学和技术的合称",
+  "来者不拒": "凡是来的都不拒绝",
+  "口头禅": "经常挂在嘴边的词语",
+  "小事一桩": "形容事情简单，不值一提",
+  "人缘": "与他人相处的关系，受人喜爱的程度",
+  "性格": "一个人在行为和态度上的特点",
+  "直率": "坦诚，不拐弯抹角",
+  "得罪": "触怒，冒犯别人",
+  "别扭": "不顺心，感到不舒服",
+  "争辩": "争论，各持己见地辩论",
+  "即使": "即便，就算",
+  "冤枉": "错怪，诬陷好人",
+  "推荐": "介绍，建议别人使用或接受",
+  "有福同享，有难同当": "好事一起分享，困难一起面对，形容同甘共苦的情谊",
+  "助人为快乐之本": "帮助别人是快乐的根本来源",
+  "健将": "在某方面技艺高超、成绩突出的人",
+  "内向": "性格内敛，不善与人交往",
+  "系列": "一组相互关联的事物",
+  "捣乱": "故意破坏，制造麻烦",
+  "瞬间": "极短的时间，一瞬",
+  "兴致勃勃": "形容兴趣很高，精神饱满",
+  "粘": "用胶水等使物体附着在一起",
+  "蛋液": "打散后的鸡蛋液体",
+  "狼狈": "处境窘迫，非常难堪",
+  "讥讽": "用尖刻的话嘲笑",
+  "赌气": "因不满或委屈而故意做某事",
+  "嚷": "大声叫喊",
+  "小心翼翼": "形容举动谨慎，丝毫不敢疏忽",
+  "荧光笔": "能在纸上画出鲜艳荧光颜色的笔，常用于标注重点",
+  "抵挡": "阻挡，抗拒",
+  "拉扯": "用力拉或拖拽；也指抚养",
+  "手足无措": "形容慌乱，不知道怎么办",
+  "布置": "安排、设置任务、环境等",
+  "体会": "通过亲身经历而理解感受",
+  "服气": "心服口服，承认别人强",
+  "证明": "用事实或材料说明某事为真",
+  "居然": "没想到竟然这样",
+  "恨不得": "非常希望能做某事",
+  "审案": "审理案件",
+  "律师": "依法为当事人提供法律帮助的专业人士",
+  "振振有词": "形容说话理由充分，理直气壮",
+  "心虚": "做了亏心事而感到害怕",
+  "哑口无言": "无话可说",
+  "判决": "法庭对案件作出的最终裁定",
+  "泄": "气体或液体漏出；也指发泄",
+  "既然": "表示在已有前提下做出推断，意思是既已如此",
+  "辩护": "为被告辩解，维护其权利",
+  "报复": "对别人的伤害进行反击",
+  "错误": "不正确的做法或想法",
+  "葡萄": "一种常见水果，圆形，成串生长",
+  "象征": "用具体事物代表某种抽象意义",
+  "风俗": "民间长期形成的习惯和传统",
+  "辞旧迎新": "告别旧年，迎接新年",
+  "燃放": "点燃（鞭炮等）使其爆发",
+  "瓶瓶罐罐": "泛指各种大小不一的瓶子和罐子",
+  "厄运": "不幸的遭遇",
+  "前夕": "某重要日子的前一天晚上",
+  "碗碟": "碗和碟子，泛指餐具",
+  "预示": "预先显示，暗示将要发生的事",
+  "兆头": "预示吉凶的征兆",
+  "忙碌": "事情多，非常繁忙",
+  "遥远": "距离或时间上很远",
+  "恭敬": "对人尊敬有礼貌",
+  "万事大吉": "一切事情都很顺利",
+  "元旦": "公历一月一日，即新年第一天",
+  "除夕": "农历年的最后一天，也叫大年三十",
+  "贼": "偷东西的人；小偷",
+  "鱼尾纹": "眼角处像鱼尾形状的细纹，通常随年龄增长而出现",
+  "装饰": "用物品点缀、美化环境",
+  "圣诞": "指圣诞节，即十二月二十五日，西方重要节日",
+  "格格不入": "形容与周围不协调，难以相容",
+  "结婚": "男女通过婚姻仪式成为夫妻",
+  "嫁": "女性与男性成婚，出嫁",
+  "视讯": "通过视频进行通话，即视频通话",
+  "沉默寡言": "话很少，不爱说话",
+  "副": "量词，用于成套的东西；也指辅助性的",
+  "酷": "形容某人或某事很帅气（口语）",
+  "承诺": "答应做某事",
+  "歉意": "道歉的心意",
+  "围炉": "围在炉火旁聚餐，尤指除夕夜团圆饭的习俗",
+  "蒸腾": "（水汽）向上升起；形容气势盛大",
+  "叽叽喳喳": "形容嘈杂的说话声",
+  "缺席": "应该出席而没有出席",
+  "悦耳": "听起来好听，令人愉快",
+  "闹别扭": "因小事产生矛盾，闹不愉快",
+  "吞吞吐吐": "说话不流畅，有所隐瞒",
+  "红枣": "一种红色的干果，常用于烹饪和药用",
+  "儿媳妇": "儿子的妻子，即儿媳",
+  "莫名其妙": "不明原因，难以解释",
+  "疑惑": "感到怀疑、不明白",
+  "大吉大利": "非常吉祥如意",
+  "魅力": "吸引人的力量",
+  "博物馆": "收藏、展示历史文物或艺术品的场所",
+  "悠久": "历史长久",
+  "遗产": "前人留下的财富或成就",
+  "巴刹": "马来语，指传统露天市场或菜市场",
+  "同胞": "同一国家或民族的人；也指兄弟姐妹",
+  "融合": "相互融入，结合在一起",
+  "皇宫": "皇帝或国王居住的宫殿",
+  "城堡": "古代用于防御的大型石头建筑",
+  "时尚": "符合当前流行趋势的风格",
+  "彩绘": "色彩丰富的图画或装饰画",
+  "流连忘返": "舍不得离开",
+  "娱乐": "使人快乐、消遣的活动",
+  "探索": "深入寻找和研究未知事物",
+  "娘惹": "指峇峇娘惹文化，是马来半岛华人与当地人通婚后形成的独特文化",
+  "拍摄": "用相机或摄影机拍照或录影",
+  "平均": "把总量按比例分配，不高不低，均等",
+  "繁忙": "事情多，非常忙碌",
+  "闪耀": "发出耀眼的光芒",
+  "文明": "人类社会发展到较高阶段时形成的文化成就",
+  "品尝": "仔细地吃、喝，以感受味道",
+  "安详": "平静而从容，没有焦虑或紧张",
+  "休闲": "放松、娱乐，无需工作的时间",
+  "横梁": "水平方向支撑建筑物的梁",
+  "覆盖": "遮盖、铺满在上面",
+  "玻璃": "一种透明的坚硬材料，常用于窗户",
+  "瀑布": "从高处落下的水流，形成水帘",
+  "循环": "反复经过同一过程，周而复始",
+  "谷": "两山之间低洼的地方；也指山谷",
+  "株": "量词，用于植物",
+  "设施": "为某种需要而建立的机构、系统或建筑",
+  "蹦跳": "跳跃，活泼地跳来跳去",
+  "甚至": "表示程度更深，连……也",
+  "主题": "中心思想或话题",
+  "别具一格": "具有独特的风格",
+  "投降": "放弃抵抗，向敌方屈服",
+  "自治": "自己管理自己的事务，不受外力控制",
+  "栏": "拦挡的围栏；也指报纸或书的栏目",
+  "棕色": "深褐色，像木材或泥土一样的颜色",
+  "氧化": "物质与氧气结合，发生化学变化",
+  "陌生": "不熟悉，不认识",
+  "宁静": "安静、平和，没有喧闹",
+  "属于": "归某人所有；是某事物的一部分",
+  "面积": "平面或物体表面的大小",
+  "天花板": "房间顶部的内表面",
+  "坚持不懈": "坚定不移地做下去",
+  "开卷有益": "读书总有好处",
+  "以礼待人": "用礼貌的态度对待别人",
+  "新颖": "新鲜独特，与众不同",
+  "戏剧": "一种表演艺术，通过演员扮演角色来讲述故事",
+  "工作坊": "以实践和互动为主的小型培训或学习活动",
+  "尴尬": "处于两难境地，窘迫",
+  "维护": "保持、保障（关系、权利等）",
+  "友谊": "朋友之间的感情和关系",
+  "一帆风顺": "比喻非常顺利",
+  "有效": "能够达到预期效果的",
+  "策略": "为达到某目标而制定的计划或方法",
+  "嘉宾": "被邀请参加活动的特别客人",
+  "辅导员": "提供指导和帮助的人，如学校里的咨询老师",
+  "一诺千金": "说话算数，守信用",
+  "言出必行": "说了就一定做到",
+  "起码": "至少；最低限度",
+  "赖床": "不想起床，赖着不起",
+  "滋味": "味道；也指某种感受或体验",
+  "催促": "督促别人快点做",
+  "哀求": "苦苦请求",
+  "硬着头皮": "勉强去做不愿意或害怕的事",
+  "藤鞭": "用藤条做成的鞭子，旧时用来体罚",
+  "抡": "用力挥舞手或器具",
+  "挨打": "被人打，受到体罚",
+  "女佣": "在家庭中工作的女性帮佣",
+  "雨蓬": "遮雨用的顶棚或遮篷",
+  "泪痕": "哭泣后留在脸上的泪水痕迹",
+  "猛": "突然而且有力；勇猛",
+  "嗓子眼": "喉咙，泛指嗓子的位置",
+  "允许": "答应，给予许可",
+  "早晨": "一天中最早的时间，通常指日出后到上午",
+  "毛病": "小缺点或坏习惯；也指问题、故障",
+  "不得了": "形容程度极深，非常厉害",
+  "情愿": "宁愿，甘愿",
+  "缘故": "原因",
+  "相貌": "面容，容貌",
+  "讲究": "注重，对……要求很高",
+  "何必": "表示不必要，没有必要",
+  "记账": "把收入和支出记录下来",
+  "亏": "吃亏，损失；也指幸好",
+  "撇": "汉字的一种笔画；也指撇开",
+  "慢条斯理": "形容说话做事不慌不忙",
+  "起航": "船或飞机出发，开始航行",
+  "焦急": "非常着急",
+  "记性": "记忆力，记住事情的能力",
+  "精明": "聪明能干，善于算计",
+  "剩": "还留着，没用完的",
+  "牙膏": "用来刷牙清洁口腔的膏状物",
+  "橡皮擦": "用来擦去铅笔痕迹的文具",
+  "薯条": "用土豆切片油炸而成的食品",
+  "番茄酱": "用番茄制成的酱料，常用于蘸食",
+  "偶尔": "有时候，不经常地",
+  "评委": "评审委员，负责评分的人",
+  "晋级": "升到更高的级别或阶段",
+  "奖励": "为鼓励好行为或成就而给予的报酬",
+  "获得": "得到，取得",
+  "企业": "从事经济活动的组织，即公司或商业机构",
+  "创新": "创造新的事物或方法",
+  "牧场": "饲养牲畜、供其活动的草地或场所",
+  "潜水": "到水下去观察或进行活动",
+  "艘": "量词，用于船只",
+  "屁股": "人体后面坐着的部位，即臀部",
+  "翘": "向上弯起或突起",
+  "潜水艇": "能在水下行驶的船只",
+  "仿佛": "好像，似乎",
+  "确切": "准确、明确，没有模糊的地方",
+  "浑身": "全身，身体的每个部分",
+  "基因": "遗传信息的基本单位，决定生物的特征",
+  "一哄而散": "形容人群很快就散开了",
+  "手势": "用手的动作来传达意思",
+  "颁布": "正式公布或宣布（法令、规定等）",
+  "泛": "漂浮；也指广泛、不具体",
+  "泡沫": "气体在液体中形成的小气泡聚合物",
+  "腾空而起": "向上飞起",
+  "降落": "从高处落下；飞机落地",
+  "打量": "仔细观察，打量别人",
+  "伤脑筋": "让人感到困难、棘手",
+  "拜访": "前去看望某人，通常带有礼貌的意思",
+  "中央": "中间，中心的地方",
+  "漫步": "悠闲地慢慢走",
+  "绞尽脑汁": "竭尽全力地思考",
+  "华侨": "旅居海外的中国籍人士或有中国血统的人",
+  "银行": "经营存款、放款等金融业务的机构",
+  "由衷": "发自内心",
+  "摩天大楼": "极高的大楼",
+  "薄薄的": "厚度很小的，很薄",
+  "抨击": "严厉批评",
+  "挫折": "失败或受阻",
+  "打交道": "与人交往、接触",
+  "而已": "罢了，不过如此，表示仅限于此",
+  "油漆": "涂在物体表面的液体涂料",
+  "栏杆": "防止人跌落的护栏",
+  "宿舍": "供工人、学生等集体居住的房间",
+  "凭": "依靠，根据；也指凭借",
+  "欣慰": "感到高兴而安慰",
+  "订购": "预先付款或签约购买商品",
+  "塔台": "机场中用于指挥飞机起降的控制塔",
+  "范围": "涉及的界限或区域",
+  "特殊": "与众不同，不普通的",
+  "警惕": "警觉，保持戒备",
+  "失误": "因疏忽或不小心而造成的错误",
+  "不堪设想": "后果非常严重",
+  "脂肪": "储存在身体内的能量物质，俗称油脂",
+  "及时": "在适当的时间，没有拖延",
+  "一旦": "表示如果有一天，假设某事发生",
+  "心满意足": "感到非常满意，没有遗憾",
+  "截至": "到某个时间为止",
+  "行驶": "（车辆、船只等）在道路或水上移动",
+  "延误": "因耽搁而造成时间上的损失",
+  "稳定": "平稳，不容易发生变化或出现问题",
+  "幕后": "不在公众面前，在背后进行的工作",
+  "贡献": "为某事物做出有益的努力或给予支持",
+  "明知山有虎，偏向虎山行": "明明知道有危险，却偏偏要去面对，形容勇于迎难而上",
+  "漏夜": "连夜，深夜不休息地工作",
+  "轨道": "供火车或地铁行驶的铁路",
+  "凌晨": "午夜之后到天亮之前的时间段",
+  "就绪": "准备好，一切都安排妥当",
+  "隧道": "穿过山或地下的通道",
+  "扫描": "用仪器或眼睛快速浏览或检测",
+  "裂痕": "物体表面出现的裂缝",
+  "顺畅": "没有阻碍，流利通畅",
+  "全力以赴": "拿出全部力量去做",
+  "职业": "一个人从事的工作或专业",
+  "故障": "机器或系统出现问题，无法正常运作",
+  "岗位": "工作的职位或位置",
+  "维修": "修理和保养，使其恢复正常状态",
+  "确保": "使某事一定会发生或做到",
+  "投入": "专注地投身于某件事；也指投资",
+  "默默无闻": "无声无息，不为人所知",
+  "新谣": "新加坡华语创作歌谣，是本地流行文化的重要组成部分",
+  "芝麻": "一种细小的油料作物种子；比喻小事",
+  "朗朗上口": "容易读、说，音调流畅悦耳",
+  "奉献": "献出（精力、力量等）",
+  "繁荣": "兴旺，经济或社会蓬勃发展",
+  "平凡": "普通，没有特别突出之处",
+  "光芒": "发出的强烈光线；也比喻耀眼的才华或成就",
+  "微不足道": "极其微小，不值一提",
+  "敬业乐业": "对工作认真负责并乐于其中",
+  "犹豫": "拿不定主意，踌躇",
+  "不分青红皂白": "不分是非，不问原因",
+  "教训": "从失败或错误中得到的经验；也指责备",
+  "叛逆": "反抗权威，不服管束",
+  "委屈": "受到不公平对待而感到难过",
+  "内疚": "因做错事而感到歉疚",
+  "不妨": "表示可以这样做，没有坏处",
+  "匿名": "不透露真实姓名",
+  "监督": "观察和检查，确保事情按规定进行",
+  "代沟": "不同年代的人之间在思想、观念上的差异",
+  "上瘾": "对某事物产生强烈的依赖，无法自拔",
+  "疏远": "关系变得不亲近、有距离",
+  "迎刃而解": "比喻问题很容易解决，顺利解决",
+  "体谅": "理解并谅解",
+  "无可厚非": "没有什么可以指责的",
+  "称赞": "用语言表达对某人或某事的肯定",
+  "崇拜": "非常敬佩，把某人视为榜样",
+  "爱不释手": "喜爱得不肯放手",
+  "碰钉子": "遭到拒绝或冷遇",
+  "泼冷水": "打击别人的热情",
+  "抽屉": "家具中可以拉出来的小格子，用来放东西",
+  "精疲力竭": "极度疲劳",
+  "衰老": "老了，衰退",
+  "抑郁": "郁闷，精神不振",
+  "寂寞": "孤独，冷清",
+  "启齿": "开口说话，尤指不好意思说出口的话",
+  "打退堂鼓": "比喻退缩，放弃",
+  "懊恼": "悔恨，烦恼",
+  "伺机": "等待适当的时机",
+  "心不在焉": "注意力不集中",
+  "破天荒": "首次出现，史无前例",
+  "仓促": "匆忙，没有充分准备",
+  "打理": "照顾，整理或安排事务",
+  "家务": "家里的日常工作，如洗碗、扫地等",
+  "严肃": "态度认真、不苟言笑，令人觉得有威严",
+  "安抚": "使人平静，让情绪激动的人冷静下来",
+  "干脆": "直接，不拖泥带水；也表示索性",
+  "风筝": "用纸或布做的，可以放飞到空中的玩具",
+  "挣脱": "用力摆脱束缚",
+  "惊讶": "对意想不到的事情感到吃惊",
+  "斑": "斑点或斑纹，颜色不均匀的痕迹",
+  "缠绕": "绕着某物弯曲包围",
+  "搂": "用手臂环抱",
+  "捐款": "捐献钱财",
+  "拯救": "救助，使脱离危险",
+  "医疗": "对疾病进行诊断和治疗",
+  "研究": "对某事物进行深入调查和分析",
+  "优惠": "给予特别的折扣或好处",
+  "券": "具有一定价值或可兑换物品的凭证",
+  "四肢": "人或动物的两条手臂和两条腿",
+  "敏捷": "动作迅速，机灵",
+  "穿梭": "来回快速移动，像织布的梭子一样",
+  "友善": "态度亲切，容易相处",
+  "辨识": "通过特征来识别和分辨",
+  "害羞": "见到陌生人或在公众场合时感到不好意思",
+  "馋": "特别想吃东西，嘴馋",
+  "调皮": "顽皮，喜欢捉弄人或做淘气的事",
+  "摔跤": "跌倒；也指一种体育运动",
+  "推出": "正式发布或开始提供产品、服务等",
+  "亲切": "态度热情，让人感到温暖和舒适",
+  "大摇大摆": "形容走路傲慢",
+  "独一无二": "没有相同的，唯一的",
+  "凶猛": "凶恶，猛烈",
+  "尤其": "特别，格外，表示程度更深",
+  "愧疚": "因做错事而感到歉疚",
+  "光泽": "表面发出的光亮，亮泽",
+  "懒懒地": "漫不经心、慵懒的样子",
+  "妻子": "丈夫对自己配偶的称呼，即太太",
+  "啾啾": "形容小鸟的叫声",
+  "仰": "向上看；也指仰慕",
+  "凝望": "专注地看，目不转睛地凝视",
+  "鸟笼": "关养鸟类的笼子",
+  "隔": "隔开，分开；相距一段距离",
+  "愤怒": "非常生气，情绪激烈",
+  "畏罪潜逃": "犯罪后逃跑",
+  "喵": "猫叫声的拟声词",
+  "衔": "用嘴巴叼着东西",
+  "搞": "做，弄；处理或解决某件事（口语）",
+  "失踪": "突然不见了，找不到人或物",
+  "估计": "大概推算，不一定准确",
+  "活泼": "性格开朗，充满生气",
+  "丰富": "数量多，种类多，内容充实",
+  "褐": "棕褐色，偏深的棕色",
+  "盘旋": "在空中绕圈飞翔",
+  "丝毫": "极小的量，一点点也没有",
+  "面面相觑": "大家互相看着对方，因惊讶或困惑而不知所措",
+  "愣": "发呆，因惊讶或困惑而停顿",
+  "傻": "头脑不灵活；也可以形容天真可爱",
+  "急促": "速度快而紧迫，时间或节奏很快",
+  "因素": "影响事物发展的原因或条件",
+  "水喉": "水管或水龙头，新加坡常用词",
+  "资源": "可以利用的物质或财富",
+  "艰巨": "困难而重大",
+  "昂贵": "价格很高，费用大",
+  "消耗": "用掉，减少",
+  "干旱": "长期缺雨，土地干燥",
+  "扩大": "使范围或规模增大",
+  "蓄水池": "储存水的人工湖或水库",
+  "洗澡": "用水清洁全身",
+  "浴室": "专门用来洗澡的房间",
+  "趋势": "事物发展的方向和倾向",
+  "开源节流": "增加收入，减少支出",
+  "媒体": "传播信息的媒介，如报纸、电视、网络",
+  "塑料": "人工合成的高分子材料",
+  "吨": "重量单位，一吨等于一千千克",
+  "廉价": "价格低廉",
+  "提供": "给予，供应",
+  "铺": "平铺，铺开；覆盖",
+  "污染": "使环境变脏或有害",
+  "焚烧": "用火烧",
+  "烟尘": "燃烧时产生的烟和灰尘",
+  "土壤": "地球表面的泥土层，植物生长的基础",
+  "遏制": "阻止，压制",
+  "倡导": "提倡，带头推广",
+  "逐渐": "慢慢地，一点一点地",
+  "威胁": "恐吓，危害",
+  "煞费苦心": "费尽心思",
+  "统计": "收集数据并加以分析整理",
+  "选择": "从多个可能性中挑出一个",
+  "泛滥": "水漫溢；也比喻事物扩散、蔓延",
+  "寿命": "生命存在的时间；物品可以使用的时间",
+  "途径": "实现目的的方法或渠道",
+  "缺乏": "不足，不够，没有",
+  "亿": "数目字，一百个百万",
+  "遗憾": "因未能实现某事而感到可惜或惋惜",
+  "谨慎": "小心，行事仔细，不轻率",
+  "妥善": "处理得当，周到合适",
+  "自卑": "感到自己不如别人",
+  "身材": "人的体型和身高比例",
+  "羡慕": "看到别人好而希望自己也有",
+  "抗拒": "抵抗，拒绝接受",
+  "诱惑": "吸引人去做某事，尤指不好的事",
+  "毅力": "坚持做事的意志力",
+  "戒": "停止某种习惯，尤指坏习惯",
+  "茫然": "不知所措，不清楚",
+  "瞌睡": "困倦想睡，忍不住要打盹",
+  "嫌": "觉得不满意，认为不够好",
+  "逼": "施加压力，强迫某人做某事",
+  "烹饪": "做饭，用火加工食物的技艺",
+  "符合": "与某标准或条件相一致",
+  "选修": "自己选择修读的科目，不是必修的",
+  "憋": "强忍，压抑不发作；也指气闷",
+  "委婉": "说话婉转，不直接",
+  "彻底": "完全，不留余地，做到底",
+  "缝": "两块布或物体之间的裂缝；也指用针线缝合",
+  "掩": "遮盖，关上门窗等",
+  "恐惧": "非常害怕",
+  "走廊": "连接房间的通道，即过道",
+  "锁": "用来扣住门窗以防人进入的装置；用锁关上",
+  "熄灯": "关掉灯，使房间变暗",
+  "颤抖": "因害怕或寒冷而发抖",
+  "隐约": "模糊，不清楚",
+  "瑟瑟": "形容因寒冷或恐惧而颤抖的样子",
+  "恐怖": "令人害怕的",
+  "通宵": "整个夜晚，从黑夜到天亮",
+  "惊悚": "惊吓，令人毛骨悚然",
+  "和谐": "配合得好，没有冲突，友好相处",
+  "冤家": "原指仇人；也泛指喜欢斗嘴但感情深厚的人",
+  "误会": "因理解错误而产生的矛盾",
+  "脖子": "连接头部与身体的部位，即颈部",
+  "社交媒体": "网上让人们互动、分享信息的平台",
+  "缺陷": "不足之处，残缺或不完美的地方",
+  "姿势": "身体所处的形态和位置",
+  "拘束": "感到不自在，局促不安",
+  "嘈杂": "声音杂乱，很吵闹",
+  "沮丧": "心情低落，情绪消沉",
+  "若有所思": "好像在想什么，陷入沉思",
+  "模糊": "不清晰，看不清楚或想不清楚",
+  "敏感": "对某事物有很强的感知力；也指容易受到影响",
+  "掩饰": "用某种方式遮掩真实的情感或缺点",
+  "摄影": "拍摄照片或影像的艺术或技术",
+  "谷底": "最低点，情绪或处境最差的时候",
+  "简陋": "设施或条件简单粗糙，不舒适",
+  "政府": "管理国家或地方事务的行政机构",
+  "开辟": "开创，打通",
+  "市镇": "比村庄大但比城市小的居住地",
+  "宗教": "对神明或超自然力量的信仰体系",
+  "综合": "把多种不同的东西集合在一起",
+  "诊疗所": "提供基本医疗服务的小型医疗机构",
+  "经济": "一个国家或地区的生产、分配和消费活动",
+  "蓬勃": "旺盛，欣欣向荣",
+  "富裕": "生活条件好，物质充足",
+  "变迁": "变化，转变",
+  "障碍": "阻碍前进的事物；比喻困难",
+  "驰名": "非常有名",
+  "屡次": "多次，一次又一次",
+  "荣誉": "光荣的称号或名声",
+  "姿态": "身体的姿势；也指表现出来的态度或风度",
+  "接触": "与人或事物产生联系，互动",
+  "翠绿": "鲜艳的绿色，像翡翠一样",
+  "心旷神怡": "心情开朗，精神愉快",
+  "合拢": "闭合，向中间聚拢",
+  "林荫": "树木遮阴形成的阴凉处",
+  "樟宜": "新加坡东部的地名，也是著名机场的所在地",
+  "耸立": "高高地挺立，气势雄伟",
+  "温馨": "温暖而亲切，充满温情",
+  "欣赏": "感受并体会某物的美好；也指对某人的赏识",
+  "粗糙": "表面不光滑，质地粗；做事不精细",
+  "婆娑": "形容树枝随风摇曳的样子，姿态优美",
+  "撑": "用力支撑；用撑杆撑开",
+  "同甘共苦": "一起享受快乐，共同面对困难",
+  "茁壮": "强健有力地成长",
+  "移民": "从一个地方迁移到另一个地方定居的人",
+  "接纳": "接受，容纳",
+  "无怨无悔": "没有怨言，没有后悔",
+  "千姿百态": "形态各种各样",
+  "空旷": "开阔而广大，没有遮挡",
+  "患": "患有疾病；担忧",
+  "失智症": "一种影响记忆和认知能力的脑部疾病",
+  "寻找": "到处搜索，试图找到某人或某物",
+  "流逝": "时间慢慢地过去，消逝",
+  "嬉戏": "欢乐地玩耍",
+  "咖喱卜": "一种包裹着咖喱馅料的油炸点心，新加坡常见小食",
+  "俏皮": "机灵可爱，活泼有趣",
+  "鲜艳": "颜色非常鲜明、明亮",
+  "承载": "负担承受；也指记录或保存某种记忆或意义",
+  "沉重": "重量大；情感上感到压力或悲伤",
+  "贸易": "买卖，商业往来",
+  "丝绸": "用蚕丝织成的光滑珍贵布料",
+  "陆地": "地球表面非水的部分，即大地",
+  "奢侈": "生活上过分享受，花费很多",
+  "瓷器": "用陶土烧制而成的器具，如碗碟等",
+  "仪式": "按照特定程序进行的正式典礼或活动",
+  "秉持": "坚守，坚持某种原则或精神",
+  "枢纽": "重要的交通或联系中心",
+  "港口": "供船只停靠的水域，用于装卸货物",
+  "致力": "全力投入，专心去做",
+  "勾勒": "用简单的线条描绘出大致轮廓；也指大略描述",
+  "高瞻远瞩": "目光远大，考虑深远",
+  "运输": "把货物或人从一处运到另一处",
+  "传承": "传授并继承",
+  "可谓": "可以说是，可以称得上",
+  "岛屿": "四面环水的陆地，比大陆小",
+  "海峡": "两块陆地之间的狭窄水道",
+  "历史": "过去发生的事件和变化；对这些事件的研究",
+  "挖掘": "深入探寻、发现潜力、价值等",
+  "区域": "某个范围内的地区",
+  "汇集": "从各处聚集在一起",
+  "赋予": "给予（使命、意义、权力等）",
+  "海纳百川": "形容气度宽广，能容纳各方",
+  "椰浆饭": "马来传统美食，用椰奶煮成的饭，新加坡国民美食之一",
+  "黄姜饭": "用姜黄粉调色煮成的饭，常见于马来和印度饮食文化",
+  "发芽": "种子开始生长，长出幼苗",
+  "兼容并蓄": "同时容纳不同的事物",
+  "携手": "合作，一起共同做某件事",
+  "辉煌": "光彩夺目，取得很大成就",
+  "得天独厚": "具有特别优越的天然条件，享有独特的优势",
+  "给予": "给，提供",
+  "婉转": "声音柔和悦耳；措辞委婉不直接",
+  "瞩目": "引人注目，受到广泛关注",
+  "求同存异": "保留共同点，保留不同意见",
+  "皇帝": "古代封建国家最高统治者",
+  "典型": "具有代表性的例子",
+  "普及": "广泛传播，使大众都能接受或了解",
+  "真伪": "真实与虚假",
+  "步伐": "走路的速度和节奏；也比喻发展的速度",
+  "询问": "向人提问，求取信息",
+  "人云亦云": "没有主见，别人说什么就说什么",
+  "免疫": "对某种疾病或影响有抵抗力，不受侵害",
+  "凝聚力": "将人们或团体聚合在一起的力量",
+  "辨别": "分辨，区别",
+  "良好": "很好",
+  "人际": "人与人之间的",
+  "坦率": "说话直接，不隐瞒自己的想法",
+  "隐瞒": "有意不让人知道",
+  "粗鲁": "粗野无礼",
+  "分歧": "意见或看法不一致，有差异",
+  "矛盾": "对立，不一致",
+  "磋商": "互相商量，共同讨论以达成共识",
+  "彼此": "互相，双方",
+  "融洽": "关系和谐",
+  "诀窍": "做好某事的关键方法或技巧",
+  "聆听": "认真地听",
+  "死党": "关系非常亲密的朋友，好哥们",
+  "强迫": "用压力迫使某人做不愿意做的事",
+  "橱窗": "商店正面展示商品的玻璃窗",
+  "狭窄": "宽度小，不宽敞",
+  "铅笔盒": "装放铅笔、钢笔等文具的小盒子",
+  "拧": "用力旋转，扭转",
+  "抿": "轻轻合拢嘴唇，或小口喝",
+  "肺炎": "肺部受到感染，引起发炎的疾病",
+  "纸屑": "撕碎或剪下来的小纸片",
+  "肿瘤": "身体内异常增生的细胞团块",
+  "癌症": "一种恶性肿瘤疾病，细胞不受控制地增生",
+  "徒劳无功": "白费力气，没有任何效果",
+  "擦拭": "用布或纸擦干净",
+  "某": "指不知道或不指明的人或事",
+  "苍白": "（面色）白而没有血色，显得虚弱",
+  "鼓掌": "拍手，表示欢迎或赞赏",
+  "忠实": "忠诚可靠，不背叛",
+  "异乎寻常": "与平常不同，非常特别",
+  "痊愈": "病完全好了，康复",
+  "清晰": "清楚，能清楚地看到或听到",
+  "调剂": "配制（药物）；也指调节、调整",
+  "目睹": "亲眼看见",
+  "鄙夷": "轻视，看不起",
+  "流淌": "液体缓慢地流动",
+  "窗帘": "挂在窗户上用来遮光的布帘",
+  "提心吊胆": "心里非常担心，十分不安",
+  "封": "量词，用于信件；也指封闭",
+  "古董": "年代久远、有收藏价值的物品",
+  "衡量": "评估，用标准来判断",
+  "纯洁": "心灵没有污染，善良真诚",
+  "歧途": "错误的道路，比喻不正当的行为或方向",
+  "蔬菜": "可以食用的植物，如白菜、菠菜等",
+  "麦片": "由燕麦等谷物制成的早餐食品",
+  "蛋白质": "构成身体细胞的重要营养成分，存在于肉类、蛋类等食物中",
+  "睡眠": "睡觉，让身体和大脑休息的过程",
+  "体魄": "身体的强健程度，体质",
+  "频率": "某事在一定时间内发生的次数",
+  "韵律": "有节奏感的节拍；也指诗歌的格律",
+  "汲取": "吸取，从中获得",
+  "敞开": "完全打开，毫无遮掩",
+  "心扉": "内心，心门，比喻内心深处",
+  "缔造": "创建，建立（伟大的事业）",
+  "聊天": "轻松随意地谈话",
+  "郊外": "城市周边的地区，离城市较远",
+  "淋漓": "湿透，汗水大量流出；也形容酣畅尽兴",
+  "手札": "亲笔写的信件或笔记，含有私人情感的文字",
+  "抒发": "表达、倾诉内心的感情",
+  "休憩": "休息，放松，恢复体力",
+  "均衡": "平衡，各方面都顾及到",
+  "享受": "体会到某种乐趣或幸福感",
+  "饮茶": "喝茶；也指广东人去茶楼吃点心的传统",
+  "唐": "中国古代朝代名，公元618年至907年",
+  "磨": "研磨，用力在物体上反复摩擦",
+  "葱": "一种常用的蔬菜，味道辛辣，常用于调味",
+  "橘子": "一种甜酸的柑橘类水果",
+  "宋": "中国古代朝代名，公元960年至1279年",
+  "鼎盛": "最兴旺、最繁荣的时期",
+  "柴": "木柴，用来生火的木头",
+  "醋": "一种酸味调料，用粮食发酵制成",
+  "沸水": "煮沸了的开水，一百摄氏度的水",
+  "调匀": "把材料搅拌均匀，使混合均一",
+  "搅拌": "用工具来回搅动，使液体或材料混合",
+  "步骤": "完成某事的先后顺序和程序",
+  "鉴赏": "欣赏并评价（艺术品、茶、美食等）的好坏",
+  "消暑": "消除暑热，使身体凉爽",
+  "菌": "微小的生物，包括细菌、真菌等",
+  "所谓": "所说的，通常用于解释某个词语的含义",
+  "源远流长": "历史悠久，传统延续时间很长",
+  "异军突起": "比喻一支新的力量突然兴起，出人意料",
+  "五花八门": "形容种类繁多，各式各样",
+  "舞蹈": "一种表现情感和节奏的肢体艺术",
+  "节奏": "音乐或动作中有规律的强弱快慢变化",
+  "霹雳舞": "一种以地板动作和旋转为主的街头舞蹈风格",
+  "肌肉": "构成人体动作的组织，负责运动",
+  "风靡": "风行一时，非常流行",
+  "掀起": "引发，带动热潮或运动",
+  "热潮": "某种事物突然非常流行的现象",
+  "雨后春笋": "比喻新事物大量涌现",
+  "爆发力": "短时间内迸发出的强大力量",
+  "默契": "双方在没有明说的情况下互相了解和配合",
+  "焕发": "精神振奋，光彩焕然",
+  "真挚": "感情真诚而深厚",
+  "名额": "允许参加某活动的人数限制",
+  "链接": "网络上用于跳转到其他页面的超链接",
+  "师傅": "对有专业技艺的人的尊称；传授技艺的老师",
+  "擅长": "特别擅长、在某方面有专长",
+  "裁缝": "制作和修改衣服的手工艺人",
+  "编织": "用线、草等材料交叉穿插，制成布料或物品",
+  "匠人": "拥有专业技能的手工艺人",
+  "烘焙": "用烤箱或炉子烤制食品",
+  "讲述": "叙述，说出（故事、经历等）",
+  "黎明": "天快亮的时候，即拂晓",
+  "苏醒": "从睡眠或昏迷中醒来；也比喻事物重新活跃",
+  "禽": "鸟类的总称，尤指家禽",
+  "晚霞": "傍晚天空中橙红色的云彩",
+  "添砖加瓦": "比喻为某事业出一份力",
+  "族裔": "民族和种族的合称，指具有共同文化和血统的群体",
+  "鲜为人知": "很少有人知道，不广为人知",
+  "宵夜": "夜晚吃的点心或正餐，即夜宵",
+  "唇齿相依": "形容关系非常密切",
+  "亲戚": "有血缘或婚姻关系的家庭成员以外的人",
+  "援手": "给予帮助，伸出援助之手",
+  "侥幸": "由于运气好而避免了不好的结果",
+  "慷慨解囊": "毫不吝啬地拿出钱来帮助",
+  "渡": "渡过，越过（水域或困难）",
+  "篱笆": "用木棍或竹子等做成的围栏",
+  "心力交瘁": "精力和体力都耗尽了",
+  "雪中送炭": "在别人困难时给予帮助",
+  "恰好": "正好，刚刚合适",
+  "弥补": "补足不足的地方，填补缺失",
+  "谚语": "流传于民间、含有道理的简短语句",
+  "和睦": "相处融洽，没有矛盾冲突",
+  "冷漠": "对人或事物漠不关心，缺乏感情",
+  "挑剔": "对事情要求过高，总是找缺点",
+  "网络": "互相连接的系统；也指互联网",
+  "开销": "花费的钱，支出",
+  "锯子": "用来锯断木材等物品的工具",
+  "遛": "牵着动物或带着孩子慢慢走",
+  "拴": "用绳子或链条绑住，使不能自由行动",
+  "渠道": "信息或资源传递的途径",
+  "弊端": "有害的方面，缺点或问题",
+  "划算": "合算，花的钱或精力值得",
+  "久而久之": "时间长了，慢慢地",
+  "培训": "系统地教导和训练，使人掌握技能",
+  "阐述": "详细说明，解释清楚",
+  "铿锵": "声音响亮有力，充满气势",
+  "雅俗": "高雅与通俗，指适合不同层次的听众",
+  "抑扬顿挫": "声音高低起伏有节奏",
+  "僵硬": "不灵活，动作或神情呆板",
+  "言简意赅": "话语简短，内容完整",
+  "啰唆": "说话重复，不简洁，令人厌烦",
+  "遐想": "漫无边际的幻想或想象",
+  "枯燥": "单调无聊，缺乏趣味",
+  "筛选": "按一定标准从中挑选合适的",
+  "欲": "想要，有意向做某事",
+  "浏览": "快速地看，大致了解内容",
+  "沟通": "互相交流，使信息传达",
+  "举手投足": "一举一动",
+  "乏味": "没有趣味，令人感到无聊",
+  "润滑剂": "减少摩擦的物质；比喻促进和谐的因素",
+  "不胜枚举": "多得数不清",
+  "扼腕": "握着自己的手腕，表示惋惜或遗憾",
+  "体恤": "理解并关心别人的处境和感受",
+  "氛围": "某个地方或场合给人的感觉和气氛",
+  "谦虚": "不自傲，虚心接受别人的意见",
+  "裨益": "好处，益处",
+  "严峻": "形势或条件非常严格、严重",
+  "流言蜚语": "没有根据的闲话",
+  "扰乱": "破坏正常的秩序，使混乱",
+  "甚嚣尘上": "形容议论纷纷或嚣张气焰",
+  "基础": "建筑物的底部支撑；也指事物的根本",
+  "涵盖": "包括，覆盖，范围广泛",
+  "畅所欲言": "毫无顾忌地表达自己的意见",
+  "尊重": "重视，有礼貌地对待别人",
+  "广泛": "涉及面宽，范围大",
+  "导致": "引起，造成某种结果",
+  "崛起": "国家、人才等迅速发展，突然兴起",
+  "颠覆": "完全推翻，彻底改变",
+  "报刊": "报纸和杂志的合称",
+  "书籍": "印刷成册的出版物，即书本",
+  "传播": "向外散布，使信息广泛流传",
+  "拨": "拨打电话；也指拨开或调动",
+  "限制": "规定范围，不允许超过",
+  "天涯": "极远的地方；也比喻相隔遥远",
+  "屏幕": "显示图像或文字的平面，如手机或电视的屏幕",
+  "按钮": "按下后能启动某功能的小圆钮",
+  "疆界": "国家或地区之间的边界",
+  "庞大": "规模很大，数量很多",
+  "前所未有": "从来没有过，历史上第一次",
+  "创建": "创立，建立机构、平台等",
+  "阶段": "事物发展过程中的某一时期",
+  "同侪": "同龄人，同辈的人（较正式用法）",
+  "撰写": "写作，起草文章、报告等",
+  "筹备": "为某活动做准备，筹划安排",
+  "募捐": "向公众筹集捐款",
+  "实践": "把想法付诸行动，亲自去做",
+  "震撼": "深深地感动或令人震惊",
+  "循规蹈矩": "遵守规矩",
+  "融会贯通": "把知识综合理解",
+  "腼腆": "害羞，不好意思，内向",
+  "咨询": "向专家或有关方面征询意见",
+  "数据": "经过收集整理的数字或信息",
+  "分析": "把复杂的事物分解，进行深入研究",
+  "冰淇淋": "用奶油和糖等制成的冷冻甜品",
+  "充实": "内容丰富，使生活或知识更加完整",
+  "贯穿": "穿过，从头到尾连接",
+  "勇于": "敢于，有勇气去做",
+  "雄鹰": "强大有力的老鹰，常用来比喻志向远大的人",
+  "渺小": "微不足道，非常微小",
+  "坐井观天": "比喻眼界狭窄",
+  "自鸣得意": "自以为了不起",
+  "孤陋寡闻": "知识浅陋，见识少",
+  "奥妙": "深奥的道理，难以理解的秘密",
+  "寓言": "通过故事说明道理的短篇文章",
+  "桨": "划船用的工具，用来推动船前进",
+  "浅尝辄止": "做事不深入",
+  "哲学": "研究世界本质和人生意义的学问",
+  "比喻": "用某种事物来说明另一种事物，打比方",
+  "热忱": "热情，对事物充满热切的感情",
+  "持之以恒": "坚持做下去",
+  "清澈": "清净透明，没有杂质",
+  "干涸": "水分完全消失，变得干燥",
+  "浇灌": "给植物浇水；也比喻培养",
+  "九牛一毛": "极少的一部分",
+  "落伍": "跟不上时代，落在别人后面",
+  "楷模": "值得学习的榜样",
+  "孜孜不倦": "勤奋不懈怠",
+  "敷衍": "做事不认真，应付了事",
+  "逆水行舟": "比喻不进则退",
+  "淘汰": "去掉不合适的；在竞争中被排除",
+  "佐证": "辅助证明，提供证据支持",
+  "平庸": "普通，没有突出的才能或成就",
+  "岂": "哪里，难道（用于反问）",
+  "层出不穷": "不断出现",
+  "诠释": "解释，说明（含义、思想等）",
+  "抛锚": "船停下来抛下锚；也指车辆半途出故障",
+  "郁闷": "心情压抑，感到苦闷",
+  "叼": "用嘴夹住",
+  "逗": "逗弄，引人发笑；惹，触动",
+  "挑战": "面对困难或高难度的任务，勇于迎接",
+  "绊": "被东西绊到，差点跌倒",
+  "攀登": "向上爬，爬高",
+  "雀跃": "高兴得跳起来，形容非常兴奋",
+  "山脉": "连绵不断的山岭，很多山连成一片",
+  "宇宙": "包含所有物质、能量和空间的总体",
+  "体验": "亲身经历，感受",
+  "信任": "相信并依赖，认为可靠",
+  "依赖": "依靠，需要某人或某物的支持",
+  "跋涉": "在艰难的环境中长途行走",
+  "牵挂": "思念，放心不下",
+  "唤": "呼叫，叫人过来",
+  "喉咙": "食物和气息通过的器官，即嗓子",
+  "绽放": "（花朵）开放；也比喻事物展现出美丽",
+  "绷": "用力拉紧，呈现紧绷状态",
+  "一般": "普通；也用于比较，表示相似",
+  "无奈": "没有办法，只能接受；感到无助",
+  "寺庙": "供奉神明的宗教场所",
+  "幽静": "安静而幽雅，远离喧嚣",
+  "诧异": "感到出乎意料，惊讶",
+  "贱": "价格低；也指低贱",
+  "哽咽": "因悲伤或激动而说不出话，喉咙哽住",
+  "眼眶": "眼睛周围的骨骼凹陷处；哭泣时眼睛周围",
+  "咀嚼": "用牙齿反复嚼食物；也比喻反复体会",
+  "搬迁": "从一个地方搬到另一个地方",
+  "孝顺": "尊敬并服从父母，好好照顾长辈",
+  "探望": "前去看望亲人、朋友等",
+  "谅解": "理解并原谅，消除误解",
+  "隆重": "仪式庄严，气氛热烈",
+  "诅咒": "用不好的话咒骂别人，希望对方遭受不幸",
+  "洋溢": "充满感情、气氛等，饱含",
+  "慈祥": "老年人和蔼可亲，充满善意",
+  "潭": "深水坑或深水池",
+  "教授": "大学或高等学府的高级教师",
+  "割舍": "放弃，忍痛舍弃",
+  "神圣": "极为庄严，令人敬畏，不可侵犯",
+  "介意": "在意，放在心上，感到不舒服",
+  "演奏": "用乐器表演音乐",
+  "责无旁贷": "责任不可推卸",
+  "分忧": "分担忧愁，帮助解决困难",
+  "残障": "身体机能有缺陷，影响日常生活",
+  "聘请": "雇用，正式邀请某人担任职务",
+  "同工同酬": "做同样的工作领同样的工资",
+  "权利": "法律上或道义上应享有的利益和自由",
+  "雇主": "聘请员工的人或机构",
+  "纠纷": "争执，因意见不合而产生的矛盾",
+  "小贩": "在市场或路边摆摊卖东西的人",
+  "摊位": "摆摊做生意的地方",
+  "呵护": "精心照顾，保护",
+  "缓解": "使紧张或严重的状况有所减轻",
+  "乞丐": "靠向人乞讨为生的人",
+  "跪": "双膝弯曲跪在地上，表示顺从或请求",
+  "肮脏": "不洁净，污秽",
+  "贫穷": "生活困苦，缺乏金钱和物质",
+  "赤裸裸": "完全暴露，没有遮掩",
+  "祈求": "恳切地请求，向神明或他人祈祷",
+  "距离": "两点之间的长度或空间间隔",
+  "慈悲": "同情、仁爱，对受苦者的怜悯",
+  "阻挡": "拦住，不让通过或发展",
+  "肆无忌惮": "任意妄为，毫无顾忌",
+  "褴褛": "衣服破烂，不整洁",
+  "革履": "皮鞋，代指穿着整齐考究",
+  "侦探": "负责侦查案件、查明真相的人",
+  "仁慈": "善良而有爱心，对别人宽厚",
+  "叩头": "跪下并用额头触地，表示极度尊敬或感谢",
+  "残疾": "身体功能受损，影响正常活动",
+  "质朴": "朴实无华，真诚自然",
+  "大概": "大约，不十分精确的估计",
+  "晓得": "知道，了解（口语，较方言化）",
+  "蓦然": "突然，出乎意料地",
+  "推心置腹": "真诚地倾心相待，毫无保留地交谈",
+  "否则": "不然的话，如果不这样",
+  "感恩": "感谢别人的帮助，心存感激",
+  "匆匆": "匆忙地，急促地",
+  "婴儿": "年龄非常小的孩子，通常指一岁以下",
+  "翅膀": "鸟类或昆虫用来飞翔的器官；也比喻保护或助力",
+  "呈献": "正式呈上，展示给大家看",
+  "扣人心弦": "形容非常感人",
+  "爱恋": "深深地喜爱，充满爱意的感情",
+  "唏嘘": "叹气声，表示惋惜或感慨",
+  "著名": "很有名，被许多人知道",
+  "兴旺": "发达旺盛，充满活力",
+  "负荷": "承受的重量或压力；也指承担的任务",
+  "反映": "显示出，表达出某种情况；也指向上级汇报",
+  "岔路口": "道路分叉的地方；也比喻人生的关键抉择时刻",
+  "惆怅": "心情失落，感到伤感和迷茫",
+  "紧凑": "节奏快，内容安排密集",
+  "小卒": "地位低微的人；在棋局中指小兵",
+  "兴衰": "兴盛与衰落，起伏变化",
+  "轿子": "古代用人抬着走的交通工具",
+  "何况": "更不用说，表示递进关系",
+  "耻笑": "嘲笑，用嘲讽的态度笑话别人",
+  "搀扶": "用手扶着，帮助行动不便的人走路",
+  "罢了": "而已，仅此而已（表示不过如此）",
+  "姊妹": "姐姐和妹妹；也泛指女性兄弟姐妹",
+  "顽劣": "顽皮而品行不好，难以管教",
+  "溺爱": "过分宠爱，不加约束地爱护",
+  "颈项": "脖子，颈部",
+  "鬓": "耳朵旁边的头发",
+  "桃": "一种常见水果；也指桃花",
+  "瓣": "花或果实的一部分",
+  "重逢": "久别之后再次相见",
+  "稀罕": "罕见，少有；也指特别喜爱",
+  "拜见": "正式地去见某人，行礼问候",
+  "面善": "面孔看起来熟悉，感觉似曾相识",
+  "大吃一惊": "受到极大的惊吓或意外，非常惊讶",
+  "三顾茅庐": "比喻真诚地再三邀请或拜访",
+  "争霸": "争夺霸主地位，争夺控制权",
+  "足智多谋": "智慧多，谋略广",
+  "起伏": "高低不平；也比喻事物的变化波动",
+  "斥责": "严厉地批评，责骂",
+  "严寒": "非常寒冷，气温极低",
+  "恳请": "恳切地请求，诚心诚意地求别人帮忙",
+  "心直口快": "性格直率，想到什么就说什么",
+  "酿": "用发酵的方法制造（酒、醋等）；也比喻造成",
+  "涌": "水或人大量地流出或集中",
+  "繁殖": "生育后代，增殖",
+  "饲料": "喂养牲畜或鱼类的食物",
+  "佳肴": "精美的食物，美味的菜肴",
+  "啃": "用牙齿咬硬的东西",
+  "入侵": "进入并占领他国领土或他人领域",
+  "盎然": "形容气氛、趣味等浓烈、充沛",
+  "砍伐": "用刀或锯把树木砍倒",
+  "栖息": "动物生活、停留在某个地方",
+  "牢记": "深深记住，不会忘记",
+  "勿": "不要，禁止（文言用法）",
+  "惩罚": "因犯错或违规而受到的责罚",
+  "平衡": "各方面均等，不偏向某一方",
+  "珍稀": "珍贵而稀少",
+  "茂密": "（植物）生长浓密，枝叶繁盛",
+  "恶劣": "非常糟糕，条件极差",
+  "浸泡": "长时间泡在液体中",
+  "牺牲": "为了某种目的而放弃利益",
+  "锐减": "数量急剧减少",
+  "保育": "保护和培育动植物或生态环境",
+  "储存": "把东西存放起来，备用",
+  "身躯": "身体，整个人的体形",
+  "侵蚀": "逐渐损害、腐蚀（物体或环境）",
+  "空隙": "中间的空间或缝隙",
+  "堤": "防水的土石建筑，用于防洪",
+  "貌不惊人": "外表普通，不起眼",
+  "窥视": "偷偷地看，暗中观察",
+  "宣布": "正式公开地说明或通告",
+  "狩猎": "打猎，捕杀野生动物",
+  "饥饿": "肚子很饿，没有足够食物",
+  "糟蹋": "浪费，破坏，不好好对待",
+  "毁灭": "完全破坏，使消失",
+  "罪魁祸首": "造成灾祸的主要负责人或原因",
+  "竞争": "互相争夺，争取更好的结果",
+  "袭击": "突然攻击",
+  "违背": "违反，不遵守（原则、规律等）",
+  "拼搏": "尽全力去争取，努力奋斗",
+  "面目全非": "面貌完全改变，变得认不出来",
+  "举措": "采取的行动或措施",
+  "联盟": "国家或团体联合起来共同行动的组织",
+  "迄今": "到现在为止",
+  "蜿蜒": "弯弯曲曲地延伸",
+  "辽阔": "面积广大，范围很宽",
+  "诸多": "许多，各种各样",
+  "古迹": "有历史价值的古代建筑或遗址",
+  "雕刻": "用刀或工具在材料上刻出图案或形状",
+  "啧啧称奇": "不停称赞，表示惊奇",
+  "赞叹": "由衷地称赞，表示佩服",
+  "底蕴": "深厚的文化积累或内涵",
+  "灿烂": "光彩夺目，辉煌耀眼",
+  "金碧辉煌": "形容建筑物富丽堂皇",
+  "绚丽": "色彩鲜艳美丽，多姿多彩",
+  "高耸": "高高地耸立，显得十分雄伟",
+  "颇": "相当，很（较文雅的用法）",
+  "独树一帜": "独特地树立自己的旗帜，形容有独特的风格或成就",
+  "赋税": "古代国家向百姓征收的税款",
+  "揭竿而起": "指发动起义",
+  "暴虐": "残忍而专横，用权力伤害别人",
+  "葬送": "使毁灭，断送（前途、生命等）",
+  "推卸": "不承担责任，把责任转给别人",
+  "停滞": "停止不前，不再发展",
+  "趾高气扬": "骄傲自满，得意忘形",
+  "谦逊": "谦虚，不骄傲，有礼貌地对待别人",
+  "梦寐以求": "睡梦中都在追求",
+  "昌盛": "兴旺发达，欣欣向荣",
+  "自知之明": "了解自己的能力和不足",
+  "忍无可忍": "已经忍到了极限，再也无法忍受",
+  "一无是处": "没有任何优点，一点好处都没有",
+  "协作": "合作，互相配合完成任务",
+  "论坛": "供人们讨论、交流意见的集会或平台",
+  "毋庸讳言": "不必隐瞒，可以直说",
+  "棘手": "难以处理，令人感到困难",
+  "肆虐": "放肆地危害或破坏，无法控制",
+  "谋求": "设法争取，努力寻求",
+  "里程碑": "比喻历史上重要的事件",
+  "开拓": "开辟，扩展（事业、领域等）",
+  "先驱": "在某领域率先探索、开拓的人",
+  "气馁": "失去信心，感到沮丧",
+  "出类拔萃": "才能超过一般人",
+  "韧性": "坚韧不拔的精神，不容易被挫折打倒的能力",
+  "浩瀚": "形容面积或数量非常广大",
+  "天方夜谭": "比喻根本不可能实现的事",
+  "百折不挠": "无论遭受多少挫折都不屈服",
+  "研发": "研究和开发新技术或新产品",
+  "畅销": "销售情况很好，卖得很快",
+  "贬": "降低（职位等）；评价低，批评",
+  "粮食": "供人食用的谷物和食物",
+  "豁达": "心胸开阔",
+  "满腔": "充满心中，整个心里都是",
+  "霜": "气温降低时，水汽凝结成的白色冰晶",
+  "遣": "派遣，打发；也指消遣",
+  "挽": "拉，拉弓射箭",
+  "豪迈": "气概宏大，勇敢而有气魄",
+  "慷慨激昂": "情绪激动高昂",
+  "勉励": "鼓励，激励别人努力",
+  "朝廷": "古代以皇帝为首的中央政府",
+  "笔锋": "写作或书法的风格和力度；也指文章的气势",
+  "扎": "扎根，深入固定；也指刺入",
+  "喧腾": "喧闹沸腾，热闹非凡",
+  "感悟": "感受并领悟到深刻的道理",
+  "崭新": "全新的，完全没有使用过的；比喻全新的开始",
+  "迥然": "差别很大，完全不同",
+  "奋斗": "为实现目标而努力拼搏",
+  "崎岖": "山路不平，道路曲折难走",
+  "抵达": "到达目的地"
+};
+let DEFS = Object.assign({}, DEFS_FALLBACK);
+
+const EXAMPLES_FALLBACK = {
+  "淘气": "弟弟很__，总是捉弄同学。",
+  "惹": "他说话不小心，常常__麻烦。",
+  "两肋插刀": "真正的朋友会为你__，不计代价。",
+  "赵": "他姓__，是我们班的新同学。",
+  "科技": "现代__发展迅速，改变了人们的生活。",
+  "来者不拒": "他热情好客，对朋友总是__。",
+  "口头禅": "她的__挂在嘴边，大家听得耳熟能详。",
+  "小事一桩": "帮你搬桌子？这不过是__，没什么大不了。",
+  "人缘": "她__很好，班里所有人都喜欢她。",
+  "性格": "她__开朗，很容易和别人交朋友。",
+  "直率": "他性格__，有什么说什么，不会拐弯抹角。",
+  "得罪": "他无意中说错了话，__了好朋友。",
+  "别扭": "两人吵架后，见面都感到很__。",
+  "争辩": "两人为了这件事__了很久，谁也不肯让步。",
+  "即使": "__下大雨，他也坚持去上学。",
+  "冤枉": "他没有做错事，却被__了，心里很难过。",
+  "推荐": "老师向全班__了这本好书。",
+  "有福同享，有难同当": "真正的朋友应该__，不离不弃。",
+  "助人为快乐之本": "他从小就明白__，所以总是乐于助人。",
+  "健将": "她是学校游泳队的__，多次获得冠军。",
+  "内向": "他性格__，不喜欢在陌生人面前说话。",
+  "系列": "这套__丛书共有十本，内容非常丰富。",
+  "捣乱": "上课时，他故意__，影响了同学们学习。",
+  "瞬间": "一个__，蝴蝶就飞走了，消失得无影无踪。",
+  "兴致勃勃": "同学们__地参加了学校的运动会。",
+  "粘": "他用胶水把纸片__在画板上。",
+  "蛋液": "她把__均匀地涂在面包上，放入烤箱烤熟。",
+  "狼狈": "他在雨中跑了很久，浑身湿透，样子十分__。",
+  "讥讽": "他的话充满了__，让对方感到非常难堪。",
+  "赌气": "她__地把书包扔在地上，拒绝道歉。",
+  "嚷": "他大声__着，引来了很多人围观。",
+  "小心翼翼": "她__地端着满满一杯水，生怕洒出来。",
+  "荧光笔": "她用__把课文中的重点句子全都标出来。",
+  "抵挡": "他用双手__住对方的攻击。",
+  "拉扯": "两个小孩互相__，争着拿那个玩具。",
+  "手足无措": "突然被老师点名提问，他__，不知如何回答。",
+  "布置": "老师__了很多作业，同学们抱怨连连。",
+  "体会": "你要亲身经历才能__其中的艰辛。",
+  "服气": "他赢得如此漂亮，对手也不得不__。",
+  "证明": "他用行动__了自己的能力。",
+  "居然": "他__在考试前一天还在打游戏，真让人惊讶。",
+  "恨不得": "天气太热，他__跳进水里游泳。",
+  "审案": "法官认真地__，仔细听取双方陈述。",
+  "律师": "他请了一位经验丰富的__为自己辩护。",
+  "振振有词": "他__地解释自己迟到的原因，但大家都不信。",
+  "心虚": "做了亏心事，他见到老师就感到__。",
+  "哑口无言": "面对确凿的证据，他__，无法反驳。",
+  "判决": "法庭最终作出了公正的__。",
+  "泄": "水管破裂，水从裂缝里__了出来。",
+  "既然": "__你已经决定了，就勇敢去做吧。",
+  "辩护": "律师为当事人进行了有力的__。",
+  "报复": "他因为被欺负，想找机会__对方。",
+  "错误": "我们要勇于承认自己的__，并及时改正。",
+  "葡萄": "西班牙人在跨年时吃十二颗__，象征好运。",
+  "象征": "红色在中国文化中__喜庆和吉祥。",
+  "风俗": "各地过年的__不同，各有特色。",
+  "辞旧迎新": "除夕夜，家家户户__，共迎新年。",
+  "燃放": "节日里，人们__烟花爆竹，热闹非凡。",
+  "瓶瓶罐罐": "除夕夜，丹麦人会把家中的__全都摔碎，以驱走厄运。",
+  "厄运": "他遭遇了一连串的__，但仍然没有放弃。",
+  "前夕": "考试__，他仔细复习了所有笔记。",
+  "碗碟": "希腊人在新年时会把__扔出窗外，象征好运。",
+  "预示": "天边的乌云__着一场暴雨即将到来。",
+  "兆头": "他认为早上看到喜鹊是好__。",
+  "忙碌": "过年前，妈妈__地准备各种年货。",
+  "遥远": "他的家乡在__的山区，交通十分不便。",
+  "恭敬": "她__地向长辈拜年，表达新年祝福。",
+  "万事大吉": "祝你新年__，诸事顺利！",
+  "元旦": "__是每年一月一日，是新年的第一天。",
+  "除夕": "__夜，全家人围坐在一起吃团圆饭。",
+  "贼": "他眼神狡猾，像个小__一样悄悄溜进屋子。",
+  "鱼尾纹": "外婆笑起来眼角有深深的__，那是岁月的痕迹。",
+  "装饰": "她用鲜花__房间，让家里充满春天的气息。",
+  "圣诞": "__将至，商场里摆满了各种礼物和装饰品。",
+  "格格不入": "他穿着校服去参加晚会，显得__。",
+  "结婚": "他们相恋三年后，终于决定__，共组家庭。",
+  "嫁": "姐姐明年就要__给一位医生了。",
+  "视讯": "他通过__通话，和远在海外的父母聊天。",
+  "沉默寡言": "他性格__，不喜欢多说话。",
+  "副": "她戴着一__眼镜，看起来文质彬彬。",
+  "酷": "他穿着时髦，同学们都觉得他很__。",
+  "承诺": "他__会按时完成作业，但最后还是食言了。",
+  "歉意": "他迟到了，向大家表示深深的__。",
+  "围炉": "冬天，一家人__吃火锅，其乐融融。",
+  "蒸腾": "热气从锅里__而起，整个厨房都是香味。",
+  "叽叽喳喳": "小鸟在树上__地叫着，非常热闹。",
+  "缺席": "他因为生病，__了今天的运动会。",
+  "悦耳": "她的歌声__动听，让人陶醉。",
+  "闹别扭": "两个好朋友为了小事__，好几天没说话。",
+  "吞吞吐吐": "他__地说出了实情，显然有所隐瞒。",
+  "红枣": "奶奶在汤里加了几颗__，说对身体很好。",
+  "儿媳妇": "婆婆对__非常好，把她当亲生女儿一样看待。",
+  "莫名其妙": "他突然生气，让大家都感到__。",
+  "疑惑": "看到这道题，她心里充满了__，不知如何作答。",
+  "大吉大利": "新年到了，祝大家__，心想事成！",
+  "魅力": "这座城市充满了独特的__，吸引着无数游客。",
+  "博物馆": "我们参观了国家__，了解了许多历史。",
+  "悠久": "这座寺庙有着__的历史，已有千年。",
+  "遗产": "我们要保护和传承祖先留下的文化__。",
+  "巴刹": "妈妈每天早上都去__买新鲜蔬菜和鱼肉。",
+  "同胞": "海外__心系故乡，时刻关心国家的发展。",
+  "融合": "新加坡是一个多元文化__的社会。",
+  "皇宫": "他们参观了欧洲一座古老的__，被它的宏伟所震撼。",
+  "城堡": "这座__建于中世纪，至今保存完好。",
+  "时尚": "她的穿着非常__，总是走在潮流前端。",
+  "彩绘": "街道两旁的墙壁上画满了__，充满艺术气息。",
+  "流连忘返": "公园里的花景太美，游客们__，迟迟不肯离去。",
+  "娱乐": "看电影是一种常见的__活动。",
+  "探索": "科学家们不断__宇宙的奥秘。",
+  "娘惹": "__料理融合了中华与马来的烹饪特色，味道独特。",
+  "拍摄": "摄影师在公园里__了许多美丽的风景照。",
+  "平均": "新加坡的年__气温约为27摄氏度。",
+  "繁忙": "樟宜机场每天__运作，接待来自世界各地的旅客。",
+  "闪耀": "夜空中繁星__，美丽动人。",
+  "文明": "中华__有五千年的悠久历史。",
+  "品尝": "来到这里，一定要__当地的特色美食。",
+  "安详": "老人靠在椅子上，神情__，十分平静。",
+  "休闲": "周末，他喜欢做一些__活动，放松身心。",
+  "横梁": "建筑师设计了精美的__，使建筑结构更加稳固。",
+  "覆盖": "大雪__了整个城市，银装素裹。",
+  "玻璃": "机场的屋顶由巨大的__圆顶组成，十分壮观。",
+  "瀑布": "山间的__飞流而下，气势磅礴。",
+  "循环": "水在自然界中不断__，形成降雨、蒸发等过程。",
+  "谷": "星耀樟宜的森林__设计独特，游客可以在其中漫步。",
+  "株": "森林谷里种植了数千__不同品种的植物。",
+  "设施": "这个运动中心的__非常完善，有泳池和球场。",
+  "蹦跳": "小孩子__着跑进了游乐场。",
+  "甚至": "他学习非常努力，__在睡前也不忘复习。",
+  "主题": "这次活动的__是《爱护环境》，人人有责。",
+  "别具一格": "她的设计风格__，与众不同，令人印象深刻。",
+  "投降": "战争结束了，敌军被迫__。",
+  "自治": "这个地区实行高度__，拥有独立的立法权。",
+  "栏": "展览馆的每一__展示着不同时期的历史文物。",
+  "棕色": "美术馆的墙壁呈__，与周围的历史建筑十分协调。",
+  "氧化": "铁器长期暴露在空气中会__生锈。",
+  "陌生": "他刚转学，对新环境感到十分__。",
+  "宁静": "乡村的夜晚十分__，只听见虫鸣鸟叫。",
+  "属于": "这本书__图书馆，请不要带走。",
+  "面积": "新加坡的国土__虽小，但经济发展迅速。",
+  "天花板": "美术馆大厅的__装饰着精美的图案，令人叹为观止。",
+  "坚持不懈": "她__地练习钢琴，终于在比赛中获奖。",
+  "开卷有益": "老师常说__，鼓励我们多读课外书。",
+  "以礼待人": "无论对谁，我们都应该__，保持礼貌。",
+  "新颖": "她的作文构思十分__，令老师眼前一亮。",
+  "戏剧": "学校举办了一场__演出，同学们表演得非常出色。",
+  "工作坊": "他参加了一个写作__，学到了很多实用技巧。",
+  "尴尬": "他说错了话，现场气氛变得非常__。",
+  "维护": "我们要__公共秩序，不随地乱扔垃圾。",
+  "友谊": "他们从小学认识，建立了深厚的__。",
+  "一帆风顺": "祝你考试__，取得好成绩！",
+  "有效": "这个方法非常__，大大提高了学习效率。",
+  "策略": "球队制定了新的比赛__，最终赢得了胜利。",
+  "嘉宾": "晚会邀请了几位著名的__，现场气氛热烈。",
+  "辅导员": "她找了学校的__谈心，解决了心中的困惑。",
+  "一诺千金": "他是个说话算数的人，真正做到了__。",
+  "言出必行": "他__，答应的事情一定会做到。",
+  "起码": "做作业__要认真检查一遍，不要粗心。",
+  "赖床": "周末他喜欢__，直到中午才起来。",
+  "滋味": "迟到被老师批评的__真不好受，他下定决心不再犯。",
+  "催促": "妈妈一再__他快点吃饭，不要迟到。",
+  "哀求": "他__老师再给他一次机会，但老师拒绝了。",
+  "硬着头皮": "他__走进校长室，准备承认自己的错误。",
+  "藤鞭": "父亲拿起__，准备惩罚犯错的孩子。",
+  "抡": "他__起手臂，用力把球投了出去。",
+  "挨打": "他调皮捣蛋，结果__了，哭了很久。",
+  "女佣": "家里的__每天负责打扫和煮饭，工作十分辛苦。",
+  "雨蓬": "他站在学校__下躲雨，等待妈妈来接他。",
+  "泪痕": "她擦去脸上的__，深呼一口气，重新振作起来。",
+  "猛": "他__地推开门，跑进教室找座位坐下。",
+  "嗓子眼": "心里紧张到__，他深呼一口气才开口说话。",
+  "允许": "老师__同学们在午休时间到图书馆看书。",
+  "早晨": "每个__，他都会去公园跑步，保持健康。",
+  "毛病": "他有一个__：总是忘记带作业。",
+  "不得了": "他迟到了，被老师骂得__，脸都红了。",
+  "情愿": "他__一个人做完，也不想麻烦别人。",
+  "缘故": "因为生病的__，他缺席了好几天的课。",
+  "相貌": "他__普通，但非常有才华。",
+  "讲究": "她对饮食非常__，只吃有机食品。",
+  "何必": "已经发生了，__再后悔呢？",
+  "记账": "他负责家里的__工作，但总是把数字搞错。",
+  "亏": "他做生意不细心，结果__了不少钱。",
+  "撇": "他写字时把这个字的__写成了横，差点闹出笑话。",
+  "慢条斯理": "他说话总是__，即使面对紧急情况也不着急。",
+  "起航": "轮船在清晨__，朝着目的地缓缓驶去。",
+  "焦急": "妈妈__地等待着考试成绩公布。",
+  "记性": "差不多先生的__很差，常常把重要的事情忘掉。",
+  "精明": "她是个__的商人，生意做得非常成功。",
+  "剩": "她把__下的材料拼在一起，做成了一件新作品。",
+  "牙膏": "她发明了一种可以自动挤出__的工具，非常方便。",
+  "橡皮擦": "他把__改造成一个小印章，上面刻了自己的名字。",
+  "薯条": "他发现可以用__的包装袋做成创意花盆。",
+  "番茄酱": "她用__画出一幅有趣的画，让评委眼前一亮。",
+  "偶尔": "他平时不喝咖啡，但__会喝一杯提神。",
+  "评委": "比赛的__由三位专家担任，评分十分严格。",
+  "晋级": "他表现出色，成功__决赛。",
+  "奖励": "老师用小贴纸__表现好的同学。",
+  "获得": "她在这次比赛中__了第一名。",
+  "企业": "这家__已有五十年历史，产品畅销全球。",
+  "创新": "科技的__改变了人们的生活方式。",
+  "牧场": "草原上有一个大__，养了许多牛羊。",
+  "潜水": "他喜欢__，曾在珊瑚礁里看到各种鱼类。",
+  "艘": "海底牧场里停放着一__废弃的潜水艇。",
+  "屁股": "他站在课室门口，翘着__，显得非常不礼貌。",
+  "翘": "小猫好奇地__起尾巴，望着窗外的鸟儿。",
+  "潜水艇": "游客可以乘坐__潜入海底，观赏奇特的海洋生物。",
+  "仿佛": "她__回到了童年，脸上露出了微笑。",
+  "确切": "他给出了一个__的答案，让大家信服。",
+  "浑身": "他跑完马拉松后，__都酸痛不已。",
+  "基因": "科学家通过研究鱼类的__来了解它们的生活习性。",
+  "一哄而散": "警报声一响，广场上的人群__，瞬间消失不见。",
+  "手势": "老师用__示意大家安静下来。",
+  "颁布": "政府__了新的法令，保护野生动物。",
+  "泛": "水面上__着一层薄薄的泡沫。",
+  "泡沫": "肥皂产生了许多__，孩子玩得很开心。",
+  "腾空而起": "烟花__，在夜空中绽放出绚丽的光芒。",
+  "降落": "飞机缓缓地__在跑道上。",
+  "打量": "她仔细地__这个陌生的地方。",
+  "伤脑筋": "这道数学题真令人__，想了很久都做不出来。",
+  "拜访": "他们专程__了一位著名的建筑师，请教设计心得。",
+  "中央": "大楼__有一个宽敞的庭院，种满了各种植物。",
+  "漫步": "他们沿着河边__，欣赏着两岸的美景。",
+  "绞尽脑汁": "他__也想不出更好的方法。",
+  "华侨": "许多早期__来到新加坡，为当地的发展作出了贡献。",
+  "银行": "这栋旧__大楼虽然已经停用，但仍保存完好。",
+  "由衷": "我__地感谢你的帮助。",
+  "摩天大楼": "滨海湾附近耸立着许多__，构成壮观的城市天际线。",
+  "薄薄的": "设计师在钢架外覆盖了一层__玻璃，使建筑看起来轻盈透明。",
+  "抨击": "评论员__了政府的这项不合理政策。",
+  "挫折": "面对__，我们不应该轻易放弃。",
+  "打交道": "做建筑设计需要和很多不同的人__，沟通能力很重要。",
+  "而已": "这只不过是一个小玩笑__，不必当真。",
+  "油漆": "工人把围墙重新刷上了白色的__。",
+  "栏杆": "工人们正在修缮走廊的__，以确保安全。",
+  "宿舍": "他住在学校的__里，每天步行上课。",
+  "凭": "他__着多年的经验，出色地完成了这项任务。",
+  "欣慰": "看到学生们进步了，老师感到十分__。",
+  "订购": "他负责为宿舍__所有的食材和日常用品。",
+  "塔台": "__人员24小时监控机场上空，确保航班安全。",
+  "范围": "机场工作人员的职责__很广，涵盖许多不同岗位。",
+  "特殊": "这是一项__任务，需要特别谨慎。",
+  "警惕": "在公共场所，我们要时刻__，保护好个人财物。",
+  "失误": "任何一个小__都可能导致严重的后果。",
+  "不堪设想": "如果缺乏安全意识，后果将__。",
+  "脂肪": "航空餐要控制__的含量，保障乘客的健康。",
+  "及时": "他__发现了问题，避免了更大的损失。",
+  "一旦": "__发生火灾，请立刻拨打995。",
+  "心满意足": "他考上了理想大学，感到__。",
+  "截至": "__今日，报名人数已达两百人。",
+  "行驶": "列车在轨道上平稳地__。",
+  "延误": "航班因为天气原因__了两个小时。",
+  "稳定": "心情要保持__，不要因为小事而烦恼。",
+  "幕后": "地铁维修人员在__默默工作，保障系统正常运作。",
+  "贡献": "他为国家做出了巨大的__。",
+  "明知山有虎，偏向虎山行": "他__，坚持在艰难的环境中完成任务。",
+  "漏夜": "工人们__赶工，确保工程按时完成。",
+  "轨道": "地铁在专用__上行驶，不受路面交通影响。",
+  "凌晨": "__三点，他还在赶作业，非常辛苦。",
+  "就绪": "所有设备检查完毕，维修工作准备__。",
+  "隧道": "火车穿过长长的__，进入了另一个城市。",
+  "扫描": "技术人员用仪器__轨道，检测是否有裂缝。",
+  "裂痕": "地震过后，墙上出现了明显的__。",
+  "顺畅": "今天的交通非常__，没有遭遇塞车。",
+  "全力以赴": "为了备考，他__，每天苦读十小时。",
+  "职业": "他选择了地铁维修作为自己的__，感到非常自豪。",
+  "故障": "电梯发生了__，需要等维修人员来修理。",
+  "岗位": "每位员工都坚守自己的__，确保工作顺利进行。",
+  "维修": "技术人员正在__受损的机器。",
+  "确保": "我们要__食品安全，防止食物中毒。",
+  "投入": "他全身心地__工作，为公司作出了很大的贡献。",
+  "默默无闻": "他__地在基层工作了二十年，从不计较名利。",
+  "新谣": "许多__歌词描述了新加坡人的日常生活，充满亲切感。",
+  "芝麻": "这首歌虽然不出名，但平凡如__的它，在人心中留下了印记。",
+  "朗朗上口": "这首歌词简单__，大家很快就能跟着唱。",
+  "奉献": "医护人员__出宝贵的时间，照顾病患。",
+  "繁荣": "新加坡经济__，人民生活水平不断提高。",
+  "平凡": "他的工作很__，但却十分重要。",
+  "光芒": "无名英雄虽然低调，但他们的默默付出散发着温暖的__。",
+  "微不足道": "个人的力量虽然__，但汇聚在一起就很强大。",
+  "敬业乐业": "他__，无论做什么工作都全力以赴。",
+  "犹豫": "他__了很久，最终决定报名参加比赛。",
+  "不分青红皂白": "他__地责骂了同学，事后才发现搞错了。",
+  "教训": "这次的失败给了他一个深刻的__，让他学会了谨慎。",
+  "叛逆": "青少年有时会有__的心理，想挑战权威。",
+  "委屈": "他被误会了，心里感到很__。",
+  "内疚": "他因为说了伤人的话而感到__，想道歉。",
+  "不妨": "你__试试这个方法，也许会有效果。",
+  "匿名": "他以__的方式捐款，不愿透露姓名。",
+  "监督": "老师__学生完成作业，确保质量。",
+  "代沟": "父母与子女之间存在__，需要互相理解。",
+  "上瘾": "他对游戏__了，每天玩到深夜才睡觉。",
+  "疏远": "因为误会，他们的关系渐渐__了。",
+  "迎刃而解": "找到了问题的关键，难题便__了。",
+  "体谅": "我们要__父母的辛苦，多帮忙做家务。",
+  "无可厚非": "他这样做是出于好意，__。",
+  "称赞": "老师__他的作文写得很好，让他非常开心。",
+  "崇拜": "她非常__这位科学家，希望以他为榜样。",
+  "爱不释手": "他拿到新书后，__，整天捧着看。",
+  "碰钉子": "他去找经理谈加薪，结果__，被拒绝了。",
+  "泼冷水": "大家都很兴奋，他却来__，说计划不可行。",
+  "抽屉": "她从__里取出一封旧信，重读父亲多年前写给她的话。",
+  "精疲力竭": "经过一天的训练，队员们__，倒头就睡。",
+  "衰老": "岁月无情，老人渐渐__，行动也不便了。",
+  "抑郁": "长期压力过大可能导致__，影响心理健康。",
+  "寂寞": "他离家上大学，第一次感受到了__。",
+  "启齿": "她有话想说，却迟迟不敢__，不知从何开口。",
+  "打退堂鼓": "遇到困难就__，是永远无法成功的。",
+  "懊恼": "他__自己没有好好复习，导致考试不及格。",
+  "伺机": "他__向父亲说出心里的话，希望得到原谅。",
+  "心不在焉": "她上课__，脑子里想着别的事。",
+  "破天荒": "他__第一次参加了学校运动会，赢了比赛。",
+  "仓促": "因为时间__，他来不及准备好演讲稿。",
+  "打理": "父亲每天忙于工作，还要__家里的大小事务，非常辛苦。",
+  "家务": "他每天帮妈妈做__，非常懂事。",
+  "严肃": "校长用__的语气警告同学不能作弊。",
+  "安抚": "妈妈轻轻地__哭泣的孩子，让他安静下来。",
+  "干脆": "他说话__，从不绕弯子，让人觉得痛快。",
+  "风筝": "他们在公园里放__，感受到久违的轻松和快乐。",
+  "挣脱": "小鸟努力地__笼子，最终飞向了天空。",
+  "惊讶": "他听到这个消息，感到十分__，完全没想到。",
+  "斑": "风筝上有彩色的花__，在蓝天下格外好看。",
+  "缠绕": "藤蔓__着树干，紧紧地抱住了大树。",
+  "搂": "父亲__着他的肩膀，两人默默站在一起，感情更近了。",
+  "捐款": "他每个月都会向慈善机构__，帮助有需要的人。",
+  "拯救": "消防员冲入火场，__了被困的居民。",
+  "医疗": "助养计划的资金用于支付动物的__费用和日常护理。",
+  "研究": "科学家通过__动物行为，了解它们的生活习性。",
+  "优惠": "动物园为助养人提供门票__，以感谢他们的支持。",
+  "券": "助养人可以获得一张免费参观__，随时入场。",
+  "四肢": "猩猩的__非常有力，能轻松攀爬高树。",
+  "敏捷": "猎豹动作__，是陆地上跑得最快的动物。",
+  "穿梭": "水獭在水中__游动，动作优雅轻盈。",
+  "友善": "这只水獭非常__，游客靠近时也不会害怕。",
+  "辨识": "游客可以通过动物身上独特的斑纹来__它们的身份。",
+  "害羞": "这只穿山甲非常__，总是躲在角落里不出来。",
+  "馋": "猩猩一看到食物就变得很__，迫不及待地伸手去拿。",
+  "调皮": "这只小猴子非常__，老是跳来跳去，不肯安静。",
+  "摔跤": "小猩猩在玩耍时不小心__了，但马上爬起来继续玩。",
+  "推出": "动物园今年__了一个新的助养计划，反应热烈。",
+  "亲切": "工作人员用__的态度介绍助养计划，让游客感到宾至如归。",
+  "大摇大摆": "他__地走进教室，完全不在意已经迟到了。",
+  "独一无二": "她的才华__，在全校无人能及。",
+  "凶猛": "狮子是__的猛兽，连老虎也要退避三舍。",
+  "尤其": "他喜欢动物，__喜欢猫，家里养了好几只。",
+  "愧疚": "他因为忘记了好友的生日而感到__。",
+  "光泽": "这块玉石闪着温润的__，非常漂亮。",
+  "懒懒地": "猫__趴在沙发上，享受着午后的阳光。",
+  "妻子": "他的__也非常喜欢猫，两人一起照顾家里的宠物。",
+  "啾啾": "笼子里的小鸟发出__的叫声，惹来了猫的注意。",
+  "仰": "猫__着头，盯着笼子里的小鸟，眼神专注。",
+  "凝望": "她__着窗外的星空，陷入了沉思。",
+  "鸟笼": "他每天给__里的小鸟换水喂食，照顾得十分周到。",
+  "隔": "猫趴在__着玻璃的窗边，看着外面的小鸟。",
+  "愤怒": "他得知被骗后，心中充满了__。",
+  "畏罪潜逃": "罪犯__，警察正在追捕他。",
+  "喵": "猫轻轻叫了一声“__”，然后缩到角落里不敢出来。",
+  "衔": "猫__着一只鸟回到屋里，让主人既惊讶又心疼。",
+  "搞": "不知道猫是怎么__进去的，把笼门都打开了。",
+  "失踪": "那只小猫已经__三天了，主人十分担心。",
+  "估计": "他__这件事要花半个小时完成。",
+  "活泼": "她性格__开朗，走到哪里都是焦点。",
+  "丰富": "他的课外活动非常__，有篮球、音乐和绘画。",
+  "褐": "一只__色的鸟在树梢上盘旋，非常罕见。",
+  "盘旋": "老鹰在天空中__，寻找猎物。",
+  "丝毫": "面对突如其来的鸟群，他__不觉得害怕。",
+  "面面相觑": "听到这个消息，大家都__，不知道该怎么办。",
+  "愣": "他__在原地，不知道该如何反应。",
+  "傻": "他__乎乎地站在那里，完全不知道发生了什么。",
+  "急促": "他的呼吸变得__，显然是跑了很久。",
+  "因素": "水资源短缺的__很多，包括气候变化和人口增长。",
+  "水喉": "记得随手关好__，不要浪费水资源。",
+  "资源": "我们要节约用水，珍惜地球的自然__。",
+  "艰巨": "这项任务十分__，需要大家通力合作。",
+  "昂贵": "这双鞋子价格__，他考虑了很久才决定买。",
+  "消耗": "长跑__了大量体力，他跑完后累极了。",
+  "干旱": "今年降雨量极少，当地正面临严重的__。",
+  "扩大": "工厂决定__生产规模，招聘更多工人。",
+  "蓄水池": "新加坡建设了多个__，为居民提供稳定的水源。",
+  "洗澡": "我们__时应该尽量缩短时间，以节约用水。",
+  "浴室": "她在__里安装了省水设备，减少了日常用水量。",
+  "趋势": "随着人口增长，用水量增加的__越来越明显。",
+  "开源节流": "家庭理财要懂得__，才能存下更多积蓄。",
+  "媒体": "这件事被各大__广泛报道，引起社会关注。",
+  "塑料": "科学家正在研发可降解的__，减少环境污染。",
+  "吨": "全球每年产生数百万__的塑料垃圾，污染海洋。",
+  "廉价": "超市正在促销__商品，吸引了大批顾客。",
+  "提供": "便宜的塑料包装为企业__了极大的便利。",
+  "铺": "大量垃圾__满了海滩，景象触目惊心。",
+  "污染": "工厂排放的废水__了附近的河流。",
+  "焚烧": "农民__秸秆产生的浓烟，影响了空气质量。",
+  "烟尘": "焚烧塑料会释放出大量有毒__，污染空气。",
+  "土壤": "塑料微粒进入__，影响农作物的生长。",
+  "遏制": "政府采取行动__垃圾乱丢的问题。",
+  "倡导": "学校__绿色生活，鼓励学生自带水壶。",
+  "逐渐": "随着公众意识提高，塑料使用量__减少。",
+  "威胁": "塑料垃圾__着海洋生物的生存。",
+  "煞费苦心": "老师__地为学生设计了有趣的课堂活动。",
+  "统计": "根据__数据，今年学校的出席率有所提高。",
+  "选择": "消费者应该有意识地__环保产品，减少垃圾。",
+  "泛滥": "网络上虚假信息__，我们要学会辨别真假。",
+  "寿命": "保持健康的生活习惯，可以延长__。",
+  "途径": "回收是处理废旧手机最环保的__之一。",
+  "缺乏": "他__自信，不敢在众人面前发言。",
+  "亿": "全球有数十__部废旧手机被随意丢弃，造成污染。",
+  "遗憾": "他没能参加毕业典礼，感到十分__。",
+  "谨慎": "在做重要决定时，我们要十分__。",
+  "妥善": "废旧电池需要__处理，不能随意丢弃。",
+  "自卑": "他因为成绩不好而感到__，不敢举手发言。",
+  "身材": "她一直对自己的__不满意，总想着减肥。",
+  "羡慕": "她__同学有一双漂亮的运动鞋。",
+  "抗拒": "他__吃蔬菜，每次都把菜挑出来。",
+  "诱惑": "零食的__太大，他忍不住多吃了几块饼干。",
+  "毅力": "完成马拉松比赛需要坚强的__。",
+  "戒": "她决定__掉吃零食的习惯，改成多吃蔬菜水果。",
+  "茫然": "听到这个消息，他__地站在原地，不知所措。",
+  "瞌睡": "他上课时打__，被老师叫起来回答问题。",
+  "嫌": "他__菜太淡，又加了一勺盐。",
+  "逼": "她__自己节食，结果反而影响了健康。",
+  "烹饪": "她喜欢__，常常为家人做各种美食。",
+  "符合": "她想找到一种__自己口味又健康的饮食计划。",
+  "选修": "他__了美术课，希望培养自己的绘画技能。",
+  "憋": "他心里有话，但一直__着不说，感到非常压抑。",
+  "委婉": "她用__的方式拒绝了对方的邀请，不显得太生硬。",
+  "彻底": "这次大扫除，他把房间__清理了一遍。",
+  "缝": "她从门__里看出去，发现走廊漆黑一片。",
+  "掩": "她用手__住嘴，不让自己发出声音。",
+  "恐惧": "他对黑暗有一种莫名的__。",
+  "走廊": "她踮着脚尖走过__，生怕发出任何声音。",
+  "锁": "她检查了门__，确保已经锁好，才安心睡觉。",
+  "熄灯": "宿舍规定晚上十点__，同学们必须准时入睡。",
+  "颤抖": "她在台上紧张地__着，声音都变了。",
+  "隐约": "远处__传来一阵歌声，若有若无。",
+  "瑟瑟": "她__发抖，躲在被子里不敢出来。",
+  "恐怖": "这部__电影吓得她躲在沙发后面。",
+  "通宵": "他__赶完了报告，眼睛布满了血丝。",
+  "惊悚": "她读完这篇__小说，好几天都不敢关灯睡觉。",
+  "和谐": "这个社区里各族群__相处，互帮互助。",
+  "冤家": "他们看似一对__，总是争吵，其实感情很好。",
+  "误会": "他们两人之间产生了__，需要坐下来好好沟通。",
+  "脖子": "她因为长时间低头看手机，__感到酸痛。",
+  "社交媒体": "她每天花很多时间在__上，浏览各种资讯。",
+  "缺陷": "她试图用好看的姿势遮掩自己外表上的__。",
+  "姿势": "打电脑时要保持正确的__，避免驼背。",
+  "拘束": "面对镜头，她显得有些__，不知道该如何表现。",
+  "嘈杂": "咖啡厅里人声__，她很难专心思考。",
+  "沮丧": "他落选了，心情十分__，不想说话。",
+  "若有所思": "她__地望着远方，好像在想什么心事。",
+  "模糊": "照片拍得太__，看不清楚细节。",
+  "敏感": "她__的心思让她容易察觉别人情绪的变化。",
+  "掩饰": "他努力__自己的紧张，但还是被老师看出来了。",
+  "摄影": "他学习了__技巧，学会了如何捕捉自然美丽的瞬间。",
+  "谷底": "跌到__的时候，她终于学会了接受真实的自己。",
+  "简陋": "他们住在一间__的小屋里，没有什么家具。",
+  "政府": "__投入大量资金，改善公共交通系统。",
+  "开辟": "工人们在山间__了一条新的道路。",
+  "市镇": "新加坡各个__都设有学校、商店和诊疗所，生活便利。",
+  "宗教": "新加坡各__和谐共处，体现了多元社会的包容精神。",
+  "综合": "新市镇内有__设施，包括购物中心、学校和医院。",
+  "诊疗所": "每个组屋区附近都有__，居民看病十分方便。",
+  "经济": "新加坡__腾飞后，居民的生活水平也大幅提升。",
+  "蓬勃": "随着经济的发展，旅游业__发展。",
+  "富裕": "他们家庭条件__，孩子从小生活无忧。",
+  "变迁": "时代的__带来了人们生活方式的巨大改变。",
+  "障碍": "语言__是留学生面临的最大挑战之一。",
+  "驰名": "这家餐厅__中外，游客慕名而来。",
+  "屡次": "新加坡__在全球宜居城市排行榜上名列前茅。",
+  "荣誉": "他为学校赢得了无数__，让大家引以为傲。",
+  "姿态": "她以优雅的__出现在颁奖典礼上。",
+  "接触": "他第一次__雨树，就被它的壮观所深深吸引。",
+  "翠绿": "春天来了，树叶变得__，生机勃勃。",
+  "心旷神怡": "站在山顶，眺望远处的美景，令人__。",
+  "合拢": "夜晚，雨树的叶子慢慢__，好像在安静地入睡。",
+  "林荫": "孩子们喜欢在__大道上玩耍，享受大树的庇护。",
+  "樟宜": "作者在__路上见到了让她印象深刻的雨树。",
+  "耸立": "一棵巨大的雨树__在路旁，成为街道的标志。",
+  "温馨": "家里的氛围十分__，充满了爱与关怀。",
+  "欣赏": "她站在画廊里，细细__每一幅画作。",
+  "粗糙": "他的双手因为长年劳作而变得__。",
+  "婆娑": "雨树的枝叶__起舞，在微风中显得格外动人。",
+  "撑": "她用一把大伞__着烈日，继续赶路。",
+  "同甘共苦": "他们__，一起经历了风风雨雨。",
+  "茁壮": "小树苗经过精心照料，__成长。",
+  "移民": "他的祖父当年从中国__到新加坡，开创了新生活。",
+  "接纳": "新同学刚来，大家热情地__她，让她感到温暖。",
+  "无怨无悔": "她为家人默默付出了多年，却__。",
+  "千姿百态": "秋天的树叶呈现出__的颜色，十分美丽。",
+  "空旷": "操场上空无一人，显得格外__。",
+  "患": "外婆__上了失智症，渐渐认不出家人。",
+  "失智症": "外婆__后，常常忘记刚刚发生的事情。",
+  "寻找": "她在熟悉的街道上__外婆年轻时喜爱的小吃。",
+  "流逝": "时光__，转眼间他已经毕业了十年。",
+  "嬉戏": "孩子们在草地上__，笑声不断。",
+  "咖喱卜": "她陪外婆去买__，那是外婆最喜欢的小吃。",
+  "俏皮": "她说了一句__的话，逗得大家哈哈大笑。",
+  "鲜艳": "花园里开满了__的鲜花，五颜六色。",
+  "承载": "这张旧照片__着他对童年的美好回忆。",
+  "沉重": "这个消息让他的心情十分__，久久无法释怀。",
+  "贸易": "新加坡是国际__中心，与全球各地有商业往来。",
+  "丝绸": "古代丝路运输的主要商品之一就是珍贵的__。",
+  "陆地": "古代丝绸之路跨越广袤的__，连接了东西方文明。",
+  "奢侈": "香料和丝绸在古代是__品，只有富人才负担得起。",
+  "瓷器": "中国的__在古代享誉全球，是丝路贸易的重要商品。",
+  "仪式": "新加坡通过各种文化__，传承多元民族的传统。",
+  "秉持": "新加坡__开放包容的精神，欢迎来自世界各地的人才。",
+  "枢纽": "樟宜机场是亚洲重要的航空__。",
+  "港口": "新加坡__吞吐量巨大，是全球最繁忙的港口之一。",
+  "致力": "新加坡__于与各国建立友好的外交和经济关系。",
+  "勾勒": "他用几句话__出了新加坡未来发展的蓝图。",
+  "高瞻远瞩": "领导人__，为国家制定了长远的发展计划。",
+  "运输": "新加坡发达的__网络连接了全球主要城市和港口。",
+  "传承": "传统文化需要一代代人的__，才不会消失。",
+  "可谓": "新加坡__是个文化大熔炉，汇集了来自各地的人和文化。",
+  "岛屿": "新加坡是一个由许多__组成的国家。",
+  "海峡": "新加坡__连接着太平洋和印度洋。",
+  "历史": "新加坡虽小，但拥有丰富的__，值得深入了解。",
+  "挖掘": "考古学家在这里__出了许多古代文物。",
+  "区域": "新加坡积极参与东南亚__事务，推动地区合作。",
+  "汇集": "这里__了来自世界各地的美食，琳琅满目。",
+  "赋予": "父母__我们生命，我们要好好珍惜。",
+  "海纳百川": "新加坡__，包容各种不同的文化。",
+  "椰浆饭": "__是许多新加坡人最喜爱的早餐之一。",
+  "黄姜饭": "印度婚礼上常会准备__招待宾客，寓意吉祥。",
+  "发芽": "这颗文化种子在新加坡的土地上__，开花结果。",
+  "兼容并蓄": "新加坡的饮食文化__，融合了各族风味。",
+  "携手": "两国决定__合作，共同应对气候变化。",
+  "辉煌": "他的体育生涯__，获奖无数。",
+  "得天独厚": "新加坡地理位置__，是重要的国际港口。",
+  "给予": "新加坡政府__各族人民平等的权利和机会。",
+  "婉转": "他用__的语气说出建议，让对方容易接受。",
+  "瞩目": "新加坡在全球舞台上的表现令人__。",
+  "求同存异": "不同民族在__的原则下，和谐共处。",
+  "皇帝": "在古代，__手握无上权力，统治万民。",
+  "典型": "他是一个__的好学生，成绩优秀，品德高尚。",
+  "普及": "智能手机的__改变了人们的通讯方式。",
+  "真伪": "面对网上消息，我们要学会辨别__，不轻信谣言。",
+  "步伐": "时代的__越来越快，我们要不断学习。",
+  "询问": "收到可疑消息，应该先向可靠来源__，再决定是否转发。",
+  "人云亦云": "做人要有自己的主见，不能__，随波逐流。",
+  "免疫": "提高媒体素养能让人对假消息产生__力，不轻易受骗。",
+  "凝聚力": "假消息会破坏社会__，让人们互相不信任。",
+  "辨别": "我们要学会__真假信息，不轻易相信谣言。",
+  "良好": "他和同学们建立了__的友谊。",
+  "人际": "学会有效沟通是建立良好__关系的基础。",
+  "坦率": "真正的朋友之间应该__地说出自己的感受。",
+  "隐瞒": "他__了事情的真相，导致误会越来越深。",
+  "粗鲁": "他说话__，经常无意中伤害别人的感情。",
+  "分歧": "两人在这件事上产生了__，各持己见。",
+  "矛盾": "他内心十分__，不知道该选择哪条路。",
+  "磋商": "两国代表经过多轮__，终于签署了协议。",
+  "彼此": "好朋友之间应该__理解，不要因小事争吵。",
+  "融洽": "全班同学相处得非常__，班级气氛很好。",
+  "诀窍": "学好语言的__是多读多写多练习。",
+  "聆听": "好的朋友懂得耐心地__对方倾诉心事。",
+  "死党": "他们是多年的__，无话不谈。",
+  "强迫": "父母不应该__孩子选择他们不喜欢的职业。",
+  "橱窗": "商店的__里摆满了新款商品，吸引路人驻足。",
+  "狭窄": "这条小巷非常__，只能容一人通过。",
+  "铅笔盒": "她把心爱的__放在桌上，那是好友送的礼物。",
+  "拧": "他__开水龙头，洗了把脸。",
+  "抿": "她__了一口水，静静地坐在朋友的病床旁。",
+  "肺炎": "他因患__住院了一个星期，出院后还需休养。",
+  "纸屑": "她把练习纸的__收拾干净，保持病房整洁。",
+  "肿瘤": "医生发现他体内有一个__，建议尽快手术。",
+  "癌症": "早期发现__，治愈率会大大提高。",
+  "徒劳无功": "他努力了很久，但最终还是__，没有解决问题。",
+  "擦拭": "她轻柔地为朋友__额头上的汗水，眼中充满关怀。",
+  "某": "学校__位老师因为身体不适，今天没来上课。",
+  "苍白": "他生病后脸色__，没有一点血色。",
+  "鼓掌": "精彩的表演结束后，观众热烈地__。",
+  "忠实": "他是俱乐部的__粉丝，每场比赛都会到场支持。",
+  "异乎寻常": "今天的天气__地炎热，超过了历史最高纪录。",
+  "痊愈": "经过一个月的治疗，他终于__，可以出院了。",
+  "清晰": "老师讲解问题时，思路非常__，让学生一听就懂。",
+  "调剂": "他用音乐来__繁忙的学习生活。",
+  "目睹": "他亲眼__了这场意外事故的发生过程。",
+  "鄙夷": "她用__的眼神看着那个说谎的同学。",
+  "流淌": "河水静静地__过草地，景色十分怡人。",
+  "窗帘": "她拉开__，让阳光照进昏暗的房间。",
+  "提心吊胆": "他__地走过那条黑暗的小巷，终于到家了。",
+  "封": "她发现了一__装满饼干罐的信封，里面藏着一个秘密。",
+  "古董": "这家店专门卖__，吸引了很多收藏家。",
+  "衡量": "我们不能只用成绩来__一个学生的价值。",
+  "纯洁": "她有一颗__的心，从不对别人存坏念头。",
+  "歧途": "父母希望孩子走正路，不要误入__。",
+  "蔬菜": "均衡饮食要多吃__，少吃油腻食物。",
+  "麦片": "她每天早上都吃一碗__，配上牛奶，简单健康。",
+  "蛋白质": "运动后应该多摄取__，帮助肌肉恢复和生长。",
+  "睡眠": "充足的__对身体健康非常重要。",
+  "体魄": "坚持运动可以强健__，增强抵抗力。",
+  "频率": "他提高了练习的__，从每周两次增加到每天。",
+  "韵律": "这首歌的__轻快，让人忍不住随之起舞。",
+  "汲取": "我们应该从失败中__教训，避免重蹈覆辙。",
+  "敞开": "她__心扉，把心中的烦恼全都说了出来。",
+  "心扉": "他终于向好友敞开__，说出了心中的烦恼。",
+  "缔造": "我们要努力__一个健康快乐的生活方式。",
+  "聊天": "与朋友__是减压的好方法，能让心情变好。",
+  "郊外": "周末，一家人驱车到__野餐，享受大自然。",
+  "淋漓": "他打完球，汗水__，但心情非常舒畅。",
+  "手札": "她用__记录下每天的心情，成为珍贵的回忆。",
+  "抒发": "写日记是__情感的好方法。",
+  "休憩": "长途旅行后，大家在小亭子里__片刻。",
+  "均衡": "要保持__的饮食，才能获得各种营养。",
+  "享受": "学会放慢脚步，__生活中的每一刻。",
+  "饮茶": "在广东，__是一种传统的饮食文化。",
+  "唐": "__代时，饮茶风俗已经非常盛行。",
+  "磨": "古代人用石__将茶叶磨成细粉，再冲泡饮用。",
+  "葱": "宋代人泡茶时会加入__、盐等调料，味道与现代截然不同。",
+  "橘子": "古人有时会把__皮加入茶中，增添清香。",
+  "宋": "__代的斗茶文化非常盛行，人们互相比试茶的品质。",
+  "鼎盛": "唐朝是中国古代文化最__的时期之一。",
+  "柴": "古人用__火慢慢将水烧开，再泡茶品饮。",
+  "醋": "古代煮茶有时会加入盐和__，口味与现代大不相同。",
+  "沸水": "泡茶要用滚烫的__，才能把茶叶的香气泡出来。",
+  "调匀": "把茶粉和少许水__后，再加入热水搅打成茶汤。",
+  "搅拌": "他用勺子慢慢地__咖啡，让糖充分溶解。",
+  "步骤": "泡茶有一定的__，马虎不得，否则味道会大打折扣。",
+  "鉴赏": "她对艺术很有造诣，能__各种名画。",
+  "消暑": "天热的时候喝一杯绿豆汤，有__的效果。",
+  "菌": "发酵茶是通过特定的__发酵而成，口感独特。",
+  "所谓": "他终于明白了__叫做真正的友谊。",
+  "源远流长": "中华文化__，有着数千年的历史传承。",
+  "异军突起": "这个新品牌__，迅速占领了市场。",
+  "五花八门": "市场上的商品__，让消费者眼花缭乱。",
+  "舞蹈": "她从小学习__，现在已经是专业舞蹈演员了。",
+  "节奏": "这首歌的__明快，适合在运动时听。",
+  "霹雳舞": "他擅长__，常常在联欢会上表演。",
+  "肌肉": "跳街舞需要强健的__和良好的协调性。",
+  "风靡": "这款游戏__全球，玩家人数突破了一亿。",
+  "掀起": "这部电影__了一股热潮，票房大卖。",
+  "热潮": "健康饮食的__席卷全国，越来越多人注重养生。",
+  "雨后春笋": "近年来，网红餐厅如__般涌现，遍布全城。",
+  "爆发力": "街舞要求舞者有极强的__，才能完成高难度动作。",
+  "默契": "他们配合得天衣无缝，两人之间的__令人羡慕。",
+  "焕发": "他的脸上__出自信的光芒，让人眼前一亮。",
+  "真挚": "她写了一封__的感谢信，表达了对老师的感激。",
+  "名额": "社区节的义工招募__有限，报名必须尽快。",
+  "链接": "活动的详情请点击以下__，查看完整说明。",
+  "师傅": "年轻人向老__学习传统裁缝技艺，努力传承手工艺。",
+  "擅长": "他__数学，每次考试都拿满分。",
+  "裁缝": "妈妈是一位技艺精湛的__，能做各种款式的衣服。",
+  "编织": "她用彩色的毛线__了一条温暖的围巾。",
+  "匠人": "这位老__用一生的时间钻研木雕技艺。",
+  "烘焙": "她热爱__，每个周末都会做蛋糕给家人吃。",
+  "讲述": "老匠人向年轻人__自己学艺的艰辛历程。",
+  "黎明": "他每天__就起床跑步，坚持了多年。",
+  "苏醒": "春天来了，万物__，大地充满了生机。",
+  "禽": "农场里养了各种家__，每天都能听到鸡鸣声。",
+  "晚霞": "傍晚的__将天空染成了橙红色，美丽极了。",
+  "添砖加瓦": "每个人都应该为社区的建设__，贡献自己的力量。",
+  "族裔": "社区节汇聚了各__的居民，共同庆祝传统节日。",
+  "鲜为人知": "这段历史__，但对研究者来说却非常重要。",
+  "宵夜": "他们吃完__，才在凌晨两点道别回家。",
+  "唇齿相依": "邻国之间__，需要互相依存，共同发展。",
+  "亲戚": "过年时，全家人会走访__，互相拜年。",
+  "援手": "他落难时，好朋友及时伸出了__。",
+  "侥幸": "他__通过了考试，其实并没有好好准备。",
+  "慷慨解囊": "募捐活动中，许多热心人士__，帮助受灾家庭。",
+  "渡": "邻居帮助他们__过了最艰难的一段时期。",
+  "篱笆": "农舍外面围着一道木__，圈养着几只鸡。",
+  "心力交瘁": "照顾病重的父亲让他__，憔悴了许多。",
+  "雪中送炭": "朋友在我最困难的时候借钱给我，真是__。",
+  "恰好": "他们__在门口碰到，便一起帮老人把东西搬上楼。",
+  "弥补": "他用实际行动来__自己的过失。",
+  "谚语": "中国有很多关于勤劳的__，内容丰富，启人深思。",
+  "和睦": "邻居之间应该__相处，互相关心。",
+  "冷漠": "面对他人的困难，我们不能__，要伸出援手。",
+  "挑剔": "她对食物非常__，只吃特定的食材。",
+  "网络": "社区__群组让居民可以快速分享信息和互相帮忙。",
+  "开销": "留学的__很大，他需要打工来补贴生活费。",
+  "锯子": "他向邻居借了一把__，用来修理家里的旧桌子。",
+  "遛": "她每天早上都会在公园__狗，顺便与邻居打招呼。",
+  "拴": "进入商店前，他把狗__在门外的柱子上。",
+  "渠道": "我们可以通过多种__获取信息，包括网络和书籍。",
+  "弊端": "长时间看手机有很多__，对眼睛和颈椎都有害。",
+  "划算": "买这套书很__，比单本购买便宜很多。",
+  "久而久之": "他每天坚持锻炼，__，身体越来越好。",
+  "培训": "公司为新员工提供了为期两周的__。",
+  "阐述": "他在演讲中__了自己对环境保护的看法。",
+  "铿锵": "他的演讲声音__有力，让台下的听众精神为之一振。",
+  "雅俗": "一篇好演讲应该__共赏，让所有人都能理解并有所收获。",
+  "抑扬顿挫": "她朗诵时声音__，感情充沛，打动了观众。",
+  "僵硬": "他站在台上，身体__，不知道手该放哪里。",
+  "言简意赅": "好的文章应该__，不要写废话。",
+  "啰唆": "他说话太__，绕了半天才说到重点。",
+  "遐想": "精彩的演讲能激发听众的__，带来无限的启发。",
+  "枯燥": "他觉得背单词很__，总是提不起兴趣。",
+  "筛选": "演讲时要仔细__内容，只保留最重要的信息。",
+  "欲": "工__善其事，必先利其器，要演讲好，事前准备至关重要。",
+  "浏览": "他__了一遍新闻，没有发现什么大事。",
+  "沟通": "好的__是建立良好关系的基础。",
+  "举手投足": "她的__都透露出优雅的气质。",
+  "乏味": "这部电影情节__，让他昏昏欲睡。",
+  "润滑剂": "幽默是人际关系的__，能化解尴尬的气氛。",
+  "不胜枚举": "他的优点__，最突出的是勤奋和谦虚。",
+  "扼腕": "他为没有及时道歉而__叹息，后悔莫及。",
+  "体恤": "领导__员工的辛苦，特别批准了额外假期。",
+  "氛围": "班级里充满了积极向上的学习__。",
+  "谦虚": "他虽然成绩优秀，但为人十分__，从不炫耀。",
+  "裨益": "多读书对增长知识大有__。",
+  "严峻": "面对__的经济形势，企业需要采取积极措施。",
+  "流言蜚语": "她对那些__不予理会，继续做好自己的事。",
+  "扰乱": "虚假信息__了公众的判断，造成不必要的恐慌。",
+  "甚嚣尘上": "关于他辞职的传言__，但他本人从未证实。",
+  "基础": "诚实和尊重是良好沟通的__，缺一不可。",
+  "涵盖": "这本书__了历史、地理、科学等多个领域。",
+  "畅所欲言": "会议上，大家__，提出了很多宝贵意见。",
+  "尊重": "我们要__每个人，无论其背景和能力。",
+  "广泛": "社交媒体的影响十分__，几乎涉及生活的每个方面。",
+  "导致": "长期熬夜__他的健康每况愈下。",
+  "崛起": "亚洲经济的__改变了世界的格局。",
+  "颠覆": "互联网__了传统的商业模式。",
+  "报刊": "他每天早上都会买一份__，了解时事新闻。",
+  "书籍": "社交媒体改变了人们阅读__的习惯。",
+  "传播": "这则消息通过社交媒体迅速__，引发广泛关注。",
+  "拨": "现代人少了__电话的习惯，更多通过社交媒体联系。",
+  "限制": "政府对塑料袋的使用加以__，以减少污染。",
+  "天涯": "虽然相隔__，但网络拉近了彼此的距离。",
+  "屏幕": "她的眼睛长时间盯着__，感到疲倦和不舒服。",
+  "按钮": "只需轻轻按下__，就能把消息发送给远方的朋友。",
+  "疆界": "社交媒体打破了地域__，让全球用户得以即时联系。",
+  "庞大": "社交媒体平台拥有__的用户群，影响力不可忽视。",
+  "前所未有": "这次洪水规模__，造成了巨大的损失。",
+  "创建": "许多年轻人在网上__了自己的频道，分享知识和才华。",
+  "阶段": "学习是一个循序渐进的过程，每个__都有不同的挑战。",
+  "同侪": "他在__中鹤立鸡群，受到了大家的赞赏。",
+  "撰写": "她花了三年时间__这本关于历史的著作。",
+  "筹备": "活动委员会正在积极__年终晚会。",
+  "募捐": "学生会举办了一场__活动，为贫困学生筹集学费。",
+  "实践": "学习知识要与__相结合，才能真正掌握。",
+  "震撼": "这幅巨型壁画让参观者感到十分__。",
+  "循规蹈矩": "他做事总是__，从不尝试新方法。",
+  "融会贯通": "他终于将所有知识__，解开了这道难题。",
+  "腼腆": "她性格__，在陌生人面前不敢说话。",
+  "咨询": "他向律师__有关合同的法律问题。",
+  "数据": "她通过分析__，发现了提高学习效率的方法。",
+  "分析": "他仔细__了调查结果，找出了改进方向。",
+  "冰淇淋": "他们通过义卖__筹款，为贫困儿童提供学习用品。",
+  "充实": "他的大学生活非常__，每天都有新的收获。",
+  "贯穿": "爱国主义精神__了整部小说，令人动容。",
+  "勇于": "我们要__面对困难，不能退缩。",
+  "雄鹰": "年轻人应该像__一样，志存高远，勇于飞翔。",
+  "渺小": "站在浩瀚的宇宙面前，人类显得十分__。",
+  "坐井观天": "他从不出门，见识浅薄，真是__。",
+  "自鸣得意": "他只是得了一个小奖，就__，让人觉得可笑。",
+  "孤陋寡闻": "他从不读书看报，__，无法跟上时代的步伐。",
+  "奥妙": "大自然充满了__，等待科学家去探索。",
+  "寓言": "老师用一则__解释了学然后知不足的含义。",
+  "桨": "他用力划动__，小船慢慢向前移动。",
+  "浅尝辄止": "做事不能__，要深入研究才能有所成就。",
+  "哲学": "他对__很感兴趣，经常思考人生的意义。",
+  "比喻": "作者用蜜蜂__勤劳，形象生动，让人印象深刻。",
+  "热忱": "她以满腔__投入到志愿服务工作中。",
+  "持之以恒": "学习外语需要__，不能三天打鱼两天晒网。",
+  "清澈": "山间的溪水__见底，可以看到水底的石头。",
+  "干涸": "长期干旱，小河已经__，河床龟裂。",
+  "浇灌": "他每天坚持阅读，用知识__自己的心田。",
+  "九牛一毛": "他的捐款对这个大工程来说，不过是__。",
+  "落伍": "他不会用智能手机，感觉自己越来越__了。",
+  "楷模": "他是同学们学习的__，品学兼优。",
+  "孜孜不倦": "她__地学习新知识，从未停止进步。",
+  "敷衍": "他的回答非常__，根本没有认真思考问题。",
+  "逆水行舟": "学习就像__，不进则退。",
+  "淘汰": "不跟上时代的人，终将被社会__。",
+  "佐证": "这个例子很好地__了终身学习的重要性。",
+  "平庸": "他不甘心__，立志要成为行业中的佼佼者。",
+  "岂": "学习是终身的事业，__能因为毕业而停下？",
+  "层出不穷": "在这个创新时代，新技术__，令人目不暇接。",
+  "诠释": "她用精湛的演技__了这个角色的复杂内心。",
+  "抛锚": "他的摩托车在路中间__，让交通堵塞了好一会儿。",
+  "郁闷": "他因为考试失利而感到十分__，情绪低落。",
+  "叼": "那只猫__着鱼骨，骄傲地走过庭院。",
+  "逗": "他做了个鬼脸来__妹妹，让她破涕为笑。",
+  "挑战": "学习新语言是一大__，但也是成长的机会。",
+  "绊": "他不小心被石头__了一下，但很快恢复平衡继续前行。",
+  "攀登": "他们组成了一支登山队，__珠穆朗玛峰。",
+  "雀跃": "听到放假的消息，同学们__，欢呼雀跃。",
+  "山脉": "他拍摄了壮观的__照片，令观众叹为观止。",
+  "宇宙": "科学家们一直在探索__的起源与奥秘。",
+  "体验": "他想亲身__一次跳伞的感觉。",
+  "信任": "他对朋友充满了__，从不怀疑对方。",
+  "依赖": "她过度__父母，缺乏独立生活的能力。",
+  "跋涉": "他们在丛林中__了三天，终于到达目的地。",
+  "牵挂": "父母远在他乡，心里总是__着孩子。",
+  "唤": "父亲站在河边，轻声__着儿子的名字。",
+  "喉咙": "他的__发炎了，说话时感到疼痛。",
+  "绽放": "春天里，百花__，美不胜收。",
+  "绷": "他心里__着一根弦，担心父亲的身体。",
+  "一般": "父亲像山__，给了他一生最坚实的依靠。",
+  "无奈": "面对无法改变的结果，他只能__地叹了口气。",
+  "寺庙": "他每年都会去__祈福，祈求家人平安。",
+  "幽静": "这片森林十分__，只有鸟鸣和风声。",
+  "诧异": "他听到这个消息，感到十分__，一时说不出话来。",
+  "贱": "父亲说鱼很__，但在儿子眼中，那是父爱的礼物。",
+  "哽咽": "她说到动情处，声音__，泪水夺眶而出。",
+  "眼眶": "想起父亲的牺牲，他__湿润，几乎掉下眼泪。",
+  "咀嚼": "吃东西要细细__，有助于消化。",
+  "搬迁": "工厂决定__到郊外，以降低租金成本。",
+  "孝顺": "他非常__，每周都会回家陪父母吃饭。",
+  "探望": "周末，他去医院__生病的老师。",
+  "谅解": "他真诚地道歉，希望得到对方的__。",
+  "隆重": "学校为毕业生举办了一场__的典礼。",
+  "诅咒": "他愤怒地__那个骗了他的人。",
+  "洋溢": "她的脸上__着幸福的笑容。",
+  "慈祥": "奶奶的脸上总带着__的笑容，让人感到温暖。",
+  "潭": "他在僻静的山__旁练习小提琴，远离人群。",
+  "教授": "那位__说自己耳聋，其实是用善意的谎言帮助他。",
+  "割舍": "他__了对小提琴的恐惧，决心认真练习。",
+  "神圣": "他感到音乐是__的，每一次演奏都是一种朝圣。",
+  "介意": "他不__别人的批评，总是虚心接受。",
+  "演奏": "她在音乐会上精彩地__了一首钢琴曲。",
+  "责无旁贷": "保护环境是每一位公民__的责任。",
+  "分忧": "他默默地帮父母__，减轻家里的负担。",
+  "残障": "这座大楼专门为__人士设置了无障碍通道。",
+  "聘请": "公司__了一位经验丰富的顾问来指导工作。",
+  "同工同酬": "男女员工从事相同工作，应该__，不得歧视。",
+  "权利": "每个公民都有受教育的__。",
+  "雇主": "__有责任为员工提供安全的工作环境。",
+  "纠纷": "两家公司之间发生了合同__，需要通过法律解决。",
+  "小贩": "街边的__叫卖着各种小食，香气四溢。",
+  "摊位": "他在夜市摆了一个__，卖自制的手工艺品。",
+  "呵护": "父母__着孩子，希望他们健康快乐地成长。",
+  "缓解": "听音乐能有效地__压力和焦虑。",
+  "乞丐": "街边坐着一位衣衫褴褛的__，向路人乞讨。",
+  "跪": "他在父母面前__下，感谢他们多年的养育之恩。",
+  "肮脏": "他的房间非常__，到处都是垃圾。",
+  "贫穷": "虽然家庭__，他却从不放弃学习的机会。",
+  "赤裸裸": "乞丐的__目光直视着每个过路人，令人不安。",
+  "祈求": "她在庙里__神明保佑家人平安健康。",
+  "距离": "他刻意拉开与乞丐之间的__，不愿靠近。",
+  "慈悲": "这位法师满怀__，常常帮助有困难的人。",
+  "阻挡": "他用身体__住了冲向同学的那辆自行车。",
+  "肆无忌惮": "他在公共场所__地大声喧哗，令人反感。",
+  "褴褛": "那位老人衣衫__，但眼神中仍带着一丝尊严。",
+  "革履": "穿着西装__的人走过，与衣衫褴褛的乞丐形成强烈对比。",
+  "侦探": "他像个__一样，仔细观察乞丐的一举一动。",
+  "仁慈": "这位老人心地__，常常收留流浪猫狗。",
+  "叩头": "他向长辈__行礼，表达深深的敬意。",
+  "残疾": "他虽然身体有__，但仍然坚持参加体育比赛。",
+  "质朴": "他为人__，说话朴实无华，从不虚伪。",
+  "大概": "那位老人__七十岁左右，头发已经全白了。",
+  "晓得": "她__这件好事是谁做的，却没有声张。",
+  "蓦然": "他__回首，发现故人就站在身后。",
+  "推心置腹": "好朋友之间可以__地交流，无话不说。",
+  "否则": "要多行善事，__生命结束时会后悔莫及。",
+  "感恩": "我们要学会__，珍惜身边的每一份关爱。",
+  "匆匆": "他__地离开现场，没有留下名字。",
+  "婴儿": "刚出生的__非常脆弱，需要细心照料。",
+  "翅膀": "善良是我们心中的__，帮助我们飞向更美好的未来。",
+  "呈献": "晚会上，同学们为长辈__了精彩的表演。",
+  "扣人心弦": "这部电影情节__，让观众全程屏住呼吸。",
+  "爱恋": "剧中的男女主角经历了许多考验，__之情却始终如一。",
+  "唏嘘": "悲剧结局令观众__不已，感慨万千。",
+  "著名": "他是一位__的钢琴家，在国际上享有盛誉。",
+  "兴旺": "这家店生意__，每天都有很多顾客光临。",
+  "负荷": "他承受着巨大的工作__，身心俱疲。",
+  "反映": "这部戏剧真实地__了当时社会的种种矛盾。",
+  "岔路口": "在人生的__，我们需要认真思考，做出正确选择。",
+  "惆怅": "毕业在即，他心中充满了__，不舍得离开。",
+  "紧凑": "行程安排得非常__，几乎没有休息时间。",
+  "小卒": "主角从__开始做起，一步一步爬上了成功的顶峰。",
+  "兴衰": "历史记录了无数王朝的__，令人深思。",
+  "轿子": "在古代，__是达官贵人出行的重要交通工具。",
+  "何况": "连大人都做不到，__是小孩子呢？",
+  "耻笑": "她担心自己的行为会被别人__，所以非常小心。",
+  "搀扶": "他__着年迈的奶奶，小心翼翼地走下台阶。",
+  "罢了": "这只不过是个误会__，不必太在意。",
+  "姊妹": "林黛玉初见贾府的__，心中十分感慨。",
+  "顽劣": "他小时候十分__，常常惹麻烦，但长大后改变了很多。",
+  "溺爱": "父母过度地__孩子，反而害了他。",
+  "颈项": "她的__上戴着一条精美的项链。",
+  "鬓": "他两__已白，却依然精神矍铄。",
+  "桃": "她的脸颊红润如__，看起来健康可爱。",
+  "瓣": "她的嘴唇红润如花__，令人印象深刻。",
+  "重逢": "多年未见，他们在同学会上__，激动万分。",
+  "稀罕": "这种植物十分__，全世界只有几株。",
+  "拜见": "他专程前往老师家中__，向老师表达感谢之情。",
+  "面善": "这个人看着很__，好像在哪里见过。",
+  "大吃一惊": "听到这个消息，他__，半天说不出话来。",
+  "三顾茅庐": "他为了请到这位专家加盟，__，诚意十足。",
+  "争霸": "三国时期，各路英雄__，乱世之中风云变幻。",
+  "足智多谋": "他__，总能在危急时刻想出解决办法。",
+  "起伏": "人生充满了__，有高峰也有低谷。",
+  "斥责": "老师__那位扰乱课堂的同学，让他反省。",
+  "严寒": "东北的冬天__，气温常常在零下二十度以下。",
+  "恳请": "他__校长重新考虑他的申请，给他一次机会。",
+  "心直口快": "她__，有什么说什么，从不拐弯抹角。",
+  "酿": "人类对环境的破坏__成了严重的生态危机。",
+  "涌": "每年繁殖季节，大批海龟__上海滩产卵。",
+  "繁殖": "春天是许多动物__的季节，到处充满生机。",
+  "饲料": "为了提高产量，养殖场在__中加入化学物质，导致环境污染。",
+  "佳肴": "宴席上摆满了各种__，香气扑鼻，令人食指大动。",
+  "啃": "外来草食动物不断__食树根和树皮，导致植被大量减少。",
+  "入侵": "外来物种__当地生态，对本土动植物造成威胁。",
+  "盎然": "雨林里生机__，各种动植物和谐共存。",
+  "砍伐": "大量__树木导致森林面积减少，破坏了生态平衡。",
+  "栖息": "这片湿地是候鸟重要的__地，吸引了大批游客。",
+  "牢记": "我们要__历史教训，不让悲剧重演。",
+  "勿": "请__乱丢垃圾，共同维护生态环境。",
+  "惩罚": "犯法者必受__，这是法律的公正体现。",
+  "平衡": "保持工作与生活的__，对健康非常重要。",
+  "珍稀": "这种__动物被列为保护名单，禁止猎杀。",
+  "茂密": "树林里树木__，遮天蔽日，形成一片绿荫。",
+  "恶劣": "在__的天气条件下，工人仍然坚持施工。",
+  "浸泡": "他把衣服__在水里，让污渍先软化再清洗。",
+  "牺牲": "消防员为了救人不惜__自己，令人敬佩。",
+  "锐减": "由于气候变化，北极熊的数量__。",
+  "保育": "政府成立了专门机构，负责濒危动植物的__工作。",
+  "储存": "他们挖了一个大水池，用来__雨水。",
+  "身躯": "红树林用自己的__抵御风浪，保护内陆免受海浪侵袭。",
+  "侵蚀": "海浪长年累月地__着海岸，使海岸线后退。",
+  "空隙": "红树林的根系之间有许多__，为鱼类和虾蟹提供了庇护所。",
+  "堤": "为了防止洪水，政府在河边修建了坚固的__。",
+  "貌不惊人": "他__，但才华横溢，是公司最优秀的工程师。",
+  "窥视": "他透过窗帘缝隙__外面的情况。",
+  "宣布": "校长在台上__今年的最佳学生名单。",
+  "狩猎": "长期__导致狼群数量急剧减少，破坏了当地生态平衡。",
+  "饥饿": "孩子__了，妈妈赶紧给他拿了一些零食。",
+  "糟蹋": "不要__食物，要珍惜粮食。",
+  "毁灭": "战争__了整个城市，留下了无数废墟。",
+  "罪魁祸首": "调查发现，过度捕鱼才是海洋生态破坏的__。",
+  "竞争": "自然界中，动物之间存在激烈的__，适者生存。",
+  "袭击": "鲨鱼__了正在游泳的冲浪者，幸好及时获救。",
+  "违背": "他的行为__了道德原则，受到了大家的谴责。",
+  "拼搏": "运动员们在赛场上奋力__，争取最好的成绩。",
+  "面目全非": "一场大火过后，那栋建筑已经__，无法辨认。",
+  "举措": "政府采取了一系列__来应对经济下滑的问题。",
+  "联盟": "五个国家组成了一个经济__，共同制定贸易政策。",
+  "迄今": "__为止，这项研究还没有得出最终结论。",
+  "蜿蜒": "东南亚的河流__穿过广袤的热带雨林。",
+  "辽阔": "西部的大草原__无边，一望无际。",
+  "诸多": "这项计划存在__问题，需要进一步完善。",
+  "古迹": "这座城市保存了许多珍贵的历史__，吸引游客参观。",
+  "雕刻": "这个艺人在木头上精心__，刻出了一只栩栩如生的老鹰。",
+  "啧啧称奇": "观众看到这个魔术表演，纷纷__。",
+  "赞叹": "他精彩的演出赢得了观众的阵阵__。",
+  "底蕴": "这座城市有着深厚的文化__，处处体现着历史的痕迹。",
+  "灿烂": "舞台上灯光__，烘托出节日的欢乐气氛。",
+  "金碧辉煌": "宫殿内部装饰得__，令参观者叹为观止。",
+  "绚丽": "烟花在夜空中绽放，五彩__，美不胜收。",
+  "高耸": "摩天大楼__入云，成为城市的地标。",
+  "颇": "这项新政策__受市民欢迎，好评如潮。",
+  "独树一帜": "她的艺术风格__，与众不同，令人难忘。",
+  "赋税": "古代农民要向官府缴纳沉重的__，生活十分艰苦。",
+  "揭竿而起": "百姓忍无可忍，终于__，推翻了暴虐的统治。",
+  "暴虐": "历史上的__统治者往往遭到人民的反抗。",
+  "葬送": "一个错误的决定，可能__他多年来的努力成果。",
+  "推卸": "他从不__责任，勇于承认错误。",
+  "停滞": "由于缺乏资金，这个项目已经__了好几个月。",
+  "趾高气扬": "他取得好成绩后，变得__，不把同学放在眼里。",
+  "谦逊": "他虽然成就斐然，但为人__，不骄不躁。",
+  "梦寐以求": "到太空旅行是他__的梦想，他为此努力了多年。",
+  "昌盛": "国泰民安，经济__，是每个国民的心愿。",
+  "自知之明": "人要有__，了解自己的长处与不足。",
+  "忍无可忍": "受够了长期的欺负，他终于__，决定反击。",
+  "一无是处": "他并不是__，只是还没找到自己的优势。",
+  "协作": "这项任务需要全组成员密切__，才能顺利完成。",
+  "论坛": "他在国际__上发表了关于气候变化的演讲。",
+  "毋庸讳言": "__，这次考试我们班的成绩确实不理想。",
+  "棘手": "这是一个十分__的问题，让他伤透了脑筋。",
+  "肆虐": "台风__，大树被连根拔起，许多房屋受损。",
+  "谋求": "他正在积极__一份新工作，改变现状。",
+  "里程碑": "这项发明是科技发展的重要__，改变了人类生活。",
+  "开拓": "他是开拓新市场的__，为公司找到了新商机。",
+  "先驱": "她是女性太空人的__，打破了诸多纪录。",
+  "气馁": "失败了不要__，应该从中吸取教训，继续努力。",
+  "出类拔萃": "她在众多参赛者中__，获得了冠军。",
+  "韧性": "他有着惊人的__，无论遭受多少挫折都不放弃。",
+  "浩瀚": "知识的海洋__无边，我们要终身学习。",
+  "天方夜谭": "登上月球在过去听起来像是__，如今却已实现。",
+  "百折不挠": "他__地克服了重重困难，终于成功了。",
+  "研发": "公司投入大量资金进行新产品的__工作。",
+  "畅销": "她的新书一出版就成为__书，卖出了百万册。",
+  "贬": "这位官员因为直言进谏而被__官，流放边疆。",
+  "粮食": "他在密州任职期间，努力解决当地__短缺的问题。",
+  "豁达": "他心胸__，从不为小事计较。",
+  "满腔": "她__热忱地投入到教育事业中。",
+  "霜": "深秋时节，地面上覆盖着薄薄的白__，天气渐凉。",
+  "遣": "他自比冯唐，希望朝廷能__他驰骋沙场，报效国家。",
+  "挽": "他想象自己__弓射虎，保卫边疆的英勇场景。",
+  "豪迈": "这首诗气势__，充满了英雄主义的精神。",
+  "慷慨激昂": "他在台上__地发表演讲，鼓舞了全场听众。",
+  "勉励": "老师__学生要努力学习，不畏困难。",
+  "朝廷": "苏轼希望__能重用他，让他有机会报效国家。",
+  "笔锋": "这篇文章__犀利，观点鲜明，令人印象深刻。",
+  "扎": "梦想要__根于努力之中，才能真正实现。",
+  "喧腾": "演唱会现场人声__，气氛热烈。",
+  "感悟": "这次旅行让他有了很多深刻的__。",
+  "崭新": "新学年开始，他以__的面貌迎接挑战。",
+  "迥然": "这两幅画风格__不同，一幅写实，一幅抽象。",
+  "奋斗": "他为梦想不断__，终于取得了成功。",
+  "崎岖": "山路__，走起来非常辛苦，但风景美丽。",
+  "抵达": "经过长途飞行，飞机终于__了目的地。"
+};
+let EXAMPLES = Object.assign({}, EXAMPLES_FALLBACK);
+
+const ENGLISH_DEFS_FALLBACK = {
+  "淘气": "naughty; mischievous",
+  "惹": "to cause; to provoke; to invite (trouble)",
+  "两肋插刀": "to go through thick and thin for a friend",
+  "赵": "Zhao (a common Chinese surname)",
+  "科技": "science and technology",
+  "来者不拒": "to turn away no one who comes; welcome all",
+  "口头禅": "pet phrase; favourite catchphrase",
+  "小事一桩": "a minor matter; a piece of cake",
+  "人缘": "popularity; ability to get along with others",
+  "性格": "personality; character; temperament",
+  "直率": "frank; straightforward; candid",
+  "得罪": "to offend; to displease someone",
+  "别扭": "awkward; uncomfortable; at odds",
+  "争辩": "to argue; to dispute; to debate",
+  "即使": "even if; even though",
+  "冤枉": "to wrong someone; to treat unjustly",
+  "推荐": "to recommend; to endorse",
+  "有福同享，有难同当": "to share joys and bear hardships together",
+  "助人为快乐之本": "helping others is the source of happiness",
+  "健将": "champion; ace; outstanding athlete",
+  "内向": "introverted; reserved",
+  "系列": "series; set",
+  "捣乱": "to make trouble; to mess things up",
+  "瞬间": "in an instant; in a flash",
+  "兴致勃勃": "with great enthusiasm; in high spirits",
+  "粘": "to stick; to glue; to paste",
+  "蛋液": "beaten egg; egg wash",
+  "狼狈": "in a sorry state; in an embarrassing situation",
+  "讥讽": "to mock; to ridicule sarcastically",
+  "赌气": "to act out of spite; in a huff",
+  "嚷": "to shout; to yell; to cry out",
+  "小心翼翼": "very carefully; with great caution",
+  "荧光笔": "highlighter (pen)",
+  "抵挡": "to resist; to withstand; to fend off",
+  "拉扯": "to pull and tug; to drag",
+  "手足无措": "at a loss; not knowing what to do",
+  "布置": "to assign; to arrange; to set up",
+  "体会": "to understand through experience; to appreciate",
+  "服气": "to be convinced; to accept defeat willingly",
+  "证明": "to prove; to demonstrate; proof",
+  "居然": "unexpectedly; to one's surprise",
+  "恨不得": "to wish one could; to be dying to do something",
+  "审案": "to try a case; to adjudicate",
+  "律师": "lawyer; attorney",
+  "振振有词": "to speak in a self-righteous manner",
+  "心虚": "feeling guilty; lacking confidence",
+  "哑口无言": "speechless; at a loss for words",
+  "判决": "verdict; judgement; ruling",
+  "泄": "to leak; to let out; to vent",
+  "既然": "since; given that; now that",
+  "辩护": "to defend; to argue in someone's defence",
+  "报复": "to retaliate; to take revenge; revenge",
+  "错误": "mistake; error; wrong",
+  "葡萄": "grape",
+  "象征": "to symbolise; symbol",
+  "风俗": "custom; tradition; folk practice",
+  "辞旧迎新": "to bid farewell to the old year and welcome the new",
+  "燃放": "to set off (fireworks)",
+  "瓶瓶罐罐": "bottles and jars; various containers",
+  "厄运": "misfortune; bad luck",
+  "前夕": "eve; the night before",
+  "碗碟": "bowls and plates; crockery",
+  "预示": "to foretell; to be an omen of",
+  "兆头": "omen; sign; portent",
+  "忙碌": "busy; bustling",
+  "遥远": "distant; faraway; remote",
+  "恭敬": "respectful; deferential",
+  "万事大吉": "everything goes well; all the best",
+  "元旦": "New Year's Day (1 January)",
+  "除夕": "Chinese New Year's Eve",
+  "贼": "thief; burglar; sneaky",
+  "鱼尾纹": "crow's feet; laugh lines",
+  "装饰": "to decorate; decoration",
+  "圣诞": "Christmas",
+  "格格不入": "out of place; incompatible",
+  "结婚": "to get married",
+  "嫁": "(of a woman) to marry; to get married",
+  "视讯": "video call; video communication",
+  "沉默寡言": "quiet and reserved; a person of few words",
+  "副": "measure word for sets/pairs; deputy; assistant",
+  "酷": "cool; stylish (colloquial)",
+  "承诺": "a promise; a commitment",
+  "歉意": "apology; feeling of regret",
+  "围炉": "to gather around the fire for a reunion meal",
+  "蒸腾": "to steam; to evaporate upward; to rise",
+  "叽叽喳喳": "chattering; twittering noisily",
+  "缺席": "to be absent; absence",
+  "悦耳": "melodious; pleasing to the ear",
+  "闹别扭": "to have a falling-out; to be at odds",
+  "吞吞吐吐": "to speak hesitatingly; to hem and haw",
+  "红枣": "red date; jujube",
+  "儿媳妇": "daughter-in-law",
+  "莫名其妙": "baffling; for no apparent reason",
+  "疑惑": "puzzled; confused; doubt",
+  "大吉大利": "great luck and prosperity; very auspicious",
+  "魅力": "charm; charisma; appeal",
+  "博物馆": "museum",
+  "悠久": "long-standing; age-old; with a long history",
+  "遗产": "heritage; legacy; inheritance",
+  "巴刹": "wet market (from Malay 'pasar')",
+  "同胞": "compatriot; fellow countryman; sibling",
+  "融合": "to blend; to merge; fusion",
+  "皇宫": "palace; royal palace",
+  "城堡": "castle; fortress",
+  "时尚": "fashionable; trendy; fashion",
+  "彩绘": "colourful painting; mural; decorative artwork",
+  "流连忘返": "to linger and be reluctant to leave",
+  "娱乐": "entertainment; amusement; leisure",
+  "探索": "to explore; exploration",
+  "娘惹": "Peranakan (culture and cuisine of Straits-born Chinese)",
+  "拍摄": "to photograph; to film; to shoot",
+  "平均": "average; equal; evenly distributed",
+  "繁忙": "busy; hectic",
+  "闪耀": "to shine; to glitter; to dazzle",
+  "文明": "civilisation; culture; civilised",
+  "品尝": "to taste; to savour; to sample",
+  "安详": "serene; peaceful; calm and composed",
+  "休闲": "leisure; relaxation; casual",
+  "横梁": "crossbeam; horizontal beam",
+  "覆盖": "to cover; to blanket",
+  "玻璃": "glass",
+  "瀑布": "waterfall",
+  "循环": "cycle; to circulate; recycling",
+  "谷": "valley; gorge",
+  "株": "measure word for plants",
+  "设施": "facility; amenity; infrastructure",
+  "蹦跳": "to jump; to leap about; to bounce",
+  "甚至": "even; even to the extent that",
+  "主题": "theme; subject; topic",
+  "别具一格": "unique; in a class of its own",
+  "投降": "to surrender; to capitulate",
+  "自治": "self-governance; autonomy",
+  "栏": "railing; section; column",
+  "棕色": "brown",
+  "氧化": "to oxidise; oxidation",
+  "陌生": "unfamiliar; strange; unknown",
+  "宁静": "peaceful; tranquil; serene",
+  "属于": "to belong to; to be part of",
+  "面积": "area; surface area",
+  "天花板": "ceiling",
+  "坚持不懈": "to persevere; to keep going without giving up",
+  "开卷有益": "reading is always beneficial",
+  "以礼待人": "to treat others with courtesy and respect",
+  "新颖": "novel; original; fresh and unique",
+  "戏剧": "drama; theatre; play",
+  "工作坊": "workshop",
+  "尴尬": "awkward; embarrassed; in an embarrassing situation",
+  "维护": "to maintain; to safeguard",
+  "友谊": "friendship",
+  "一帆风顺": "smooth sailing; everything going smoothly",
+  "有效": "effective; valid",
+  "策略": "strategy; tactic",
+  "嘉宾": "guest of honour; distinguished guest",
+  "辅导员": "counsellor; mentor; guidance officer",
+  "一诺千金": "a promise as good as gold",
+  "言出必行": "to keep one's word; actions match words",
+  "起码": "at least; the bare minimum",
+  "赖床": "to be reluctant to get out of bed",
+  "滋味": "taste; flavour; feeling",
+  "催促": "to urge; to press; to rush someone",
+  "哀求": "to plead; to beg; to entreat",
+  "硬着头皮": "to steel oneself; to brace oneself",
+  "藤鞭": "rattan cane; cane for corporal punishment",
+  "抡": "to swing; to brandish; to wield",
+  "挨打": "to be beaten; to receive a beating",
+  "女佣": "maid; domestic helper (female)",
+  "雨蓬": "awning; canopy",
+  "泪痕": "tear stains; traces of tears",
+  "猛": "fierce; sudden and forceful",
+  "嗓子眼": "throat; the back of the throat",
+  "允许": "to allow; to permit",
+  "早晨": "morning; early morning",
+  "毛病": "fault; bad habit; problem; flaw",
+  "不得了": "extremely; terribly; very serious",
+  "情愿": "to prefer; to be willing; would rather",
+  "缘故": "reason; cause",
+  "相貌": "appearance; looks; facial features",
+  "讲究": "to be particular about; fastidious",
+  "何必": "why bother; there's no need to",
+  "记账": "to keep accounts; to record expenses",
+  "亏": "to lose out; at a loss; fortunately",
+  "撇": "left-falling stroke (in Chinese writing); to disregard",
+  "慢条斯理": "unhurried and methodical; slow and deliberate",
+  "起航": "to set sail; to depart",
+  "焦急": "anxious; worried; impatient",
+  "记性": "memory; ability to remember",
+  "精明": "shrewd; astute; clever",
+  "剩": "to remain; leftover",
+  "牙膏": "toothpaste",
+  "橡皮擦": "eraser; rubber",
+  "薯条": "french fries; chips",
+  "番茄酱": "tomato sauce; ketchup",
+  "偶尔": "occasionally; once in a while",
+  "评委": "judge; panel member; assessor",
+  "晋级": "to advance; to move up to the next level",
+  "奖励": "reward; prize; to reward",
+  "获得": "to obtain; to gain; to win",
+  "企业": "enterprise; business; company",
+  "创新": "innovation; to innovate",
+  "牧场": "pasture; ranch",
+  "潜水": "to dive; diving",
+  "艘": "measure word for ships and boats",
+  "屁股": "buttocks; bottom; rear end",
+  "翘": "to turn up; to stick up",
+  "潜水艇": "submarine",
+  "仿佛": "as if; as though; seemingly",
+  "确切": "exact; precise; definite",
+  "浑身": "all over the body; from head to toe",
+  "基因": "gene",
+  "一哄而散": "to scatter in all directions; to disperse all at once",
+  "手势": "gesture; hand signal",
+  "颁布": "to promulgate; to issue officially",
+  "泛": "to float; to overflow; general; vague",
+  "泡沫": "foam; bubble; froth",
+  "腾空而起": "to leap into the air; to soar up",
+  "降落": "to land; to descend; to come down",
+  "打量": "to size up; to look someone up and down",
+  "伤脑筋": "to rack one's brains; troublesome; headache-inducing",
+  "拜访": "to visit; to call on",
+  "中央": "centre; middle; central",
+  "漫步": "to stroll; to walk leisurely",
+  "绞尽脑汁": "to rack one's brains; to think hard",
+  "华侨": "overseas Chinese; Chinese diaspora",
+  "银行": "bank",
+  "由衷": "heartfelt; sincere; from the heart",
+  "摩天大楼": "skyscraper",
+  "薄薄的": "thin; very thin",
+  "抨击": "to criticise strongly; to attack (verbally)",
+  "挫折": "setback; frustration; failure",
+  "打交道": "to deal with; to interact with",
+  "而已": "that's all; merely",
+  "油漆": "paint; to paint",
+  "栏杆": "railing; handrail; balustrade",
+  "宿舍": "dormitory; quarters",
+  "凭": "to rely on; based on; by virtue of",
+  "欣慰": "gratified; comforted; pleased and relieved",
+  "订购": "to order; to place an order",
+  "塔台": "control tower",
+  "范围": "scope; range; area",
+  "特殊": "special; exceptional",
+  "警惕": "to be vigilant; alertness",
+  "失误": "mistake; error; slip",
+  "不堪设想": "unthinkable; the consequences would be terrible",
+  "脂肪": "fat; lipid",
+  "及时": "timely; in time; without delay",
+  "一旦": "once; if; in case",
+  "心满意足": "perfectly satisfied; content; pleased",
+  "截至": "up to; as of; by (a certain time)",
+  "行驶": "to travel; to run (of vehicles)",
+  "延误": "delay; to be delayed",
+  "稳定": "stable; steady",
+  "幕后": "behind the scenes; backstage",
+  "贡献": "contribution; to contribute",
+  "明知山有虎，偏向虎山行": "to knowingly face danger; to tackle challenges head-on",
+  "漏夜": "throughout the night; to work through the night",
+  "轨道": "track; rail; orbit",
+  "凌晨": "early hours of the morning; small hours",
+  "就绪": "ready; prepared; in readiness",
+  "隧道": "tunnel",
+  "扫描": "to scan; to sweep",
+  "裂痕": "crack; fissure; rift",
+  "顺畅": "smooth; unobstructed; without a hitch",
+  "全力以赴": "to go all out; to spare no effort",
+  "职业": "occupation; profession",
+  "故障": "malfunction; breakdown; fault",
+  "岗位": "post; position; work station",
+  "维修": "maintenance; to repair",
+  "确保": "to ensure; to guarantee",
+  "投入": "to devote oneself; dedicated; to invest",
+  "默默无闻": "quietly unknown; without seeking recognition",
+  "新谣": "Xinyao (Singapore Mandarin folk songs)",
+  "芝麻": "sesame; something small and trivial",
+  "朗朗上口": "catchy; easy to read aloud; pleasant to recite",
+  "奉献": "to dedicate; to devote; to contribute selflessly",
+  "繁荣": "prosperity; flourishing",
+  "平凡": "ordinary; commonplace; average",
+  "光芒": "radiance; brilliance; rays of light",
+  "微不足道": "insignificant; negligible; too trivial to mention",
+  "敬业乐业": "to be dedicated to one's work and find joy in it",
+  "犹豫": "to hesitate; to be indecisive",
+  "不分青红皂白": "indiscriminately; without asking questions",
+  "教训": "lesson; to teach someone a lesson; to reprimand",
+  "叛逆": "rebellious; defiant",
+  "委屈": "to feel wronged; grievance",
+  "内疚": "to feel guilty; guilt; remorse",
+  "不妨": "might as well; there's no harm in",
+  "匿名": "anonymous; anonymously",
+  "监督": "to supervise; to monitor",
+  "代沟": "generation gap",
+  "上瘾": "to be addicted; to get hooked on",
+  "疏远": "to drift apart; to become estranged",
+  "迎刃而解": "to be solved readily; the problem cuts itself",
+  "体谅": "to understand and make allowances for; to be considerate",
+  "无可厚非": "pardonable; nothing to find fault with",
+  "称赞": "to praise; to compliment",
+  "崇拜": "to admire; to worship; to idolise",
+  "爱不释手": "to be so fond of something one cannot put it down",
+  "碰钉子": "to meet with a rebuff; to be turned down",
+  "泼冷水": "to pour cold water on; to dampen enthusiasm",
+  "抽屉": "drawer",
+  "精疲力竭": "exhausted; worn out; drained",
+  "衰老": "to age; to grow old; ageing",
+  "抑郁": "depressed; depression; low-spirited",
+  "寂寞": "lonely; lonesome",
+  "启齿": "to open one's mouth to speak; to bring oneself to say something",
+  "打退堂鼓": "to back down; to give up halfway",
+  "懊恼": "annoyed at oneself; regretful; vexed",
+  "伺机": "to wait for the right opportunity; to bide one's time",
+  "心不在焉": "absent-minded; with one's mind elsewhere",
+  "破天荒": "for the first time ever; unprecedented",
+  "仓促": "hasty; hurried; in a rush",
+  "打理": "to manage; to take care of; to handle",
+  "家务": "household chores; domestic duties",
+  "严肃": "serious; solemn; stern",
+  "安抚": "to soothe; to pacify; to calm down",
+  "干脆": "straightforward; simply; just go ahead and",
+  "风筝": "kite",
+  "挣脱": "to break free; to struggle free from",
+  "惊讶": "surprised; astonished; amazed",
+  "斑": "spot; mark; speck; patch of colour",
+  "缠绕": "to wind around; to tangle",
+  "搂": "to hug; to embrace; to put one's arm around",
+  "捐款": "to donate money; donation",
+  "拯救": "to save; to rescue",
+  "医疗": "medical treatment; healthcare",
+  "研究": "research; to study",
+  "优惠": "preferential; discount; special offer",
+  "券": "coupon; voucher; ticket",
+  "四肢": "four limbs; arms and legs",
+  "敏捷": "agile; nimble; quick",
+  "穿梭": "to shuttle; to dart back and forth",
+  "友善": "friendly; amiable; kind",
+  "辨识": "to identify; to distinguish",
+  "害羞": "shy; bashful",
+  "馋": "greedy (for food); having a craving",
+  "调皮": "mischievous; naughty; playful",
+  "摔跤": "to fall; to tumble; wrestling (sport)",
+  "推出": "to launch; to introduce; to roll out",
+  "亲切": "warm; friendly; cordial",
+  "大摇大摆": "to strut; to swagger",
+  "独一无二": "unique; one of a kind",
+  "凶猛": "fierce; ferocious; aggressive",
+  "尤其": "especially; particularly",
+  "愧疚": "guilt; remorse; to feel guilty",
+  "光泽": "lustre; sheen; gloss",
+  "懒懒地": "lazily; languidly",
+  "妻子": "wife",
+  "啾啾": "twitter; chirping sound (of birds)",
+  "仰": "to look up; to tilt one's head back",
+  "凝望": "to gaze; to stare intently",
+  "鸟笼": "birdcage",
+  "隔": "to separate; separated by",
+  "愤怒": "furious; angry; rage",
+  "畏罪潜逃": "to flee for fear of punishment",
+  "喵": "meow (sound a cat makes)",
+  "衔": "to hold in the mouth",
+  "搞": "to do; to make; to handle (colloquial)",
+  "失踪": "to go missing; to disappear; to vanish",
+  "估计": "to estimate; to reckon; to guess",
+  "活泼": "lively; vivacious; energetic",
+  "丰富": "rich; abundant; plentiful",
+  "褐": "brown; dark brown",
+  "盘旋": "to circle; to spiral; to hover",
+  "丝毫": "the slightest; a bit; in the least",
+  "面面相觑": "to look at each other in blank amazement",
+  "愣": "to be stunned; to be dazed; to freeze",
+  "傻": "silly; foolish; naive",
+  "急促": "rapid; hurried; urgent",
+  "因素": "factor; element",
+  "水喉": "tap; faucet; water pipe (Singapore usage)",
+  "资源": "resource",
+  "艰巨": "arduous; formidable; difficult",
+  "昂贵": "expensive; costly",
+  "消耗": "to consume; to use up; consumption",
+  "干旱": "drought; arid",
+  "扩大": "to expand; to enlarge; to extend",
+  "蓄水池": "reservoir",
+  "洗澡": "to bathe; to shower; to take a bath",
+  "浴室": "bathroom",
+  "趋势": "trend; tendency",
+  "开源节流": "to increase income and cut expenditure",
+  "媒体": "media",
+  "塑料": "plastic",
+  "吨": "ton; tonne",
+  "廉价": "cheap; low-cost; inexpensive",
+  "提供": "to provide; to supply; to offer",
+  "铺": "to spread; to lay out; to cover",
+  "污染": "pollution; to pollute",
+  "焚烧": "to incinerate; to burn",
+  "烟尘": "smoke and dust; soot",
+  "土壤": "soil; earth",
+  "遏制": "to curb; to restrain; to suppress",
+  "倡导": "to advocate; to promote; to champion",
+  "逐渐": "gradually; step by step",
+  "威胁": "threat; to threaten; to endanger",
+  "煞费苦心": "to take great pains; to rack one's brains",
+  "统计": "statistics; to compile statistics",
+  "选择": "choice; to choose; to select",
+  "泛滥": "to flood; to spread uncontrollably; rampant",
+  "寿命": "lifespan; service life",
+  "途径": "channel; approach; means",
+  "缺乏": "to lack; shortage; deficient",
+  "亿": "hundred million; 100,000,000",
+  "遗憾": "regret; sorry; a pity",
+  "谨慎": "cautious; careful; prudent",
+  "妥善": "appropriate; proper; in a fitting manner",
+  "自卑": "to feel inferior; inferiority complex",
+  "身材": "figure; physique; body shape",
+  "羡慕": "to envy; to admire",
+  "抗拒": "to resist; to reject; to refuse",
+  "诱惑": "temptation; to tempt",
+  "毅力": "willpower; perseverance; determination",
+  "戒": "to give up; to quit; to abstain from",
+  "茫然": "at a loss; bewildered; blank",
+  "瞌睡": "drowsy; to doze off",
+  "嫌": "to dislike; to find fault with; to mind",
+  "逼": "to force; to compel; to pressure",
+  "烹饪": "cooking; culinary arts",
+  "符合": "to comply with; to meet (a standard)",
+  "选修": "elective; optional subject",
+  "憋": "to hold back; to suppress; to stifle",
+  "委婉": "tactful; indirect; euphemistic",
+  "彻底": "thorough; complete; total",
+  "缝": "crack; seam; gap",
+  "掩": "to cover; to shut; to conceal",
+  "恐惧": "fear; terror; dread",
+  "走廊": "corridor; hallway; passage",
+  "锁": "lock; to lock",
+  "熄灯": "to turn off the lights; lights out",
+  "颤抖": "to tremble; to shiver; to shake",
+  "隐约": "faintly; vaguely; indistinctly",
+  "瑟瑟": "shivering; trembling",
+  "恐怖": "terrifying; horrifying; dreadful",
+  "通宵": "all night; through the night",
+  "惊悚": "thrilling; horrifying; spine-chilling",
+  "和谐": "harmonious; in harmony",
+  "冤家": "adversary; rival; also used affectionately for someone you bicker with",
+  "误会": "misunderstanding; to misunderstand",
+  "脖子": "neck",
+  "社交媒体": "social media",
+  "缺陷": "defect; flaw; shortcoming",
+  "姿势": "posture; pose; position",
+  "拘束": "constrained; ill at ease; inhibited",
+  "嘈杂": "noisy; clamorous; chaotic (sound)",
+  "沮丧": "depressed; dejected; despondent",
+  "若有所思": "pensive; as if deep in thought",
+  "模糊": "blurry; vague; unclear",
+  "敏感": "sensitive; touchy",
+  "掩饰": "to conceal; to cover up; to disguise",
+  "摄影": "photography",
+  "谷底": "rock bottom; the lowest point",
+  "简陋": "simple and crude; shabby",
+  "政府": "government",
+  "开辟": "to open up; to develop; to pioneer",
+  "市镇": "town; township; urban district",
+  "宗教": "religion",
+  "综合": "comprehensive; integrated",
+  "诊疗所": "clinic; polyclinic",
+  "经济": "economy; economic",
+  "蓬勃": "vigorous; thriving; flourishing",
+  "富裕": "wealthy; affluent; prosperous",
+  "变迁": "changes over time; vicissitudes; transformation",
+  "障碍": "obstacle; barrier; hindrance",
+  "驰名": "renowned; well-known; famous",
+  "屡次": "repeatedly; time and again; on many occasions",
+  "荣誉": "honour; glory; distinction",
+  "姿态": "posture; stance; attitude",
+  "接触": "contact; to come into contact with; to interact",
+  "翠绿": "verdant; bright green",
+  "心旷神怡": "carefree and happy; refreshed in mind and spirit",
+  "合拢": "to close; to fold together; to come together",
+  "林荫": "shade of trees; tree-lined",
+  "樟宜": "Changi (a place in eastern Singapore)",
+  "耸立": "to stand tall; to tower",
+  "温馨": "warm and cosy; heartwarming",
+  "欣赏": "to appreciate; to admire; to enjoy",
+  "粗糙": "rough; coarse; crude",
+  "婆娑": "gracefully swaying; dancing (of branches in the breeze)",
+  "撑": "to prop up; to support; to hold up",
+  "同甘共苦": "to share joys and hardships together",
+  "茁壮": "sturdy; vigorous; to grow strongly",
+  "移民": "immigrant; migrant",
+  "接纳": "to accept; to take in; to embrace",
+  "无怨无悔": "without complaint or regret",
+  "千姿百态": "in all shapes and forms; a great variety",
+  "空旷": "open; spacious; vast and empty",
+  "患": "to suffer from; to contract (a disease)",
+  "失智症": "dementia; Alzheimer's disease",
+  "寻找": "to look for; to search for",
+  "流逝": "to flow by; to pass (of time); to elapse",
+  "嬉戏": "to frolic; to play happily",
+  "咖喱卜": "curry puff (a popular Singaporean snack)",
+  "俏皮": "cute and witty; lively and charming; playful",
+  "鲜艳": "vivid; bright-coloured; brilliant",
+  "承载": "to bear; to carry; to hold (memories, meaning)",
+  "沉重": "heavy; weighty; (emotionally) heavy; burdensome",
+  "贸易": "trade; commerce",
+  "丝绸": "silk",
+  "陆地": "land; terra firma",
+  "奢侈": "luxury; extravagant; lavish",
+  "瓷器": "porcelain; china",
+  "仪式": "ceremony; ritual; rite",
+  "秉持": "to uphold; to adhere to",
+  "枢纽": "hub; nexus; pivot",
+  "港口": "port; harbour",
+  "致力": "to devote oneself to; to be committed to",
+  "勾勒": "to outline; to sketch; to delineate",
+  "高瞻远瞩": "to have great foresight; far-sighted",
+  "运输": "transportation; to transport",
+  "传承": "to pass down; to inherit and carry on",
+  "可谓": "one could say; it can be said that",
+  "岛屿": "island",
+  "海峡": "strait; channel",
+  "历史": "history",
+  "挖掘": "to unearth; to explore; to mine (for potential)",
+  "区域": "region; area; zone",
+  "汇集": "to converge; to gather together; to congregate",
+  "赋予": "to bestow; to endow with; to grant",
+  "海纳百川": "to embrace all with great tolerance (like the sea)",
+  "椰浆饭": "nasi lemak (Malay rice dish cooked in coconut milk)",
+  "黄姜饭": "turmeric rice; yellow rice",
+  "发芽": "to germinate; to sprout; to take root",
+  "兼容并蓄": "to accommodate diverse things; all-inclusive",
+  "携手": "hand in hand; to work together; to join forces",
+  "辉煌": "glorious; splendid; brilliant",
+  "得天独厚": "to be uniquely blessed; with exceptional advantages",
+  "给予": "to give; to provide; to grant",
+  "婉转": "melodious; tactful; indirect (in speech)",
+  "瞩目": "eye-catching; noteworthy",
+  "求同存异": "to seek common ground while accepting differences",
+  "皇帝": "emperor",
+  "典型": "typical; representative example",
+  "普及": "widespread; to popularise; to become universal",
+  "真伪": "truth and falsehood; authenticity",
+  "步伐": "pace; step; stride",
+  "询问": "to inquire; to ask",
+  "人云亦云": "to echo what others say; lacking independent thought",
+  "免疫": "immune; immunity",
+  "凝聚力": "cohesion; solidarity; unifying force",
+  "辨别": "to distinguish; to differentiate",
+  "良好": "good; sound; healthy (condition)",
+  "人际": "interpersonal; between people",
+  "坦率": "frank; candid; straightforward",
+  "隐瞒": "to conceal; to hide; to cover up",
+  "粗鲁": "rude; crude; impolite",
+  "分歧": "divergence; disagreement; difference of opinion",
+  "矛盾": "contradiction; conflict",
+  "磋商": "to consult; to negotiate",
+  "彼此": "each other; mutually; one another",
+  "融洽": "harmonious; cordial; on good terms",
+  "诀窍": "knack; trick; key technique",
+  "聆听": "to listen attentively",
+  "死党": "close friend; best buddy; bosom friend",
+  "强迫": "to force; to compel; to coerce",
+  "橱窗": "shop window; display window",
+  "狭窄": "narrow; cramped",
+  "铅笔盒": "pencil case",
+  "拧": "to twist; to wring; to turn",
+  "抿": "to press (lips together); to take a small sip",
+  "肺炎": "pneumonia",
+  "纸屑": "scraps of paper; paper bits",
+  "肿瘤": "tumour",
+  "癌症": "cancer",
+  "徒劳无功": "to work hard but achieve nothing; futile effort",
+  "擦拭": "to wipe; to clean by wiping",
+  "某": "a certain; some (unspecified)",
+  "苍白": "pale; pallid; wan",
+  "鼓掌": "to applaud; to clap",
+  "忠实": "loyal; faithful; devoted",
+  "异乎寻常": "out of the ordinary; unusual",
+  "痊愈": "to recover fully; to be cured",
+  "清晰": "clear; distinct",
+  "调剂": "to adjust; to relieve; to dispense",
+  "目睹": "to witness; to see with one's own eyes",
+  "鄙夷": "to despise; to look down on; contemptuous",
+  "流淌": "to flow; to trickle; to stream",
+  "窗帘": "curtain; window drape",
+  "提心吊胆": "to be on tenterhooks; to be very worried",
+  "封": "measure word for letters; to seal; to close",
+  "古董": "antique; curio",
+  "衡量": "to measure; to weigh up; to assess",
+  "纯洁": "pure; innocent",
+  "歧途": "wrong path; evil way; to go astray",
+  "蔬菜": "vegetables",
+  "麦片": "oatmeal; cereal",
+  "蛋白质": "protein",
+  "睡眠": "sleep",
+  "体魄": "physique; physical constitution",
+  "频率": "frequency",
+  "韵律": "rhythm; cadence",
+  "汲取": "to draw from; to absorb; to derive",
+  "敞开": "to open wide; to throw open",
+  "心扉": "the door of one's heart; inner feelings",
+  "缔造": "to create; to found; to establish",
+  "聊天": "to chat; to talk casually",
+  "郊外": "outskirts; countryside; suburban area",
+  "淋漓": "dripping; pouring; thoroughly",
+  "手札": "personal letter; handwritten note; diary",
+  "抒发": "to express; to give vent to (emotions)",
+  "休憩": "to rest; to relax; to take a break",
+  "均衡": "balanced; well-proportioned",
+  "享受": "to enjoy; enjoyment",
+  "饮茶": "to drink tea; yum cha",
+  "唐": "Tang (dynasty, 618-907 AD)",
+  "磨": "to grind; millstone",
+  "葱": "spring onion; scallion",
+  "橘子": "mandarin orange; tangerine",
+  "宋": "Song (dynasty, 960-1279 AD)",
+  "鼎盛": "at its height; flourishing; in its prime",
+  "柴": "firewood; fuel wood",
+  "醋": "vinegar",
+  "沸水": "boiling water",
+  "调匀": "to mix evenly; to blend thoroughly",
+  "搅拌": "to stir; to mix; to blend",
+  "步骤": "step; procedure; process",
+  "鉴赏": "to appreciate; to savour; connoisseurship",
+  "消暑": "to relieve the heat; to cool down",
+  "菌": "bacteria; fungus; microorganism",
+  "所谓": "so-called; what is known as",
+  "源远流长": "to have a long history; with distant origins",
+  "异军突起": "to emerge as a new force; to rise unexpectedly",
+  "五花八门": "of all kinds; in great variety",
+  "舞蹈": "dance",
+  "节奏": "rhythm; beat; tempo",
+  "霹雳舞": "breakdancing; B-boying",
+  "肌肉": "muscle",
+  "风靡": "to sweep through; wildly popular",
+  "掀起": "to set off; to trigger; to spark (a trend)",
+  "热潮": "craze; wave; trend",
+  "雨后春笋": "springing up like mushrooms after rain; rapid growth",
+  "爆发力": "explosive power; burst of energy",
+  "默契": "mutual understanding; tacit agreement; rapport",
+  "焕发": "to radiate; to glow with",
+  "真挚": "sincere; genuine; heartfelt",
+  "名额": "quota; number of places allocated",
+  "链接": "link; hyperlink",
+  "师傅": "master craftsman; skilled worker; sifu",
+  "擅长": "to be good at; to excel in; to specialise in",
+  "裁缝": "tailor; dressmaker",
+  "编织": "to weave; to knit; to braid",
+  "匠人": "craftsman; artisan",
+  "烘焙": "to bake; baking",
+  "讲述": "to narrate; to tell; to recount",
+  "黎明": "dawn; daybreak",
+  "苏醒": "to wake up; to regain consciousness",
+  "禽": "bird; poultry",
+  "晚霞": "evening glow; sunset clouds",
+  "添砖加瓦": "to make one's humble contribution",
+  "族裔": "ethnic group; race and ethnicity",
+  "鲜为人知": "little known; not widely known",
+  "宵夜": "supper; late-night meal",
+  "唇齿相依": "as closely related as lips and teeth; interdependent",
+  "亲戚": "relative; kin",
+  "援手": "a helping hand; assistance",
+  "侥幸": "lucky; by a stroke of luck; fortuitously",
+  "慷慨解囊": "to give generously; to open one's purse",
+  "渡": "to cross; to get through; to overcome",
+  "篱笆": "fence; hedge",
+  "心力交瘁": "mentally and physically exhausted",
+  "雪中送炭": "to provide help in time of need; to send charcoal in the snow",
+  "恰好": "just right; exactly; as it happens",
+  "弥补": "to make up for; to compensate; to fill a gap",
+  "谚语": "proverb; saying; adage",
+  "和睦": "harmonious; on good terms; amicable",
+  "冷漠": "indifferent; cold; apathetic",
+  "挑剔": "fussy; picky; fault-finding",
+  "网络": "network; internet",
+  "开销": "expenses; expenditure; costs",
+  "锯子": "saw (tool)",
+  "遛": "to walk (a pet); to stroll with",
+  "拴": "to tie up; to tether; to fasten",
+  "渠道": "channel; avenue; means",
+  "弊端": "drawback; disadvantage; malpractice",
+  "划算": "worth it; cost-effective; a good deal",
+  "久而久之": "over time; as time goes by; gradually",
+  "培训": "training; to train",
+  "阐述": "to expound; to elaborate; to explain",
+  "铿锵": "sonorous; resonant; forceful (of sound)",
+  "雅俗": "highbrow and lowbrow; elegant and popular",
+  "抑扬顿挫": "with rhythmic cadence; with varied intonation",
+  "僵硬": "stiff; rigid; inflexible",
+  "言简意赅": "concise and comprehensive; brief but to the point",
+  "啰唆": "long-winded; wordy; nagging",
+  "遐想": "to daydream; reverie; faraway thoughts",
+  "枯燥": "dry; boring; tedious",
+  "筛选": "to screen; to filter; to select",
+  "欲": "to desire; to want; wish",
+  "浏览": "to browse; to skim; to glance through",
+  "沟通": "communication; to communicate",
+  "举手投足": "every gesture and movement; one's bearing",
+  "乏味": "dull; bland; uninteresting",
+  "润滑剂": "lubricant; something that facilitates smooth relations",
+  "不胜枚举": "too numerous to mention; countless examples",
+  "扼腕": "to clench one's fist in regret; to lament",
+  "体恤": "to show understanding and care; to be considerate",
+  "氛围": "atmosphere; ambience; mood",
+  "谦虚": "humble; modest",
+  "裨益": "benefit; advantage",
+  "严峻": "severe; harsh; grim",
+  "流言蜚语": "gossip; groundless rumours",
+  "扰乱": "to disturb; to disrupt; to throw into disorder",
+  "甚嚣尘上": "rife with rumours; widespread and noisy",
+  "基础": "foundation; basis; fundamental",
+  "涵盖": "to encompass; to cover; to include",
+  "畅所欲言": "to speak freely; to say all one wishes",
+  "尊重": "respect; to respect",
+  "广泛": "wide-ranging; extensive; broad",
+  "导致": "to lead to; to result in; to cause",
+  "崛起": "to rise; to emerge; to gain prominence",
+  "颠覆": "to overturn; to subvert; to revolutionise",
+  "报刊": "newspapers and magazines; press",
+  "书籍": "books; publications",
+  "传播": "to spread; to disseminate; to transmit",
+  "拨": "to dial; to flip; to move aside",
+  "限制": "restriction; to restrict; to limit",
+  "天涯": "the ends of the earth; far-off place",
+  "屏幕": "screen; display",
+  "按钮": "button",
+  "疆界": "border; boundary",
+  "庞大": "enormous; gigantic; huge",
+  "前所未有": "unprecedented; never seen before",
+  "创建": "to establish; to create; to found",
+  "阶段": "stage; phase; period",
+  "同侪": "peers; contemporaries",
+  "撰写": "to write; to compose; to draft",
+  "筹备": "to prepare; to plan and organise",
+  "募捐": "to raise funds; to solicit donations",
+  "实践": "to practise; to put into practice; practice",
+  "震撼": "to move deeply; to shake; awe-inspiring",
+  "循规蹈矩": "to follow rules strictly; to toe the line",
+  "融会贯通": "to achieve a thorough understanding; to master completely",
+  "腼腆": "shy; introverted; bashful",
+  "咨询": "to consult; consultation; to seek advice",
+  "数据": "data; statistics",
+  "分析": "to analyse; analysis",
+  "冰淇淋": "ice cream",
+  "充实": "fulfilling; enriching; substantial",
+  "贯穿": "to run through; to connect throughout",
+  "勇于": "to be brave enough to; to have the courage to",
+  "雄鹰": "eagle; (figuratively) a person with great ambition",
+  "渺小": "tiny; insignificant",
+  "坐井观天": "to have a limited view of the world",
+  "自鸣得意": "to be complacent; to be smug",
+  "孤陋寡闻": "ignorant; ill-informed; with limited knowledge",
+  "奥妙": "mystery; profound truth; subtle secret",
+  "寓言": "fable; parable",
+  "桨": "oar; paddle",
+  "浅尝辄止": "to give up at the first attempt; to scratch the surface",
+  "哲学": "philosophy",
+  "比喻": "metaphor; to use a simile; to compare",
+  "热忱": "enthusiasm; passion",
+  "持之以恒": "to persevere; to keep at it consistently",
+  "清澈": "crystal-clear; transparent",
+  "干涸": "to dry up; dried out; parched",
+  "浇灌": "to irrigate; to water; to nurture",
+  "九牛一毛": "a drop in the ocean; a tiny fraction",
+  "落伍": "outdated; behind the times",
+  "楷模": "role model; example; exemplar",
+  "孜孜不倦": "diligently; tirelessly; without flagging",
+  "敷衍": "to muddle through; to be perfunctory",
+  "逆水行舟": "like rowing upstream; must keep advancing",
+  "淘汰": "to eliminate; to phase out",
+  "佐证": "to corroborate; supporting evidence; to back up",
+  "平庸": "mediocre; ordinary; undistinguished",
+  "岂": "how could; how can (used in rhetorical questions)",
+  "层出不穷": "to emerge one after another; to keep appearing",
+  "诠释": "to interpret; to explain",
+  "抛锚": "to drop anchor; to break down (of a vehicle)",
+  "郁闷": "depressed; gloomy; sullen",
+  "叼": "to hold in the mouth; to clench (between teeth)",
+  "逗": "to tease; to amuse; to play with",
+  "挑战": "challenge; to challenge",
+  "绊": "to trip; to stumble",
+  "攀登": "to climb; to scale; to ascend",
+  "雀跃": "to jump for joy; elated; jubilant",
+  "山脉": "mountain range",
+  "宇宙": "universe; cosmos",
+  "体验": "to experience; experience",
+  "信任": "trust; to trust",
+  "依赖": "to depend on; to rely on; reliance",
+  "跋涉": "to trek; to trudge",
+  "牵挂": "to miss; to worry about",
+  "唤": "to call; to summon; to beckon",
+  "喉咙": "throat",
+  "绽放": "to bloom; to blossom",
+  "绷": "to stretch tight; to tense up",
+  "一般": "ordinary; general; just like; as if",
+  "无奈": "helpless; having no choice; resigned",
+  "寺庙": "temple",
+  "幽静": "quiet and serene; secluded",
+  "诧异": "surprised; astonished; taken aback",
+  "贱": "cheap; lowly; humble",
+  "哽咽": "to choke up; to be overcome with emotion",
+  "眼眶": "eye socket; rim of the eye",
+  "咀嚼": "to chew; to masticate; to ponder over",
+  "搬迁": "to relocate; to move (house or office)",
+  "孝顺": "filial; respectful and obedient to parents",
+  "探望": "to visit; to pay a call on",
+  "谅解": "understanding; to forgive",
+  "隆重": "grand; solemn; ceremonious",
+  "诅咒": "to curse; a curse",
+  "洋溢": "to brim with; to overflow with; filled with",
+  "慈祥": "kindly; benevolent; gentle (of elderly)",
+  "潭": "deep pool; pond",
+  "教授": "professor",
+  "割舍": "to give up; to let go of; to part with",
+  "神圣": "sacred; holy; divine",
+  "介意": "to mind; to take offence; to care about",
+  "演奏": "to perform; to play (an instrument)",
+  "责无旁贷": "one's unshirkable duty; cannot pass the buck",
+  "分忧": "to share one's worries; to help lighten one's burden",
+  "残障": "disabled; handicapped",
+  "聘请": "to employ; to hire",
+  "同工同酬": "equal pay for equal work",
+  "权利": "right; entitlement",
+  "雇主": "employer",
+  "纠纷": "dispute; conflict",
+  "小贩": "hawker; street vendor",
+  "摊位": "stall; booth",
+  "呵护": "to care for tenderly; to cherish and protect",
+  "缓解": "to ease; to alleviate",
+  "乞丐": "beggar",
+  "跪": "to kneel",
+  "肮脏": "dirty; filthy",
+  "贫穷": "poverty; poor",
+  "赤裸裸": "stark naked; bare; blatant",
+  "祈求": "to pray; to beg; to implore",
+  "距离": "distance; gap",
+  "慈悲": "compassion; mercy; benevolence",
+  "阻挡": "to block; to obstruct; to stop",
+  "肆无忌惮": "recklessly; without any scruples",
+  "褴褛": "tattered; ragged; in rags",
+  "革履": "leather shoes; well-dressed",
+  "侦探": "detective; investigator",
+  "仁慈": "kind-hearted; benevolent; merciful",
+  "叩头": "to kowtow; to bow deeply (head to the ground)",
+  "残疾": "disability; disabled; impaired",
+  "质朴": "simple and honest; plain; unpretentious",
+  "大概": "approximately; roughly; probably",
+  "晓得": "to know; to understand (colloquial)",
+  "蓦然": "suddenly; unexpectedly",
+  "推心置腹": "to open one's heart; to speak frankly and sincerely",
+  "否则": "otherwise; or else; if not",
+  "感恩": "to be grateful; gratitude; thanksgiving",
+  "匆匆": "hurriedly; hastily; in a rush",
+  "婴儿": "infant; baby",
+  "翅膀": "wings",
+  "呈献": "to present; to perform; to offer",
+  "扣人心弦": "gripping; captivating; heart-stirring",
+  "爱恋": "love; deep affection",
+  "唏嘘": "to sigh with feeling; to lament",
+  "著名": "famous; well-known; renowned",
+  "兴旺": "prosperous; thriving; flourishing",
+  "负荷": "load; burden",
+  "反映": "to reflect; to mirror; to portray",
+  "岔路口": "crossroads; fork in the road; turning point",
+  "惆怅": "melancholy; wistful; sad and disappointed",
+  "紧凑": "compact; tight; fast-paced",
+  "小卒": "a small pawn; a minor figure; a nobody",
+  "兴衰": "rise and fall; vicissitudes of fortune",
+  "轿子": "sedan chair; palanquin",
+  "何况": "let alone; much less; not to mention",
+  "耻笑": "to ridicule; to mock",
+  "搀扶": "to support; to help someone walk; to hold up",
+  "罢了": "that's all; nothing more",
+  "姊妹": "sisters",
+  "顽劣": "naughty and wayward; unruly",
+  "溺爱": "to spoil; to pamper; excessive love",
+  "颈项": "neck; nape",
+  "鬓": "hair at the temples",
+  "桃": "peach",
+  "瓣": "petal; segment",
+  "重逢": "reunion; to meet again",
+  "稀罕": "rare; precious; to cherish",
+  "拜见": "to pay a formal visit; to call on (respectfully)",
+  "面善": "familiar-looking; having a familiar face",
+  "大吃一惊": "to be greatly surprised; to be taken aback",
+  "三顾茅庐": "to make repeated calls to invite a talented person",
+  "争霸": "to contend for supremacy; to vie for dominance",
+  "足智多谋": "resourceful; full of clever plans",
+  "起伏": "ups and downs; to rise and fall",
+  "斥责": "to rebuke; to reprimand; to scold harshly",
+  "严寒": "severe cold; bitter cold; freezing",
+  "恳请": "to earnestly request; to entreat; to sincerely appeal",
+  "心直口快": "frank and outspoken; saying what one thinks",
+  "酿": "to brew; to ferment; to lead to (a result)",
+  "涌": "to surge; to pour; to swarm",
+  "繁殖": "to reproduce; to breed",
+  "饲料": "fodder; feed; animal feed",
+  "佳肴": "delicious food; fine cuisine",
+  "啃": "to gnaw; to nibble; to chew on",
+  "入侵": "to invade; invasion",
+  "盎然": "full of vigour; overflowing with",
+  "砍伐": "to fell; to chop down; to log",
+  "栖息": "to inhabit; to dwell; (of animals) to live in",
+  "牢记": "to keep firmly in mind; to remember well",
+  "勿": "do not; must not (literary)",
+  "惩罚": "punishment; to punish",
+  "平衡": "balance; equilibrium; to balance",
+  "珍稀": "rare and precious; endangered",
+  "茂密": "dense; lush; thick (of vegetation)",
+  "恶劣": "harsh; terrible; severe",
+  "浸泡": "to soak; to immerse; to steep",
+  "牺牲": "sacrifice; to sacrifice",
+  "锐减": "to drop sharply; to plummet",
+  "保育": "conservation; to conserve and nurture",
+  "储存": "to store; to stockpile; to accumulate",
+  "身躯": "body; physique; frame",
+  "侵蚀": "to erode; to corrode; erosion",
+  "空隙": "gap; space; interval",
+  "堤": "embankment; dike; levee",
+  "貌不惊人": "plain-looking; unremarkable in appearance",
+  "窥视": "to peep; to spy; to watch stealthily",
+  "宣布": "to announce; to declare; to proclaim",
+  "狩猎": "to hunt; hunting",
+  "饥饿": "hunger; starvation; starving",
+  "糟蹋": "to waste; to ruin; to destroy",
+  "毁灭": "to destroy; to annihilate; to wipe out",
+  "罪魁祸首": "the chief culprit; the root cause of trouble",
+  "竞争": "competition; to compete",
+  "袭击": "to attack; to raid; to strike suddenly",
+  "违背": "to violate; to go against; to contravene",
+  "拼搏": "to strive; to fight hard; to give one's all",
+  "面目全非": "changed beyond recognition; completely altered",
+  "举措": "measure; action; initiative",
+  "联盟": "alliance; union; federation",
+  "迄今": "up to now; so far; to this day",
+  "蜿蜒": "to wind; to meander; to snake",
+  "辽阔": "vast; wide; expansive",
+  "诸多": "many; numerous; various",
+  "古迹": "historical site; ancient relic; monument",
+  "雕刻": "carving; sculpture; to carve",
+  "啧啧称奇": "to marvel at; to exclaim in admiration",
+  "赞叹": "to admire; to praise with admiration; to marvel at",
+  "底蕴": "cultural depth; accumulated heritage; inner substance",
+  "灿烂": "brilliant; splendid; dazzling",
+  "金碧辉煌": "magnificent; resplendent with gold and jade",
+  "绚丽": "gorgeous; magnificent; colourful and dazzling",
+  "高耸": "to tower; to soar; to loom tall",
+  "颇": "quite; rather; considerably",
+  "独树一帜": "to stand out; to have a unique style",
+  "赋税": "taxes and levies; tax burden",
+  "揭竿而起": "to rise in revolt; to take up arms against",
+  "暴虐": "brutal; tyrannical; cruel and oppressive",
+  "葬送": "to ruin; to bury; to bring to destruction",
+  "推卸": "to shirk; to pass the buck; to evade (responsibility)",
+  "停滞": "to stagnate; to come to a standstill",
+  "趾高气扬": "arrogant and complacent; walking on air",
+  "谦逊": "humble; modest; unassuming",
+  "梦寐以求": "to dream of; to long for earnestly",
+  "昌盛": "prosperous; thriving; flourishing",
+  "自知之明": "self-knowledge; knowing one's own limitations",
+  "忍无可忍": "to be pushed beyond one's endurance",
+  "一无是处": "without a single redeeming quality; good for nothing",
+  "协作": "cooperation; collaboration; to work together",
+  "论坛": "forum; platform for discussion",
+  "毋庸讳言": "there is no need to hide the fact; frankly speaking",
+  "棘手": "thorny; tricky; difficult to handle",
+  "肆虐": "to wreak havoc; to run rampant; to rage",
+  "谋求": "to seek; to strive for; to pursue",
+  "里程碑": "milestone; landmark achievement",
+  "开拓": "to open up; to pioneer; to expand",
+  "先驱": "pioneer; trailblazer; forerunner",
+  "气馁": "to be discouraged; to lose heart; to feel disheartened",
+  "出类拔萃": "to stand out from the crowd; outstanding",
+  "韧性": "resilience; tenacity; toughness",
+  "浩瀚": "vast; boundless; immense",
+  "天方夜谭": "an Arabian Nights fantasy; a pipe dream",
+  "百折不挠": "to be indomitable; unyielding despite setbacks",
+  "研发": "research and development (R&D)",
+  "畅销": "bestselling; fast-selling; popular",
+  "贬": "to demote; to devalue; to criticise",
+  "粮食": "grain; food; provisions",
+  "豁达": "open-minded; magnanimous; easygoing",
+  "满腔": "full of; brimming with (emotion)",
+  "霜": "frost",
+  "遣": "to dispatch; to send; to while away",
+  "挽": "to draw (a bow); to pull; to lament",
+  "豪迈": "bold; heroic; full of spirit",
+  "慷慨激昂": "impassioned; stirring with strong emotion",
+  "勉励": "to encourage; to urge; to exhort",
+  "朝廷": "imperial court; the court (in ancient China)",
+  "笔锋": "style of writing; force of a pen",
+  "扎": "to take root; to be grounded; to pierce",
+  "喧腾": "clamorous; noisy and excited; tumultuous",
+  "感悟": "realisation; insight; to come to understand deeply",
+  "崭新": "brand new; fresh; completely new",
+  "迥然": "entirely different; poles apart",
+  "奋斗": "to strive; to work hard; to struggle",
+  "崎岖": "rugged; rough; bumpy (of terrain)",
+  "抵达": "to arrive; to reach (a destination)"
+};
+let ENGLISH_DEFS = Object.assign({}, ENGLISH_DEFS_FALLBACK);
+
+
+
+// ══════════════════════════════════════════════════════════════
+// GOOGLE SHEETS LIVE DATA
+// ══════════════════════════════════════════════════════════════
+
+// ── CONFIG ────────────────────────────────────────────────────
+// Step 1: In Google Sheets → File → Share → Publish to web
+// Step 2: Publish each tab as CSV, copy the URL
+// Step 3: Replace the placeholder URLs below with your real URLs
+//
+// URL format for each tab:
+// https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/gviz/tq?tqx=out:csv&sheet=SHEET_TAB_NAME
+//
+// Replace SHEET_TAB_NAME with the exact tab name (URL-encoded if needed):
+//   中文释义  →  %E4%B8%AD%E6%96%87%E9%87%8A%E4%B9%89
+//   例句      →  %E4%BE%8B%E5%8F%A5
+//   英文翻译  →  %E8%8B%B1%E6%96%87%E7%BF%BB%E8%AF%91
+
+const SHEETS_CONFIG = {
+  SHEET_ID: 'YOUR_GOOGLE_SHEET_ID_HERE',
+  // After publishing, replace each URL with your actual published CSV URLs:
+  DEFS_URL:    'YOUR_DEFS_CSV_URL_HERE',
+  EXAMPLES_URL:'YOUR_EXAMPLES_CSV_URL_HERE',
+  ENGLISH_URL: 'YOUR_ENGLISH_CSV_URL_HERE',
+};
+
+const DATA_CACHE_KEY   = 'cl_vocab_sheet_data';
+const DATA_CACHE_TS    = 'cl_vocab_sheet_ts';
+const CACHE_MAX_AGE_MS = 6 * 60 * 60 * 1000; // 6 hours
+
+// ── CSV PARSER ────────────────────────────────────────────────
+function parseCSV(text) {
+  // Handle Google Sheets CSV with possible quoted fields
+  const rows = [];
+  const lines = text.split(/\r?\n/);
+  for (const line of lines) {
+    if (!line.trim()) continue;
+    const cols = [];
+    let cur = '', inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (ch === '"') {
+        if (inQ && line[i+1] === '"') { cur += '"'; i++; }
+        else inQ = !inQ;
+      } else if (ch === ',' && !inQ) {
+        cols.push(cur); cur = '';
+      } else {
+        cur += ch;
+      }
+    }
+    cols.push(cur);
+    rows.push(cols);
+  }
+  return rows;
+}
+
+// ── FETCH ONE CSV TAB ─────────────────────────────────────────
+async function fetchCSV(url) {
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return parseCSV(await res.text());
+}
+
+// ── APPLY FETCHED DATA ────────────────────────────────────────
+function applySheetData(defsRows, exRows, engRows) {
+  let defsUpdated = 0, exUpdated = 0, engUpdated = 0;
+
+  // DEFS: col C (index 2) = word, col D (index 3) = definition
+  defsRows.slice(1).forEach(row => {
+    const word = (row[2]||'').trim();
+    const def  = (row[3]||'').trim();
+    if (word && def && def !== '（待填写）') {
+      DEFS[word] = def; defsUpdated++;
+    }
+  });
+
+  // EXAMPLES: col C = word, col D = sentence
+  exRows.slice(1).forEach(row => {
+    const word = (row[2]||'').trim();
+    const sent = (row[3]||'').trim();
+    if (word && sent && sent !== '（待填写）' && sent.includes('__')) {
+      EXAMPLES[word] = sent; exUpdated++;
+    }
+  });
+
+  // ENGLISH: col C = word, col D = english
+  engRows.slice(1).forEach(row => {
+    const word = (row[2]||'').trim();
+    const eng  = (row[3]||'').trim();
+    if (word && eng && eng !== '(to be filled)') {
+      ENGLISH_DEFS[word] = eng; engUpdated++;
+    }
+  });
+
+  console.log(`Sheet data applied: ${defsUpdated} defs, ${exUpdated} examples, ${engUpdated} English`);
+  return { defsUpdated, exUpdated, engUpdated };
+}
+
+// ── MAIN FETCH FUNCTION ───────────────────────────────────────
+async function fetchSheetData(forceRefresh = false) {
+  // Skip if not configured
+  if (SHEETS_CONFIG.DEFS_URL === 'YOUR_DEFS_CSV_URL_HERE') {
+    console.log('Google Sheets not configured — using built-in data');
+    hideDataLoader();
+    return;
+  }
+
+  // Check cache freshness (avoid fetching on every page load)
+  if (!forceRefresh) {
+    try {
+      const ts = parseInt(localStorage.getItem(DATA_CACHE_TS) || '0');
+      if (Date.now() - ts < CACHE_MAX_AGE_MS) {
+        // Use cached data
+        const cached = await idbGet(DATA_CACHE_KEY);
+        if (cached) {
+          applySheetData(cached.defs, cached.ex, cached.eng);
+          hideDataLoader();
+          updateHomeStats();
+          return;
+        }
+      }
+    } catch(e) {}
+  }
+
+  showDataLoader('正在加载最新词语数据…');
+
+  try {
+    const [defsRows, exRows, engRows] = await Promise.all([
+      fetchCSV(SHEETS_CONFIG.DEFS_URL),
+      fetchCSV(SHEETS_CONFIG.EXAMPLES_URL),
+      fetchCSV(SHEETS_CONFIG.ENGLISH_URL),
+    ]);
+
+    applySheetData(defsRows, exRows, engRows);
+
+    // Cache for offline use
+    await idbSet(DATA_CACHE_KEY, { defs: defsRows, ex: exRows, eng: engRows });
+    localStorage.setItem(DATA_CACHE_TS, Date.now().toString());
+
+    hideDataLoader();
+    updateHomeStats();
+    showToast('✓ 词语数据已更新');
+
+  } catch(err) {
+    console.warn('Sheet fetch failed, using built-in data:', err);
+    // Try to use IndexedDB cache even if stale
+    try {
+      const cached = await idbGet(DATA_CACHE_KEY);
+      if (cached) {
+        applySheetData(cached.defs, cached.ex, cached.eng);
+        showToast('使用离线缓存数据');
+      }
+    } catch(e2) {}
+    hideDataLoader();
+    updateHomeStats();
+  }
+}
+
+// ── LOADER UI ─────────────────────────────────────────────────
+function showDataLoader(msg) {
+  let el = document.getElementById('data-loader');
+  if (el) { el.querySelector('.loader-msg').textContent = msg; el.style.display = 'flex'; }
+}
+function hideDataLoader() {
+  const el = document.getElementById('data-loader');
+  if (el) el.style.display = 'none';
+}
+
+// ── MANUAL REFRESH (teacher can trigger) ─────────────────────
+function refreshSheetData() {
+  fetchSheetData(true);
+}
+
+
+// ══ STATE ══════════════════════════════════════════════════
+let progress = {};      // word → { box:0|1|2, wrongCount, lastSeen }
+let sessionHistory = {}; // unitKey → [{score, date, mode}]
+let currentLevel = null;
+let currentUnit  = null;
+let currentWords = [];
+let currentIdx   = 0;
+let currentMode  = 'flashcard';
+let sessionCorrect = 0;
+let sessionWrong   = 0;
+let sessionWrongWords = [];
+let isFlipped = false;
+
+// ══ PERSISTENCE ════════════════════════════════════════════
+function loadProgress() {
+  try {
+    const p = localStorage.getItem('cl_vocab_progress_v2');
+    if (p) progress = JSON.parse(p);
+    const h = localStorage.getItem('cl_session_history');
+    if (h) sessionHistory = JSON.parse(h);
+  } catch(e) { progress = {}; sessionHistory = {}; }
+}
+
+function saveProgress() {
+  try {
+    localStorage.setItem('cl_vocab_progress_v2', JSON.stringify(progress));
+    localStorage.setItem('cl_session_history', JSON.stringify(sessionHistory));
+  } catch(e) {}
+}
+
+function getWordBox(w) { return (progress[w] && progress[w].box) || 0; }
+
+function markWordCorrect(w) {
+  if (!progress[w]) progress[w] = { box:0, wrongCount:0 };
+  progress[w].box = Math.min(2, (progress[w].box||0) + 1);
+  progress[w].lastSeen = Date.now();
+  saveProgress();
+}
+
+function markWordWrong(w) {
+  if (!progress[w]) progress[w] = { box:0, wrongCount:0 };
+  progress[w].box = 0;
+  progress[w].wrongCount = (progress[w].wrongCount||0) + 1;
+  progress[w].lastSeen = Date.now();
+  saveProgress();
+}
+
+function saveSessionResult(unitKey, score, mode) {
+  if (!sessionHistory[unitKey]) sessionHistory[unitKey] = [];
+  sessionHistory[unitKey].unshift({
+    score, mode,
+    date: new Date().toLocaleDateString('zh-SG', {month:'short', day:'numeric'}),
+    time: new Date().toLocaleTimeString('zh-SG', {hour:'2-digit', minute:'2-digit'})
+  });
+  // Keep last 10
+  if (sessionHistory[unitKey].length > 10) sessionHistory[unitKey] = sessionHistory[unitKey].slice(0, 10);
+  saveProgress();
+}
+
+// ══ STATISTICS ═════════════════════════════════════════════
+function getMastered(words) { return words.filter(w => getWordBox(w) >= 2).length; }
+function getAllWords() {
+  return Object.values(VOCAB).flatMap(u => Object.values(u).flat());
+}
+function getWeakWords() {
+  return getAllWords().filter(w => progress[w] && progress[w].box === 0 && progress[w].wrongCount > 0);
+}
+
+// ══ SCREEN NAV ═════════════════════════════════════════════
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function updateHomeStats() {
+  const all = getAllWords();
+  const mastered = getMastered(all);
+  const learning = all.filter(w => progress[w] && progress[w].box === 1).length;
+  const weak     = getWeakWords();
+
+  document.getElementById('stat-total').textContent    = all.length;
+  document.getElementById('stat-mastered').textContent = mastered;
+  document.getElementById('stat-learning').textContent = learning;
+
+  const pct = Math.round(mastered / all.length * 100);
+  document.getElementById('global-bar-fill').style.width = pct + '%';
+  document.getElementById('global-bar-label').textContent = pct + '% 已掌握';
+
+  Object.keys(VOCAB).forEach(level => {
+    const words = Object.values(VOCAB[level]).flat();
+    const mp = Math.round(getMastered(words) / words.length * 100);
+    document.getElementById('bar-' + level).style.width = mp + '%';
+    document.getElementById('pct-' + level).textContent = mp + '% 掌握';
+    document.getElementById('count-' + level).textContent = words.length + ' 词语';
+  });
+
+  const wb = document.getElementById('weak-words-btn');
+  if (weak.length > 0) {
+    wb.style.display = 'flex';
+    document.getElementById('weak-count-badge').textContent = weak.length;
+  } else {
+    wb.style.display = 'none';
+  }
+}
+
+function showLevel(level) {
+  currentLevel = level;
+  document.getElementById('level-screen-title').textContent = level + ' 词语';
+  renderUnitsList(level);
+  showScreen('level-screen');
+}
+
+function renderUnitsList(level) {
+  const container = document.getElementById('units-list');
+  container.innerHTML = '';
+  const units = VOCAB[level];
+
+  const grouped = {};
+  Object.keys(units).forEach(key => {
+    const m = key.match(/^(单元\S+)\s+(.+)$/);
+    const num  = m ? m[1] : key;
+    const type = m ? m[2] : '';
+    if (!grouped[num]) grouped[num] = [];
+    grouped[num].push({ key, type, words: units[key] });
+  });
+
+  Object.entries(grouped).forEach(([unitNum, items]) => {
+    const grp = document.createElement('div');
+    grp.className = 'unit-group';
+    grp.innerHTML = `<div class="unit-group-label">${unitNum}</div>`;
+
+    items.forEach(({ key, words }) => {
+      const mastered = getMastered(words);
+      const pct = Math.round(mastered / words.length * 100);
+      const dot  = pct===0?'dot-none':pct<50?'dot-some':pct<100?'dot-most':'dot-all';
+      const fill = pct===0?'fill-none':pct<50?'fill-some':pct<100?'fill-most':'fill-all';
+
+      // Session best score for this unit
+      const hist = sessionHistory[key];
+      const bestStr = hist && hist.length > 0
+        ? '最高 ' + Math.max(...hist.map(h=>h.score)) + '%'
+        : '';
+
+      const btn = document.createElement('button');
+      btn.className = 'unit-btn';
+      btn.innerHTML = `
+        <div class="unit-dot ${dot}"></div>
+        <div class="unit-btn-info">
+          <div class="unit-btn-name">${key}</div>
+          <div class="unit-btn-sub">${words.length} 词语 · ${mastered} 已掌握${bestStr ? ' · ' + bestStr : ''}</div>
+        </div>
+        <div class="unit-mastery-bar"><div class="unit-mastery-fill ${fill}" style="width:${pct}%"></div></div>`;
+      btn.onclick = () => startStudy(level, key, words);
+      grp.appendChild(btn);
+    });
+    container.appendChild(grp);
+  });
+}
+
+// ══ STUDY SESSION ══════════════════════════════════════════
+function startStudy(level, unitKey, words, weakOnly=false) {
+  currentLevel = level;
+  currentUnit  = unitKey;
+
+  // Sort: unmastered first, then shuffle within tiers
+  let pool = [...words];
+  pool.sort((a,b) => getWordBox(a) - getWordBox(b));
+  pool = pool.slice(0, Math.min(pool.length, weakOnly ? 999 : 20));
+  shuffleArray(pool);
+
+  // For non-flashcard modes, filter to words that have definitions
+  // (so MCQ options make sense). For flashcard, keep all.
+  currentWords = pool;
+  currentIdx = 0;
+  sessionCorrect = 0;
+  sessionWrong   = 0;
+  sessionWrongWords = [];
+
+  document.getElementById('study-title').textContent = weakOnly ? '薄弱词语复习' : unitKey;
+  switchMode(currentMode, true);
+  showScreen('study-screen');
+}
+
+function startWeakWords() {
+  const weak = getWeakWords();
+  if (!weak.length) { showToast('暂时没有薄弱词语！'); return; }
+  startStudy(null, '薄弱词语', weak, true);
+}
+
+function exitStudy() {
+  updateHomeStats();
+  if (currentLevel) { renderUnitsList(currentLevel); showScreen('level-screen'); }
+  else showScreen('home-screen');
+}
+
+function switchMode(mode, force=false) {
+  if (mode === currentMode && !force) return;
+
+  // For English mode, filter to words that have English definitions
+  if (mode === 'english') {
+    const engWords = currentWords.filter(w => ENGLISH_DEFS[w]);
+    if (engWords.length < 4) {
+      showToast('此单元英文释义词语不足，请选择其他单元');
+      return;
+    }
+    currentWords = engWords;
+  }
+
+  // For MCQ/cloze, filter to words with definitions
+  if (mode === 'mcq') {
+    const dWords = currentWords.filter(w => DEFS[w]);
+    if (dWords.length < 4) {
+      showToast('请先尝试闪卡模式');
+      return;
+    }
+    currentWords = dWords;
+  }
+
+  if (mode === 'cloze') {
+    const cWords = currentWords.filter(w => EXAMPLES[w]);
+    if (cWords.length < 4) {
+      showToast('此单元填空题目不足，请尝试其他模式');
+      return;
+    }
+    currentWords = cWords;
+  }
+
+  currentMode = mode;
+  currentIdx  = 0;
+  sessionCorrect = 0;
+  sessionWrong   = 0;
+  sessionWrongWords = [];
+
+  document.querySelectorAll('.mode-tab').forEach(t =>
+    t.classList.toggle('active', t.dataset.mode === mode));
+
+  // Show/hide mode panels
+  document.getElementById('flashcard-mode').style.display = mode==='flashcard' ? 'flex' : 'none';
+  document.getElementById('mcq-mode').style.display       = mode==='mcq'       ? 'flex' : 'none';
+  document.getElementById('cloze-mode').style.display     = mode==='cloze'     ? 'flex' : 'none';
+  document.getElementById('english-mode').style.display   = mode==='english'   ? 'flex' : 'none';
+
+  renderQuestion();
+}
+
+function renderQuestion() {
+  if (currentIdx >= currentWords.length) { showResults(); return; }
+  const pct = Math.round(currentIdx / currentWords.length * 100);
+  document.getElementById('study-progress-fill').style.width = pct + '%';
+
+  const word = currentWords[currentIdx];
+  if      (currentMode === 'flashcard') renderFlashcard(word);
+  else if (currentMode === 'mcq')       renderMCQ(word);
+  else if (currentMode === 'cloze')     renderCloze(word);
+  else if (currentMode === 'english')   renderEnglish(word);
+}
+
+// ── FLASHCARD ─────────────────────────────────────────────
+function renderFlashcard(word) {
+  document.getElementById('flashcard').classList.remove('flipped');
+  isFlipped = false;
+  document.getElementById('fc-counter').textContent = `${currentIdx+1} / ${currentWords.length}`;
+  document.getElementById('fc-word').textContent      = word;
+  document.getElementById('fc-context').textContent   = getUnitContext(word);
+  document.getElementById('fc-back-word').textContent = word;
+  document.getElementById('fc-meaning').textContent   = DEFS[word] || '（义项见课本）';
+  // Show example with word filled in
+  const ex = EXAMPLES[word] ? EXAMPLES[word].replace('__', '【'+word+'】') : '';
+  document.getElementById('fc-example').textContent   = ex;
+  document.getElementById('self-mark-btns').style.display = 'none';
+  document.getElementById('fc-hint').style.display = 'block';
+}
+
+function flipCard() {
+  if (!isFlipped) {
+    document.getElementById('flashcard').classList.add('flipped');
+    document.getElementById('self-mark-btns').style.display = 'flex';
+    document.getElementById('fc-hint').style.display = 'none';
+    isFlipped = true;
+  }
+}
+
+function markWord(known) {
+  const word = currentWords[currentIdx];
+  if (known) { markWordCorrect(word); sessionCorrect++; showToast('✓ 已记住！'); }
+  else       { markWordWrong(word);   sessionWrong++;   sessionWrongWords.push(word); showToast('✗ 加入复习队列'); }
+  currentIdx++;
+  setTimeout(renderQuestion, 320);
+}
+
+// ── MCQ: Chinese meaning ──────────────────────────────────
+function renderMCQ(word) {
+  document.getElementById('mcq-word').textContent    = word;
+  document.getElementById('mcq-context').textContent = getUnitContext(word);
+  document.getElementById('mcq-feedback').className  = 'mcq-feedback';
+  document.getElementById('mcq-next').className      = 'next-btn';
+
+  const correct = DEFS[word];
+  const opts = buildMCQOptions(word, correct, DEFS, currentLevel);
+
+  renderOptions('mcq-options', opts, correct, (isRight) => {
+    const fb = document.getElementById('mcq-feedback');
+    fb.textContent = isRight ? '✓ 正确！' : `✗ 正确答案是：${correct}`;
+    fb.className = 'mcq-feedback show ' + (isRight ? 'correct' : 'wrong');
+    document.getElementById('mcq-next').className = 'next-btn show';
+    if (isRight) { markWordCorrect(word); sessionCorrect++; }
+    else         { markWordWrong(word);   sessionWrong++;   sessionWrongWords.push(word); }
+  });
+}
+
+// ── CLOZE: sentence + MCQ options ────────────────────────
+function renderCloze(word) {
+  const sentence = EXAMPLES[word];
+  if (!sentence) { currentIdx++; renderQuestion(); return; }
+
+  const parts = sentence.split('__');
+  const html = parts.join(`<span class="cloze-blank" id="cloze-blank">＿＿＿</span>`);
+  document.getElementById('cloze-sentence').innerHTML = html;
+  document.getElementById('cloze-feedback').className = 'cloze-feedback';
+  document.getElementById('cloze-next').className     = 'next-btn';
+
+  // ── DISTRACTOR LOGIC ───────────────────────────────────
+  // Get same-unit words that also have EXAMPLES (for plausibility)
+  const unitWords = getUnitWords(word, currentLevel);
+  const same = unitWords.filter(w => w !== word && EXAMPLES[w]);
+  const fallback = currentLevel
+    ? Object.values(VOCAB[currentLevel]).flat().filter(w => w !== word && EXAMPLES[w])
+    : getAllWords().filter(w => w !== word && EXAMPLES[w]);
+
+  // Prefer same-length words (±1 char) as distractors for better plausibility
+  const wLen = word.length;
+  const byLen = [...same, ...fallback].filter(w => Math.abs(w.length - wLen) <= 1 && w !== word);
+  const others = [...same, ...fallback].filter(w => !byLen.includes(w) && w !== word);
+
+  shuffleArray(byLen); shuffleArray(others);
+  const distractors = [...new Set([...byLen, ...others])].slice(0, 3);
+
+  const opts = [word, ...distractors];
+  shuffleArray(opts);
+
+  renderOptions('cloze-options', opts, word, (isRight) => {
+    const blank = document.getElementById('cloze-blank');
+    blank.textContent = isRight ? word : word;
+    blank.className   = 'cloze-blank ' + (isRight ? 'correct' : 'wrong');
+
+    const fb = document.getElementById('cloze-feedback');
+    fb.textContent = isRight ? '✓ 正确！' : `✗ 正确答案是：${word}`;
+    fb.className = 'cloze-feedback show ' + (isRight ? 'correct' : 'wrong');
+    document.getElementById('cloze-next').className = 'next-btn show';
+    if (isRight) { markWordCorrect(word); sessionCorrect++; }
+    else         { markWordWrong(word);   sessionWrong++;   sessionWrongWords.push(word); }
+  });
+}
+
+// ── ENGLISH translation MCQ ───────────────────────────────
+function renderEnglish(word) {
+  document.getElementById('eng-word').textContent    = word;
+  document.getElementById('eng-context').textContent = getUnitContext(word);
+  document.getElementById('eng-feedback').className  = 'mcq-feedback';
+  document.getElementById('eng-next').className      = 'next-btn';
+
+  const correct = ENGLISH_DEFS[word];
+  const pool = Object.entries(ENGLISH_DEFS)
+    .filter(([w, d]) => w !== word && d !== correct)
+    .map(([w, d]) => d);
+  shuffleArray(pool);
+  const distractors = pool.slice(0, 3);
+  const opts = [correct, ...distractors];
+  shuffleArray(opts);
+
+  renderOptions('eng-options', opts, correct, (isRight) => {
+    const fb = document.getElementById('eng-feedback');
+    fb.textContent = isRight ? '✓ Correct!' : `✗ Answer: ${correct}`;
+    fb.className = 'mcq-feedback show ' + (isRight ? 'correct' : 'wrong');
+    document.getElementById('eng-next').className = 'next-btn show';
+    if (isRight) { markWordCorrect(word); sessionCorrect++; }
+    else         { markWordWrong(word);   sessionWrong++;   sessionWrongWords.push(word); }
+  });
+}
+
+// ── SHARED OPTION RENDERER ────────────────────────────────
+function renderOptions(containerId, opts, correct, onSelect) {
+  const letters = ['A','B','C','D'];
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'mcq-option';
+    btn.innerHTML = `<span class="option-letter">${letters[i]||''}</span><span>${opt}</span>`;
+    btn.onclick = () => {
+      // Disable all
+      container.querySelectorAll('.mcq-option').forEach(b => b.disabled = true);
+      const isRight = (opt === correct);
+      btn.classList.add(isRight ? 'correct' : 'wrong');
+      if (!isRight) {
+        // Reveal correct
+        container.querySelectorAll('.mcq-option').forEach(b => {
+          if (b.querySelector('span:last-child').textContent === correct)
+            b.classList.add('reveal-correct');
+        });
+      }
+      onSelect(isRight);
+    };
+    container.appendChild(btn);
+  });
+}
+
+// ── DISTRACTOR BUILDER ────────────────────────────────────
+function buildMCQOptions(word, correct, defsObj, level) {
+  // Prefer distractors from same unit, then same level, then global
+  const unitWords = getUnitWords(word, level);
+  const levelWords = level ? Object.values(VOCAB[level]).flat() : [];
+  const allW = getAllWords();
+
+  const pools = [
+    unitWords.filter(w => w !== word && defsObj[w] && defsObj[w] !== correct),
+    levelWords.filter(w => w !== word && defsObj[w] && defsObj[w] !== correct),
+    allW.filter(w => w !== word && defsObj[w] && defsObj[w] !== correct)
+  ];
+
+  const seen = new Set([correct]);
+  const distractors = [];
+
+  for (const pool of pools) {
+    shuffleArray(pool);
+    for (const w of pool) {
+      if (!seen.has(defsObj[w]) && distractors.length < 3) {
+        seen.add(defsObj[w]);
+        distractors.push(defsObj[w]);
+      }
+    }
+    if (distractors.length >= 3) break;
+  }
+
+  const opts = [correct, ...distractors];
+  shuffleArray(opts);
+  return opts;
+}
+
+function getUnitWords(word, level) {
+  if (!level) return [];
+  for (const [unit, words] of Object.entries(VOCAB[level])) {
+    if (words.includes(word)) return words;
+  }
+  return [];
+}
+
+function getUnitContext(word) {
+  if (!currentLevel) return '';
+  for (const [unit, words] of Object.entries(VOCAB[currentLevel]||{})) {
+    if (words.includes(word)) return unit;
+  }
+  return '';
+}
+
+function nextQuestion() { currentIdx++; renderQuestion(); }
+
+// ══ RESULTS ════════════════════════════════════════════════
+function showResults() {
+  const total = sessionCorrect + sessionWrong;
+  const pct   = total > 0 ? Math.round(sessionCorrect / total * 100) : 100;
+
+  let emoji = pct>=90?'🎉':pct>=70?'👍':pct>=50?'📚':'💪';
+  let title = pct>=90?'太棒了！':pct>=70?'不错！':pct>=50?'继续加油！':'多多练习！';
+
+  document.getElementById('res-emoji').textContent  = emoji;
+  document.getElementById('res-title').textContent  = title;
+  document.getElementById('res-subtitle').textContent =
+    (currentUnit||'词语') + ' · ' + modeLabel(currentMode);
+  document.getElementById('res-score-num').textContent = pct + '%';
+  document.getElementById('res-correct').textContent   = sessionCorrect;
+  document.getElementById('res-wrong').textContent     = sessionWrong;
+  document.getElementById('res-total-q').textContent   = total;
+
+  // Animate ring
+  const circ = 226;
+  const offset = circ - (pct/100 * circ);
+  const circle = document.getElementById('score-ring-circle');
+  circle.style.strokeDashoffset = circ;
+  circle.style.stroke = pct>=70?'#1a7a4a':pct>=50?'#c47c00':'#c0392b';
+  setTimeout(() => {
+    circle.style.transition = 'stroke-dashoffset 1s ease';
+    circle.style.strokeDashoffset = offset;
+  }, 80);
+
+  // Save to history
+  if (currentUnit && total > 0) {
+    saveSessionResult(currentUnit, pct, currentMode);
+  }
+
+  // History panel
+  renderHistoryPanel();
+  document.getElementById('history-panel').classList.remove('show');
+
+  // Weak words
+  const uniqueWrong = [...new Set(sessionWrongWords)];
+  const weakPrev = document.getElementById('weak-preview');
+  const retryWeak = document.getElementById('btn-retry-weak');
+  if (uniqueWrong.length > 0) {
+    weakPrev.className = 'weak-preview show';
+    document.getElementById('weak-chips').innerHTML =
+      uniqueWrong.slice(0, 12).map(w => `<span class="weak-chip">${w}</span>`).join('');
+    retryWeak.className = 'action-btn action-weak show';
+  } else {
+    weakPrev.className = 'weak-preview';
+    retryWeak.className = 'action-btn action-weak';
+  }
+
+  sendXAPIScore(pct);
+  showScreen('results-screen');
+  updateHomeStats();
+}
+
+function modeLabel(m) {
+  return m==='flashcard'?'闪卡':m==='mcq'?'中文选择':m==='cloze'?'填空选择':'英文翻译';
+}
+
+function renderHistoryPanel() {
+  const key = currentUnit;
+  const hist = sessionHistory[key];
+  const container = document.getElementById('history-rows');
+  if (!hist || !hist.length) { container.innerHTML = '<div style="font-size:.75rem;color:var(--ink-mute);font-family:sans-serif;">暂无记录</div>'; return; }
+
+  container.innerHTML = hist.map(h => {
+    const cls = h.score>=70?'score-good':h.score>=50?'score-mid':'score-low';
+    return `<div class="history-row">
+      <span style="color:var(--ink-soft)">${h.date} ${h.time}</span>
+      <span style="color:var(--ink-mute);font-size:.7rem">${modeLabel(h.mode)}</span>
+      <span class="history-score ${cls}">${h.score}%</span>
+    </div>`;
+  }).join('');
+}
+
+function toggleHistory() {
+  const panel = document.getElementById('history-panel');
+  panel.classList.toggle('show');
+}
+
+function retryWeak() {
+  const unique = [...new Set(sessionWrongWords)];
+  if (!unique.length) return;
+  currentWords = unique;
+  currentIdx = 0; sessionCorrect = 0; sessionWrong = 0; sessionWrongWords = [];
+  switchMode(currentMode, true);
+  showScreen('study-screen');
+}
+
+function retryAll() {
+  // Reload original word list
+  const orig = currentLevel && currentUnit && VOCAB[currentLevel] && VOCAB[currentLevel][currentUnit]
+    ? VOCAB[currentLevel][currentUnit] : currentWords;
+  let pool = [...orig];
+  pool.sort((a,b) => getWordBox(a) - getWordBox(b));
+  pool = pool.slice(0, 20);
+  shuffleArray(pool);
+  currentWords = pool;
+  currentIdx = 0; sessionCorrect = 0; sessionWrong = 0; sessionWrongWords = [];
+  switchMode(currentMode, true);
+  showScreen('study-screen');
+}
+
+// ══ XAPI ════════════════════════════════════════════════════
+const XAPIUtils = {
+  parameters: null,
+  getParameters() {
+    if (!this.parameters) {
+      try {
+        const p = new URLSearchParams(window.location.search);
+        const ep = p.get('endpoint'), auth = p.get('auth');
+        const agent = p.get('agent') ? JSON.parse(p.get('agent')) : null;
+        if (ep && typeof ADL !== 'undefined')
+          ADL.XAPIWrapper.changeConfig({ endpoint: ep+'/', auth:'Basic '+auth });
+        this.parameters = { agent, stateId: p.get('stateId'), activityId: p.get('activityId') };
+      } catch(e) { this.parameters = {}; }
+    }
+    return this.parameters;
+  }
+};
+document.addEventListener('DOMContentLoaded', () => XAPIUtils.getParameters());
+
+function sendXAPIScore(pct) {
+  try {
+    if (typeof ADL === 'undefined') return;
+    const { agent, stateId, activityId } = XAPIUtils.getParameters();
+    if (!activityId) return;
+    ADL.XAPIWrapper.sendState(activityId, agent, stateId, null, { score: pct });
+  } catch(e) {}
+}
+
+// ══ UTILS ═══════════════════════════════════════════════════
+function shuffleArray(arr) {
+  for (let i=arr.length-1;i>0;i--) {
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
+let _toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+// ══ INIT ═══════════════════════════════════════════════════
+loadProgress();
+updateHomeStats();
+
+
+// ══════════════════════════════════════════════════════════════
+// PWA + INDEXEDDB + GOOGLE SHEETS + SAVE CODE
+// ══════════════════════════════════════════════════════════════
+
+// ── CONFIG — replace with your deployed Google Apps Script URL ──
+const GAS_ENDPOINT = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+// Example: 'https://script.google.com/macros/s/AKfycbx.../exec'
+
+
+// ══════════════════════════════════════════════════════════════
+// AUTHENTICATION & USER IDENTITY
+// ══════════════════════════════════════════════════════════════
+
+const USER_KEY       = 'cl_vocab_user_email';
+const USER_TYPE_KEY  = 'cl_vocab_user_type';
+
+// Domain detection
+function detectUserType(email) {
+  if (!email) return 'unknown';
+  const lower = email.toLowerCase().trim();
+  if (lower.endsWith('@students.edu.sg')) return 'student';
+  if (lower.endsWith('@moe.edu.sg'))      return 'teacher';
+  return 'external';
+}
+
+function getUserType()  {
+  return sessionStorage.getItem(USER_TYPE_KEY) ||
+         localStorage.getItem(USER_TYPE_KEY) || 'unknown';
+}
+
+function isTeacher()  { return getUserType() === 'teacher'; }
+function isStudent()  { return getUserType() === 'student'; }
+
+// ── WELCOME SCREEN LOGIC ─────────────────────────────────────
+function submitWelcome() {
+  const input = document.getElementById('welcome-email');
+  const errEl = document.getElementById('welcome-error');
+  const email = (input.value || '').trim().toLowerCase();
+
+  // Basic validation
+  if (!email) {
+    showWelcomeError('请输入你的电邮地址');
+    return;
+  }
+  if (!email.includes('@') || !email.includes('.')) {
+    showWelcomeError('请输入有效的电邮地址');
+    return;
+  }
+
+  // Save identity
+  const userType = detectUserType(email);
+  try {
+    localStorage.setItem(USER_KEY, email);
+    localStorage.setItem(USER_TYPE_KEY, userType);
+    sessionStorage.setItem(USER_KEY, email);
+    sessionStorage.setItem(USER_TYPE_KEY, userType);
+  } catch(e) {}
+  idbSet(USER_KEY, email).catch(() => {});
+  idbSet(USER_TYPE_KEY, userType).catch(() => {});
+
+  launchApp(email, userType);
+}
+
+function showWelcomeError(msg) {
+  const errEl = document.getElementById('welcome-error');
+  const input = document.getElementById('welcome-email');
+  errEl.textContent = msg;
+  errEl.classList.add('show');
+  input.classList.add('error');
+  setTimeout(() => {
+    errEl.classList.remove('show');
+    input.classList.remove('error');
+  }, 3000);
+}
+
+// ── LAUNCH APP AFTER LOGIN ────────────────────────────────────
+function launchApp(email, userType) {
+  // Update UI
+  const emailDisplay = document.getElementById('user-email-display');
+  if (emailDisplay) emailDisplay.textContent = email;
+
+  // Show teacher banner if applicable
+  const teacherBanner = document.getElementById('teacher-banner');
+  if (teacherBanner && userType === 'teacher') {
+    teacherBanner.classList.add('show');
+  }
+
+  // Switch to home screen
+  showScreen('home-screen');
+  loadProgress().then(() => fetchSheetData());
+}
+
+// ── SIGN OUT ─────────────────────────────────────────────────
+function signOut() {
+  if (!confirm('确定要退出登录吗？你的学习进度不会丢失。')) return;
+  try {
+    localStorage.removeItem(USER_KEY);
+    localStorage.removeItem(USER_TYPE_KEY);
+    sessionStorage.removeItem(USER_KEY);
+    sessionStorage.removeItem(USER_TYPE_KEY);
+  } catch(e) {}
+  idbSet(USER_KEY, null).catch(() => {});
+  showScreen('welcome-screen');
+}
+
+// ── GET CURRENT USER EMAIL ────────────────────────────────────
+// Override the stub from PWA section
+function getUserEmail() {
+  return sessionStorage.getItem(USER_KEY) ||
+         localStorage.getItem(USER_KEY) ||
+         'unknown';
+}
+
+// ── PATCH reportToSheets: skip if teacher ────────────────────
+const _origReport = reportToSheets;
+reportToSheets = async function(scoreData) {
+  if (isTeacher()) {
+    console.log('Teacher mode — skipping sheet report');
+    return;
+  }
+  // Add user type to payload
+  scoreData.userType = getUserType();
+  await _origReport(scoreData);
+};
+
+// ── CHECK LOGIN ON STARTUP ────────────────────────────────────
+async function checkLoginState() {
+  // Try sources in order: sessionStorage → localStorage → IndexedDB
+  let email = sessionStorage.getItem(USER_KEY) || localStorage.getItem(USER_KEY);
+  if (!email) {
+    try { email = await idbGet(USER_KEY); } catch(e) {}
+  }
+
+  if (email) {
+    // Restore to session storage (in case it was only in IDB)
+    try {
+      sessionStorage.setItem(USER_KEY, email);
+      const userType = detectUserType(email);
+      sessionStorage.setItem(USER_TYPE_KEY, userType);
+      localStorage.setItem(USER_KEY, email);
+      localStorage.setItem(USER_TYPE_KEY, userType);
+    } catch(e) {}
+    launchApp(email, detectUserType(email));
+  } else {
+    // First time — show welcome screen (already active by default)
+    showScreen('welcome-screen');
+  }
+}
+
+
+// ── MASTER WORD LIST (for index-based save code) ──────────────
+const WORD_INDEX = Object.values(VOCAB).flatMap(u => Object.values(u).flat());
+
+// ── INDEXEDDB STORAGE ─────────────────────────────────────────
+const DB_NAME    = 'cl_vocab_db';
+const DB_VERSION = 1;
+const STORE_NAME = 'progress';
+let db = null;
+
+function openDB() {
+  return new Promise((resolve, reject) => {
+    if (db) { resolve(db); return; }
+    const req = indexedDB.open(DB_NAME, DB_VERSION);
+    req.onupgradeneeded = e => {
+      const d = e.target.result;
+      if (!d.objectStoreNames.contains(STORE_NAME)) {
+        d.createObjectStore(STORE_NAME, { keyPath: 'key' });
+      }
+    };
+    req.onsuccess = e => { db = e.target.result; resolve(db); };
+    req.onerror   = () => reject(req.error);
+  });
+}
+
+async function idbSet(key, value) {
+  try {
+    const d = await openDB();
+    return new Promise((res, rej) => {
+      const tx = d.transaction(STORE_NAME, 'readwrite');
+      tx.objectStore(STORE_NAME).put({ key, value });
+      tx.oncomplete = () => res();
+      tx.onerror    = () => rej(tx.error);
+    });
+  } catch(e) { /* fallback to localStorage */ }
+}
+
+async function idbGet(key) {
+  try {
+    const d = await openDB();
+    return new Promise((res, rej) => {
+      const tx  = d.transaction(STORE_NAME, 'readonly');
+      const req = tx.objectStore(STORE_NAME).get(key);
+      req.onsuccess = () => res(req.result ? req.result.value : null);
+      req.onerror   = () => rej(req.error);
+    });
+  } catch(e) { return null; }
+}
+
+// ── OVERRIDE saveProgress to use IndexedDB + localStorage ─────
+const _origSave = saveProgress;
+saveProgress = function() {
+  // localStorage (best-effort, works on ChromeOS)
+  try {
+    localStorage.setItem('cl_vocab_progress_v2', JSON.stringify(progress));
+    localStorage.setItem('cl_session_history',   JSON.stringify(sessionHistory));
+  } catch(e) {}
+  // sessionStorage (survives tab close in same browser session)
+  try {
+    sessionStorage.setItem('cl_vocab_progress_v2', JSON.stringify(progress));
+  } catch(e) {}
+  // IndexedDB (most persistent — survives Safari 7-day ITP when installed as PWA)
+  idbSet('progress', progress).catch(() => {});
+  idbSet('sessionHistory', sessionHistory).catch(() => {});
+};
+
+// ── OVERRIDE loadProgress to check IndexedDB first ────────────
+const _origLoad = loadProgress;
+loadProgress = async function() {
+  // Try IndexedDB first (most reliable when installed as PWA)
+  try {
+    const p = await idbGet('progress');
+    const h = await idbGet('sessionHistory');
+    if (p) { progress = p; }
+    if (h) { sessionHistory = h; }
+    if (p || h) { updateHomeStats(); return; }
+  } catch(e) {}
+  // Fall back to localStorage
+  try {
+    const p = localStorage.getItem('cl_vocab_progress_v2');
+    const h = localStorage.getItem('cl_session_history');
+    if (p) progress = JSON.parse(p);
+    if (h) sessionHistory = JSON.parse(h);
+  } catch(e) {}
+  // Fall back to sessionStorage
+  try {
+    const p = sessionStorage.getItem('cl_vocab_progress_v2');
+    if (p && !Object.keys(progress).length) progress = JSON.parse(p);
+  } catch(e) {}
+  updateHomeStats();
+};
+
+// ── SAVE CODE: encode/decode ──────────────────────────────────
+function encodeProgress() {
+  // Only encode words that have been touched (non-default state)
+  const touched = WORD_INDEX
+    .map((w, i) => {
+      const p = progress[w];
+      if (!p) return null;
+      if (p.box === 0 && !p.wrongCount) return null;
+      return [i, p.box || 0, p.wrongCount || 0];
+    })
+    .filter(Boolean);
+
+  if (!touched.length) return null;
+
+  const raw = JSON.stringify(touched);
+  // Use btoa with UTF-8 encoding
+  try {
+    const b64 = btoa(unescape(encodeURIComponent(raw)));
+    return b64;
+  } catch(e) { return null; }
+}
+
+function decodeProgress(code) {
+  try {
+    const raw = decodeURIComponent(escape(atob(code.trim())));
+    const entries = JSON.parse(raw);
+    const restored = {};
+    entries.forEach(([idx, box, wrongCount]) => {
+      const word = WORD_INDEX[idx];
+      if (word) restored[word] = { box, wrongCount, lastSeen: Date.now() };
+    });
+    return restored;
+  } catch(e) { return null; }
+}
+
+// ── SAVE MODAL ────────────────────────────────────────────────
+function showSaveModal() {
+  const code = encodeProgress();
+  if (!code) {
+    showToast('还没有学习记录可以保存');
+    return;
+  }
+  document.getElementById('save-code-box').value = code;
+  document.getElementById('copy-btn').textContent = '📋 复制进度码';
+  document.getElementById('save-modal').classList.add('show');
+}
+
+function closeSaveModal() {
+  document.getElementById('save-modal').classList.remove('show');
+}
+
+function copyCode() {
+  const box = document.getElementById('save-code-box');
+  box.select();
+  try {
+    navigator.clipboard.writeText(box.value).then(() => {
+      document.getElementById('copy-btn').textContent = '✓ 已复制！';
+      setTimeout(() => {
+        document.getElementById('copy-btn').textContent = '📋 复制进度码';
+      }, 2000);
+    });
+  } catch(e) {
+    // Fallback for older browsers
+    document.execCommand('copy');
+    document.getElementById('copy-btn').textContent = '✓ 已复制！';
+  }
+}
+
+// ── RESTORE MODAL ─────────────────────────────────────────────
+function showRestoreModal() {
+  document.getElementById('restore-code-box').value = '';
+  document.getElementById('restore-modal').classList.add('show');
+}
+
+function closeRestoreModal() {
+  document.getElementById('restore-modal').classList.remove('show');
+}
+
+function restoreFromCode() {
+  const code = document.getElementById('restore-code-box').value.trim();
+  if (!code) { showToast('请先粘贴进度码'); return; }
+  const restored = decodeProgress(code);
+  if (!restored) {
+    showToast('❌ 进度码无效，请检查后重试');
+    return;
+  }
+  // Merge: don't overwrite words that are already further along
+  Object.entries(restored).forEach(([word, data]) => {
+    const current = progress[word];
+    if (!current || current.box < data.box) {
+      progress[word] = data;
+    }
+  });
+  saveProgress();
+  updateHomeStats();
+  closeRestoreModal();
+  showToast(`✓ 已恢复 ${Object.keys(restored).length} 个词语的进度！`);
+}
+
+// Close modals on overlay click
+document.getElementById('save-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeSaveModal();
+});
+document.getElementById('restore-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeRestoreModal();
+});
+
+// ── GOOGLE SHEETS REPORTING ───────────────────────────────────
+function getUserEmail() {
+  // Try to get from Google Sign-In if available
+  try {
+    if (window.google && google.accounts && google.accounts.id) {
+      return sessionStorage.getItem('cl_user_email') || 'student';
+    }
+  } catch(e) {}
+  return sessionStorage.getItem('cl_user_email') || 'student';
+}
+
+async function reportToSheets(scoreData) {
+  if (!GAS_ENDPOINT || GAS_ENDPOINT === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') return;
+  try {
+    const payload = {
+      email:     getUserEmail(),
+      level:     currentLevel || '',
+      unit:      currentUnit  || '',
+      mode:      currentMode  || '',
+      score:     scoreData.score,
+      correct:   scoreData.correct,
+      wrong:     scoreData.wrong,
+      weakWords: scoreData.weakWords || []
+    };
+    // Use sendBeacon for reliability (works even if page closes)
+    const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon(GAS_ENDPOINT, blob);
+    } else {
+      fetch(GAS_ENDPOINT, { method: 'POST', body: JSON.stringify(payload) }).catch(() => {});
+    }
+  } catch(e) { /* Silent fail — don't disrupt student */ }
+}
+
+// ── PATCH showResults to call reportToSheets ──────────────────
+const _origShowResults = showResults;
+showResults = function() {
+  _origShowResults();
+  // Report to Google Sheets
+  const total = sessionCorrect + sessionWrong;
+  const pct   = total > 0 ? Math.round(sessionCorrect / total * 100) : 100;
+  reportToSheets({
+    score:     pct,
+    correct:   sessionCorrect,
+    wrong:     sessionWrong,
+    weakWords: [...new Set(sessionWrongWords)].slice(0, 20)
+  });
+};
+
+// ── PWA INSTALL PROMPT ────────────────────────────────────────
+let deferredInstallPrompt = null;
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  // Show install banner only if not already installed
+  if (!window.matchMedia('(display-mode: standalone)').matches) {
+    document.getElementById('install-banner').classList.add('show');
+  }
+});
+
+function triggerInstall() {
+  if (!deferredInstallPrompt) return;
+  deferredInstallPrompt.prompt();
+  deferredInstallPrompt.userChoice.then(choice => {
+    if (choice.outcome === 'accepted') {
+      document.getElementById('install-banner').classList.remove('show');
+    }
+    deferredInstallPrompt = null;
+  });
+}
+
+function dismissInstall() {
+  document.getElementById('install-banner').classList.remove('show');
+  deferredInstallPrompt = null;
+}
+
+// Hide install banner if already in standalone mode
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const b = document.getElementById('install-banner');
+    if (b) b.style.display = 'none';
+  });
+}
+
+// ── SERVICE WORKER REGISTRATION ───────────────────────────────
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => {
+        // Check for updates
+        reg.addEventListener('updatefound', () => {
+          const newWorker = reg.installing;
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              showToast('🔄 应用已更新，重启后生效');
+            }
+          });
+        });
+      })
+      .catch(() => { /* SW not supported or blocked in iframe */ });
+  });
+}
+
+// ── RE-INIT with async loadProgress ──────────────────────────
+// (overrides the sync init at bottom of v2 logic)
+document.addEventListener('DOMContentLoaded', () => {
+  // checkLoginState handles loadProgress + fetchSheetData after auth
+  checkLoginState();
+});
+
+</script>
+</body>
+</html>

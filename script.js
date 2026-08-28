@@ -366,6 +366,84 @@
     blocks.forEach((b) => io.observe(b));
   }
 
+  /** The evolution strip. The track is a scroll-snapping row that already
+      drags on its own, so this only adds what a drag cannot do: buttons, a
+      position readout, and dots to jump with.
+
+      A button paints from the index it just asked for rather than from where
+      the track currently sits, because a smooth scroll has not arrived yet at
+      the moment of the click. The scroll listener is for drags, and repaints
+      from the real position once anything settles. */
+  function initGallery(root = document) {
+    root.querySelectorAll('[data-evo-root]').forEach((gallery) => {
+      const track = gallery.querySelector('[data-evo-track]');
+      const dots = gallery.querySelector('[data-evo-dots]');
+      const count = gallery.querySelector('[data-evo-count]');
+      const prev = gallery.querySelector('[data-evo="prev"]');
+      const next = gallery.querySelector('[data-evo="next"]');
+      const slides = [...gallery.querySelectorAll('.evo-slide')];
+      if (!track || slides.length < 2) return;
+
+      /* Measured against the track's own box rather than through offsetLeft,
+         which is relative to whichever ancestor happens to be positioned and
+         so shares no origin with scrollLeft. */
+      const centre = (el) => {
+        const box = el.getBoundingClientRect();
+        return box.left + box.width / 2;
+      };
+
+      /* Whichever slide's centre sits nearest the track's centre. */
+      const current = () => {
+        const mid = centre(track);
+        let best = 0, gap = Infinity;
+        slides.forEach((slide, n) => {
+          const away = Math.abs(centre(slide) - mid);
+          if (away < gap) { gap = away; best = n; }
+        });
+        return best;
+      };
+
+      let shown = 0;
+      const paint = (n = current()) => {
+        shown = Math.max(0, Math.min(slides.length - 1, n));
+        if (count) count.textContent = `${shown + 1} / ${slides.length}`;
+        if (prev) prev.disabled = shown === 0;
+        if (next) next.disabled = shown === slides.length - 1;
+        if (dots) {
+          dots.querySelectorAll('button').forEach((dot, i) => {
+            dot.setAttribute('aria-current', i === shown ? 'true' : 'false');
+            dot.setAttribute('aria-label', `${i + 1} / ${slides.length}`);
+          });
+        }
+      };
+
+      const go = (n) => {
+        const want = Math.max(0, Math.min(slides.length - 1, n));
+        track.scrollBy({ left: centre(slides[want]) - centre(track) });
+        paint(want);
+      };
+
+      if (dots) {
+        dots.innerHTML = slides.map((_, n) =>
+          `<li><button type="button" data-evo-to="${n}"></button></li>`).join('');
+        dots.addEventListener('click', (event) => {
+          const dot = event.target.closest('button[data-evo-to]');
+          if (dot) go(Number(dot.dataset.evoTo));
+        });
+      }
+      if (prev) prev.addEventListener('click', () => go(shown - 1));
+      if (next) next.addEventListener('click', () => go(shown + 1));
+
+      let settle;
+      track.addEventListener('scroll', () => {
+        clearTimeout(settle);
+        settle = setTimeout(() => paint(), 90);
+      });
+      window.addEventListener('resize', () => paint());
+      paint(0);
+    });
+  }
+
   /* The images are controls, so they need a name and a focus stop. */
   function labelZoomables(root = document) {
     root.querySelectorAll('.shot img, .specimen img').forEach((img) => {
@@ -507,6 +585,8 @@
 
     renderAll();
     revealLoadedImages();
+    initGallery();
+    wireEmbeds(document);
     wireTalkNav();
     wireDocSpy();
     initToggle();

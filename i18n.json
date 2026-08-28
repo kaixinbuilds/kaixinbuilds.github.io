@@ -520,17 +520,9 @@
     "en": "vocabulary entries",
     "zh": "词条总数"
   },
-  "nlc26.statClasses": {
-    "en": "classes tested the platform",
-    "zh": "个班级测试平台"
-  },
-  "nlc26.statStudents": {
-    "en": "students gave real feedback",
-    "zh": "名学生提供了真实反馈"
-  },
   "nlc26.statPeople": {
-    "en": "teacher, slightly mad",
-    "zh": "位疯狂的教师"
+    "zh": "个疯狂的学习设计师",
+    "en": "learning designer, slightly mad"
   },
   "nlc26.shot1": {
     "en": "The landing page, and where the name comes from",
@@ -875,5 +867,105 @@
   "talks.groupOther": {
     "en": "Elsewhere",
     "zh": "其他"
+  },
+  "nlc26.statProfiles": {
+    "zh": "份学习档案 · 截至 2026.08.27",
+    "en": "learner profiles, as of 27 Aug 2026"
+  },
+  "nlc26.cycle1": {
+    "zh": "说清楚要什么",
+    "en": "Say what you want"
+  },
+  "nlc26.cycle2": {
+    "zh": "看它做出什么",
+    "en": "Look at what it made"
+  },
+  "nlc26.cycle3": {
+    "zh": "说哪里要调整",
+    "en": "Say what needs adjusting"
+  },
+  "nlc26.cycleReturn": {
+    "zh": "然后回到第一步。这个循环，我做了四个月。",
+    "en": "Then back to the first step. Four months of this."
+  },
+  "nlc26.navEvo": {
+    "zh": "演变",
+    "en": "How it changed"
+  },
+  "nlc26.evoTitle": {
+    "zh": "一个粗糙的开始，就是最好的开始",
+    "en": "A rough start is the best kind of start"
+  },
+  "nlc26.evoLede": {
+    "zh": "下面六张图，是同一个东西的四个月。第一张丑得很实在，但它能用，所以学生用了，所以我知道下一步该改哪里。",
+    "en": "Six pictures, four months, one thing. The first is honestly ugly. But it ran, so students used it, so I knew what to fix next."
+  },
+  "nlc26.evo1": {
+    "zh": "第一版的登录页。一个书本表情符号当图标，一个输入框，深紫色背景。从开仓库到传上这个文件，只隔了 13 分钟。",
+    "en": "The first login screen. A book emoji for a logo, one input box, a purple gradient. Thirteen minutes after the repository was created."
+  },
+  "nlc26.evo2": {
+    "zh": "同一天晚上的主页。992 个词语，四张年级卡片，没有插图，没有关卡，什么都没有。但进度条是真的会动的。",
+    "en": "The home screen, same evening. 992 words, four year-level cards, no art, no levels, nothing. But the progress bar was real."
+  },
+  "nlc26.evo3": {
+    "zh": "第三天。有了名字「词王训练营」，有了第一张 AI 画的水墨插图，登录页开始像个作品，而不像个表格。",
+    "en": "Day three. It had a name, and its first AI-drawn ink-wash illustration. The login screen began to look like a thing, not a form."
+  },
+  "nlc26.evo4": {
+    "zh": "第十天。改名「词王淬炼坊」，加了成就、排行榜、身份分流。词语从 992 涨到 1068，因为学生开始提意见了。",
+    "en": "Day ten. Renamed, with badges, a leaderboard and separate roles. The word count had grown from 992 to 1,068, because students had started asking for words."
+  },
+  "nlc26.evo5": {
+    "zh": "四个月后重起炉灶：「词山学海」的第一天。四座山峰对应四个课程源流，山还是纯色块画的。但结构已经是今天这一版的结构了。",
+    "en": "Four months on, rebuilt from nothing: VocabSummit, day one. Four peaks for four course streams, the mountains still drawn in flat colour. The structure is already today's structure."
+  },
+  "nlc26.evo6": {
+    "zh": "今天。同一个版式、同一副对联、同一个页脚，只是画好了。上面那张和这张之间，隔的不是灵感，是一百七十多次修改。",
+    "en": "Today. Same layout, same couplet, same footer as the frame before it. Only the drawing changed. What sits between the two is not inspiration; it is a hundred and seventy-odd revisions."
+  },
+  "nlc26.evoPrev": {
+    "zh": "上一张",
+    "en": "Previous"
+  },
+  "nlc26.evoNext": {
+    "zh": "下一张",
+    "en": "Next"
+  },
+  "nlc26.evoPlay": {
+    "zh": "打开 2026 年 4 月 10 日的第一版",
+    "en": "Open the first version, 10 April 2026"
+  },
+  "nlc26.evoPlayNote": {
+    "zh": "这不是截图，是当天上传的那个文件本身，原封不动。随便点，进度只存在你自己的浏览器里。",
+    "en": "Not a screenshot: the actual file uploaded that night, unedited. Click around, and anything you do stays in your own browser."
+  },
+  "nlc26.evoLabel": {
+    "zh": "重点",
+    "en": "The point"
+  },
+  "nlc26.evoClose": {
+    "zh": "如果我等到想清楚了才动手，这个东西到今天还不存在。先做一个能用的丑东西，让它去见学生，剩下的交给修改。",
+    "en": "Had I waited until I knew what I was doing, none of this would exist. Make an ugly thing that runs, put it in front of students, and let revision do the rest."
+  },
+  "nlc26.rosterYou": {
+    "zh": "你",
+    "en": "You"
+  },
+  "nlc26.rosterYouRole": {
+    "zh": "唯一做判断的那个",
+    "en": "The only one who decides"
+  },
+  "nlc26.rosterDecides": {
+    "zh": "下判断",
+    "en": "Judgement"
+  },
+  "nlc26.rosterNote": {
+    "zh": "箭头只有一个方向。它们做得很快，但它们不知道你的学生是谁。",
+    "en": "The arrow points one way only. They work fast, and not one of them knows your students."
+  },
+  "nlc26.statShips": {
+    "zh": "次改版上线 · 自 2026.04.10",
+    "en": "deployments since 10 April 2026"
   }
 }
