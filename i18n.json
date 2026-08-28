@@ -701,20 +701,20 @@
     "zh": "120 分钟冲刺目标"
   },
   "nlc26.goal1": {
-    "en": "See how the bottleneck at the prototype stage of design thinking has shifted: it is no longer coding ability, but being able to say clearly what you want and to judge whether what comes back is right.",
-    "zh": "认清设计思考中「原型」阶段的瓶颈已经改变：靠的不再是编码能力，而是把要求讲清楚、判断做得对不对"
+    "en": "Understand that delivering the prototype stage of design thinking no longer depends on coding ability: it depends on stating the requirement clearly, then judging what comes back and refining it.",
+    "zh": "理解设计思考中「原型」落实不再依靠编码能力，而是要能把要求讲清楚，再判断成果，并进行优化"
   },
   "nlc26.goal2": {
     "en": "Understand what Claude and GitHub each do, and how the work divides between them.",
     "zh": "理解 Claude 与 GitHub 各自的功能与分工"
   },
   "nlc26.goal3": {
-    "en": "Prototype: create your own GitHub repo and publish a small learning game on it.",
-    "zh": "做出原型：创建自己的 GitHub Repo，把一款小游戏发布上线"
+    "en": "Prototype: create your own GitHub repo, copy a small game and publish it live.",
+    "zh": "做出原型：创建自己的 GitHub Repo，复制一款小游戏并发布上线"
   },
   "nlc26.goal4": {
-    "en": "Iterate: talk to Claude to swap in your own unit's content, play it, and revise.",
-    "zh": "迭代原型：通过与 Claude 对话换成自己的单元内容，试玩，再修改"
+    "en": "(Stretch goal) Iterate the prototype: iterate the game by talking to Claude, play it, and publish it live.",
+    "zh": "（伸展目标）迭代原型：通过与 Claude 对话迭代游戏原型，试玩并发布上线"
   },
   "nlc26.p5Title": {
     "en": "Archivist · GitHub",
