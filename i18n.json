@@ -953,12 +953,12 @@
     "en": "You"
   },
   "nlc26.rosterYouRole": {
-    "zh": "唯一做判断的那个",
+    "zh": "唯一出决策的那个",
     "en": "The only one who decides"
   },
   "nlc26.rosterDecides": {
-    "zh": "下判断",
-    "en": "Judgement"
+    "zh": "出决策",
+    "en": "Decisions"
   },
   "nlc26.rosterNote": {
     "zh": "箭头只有一个方向。它们做得很快，但它们不知道你的学生是谁。",
