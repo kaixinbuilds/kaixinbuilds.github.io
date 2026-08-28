@@ -1135,12 +1135,16 @@ html[data-lang-mode="zh"] .epigraph .en { display: none; }
 .roster-you .roster-glyph .ink { fill: var(--paper); }
 .roster-you .roster-name { font-family: var(--font-serif); font-size: 1.08rem; }
 .roster-you .roster-role { font-size: .82rem; opacity: .75; }
-.roster-arrow { display: grid; justify-items: center; gap: .35rem; width: 100%; }
-.roster-arrow svg { width: 26px; }
-.roster-arrow span {
-  font-size: .68rem; font-weight: 600;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--ochre-deep);
+/* The fan spans the roster, so its five endpoints can sit over the five
+   column centres of the row beneath. Its own viewBox carries the vertical
+   air, which is why the flow row adds none of its own. */
+.roster-flow { display: grid; justify-items: center; width: 100%; }
+.roster-fan { width: 100%; }
+.roster-stem { display: none; width: 26px; }
+@media (max-width: 700px) {
+  /* Two columns down here, so a five-way fan would land nowhere. */
+  .roster-fan { display: none; }
+  .roster-stem { display: block; }
 }
 .roster-tools {
   list-style: none; margin: 0; padding: 0;

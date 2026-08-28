@@ -661,12 +661,24 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
                 <span class="roster-role" data-i18n="nlc26.rosterYouRole"></span>
               </div>
 
-              <div class="roster-arrow">
-                <svg class="cut" viewBox="0 0 26 34" aria-hidden="true" focusable="false">
-                  <path class="line-o" d="M13 2 L13 24" stroke-width="2.4"/>
-                  <path class="och" d="M13 33 L5 21 L21 21 Z"/>
+              <div class="roster-flow">
+                <svg class="cut roster-fan" viewBox="0 0 1000 132" aria-hidden="true" focusable="false">
+                  <path class="line-o" d="M500 10 C 500 64, 95.5 64, 95.5 112" stroke-width="2" vector-effect="non-scaling-stroke"/>
+                  <path class="line-o" d="M500 10 C 500 64, 297.8 64, 297.8 112" stroke-width="2" vector-effect="non-scaling-stroke"/>
+                  <path class="line-o" d="M500 10 C 500 64, 500 64, 500 112" stroke-width="2" vector-effect="non-scaling-stroke"/>
+                  <path class="line-o" d="M500 10 C 500 64, 702.2 64, 702.2 112" stroke-width="2" vector-effect="non-scaling-stroke"/>
+                  <path class="line-o" d="M500 10 C 500 64, 904.5 64, 904.5 112" stroke-width="2" vector-effect="non-scaling-stroke"/>
+                  <path class="och" d="M90.0 110 L101.0 110 L95.5 126 Z"/>
+                  <path class="och" d="M292.3 110 L303.3 110 L297.8 126 Z"/>
+                  <path class="och" d="M494.5 110 L505.5 110 L500 126 Z"/>
+                  <path class="och" d="M696.7 110 L707.7 110 L702.2 126 Z"/>
+                  <path class="och" d="M899.0 110 L910.0 110 L904.5 126 Z"/>
+                  <circle class="och" cx="500" cy="10" r="4.5"/>
                 </svg>
-                <span data-i18n="nlc26.rosterDecides"></span>
+                <svg class="cut roster-stem" viewBox="0 0 26 40" aria-hidden="true" focusable="false">
+                  <path class="line-o" d="M13 3 L13 27" stroke-width="2.4"/>
+                  <path class="och" d="M13 38 L5 24 L21 24 Z"/>
+                </svg>
               </div>
 
               <ul class="roster-tools">
