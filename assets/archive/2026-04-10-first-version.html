@@ -392,28 +392,26 @@ body{font-family:'Georgia','Noto Serif SC','STSong',serif;background:var(--paper
 
 
 
-<!-- WELCOME / LOGIN SCREEN -->
+<!-- WELCOME SCREEN -->
+<!-- Archived 6 Sep 2026. The original asked every student for their school
+     email address here, validated it, and used the domain to tell students
+     from teachers. That field is gone from this archived copy, and the button
+     now enters directly.
+
+     Why: this file is embedded in a public page, and a page on a shared host
+     (github.io) collecting institutional email addresses is a shape that
+     phishing and malware scanners flag on sight. Padlet's scanner flagged the
+     page that embeds this archive; school web filters run the same heuristics
+     and would have blocked teachers on school networks silently.
+
+     Nothing else about the game changed. See also the note on reportToSheets
+     further down, emptied the same day for the same reason. -->
 <div id="welcome-screen" class="screen active">
   <div class="welcome-card">
     <div class="welcome-logo">📖</div>
     <div class="welcome-title">华文词语温习</div>
     <div class="welcome-sub">S1–4 Express Chinese · Vocabulary Revision</div>
-    <label class="welcome-label">请输入你的学校电邮地址</label>
-    <input
-      class="welcome-input"
-      id="welcome-email"
-      type="email"
-      placeholder="e.g. name@students.edu.sg"
-      autocomplete="email"
-      autocapitalize="none"
-      onkeydown="if(event.key==='Enter') submitWelcome()"
-    >
-    <div class="welcome-error" id="welcome-error"></div>
-    <button class="welcome-btn" onclick="submitWelcome()">开始学习 →</button>
-    <div class="welcome-note">
-      你的电邮地址只用于记录学习进度。<br>
-      首次输入后，无需再次登录。
-    </div>
+    <button class="welcome-btn" onclick="enterArchive()">开始学习 →</button>
   </div>
 </div>
 
@@ -4532,6 +4530,25 @@ function isTeacher()  { return getUserType() === 'teacher'; }
 function isStudent()  { return getUserType() === 'student'; }
 
 // ── WELCOME SCREEN LOGIC ─────────────────────────────────────
+
+// Archived 6 Sep 2026: stands in for submitWelcome, which read the school
+// email address the welcome screen no longer asks for. A fixed local identity
+// keeps every downstream caller of getUserEmail/getUserType working, so the
+// rest of the app behaves exactly as it did. Nothing leaves this browser.
+function enterArchive() {
+  const email = 'archive', userType = 'student';
+  try {
+    localStorage.setItem(USER_KEY, email);
+    localStorage.setItem(USER_TYPE_KEY, userType);
+    sessionStorage.setItem(USER_KEY, email);
+    sessionStorage.setItem(USER_TYPE_KEY, userType);
+  } catch(e) {}
+  idbSet(USER_KEY, email).catch(() => {});
+  idbSet(USER_TYPE_KEY, userType).catch(() => {});
+  launchApp(email, userType);
+}
+
+// Kept for reference; nothing calls it now that the email field is gone.
 function submitWelcome() {
   const input = document.getElementById('welcome-email');
   const errEl = document.getElementById('welcome-error');
