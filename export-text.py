@@ -18,8 +18,8 @@ i18n = json.loads((HERE / "i18n.json").read_text())
 projects = json.loads((HERE / "projects.json").read_text())
 talks = json.loads((HERE / "talks.json").read_text())
 
-PAGES = [("index.html", "Home"), ("work.html", "Work"), ("talks.html", "Connect"),
-         ("approach.html", "Practice"), ("contact.html", "Contact")]
+PAGES = [("index.html", "Home"), ("work.html", "Work"), ("connect.html", "Connect"),
+         ("practice.html", "Practice"), ("contact.html", "Contact")]
 
 # Quotations and the address live in build.py, not in i18n.json, so they are
 # listed separately rather than being silently absent.
@@ -56,7 +56,7 @@ for f, name in PAGES:
 # all three; matching only t('...') silently reports live keys as unused.
 sources = "".join((HERE / f).read_text() for f in
                   ("script.js", "build.py", "index.html", "work.html",
-                   "talks.html", "approach.html", "contact.html"))
+                   "connect.html", "practice.html", "contact.html"))
 dynamic = sorted(k for k in i18n
                  if k != "_comment" and (f"'{k}'" in sources or f'"{k}"' in sources))
 dynamic += [k for k in ("talks.upcoming", "talks.completed")

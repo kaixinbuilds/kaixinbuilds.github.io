@@ -10,7 +10,7 @@ Live at **https://kaixinbuilds.github.io**
 
 ## ⚠️ The HTML files are generated
 
-`index.html`, `work.html`, `talks.html`, `approach.html` and `contact.html` are **output**,
+`index.html`, `work.html`, `connect.html`, `practice.html` and `contact.html` are **output**,
 along with `sitemap.xml` and `robots.txt`. Editing them directly does nothing lasting: the
 next build overwrites your changes. Each generated page carries a banner saying so.
 

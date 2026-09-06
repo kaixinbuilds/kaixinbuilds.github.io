@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://kaixinbuilds.github.io/</loc><priority>1.0</priority></url>
   <url><loc>https://kaixinbuilds.github.io/work.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kaixinbuilds.github.io/talks.html</loc><priority>0.8</priority></url>
-  <url><loc>https://kaixinbuilds.github.io/approach.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kaixinbuilds.github.io/connect.html</loc><priority>0.8</priority></url>
+  <url><loc>https://kaixinbuilds.github.io/practice.html</loc><priority>0.8</priority></url>
   <url><loc>https://kaixinbuilds.github.io/2026AIinSecCLNLC.html</loc><priority>0.8</priority></url>
   <url><loc>https://kaixinbuilds.github.io/contact.html</loc><priority>0.8</priority></url>
 </urlset>
