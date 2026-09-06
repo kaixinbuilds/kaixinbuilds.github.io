@@ -43,7 +43,7 @@ Then open http://localhost:8000.
 | I want to… | Edit this |
 |---|---|
 | Add or change a project | `projects.json` |
-| Add a talk, post or community contribution | `talks.json` |
+| Add a talk, post or community contribution | `connect.json` |
 | Change any wording on the page | `i18n.json` |
 | Change page structure, nav, or `<head>` metadata | `build.py`, then rebuild |
 | Change colours, spacing, typography | `style.css` (the `:root` block at the top) |
@@ -87,7 +87,7 @@ Append one object to `projects.json`:
 
 ### Adding a talk or post
 
-Append one object to `talks.json`. `"status"` is `"upcoming"` or `"completed"`. Upcoming
+Append one object to `connect.json`. `"status"` is `"upcoming"` or `"completed"`. Upcoming
 entries list nearest-first and completed newest-first, under separate headings. Optional:
 
 - `"award"` for recognition, rendered as its own ochre line
@@ -106,7 +106,7 @@ the deck as delivered and not in the PDF on the site.
 ## Content that needs periodic updating
 
 - **After a talk happens**, change its `"status"` from `"upcoming"` to `"completed"` in
-  `talks.json`. Nothing does this automatically.
+  `connect.json`. Nothing does this automatically.
 
 ---
 
@@ -216,7 +216,7 @@ style.css               design tokens in :root, then components
 script.js               JSON loading, i18n, rendering, disclosure, lightbox
 i18n.json               every UI string, bilingual
 projects.json           project data, bilingual
-talks.json              talks and community contributions, bilingual
+connect.json              talks and community contributions, bilingual
 googleb99ff….html       Google Search Console verification; never delete, see Search below
 favicon.png             the diskette block print
 apple-touch-icon.png    the same, for iOS home screens
@@ -224,7 +224,7 @@ LICENSE                 all rights reserved; see below
 assets/
   art/prints/           block prints and their masters
   screenshots/          project screenshots
-  slides/               talk decks as PDF, named after the talk's id in talks.json
+  slides/               talk decks as PDF, named after the talk's id in connect.json
 publish.sh              build, validate, commit, push, then verify the Pages build
 export-text.py          dump all copy to one bilingual markdown file for proofreading
 ```

@@ -8,7 +8,7 @@
     "en": "Work",
     "zh": "作品"
   },
-  "nav.talks": {
+  "nav.connect": {
     "en": "Connect",
     "zh": "并肩同行"
   },
@@ -60,19 +60,19 @@
     "en": "Internal use",
     "zh": "校内使用"
   },
-  "talks.title": {
+  "connect.title": {
     "en": "Connect",
     "zh": "并肩同行"
   },
-  "talks.upcoming": {
+  "connect.upcoming": {
     "en": "Upcoming",
     "zh": "即将进行"
   },
-  "talks.completed": {
+  "connect.completed": {
     "en": "Completed",
     "zh": "已完成"
   },
-  "talks.viewLink": {
+  "connect.viewLink": {
     "en": "View",
     "zh": "查看"
   },
@@ -128,7 +128,7 @@
     "en": "Work · Chun Kai Xin",
     "zh": "作品 · 郑凯欣"
   },
-  "page.talks.title": {
+  "page.connect.title": {
     "en": "Connect · Chun Kai Xin",
     "zh": "并肩同行 · 郑凯欣"
   },
@@ -148,11 +148,11 @@
     "en": "LIVE",
     "zh": "上线中"
   },
-  "talks.groupUpcoming": {
+  "connect.groupUpcoming": {
     "en": "Upcoming",
     "zh": "即将进行"
   },
-  "talks.groupCompleted": {
+  "connect.groupCompleted": {
     "en": "Completed",
     "zh": "已完成"
   },
@@ -852,19 +852,19 @@
     "en": "Get started with Firebase Authentication · Firebase docs",
     "zh": "Firebase 身份验证入门 · Firebase 文档"
   },
-  "talks.groupVocabSummit": {
+  "connect.groupVocabSummit": {
     "en": "VocabSummit",
     "zh": "词山学海"
   },
-  "talks.groupHub": {
+  "connect.groupHub": {
     "en": "The Resource Hub",
     "zh": "华文资源站"
   },
-  "talks.groupLesson": {
+  "connect.groupLesson": {
     "en": "Classroom design",
     "zh": "课堂设计"
   },
-  "talks.groupOther": {
+  "connect.groupOther": {
     "en": "Elsewhere",
     "zh": "其他"
   },
@@ -901,8 +901,8 @@
     "en": "Four pictures, four months, one thing. The first is honestly ugly. But it ran, so students used it, so I knew what to fix next."
   },
   "nlc26.evo2": {
-    "zh": "同一天晚上的主页。992 个词语，四张年级卡片，没有插图，没有关卡，什么都没有。但进度条是真的会动的。",
-    "en": "The home screen, same evening. 992 words, four year-level cards, no art, no levels, nothing. But the progress bar was real."
+    "zh": "主页。992 个词语，四张年级卡片，没有插图，没有关卡，什么都没有。但进度条是真的会动的。",
+    "en": "The home screen. 992 words, four year-level cards, no art, no levels, nothing. But the progress bar was real."
   },
   "nlc26.evo4": {
     "zh": "第十天。改名「词王淬炼坊」，加了成就、排行榜、身份分流。词语从 992 涨到 1068，因为学生开始提意见了。",
@@ -929,8 +929,8 @@
     "en": "Open the first version, 10 April 2026"
   },
   "nlc26.evoPlayNote": {
-    "zh": "这不是截图，是当天上传的那个文件本身，原封不动。随便点，进度只存在你自己的浏览器里。",
-    "en": "Not a screenshot: the actual file uploaded that night, unedited. Click around, and anything you do stays in your own browser."
+    "zh": "这不是截图，是当天上传的那个文件本身。随便点，进度只存在你自己的浏览器里。",
+    "en": "Not a screenshot: the actual file uploaded that night. Click around, and anything you do stays in your own browser."
   },
   "nlc26.evoLabel": {
     "zh": "重点",

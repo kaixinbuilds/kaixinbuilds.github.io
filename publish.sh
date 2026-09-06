@@ -14,7 +14,7 @@ echo "pages built"
 
 # Validate the JSON before it can reach the live site. A stray comma here
 # would blank out the whole page, and Pages has no way to warn you.
-for f in projects.json talks.json i18n.json; do
+for f in projects.json connect.json i18n.json; do
   if ! python3 -m json.tool "$f" > /dev/null 2>&1; then
     echo "$f is not valid JSON. Nothing published."
     python3 -m json.tool "$f" > /dev/null || true

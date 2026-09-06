@@ -11,7 +11,7 @@
   const LANGS = ['zh', 'both', 'en'];
 
   /** Everything loaded from disk lives here so re-rendering is cheap. */
-  const data = { i18n: {}, projects: [], talks: [] };
+  const data = { i18n: {}, projects: [], connect: [] };
 
   let lang = pickInitialLang();
 
@@ -242,39 +242,39 @@
     });
   }
 
-  function talkEntry(talk, open) {
-    const status = talk.status === 'upcoming' ? 'upcoming' : 'completed';
+  function connectEntry(entry, open) {
+    const status = entry.status === 'upcoming' ? 'upcoming' : 'completed';
     const body = [
-      talk.venueUrl
-        ? `<p class="talk-venue"><a href="${esc(talk.venueUrl)}" target="_blank" rel="noopener">${bi(talk.venue)}</a></p>`
-        : `<p class="talk-venue">${bi(talk.venue)}</p>`,
-      talk.summary ? `<p class="talk-summary">${bi(talk.summary)}</p>` : '',
-      talk.award ? `<p class="talk-award">${bi(talk.award)}</p>` : '',
-      (talk.link || (talk.links || []).length)
-        ? `<p class="talk-links">${[
-            talk.link ? `<a class="talk-link" href="${esc(talk.link)}" target="_blank" rel="noopener">${tb('talks.viewLink')} \u2192</a>` : '',
-            ...(talk.links || []).map((l) =>
-              `<a class="talk-link" href="${esc(l.url)}" target="_blank" rel="noopener">${bi(l.label)} \u2192</a>`),
+      entry.venueUrl
+        ? `<p class="connect-venue"><a href="${esc(entry.venueUrl)}" target="_blank" rel="noopener">${bi(entry.venue)}</a></p>`
+        : `<p class="connect-venue">${bi(entry.venue)}</p>`,
+      entry.summary ? `<p class="connect-summary">${bi(entry.summary)}</p>` : '',
+      entry.award ? `<p class="connect-award">${bi(entry.award)}</p>` : '',
+      (entry.link || (entry.links || []).length)
+        ? `<p class="connect-links">${[
+            entry.link ? `<a class="connect-link" href="${esc(entry.link)}" target="_blank" rel="noopener">${tb('connect.viewLink')} \u2192</a>` : '',
+            ...(entry.links || []).map((l) =>
+              `<a class="connect-link" href="${esc(l.url)}" target="_blank" rel="noopener">${bi(l.label)} \u2192</a>`),
           ].filter(Boolean).join('')}</p>`
         : '',
     ].join('');
 
     return `
-      <li id="talk-${esc(talk.id)}">
-        <details class="talk"${open ? ' open' : ''}>
-          <summary class="talk-head">
-            <span class="talk-date">${esc(pick(talk.dateLabel) || talk.date)}</span>
-            <span class="talk-title">${bi(talk.title)}</span>
-            <span class="talk-status ${status}">${esc(t('talks.' + status))}</span>
-            <span class="talk-chevron" aria-hidden="true"></span>
+      <li id="connect-${esc(entry.id)}">
+        <details class="connect-item"${open ? ' open' : ''}>
+          <summary class="connect-head">
+            <span class="connect-date">${esc(pick(entry.dateLabel) || entry.date)}</span>
+            <span class="connect-title">${bi(entry.title)}</span>
+            <span class="connect-status ${status}">${esc(t('connect.' + status))}</span>
+            <span class="connect-chevron" aria-hidden="true"></span>
           </summary>
-          <div class="talk-body">${body}</div>
+          <div class="connect-body">${body}</div>
         </details>
       </li>`;
   }
 
-  function renderTalks() {
-    const host = $('#talks-list');
+  function renderConnect() {
+    const host = $('#connect-list');
     if (!host) return;
 
     // Grouped by body of work, not by date. Chronology says almost nothing
@@ -283,9 +283,9 @@
     // The upcoming/completed distinction survives as the badge on each entry.
     const ORDER = ['vocabsummit', 'hub', 'lesson'];
     const LABEL = {
-      vocabsummit: 'talks.groupVocabSummit',
-      hub:         'talks.groupHub',
-      lesson:      'talks.groupLesson',
+      vocabsummit: 'connect.groupVocabSummit',
+      hub:         'connect.groupHub',
+      lesson:      'connect.groupLesson',
     };
 
     // Within a group: anything still to come first, then most recent back.
@@ -295,18 +295,18 @@
 
     const seen = new Set(ORDER);
     const groups = ORDER
-      .map((key) => [key, data.talks.filter((x) => x.category === key).sort(within)])
+      .map((key) => [key, data.connect.filter((x) => x.category === key).sort(within)])
       // Anything with a category nobody listed, or none at all, still has to
       // appear: silently dropping an entry is worse than an odd heading.
-      .concat([['other', data.talks
+      .concat([['other', data.connect
         .filter((x) => !seen.has(x.category)).sort(within)]])
       .filter(([, items]) => items.length);
 
     const group = (key, items, openFirst) => `
-      <section class="talk-group">
-        <h2 class="talk-group-title">${esc(t(LABEL[key] || 'talks.groupOther'))}</h2>
-        <ol class="talks-list">
-          ${items.map((x, i) => talkEntry(x, openFirst && i === 0)).join('')}
+      <section class="connect-group">
+        <h2 class="connect-group-title">${esc(t(LABEL[key] || 'connect.groupOther'))}</h2>
+        <ol class="connect-list">
+          ${items.map((x, i) => connectEntry(x, openFirst && i === 0)).join('')}
         </ol>
       </section>`;
 
@@ -315,25 +315,25 @@
 
     // The standing index mirrors the groups, so the sidebar and the page
     // read in the same order.
-    const nav = $('#talk-nav');
+    const nav = $('#connect-nav');
     if (!nav) return;
     const entry = (x) => `
-      <li><a href="#talk-${esc(x.id)}">
+      <li><a href="#connect-${esc(x.id)}">
         <span class="nav-date">${esc(pick(x.dateLabel) || x.date)}</span>
         ${bi(x.title)}
       </a></li>`;
     nav.innerHTML = groups.map(([key, items]) => `
-      <p class="nav-group">${esc(t(LABEL[key] || 'talks.groupOther'))}</p>
+      <p class="nav-group">${esc(t(LABEL[key] || 'connect.groupOther'))}</p>
       <ul>${items.map(entry).join('')}</ul>`).join('');
   }
 
-  /* A jump from the index has to open the talk it lands on, otherwise it
+  /* A jump from the index has to open the entry it lands on, otherwise it
      scrolls to a closed row and looks broken. */
   function wireTalkNav() {
-    const nav = $('#talk-nav');
+    const nav = $('#connect-nav');
     if (!nav) return;
     nav.addEventListener('click', (event) => {
-      const link = event.target.closest('a[href^="#talk-"]');
+      const link = event.target.closest('a[href^="#connect-"]');
       if (!link) return;
       const row = document.getElementById(link.getAttribute('href').slice(1));
       const details = row && row.querySelector('details');
@@ -456,7 +456,7 @@
   function renderAll() {
     applyI18n();
     renderProjects();
-    renderTalks();
+    renderConnect();
     labelZoomables();
   }
 
@@ -549,7 +549,7 @@
 
   function showLoadError(err) {
     if (err) console.error('Content failed to load:', err);
-    const host = $('#project-detail') || $('#talks-list');
+    const host = $('#project-detail') || $('#connect-list');
     if (!host || host.dataset.errored) return;
     host.dataset.errored = 'true';
     host.insertAdjacentHTML('beforebegin', `
@@ -573,7 +573,7 @@
 
     const wanted = [
       $('#project-detail') ? ['projects', 'projects.json'] : null,
-      $('#talks-list') ? ['talks', 'talks.json'] : null,
+      $('#connect-list') ? ['connect', 'connect.json'] : null,
     ].filter(Boolean);
 
     const results = await Promise.allSettled(wanted.map(([, file]) => loadJSON(file)));

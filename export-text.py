@@ -16,7 +16,7 @@ DEST = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else \
 
 i18n = json.loads((HERE / "i18n.json").read_text())
 projects = json.loads((HERE / "projects.json").read_text())
-talks = json.loads((HERE / "talks.json").read_text())
+connect = json.loads((HERE / "connect.json").read_text())
 
 PAGES = [("index.html", "Home"), ("work.html", "Work"), ("connect.html", "Connect"),
          ("practice.html", "Practice"), ("contact.html", "Contact")]
@@ -52,14 +52,14 @@ for f, name in PAGES:
 
 # Keys can be reached three ways: a data-i18n attribute, a literal t('key')
 # call, or a lookup built at runtime such as data.i18n['brand.a'] or
-# t('talks.' + status). Matching the key name anywhere in the sources catches
+# t('connect.' + status). Matching the key name anywhere in the sources catches
 # all three; matching only t('...') silently reports live keys as unused.
 sources = "".join((HERE / f).read_text() for f in
                   ("script.js", "build.py", "index.html", "work.html",
                    "connect.html", "practice.html", "contact.html"))
 dynamic = sorted(k for k in i18n
                  if k != "_comment" and (f"'{k}'" in sources or f'"{k}"' in sources))
-dynamic += [k for k in ("talks.upcoming", "talks.completed")
+dynamic += [k for k in ("connect.upcoming", "connect.completed")
             if k in i18n and k not in dynamic]
 
 out = []
@@ -77,7 +77,7 @@ w(f"Generated {datetime.date.today().isoformat()} by `export-text.py`, from the 
 w("Ordered the way a visitor reads the site, page by page."); w()
 w("**To change something:** edit the text here and say which entries changed, or edit the")
 w("source directly. The `key` names map to `i18n.json`; project and talk entries map to")
-w("`projects.json` and `talks.json`. Anything marked *set in build.py* is markup, not data."); w()
+w("`projects.json` and `connect.json`. Anything marked *set in build.py* is markup, not data."); w()
 w("---"); w()
 w("## Header, on every page"); w()
 for k in chrome: key(k)
@@ -111,8 +111,8 @@ for f, name in PAGES:
             if p.get("displayUrl"): w(f"URL shown on the card: `{p['displayUrl']}`"); w()
 
     if name == "Connect":
-        w("### Entries  ·  `talks.json`"); w()
-        for t in sorted(talks, key=lambda x: x["date"], reverse=True):
+        w("### Entries  ·  `connect.json`"); w()
+        for t in sorted(connect, key=lambda x: x["date"], reverse=True):
             w(f"#### {t['dateLabel']['en']}  ·  `{t['id']}`  ·  *{t['status']}*"); w()
             entry("title", t["title"]["en"], t["title"]["zh"])
             entry("date label", t["dateLabel"]["en"], t["dateLabel"]["zh"])
