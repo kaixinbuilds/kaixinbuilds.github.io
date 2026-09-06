@@ -67,6 +67,26 @@
 
   const $ = (sel) => document.querySelector(sel);
 
+  /** Send one analytics event, or quietly do nothing.
+      Work and Connect show one panel at a time without changing the URL, so
+      analytics that only counts pageviews cannot tell which project or entry
+      anyone actually opened. These events are what make that visible.
+      No-ops when gtag is absent, which is the case whenever
+      GA_MEASUREMENT_ID is empty in build.py, and whenever a blocker has
+      stopped the script. Nothing here is load-bearing for the page. */
+  const tracked = new Set();
+  const track = (name, params) => {
+    if (typeof window.gtag !== 'function') return;
+    // Once per thing per page view. Switching language re-renders the whole
+    // list, which re-fires `toggle` on every entry that was already open, and
+    // re-opening the same panel twice says nothing new. Counting the first
+    // time answers "did anyone look at this", which is the actual question.
+    const key = name + ':' + Object.values(params || {}).join('|');
+    if (tracked.has(key)) return;
+    tracked.add(key);
+    try { window.gtag('event', name, params || {}); } catch (e) {}
+  };
+
   /* ── i18n application ────────────────────────────────── */
 
   function applyI18n() {
@@ -199,6 +219,7 @@
       if (push && history.replaceState) history.replaceState(null, '', '#' + target);
       revealLoadedImages(detail);
       labelZoomables(detail);
+      track('project_view', { project_id: target });
     };
 
     nav.addEventListener('click', (event) => {
@@ -236,6 +257,7 @@
         frame.title = button.dataset.embedTitle;
         frame.loading = 'lazy';
         frame.allow = 'autoplay; fullscreen';
+        track('archive_open', { src: button.dataset.embedSrc });
         button.replaceWith(frame);
         frame.focus();
       }, { once: true });
@@ -329,7 +351,18 @@
 
   /* A jump from the index has to open the entry it lands on, otherwise it
      scrolls to a closed row and looks broken. */
-  function wireTalkNav() {
+  function wireConnectEvents() {
+    const host = $('#connect-list');
+    if (!host) return;
+    host.addEventListener('toggle', (event) => {
+      const details = event.target;
+      if (!details.open || !details.classList.contains('connect-item')) return;
+      const row = details.closest('li');
+      track('connect_view', { entry_id: row ? row.id.replace(/^connect-/, '') : '' });
+    }, true);
+  }
+
+  function wireConnectNav() {
     const nav = $('#connect-nav');
     if (!nav) return;
     nav.addEventListener('click', (event) => {
@@ -481,9 +514,13 @@
       localStorage.setItem(STORAGE_KEY, lang);
       renderAll();
       paint();
+      track('lang_mode', { mode: lang, chosen: 'switched' });
     });
 
     paint();
+    // The mode people land on matters as much as the one they pick: it is
+    // either their remembered choice or the 'both' default.
+    track('lang_mode', { mode: lang, chosen: 'landed' });
   }
 
   /* ── lightbox ────────────────────────────────────────── */
@@ -587,7 +624,8 @@
     revealLoadedImages();
     initGallery();
     wireEmbeds(document);
-    wireTalkNav();
+    wireConnectNav();
+    wireConnectEvents();
     wireDocSpy();
     initToggle();
     initLightbox();
