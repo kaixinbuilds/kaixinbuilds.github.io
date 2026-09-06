@@ -4503,9 +4503,8 @@ updateHomeStats();
 // PWA + INDEXEDDB + GOOGLE SHEETS + SAVE CODE
 // ══════════════════════════════════════════════════════════════
 
-// ── CONFIG — replace with your deployed Google Apps Script URL ──
-const GAS_ENDPOINT = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
-// Example: 'https://script.google.com/macros/s/AKfycbx.../exec'
+// ── CONFIG — the Google Apps Script endpoint was never filled in.
+//    See the note on reportToSheets below for why it is gone. ──
 
 
 // ══════════════════════════════════════════════════════════════
@@ -4859,26 +4858,22 @@ function getUserEmail() {
 }
 
 async function reportToSheets(scoreData) {
-  if (!GAS_ENDPOINT || GAS_ENDPOINT === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') return;
-  try {
-    const payload = {
-      email:     getUserEmail(),
-      level:     currentLevel || '',
-      unit:      currentUnit  || '',
-      mode:      currentMode  || '',
-      score:     scoreData.score,
-      correct:   scoreData.correct,
-      wrong:     scoreData.wrong,
-      weakWords: scoreData.weakWords || []
-    };
-    // Use sendBeacon for reliability (works even if page closes)
-    const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon(GAS_ENDPOINT, blob);
-    } else {
-      fetch(GAS_ENDPOINT, { method: 'POST', body: JSON.stringify(payload) }).catch(() => {});
-    }
-  } catch(e) { /* Silent fail — don't disrupt student */ }
+  // Emptied 6 Sep 2026. This once assembled a end-of-session summary and
+  // posted it in the background to a Google Apps Script endpoint. It never
+  // ran even once: the endpoint was left at its placeholder value, and the
+  // guard on its first line returned early every single time. So emptying it
+  // changes nothing any student ever experienced.
+  //
+  // It was emptied because of its shape, not its behaviour. A background
+  // beacon posting JSON, with a fallback POST whose errors were deliberately
+  // swallowed, is the pattern malware scanners treat as data exfiltration.
+  // Padlet's scanner flagged the page that embeds this archive as malware on
+  // that basis, and school web filters run the same heuristics, which would
+  // have blocked teachers on school networks with nobody being told why.
+  //
+  // The rest of this archive is untouched and behaves exactly as it did on
+  // 10 April 2026.
+  return;
 }
 
 // ── PATCH showResults to call reportToSheets ──────────────────
