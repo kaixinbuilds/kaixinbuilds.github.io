@@ -11,8 +11,8 @@
       "zh": "中学华文词汇平台"
     },
     "summary": {
-      "en": "3,889 vocabulary items across G1, G2, G3, Higher Chinese and the beginner pier, with visible progression, streaks and student-selected challenge. The core learning mechanics were designed around Self-Determination Theory and Assessment for Learning from the outset.",
-      "zh": "3,889 个词条，涵盖 G1、G2、G3、高级华文与出发码头，有看得见的进度、连续挑战，难度由学生自己选。核心的学习机制，一开始就是照着自我决定理论（SDT）与促进学习的评价（AfL）来设计的。"
+      "en": "3,889 vocabulary items across G1, G2, G3, Higher Chinese and the beginner pier, with visible progression, streaks and student-selected challenge.",
+      "zh": "3,889 个词条，涵盖 G1、G2、G3、高级华文与出发码头，有看得见的进度、连续挑战，难度由学生自己选。"
     },
     "highlight": {
       "en": "Built without formal software-engineering training, in conversation with an AI coding agent (Claude Code), on a Firebase backend. The scene artwork was generated with ChatGPT; the vocabulary bank was vetted by hand, entry by entry.",
@@ -45,13 +45,6 @@
         "label": {
           "en": "students gave feedback",
           "zh": "名学生提供反馈"
-        }
-      },
-      {
-        "value": "1",
-        "label": {
-          "en": "person building it",
-          "zh": "开发者人数"
         }
       }
     ],
