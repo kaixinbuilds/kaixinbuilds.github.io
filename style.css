@@ -105,6 +105,20 @@ main > section > .wrap {
   main > section > .wrap { background: color-mix(in srgb, var(--paper) 97%, transparent); }
 }
 
+/* The hero is the one place the print is worth seeing properly, so its panel
+   drops the blur and thickens the wash instead. Blurring was what flattened
+   the carving: at any opacity it turns the handsets into soft colour, while a
+   plain wash leaves them readable as lines. Every other page keeps the frosted
+   panel, where denser body copy runs over the pattern and needs the contrast.
+   This outranks the @supports fallback above on specificity, which is correct:
+   a browser without backdrop-filter never had the blur to lose. */
+main > section.hero > .wrap {
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+  box-shadow: 0 8px 30px -24px rgba(30, 39, 73, .32);
+}
+
 /* ── layout ────────────────────────────────────────────── */
 .wrap { width: min(100% - 2.5rem, var(--wrap)); margin-inline: auto; }
 .wrap-narrow { width: min(100% - 2.5rem, var(--wrap-narrow)); }
