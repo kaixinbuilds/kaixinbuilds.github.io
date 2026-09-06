@@ -325,8 +325,8 @@
     "zh": "幕后团队"
   },
   "nlc26.stackLede": {
-    "en": "A one-person department. So how does it run six roles?",
-    "zh": "一个人的部门，怎么会有六个岗位？"
+    "en": "A development team of one. So how does it run six roles?",
+    "zh": "一人开发团队，怎么会有六个岗位？"
   },
   "nlc26.p1Title": {
     "en": "Founder · me",
@@ -897,20 +897,12 @@
     "en": "A rough start is the best kind of start"
   },
   "nlc26.evoLede": {
-    "zh": "下面六张图，是同一个东西的四个月。第一张丑得很实在，但它能用，所以学生用了，所以我知道下一步该改哪里。",
-    "en": "Six pictures, four months, one thing. The first is honestly ugly. But it ran, so students used it, so I knew what to fix next."
-  },
-  "nlc26.evo1": {
-    "zh": "第一版的登录页。一个书本表情符号当图标，一个输入框，深紫色背景。从开仓库到传上这个文件，只隔了 13 分钟。",
-    "en": "The first login screen. A book emoji for a logo, one input box, a purple gradient. Thirteen minutes after the repository was created."
+    "zh": "下面四张图，是同一个东西的四个月。第一张丑得很实在，但它能用，所以学生用了，所以我知道下一步该改哪里。",
+    "en": "Four pictures, four months, one thing. The first is honestly ugly. But it ran, so students used it, so I knew what to fix next."
   },
   "nlc26.evo2": {
     "zh": "同一天晚上的主页。992 个词语，四张年级卡片，没有插图，没有关卡，什么都没有。但进度条是真的会动的。",
     "en": "The home screen, same evening. 992 words, four year-level cards, no art, no levels, nothing. But the progress bar was real."
-  },
-  "nlc26.evo3": {
-    "zh": "第三天。有了名字「词王训练营」，有了第一张 AI 画的水墨插图，登录页开始像个作品，而不像个表格。",
-    "en": "Day three. It had a name, and its first AI-drawn ink-wash illustration. The login screen began to look like a thing, not a form."
   },
   "nlc26.evo4": {
     "zh": "第十天。改名「词王淬炼坊」，加了成就、排行榜、身份分流。词语从 992 涨到 1068，因为学生开始提意见了。",

@@ -513,19 +513,6 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
               <div class="evo-track" data-evo-track tabindex="0"
                    data-i18n-aria-label="nlc26.evoTitle" role="group">
 
-                <figure class="evo-slide shot">
-                  <div class="screen-bezel">
-                    <div class="screen-inner" data-missing="assets/screenshots/evolution/01-2026-04-10-login.jpg">
-                      <img src="assets/screenshots/evolution/01-2026-04-10-login.jpg" alt=""
-                           data-i18n="nlc26.evo1" data-i18n-attr="alt" loading="lazy" decoding="async">
-                    </div>
-                  </div>
-                  <figcaption class="evo-cap">
-                    <span class="evo-date">2026.04.10</span>
-                    <span class="evo-name" lang="zh-Hans">华文词语温习</span>
-                    <span class="evo-note" data-i18n="nlc26.evo1"></span>
-                  </figcaption>
-                </figure>
 
                 <figure class="evo-slide shot">
                   <div class="screen-bezel">
@@ -541,19 +528,6 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
                   </figcaption>
                 </figure>
 
-                <figure class="evo-slide shot">
-                  <div class="screen-bezel">
-                    <div class="screen-inner" data-missing="assets/screenshots/evolution/03-2026-04-12-training.jpg">
-                      <img src="assets/screenshots/evolution/03-2026-04-12-training.jpg" alt=""
-                           data-i18n="nlc26.evo3" data-i18n-attr="alt" loading="lazy" decoding="async">
-                    </div>
-                  </div>
-                  <figcaption class="evo-cap">
-                    <span class="evo-date">2026.04.12</span>
-                    <span class="evo-name" lang="zh-Hans">词王训练营</span>
-                    <span class="evo-note" data-i18n="nlc26.evo3"></span>
-                  </figcaption>
-                </figure>
 
                 <figure class="evo-slide shot">
                   <div class="screen-bezel">
