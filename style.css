@@ -200,7 +200,16 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 .site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--ochre); }
 
 @media (max-width: 700px) {
-  .header-inner { flex-wrap: wrap; gap: .5rem 1rem; padding-bottom: .5rem; }
+  /* The header was costing three rows on a phone and 17% of the viewport
+     before a word of content: wordmark, then the language switch on a row of
+     its own, then the nav. The switch only wrapped because the bilingual
+     wordmark carries both 观象制器 and kaixinbuilds, and the pair missed
+     sharing a row by 27px. Tightening the gutter, the column gap and the
+     switch itself buys that back, so the switch sits beside the wordmark and
+     the header drops to two rows. Both wordmark forms stay visible: neither
+     is a translation of the other. */
+  .site-header .wrap { padding-inline: .875rem; }
+  .header-inner { flex-wrap: wrap; gap: .35rem .5rem; padding-bottom: .45rem; min-height: 0; }
   .wordmark { margin-right: auto; }
   .site-nav {
     order: 3;
@@ -1276,3 +1285,21 @@ html[data-lang-mode="zh"] .epigraph .en { display: none; }
 .evo-embed .screen-inner { aspect-ratio: 4 / 3; }
 @media (min-width: 700px) { .evo-embed .screen-inner { aspect-ratio: 16 / 10; } }
 .evo-embed .screen-bezel::after { content: none; }
+
+/* ── phone overrides, kept last on purpose ─────────────── */
+/* Each rule below targets a selector defined earlier in this file. A media
+   query carries no extra specificity, so these only win by being last: an
+   identical block written higher up is silently overridden by the desktop
+   rule that follows it. Moving any of this upward will quietly undo it. */
+@media (max-width: 700px) {
+  /* lets the language switch share the wordmark's row instead of taking one
+     of its own; the pair missed fitting by 27px */
+  .lang-switch button { font-size: .76rem; padding: .3rem .5rem; }
+
+  /* In bilingual mode every hero block is twice the height it is in one
+     language, so desktop spacing compounds until the calls to action fall
+     off an 812px screen. Phone values only; the desktop hero is untouched. */
+  .hero { padding-block: 2rem 2.5rem; }
+  .epigraph { margin-bottom: 1.5rem; }
+  .hero-actions { margin-top: 1.6rem; }
+}
