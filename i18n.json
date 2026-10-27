@@ -933,8 +933,32 @@
     "zh": "补天：不会编码，也能用 AI 工具做学习游戏"
   },
   "nw26.stackLede": {
-    "en": "A development team of one. So how does it run five roles?",
-    "zh": "一人开发团队，怎么会有五个岗位？"
+    "en": "Nüwa also had to raise four pillars to hold up the sky. A development team of one: which four pillars hold up its five roles?",
+    "zh": "女娲补天，还得立起四根天柱。一人开发团队，靠哪四根柱子撑起五个岗位？"
+  },
+  "nw26.storyTitle": {
+    "en": "Gathering the stones: when you can do none of it, where do you begin?",
+    "zh": "寻找五色石：什么都不会的时候，从哪里开始？"
+  },
+  "nw26.evoTitle": {
+    "en": "The stones were not fired in one go",
+    "zh": "五色石，不是一炉炼成的"
+  },
+  "nw26.evo6": {
+    "en": "Today. Same layout, same couplet, same footer as the frame before it. Only the drawing changed. What sits between the two is not inspiration; it is more than two hundred revisions.",
+    "zh": "今天。同一个版式、同一副对联、同一个页脚，只是画好了。上面那张和这张之间，隔的不是灵感，是两百多次修改。"
+  },
+  "nw26.evoClose": {
+    "en": "Had I waited until I knew what I was doing, none of this would exist. Nüwa, the story goes, fired her stones eighty-one times. From the first version on 10 April to today, this one has been fired 378 times: 171 as the G3 vocabulary trainer, 207 as VocabSummit.",
+    "zh": "如果我等到想清楚了才动手，这个东西到今天还不存在。传说女娲炼了九九八十一炉；从 4 月 10 日的第一版到今天，这块石头炼了 378 炉：词王训练营 171 次，词山学海 207 次。"
+  },
+  "nw26.statShips": {
+    "en": "deployments, as of 28 Oct 2026",
+    "zh": "次改版上线 · 截至 2026.10.28"
+  },
+  "nw26.handsTitle": {
+    "en": "Hands-on: fire the stones and mend the sky, turning what you already have into an interactive game",
+    "zh": "动手环节：炼石补天，把手上的资源炼成互动游戏"
   },
   "nw26.goalGap": {
     "en": "Understand how to use Self-Determination Theory (ARC: autonomy, relatedness, competence) to analyse students' learning needs, and fill that gap through game design.",

@@ -1360,7 +1360,21 @@ def _nuwa_body():
     }
 
     # Second half of the programme starts here.
-    vocabsummit = _swap(b["vocabsummit"], (
+    # The story told as the myth's own steps: gather the stones, fire them,
+    # raise the pillars (the stack lede), mend the sky (the hands-on). The
+    # revision count is both repos, the G3 trainer's 171 and VocabSummit's
+    # 207, counted on the day; the NLC page keeps its 27 August figure.
+    story = _swap(b["how-it-started"], ('nlc26.storyTitle', 'nw26.storyTitle'))
+    evolution = _swap(b["evolution"],
+        ('<h2 class="section-title" data-i18n="nlc26.evoTitle">', '<h2 class="section-title" data-i18n="nw26.evoTitle">'),
+        ('data-i18n-aria-label="nlc26.evoTitle"', 'data-i18n-aria-label="nw26.evoTitle"'),
+        ('data-i18n="nlc26.evo6" data-i18n-attr', 'data-i18n="nw26.evo6" data-i18n-attr'),
+        ('class="evo-note" data-i18n="nlc26.evo6"', 'class="evo-note" data-i18n="nw26.evo6"'),
+        ('nlc26.evoClose', 'nw26.evoClose'))
+    vocabsummit = _swap(b["vocabsummit"],
+        ('<span class="value">353</span><span class="label" data-i18n="nlc26.statShips">',
+         '<span class="value">378</span><span class="label" data-i18n="nw26.statShips">'))
+    vocabsummit = _swap(vocabsummit, (
         '<h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>',
         '<p class="eyebrow" data-i18n="nw26.partTwo"></p>\n'
         '            <h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>\n'
@@ -1407,7 +1421,7 @@ def _nuwa_body():
     hands = b["hands-on"]
     stage1 = re.search(r'<ul class="loop-points">\s*<li class="step-item">\s*<span data-i18n="nlc26.s1P1">'
                        r'.*?<li data-i18n="nlc26.s1P6"></li>\s*</ul>', hands, re.S).group(0)
-    hands = _swap(hands, (stage1, """<ul class="loop-points">
+    hands = _swap(hands, ('nlc26.handsTitle', 'nw26.handsTitle'), (stage1, """<ul class="loop-points">
             <li class="step-item">
               <span data-i18n="nlc26.s1P1"></span>
               <a class="tool-link" href="https://github.com/signup"
@@ -1489,8 +1503,8 @@ def _nuwa_body():
 
         <div class="project-detail">
 
-""" + "\n".join([goals, session, gap, vocabsummit, b["how-it-started"],
-                 b["evolution"], stack, hands, concerns, feedback]) + """
+""" + "\n".join([goals, session, gap, vocabsummit, story,
+                 evolution, stack, hands, concerns, feedback]) + """
         </div>
       </div>
     </div>
