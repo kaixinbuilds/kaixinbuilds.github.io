@@ -1183,6 +1183,45 @@ def _nuwa_body():
         + '                </svg>')
     stack = _swap(stack, (fan, new_fan))
 
+    # Stage 1 copies the starter with Use this template instead of download
+    # and upload: the upload was where Pangu participants got lost. Stage 2
+    # still needs the files on the laptop, so the ZIP moves there. The
+    # screenshots are the guide's, so the page and the guide match.
+    def shot(name, caption):
+        return """
+              <figure class="shot step-shot">
+                <div class="screen-bezel">
+                  <div class="screen-inner" data-missing="assets/screenshots/guide/%(n)s">
+                    <img src="assets/screenshots/guide/%(n)s" alt=""
+                         data-i18n="%(c)s" data-i18n-attr="alt" decoding="async">
+                  </div>
+                </div>
+                <figcaption data-i18n="%(c)s"></figcaption>
+              </figure>""" % {"n": name, "c": caption}
+    hands = b["hands-on"]
+    stage1 = re.search(r'<ul class="loop-points">\s*<li class="step-item">\s*<span data-i18n="nlc26.s1P1">'
+                       r'.*?<li data-i18n="nlc26.s1P6"></li>\s*</ul>', hands, re.S).group(0)
+    hands = _swap(hands, (stage1, """<ul class="loop-points">
+            <li class="step-item">
+              <span data-i18n="nlc26.s1P1"></span>
+              <a class="tool-link" href="https://github.com/signup"
+                 target="_blank" rel="noopener">github.com/signup</a>
+            </li>
+            <li class="step-item">
+              <span data-i18n="nw26.s1T1"></span>
+              <a class="tool-link" href="https://github.com/kaixinbuilds/VocabClimbStarter"
+                 target="_blank" rel="noopener">github.com/kaixinbuilds/VocabClimbStarter</a>%s
+            </li>
+            <li data-i18n="nw26.s1T2"></li>
+            <li>
+              <span data-i18n="nlc26.s1P5"></span>%s
+            </li>
+            <li data-i18n="nw26.s1P6"></li>
+          </ul>""" % (shot("02-use-template.jpg", "guide.pub1Shot"),
+                      shot("04-settings-pages.jpg", "guide.pub3Shot"))),
+        ('<li data-i18n="nlc26.s2P1"></li>',
+         '<li data-i18n="nw26.s2Zip"></li>\n            <li data-i18n="nlc26.s2P1"></li>'))
+
     concerns = _swap(b["concerns"], ('\n            <li data-i18n="nlc26.q3B"></li>', ''))
 
     # The NLC block with this workshop's own form, and without the NLC
@@ -1245,7 +1284,7 @@ def _nuwa_body():
         <div class="project-detail">
 
 """ + "\n".join([goals, session, gap, vocabsummit, b["how-it-started"],
-                 b["evolution"], stack, b["hands-on"], concerns, feedback]) + """
+                 b["evolution"], stack, hands, concerns, feedback]) + """
         </div>
       </div>
     </div>

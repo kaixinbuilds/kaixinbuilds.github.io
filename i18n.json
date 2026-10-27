@@ -725,8 +725,8 @@
     "zh": "继续优化到满意为止"
   },
   "nlc26.stuck5": {
-    "en": "Broke it: in your repository, History → the last version that worked → Revert. Two clicks and you are back. This is the whole reason the code lives on GitHub instead of on your desktop.",
-    "zh": "改坏了：进你的仓库，History → 上一个还能跑的版本 → Revert。两下就回来了。代码放 GitHub 而不是放桌面，为的就是这个。"
+    "zh": "改坏了：打开那个文件 → History → 找到最后一次正常的版本 → 复制回来 → Commit changes。GitHub 网页没有「一键退回」，但每个旧版本都留着，详细步骤见课后教程。",
+    "en": "Broke it: open the file → History → the last version that worked → copy it back → Commit changes. The GitHub website has no one-click undo, but every old version is kept; the guide has the full steps."
   },
   "nlc26.stuck6": {
     "en": "The starter is MIT licensed: adapt it, use it in class, rebuild it for another subject. Keep the attribution. The artwork comes with it.",
@@ -1231,5 +1231,21 @@
   "nw26.voice3": {
     "zh": "「我身边的人，下了课没人用华文。」",
     "en": "“Nobody close to me uses Chinese outside class.”"
+  },
+  "nw26.s1T1": {
+    "zh": "打开我的示范项目 → 右上角绿色的 Use this template → Create a new repository。",
+    "en": "Open my starter → the green Use this template (top right) → Create a new repository."
+  },
+  "nw26.s1T2": {
+    "zh": "仓库名用英文、不要空格，例如 s3-unit1-climb → 保持 Public → Create repository。所有文件一次复制好，不必下载，也不必上传。",
+    "en": "Name it in English with no spaces, e.g. s3-unit1-climb → keep Public → Create repository. Every file is copied in one go: nothing to download or upload."
+  },
+  "nw26.s1P6": {
+    "zh": "https://你的用户名.github.io/你的仓库名/ 活了。里面还是我的示范词语，但它已经是一个学生打得开的网址。到这里就算完成。",
+    "en": "https://yourusername.github.io/your-repository-name/ is live. The words in it are still mine, but it is already a link a student can open. That is this stage finished."
+  },
+  "nw26.s2Zip": {
+    "zh": "在你的新仓库：绿色 Code 按钮 → Download ZIP → 解压。",
+    "en": "In your new repository: green Code button → Download ZIP → unzip."
   }
 }
