@@ -378,9 +378,10 @@
      the outline first and opens only what they need. Done here rather than
      as <details> in build.py so the heading keeps its data-i18n and the
      page still reads in full without script. The goals stay open: they are
-     what the session is for. A side-nav link or a #hash opens its block. */
+     what the session is for. A side-nav link or a #hash opens its block.
+     The Nüwa page is read as one scroll instead (see wireReveal). */
   function wireCollapse() {
-    const host = document.querySelector('#nlc .project-detail, #nuwa .project-detail');
+    const host = document.querySelector('#nlc .project-detail');
     if (!host) return;
     const OPEN = ['goals'];
 
@@ -426,6 +427,63 @@
     window.addEventListener('hashchange', () => openFromHash(location.hash));
     openFromHash(location.hash);
     if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+  }
+
+  /* The Nüwa page tells itself as you scroll: each part of a block rises
+     into place as it arrives, and runs of like things (the ARC cards, the
+     stages, the tools) arrive one after another. The classes are added here,
+     so without script, or with reduced motion asked for, nothing is hidden. */
+  function wireReveal() {
+    const host = document.querySelector('#nuwa .project-detail');
+    if (!host || !('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    const RUNS = '.needs > .need, .loop > li, .roster-tools > li, .stats > li, .cycle > li, .shots > .shot';
+    const runItems = new Set(host.querySelectorAll(RUNS));
+    runItems.forEach((el) => {
+      const i = [...el.parentElement.children].indexOf(el);
+      el.style.setProperty('--reveal-delay', Math.min(i, 6) * 0.09 + 's');
+    });
+
+    host.querySelectorAll(':scope > .doc-block').forEach((block) => {
+      [...block.children].forEach((child) => {
+        // a run's container stays put; its members arrive instead
+        const members = child.matches('.needs, .loop, .roster, .stats, .cycle, .shots')
+          ? [...child.querySelectorAll(RUNS)].filter((el) => runItems.has(el))
+          : [child];
+        members.forEach((el) => { el.classList.add('reveal'); io.observe(el); });
+      });
+    });
+
+    // The message that started VocabSummit, typed out once, as it was sent.
+    const pre = host.querySelector('#how-it-started .copy-block pre');
+    if (pre) {
+      const text = pre.textContent;
+      pre.style.minHeight = pre.offsetHeight + 'px';
+      pre.textContent = '';
+      pre.classList.add('is-typing');
+      const typer = new IntersectionObserver((entries) => {
+        if (!entries[0].isIntersecting) return;
+        typer.disconnect();
+        let n = 0;
+        const step = () => {
+          n = Math.min(text.length, n + 3);
+          pre.textContent = text.slice(0, n);
+          if (n < text.length) setTimeout(step, 16);
+          else pre.classList.remove('is-typing');
+        };
+        setTimeout(step, 350);
+      }, { threshold: 0.5 });
+      typer.observe(pre);
+    }
   }
 
   /* Highlight whichever block of a long page is currently in view. */
@@ -676,6 +734,7 @@
 
     renderAll();
     wireCollapse();
+    wireReveal();
     revealLoadedImages();
     initGallery();
     wireEmbeds(document);

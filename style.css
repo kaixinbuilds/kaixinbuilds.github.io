@@ -1328,3 +1328,44 @@ html[data-lang-mode="zh"] .epigraph .en { display: none; }
   .epigraph { margin-bottom: 1.5rem; }
   .hero-actions { margin-top: 1.6rem; }
 }
+
+/* ── Nüwa: the page told as you scroll ─────────────────── */
+/* wireReveal adds .reveal only when motion is welcome, so a reader
+   without script, or who has asked for less motion, gets the page whole. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* The first message, typed out: a caret while it is still being written. */
+pre.is-typing::after {
+  content: "▍";
+  color: var(--ochre);
+  animation: caret 1s steps(1) infinite;
+}
+@keyframes caret { 50% { opacity: 0; } }
+
+/* The banner on arrival: the tear opens, then five stones are set into it
+   one at a time, which is the title drawn as it happens. */
+#nuwa > .wrap > .eyebrow,
+#nuwa > .wrap > .page-title { animation: rise .8s cubic-bezier(.2, .7, .2, 1) both; }
+#nuwa > .wrap > .page-title { animation-delay: .12s; }
+#nuwa .figure-hero .tear { animation: open-tear 1s ease .35s both; }
+#nuwa .figure-hero .stone {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: set-stone .75s cubic-bezier(.2, .8, .25, 1.15) var(--d, 1s) both;
+}
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+@keyframes open-tear { from { opacity: 0; } }
+@keyframes set-stone {
+  from { opacity: 0; transform: translateY(-46px) rotate(-14deg) scale(.85); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #nuwa > .wrap > .eyebrow, #nuwa > .wrap > .page-title,
+  #nuwa .figure-hero .tear, #nuwa .figure-hero .stone { animation: none; }
+  pre.is-typing::after { animation: none; }
+}
