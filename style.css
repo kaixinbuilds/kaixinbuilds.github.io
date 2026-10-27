@@ -1590,3 +1590,20 @@ pre.is-typing::after {
   .mend-map li { grid-template-columns: 1fr; }
   .mend-hole { border-right: 0; border-bottom: 1px dashed var(--rule); }
 }
+
+/* Recent research, each card dated first so the year is never in doubt. */
+.research { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; gap: .8rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 700px) { .research { grid-template-columns: 1fr; } }
+.research li { display: grid; gap: .45rem; align-content: start; padding: 1rem 1.1rem; background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--ink); border-radius: var(--radius); }
+.res-date { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ochre-deep); }
+.res-find { margin: 0; font-size: .92rem; line-height: 1.65; color: var(--ink); }
+.research .tool-link { font-size: .8rem; }
+
+/* Nüwa hands-on: the annotated screenshots at the full column width, one
+   to a row, so every red ring is readable on a projector and a laptop. */
+#nuwa #hands-on .step-shot { max-width: none; margin: .9rem 0 .4rem; }
+#nuwa #hands-on .stuck-shots { grid-template-columns: 1fr; }
+#nuwa #hands-on .step-shot figcaption, #nuwa #hands-on .stuck-shots figcaption { font-size: .82rem; }
+.research li { min-width: 0; }
+.research .tool-link { white-space: normal; overflow-wrap: anywhere; }
+#nuwa #hands-on a.shot-full { display: block; cursor: zoom-in; }

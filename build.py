@@ -1292,6 +1292,26 @@ def _nuwa_body():
               </li>
 """ % {"n": n, "l": l} for n, l in ((1, "A"), (2, "C"), (3, "R")))
 
+    # What recent research says, each finding dated and sourced, 2021 on
+    # only. No public survey of secondary students since 2021 turned up,
+    # so the note says so and the cards say who was asked.
+    studies = (("2026.05", "https://lkyspp.nus.edu.sg/docs/default-source/ips/ips-working-papers-no-74.pdf", 1),
+               ("2024.08", "https://lkyspp.nus.edu.sg/docs/default-source/ips/cna_the-big-read-is-singapore-becoming-a-monolingual-nation-and-is-that-a-boon-or-bane-for-national-identity_090824.pdf", 2),
+               ("2024.11", "https://ntu.edu.sg/nie/news-events/news/detail/nie-faculty-co-publish-two-journal-articles-in-different-journals", 3),
+               ("2025.12", "https://www.ntu.edu.sg/nie/news-events/news/detail/%E5%AE%9E%E5%86%B5%E6%8A%A5%E9%81%93-%E5%8D%8E%E6%96%87%E5%A4%96%E5%8C%85%E6%8E%A8%E9%AB%98%E8%A1%A5%E4%B9%A0%E7%83%AD%E6%BD%AE-%E5%AE%B6%E5%BA%AD%E5%8F%91%E5%8A%9B%E6%AF%8D%E8%AF%AD%E6%89%8D%E6%9C%89%E6%B8%A9%E5%BA%A6", 4))
+    research = """
+            <h3 class="arc-title" data-i18n="nw26.resTitle"></h3>
+            <p class="section-sub" data-i18n="nw26.resLede"></p>
+            <ul class="research">
+%s            </ul>
+""" % "".join("""\
+              <li>
+                <span class="res-date">%s</span>
+                <p class="res-find" data-i18n="nw26.res%dF"></p>
+                <a class="tool-link" href="%s" target="_blank" rel="noopener" data-i18n="nw26.res%dS"></a>
+              </li>
+""" % (d, n, u, n) for d, u, n in studies)
+
     # The home-language chart is one hole; these are the rest, from the
     # classroom, the market and teachers' own work. Drawn as the banner's
     # sky with four tears, numbered to the cards beneath.
@@ -1323,7 +1343,7 @@ def _nuwa_body():
             <h2 class="section-title" data-i18n="nw26.gapTitle"></h2>
             <p class="lede" data-i18n="nw26.gapLede"></p>
 
-%(sky)s%(holes)s
+%(sky)s%(research)s%(holes)s
             <ul class="gap-trio">
 %(gaps)s            </ul>
 
@@ -1375,7 +1395,7 @@ def _nuwa_body():
             </p>
           </div>
 """ % {
-        "gaps": gaps, "arc": arc, "sky": sky, "holes": holes,
+        "gaps": gaps, "arc": arc, "sky": sky, "holes": holes, "research": research,
         "zodiac": sprites(zodiac, "nw26.zodiacCap", size="pixel"),
         "story": sprites(["story-%d" % i for i in range(1, 6)], "nw26.storyCap", size="pixel"),
         "mythic": sprites(["mythic-%d" % i for i in range(1, 5)], "nw26.mythicCap", size="pixel big"),
@@ -1496,22 +1516,39 @@ def _nuwa_body():
             <li class="step-item">
               <span data-i18n="nlc26.s1P1"></span>
               <a class="tool-link" href="https://github.com/signup"
-                 target="_blank" rel="noopener">github.com/signup</a>
+                 target="_blank" rel="noopener">github.com/signup</a>%s
             </li>
             <li class="step-item">
               <span data-i18n="nw26.s1T1"></span>
               <a class="tool-link" href="https://github.com/kaixinbuilds/VocabClimbStarter"
                  target="_blank" rel="noopener">github.com/kaixinbuilds/VocabClimbStarter</a>%s
             </li>
-            <li data-i18n="nw26.s1T2"></li>
+            <li>
+              <span data-i18n="nw26.s1T2"></span>%s
+            </li>
             <li>
               <span data-i18n="nlc26.s1P5"></span>%s
             </li>
             <li data-i18n="nw26.s1P6"></li>
-          </ul>""" % (shot("02-use-template.jpg", "guide.pub1Shot"),
+          </ul>""" % (shot("00-github-signup.jpg", "nw26.shotGitHub"),
+                      shot("02-use-template.jpg", "guide.pub1Shot"),
+                      shot("03-new-repo-form.jpg", "guide.pub2Shot"),
                       shot("04-settings-pages.jpg", "guide.pub3Shot"))),
         ('<li data-i18n="nlc26.s2P1"></li>',
-         '<li data-i18n="nw26.s2Zip"></li>\n            <li data-i18n="nlc26.s2P1"></li>'))
+         '<li>\n              <span data-i18n="nw26.s2Zip"></span>%s\n            </li>\n'
+         '            <li data-i18n="nlc26.s2P1"></li>' % shot("05-download-zip.jpg", "guide.words1Shot")),
+        ('<li data-i18n="nlc26.s2P2"></li>',
+         '<li>\n              <span data-i18n="nlc26.s2P2"></span>%s%s\n            </li>'
+         % (shot("00-claude-login.jpg", "nw26.shotClaude"), shot("06-claude-new-project.jpg", "guide.words3Shot"))),
+        ('<li data-i18n="nlc26.s2P4"></li>',
+         '<li>\n              <span data-i18n="nlc26.s2P4"></span>%s%s\n            </li>'
+         % (shot("07-file-pencil.jpg", "guide.words5Shot"), shot("08-edit-commit.jpg", "guide.words6Shot"))))
+    # On this page the shots are the annotated copies, red rings and
+    # arrows on what to click; the guide keeps its plain ones.
+    hands = hands.replace("assets/screenshots/guide/", "assets/screenshots/hands/")
+    # and each opens at full size, for anyone who needs it bigger still
+    hands = re.sub(r'(<img src="(assets/screenshots/hands/[^"]+)"[^>]*>)',
+                   r'<a class="shot-full" href="\2" target="_blank" rel="noopener">\1</a>', hands)
 
     concerns = _swap(b["concerns"], ('\n            <li data-i18n="nlc26.q3B"></li>', ''))
 

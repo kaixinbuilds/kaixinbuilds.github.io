@@ -1220,6 +1220,14 @@
     "zh": "仓库名用英文、不要空格，例如 s3-unit1-climb → 保持 Public → Create repository。所有文件一次复制好，不必下载，也不必上传。",
     "en": "Name it in English with no spaces, e.g. s3-unit1-climb → keep Public → Create repository. Every file is copied in one go: nothing to download or upload."
   },
+  "nw26.shotGitHub": {
+    "zh": "github.com/signup：填电邮、密码和用户名，也可以直接用 Google 账号注册",
+    "en": "github.com/signup: fill in email, password and username, or sign up with a Google account"
+  },
+  "nw26.shotClaude": {
+    "zh": "claude.ai：用 Google 账号或电邮登录",
+    "en": "claude.ai: sign in with a Google account or email"
+  },
   "nw26.s1P6": {
     "zh": "https://你的用户名.github.io/你的仓库名/ 活了。里面还是我的示范词语，但它已经是一个学生打得开的网址。到这里就算完成。",
     "en": "https://yourusername.github.io/your-repository-name/ is live. The words in it are still mine, but it is already a link a student can open. That is this stage finished."
@@ -1399,6 +1407,46 @@
   "nw26.skyAll": {
     "zh": "不只是华文：在家最常讲马来语的从 14.1% 降到 7.0%，淡米尔语从 3.2% 降到 2.2%。下面是统计局的互动图表，可以自己点开各族群看看。",
     "en": "Not only Chinese: Malay as the main home language fell from 14.1% to 7.0%, Tamil from 3.2% to 2.2%. Below is SingStat’s own interactive dashboard; explore each group yourself."
+  },
+  "nw26.resTitle": {
+    "zh": "研究怎么说（2024 至 2026）",
+    "en": "What the research says (2024 to 2026)"
+  },
+  "nw26.resLede": {
+    "zh": "只收 2021 年以后发表的资料。2021 年以后还没有专门针对中学生的公开调查，以下是最接近的，每条都注明问的是谁。",
+    "en": "Sources from 2021 on only. No public survey of secondary students specifically has appeared since 2021; these are the closest, each noting who was asked."
+  },
+  "nw26.res1F": {
+    "zh": "把母语或祖籍方言当作最认同的语言的人，从 2013 年的 65.1% 降到 2024 年的 50.4%。华族和年轻受访者更倾向认为，母语水平比十年前差了。",
+    "en": "Those who identify most with their Mother Tongue or heritage language fell from 65.1% in 2013 to 50.4% in 2024. Chinese and younger respondents were more likely to feel Mother Tongue standards had dropped over the decade."
+  },
+  "nw26.res1S": {
+    "zh": "政策研究院（IPS）第 74 号工作论文 · 2024 年调查，4,000 名居民",
+    "en": "IPS Working Paper No. 74 · 2024 survey of 4,000 residents"
+  },
+  "nw26.res2F": {
+    "zh": "26 至 35 岁的家长，61% 跟孩子最常讲英语；56 至 65 岁的家长只有 45%。有些家长和学生，把母语只看作一门必考的科目。",
+    "en": "61% of parents aged 26 to 35 speak English most with their children, against 45% of those aged 56 to 65. Some parents and students see the Mother Tongue only as a required exam subject."
+  },
+  "nw26.res2S": {
+    "zh": "CNA《The Big Read》· 引 IPS 2020 年数据",
+    "en": "CNA, The Big Read · citing IPS 2020 data"
+  },
+  "nw26.res3F": {
+    "zh": "在家讲华语的频率，对学习动机、学习策略和华文成绩的影响，明显大于补习时间的长短。",
+    "en": "How often Chinese is used at home affected motivation, learning strategies and Chinese grades far more than how long a student had tuition."
+  },
+  "nw26.res3S": {
+    "zh": "孙宝琦等，Language and Education · 1,410 名小五学生",
+    "en": "Sun et al., Language and Education · 1,410 Primary 5 students"
+  },
+  "nw26.res4F": {
+    "zh": "华文补习需求高涨，有补习中心排队的人数超过三千。教育部提醒，不必要或过度的补习，反而可能让学生失去学母语的乐趣。",
+    "en": "Demand for Chinese tuition is surging, with waiting lists of over 3,000 at one provider. MOE cautions that unnecessary or excessive tuition may take the joy out of learning the Mother Tongue."
+  },
+  "nw26.res4S": {
+    "zh": "《联合早报》报道，国立教育学院转载",
+    "en": "Lianhe Zaobao report, republished by NIE"
   },
   "nw26.holesTitle": {
     "zh": "天上不止一个窟窿",
