@@ -1,5 +1,28 @@
 [
   {
+    "id": "nuwa-2026",
+    "status": "upcoming",
+    "category": "vocabsummit",
+    "date": "2026-10-28",
+    "dateLabel": {
+      "en": "28 October 2026",
+      "zh": "2026年10月28日"
+    },
+    "title": {
+      "en": "Nüwa Mends the Sky: Using AI to Design Chinese Language Games for Self-Directed Learning",
+      "zh": "女娲补天：运用AI设计华文游戏，推动自主学习"
+    },
+    "venue": {
+      "en": "Workshop at Bukit View Secondary School",
+      "zh": "百德中学工作坊"
+    },
+    "summary": {
+      "en": "Hands-on: Claude Code, ChatGPT image generation, GitHub hosting.",
+      "zh": "动手环节：Claude Code、ChatGPT 图像生成、GitHub 网页发布。"
+    },
+    "links": []
+  },
+  {
     "id": "nlc-2026",
     "status": "completed",
     "category": "vocabsummit",
@@ -13,12 +36,12 @@
       "zh": "挥舞AI之斧开天辟地 —— 词山学海的创作现场"
     },
     "venue": {
-      "en": "Workshop conducted for the 2026 AI in Sec CL NLC, a networked learning community of 18 teachers from 16 schools across 13 clusters",
-      "zh": "为「2026 AI in Sec CL NLC」举办的工作坊。该学习社群由来自 13 个学区、16 所学校的 18 名教师组成"
+      "en": "Workshop for the 2026 AI in Sec CL NLC",
+      "zh": "「2026 AI in Sec CL NLC」工作坊"
     },
     "summary": {
-      "en": "How VocabSummit actually got built: what it looks like when a teacher with no coding background designs and ships a working product in conversation with an AI agent.",
-      "zh": "词山学海是怎么做出来的：一个没有编码背景的教师，怎么跟 AI agent 一起，把一个真正能用的东西做出来。"
+      "en": "How VocabSummit was built with an AI coding agent.",
+      "zh": "词山学海如何与 AI 编程 agent 一起做出来。"
     },
     "links": [
       {
@@ -48,8 +71,8 @@
       "zh": "面向百德中学校务规划与管理委员会（BVSS SPMC）的分享"
     },
     "summary": {
-      "en": "A sharing for school and teacher leaders on designing self-directed learning so that motivation is built into the structure rather than expected from students. Self-Determination Theory supplies the three questions: autonomy, competence, relatedness. VocabSummit is the worked case, and every design decision in the platform traces back to one of them.",
-      "zh": "面向校方与教师领导的分享：自主学习要怎么设计，才能把动机放进结构里，而不是指望学生自己有。自我决定理论给出三个问题：自主、胜任、关联。词山学海就是那个做完的例子，平台上每一个设计决定，都能对回其中一个。"
+      "en": "Designing motivation into self-directed learning, with VocabSummit as the case.",
+      "zh": "把动机设计进自主学习，以词山学海为例。"
     },
     "link": "",
     "links": [
@@ -87,8 +110,8 @@
       "zh": "面向百德中学校务规划与管理委员会（BVSS SPMC）的部门实践分享"
     },
     "summary": {
-      "en": "The second half of the same session, on the department's one-stop hub: SLS lesson resources by level and year, past national oral exam videos by topic, reading aloud and listening, graded extensive reading, news links students can actually open, the tools worth teaching them to use, and a glossary for the Singapore terms no dictionary carries. The structure transfers to any subject, and a shared space turns out to be an easy thing for colleagues to start adding to.",
-      "zh": "同一场分享的下半场，讲部门的一站式资源站：按程度与年级整理的 SLS 课堂资源、按主题分类的历年会话考试录像、朗读与听力、分级泛读、学生真的打得开的时事链接、值得教他们用的工具，还有一份字典查不到的新加坡本地词汇表。这套结构换个科目也用得上；而一个共用的空间，同事也比较容易开始往里面加东西。"
+      "en": "The department's one-stop CL resource hub.",
+      "zh": "部门的一站式华文资源站。"
     },
     "link": "",
     "links": [
@@ -122,12 +145,12 @@
       "zh": "古代哲学家若穿越到现代，会如何给我们提供人生建议？"
     },
     "venue": {
-      "en": "Post shared with SgLDC, the Singapore Learning Designers Circle: a group of over 22,000 educators run by MOE's Educational Technology Division, for teachers designing technology-enabled learning",
-      "zh": "在新加坡学习设计师社群（SgLDC）发布的分享贴文。该社群由教育部教育技术司（ETD）主办，成员逾两万两千人，面向设计科技辅助学习的教师"
+      "en": "Post shared with SgLDC, the Singapore Learning Designers Circle",
+      "zh": "在新加坡学习设计师社群（SgLDC）发布的分享贴文"
     },
     "summary": {
-      "en": "A Secondary 4 Higher Chinese lesson from the Chapter 2 Cultural Station. Students play a hawker deciding whether to raise prices as costs climb, then think it through with Confucius, Laozi and Mozi, each built as a chatbot in EdCafe.AI and delivered through SLS. They pick which one to consult, defend that school of thought in the hot seat, then weigh all three to justify a decision.",
-      "zh": "中四高级华文单元二文化站的课例。学生扮演一个小贩：成本上涨，要不要涨价？然后分别去问孔子、老子、墨子。三位思想家用 EdCafe.AI 做成聊天机器人，通过 SLS 推送。学生自己选想请教谁，坐上「热座」替那一家辩护，最后综合三家，给出自己的决定。"
+      "en": "A Sec 4 Higher Chinese lesson with Confucius, Laozi and Mozi as EdCafe.AI chatbots.",
+      "zh": "中四高级华文课例：孔子、老子、墨子化身 EdCafe.AI 聊天机器人。"
     },
     "link": "https://www.facebook.com/share/p/19H8PA4W8e/",
     "award": {
@@ -159,12 +182,12 @@
       "zh": "华文学习的百宝袋 —— 百德中学华文资源站"
     },
     "venue": {
-      "en": "Post shared with SgLDC, the Singapore Learning Designers Circle: a group of over 22,000 educators run by MOE's Educational Technology Division, for teachers designing technology-enabled learning",
-      "zh": "在新加坡学习设计师社群（SgLDC）发布的分享贴文。该社群由教育部教育技术司（ETD）主办，成员逾两万两千人，面向设计科技辅助学习的教师"
+      "en": "Post shared with SgLDC, the Singapore Learning Designers Circle",
+      "zh": "在新加坡学习设计师社群（SgLDC）发布的分享贴文"
     },
     "summary": {
-      "en": "On building the school's Chinese Language resource hub, and why the structure transfers to any subject: students reach for their devices anyway, so the device may as well hold what they need. A shared hub also turns out to be an easy thing for colleagues to start adding to.",
-      "zh": "讲校内华文资源站是怎么建起来的，以及这套做法为什么换个科目也用得上：学生卡住时本来就会去拿设备，那就让设备里有他们要的东西。而一个共用的平台，同事也比较容易开始往里面加。"
+      "en": "Building the school's CL resource hub.",
+      "zh": "校内华文资源站的建设。"
     },
     "link": "https://www.facebook.com/share/p/1L9dq5XU4q/",
     "award": {

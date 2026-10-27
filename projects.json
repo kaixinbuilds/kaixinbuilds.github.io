@@ -11,12 +11,12 @@
       "zh": "中学华文词汇平台"
     },
     "summary": {
-      "en": "3,889 vocabulary items across G1, G2, G3, Higher Chinese and the beginner pier, with visible progression, streaks and student-selected challenge.",
-      "zh": "3,889 个词条，涵盖 G1、G2、G3、高级华文与出发码头，有看得见的进度、连续挑战，难度由学生自己选。"
+      "en": "3,889 vocabulary items across G1, G2, G3, Higher Chinese and the beginner pier.",
+      "zh": "3,889 个词条，涵盖 G1、G2、G3、高级华文与出发码头。"
     },
     "highlight": {
-      "en": "Built without formal software-engineering training, in conversation with an AI coding agent (Claude Code), on a Firebase backend. The scene artwork was generated with ChatGPT; the vocabulary bank was vetted by hand, entry by entry.",
-      "zh": "没有受过软件工程的正规训练，全程与 AI 编程 agent（Claude Code）协作，后端用 Firebase。场景插图由 ChatGPT 生成；词库则逐条人工审核。"
+      "en": "Built with Claude Code on Firebase. Artwork by ChatGPT; vocabulary vetted by hand.",
+      "zh": "与 Claude Code 协作开发，后端 Firebase。插图由 ChatGPT 生成，词库逐条人工审核。"
     },
     "stats": [
       {
@@ -103,8 +103,8 @@
       "zh": "论证法冒险游戏"
     },
     "summary": {
-      "en": "A platformer that teaches Secondary 3 G3 students to spot argumentation techniques in two set texts. Six lives instead of three, so an unfamiliar game mechanic is less likely to be the reason a student stops.",
-      "zh": "一个横向卷轴游戏，教中三 G3 学生认出两篇课文里的论证法。生命值给六条不是三条：不熟悉操作，不该成为学生放弃的理由。"
+      "en": "A platformer for Sec 3 G3 on spotting argumentation techniques in two set texts.",
+      "zh": "横向卷轴游戏，帮助中三 G3 学生认出两篇课文里的论证法。"
     },
     "link": "https://kaixinbuilds.github.io/S3G3CLArgumentativeAdventure/",
     "tags": [
@@ -140,8 +140,8 @@
       "zh": "百德中学华文资源站"
     },
     "summary": {
-      "en": "I asked a student what he does when he gets stuck in Chinese class. He shrugged: “stare into space?”, with an iPad already in his hands. The hub turns that device into somewhere to go next: SLS resources by subject level and year, past oral exam videos by topic, reading and listening practice, graded reading, and a glossary for the Singapore terms no dictionary carries. Colleagues now add to it.",
-      "zh": "我问一个学生：华文课上卡住了，你会做什么？他耸耸肩说「发呆？」，手里正拿着 iPad。资源站就是要让那台设备变成他下一步可以去的地方：按科目程度与年级整理的 SLS 资源、按主题分类的历年会话考试录像、朗读与听力练习、分级泛读，还有一份字典查不到的新加坡本地词汇表。同事现在也一起在加东西。"
+      "en": "One-stop hub for students: SLS resources, oral exam videos, reading and listening practice, and a local glossary.",
+      "zh": "学生的一站式资源站：SLS 资源、会话考试录像、阅读与听力练习、本地词汇表。"
     },
     "link": "https://sites.google.com/moe.edu.sg/bvss-cl-hub",
     "tags": [
@@ -177,8 +177,8 @@
       "zh": "单元五复习《学无止境》· 书山登顶"
     },
     "summary": {
-      "en": "A drag-and-drop revision game for Secondary 3 G3. Both texts in the unit run on argument by contrast, but in opposite orders: one negative then positive, the other positive then negative. That reversal is what the closing screen points out. A wrong card springs back and costs nothing, so every student finishes, but the mark records the first judgement, which is what makes the figure in the SLS gradebook worth reading.",
-      "zh": "为中三 G3 做的拖曳式复习游戏。单元里两篇课文用的都是对比论证，顺序却相反：一篇先反后正，一篇先正后反 —— 收关时才点破，这个对调本身就是学习点。放错的卡片弹回原位，不扣分，所以人人走得完；但分数记的是第一次的判断，SLS 教师后台那个数字才有诊断价值。"
+      "en": "A drag-and-drop revision game for Sec 3 G3 on argument by contrast.",
+      "zh": "中三 G3 拖曳式复习游戏，聚焦对比论证。"
     },
     "link": "https://kaixinbuilds.github.io/S3G3CLChapter5Revision/",
     "displayUrl": "kaixinbuilds.github.io/S3G3CLChapter5Revision",

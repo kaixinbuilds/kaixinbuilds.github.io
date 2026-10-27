@@ -6,6 +6,17 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
+# The text can also be edited online (admin/), which commits straight to
+# GitHub, so GitHub may be ahead of this Mac. Take those commits first, or
+# the push at the end is refused. --autostash carries uncommitted local edits
+# across; it only stops if the same line was changed in both places.
+if ! git pull --rebase --autostash --quiet origin main; then
+  echo "The same text was changed here and in the online editor."
+  echo "Run 'git status' to see which file, settle it, then publish again."
+  exit 1
+fi
+echo "up to date with GitHub"
+
 # Rebuild the pages first, so the committed HTML can never drift from the
 # shell in build.py. This runs before the clean-tree check on purpose: a
 # stale page is exactly the case that check would otherwise let through.

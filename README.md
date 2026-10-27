@@ -25,6 +25,42 @@ output.
 
 ---
 
+## Editing online
+
+**https://kaixinbuilds.github.io/admin/** edits every word on the site from any browser,
+phone included, and publishes it. The editor covers `i18n.json`, `projects.json` and
+`connect.json`. Layout, colours, images and new pages are still edited on the Mac.
+
+- **Signing in** takes a GitHub fine-grained token: kaixinbuilds.github.io only, with
+  *Contents: Read and write* and nothing else. The sign-in page explains how to make one.
+  Nobody without that token can see the editor or save anything. The page is not linked
+  from the site and tells search engines not to index it, but the token is the actual lock.
+- **Page text** shows every string page by page, in reading order, English beside Chinese.
+  **Work** and **Connect** are forms, so a project or talk can be added, changed, reordered
+  or removed without touching JSON.
+- **Edits are kept on the device** until you publish, so closing the tab loses nothing.
+- **Review and publish** shows every change before it goes out. It warns about the site's
+  house rules: Chinese in English strings, em dashes outside titles, single — in Chinese
+  titles, the name order, a language left blank. It blocks only what would break a page: a
+  missing or duplicate ID, an entry with no English title, a talk with no date, anything
+  other than exactly one flagship.
+- **Publishing** writes one commit, then watches the live site until the new text is
+  actually being served, for the reason explained under Publishing below.
+- **Changed in two places.** If the same text was also changed elsewhere since the editor
+  opened, publishing stops and shows both versions. Edits to different text merge on
+  their own.
+
+Page titles and the site description also exist as a fixed copy written into each page by
+`build.py`. Search engines and link previews read that copy, so changing those keys online
+changes what visitors see but not what Google shows. The editor marks them.
+
+`admin/` is hand-written. `build.py` does not generate it and never touches it.
+
+Because the online editor commits straight to GitHub, `publish.sh` now pulls before it
+does anything else. On the Mac, start a session of local edits with `git pull` as well.
+
+---
+
 ## Running it locally
 
 The pages read their content from JSON, and browsers block `fetch()` for pages opened
@@ -225,7 +261,8 @@ assets/
   art/prints/           block prints and their masters
   screenshots/          project screenshots
   slides/               talk decks as PDF, named after the talk's id in connect.json
-publish.sh              build, validate, commit, push, then verify the Pages build
+admin/                  the online editor (index.html, admin.js); hand-written, see Editing online
+publish.sh              pull, build, validate, commit, push, then verify the Pages build
 export-text.py          dump all copy to one bilingual markdown file for proofreading
 ```
 
