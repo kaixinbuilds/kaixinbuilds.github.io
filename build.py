@@ -1192,7 +1192,7 @@ def _nuwa_body():
 
     # The one block this workshop adds: the VocabSummit deck retold in CL,
     # with the platform's own art. Three gaps students name, the three needs
-    # they are (SDT, ARC), then what the platform does about each, shown
+    # they are (SDT, ACR), then what the platform does about each, shown
     # rather than listed. The need names and questions are the Practice
     # page's keys; the quotes say 华文, since this audience is all CL-trained.
     def sprites(names, caption, labels=None, size="", lazy=True):
@@ -1286,7 +1286,7 @@ def _nuwa_body():
     arc = "".join("""\
               <li class="arc-card">
                 <span class="arc-letter">%(l)s</span>
-                <p class="need-name" data-i18n="approach.need%(n)sName"></p>
+                <p class="need-name" data-i18n="nw26.need%(n)sName"></p>
                 <p class="arc-line" data-i18n="nw26.need%(n)s"></p>
                 <p class="arc-q" data-i18n="approach.need%(n)sQ"></p>
               </li>
@@ -1385,8 +1385,16 @@ def _nuwa_body():
             <div class="highlight-box">
               <span class="label" data-i18n="nw26.researchLabel"></span>
               <p data-i18n="nw26.research"></p>
-              <p><a href="https://doi.org/10.1007/s10648-019-09498-w" target="_blank" rel="noopener"
-                    data-i18n="nw26.researchCite"></a></p>
+              <ul class="theory-refs">
+                <li><a href="https://doi.org/10.1037/0003-066X.55.1.68" target="_blank" rel="noopener"
+                       data-i18n="nw26.theory1"></a></li>
+                <li><a href="https://doi.org/10.1016/j.cedpsych.2020.101860" target="_blank" rel="noopener"
+                       data-i18n="nw26.theory2"></a></li>
+                <li><a href="https://doi.org/10.1016/j.chb.2016.12.033" target="_blank" rel="noopener"
+                       data-i18n="nw26.theory3"></a></li>
+                <li><a href="https://doi.org/10.1007/s10648-019-09498-w" target="_blank" rel="noopener"
+                       data-i18n="nw26.researchCite"></a></li>
+              </ul>
             </div>
 
             <p class="featured-cta">

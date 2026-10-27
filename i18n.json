@@ -873,8 +873,20 @@
     "zh": "动机框架：自我决定理论"
   },
   "nw26.arcLede": {
-    "en": "ARC: autonomy, relatedness, competence. What makes a student choose to practise.",
-    "zh": "ARC：自主、关联、胜任。学生为什么会主动练习。"
+    "en": "ACR: autonomy, competence, relatedness. What makes a student choose to practise.",
+    "zh": "ACR：自主（Autonomy）、胜任（Competence）、关联（Relatedness）。学生为什么会主动练习。"
+  },
+  "nw26.need1Name": {
+    "en": "Autonomy",
+    "zh": "自主 · Autonomy"
+  },
+  "nw26.need2Name": {
+    "en": "Competence",
+    "zh": "胜任 · Competence"
+  },
+  "nw26.need3Name": {
+    "en": "Relatedness",
+    "zh": "关联 · Relatedness"
   },
   "nw26.gap1": {
     "en": "No choice",
@@ -913,12 +925,24 @@
     "en": "Relatedness · nobody climbs alone"
   },
   "nw26.researchLabel": {
-    "en": "Gamification",
-    "zh": "游戏化"
+    "en": "Theoretical grounding",
+    "zh": "理论支撑"
   },
   "nw26.research": {
-    "en": "Game elements are not effective in themselves. Different elements satisfy different psychological needs: competence, autonomy, relatedness.",
-    "zh": "游戏元素本身不会产生效果。不同的元素满足不同的心理需求：胜任、自主、关联。"
+    "en": "Game elements are not effective in themselves. Different elements satisfy different psychological needs: autonomy, competence, relatedness.",
+    "zh": "游戏元素本身不会产生效果。不同的元素满足不同的心理需求：自主、胜任、关联。"
+  },
+  "nw26.theory1": {
+    "en": "Ryan & Deci, 2000 · Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being · American Psychologist · the three basic needs",
+    "zh": "Ryan & Deci, 2000 · Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being · American Psychologist · 三种基本心理需求的奠基论文"
+  },
+  "nw26.theory2": {
+    "en": "Ryan & Deci, 2020 · Intrinsic and extrinsic motivation from a self-determination theory perspective · Contemporary Educational Psychology · what the theory means for classrooms",
+    "zh": "Ryan & Deci, 2020 · Intrinsic and extrinsic motivation from a self-determination theory perspective · Contemporary Educational Psychology · 理论在课堂上的应用"
+  },
+  "nw26.theory3": {
+    "en": "Sailer, Hense, Mayr & Mandl, 2017 · How gamification motivates · Computers in Human Behavior · which game elements meet which need",
+    "zh": "Sailer, Hense, Mayr & Mandl, 2017 · How gamification motivates · Computers in Human Behavior · 哪些游戏元素满足哪一种需求"
   },
   "nw26.researchCite": {
     "en": "Sailer & Homner, 2020 · The gamification of learning: a meta-analysis · Educational Psychology Review",
@@ -989,8 +1013,8 @@
     "zh": "动手环节：炼石补天，把手上的资源炼成互动游戏"
   },
   "nw26.goalGap": {
-    "en": "Understand how to use Self-Determination Theory (ARC: autonomy, relatedness, competence) to analyse students' learning needs, and fill that gap through game design.",
-    "zh": "理解如何以自我决定理论（ARC：自主、关联、胜任）分析学生的学习需求，通过游戏设计补上该缺口"
+    "en": "Understand how to use Self-Determination Theory (ACR: autonomy, competence, relatedness) to analyse students' learning needs, and fill that gap through game design.",
+    "zh": "理解如何以自我决定理论（ACR：自主 Autonomy、胜任 Competence、关联 Relatedness）分析学生的学习需求，通过游戏设计补上该缺口"
   },
   "nw26.goal3": {
     "en": "Publish a game prototype: create your own GitHub repo, copy a small game and publish it live.",

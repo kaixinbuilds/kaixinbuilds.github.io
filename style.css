@@ -384,6 +384,8 @@ main > .section + .section { border-top: 1px solid var(--rule); }
   color: var(--ochre-deep); margin-bottom: .45rem;
 }
 .highlight-box p { margin: 0; color: var(--ink-soft); font-size: .97rem; }
+.theory-refs { margin: .8rem 0 0; padding-left: 1.1rem; display: grid; gap: .45rem; font-size: .86rem; line-height: 1.5; color: var(--ink-soft); }
+.theory-refs a { overflow-wrap: anywhere; }
 
 .featured-cta { margin: 2rem 0 0; }
 
