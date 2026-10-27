@@ -1247,5 +1247,21 @@
   "nw26.s2Zip": {
     "zh": "在你的新仓库：绿色 Code 按钮 → Download ZIP → 解压。",
     "en": "In your new repository: green Code button → Download ZIP → unzip."
+  },
+  "nlc26.key1": {
+    "zh": "网址活了，用的是示范游戏原件",
+    "en": "Your link is live, still running the starter game as it came"
+  },
+  "nlc26.key2": {
+    "zh": "网址上用的已经是我的教学内容",
+    "en": "The link now runs your own teaching content"
+  },
+  "nlc26.key3": {
+    "zh": "换了图，网址已经有我重新设计的图像",
+    "en": "New pictures: the link shows artwork you redesigned"
+  },
+  "nlc26.key4": {
+    "zh": "换了玩法，做出一款新的游戏",
+    "en": "A new way to play: a different game of your own"
   }
 }

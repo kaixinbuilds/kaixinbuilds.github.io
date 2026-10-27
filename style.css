@@ -1240,6 +1240,22 @@ html[data-lang-mode="zh"] .epigraph .en { display: none; }
    reader, who gets the ordered list instead. */
 .climb { margin: 1.5rem 0 0; }
 .climb .cut { max-height: 210px; }
+/* The map's key: four stops in a row under the four markers, two by two
+   on a phone. */
+.climb-key {
+  list-style: none; margin: .4rem 0 0; padding: 0;
+  display: grid; gap: .9rem 1.2rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 700px) { .climb-key { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.climb-key li { display: grid; gap: .2rem; align-content: start; font-size: .84rem; color: var(--ink-soft); line-height: 1.45; }
+.climb-key b { font-family: var(--font-serif); font-size: 1.02rem; font-weight: 600; color: var(--ink); }
+.climb-key-n {
+  display: grid; place-content: center;
+  width: 1.6rem; height: 1.6rem; border-radius: 50%;
+  background: var(--ink); color: var(--paper);
+  font-family: var(--font-serif); font-size: .82rem; font-weight: 600;
+}
 
 /* ── the evolution gallery ─────────────────────────────── */
 /* A strip that scroll-snaps. Without JS it is still a strip you
