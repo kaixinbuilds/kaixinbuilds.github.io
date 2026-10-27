@@ -1417,12 +1417,12 @@
     "en": "Students memorise the vocabulary handbook, then forget it once the test is over. Words stay only with repeated use, and a handbook alone cannot carry that repetition."
   },
   "nw26.hole2T": {
-    "zh": "G1 没有《词语手册》",
-    "en": "No vocabulary handbook for G1"
+    "zh": "G1 的词语表，老师各自编",
+    "en": "G1 word lists, each teacher compiling their own"
   },
   "nw26.hole2": {
-    "zh": "市面上还没有出版社为 G1 编过《词语手册》。G1 老师想给学生一本，只能自己从零编起。",
-    "en": "No publisher has made a vocabulary handbook for G1 yet. A G1 teacher who wants one for students has to compile it from nothing."
+    "zh": "市面上还没有出版社为 G1 编过《词语手册》。G1 华文老师一直在自己编词语表，各编各的。",
+    "en": "No publisher has made a vocabulary handbook for G1 yet. G1 Chinese Language teachers have been compiling their own word lists, each separately."
   },
   "nw26.hole3T": {
     "zh": "碎片式练习，进度追踪不了",
@@ -1433,12 +1433,84 @@
     "en": "Teachers all over Singapore work hard building practice on Quizlet, Kahoot, Blooket, Wayground and Gimkit. But students' learning is scattered across these platforms, and nowhere shows how far each one has come overall."
   },
   "nw26.hole4T": {
-    "zh": "开源笔记，质量参差",
-    "en": "Open notes, uneven quality"
+    "zh": "开源资源，参差不齐",
+    "en": "Open resources, uneven and incomplete"
   },
   "nw26.hole4": {
-    "zh": "网上分享的教师笔记很多，质量和结构却参差不齐，也不一定贴合我们学生的程度和需要。",
-    "en": "Teachers share plenty of notes online, but their quality and structure vary, and they do not always fit our own learners' level and needs."
+    "zh": "网上公开的词汇小测，G3 和大部分高级华文都找得到；G2、G1 却很难找齐，要么没人做，要么没公开分享。教师笔记也多，质量和结构却参差不齐，不一定贴合我们学生的程度和需要。",
+    "en": "Public vocabulary quizzes are easy to find for G3 and most of Higher Chinese, but hard to find in full for G2 and G1: either nobody has built them, or nobody has shared them. Teachers' notes are plentiful too, but their quality and structure vary, and they do not always fit our own learners' level and needs."
+  },
+  "nw26.navMend": {
+    "zh": "炼石补天",
+    "en": "Mending the sky"
+  },
+  "nw26.mendTitle": {
+    "zh": "炼石补天：词山学海怎么补这些窟窿",
+    "en": "Mending the sky: how VocabSummit fills each hole"
+  },
+  "nw26.mendLede": {
+    "zh": "一个窟窿，一块石头。先想清楚补哪里，再动手炼。",
+    "en": "One stone for each hole. Work out where it goes first, then fire it."
+  },
+  "nw26.m0H": {
+    "zh": "家里少讲华语",
+    "en": "Little Mandarin at home"
+  },
+  "nw26.m0T": {
+    "zh": "练的时候，不是一个人",
+    "en": "Nobody practises alone"
+  },
+  "nw26.m0": {
+    "zh": "老师用六位数房间码开班级挑战，学生也能自己开对战（2 至 8 人），还有校内和跨校排行榜。家里没人讲，至少练的时候有人一起。",
+    "en": "Teachers open class challenges with a six-digit room code, students host their own (2 to 8 players), and there are school and cross-school leaderboards. If nobody speaks it at home, at least someone practises with you."
+  },
+  "nw26.m1H": {
+    "zh": "词语手册，背了就忘",
+    "en": "The handbook does not stick"
+  },
+  "nw26.m1T": {
+    "zh": "同一份词语，换着玩法反复练",
+    "en": "The same words, practised again in different games"
+  },
+  "nw26.m1": {
+    "zh": "填空、攀山快答、词雨灵露、组字成词，都围着同一份词语表转。每个词对每个学生都有状态：已掌握、待巩固、未学，复习只练自己还没掌握的词。历练值只加不扣。",
+    "en": "Cloze, Quick Climb, Word Rain and Build the Word all run on the same word list. Every word has a state for every learner (mastered, needs consolidating, not yet), so revision covers only the words that learner has not mastered. Experience points are never deducted."
+  },
+  "nw26.m2H": {
+    "zh": "G1 的词语表，老师各自编",
+    "en": "G1 word lists, each teacher their own"
+  },
+  "nw26.m2T": {
+    "zh": "G1 有了自己的一座岛",
+    "en": "G1 gets an island of its own"
+  },
+  "nw26.m2": {
+    "zh": "G1 岛收了 426 个词条，按课文分单元编好，和 G2、G3、高级华文同一个结构。零起点的学生还有出发码头：156 个日常词语，分 8 个主题。",
+    "en": "The G1 island holds 426 entries, arranged in units by text, in the same structure as G2, G3 and Higher Chinese. Students starting from zero have the Beginner's Pier: 156 everyday words in 8 themes."
+  },
+  "nw26.m3H": {
+    "zh": "碎片式练习，进度追踪不了",
+    "en": "Fragments nobody can track"
+  },
+  "nw26.m3T": {
+    "zh": "一个平台，一份进度",
+    "en": "One platform, one record of progress"
+  },
+  "nw26.m3": {
+    "zh": "所有玩法都记进同一份学习档案：每个词练过几次、掌握了没有。海拔就是掌握的词数（一个词一米）。老师后台看得到全班的进度，也能导出。",
+    "en": "Every mode writes to the same learner profile: how often each word was practised and whether it is mastered. Altitude is words mastered, one metre a word. The teacher backend shows the whole class's progress and exports it."
+  },
+  "nw26.m4H": {
+    "zh": "开源资源，参差不齐",
+    "en": "Open resources, uneven and incomplete"
+  },
+  "nw26.m4T": {
+    "zh": "四个源流一样齐，一个结构",
+    "en": "All four streams equally complete, in one structure"
+  },
+  "nw26.m4": {
+    "zh": "G1、G2、G3、高级华文四个源流，词语一样齐全。每个词条同一个格式：词语、拼音、词性、华文解释、英文、例句。每个词和每个例句都经老师审定，平台上不会临时生成任何内容。",
+    "en": "G1, G2, G3 and Higher Chinese are equally complete. Every entry has the same shape: word, pinyin, part of speech, Chinese explanation, English and an example sentence. Every word and sentence was checked by a teacher, and nothing on the platform is generated on the fly."
   },
   "nlc26.stuckGuide": {
     "zh": "完整排错步骤（附截图）· 课后教程",

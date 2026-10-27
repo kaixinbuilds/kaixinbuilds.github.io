@@ -1385,6 +1385,32 @@ def _nuwa_body():
         "places": sprites(["place-%d" % i for i in range(1, 5)], "nw26.placeCap"),
     }
 
+    # Stone for hole: each pain point named in the gap section, then what
+    # VocabSummit was designed to do about it. Five rows, so five stones,
+    # in the fills the mend marks use.
+    mend_rows = "".join("""\
+              <li>
+                <div class="mend-hole">
+                  <span class="mend-tag">%(tag)s</span>
+                  <p data-i18n="nw26.m%(n)dH"></p>
+                </div>
+                <div class="mend-fix">
+                  <svg class="cut mend-glyph" viewBox="0 0 32 24" aria-hidden="true" focusable="false"><path class="%(cls)s" d="%(d)s"/></svg>
+                  <p class="mend-fix-title" data-i18n="nw26.m%(n)dT"></p>
+                  <p class="mend-fix-note" data-i18n="nw26.m%(n)d"></p>
+                </div>
+              </li>
+""" % {"n": n, "tag": tag, "d": _STONES[n][0], "cls": _STONES[n][1]}
+        for n, tag in enumerate(("家", "1", "2", "3", "4")))
+    mend = """\
+          <div class="doc-block" id="mend">
+            <h2 class="section-title" data-i18n="nw26.mendTitle"></h2>
+            <p class="section-sub" data-i18n="nw26.mendLede"></p>
+            <ul class="mend-map">
+%s            </ul>
+          </div>
+""" % mend_rows
+
     # Second half of the programme starts here.
     # The story told as the myth's own steps: gather the stones, fire them,
     # raise the pillars (the stack lede), mend the sky (the hands-on). The
@@ -1536,6 +1562,7 @@ def _nuwa_body():
             <li><a href="#goals" data-i18n="nlc26.navGoals"></a></li>
             <li><a href="#session" data-i18n="nlc26.navSession"></a></li>
             <li><a href="#gap" data-i18n="nw26.navGap"></a></li>
+            <li><a href="#mend" data-i18n="nw26.navMend"></a></li>
             <li><a href="#vocabsummit" data-i18n="nlc26.navVs"></a></li>
             <li><a href="#how-it-started" data-i18n="nlc26.navStory"></a></li>
             <li><a href="#evolution" data-i18n="nlc26.navEvo"></a></li>
@@ -1548,7 +1575,7 @@ def _nuwa_body():
 
         <div class="project-detail">
 
-""" + "\n".join([goals, session, gap, vocabsummit, story,
+""" + "\n".join([goals, session, gap, mend, vocabsummit, story,
                  evolution, stack, hands, concerns, feedback]) + """
         </div>
       </div>

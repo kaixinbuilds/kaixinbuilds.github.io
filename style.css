@@ -1566,3 +1566,27 @@ pre.is-typing::after {
 .hole-title { margin: 0; font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.45; color: var(--ink); }
 .hole-note { margin: .35rem 0 0; font-size: .88rem; line-height: 1.65; color: var(--ink-soft); }
 @media (prefers-reduced-motion: reduce) { .holes-sky.reveal .hole { transform: none; animation: none; } }
+
+/* Stone for hole: each row pairs a pain point (muted, left) with what
+   the platform does about it (right), joined by the stone that fills it. */
+.mend-map { list-style: none; margin: 1.4rem 0 0; padding: 0; display: grid; gap: .8rem; }
+.mend-map li {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; background: var(--card);
+}
+.mend-hole {
+  display: flex; gap: .7rem; align-items: baseline; padding: 1rem 1.1rem;
+  background: var(--ochre-wash); border-right: 1px dashed var(--rule);
+}
+.mend-hole p { margin: 0; font-size: .9rem; line-height: 1.5; color: var(--ink-soft); }
+.mend-tag { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; line-height: 1; color: var(--ochre-deep); }
+.mend-fix { position: relative; padding: 1rem 1.1rem 1rem 3.3rem; }
+.mend-glyph { position: absolute; left: 1rem; top: 1rem; width: 1.7rem; height: auto; overflow: visible; }
+.mend-glyph path { transform-box: fill-box; transform-origin: center; }
+.mend-fix-title { margin: 0; font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.45; color: var(--ink); }
+.mend-fix-note { margin: .35rem 0 0; font-size: .88rem; line-height: 1.65; color: var(--ink-soft); }
+.mend-map li.reveal.is-in .mend-glyph path { animation: mend-drop .7s cubic-bezier(.2, .8, .25, 1.15) calc(var(--reveal-delay, 0s) + .35s) both; }
+@media (max-width: 700px) {
+  .mend-map li { grid-template-columns: 1fr; }
+  .mend-hole { border-right: 0; border-bottom: 1px dashed var(--rule); }
+}
