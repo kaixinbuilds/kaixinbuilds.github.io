@@ -1101,7 +1101,10 @@ def _swap(text, *pairs):
 def _nuwa_body():
     b = _nlc_blocks()
 
-    goals = _swap(b["goals"], ('nlc26.goalsTitle', 'nw26.goalsTitle'))
+    goals = _swap(b["goals"], ('nlc26.goalsTitle', 'nw26.goalsTitle'),
+                  ('<li data-i18n="nlc26.goal1"></li>',
+                   '<li data-i18n="nw26.goalGap"></li>\n'
+                   '              <li data-i18n="nlc26.goal1"></li>'))
     session = _swap(b["session"],
                     ('nlc26.dDate', 'nw26.dDate'),
                     ('nlc26.dTime', 'nw26.dTime'),
@@ -1179,6 +1182,14 @@ def _nuwa_body():
 
     concerns = _swap(b["concerns"], ('\n            <li data-i18n="nlc26.q3B"></li>', ''))
 
+    # The NLC block with this workshop's own form, and without the NLC
+    # community's motto, which is theirs.
+    feedback = re.sub(r'\n\n *<!-- The community.*?</p>\n', '\n', b["feedback"], flags=re.S)
+    feedback = _swap(feedback, (
+        "https://docs.google.com/forms/d/e/1FAIpQLSdx0yJJJ5u6PAiAwNQQ-1_y4BrDkbNJyNMgMFDphnFu42w6vA/viewform",
+        "https://forms.gle/3Rrmntju33SkvU6u5"))
+    assert "colophon" not in feedback
+
     return """\
   <section class="section" id="nuwa">
     <div class="wrap">
@@ -1224,13 +1235,14 @@ def _nuwa_body():
             <li><a href="#stack" data-i18n="nlc26.navStack"></a></li>
             <li><a href="#hands-on" data-i18n="nlc26.navHands"></a></li>
             <li><a href="#concerns" data-i18n="nlc26.navQ"></a></li>
+            <li><a href="#feedback" data-i18n="nlc26.navFb"></a></li>
           </ul>
         </nav>
 
         <div class="project-detail">
 
 """ + "\n".join([goals, session, gap, vocabsummit, b["how-it-started"],
-                 b["evolution"], stack, b["hands-on"], concerns]) + """
+                 b["evolution"], stack, b["hands-on"], concerns, feedback]) + """
         </div>
       </div>
     </div>

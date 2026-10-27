@@ -1007,5 +1007,9 @@
   "nw26.stackLede": {
     "en": "A development team of one. So how does it run five roles?",
     "zh": "一人开发团队，怎么会有五个岗位？"
+  },
+  "nw26.goalGap": {
+    "en": "Spot the gap: use Self-Determination Theory (ARC: autonomy, relatedness, competence) to see why students resist practice, and how game design can fill it.",
+    "zh": "发现缺口：以自我决定理论（ARC：自主、关联、胜任）看清学生为什么抗拒练习，以及游戏设计怎么补上"
   }
 }
