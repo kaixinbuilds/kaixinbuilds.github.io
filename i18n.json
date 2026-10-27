@@ -925,64 +925,16 @@
     "zh": "我不是一个人在练。"
   },
   "nw26.fill1": {
-    "en": "How VocabSummit fills it: everything is a choice",
-    "zh": "词山学海怎么补：一切由自己选"
+    "zh": "自主 · 一切由自己选",
+    "en": "Autonomy · everything is a choice"
   },
   "nw26.fill2": {
-    "en": "How VocabSummit fills it: progress you can see",
-    "zh": "词山学海怎么补：看得见的进步"
+    "zh": "胜任 · 看得见的进步",
+    "en": "Competence · progress you can see"
   },
   "nw26.fill3": {
-    "en": "How VocabSummit fills it: nobody climbs alone",
-    "zh": "词山学海怎么补：没有人独自攀登"
-  },
-  "nw26.fill1A": {
-    "en": "Which climber to play as",
-    "zh": "选哪个攀登者"
-  },
-  "nw26.fill1B": {
-    "en": "Learn mode or game mode",
-    "zh": "学习模式还是游戏模式"
-  },
-  "nw26.fill1C": {
-    "en": "Which words, and when",
-    "zh": "练哪些词、什么时候练"
-  },
-  "nw26.fill1D": {
-    "en": "How to build up their camp",
-    "zh": "怎么建设自己的营地"
-  },
-  "nw26.fill1E": {
-    "en": "Which powerups to spend on",
-    "zh": "把货币花在哪些道具上"
-  },
-  "nw26.fill2A": {
-    "en": "Experience points that never fall",
-    "zh": "只升不降的经验值"
-  },
-  "nw26.fill2B": {
-    "en": "A badge per chapter component",
-    "zh": "每个单元板块一枚徽章"
-  },
-  "nw26.fill2C": {
-    "en": "Currency earned by practising",
-    "zh": "练习才赚得到的货币"
-  },
-  "nw26.fill2D": {
-    "en": "Height gained up the mountain",
-    "zh": "在山上爬升的高度"
-  },
-  "nw26.fill3A": {
-    "en": "Classroom climbs, started by the teacher or by the students themselves",
-    "zh": "课堂攀登，由老师或学生自己发起"
-  },
-  "nw26.fill3B": {
-    "en": "Peer challenges between friends",
-    "zh": "朋友之间的对战挑战"
-  },
-  "nw26.fill3C": {
-    "en": "Leaderboards and placing badges",
-    "zh": "排行榜与名次徽章"
+    "zh": "关联 · 没有人独自攀登",
+    "en": "Relatedness · nobody climbs alone"
   },
   "nw26.researchLabel": {
     "en": "Gamification",
@@ -997,8 +949,8 @@
     "zh": "Sailer & Homner, 2020 · The gamification of learning: a meta-analysis · Educational Psychology Review"
   },
   "nw26.slidesCta": {
-    "en": "The SPMC slides (PDF)",
-    "zh": "SPMC 分享幻灯片（PDF）"
+    "zh": "英文版幻灯片（PDF）",
+    "en": "The slides in English (PDF)"
   },
   "nw26.partTwo": {
     "en": "Mending the sky: building learning games with AI tools, without a coding background",
@@ -1263,5 +1215,157 @@
   "nlc26.key4": {
     "zh": "换了玩法，做出一款新的游戏",
     "en": "A new way to play: a different game of your own"
+  },
+  "nw26.skyTitle": {
+    "zh": "天为什么破了？",
+    "en": "Why is the sky broken?"
+  },
+  "nw26.skyLede": {
+    "zh": "在家最常讲的语言，2000 至 2025 年（5 岁及以上居民）",
+    "en": "Language most often spoken at home, 2000 to 2025 (residents aged 5 and over)"
+  },
+  "nw26.skyEnglish": {
+    "zh": "英语",
+    "en": "English"
+  },
+  "nw26.skyMandarin": {
+    "zh": "华语",
+    "en": "Mandarin"
+  },
+  "nw26.skyDialects": {
+    "zh": "汉语方言",
+    "en": "Chinese dialects"
+  },
+  "nw26.skyTake": {
+    "zh": "2025 年，58.1% 的居民在家最常讲英语；华语从 35.0% 降到 26.6%，方言从 23.8% 降到 4.9%。",
+    "en": "In 2025, 58.1% of residents speak English most at home; Mandarin has fallen from 35.0% to 26.6%, dialects from 23.8% to 4.9%."
+  },
+  "nw26.skySource": {
+    "zh": "资料来源：新加坡统计局 · 家庭用语数据",
+    "en": "Source: Singapore Department of Statistics, home language dashboard"
+  },
+  "nw26.skyTable": {
+    "zh": "查看数据",
+    "en": "View the data"
+  },
+  "nw26.arcTurn": {
+    "zh": "词山学海怎么补上这三个缺口",
+    "en": "How VocabSummit fills each gap"
+  },
+  "nw26.zodiacCap": {
+    "zh": "十二生肖攀登者：注册即送，人人自选，不分配。",
+    "en": "Twelve zodiac climbers, free at registration. Everyone picks their own; nothing is assigned."
+  },
+  "nw26.storyCap": {
+    "zh": "五位故事攀登者：300 至 600 游戏币，游戏币只能靠练习和获胜赚取。",
+    "en": "Five story climbers, 300 to 600 in game currency, which only comes from practising and winning."
+  },
+  "nw26.mythicCap": {
+    "zh": "四只神兽：不卖。每通过一次年度考验，解锁一只，中一至中四。",
+    "en": "Four mythic beasts, not for sale: clear one annual trial, unlock one, Sec 1 to 4."
+  },
+  "nw26.learnMode": {
+    "zh": "学习模式",
+    "en": "Learn mode"
+  },
+  "nw26.learnModeNote": {
+    "zh": "按自己的步调自学，不计时，不计分。",
+    "en": "Self-study at your own pace: no clock, no score."
+  },
+  "nw26.gameMode": {
+    "zh": "游戏模式",
+    "en": "Game mode"
+  },
+  "nw26.gameModeNote": {
+    "zh": "同一批词语，在挑战和竞速里再见。随时切换。",
+    "en": "The same words, met again in challenges and races. Switch any time."
+  },
+  "nw26.xpNote": {
+    "zh": "经验值只升不降：答错，不扣已经赚到的。",
+    "en": "Experience points never go down: a wrong answer costs nothing already earned."
+  },
+  "nw26.badge1": {
+    "zh": "生活",
+    "en": "Everyday life"
+  },
+  "nw26.badge2": {
+    "zh": "核心",
+    "en": "Core"
+  },
+  "nw26.badge3": {
+    "zh": "巩固",
+    "en": "Consolidation"
+  },
+  "nw26.badge4": {
+    "zh": "进阶",
+    "en": "Advanced"
+  },
+  "nw26.badge5": {
+    "zh": "文化",
+    "en": "Culture"
+  },
+  "nw26.badgeCap": {
+    "zh": "每个单元板块一枚徽章：学完那个板块的词语就拿到。",
+    "en": "One badge per chapter component, earned by finishing its words."
+  },
+  "nw26.power1": {
+    "zh": "糖葫芦 · 多一条命",
+    "en": "Tanghulu · one extra life"
+  },
+  "nw26.power2": {
+    "zh": "油纸伞 · 连击护盾",
+    "en": "Oil-paper umbrella · combo shield"
+  },
+  "nw26.power3": {
+    "zh": "定风珠 · 冻结时间 5 秒",
+    "en": "Wind-stilling pearl · freeze the clock 5s"
+  },
+  "nw26.power4": {
+    "zh": "铜壶滴漏 · 多 8 秒",
+    "en": "Bronze water clock · eight more seconds"
+  },
+  "nw26.power5": {
+    "zh": "护膝 · 首错不计",
+    "en": "Knee guard · first mistake does not count"
+  },
+  "nw26.power6": {
+    "zh": "司南 · 删去一个错项",
+    "en": "Compass · remove one wrong option"
+  },
+  "nw26.power7": {
+    "zh": "锦囊 · 随机道具",
+    "en": "Brocade pouch · a random item"
+  },
+  "nw26.powerCap": {
+    "zh": "每一样道具，都要用练习赚来的游戏币买。",
+    "en": "Every powerup is bought with currency earned by practising."
+  },
+  "nw26.areaCap": {
+    "zh": "3,889 个词条，五个区域：出发码头、G1、G2、G3、高级华文。同一套动机设计，照顾每一种程度。",
+    "en": "3,889 entries across five areas: the beginner pier, G1, G2, G3 and Higher Chinese. One motivation design for every readiness."
+  },
+  "nw26.classClimb": {
+    "zh": "课堂攀登",
+    "en": "Classroom climbs"
+  },
+  "nw26.classClimbNote": {
+    "zh": "老师发起，全班即时排行。",
+    "en": "Started by the teacher, with a live class leaderboard."
+  },
+  "nw26.peerChallenge": {
+    "zh": "同伴挑战",
+    "en": "Peer challenges"
+  },
+  "nw26.peerChallengeNote": {
+    "zh": "学生自己发起，和朋友比同一批词语。",
+    "en": "Started by students, racing friends on the same words."
+  },
+  "nw26.placeCap": {
+    "zh": "拿到名次，就拿到徽章。",
+    "en": "Place on the leaderboard and earn a badge."
+  },
+  "nw26.vsDirect": {
+    "zh": "进入词山学海",
+    "en": "Open VocabSummit"
   }
 }

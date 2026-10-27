@@ -844,10 +844,10 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
                  form's own options, so the map, the form and the Padlet's
                  columns all name the same four stages. -->
             <ol class="climb-key">
-              <li><span class="climb-key-n">1</span><b data-i18n="nlc26.s1Title"></b><span data-i18n="nlc26.key1"></span></li>
-              <li><span class="climb-key-n">2</span><b data-i18n="nlc26.s2Title"></b><span data-i18n="nlc26.key2"></span></li>
-              <li><span class="climb-key-n">3</span><b data-i18n="nlc26.s3Title"></b><span data-i18n="nlc26.key3"></span></li>
-              <li><span class="climb-key-n">4</span><b data-i18n="nlc26.s4Title"></b><span data-i18n="nlc26.key4"></span></li>
+              <li><b data-i18n="nlc26.s1Title"></b><span data-i18n="nlc26.key1"></span></li>
+              <li><b data-i18n="nlc26.s2Title"></b><span data-i18n="nlc26.key2"></span></li>
+              <li><b data-i18n="nlc26.s3Title"></b><span data-i18n="nlc26.key3"></span></li>
+              <li><b data-i18n="nlc26.s4Title"></b><span data-i18n="nlc26.key4"></span></li>
             </ol>
 
             <p class="featured-cta">
@@ -1124,34 +1124,139 @@ def _nuwa_body():
                     ('nlc26.dVenue', 'nw26.dVenue'),
                     ('\n              <li data-i18n="nlc26.dAudience"></li>', ''))
 
-    # The one block this workshop adds, taken from the SPMC deck: the three
-    # gaps students name, the need each one is (SDT, ARC), and what the
-    # platform does about it. The need names and questions are the Practice
-    # page's own keys. The quotes are not: this audience is all CL-trained,
-    # so here the students say 华文 where the Practice page says 母语.
-    cards = "".join("""\
-              <article class="need">
-                <p class="need-name"><span data-i18n="nw26.gap%(n)s"></span> → <span data-i18n="approach.need%(n)sName"></span></p>
+    # The one block this workshop adds: the VocabSummit deck retold in CL,
+    # with the platform's own art. Three gaps students name, the three needs
+    # they are (SDT, ARC), then what the platform does about each, shown
+    # rather than listed. The need names and questions are the Practice
+    # page's keys; the quotes say 华文, since this audience is all CL-trained.
+    def sprites(names, caption, labels=None, size="", lazy=True):
+        items = "".join(
+            '                  <li><img src="assets/arc/%s.png" alt=""%s decoding="async">%s</li>\n'
+            % (n, ' loading="lazy"' if lazy else "",
+               '<span data-i18n="%s"></span>' % labels[i] if labels else "")
+            for i, n in enumerate(names))
+        return """\
+              <figure class="sprites%s">
+                <ul>
+%s                </ul>
+                <figcaption data-i18n="%s"></figcaption>
+              </figure>
+""" % (" " + size if size else "", items, caption)
+
+    zodiac = ["zodiac-%02d-%s" % (i + 1, a) for i, a in enumerate(
+        "rat ox tiger rabbit dragon snake horse goat monkey rooster dog pig".split())]
+    badges = ["badge-%d-%s" % (i + 1, a) for i, a in enumerate(
+        "life core consolidation advanced culture".split())]
+    powerups = ["powerup-%d-%s" % (i + 1, a) for i, a in enumerate(
+        "tanghulu umbrella pearl waterclock kneeguard compass pouch".split())]
+
+    # Why the sky is broken: the language spoken most at home, drawn from
+    # SingStat's figures rather than pasted as a screenshot, so it reads in
+    # both languages and at any width. Three series, so each line also has a
+    # direct label, a different dash, and a native tooltip on every point.
+    years = (2000, 2005, 2010, 2015, 2020, 2025)
+    series = (("english", "#C0703A", "", (23.0, 28.1, 32.3, 36.9, 48.3, 58.1)),
+              ("mandarin", "#1E2749", "", (35.0, 36.0, 35.6, 34.9, 29.9, 26.6)),
+              ("dialects", "#7E8AAE", "6 5", (23.8, 18.2, 14.3, 12.2, 8.7, 4.9)))
+    X = lambda i: 56 + i * 96
+    Y = lambda v: 262 - v * 3.4
+    grid = "".join('<line class="sky-grid" x1="56" x2="536" y1="%.1f" y2="%.1f"/>'
+                   '<text class="sky-tick" x="48" y="%.1f">%d%%</text>' % (Y(v), Y(v), Y(v) + 4, v)
+                   for v in (0, 20, 40, 60))
+    xt = "".join('<text class="sky-tick" x="%d" y="284" text-anchor="middle">%d</text>' % (X(i), y)
+                 for i, y in enumerate(years))
+    lines = ""
+    for key, col, dash, vals in series:
+        pts = " ".join("%d,%.1f" % (X(i), Y(v)) for i, v in enumerate(vals))
+        lines += ('<polyline fill="none" stroke="%s" stroke-width="2.5" stroke-linejoin="round"%s points="%s"/>'
+                  % (col, ' stroke-dasharray="%s"' % dash if dash else "", pts))
+        lines += "".join('<circle cx="%d" cy="%.1f" r="4.5" fill="%s" stroke="var(--paper)" stroke-width="2">'
+                         '<title>%d · %.1f%%</title></circle>' % (X(i), Y(v), col, years[i], v)
+                         for i, v in enumerate(vals))
+        lines += ('<text class="sky-end" x="%d" y="%.1f">%.1f%%</text>' % (X(5) + 10, Y(vals[-1]) + 4, vals[-1]))
+    table = "".join("<tr><th>%d</th>%s</tr>" % (y, "".join("<td>%.1f%%</td>" % sv[3][i] for sv in series))
+                    for i, y in enumerate(years))
+    sky = """\
+            <figure class="sky">
+              <p class="arc-title" data-i18n="nw26.skyTitle"></p>
+              <p class="section-sub" data-i18n="nw26.skyLede"></p>
+              <ul class="sky-legend">
+                <li><i style="background:#C0703A"></i><span data-i18n="nw26.skyEnglish"></span></li>
+                <li><i style="background:#1E2749"></i><span data-i18n="nw26.skyMandarin"></span></li>
+                <li><i class="dashed" style="color:#7E8AAE"></i><span data-i18n="nw26.skyDialects"></span></li>
+              </ul>
+              <svg class="sky-chart" viewBox="0 0 600 296" role="img" data-i18n-aria-label="nw26.skyLede">%s%s%s</svg>
+              <figcaption>
+                <p class="sky-take" data-i18n="nw26.skyTake"></p>
+                <a class="tool-link" href="https://www.singstat.gov.sg/publication-resources/home-language-of-residents-aged-5-years-and-over-dashboard"
+                   target="_blank" rel="noopener" data-i18n="nw26.skySource"></a>
+                <details class="sky-data">
+                  <summary data-i18n="nw26.skyTable"></summary>
+                  <table><thead><tr><th></th><th data-i18n="nw26.skyEnglish"></th><th data-i18n="nw26.skyMandarin"></th><th data-i18n="nw26.skyDialects"></th></tr></thead>
+                  <tbody>%s</tbody></table>
+                </details>
+              </figcaption>
+            </figure>
+""" % (grid, xt, lines, table)
+
+    gaps = "".join("""\
+              <li>
+                <span class="gap-tag" data-i18n="nw26.gap%(n)s"></span>
                 <p class="need-voice" data-i18n="nw26.voice%(n)s"></p>
-                <p data-i18n="nw26.need%(n)s"></p>
-                <h3 data-i18n="approach.need%(n)sQ"></h3>
-                <span class="label" data-i18n="nw26.fill%(n)s"></span>
-                <ul class="loop-points need-points">
-%(items)s
-                </ul>
-              </article>
-""" % {"n": n, "items": "\n".join(
-            '                  <li data-i18n="nw26.fill%s%s"></li>' % (n, c) for c in cs)}
-        for n, cs in ((1, "ABCDE"), (2, "ABCD"), (3, "ABC")))
+              </li>
+""" % {"n": n} for n in (1, 2, 3))
+    arc = "".join("""\
+              <li class="arc-card">
+                <span class="arc-letter">%(l)s</span>
+                <p class="need-name" data-i18n="approach.need%(n)sName"></p>
+                <p class="arc-line" data-i18n="nw26.need%(n)s"></p>
+                <p class="arc-q" data-i18n="approach.need%(n)sQ"></p>
+              </li>
+""" % {"n": n, "l": l} for n, l in ((1, "A"), (2, "C"), (3, "R")))
+
     gap = """\
           <div class="doc-block" id="gap">
             <h2 class="section-title" data-i18n="nw26.gapTitle"></h2>
             <p class="lede" data-i18n="nw26.gapLede"></p>
 
-            <h3 data-i18n="nw26.arcTitle"></h3>
+%(sky)s
+            <ul class="gap-trio">
+%(gaps)s            </ul>
+
+            <h3 class="arc-title" data-i18n="nw26.arcTitle"></h3>
             <p class="section-sub" data-i18n="nw26.arcLede"></p>
-            <div class="needs">
-%s            </div>
+            <ul class="arc-trio">
+%(arc)s            </ul>
+
+            <p class="arc-turn" data-i18n="nw26.arcTurn"></p>
+
+            <div class="arc-fill">
+              <p class="arc-fill-head"><span class="arc-letter">A</span><span data-i18n="nw26.fill1"></span></p>
+%(zodiac)s%(story)s%(mythic)s              <ul class="arc-modes">
+                <li><b data-i18n="nw26.learnMode"></b><span data-i18n="nw26.learnModeNote"></span></li>
+                <li><b data-i18n="nw26.gameMode"></b><span data-i18n="nw26.gameModeNote"></span></li>
+              </ul>
+            </div>
+
+            <div class="arc-fill">
+              <p class="arc-fill-head"><span class="arc-letter">C</span><span data-i18n="nw26.fill2"></span></p>
+              <p class="arc-note" data-i18n="nw26.xpNote"></p>
+%(badges)s%(powerups)s%(areas)s            </div>
+
+            <div class="arc-fill">
+              <p class="arc-fill-head"><span class="arc-letter">R</span><span data-i18n="nw26.fill3"></span></p>
+              <ul class="arc-modes">
+                <li><b data-i18n="nw26.classClimb"></b><span data-i18n="nw26.classClimbNote"></span></li>
+                <li><b data-i18n="nw26.peerChallenge"></b><span data-i18n="nw26.peerChallengeNote"></span></li>
+              </ul>
+              <figure class="shot step-shot arc-board">
+                <div class="screen-bezel">
+                  <div class="screen-inner">
+                    <img src="assets/arc/leaderboard.png" alt="" loading="lazy" decoding="async">
+                  </div>
+                </div>
+              </figure>
+%(places)s            </div>
 
             <div class="highlight-box">
               <span class="label" data-i18n="nw26.researchLabel"></span>
@@ -1162,16 +1267,28 @@ def _nuwa_body():
 
             <p class="featured-cta">
               <a class="btn btn-ghost" href="assets/slides/spmc-2026-vocabsummit.pdf"
-                 data-i18n="nw26.slidesCta" target="_blank" rel="noopener">The SPMC slides (PDF)</a>
+                 data-i18n="nw26.slidesCta" target="_blank" rel="noopener">The slides in English (PDF)</a>
             </p>
           </div>
-""" % cards
+""" % {
+        "gaps": gaps, "arc": arc, "sky": sky,
+        "zodiac": sprites(zodiac, "nw26.zodiacCap", size="pixel"),
+        "story": sprites(["story-%d" % i for i in range(1, 6)], "nw26.storyCap", size="pixel"),
+        "mythic": sprites(["mythic-%d" % i for i in range(1, 5)], "nw26.mythicCap", size="pixel big"),
+        "badges": sprites(badges, "nw26.badgeCap", ["nw26.badge%d" % i for i in range(1, 6)]),
+        "powerups": sprites(powerups, "nw26.powerCap", ["nw26.power%d" % i for i in range(1, 8)], "pixel"),
+        "areas": sprites(["area-%d" % i for i in range(1, 6)], "nw26.areaCap", size="big"),
+        "places": sprites(["place-%d" % i for i in range(1, 5)], "nw26.placeCap"),
+    }
 
     # Second half of the programme starts here.
     vocabsummit = _swap(b["vocabsummit"], (
         '<h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>',
         '<p class="eyebrow" data-i18n="nw26.partTwo"></p>\n'
-        '            <h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>'))
+        '            <h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>\n'
+        '            <p class="featured-cta vs-direct"><a class="btn btn-primary" href="https://for.edu.sg/vocabsummit"\n'
+        '               target="_blank" rel="noopener" data-i18n="nw26.vsDirect">Open VocabSummit</a>\n'
+        '              <a class="tool-link" href="https://for.edu.sg/vocabsummit" target="_blank" rel="noopener">for.edu.sg/vocabsummit</a></p>'))
 
     # Four hires instead of five: the fan is redrawn for four columns, with
     # the endpoints over the column centres at the same .7rem gap.

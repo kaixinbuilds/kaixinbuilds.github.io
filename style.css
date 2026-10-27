@@ -1250,12 +1250,6 @@ html[data-lang-mode="zh"] .epigraph .en { display: none; }
 @media (max-width: 700px) { .climb-key { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .climb-key li { display: grid; gap: .2rem; align-content: start; font-size: .84rem; color: var(--ink-soft); line-height: 1.45; }
 .climb-key b { font-family: var(--font-serif); font-size: 1.02rem; font-weight: 600; color: var(--ink); }
-.climb-key-n {
-  display: grid; place-content: center;
-  width: 1.6rem; height: 1.6rem; border-radius: 50%;
-  background: var(--ink); color: var(--paper);
-  font-family: var(--font-serif); font-size: .82rem; font-weight: 600;
-}
 
 /* ── the evolution gallery ─────────────────────────────── */
 /* A strip that scroll-snaps. Without JS it is still a strip you
@@ -1411,3 +1405,67 @@ pre.is-typing::after {
   #nuwa .figure-hero .tear, #nuwa .figure-hero .stone { animation: none; }
   pre.is-typing::after { animation: none; }
 }
+
+/* ── Nüwa: spotting the gap, told with the platform's own art ── */
+.sky { margin: 1.6rem 0 0; }
+.sky-legend { list-style: none; margin: .8rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; font-size: .84rem; color: var(--ink-soft); }
+.sky-legend li { display: flex; align-items: center; gap: .45rem; }
+.sky-legend i { display: inline-block; width: 1.4rem; height: 3px; border-radius: 2px; }
+.sky-legend i.dashed { background: repeating-linear-gradient(90deg, currentColor 0 6px, transparent 6px 11px); }
+.sky-chart { width: 100%; height: auto; margin-top: .4rem; overflow: visible; }
+.sky-grid { stroke: var(--rule); stroke-width: 1; }
+.sky-tick { font-size: 11px; fill: var(--ink-faint); font-family: var(--font-sans); text-anchor: end; }
+.sky-tick[text-anchor="middle"] { text-anchor: middle; }
+.sky-end { font-size: 12px; font-weight: 600; fill: var(--ink); font-family: var(--font-sans); }
+.sky-chart circle { cursor: default; }
+.sky figcaption { display: grid; gap: .5rem; margin-top: .4rem; }
+.sky-take { margin: 0; font-size: .95rem; color: var(--ink); }
+.sky-data summary { cursor: pointer; font-size: .82rem; color: var(--ink-faint); }
+.sky-data table { margin-top: .5rem; border-collapse: collapse; font-size: .82rem; font-variant-numeric: tabular-nums; }
+.sky-data th, .sky-data td { padding: .25rem .8rem .25rem 0; text-align: left; border-bottom: 1px solid var(--rule); }
+
+.gap-trio, .arc-trio {
+  list-style: none; margin: 1.4rem 0 0; padding: 0;
+  display: grid; gap: .9rem; grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 700px) { .gap-trio, .arc-trio { grid-template-columns: 1fr; } }
+.gap-trio li {
+  padding: 1rem 1.1rem; background: var(--card); border: 1px solid var(--rule);
+  border-top: 3px solid var(--ochre); border-radius: var(--radius);
+}
+.gap-tag { font-size: .74rem; font-weight: 600; letter-spacing: .12em; color: var(--ochre-deep); }
+.gap-trio .need-voice { margin: .45rem 0 0; font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.5; color: var(--ink); }
+.arc-title { margin: 2.2rem 0 0; font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); }
+.arc-card {
+  display: grid; gap: .35rem; align-content: start; padding: 1.1rem;
+  background: var(--ink); color: var(--paper); border-radius: var(--radius);
+}
+.arc-card .need-name { margin: 0; font-size: .74rem; letter-spacing: .14em; font-weight: 600; opacity: .8; }
+.arc-line { margin: 0; font-family: var(--font-serif); font-size: 1.12rem; line-height: 1.45; }
+.arc-q { margin: .3rem 0 0; font-size: .84rem; line-height: 1.5; opacity: .85; }
+.arc-letter {
+  display: inline-grid; place-content: center; width: 2.2rem; height: 2.2rem; border-radius: 50%;
+  background: var(--ochre); color: var(--paper); font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600;
+}
+.arc-turn { margin: 2.4rem 0 0; font-family: var(--font-serif); font-size: 1.2rem; color: var(--ink); }
+.arc-fill { margin: 1.2rem 0 0; padding: 1.2rem 1.2rem 1.4rem; background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius); }
+.arc-fill-head { display: flex; align-items: center; gap: .7rem; margin: 0; font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); }
+.arc-note { margin: .8rem 0 0; color: var(--ink-soft); }
+.arc-modes { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: .7rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 560px) { .arc-modes { grid-template-columns: 1fr; } }
+.arc-modes li { display: grid; gap: .2rem; padding: .8rem .9rem; background: var(--paper); border-radius: var(--radius); font-size: .86rem; color: var(--ink-soft); }
+.arc-modes b { font-family: var(--font-serif); font-size: 1rem; color: var(--ink); }
+.arc-board { max-width: 100%; margin: 1rem 0 0; }
+
+/* A row of the platform's own art, captioned underneath. */
+.sprites { margin: 1.1rem 0 0; }
+.sprites ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem .6rem; }
+.sprites li { display: grid; justify-items: center; gap: .25rem; width: 4.4rem; text-align: center; font-size: .72rem; line-height: 1.35; color: var(--ink-soft); }
+.sprites img { width: 3.6rem; height: 3.6rem; object-fit: contain; }
+.sprites.pixel img { image-rendering: pixelated; }
+.sprites.big li { width: 6rem; }
+.sprites.big img { width: 5.4rem; height: 5.4rem; }
+.sprites figcaption { margin-top: .5rem; font-size: .86rem; color: var(--ink-soft); }
+/* Light on dark: the English half of each line keeps the card's paper
+   colour instead of the page's faint grey, which vanishes on ink. */
+.arc-card .bi-en { color: var(--paper); opacity: .78; }
