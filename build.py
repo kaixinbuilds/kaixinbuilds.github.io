@@ -1497,7 +1497,69 @@ def _nuwa_body():
   </section>"""
 
 
-PAGES["20261028NuwaGamificationWorkshop.html"] = ("page.nw26.title", _nuwa_body())
+# The page is long and much of it is text, so the title is drawn twice more:
+# every section heading gets a hairline crack with one of the five stones,
+# which drops into place as the section arrives (wireReveal adds the class),
+# and the page ends on the sky from the banner, mended, with light coming
+# through. Stones cycle through the banner's own fills.
+_STONES = (("M8 6 L22 2 L28 13 L16 20 L4 14 Z", "och"),
+           ("M6 4 L24 4 L28 16 L12 20 L4 12 Z", "ink"),
+           ("M10 3 L26 7 L24 18 L8 18 Z", "och-deep"),
+           ("M6 8 L18 2 L28 10 L22 20 L6 18 Z", "ink-2"),
+           ("M8 4 L26 3 L28 15 L16 21 L5 15 Z", "och"))
+
+
+def _nuwa_dress(body):
+    n = [0]
+
+    def mark(m):
+        path, cls = _STONES[n[0] % len(_STONES)]
+        n[0] += 1
+        return ('<svg class="cut mend" viewBox="0 -14 240 44" aria-hidden="true" focusable="false">'
+                '<path class="mend-crack" d="M0 24 H98 L104 18 L110 26 L116 19 L122 25 L128 21 L134 24 H240"/>'
+                '<g transform="translate(96 -10) scale(1.5)"><path class="mend-stone %s" d="%s"/></g>'
+                '</svg>\n            ' % (cls, path) + m.group(0))
+
+    body = re.sub(r'<h2 class="section-title"', mark, body)
+
+    stones = "".join('<path class="%s stone-set" style="--d: %.2fs" d="%s"/>' % (c, 0.2 * i, d)
+                     for i, (c, d) in enumerate((
+                         ("och", "M520 14 L566 8 L578 40 L540 52 L512 38 Z"),
+                         ("ink", "M584 10 L636 6 L644 42 L600 54 L582 36 Z"),
+                         ("och", "M652 8 L700 14 L690 46 L652 50 Z"),
+                         ("ink", "M540 62 L590 58 L600 96 L556 104 L534 86 Z"),
+                         ("och", "M606 60 L668 58 L676 92 L630 112 L602 96 Z"))))
+    rays = "".join('<path class="ray" pathLength="1" style="--d: %.2fs" d="M600 %d L%d 214"/>' % (0.9 + 0.12 * i, 104, x)
+                   for i, x in enumerate((360, 470, 560, 640, 730, 840)))
+    closing = """
+            <!-- The banner's sky again, mended: the five stones fused into the
+                 tear, and light drawn down through it to the mountains. -->
+            <div class="mended" aria-hidden="true">
+              <svg class="cut" viewBox="0 0 1200 260" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <path class="ink-3" d="M0 0 H1200 V118 C 900 72, 300 72, 0 118 Z"/>
+                <path class="och-w" d="M500 4 H700 L680 40 L700 70 L660 104 L540 104 L500 70 L520 40 Z"/>
+                <g class="line-o rays">%s</g>
+                %s
+                <path class="ink" d="M-20 225 L190 150 L330 196 L470 142 L620 225 Z"/>
+                <path class="ink" d="M560 225 L760 132 L930 188 L1080 150 L1220 225 Z"/>
+                <g class="line">
+                  <path d="M70 236 h160"/><path d="M270 236 h100"/><path d="M420 246 h230"/>
+                  <path d="M690 236 h130"/><path d="M860 246 h250"/><path d="M1130 236 h60"/>
+                </g>
+              </svg>
+            </div>
+
+            <p class="epigraph colophon">
+              <span class="zh" lang="zh-Hans">人之所以能，是因为相信能</span>
+              <span class="en" lang="en">We can because we believe we can.</span>
+            </p>
+""" % (rays, stones)
+    at = body.index('data-i18n="nlc26.fbCta"')
+    at = body.index("</p>", at) + len("</p>")
+    return body[:at] + "\n" + closing + body[at:]
+
+
+PAGES["20261028NuwaGamificationWorkshop.html"] = ("page.nw26.title", _nuwa_dress(_nuwa_body()))
 
 
 # ── VocabClimb guide ───────────────────────────────────────
