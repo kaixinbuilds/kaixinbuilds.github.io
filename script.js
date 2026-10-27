@@ -446,7 +446,7 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
-    const RUNS = '.needs > .need, .gap-trio > li, .arc-trio > li, .loop > li, .roster-tools > li, .stats > li, .cycle > li, .shots > .shot';
+    const RUNS = '.needs > .need, .gap-trio > li, .holes > li, .arc-trio > li, .loop > li, .roster-tools > li, .stats > li, .cycle > li, .shots > .shot';
     const runItems = new Set(host.querySelectorAll(RUNS));
     runItems.forEach((el) => {
       const i = [...el.parentElement.children].indexOf(el);
@@ -456,7 +456,7 @@
     host.querySelectorAll(':scope > .doc-block').forEach((block) => {
       [...block.children].forEach((child) => {
         // a run's container stays put; its members arrive instead
-        const members = child.matches('.needs, .gap-trio, .arc-trio, .loop, .roster, .stats, .cycle, .shots')
+        const members = child.matches('.needs, .gap-trio, .holes, .arc-trio, .loop, .roster, .stats, .cycle, .shots')
           ? [...child.querySelectorAll(RUNS)].filter((el) => runItems.has(el))
           : [child];
         members.forEach((el) => { el.classList.add('reveal'); io.observe(el); });

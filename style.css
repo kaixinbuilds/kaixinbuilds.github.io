@@ -1541,3 +1541,28 @@ pre.is-typing::after {
   .evo-phases.reveal .evo-phase-bar { transform: none; animation: none; }
   .mended .stone-next { animation: none; }
 }
+
+/* More than one hole: the sky torn in four places, each tear numbered
+   to its card. The tears open one by one as the strip arrives. */
+.holes-sky { display: block; width: 100%; height: auto; margin: 1rem 0 0; }
+.holes-sky .hole { transform-box: fill-box; transform-origin: top center; }
+.holes-sky.reveal .hole { transform: scaleY(0); }
+.holes-sky.reveal.is-in .hole { animation: hole-open .6s cubic-bezier(.3, .9, .3, 1.2) var(--d, 0s) forwards; }
+@keyframes hole-open { to { transform: scaleY(1); } }
+.hole-n { font-family: var(--font-serif); font-size: 42px; font-weight: 600; fill: var(--ochre-deep); }
+.holes {
+  list-style: none; margin: .4rem 0 0; padding: 0;
+  display: grid; gap: .9rem; grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 700px) { .holes { grid-template-columns: 1fr; } }
+.holes li {
+  position: relative; padding: 1rem 1.1rem 1rem 3rem;
+  background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius);
+}
+.hole-tag {
+  position: absolute; left: 1rem; top: .95rem;
+  font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600; line-height: 1; color: var(--ochre-deep);
+}
+.hole-title { margin: 0; font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.45; color: var(--ink); }
+.hole-note { margin: .35rem 0 0; font-size: .88rem; line-height: 1.65; color: var(--ink-soft); }
+@media (prefers-reduced-motion: reduce) { .holes-sky.reveal .hole { transform: none; animation: none; } }

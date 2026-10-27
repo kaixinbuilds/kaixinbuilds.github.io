@@ -1400,6 +1400,46 @@
     "zh": "不只是华文：在家最常讲马来语的从 14.1% 降到 7.0%，淡米尔语从 3.2% 降到 2.2%。下面是统计局的互动图表，可以自己点开各族群看看。",
     "en": "Not only Chinese: Malay as the main home language fell from 14.1% to 7.0%, Tamil from 3.2% to 2.2%. Below is SingStat’s own interactive dashboard; explore each group yourself."
   },
+  "nw26.holesTitle": {
+    "zh": "天上不止一个窟窿",
+    "en": "More than one hole in the sky"
+  },
+  "nw26.holesLede": {
+    "zh": "家里少讲华语，只是其中一个窟窿。往课堂、市场和老师自己的桌上看，还有这些：",
+    "en": "Less Mandarin at home is one hole. Look at the classroom, the market and teachers' own desks, and there are more:"
+  },
+  "nw26.hole1T": {
+    "zh": "词语手册，背了就忘",
+    "en": "The vocabulary handbook does not stick"
+  },
+  "nw26.hole1": {
+    "zh": "学生把《词语手册》背了又背，测验一过就忘。词汇要反复用才记得住，单靠一本手册撑不起这份反复。",
+    "en": "Students memorise the vocabulary handbook, then forget it once the test is over. Words stay only with repeated use, and a handbook alone cannot carry that repetition."
+  },
+  "nw26.hole2T": {
+    "zh": "G1 没有现成的词汇资源",
+    "en": "Nothing on the market for G1"
+  },
+  "nw26.hole2": {
+    "zh": "市面上还没有出版社为 G1 编过词汇练习。老师想给学生练，只能自己从零做起。",
+    "en": "No publisher has made vocabulary practice for G1 yet. A teacher who wants it has to build it from nothing."
+  },
+  "nw26.hole3T": {
+    "zh": "碎片式练习，进度追踪不了",
+    "en": "Fragments nobody can track"
+  },
+  "nw26.hole3": {
+    "zh": "全国的老师都在 Quizlet、Kahoot、Blooket 上辛苦自制练习。可是学生的学习散落在一个个平台里，没有一处看得到他们整体学到了哪里。",
+    "en": "Teachers all over Singapore work hard building practice on Quizlet, Kahoot and Blooket. But students' learning is scattered across these platforms, and nowhere shows how far each one has come overall."
+  },
+  "nw26.hole4T": {
+    "zh": "开源笔记，质量参差",
+    "en": "Open notes, uneven quality"
+  },
+  "nw26.hole4": {
+    "zh": "网上分享的教师笔记很多，质量和结构却参差不齐，也不一定贴合我们学生的程度和需要。",
+    "en": "Teachers share plenty of notes online, but their quality and structure vary, and they do not always fit our own learners' level and needs."
+  },
   "nlc26.stuckGuide": {
     "zh": "完整排错步骤（附截图）· 课后教程",
     "en": "Full troubleshooting, with screenshots · the guide"

@@ -1292,12 +1292,38 @@ def _nuwa_body():
               </li>
 """ % {"n": n, "l": l} for n, l in ((1, "A"), (2, "C"), (3, "R")))
 
+    # The home-language chart is one hole; these are the rest, from the
+    # classroom, the market and teachers' own work. Drawn as the banner's
+    # sky with four tears, numbered to the cards beneath.
+    tears = "".join(
+        '<path class="och-w hole" style="--d: %(d).2fs" d="M%(a)d 0 H%(b)d L%(c)d 26 L%(e)d 52 L%(f)d 90 L%(g)d 62 L%(h)d 30 Z"/>'
+        '<text class="hole-n" x="%(x)d" y="52" text-anchor="middle">%(n)d</text>'
+        % {"n": i + 1, "x": x, "d": 0.15 + 0.2 * i, "a": x - 80, "b": x + 80, "c": x + 58,
+           "e": x + 70, "f": x + 10, "g": x - 52, "h": x - 70}
+        for i, x in enumerate((170, 460, 750, 1040)))
+    hole_cards = "".join("""\
+              <li>
+                <span class="hole-tag">%(n)d</span>
+                <p class="hole-title" data-i18n="nw26.hole%(n)dT"></p>
+                <p class="hole-note" data-i18n="nw26.hole%(n)d"></p>
+              </li>
+""" % {"n": n} for n in (1, 2, 3, 4))
+    holes = """
+            <h3 class="arc-title" data-i18n="nw26.holesTitle"></h3>
+            <p class="section-sub" data-i18n="nw26.holesLede"></p>
+            <svg class="cut holes-sky" viewBox="0 0 1200 140" aria-hidden="true" focusable="false">
+              <path class="ink-3" d="M0 0 H1200 V132 C 900 100, 300 100, 0 132 Z"/>%s
+            </svg>
+            <ul class="holes">
+%s            </ul>
+""" % (tears, hole_cards)
+
     gap = """\
           <div class="doc-block" id="gap">
             <h2 class="section-title" data-i18n="nw26.gapTitle"></h2>
             <p class="lede" data-i18n="nw26.gapLede"></p>
 
-%(sky)s
+%(sky)s%(holes)s
             <ul class="gap-trio">
 %(gaps)s            </ul>
 
@@ -1349,7 +1375,7 @@ def _nuwa_body():
             </p>
           </div>
 """ % {
-        "gaps": gaps, "arc": arc, "sky": sky,
+        "gaps": gaps, "arc": arc, "sky": sky, "holes": holes,
         "zodiac": sprites(zodiac, "nw26.zodiacCap", size="pixel"),
         "story": sprites(["story-%d" % i for i in range(1, 6)], "nw26.storyCap", size="pixel"),
         "mythic": sprites(["mythic-%d" % i for i in range(1, 5)], "nw26.mythicCap", size="pixel big"),
