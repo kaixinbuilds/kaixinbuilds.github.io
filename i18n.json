@@ -1009,8 +1009,8 @@
     "zh": "一人开发团队，怎么会有五个岗位？"
   },
   "nw26.goalGap": {
-    "en": "Use Self-Determination Theory (ARC: autonomy, relatedness, competence) to analyse students' learning needs, and fill that gap through game design.",
-    "zh": "以自我决定理论（ARC：自主、关联、胜任）分析学生的学习需求，通过游戏设计补上该缺口"
+    "en": "Understand how to use Self-Determination Theory (ARC: autonomy, relatedness, competence) to analyse students' learning needs, and fill that gap through game design.",
+    "zh": "理解如何以自我决定理论（ARC：自主、关联、胜任）分析学生的学习需求，通过游戏设计补上该缺口"
   },
   "nw26.goal3": {
     "en": "Publish a game prototype: create your own GitHub repo, copy a small game and publish it live.",
