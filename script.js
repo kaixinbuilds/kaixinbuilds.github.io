@@ -374,6 +374,60 @@
     });
   }
 
+  /* The session pages fold each block under its heading, so a teacher sees
+     the outline first and opens only what they need. Done here rather than
+     as <details> in build.py so the heading keeps its data-i18n and the
+     page still reads in full without script. The goals stay open: they are
+     what the session is for. A side-nav link or a #hash opens its block. */
+  function wireCollapse() {
+    const host = document.querySelector('#nlc .project-detail, #nuwa .project-detail');
+    if (!host) return;
+    const OPEN = ['goals'];
+
+    host.querySelectorAll(':scope > .doc-block').forEach((block) => {
+      const head = block.querySelector(':scope > .section-title');
+      if (!head) return;
+      const body = document.createElement('div');
+      body.className = 'doc-body';
+      body.id = block.id + '-body';
+      while (head.nextSibling) body.appendChild(head.nextSibling);
+      block.appendChild(body);
+      block.classList.add('is-collapsible');
+
+      head.setAttribute('role', 'button');
+      head.setAttribute('tabindex', '0');
+      head.setAttribute('aria-controls', body.id);
+      const set = (open) => {
+        block.classList.toggle('is-open', open);
+        head.setAttribute('aria-expanded', String(open));
+        body.hidden = !open;
+        // the evolution strip measures itself, and cannot while hidden
+        if (open) window.dispatchEvent(new Event('resize'));
+      };
+      block.openBlock = () => set(true);
+      set(OPEN.includes(block.id));
+
+      head.addEventListener('click', () => set(body.hidden));
+      head.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        set(body.hidden);
+      });
+    });
+
+    const openFromHash = (hash) => {
+      const block = hash && document.getElementById(hash.slice(1));
+      if (block && block.openBlock) block.openBlock();
+    };
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a[href^="#"]');
+      if (link) openFromHash(link.getAttribute('href'));
+    });
+    window.addEventListener('hashchange', () => openFromHash(location.hash));
+    openFromHash(location.hash);
+    if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+  }
+
   /* Highlight whichever block of a long page is currently in view. */
   function wireDocSpy() {
     const links = [...document.querySelectorAll('.project-nav a[href^="#"]')];
@@ -621,6 +675,7 @@
     });
 
     renderAll();
+    wireCollapse();
     revealLoadedImages();
     initGallery();
     wireEmbeds(document);

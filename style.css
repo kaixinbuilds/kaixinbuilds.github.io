@@ -1061,6 +1061,30 @@ html[data-lang-mode="zh"] .epigraph .en { display: none; }
 .doc-block .loop h3 { font-size: 1.08rem; line-height: 1.35; font-family: var(--font-serif); font-weight: 600; }
 .doc-block { scroll-margin-top: 5.5rem; }
 
+/* Folded blocks (session pages, see wireCollapse): the heading is the
+   toggle, and a closed page reads as a short outline, so the rules between
+   blocks tighten from document spacing to list spacing. */
+.doc-block.is-collapsible + .doc-block.is-collapsible { margin-top: 0; padding-top: 1.35rem; }
+.doc-block.is-collapsible { padding-bottom: 1.35rem; }
+/* Block, not flex: in bilingual mode the heading holds two stacked spans,
+   and a flex row would set them side by side. */
+.doc-block.is-collapsible > .section-title {
+  position: relative;
+  padding-right: 2rem;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+.doc-block.is-collapsible > .section-title::after {
+  content: "+";
+  position: absolute; right: 0; top: 0;
+  font-family: var(--font-sans, inherit); font-weight: 400;
+  color: var(--ink-faint);
+}
+.doc-block.is-open > .section-title::after { content: "−"; }
+.doc-block.is-collapsible > .section-title:hover::after { color: var(--ink); }
+.doc-block.is-collapsible > .section-title:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.doc-block.is-open > .doc-body { padding-top: 1.1rem; }
+
 /* Entries carry a date above the title in the index. */
 .project-nav .nav-date {
   display: block;
