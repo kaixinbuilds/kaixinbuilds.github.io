@@ -649,8 +649,8 @@
     "zh": "打开我的示范项目 → 绿色的 Code 按钮 → Download ZIP → 解压。"
   },
   "nlc26.s1P4": {
-    "en": "Back in your repository → uploading an existing file (once it has files in it, use the + beside the green Code button → Upload files) → drag in everything you unzipped, art folder included → scroll to the bottom and Commit changes.",
-    "zh": "回到你的仓库 → 点 uploading an existing file（仓库里已经有东西了，就点绿色 Code 按钮左边的「+」→ Upload files）→ 把解压后的东西全部拖进去，art 资料夹也要 → 拉到页面最下面按 Commit changes。"
+    "en": "Back in your repository → uploading an existing file (once it has files in it, use the + beside the green Code button → Upload files) → drag in every file you unzipped, the three pictures included → scroll to the bottom and Commit changes.",
+    "zh": "回到你的仓库 → 点 uploading an existing file（仓库里已经有东西了，就点绿色 Code 按钮左边的「+」→ Upload files）→ 把解压后的文件全部拖进去，三张图也要 → 拉到页面最下面按 Commit changes。"
   },
   "nlc26.s1Shot": {
     "en": "The + sits just left of the green Code button. Upload files is inside it.",
@@ -673,8 +673,8 @@
     "zh": "核心"
   },
   "nlc26.s2P1": {
-    "en": "The folder has an .xlsx template and a .csv. Two columns: the word, and its meaning. Row 1 stays as it is. Eight entries or more, and you never write the wrong answers yourself: the game generates the distractors from your own list.",
-    "zh": "资料夹里有「词语表模板.xlsx」和一份 .csv。两栏：词语、释义。第一行不需修改。8 个以上，错误选项不用自己写，程序会参考词语表自动生成干扰项。"
+    "en": "The folder has an .xlsx template. Two columns: the word, and its meaning. Row 1 stays as it is. Eight entries or more, and you never write the wrong answers yourself: the game generates the distractors from your own list.",
+    "zh": "资料夹里有「词语表模板.xlsx」。两栏：词语、释义。第一行不需修改。8 个以上，错误选项不用自己写，程序会参考词语表自动生成干扰项。"
   },
   "nlc26.s2P2": {
     "en": "claude.ai → Projects → new one. Upload the whole folder and your filled-in sheet. Claude has to see the original format to know what it is matching.",
@@ -697,8 +697,8 @@
     "zh": "巩固"
   },
   "nlc26.s3P1": {
-    "en": "Three pictures in the art folder: landscape.jpg behind everything, wall.jpg for the cliff, climber.png for the climber. Swap the files, keep the names, and it just works.",
-    "zh": "art 资料夹里三张图：landscape.jpg 是远景，wall.jpg 是崖壁，climber.png 是攀登者。换掉文件、名字不变，就换好了。"
+    "en": "Three pictures: landscape.jpg behind everything, wall.jpg for the cliff, climber.png for the climber. Swap the files, keep the names, and it just works.",
+    "zh": "三张图：landscape.jpg 是远景，wall.jpg 是崖壁，climber.png 是攀登者。换掉文件、名字不变，就换好了。"
   },
   "nlc26.s3P2": {
     "en": "Then look at it on your own phone. Whether your students can make it out is a judgment only you can make.",
@@ -851,5 +851,161 @@
   "nlc26.statShips": {
     "zh": "次改版上线 · 自 2026.04.10",
     "en": "deployments since 10 April 2026"
+  },
+  "page.nw26.title": {
+    "en": "Nüwa Mends the Sky - Chun Kai Xin",
+    "zh": "女娲补天 · 郑凯欣"
+  },
+  "nw26.eyebrow": {
+    "en": "Workshop · 28 October 2026",
+    "zh": "工作坊 · 2026年10月28日"
+  },
+  "nw26.title": {
+    "en": "Nüwa Mends the Sky: Using AI to Design Chinese Language Games for Self-Directed Learning",
+    "zh": "女娲补天：运用AI设计华文游戏，推动自主学习"
+  },
+  "nw26.goalsTitle": {
+    "en": "The three-hour sprint",
+    "zh": "三小时冲刺目标"
+  },
+  "nw26.dDate": {
+    "en": "Date · 28 October 2026 (Wednesday)",
+    "zh": "日期 · 2026年10月28日（星期三）"
+  },
+  "nw26.dTime": {
+    "en": "Time · 1330 to 1630",
+    "zh": "时间 · 1330 至 1630"
+  },
+  "nw26.dVenue": {
+    "en": "Venue · Bukit View Secondary School, Learning Hub (Level 3)",
+    "zh": "地点 · 百德中学学习中心（三楼）"
+  },
+  "nw26.navGap": {
+    "en": "Spotting the gap",
+    "zh": "发现缺口"
+  },
+  "nw26.gapTitle": {
+    "en": "Spotting the gap: how game-based learning drives self-directed learning",
+    "zh": "发现缺口：游戏化学习如何推动自主学习"
+  },
+  "nw26.gapLede": {
+    "en": "Vocabulary is the building block of language. It has to be learned by repetition, and our students resist this mode of learning.",
+    "zh": "词汇是语言的基石，必须靠反复练习来掌握，而学生偏偏抗拒这种学法。"
+  },
+  "nw26.arcTitle": {
+    "en": "Motivation framework: Self-Determination Theory",
+    "zh": "动机框架：自我决定理论"
+  },
+  "nw26.arcLede": {
+    "en": "ARC: autonomy, relatedness, competence. What makes a student choose to practise.",
+    "zh": "ARC：自主、关联、胜任。学生为什么会主动练习。"
+  },
+  "nw26.gap1": {
+    "en": "No choice",
+    "zh": "没有选择"
+  },
+  "nw26.gap2": {
+    "en": "No success",
+    "zh": "没有成功感"
+  },
+  "nw26.gap3": {
+    "en": "No community",
+    "zh": "没有同伴"
+  },
+  "nw26.need1": {
+    "en": "I have real choices here.",
+    "zh": "我在这里真的有选择。"
+  },
+  "nw26.need2": {
+    "en": "I can see myself getting better.",
+    "zh": "我看得见自己在进步。"
+  },
+  "nw26.need3": {
+    "en": "I'm not doing this alone.",
+    "zh": "我不是一个人在练。"
+  },
+  "nw26.fill1": {
+    "en": "How VocabSummit fills it: everything is a choice",
+    "zh": "词山学海怎么补：一切由自己选"
+  },
+  "nw26.fill2": {
+    "en": "How VocabSummit fills it: progress you can see",
+    "zh": "词山学海怎么补：看得见的进步"
+  },
+  "nw26.fill3": {
+    "en": "How VocabSummit fills it: nobody climbs alone",
+    "zh": "词山学海怎么补：没有人独自攀登"
+  },
+  "nw26.fill1A": {
+    "en": "Which climber to play as",
+    "zh": "选哪个攀登者"
+  },
+  "nw26.fill1B": {
+    "en": "Learn mode or game mode",
+    "zh": "学习模式还是游戏模式"
+  },
+  "nw26.fill1C": {
+    "en": "Which words, and when",
+    "zh": "练哪些词、什么时候练"
+  },
+  "nw26.fill1D": {
+    "en": "How to build up their camp",
+    "zh": "怎么建设自己的营地"
+  },
+  "nw26.fill1E": {
+    "en": "Which powerups to spend on",
+    "zh": "把货币花在哪些道具上"
+  },
+  "nw26.fill2A": {
+    "en": "Experience points that never fall",
+    "zh": "只升不降的经验值"
+  },
+  "nw26.fill2B": {
+    "en": "A badge per chapter component",
+    "zh": "每个单元板块一枚徽章"
+  },
+  "nw26.fill2C": {
+    "en": "Currency earned by practising",
+    "zh": "练习才赚得到的货币"
+  },
+  "nw26.fill2D": {
+    "en": "Height gained up the mountain",
+    "zh": "在山上爬升的高度"
+  },
+  "nw26.fill3A": {
+    "en": "Classroom climbs, started by the teacher or by the students themselves",
+    "zh": "课堂攀登，由老师或学生自己发起"
+  },
+  "nw26.fill3B": {
+    "en": "Peer challenges between friends",
+    "zh": "朋友之间的对战挑战"
+  },
+  "nw26.fill3C": {
+    "en": "Leaderboards and placing badges",
+    "zh": "排行榜与名次徽章"
+  },
+  "nw26.researchLabel": {
+    "en": "Gamification",
+    "zh": "游戏化"
+  },
+  "nw26.research": {
+    "en": "Game elements are not effective in themselves. Different elements satisfy different psychological needs: competence, autonomy, relatedness.",
+    "zh": "游戏元素本身不会产生效果。不同的元素满足不同的心理需求：胜任、自主、关联。"
+  },
+  "nw26.researchCite": {
+    "en": "Sailer & Homner, 2020 · The gamification of learning: a meta-analysis · Educational Psychology Review",
+    "zh": "Sailer & Homner, 2020 · The gamification of learning: a meta-analysis · Educational Psychology Review"
+  },
+  "nw26.slidesCta": {
+    "en": "The SPMC slides (PDF)",
+    "zh": "SPMC 分享幻灯片（PDF）"
+  },
+  "nw26.partTwo": {
+    "en": "Mending the sky: building learning games with AI tools, without a coding background",
+    "zh": "补天：不会编码，也能用 AI 工具做学习游戏"
+  },
+  "nw26.stackLede": {
+    "en": "A development team of one. So how does it run five roles?",
+    "zh": "一人开发团队，怎么会有五个岗位？"
   }
 }

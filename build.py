@@ -129,6 +129,8 @@ META = {
                       "deciding step is students using it in a real lesson."),
     "2026AIinSecCLNLC.html": ("2026 AI in Sec CL NLC - Chun Kai Xin",
                               "Resources for the 28 August 2026 AI in Sec CL NLC workshop: the five pieces of technology behind VocabSummit, and a starter game to adapt for your own unit."),
+    "20261028NuwaGamificationWorkshop.html": ("Nüwa Mends the Sky - Chun Kai Xin",
+                              "Resources for the 28 October 2026 workshop: how game-based learning drives self-directed learning, and a starter game to adapt for your own unit."),
     "contact.html": ("Contact - Chun Kai Xin",
                      "Get in touch about adapting any of these tools, or about building "
                      "something together."),
@@ -926,7 +928,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
             <span class="cap" data-i18n="nlc26.promptCap"></span>
             <pre lang="zh-Hans">我已经把这个游戏的整个资料夹上传到这个 Project 里了。
 
-告诉我 art 资料夹里那三张图（landscape.jpg、wall.jpg、climber.png）
+告诉我那三张图（landscape.jpg、wall.jpg、climber.png）
 分别是做什么用的、该做多大，我想自己换掉。</pre>
           </div>
         </li>
@@ -1062,6 +1064,180 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
     </div>
   </section>"""),
 }
+
+
+# ── Nüwa (28 Oct 2026) ─────────────────────────────────────
+# Two thirds of this workshop is the NLC session, so its page is assembled
+# from the NLC page's own blocks rather than a copy of them: a fix to the
+# hands-on lands on both. What differs is swapped in by exact string, and
+# every swap asserts it hit once, so an edit to the NLC markup that breaks
+# one fails the build instead of quietly shipping the NLC version.
+# Claude Code is left out of this page altogether, at her request.
+def _nlc_blocks():
+    body = PAGES["2026AIinSecCLNLC.html"][1]
+    starts = [(m.group(1), m.start()) for m in
+              re.finditer(r' *<div class="doc-block" id="([a-z-]+)">', body)]
+    blocks = {}
+    for i, (bid, at) in enumerate(starts):
+        end = starts[i + 1][1] if i + 1 < len(starts) else len(body)
+        chunk = body[at:end]
+        # a comment introducing the next block belongs to that block
+        while True:
+            trimmed = re.sub(r'\s*<!--(?:(?!<!--).)*?-->\s*$', '', chunk, flags=re.S)
+            if trimmed == chunk:
+                break
+            chunk = trimmed
+        blocks[bid] = chunk.rstrip() + "\n"
+    return blocks
+
+
+def _swap(text, *pairs):
+    for old, new in pairs:
+        assert text.count(old) == 1, "Nüwa page: expected once in the NLC markup: " + old
+        text = text.replace(old, new)
+    return text
+
+
+def _nuwa_body():
+    b = _nlc_blocks()
+
+    goals = _swap(b["goals"], ('nlc26.goalsTitle', 'nw26.goalsTitle'))
+    session = _swap(b["session"],
+                    ('nlc26.dDate', 'nw26.dDate'),
+                    ('nlc26.dTime', 'nw26.dTime'),
+                    ('nlc26.dVenue', 'nw26.dVenue'),
+                    ('\n              <li data-i18n="nlc26.dAudience"></li>', ''))
+
+    # The one block this workshop adds, taken from the SPMC deck: the three
+    # gaps students name, the need each one is (SDT, ARC), and what the
+    # platform does about it. The need names, quotes and questions are the
+    # Practice page's own keys, so the two pages cannot drift apart.
+    cards = "".join("""\
+              <article class="need">
+                <p class="need-name"><span data-i18n="nw26.gap%(n)s"></span> → <span data-i18n="approach.need%(n)sName"></span></p>
+                <p class="need-voice" data-i18n="approach.need%(n)sVoice"></p>
+                <p data-i18n="nw26.need%(n)s"></p>
+                <h3 data-i18n="approach.need%(n)sQ"></h3>
+                <span class="label" data-i18n="nw26.fill%(n)s"></span>
+                <ul class="loop-points need-points">
+%(items)s
+                </ul>
+              </article>
+""" % {"n": n, "items": "\n".join(
+            '                  <li data-i18n="nw26.fill%s%s"></li>' % (n, c) for c in cs)}
+        for n, cs in ((1, "ABCDE"), (2, "ABCD"), (3, "ABC")))
+    gap = """\
+          <div class="doc-block" id="gap">
+            <h2 class="section-title" data-i18n="nw26.gapTitle"></h2>
+            <p class="lede" data-i18n="nw26.gapLede"></p>
+
+            <h3 data-i18n="nw26.arcTitle"></h3>
+            <p class="section-sub" data-i18n="nw26.arcLede"></p>
+            <div class="needs">
+%s            </div>
+
+            <div class="highlight-box">
+              <span class="label" data-i18n="nw26.researchLabel"></span>
+              <p data-i18n="nw26.research"></p>
+              <p><a href="https://doi.org/10.1007/s10648-019-09498-w" target="_blank" rel="noopener"
+                    data-i18n="nw26.researchCite"></a></p>
+            </div>
+
+            <p class="featured-cta">
+              <a class="btn btn-ghost" href="assets/slides/spmc-2026-vocabsummit.pdf"
+                 data-i18n="nw26.slidesCta" target="_blank" rel="noopener">The SPMC slides (PDF)</a>
+            </p>
+          </div>
+""" % cards
+
+    # Second half of the programme starts here.
+    vocabsummit = _swap(b["vocabsummit"], (
+        '<h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>',
+        '<p class="eyebrow" data-i18n="nw26.partTwo"></p>\n'
+        '            <h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>'))
+
+    # Four hires instead of five: the fan is redrawn for four columns, with
+    # the endpoints over the column centres at the same .7rem gap.
+    stack = b["stack"]
+    stack = _swap(stack,
+        ('nlc26.stackLede', 'nw26.stackLede'),
+        ('<ul class="roster-tools">', '<ul class="roster-tools roster-tools-4">'),
+        (re.search(r'\n *<li>\n *<svg class="cut roster-glyph"[^\n]*\n *<rect class="ink" x="3" y="5"'
+                   r'.*?Claude Code\n *</li>', stack, re.S).group(0), ''),
+        (re.search(r'\n *<li>\n *<div class="tool-head">\n *<h3 data-i18n="nlc26.p3Title">'
+                   r'.*?</details>\n *</li>', stack, re.S).group(0), ''))
+    fan = re.search(r'<svg class="cut roster-fan".*?</svg>', stack, re.S).group(0)
+    xs = (120.8, 373.6, 626.4, 879.2)
+    new_fan = (fan.split("\n")[0] + "\n"
+        + "".join('                  <path class="line-o" d="M500 10 C 500 64, %s 64, %s 112" '
+                  'stroke-width="2" vector-effect="non-scaling-stroke"/>\n' % (x, x) for x in xs)
+        + "".join('                  <path class="och" d="M%.1f 110 L%.1f 110 L%s 126 Z"/>\n'
+                  % (x - 5.5, x + 5.5, x) for x in xs)
+        + '                  <circle class="och" cx="500" cy="10" r="4.5"/>\n'
+        + '                </svg>')
+    stack = _swap(stack, (fan, new_fan))
+
+    concerns = _swap(b["concerns"], ('\n            <li data-i18n="nlc26.q3B"></li>', ''))
+
+    return """\
+  <section class="section" id="nuwa">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="nw26.eyebrow">Workshop · 28 October 2026</p>
+      <h1 class="page-title" data-i18n="nw26.title">Nüwa Mends the Sky</h1>
+
+      <!-- The sky torn open, and five stones set into the tear: the title
+           drawn once, without words, in the same cut as the NLC banner. -->
+      <div class="figure-hero" aria-hidden="true">
+        <svg class="cut" viewBox="0 0 1200 260" preserveAspectRatio="xMidYMid meet" focusable="false">
+          <path class="ink-3" d="M0 0 H1200 V118 C 900 72, 300 72, 0 118 Z"/>
+          <!-- the tear -->
+          <path class="och-w" d="M462 0 H738 L706 34 L742 62 L694 98 L640 126 L560 124 L506 96 L526 66 L478 38 Z"/>
+          <!-- five stones, set -->
+          <path class="och" d="M520 14 L566 8 L578 40 L540 52 L512 38 Z"/>
+          <path class="ink" d="M584 10 L636 6 L644 42 L600 54 L582 36 Z"/>
+          <path class="och" d="M652 8 L700 14 L690 46 L652 50 Z"/>
+          <path class="ink" d="M540 62 L590 58 L600 96 L556 104 L534 86 Z"/>
+          <path class="och" d="M606 60 L668 58 L676 92 L630 112 L602 96 Z"/>
+          <!-- the ground, as in the NLC banner -->
+          <path class="ink" d="M-20 225 L190 150 L330 196 L470 142 L620 225 Z"/>
+          <path class="ink" d="M560 225 L760 132 L930 188 L1080 150 L1220 225 Z"/>
+          <g class="line">
+            <path d="M70 236 h160"/>
+            <path d="M270 236 h100"/>
+            <path d="M420 246 h230"/>
+            <path d="M690 236 h130"/>
+            <path d="M860 246 h250"/>
+            <path d="M1130 236 h60"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="work-layout">
+        <nav class="project-nav" aria-label="On this page">
+          <ul>
+            <li><a href="#goals" data-i18n="nlc26.navGoals"></a></li>
+            <li><a href="#session" data-i18n="nlc26.navSession"></a></li>
+            <li><a href="#gap" data-i18n="nw26.navGap"></a></li>
+            <li><a href="#vocabsummit" data-i18n="nlc26.navVs"></a></li>
+            <li><a href="#how-it-started" data-i18n="nlc26.navStory"></a></li>
+            <li><a href="#evolution" data-i18n="nlc26.navEvo"></a></li>
+            <li><a href="#stack" data-i18n="nlc26.navStack"></a></li>
+            <li><a href="#hands-on" data-i18n="nlc26.navHands"></a></li>
+            <li><a href="#concerns" data-i18n="nlc26.navQ"></a></li>
+          </ul>
+        </nav>
+
+        <div class="project-detail">
+
+""" + "\n".join([goals, session, gap, vocabsummit, b["how-it-started"],
+                 b["evolution"], stack, b["hands-on"], concerns]) + """
+        </div>
+      </div>
+    </div>
+  </section>"""
+
+
+PAGES["20261028NuwaGamificationWorkshop.html"] = ("page.nw26.title", _nuwa_body())
 
 
 def render(page):

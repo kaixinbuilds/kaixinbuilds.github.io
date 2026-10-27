@@ -17,10 +17,18 @@
       "zh": "百德中学工作坊"
     },
     "summary": {
-      "en": "Hands-on: Claude Code, ChatGPT image generation, GitHub hosting.",
-      "zh": "动手环节：Claude Code、ChatGPT 图像生成、GitHub 网页发布。"
+      "en": "Hands-on: Claude, ChatGPT image generation, GitHub hosting.",
+      "zh": "动手环节：Claude、ChatGPT 图像生成、GitHub 网页发布。"
     },
-    "links": []
+    "links": [
+      {
+        "label": {
+          "en": "Session resources and hands-on",
+          "zh": "工作坊资源与动手环节"
+        },
+        "url": "https://kaixinbuilds.github.io/20261028NuwaGamificationWorkshop.html"
+      }
+    ]
   },
   {
     "id": "nlc-2026",
