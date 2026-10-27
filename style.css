@@ -1245,7 +1245,11 @@ html[data-lang-mode="zh"] .epigraph .en { display: none; }
 /* A strip that scroll-snaps. Without JS it is still a strip you
    can drag; the buttons and dots are the enhancement, not the
    mechanism. */
-.evo { margin: 1.6rem 0 0; }
+/* The gallery is a size container so the arrows can be pinned to the
+   middle of the screenshot itself: the frame is 14:9 of the gallery's
+   width, so half its height is a fixed share of that width, whatever the
+   caption below it runs to. */
+.evo { margin: 1.6rem 0 0; position: relative; container-type: inline-size; }
 .evo-track {
   display: grid;
   grid-auto-flow: column;
@@ -1292,6 +1296,24 @@ html[data-lang-mode="zh"] .epigraph .en { display: none; }
 .evo-btn:hover:not([disabled]) { border-color: var(--ink); background: var(--card); }
 .evo-btn[disabled] { opacity: .35; cursor: default; }
 .evo-btn svg { width: 9px; }
+/* Prev and next sit on the left and right edges of the screenshot,
+   on paper so they read against a dark screen. */
+.evo-btn[data-evo] {
+  position: absolute;
+  top: calc(50cqw * 9 / 14);
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 2.6rem; height: 2.6rem;
+  border-radius: 50%;
+  background: var(--paper);
+  border-color: var(--ink-faint);
+  box-shadow: 0 2px 10px rgb(0 0 0 / .18);
+}
+.evo-btn[data-evo]:hover:not([disabled]) { background: var(--paper); border-color: var(--ink); }
+.evo-btn[data-evo="prev"] { left: .7rem; }
+.evo-btn[data-evo="next"] { right: .7rem; }
+.evo-btn[data-evo][disabled] { opacity: 0; pointer-events: none; }
+.evo-btn[data-evo] svg { width: 10px; }
 .evo-dots { display: flex; gap: .45rem; margin: 0; padding: 0; list-style: none; }
 .evo-dots button {
   width: 1.5rem; height: 3px; padding: 0;
