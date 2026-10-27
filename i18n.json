@@ -1409,12 +1409,12 @@
     "en": "Less Mandarin at home is one hole. Look at the classroom, the market and teachers' own desks, and there are more:"
   },
   "nw26.hole1T": {
-    "zh": "词语手册，背了就忘",
-    "en": "The vocabulary handbook does not stick"
+    "zh": "词语手册，读了就忘",
+    "en": "The vocabulary handbook: read, then forgotten"
   },
   "nw26.hole1": {
-    "zh": "学生把《词语手册》背了又背，测验一过就忘。词汇要反复用才记得住，单靠一本手册撑不起这份反复。",
-    "en": "Students memorise the vocabulary handbook, then forget it once the test is over. Words stay only with repeated use, and a handbook alone cannot carry that repetition."
+    "zh": "学生把《词语手册》读过一遍，测验一过就忘，连背都谈不上。词汇要反复用才记得住，单靠一本手册撑不起这份反复。",
+    "en": "Students read through the vocabulary handbook and forget it once the test is over; most never get as far as memorising it. Words stay only with repeated use, and a handbook alone cannot carry that repetition."
   },
   "nw26.hole2T": {
     "zh": "G1 的词语表，老师各自编",
@@ -1465,8 +1465,8 @@
     "en": "Teachers open class challenges with a six-digit room code, students host their own (2 to 8 players), and there are school and cross-school leaderboards. If nobody speaks it at home, at least someone practises with you."
   },
   "nw26.m1H": {
-    "zh": "词语手册，背了就忘",
-    "en": "The handbook does not stick"
+    "zh": "词语手册，读了就忘",
+    "en": "The handbook: read, then forgotten"
   },
   "nw26.m1T": {
     "zh": "同一份词语，换着玩法反复练",
