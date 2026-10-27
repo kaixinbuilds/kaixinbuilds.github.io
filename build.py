@@ -1102,9 +1102,8 @@ def _nuwa_body():
     b = _nlc_blocks()
 
     goals = _swap(b["goals"], ('nlc26.goalsTitle', 'nw26.goalsTitle'),
-                  ('<li data-i18n="nlc26.goal1"></li>',
-                   '<li data-i18n="nw26.goalGap"></li>\n'
-                   '              <li data-i18n="nlc26.goal1"></li>'))
+                  ('nlc26.goal1', 'nw26.goalGap'),
+                  ('nlc26.goal3', 'nw26.goal3'))
     session = _swap(b["session"],
                     ('nlc26.dDate', 'nw26.dDate'),
                     ('nlc26.dTime', 'nw26.dTime'),
