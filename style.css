@@ -1474,3 +1474,13 @@ pre.is-typing::after {
 .sky-live { margin: 1.6rem 0 0; }
 .sky-frame { margin-top: .7rem; aspect-ratio: 16 / 10.5; border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; background: var(--card); }
 .sky-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+/* Screens inside the 卡住了 box: two side by side, one per row on a phone. */
+.stuck-shots { display: grid; gap: .8rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: .7rem 0 .4rem; }
+@media (max-width: 560px) { .stuck-shots { grid-template-columns: 1fr; } }
+.stuck-shots .shot { margin: 0; }
+.stuck-shots .screen-inner { aspect-ratio: auto; background: var(--paper); }
+.stuck-shots .screen-inner img { height: auto; object-fit: contain; }
+.stuck-shots figcaption { font-size: .78rem; }
+.stuck-more { margin-top: .4rem; }
+/* The tech FAQ: each question set apart from its answer. */
+.faq .faq-q { display: block; margin-bottom: .2rem; font-weight: 600; color: var(--ink); }

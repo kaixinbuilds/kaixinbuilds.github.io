@@ -261,20 +261,8 @@
     "zh": "打开示范项目"
   },
   "nlc26.stuckLabel": {
-    "en": "Stuck?",
-    "zh": "卡住了？"
-  },
-  "nlc26.stuck1": {
-    "en": "Blank page, or a message saying something looks wrong with the sheet: it names the line. Almost always a missing comma, quote, or brace.",
-    "zh": "页面空白，或跳出「词语表好像有点问题」：提示会写第几行。九成是少了逗号、引号或大括号。"
-  },
-  "nlc26.stuck2": {
-    "en": "Can't find Claude's file: look in Downloads, then drag it back into the game folder.",
-    "zh": "找不到 Claude 给的文件：看「下载 / Downloads」资料夹，再拖回游戏资料夹。"
-  },
-  "nlc26.stuck3": {
-    "en": "GitHub Pages shows 404: it needs a minute or two after Save. Then hard refresh, Cmd+Shift+R or Ctrl+F5.",
-    "zh": "GitHub Pages 是 404：按了 Save 之后要等一两分钟。然后强制刷新（Cmd+Shift+R / Ctrl+F5）。"
+    "zh": "技术常见问题",
+    "en": "Tech FAQ"
   },
   "nlc26.stackTitle": {
     "en": "The team behind it",
@@ -455,10 +443,6 @@
   "nlc26.promptCap": {
     "en": "Paste this",
     "zh": "把这段贴进去"
-  },
-  "nlc26.stuck4": {
-    "en": "The school network blocks github.com or claude.ai: phone hotspot, or do it at home. You do not need Claude either: open my-words.js in Notepad or TextEdit and type your words straight in.",
-    "zh": "学校网络挡住 github.com 或 claude.ai：用手机热点，或回家再弄。不用 Claude 也行：用记事本或「文本编辑」打开 my-words.js，直接把词语打进去。"
   },
   "nlc26.storyTitle": {
     "en": "Splitting heaven and earth out of chaos. When you can do none of it, where do you begin?",
@@ -723,14 +707,6 @@
   "nlc26.s4P3": {
     "en": "Keep refining until you are happy with it.",
     "zh": "继续优化到满意为止"
-  },
-  "nlc26.stuck5": {
-    "zh": "改坏了：打开那个文件 → History → 找到最后一次正常的版本 → 复制回来 → Commit changes。GitHub 网页没有「一键退回」，但每个旧版本都留着，详细步骤见课后教程。",
-    "en": "Broke it: open the file → History → the last version that worked → copy it back → Commit changes. The GitHub website has no one-click undo, but every old version is kept; the guide has the full steps."
-  },
-  "nlc26.stuck6": {
-    "en": "The starter is MIT licensed: adapt it, use it in class, rebuild it for another subject. Keep the attribution. The artwork comes with it.",
-    "zh": "示范项目 MIT 许可：自由改编、用于课堂、改成别科都可以，保留署名即可。美术素材一并提供。"
   },
   "nlc26.p6Title": {
     "en": "HR manager · Firebase",
@@ -1371,5 +1347,69 @@
   "nw26.skyAll": {
     "zh": "不只是华文：在家最常讲马来语的从 14.1% 降到 7.0%，淡米尔语从 3.2% 降到 2.2%。下面是统计局的互动图表，可以自己点开各族群看看。",
     "en": "Not only Chinese: Malay as the main home language fell from 14.1% to 7.0%, Tamil from 3.2% to 2.2%. Below is SingStat’s own interactive dashboard; explore each group yourself."
+  },
+  "nlc26.stuckGuide": {
+    "zh": "完整排错步骤（附截图）· 课后教程",
+    "en": "Full troubleshooting, with screenshots · the guide"
+  },
+  "nlc26.faq1Q": {
+    "zh": "页面空白，或跳出「词语表好像有点问题」？",
+    "en": "Blank page, or \"something looks wrong with the word list\"?"
+  },
+  "nlc26.faq1A": {
+    "zh": "提示会写第几行。九成是少了逗号、引号或大括号。",
+    "en": "The message names the line. Almost always a missing comma, quote or brace."
+  },
+  "nlc26.faq2Q": {
+    "zh": "找不到 Claude 给的文件？",
+    "en": "Can’t find the file Claude gave you?"
+  },
+  "nlc26.faq2A": {
+    "zh": "看「下载 / Downloads」资料夹，再拖回游戏资料夹。",
+    "en": "Look in Downloads, then drag it back into the game folder."
+  },
+  "nlc26.faq3Q": {
+    "zh": "网址打开是 404？",
+    "en": "The link shows 404?"
+  },
+  "nlc26.faq3A": {
+    "zh": "按了 Save 之后要等一两分钟。点上方 Actions 看发布状态，出现绿色勾才算好，然后强制刷新（Cmd+Shift+R / Ctrl+F5）。",
+    "en": "It needs a minute or two after Save. Open Actions to see the publishing status; once there is a green tick, hard refresh (Cmd+Shift+R or Ctrl+F5)."
+  },
+  "nlc26.faq4Q": {
+    "zh": "学校网络挡住 github.com 或 claude.ai？",
+    "en": "The school network blocks github.com or claude.ai?"
+  },
+  "nlc26.faq4A": {
+    "zh": "用手机热点，或回家再弄。不用 Claude 也行：用记事本或「文本编辑」打开 my-words.js，直接把词语打进去。",
+    "en": "Use a phone hotspot, or do it at home. You don’t need Claude either: open my-words.js in Notepad or TextEdit and type your words straight in."
+  },
+  "nlc26.faq5Q": {
+    "zh": "改坏了，怎么回到上一个能用的版本？",
+    "en": "Broke it: how do I get back to the last version that worked?"
+  },
+  "nlc26.faq5A": {
+    "zh": "打开那个文件 → History → 找到最后一次正常的版本 → 复制整份 → 回到现在的文件，用铅笔贴上 → Commit changes。",
+    "en": "Open the file → History → find the last version that worked → copy all of it → back in the current file, paste it in with the pencil → Commit changes."
+  },
+  "nlc26.faq6Q": {
+    "zh": "把最新的 commit 删掉，不就退回去了吗？",
+    "en": "Can’t I just delete the latest commit to undo it?"
+  },
+  "nlc26.faq6A": {
+    "zh": "不能。GitHub 网页上没有删除 commit 的功能；删掉文件也只是多了一次「删除」的改动，旧的内容不会自己回来。要退回，就用上一题的方法：把旧版本复制回来，再 Commit 一次。每一个版本，包括改坏的那个，都会一直留在 History 里。",
+    "en": "No. The GitHub website has no way to delete a commit, and deleting a file only adds one more change, a deletion; the old content does not come back by itself. To go back, use the answer above: copy the old version back and commit again. Every version, including the broken one, stays in History."
+  },
+  "nlc26.faq7Q": {
+    "zh": "可以改编、用在课堂、改成别科吗？",
+    "en": "Can I adapt it, use it in class, or rebuild it for another subject?"
+  },
+  "nlc26.faq7A": {
+    "zh": "可以。示范项目是 MIT 许可，保留署名即可，美术素材一并提供。",
+    "en": "Yes. The starter is MIT licensed: keep the attribution. The artwork comes with it."
+  },
+  "guide.back5": {
+    "zh": "注意：删掉最新的 commit 或删掉文件，都不会退回旧版本。GitHub 网页不能删除 commit，删文件只会多一次「删除」的改动。退回的方法只有上面这一种：把旧版本复制回来，再 Commit。",
+    "en": "Note: deleting the latest commit, or deleting the file, does not bring the old version back. The GitHub website cannot delete commits, and deleting a file only adds a deletion. The way back is the one above: copy the old version in and commit again."
   }
 }
