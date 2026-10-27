@@ -721,6 +721,10 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 .step-shot { max-width: 30rem; margin: 1rem 0 .25rem; }
 .step-shot .screen-inner { aspect-ratio: auto; background: var(--paper); }
 .step-shot .screen-inner img { height: auto; object-fit: contain; image-rendering: auto; }
+/* The guide's screenshots are whole GitHub screens, so they take the
+   column's width: at 30rem the buttons they point at would be unreadable. */
+.guide-shot { max-width: 100%; }
+.guide-shot .copy-block, .loop-points-num .copy-block { margin-top: .8rem; }
 
 /* The second half of the Practice page: what the loop is aimed at.
    Deliberately not numbered. The loop is a sequence and reads as one; the

@@ -1015,5 +1015,221 @@
   "nw26.goal3": {
     "en": "Publish a game prototype: create your own GitHub repo, copy a small game and publish it live.",
     "zh": "发布游戏原型：创建自己的 GitHub Repo，复制一款小游戏并发布上线"
+  },
+  "page.guide.title": {
+    "en": "VocabClimb guide - Chun Kai Xin",
+    "zh": "攀山快答教程 · 郑凯欣"
+  },
+  "guide.eyebrow": {
+    "en": "VocabClimb starter",
+    "zh": "攀山快答 · 教师改编版"
+  },
+  "guide.title": {
+    "en": "Make your vocabulary game, step by step",
+    "zh": "一步一步做出你的词语游戏"
+  },
+  "guide.sub": {
+    "en": "For after the workshop. Every step shows the real screen; if something goes wrong, see the last two parts.",
+    "zh": "工作坊结束后照着做。每一步都附上真实画面；出了问题，看最后两部分。"
+  },
+  "guide.publishNav": {
+    "en": "1 · Publish the game",
+    "zh": "一 · 发布游戏"
+  },
+  "guide.publishTitle": {
+    "en": "1 · Copy the game and get a link",
+    "zh": "一 · 复制游戏，变成网址"
+  },
+  "guide.publishLede": {
+    "en": "All on the GitHub website. Nothing to download or upload.",
+    "zh": "只需在 GitHub 网页上点，不必下载，不必上传。"
+  },
+  "guide.pub1": {
+    "en": "Open the starter repository. Click the green Use this template (top right) → Create a new repository.",
+    "zh": "打开示范仓库，点右上角绿色的 Use this template → Create a new repository。"
+  },
+  "guide.pub1Shot": {
+    "en": "Use this template sits at the top right",
+    "zh": "Use this template 在页面右上角"
+  },
+  "guide.pub2": {
+    "en": "Give it an English name with no spaces, e.g. s3-unit1-climb. Keep it Public and click Create repository.",
+    "zh": "Repository name 填一个英文名字，不要空格，例如 s3-unit1-climb。保持 Public，按 Create repository。"
+  },
+  "guide.pub2Shot": {
+    "en": "Only the repository name needs filling in",
+    "zh": "只需要填 Repository name"
+  },
+  "guide.pub3": {
+    "en": "In your own new repository: Settings (top) → Pages (left) → Source: Deploy from a branch → Branch: main and / (root) → Save.",
+    "zh": "在你自己的新仓库里：上方 Settings → 左边 Pages → Source 选 Deploy from a branch → Branch 选 main 和 / (root) → Save。"
+  },
+  "guide.pub3Shot": {
+    "en": "Settings → Pages. Once set, Your site is live at … appears at the top",
+    "zh": "Settings → Pages。设好之后，上方会出现 Your site is live at …"
+  },
+  "guide.pub4": {
+    "en": "Wait a minute or two and refresh. When Your site is live at … appears, click Visit site. That link is the one for your students.",
+    "zh": "等一两分钟，刷新这一页，上方出现 Your site is live at … 就成功了。点 Visit site，这个网址就可以发给学生。"
+  },
+  "guide.wordsNav": {
+    "en": "2 · Your own words",
+    "zh": "二 · 换上你的词语"
+  },
+  "guide.wordsTitle": {
+    "en": "2 · Put in your own words",
+    "zh": "二 · 换上你自己的词语"
+  },
+  "guide.wordsLede": {
+    "en": "Claude turns your word list into the format the game reads; then you paste it into GitHub.",
+    "zh": "用 Claude 把词语表变成游戏要的格式，再贴回 GitHub。"
+  },
+  "guide.words1": {
+    "en": "On your repository page: green Code button → Download ZIP → unzip it.",
+    "zh": "在你的仓库首页：绿色 Code 按钮 → Download ZIP → 解压。"
+  },
+  "guide.words1Shot": {
+    "en": "Download ZIP is at the bottom of the Code menu",
+    "zh": "Download ZIP 在 Code 菜单最下面"
+  },
+  "guide.words2": {
+    "en": "Open 词语表模板.xlsx and fill in your words and meanings. Leave row 1 alone; eight words or more.",
+    "zh": "打开「词语表模板.xlsx」，填上你的词语和释义，第一行不动，至少 8 个。"
+  },
+  "guide.words3": {
+    "en": "claude.ai → Projects → Create project → name it. Upload every unzipped file and your filled-in sheet, then paste the prompt below.",
+    "zh": "claude.ai → Projects → Create project → 取个名字。把解压后的所有文件和你填好的表格上传进去，再贴下面这段提示词。"
+  },
+  "guide.words3Shot": {
+    "en": "Creating a new Project",
+    "zh": "新建 Project 的画面"
+  },
+  "guide.words4": {
+    "en": "Put Claude's my-words.js into the unzipped folder, replacing the old one. Double-click index.html and play a round to check the words.",
+    "zh": "把 Claude 给你的 my-words.js 放进解压的资料夹，覆盖原来那个。双击 index.html 先玩一局，确认词语对了。"
+  },
+  "guide.words5": {
+    "en": "Back in your GitHub repository, click my-words.js, then the pencil icon on the right.",
+    "zh": "回到你的 GitHub 仓库，点 my-words.js，再点右边的铅笔图标。"
+  },
+  "guide.words5Shot": {
+    "en": "The pencil is to the right of Raw",
+    "zh": "铅笔图标在 Raw 的右边"
+  },
+  "guide.words6": {
+    "en": "Select all, delete, paste in what Claude gave you. Click Commit changes… at the top right, then Commit changes again.",
+    "zh": "全选、删除，贴上 Claude 给你的内容，按右上角 Commit changes…，再按一次 Commit changes。"
+  },
+  "guide.words6Shot": {
+    "en": "Commit changes turns green once something has changed",
+    "zh": "改了内容之后，Commit changes 才会变绿"
+  },
+  "guide.words7": {
+    "en": "Wait a minute or two and refresh your game link. Your students now get your words.",
+    "zh": "等一两分钟，刷新你的游戏网址，学生就玩到你的词语了。"
+  },
+  "guide.artNav": {
+    "en": "3 · Change the pictures",
+    "zh": "三 · 换图"
+  },
+  "guide.artTitle": {
+    "en": "3 · Change the pictures (optional)",
+    "zh": "三 · 换图（选做）"
+  },
+  "guide.artLede": {
+    "en": "Three pictures: landscape.jpg behind, wall.jpg the cliff, climber.png the climber.",
+    "zh": "三张图：landscape.jpg 远景、wall.jpg 崖壁、climber.png 攀登者。"
+  },
+  "guide.art1": {
+    "en": "Make a new picture with ChatGPT and rename it to exactly the same file name.",
+    "zh": "用 ChatGPT 生成新图，下载后改成一模一样的文件名。"
+  },
+  "guide.art2": {
+    "en": "In your repository: Add file → Upload files → drag the picture in → Commit changes. A file with the same name is replaced.",
+    "zh": "在你的仓库：Add file → Upload files → 把图拖进去 → Commit changes。同名的图会被替换。"
+  },
+  "guide.fixNav": {
+    "en": "4 · GitHub problems",
+    "zh": "四 · GitHub 常见问题"
+  },
+  "guide.fixTitle": {
+    "en": "4 · When GitHub gets in the way",
+    "zh": "四 · GitHub 常见问题"
+  },
+  "guide.fixLede": {
+    "en": "Check here first when you are stuck.",
+    "zh": "卡住时，先对照这里。"
+  },
+  "guide.fix1": {
+    "en": "No Settings tab: check the top left shows your own name (yourname / repository). The starter is not yours, so it has no Settings. On a small screen, Settings is folded into the ··· at the end of the tab row.",
+    "zh": "找不到 Settings：先看左上角是不是你自己的名字（你的名字 / 仓库名）。示范仓库不是你的，没有 Settings。屏幕小的话，Settings 会收进上方那排标签最后的「···」里。"
+  },
+  "guide.fix2": {
+    "en": "The link shows 404: Pages takes a minute or two at first. If it still fails, check Settings → Pages says main and / (root), and that index.html sits at the top of the repository, not inside a folder.",
+    "zh": "网址打开是 404：刚开 Pages 要等一两分钟。还是不行，回 Settings → Pages 看是不是 main 和 / (root)，并确认 index.html 在仓库最外层，不在任何资料夹里。"
+  },
+  "guide.fix3": {
+    "en": "Changed it but the link has not: open the Actions tab. A yellow dot is still publishing, a green tick is done, red or ! has failed. Once done, hard refresh (Windows Ctrl + F5, Mac Cmd + Shift + R).",
+    "zh": "改了但网址没变：点上方 Actions。黄色圆点是还在发布，绿色勾是好了，红色或感叹号是失败。好了之后强制刷新（Windows Ctrl + F5，Mac Cmd + Shift + R）。"
+  },
+  "guide.fix3Shot": {
+    "en": "Actions: every change publishes once",
+    "zh": "Actions：每一次改动都会发布一次"
+  },
+  "guide.fix4": {
+    "en": "The game is blank or says the word list has a problem: it names the line. Almost always a missing comma, quote or brace. Fix that line in my-words.js with the pencil.",
+    "zh": "游戏一片空白或说词语表有问题：画面会写出第几行错了，九成是少了逗号、引号或大括号。回到 my-words.js 用铅笔改那一行。"
+  },
+  "guide.rollbackNav": {
+    "en": "5 · Go back to a version that worked",
+    "zh": "五 · 退回上一个好的版本"
+  },
+  "guide.rollbackTitle": {
+    "en": "5 · Broke it: go back to a version that worked",
+    "zh": "五 · 改坏了：退回上一个好的版本"
+  },
+  "guide.rollbackLede": {
+    "en": "The GitHub website has no one-click undo, but every old version is kept. Copy the good one back. If several files broke, do this for each.",
+    "zh": "GitHub 网页没有「一键退回」，但每一个旧版本都留着，复制回来就行。改坏了几个文件，就每个文件做一次。"
+  },
+  "guide.back1": {
+    "en": "Open the broken file (e.g. my-words.js) and click History. Each row is one change, newest at the top.",
+    "zh": "打开改坏的文件（例如 my-words.js），点右上方 History。每一行是一次改动，最新的在最上面。"
+  },
+  "guide.back1Shot": {
+    "en": "History: every change to this file",
+    "zh": "History：这个文件的每一次改动"
+  },
+  "guide.back2": {
+    "en": "Find the last row that still worked and click the middle icon on its right (View file at this point). Copy the whole file with the copy icon beside Raw.",
+    "zh": "找到最后一次还正常的那一行，点右边中间的图标（View file at this point），就会看到当时的内容。按 Raw 旁边的复制图标，整份复制。"
+  },
+  "guide.back2Shot": {
+    "en": "The file as it was. The copy icon is right of Raw",
+    "zh": "旧版本的文件。复制图标在 Raw 右边"
+  },
+  "guide.back3": {
+    "en": "Go back to the current file, click the pencil, select all, delete, paste, Commit changes.",
+    "zh": "回到现在的文件，点铅笔，全选、删除，贴上刚才复制的内容，Commit changes。"
+  },
+  "guide.back4": {
+    "en": "Wait a minute or two and refresh the link. You are back on that version, and the broken one is still in History.",
+    "zh": "等一两分钟刷新网址，就回到那个版本了。旧的坏版本也还留在 History 里，不会丢。"
+  },
+  "nlc26.handsGuide": {
+    "en": "Step-by-step guide, with screenshots",
+    "zh": "课后自学教程（附截图）"
+  },
+  "nw26.voice1": {
+    "zh": "「我是被逼学华文的。」",
+    "en": "“I am forced to learn Chinese.”"
+  },
+  "nw26.voice2": {
+    "zh": "「华文我一直考不好。」",
+    "en": "“I keep doing badly in Chinese.”"
+  },
+  "nw26.voice3": {
+    "zh": "「我身边的人，下了课没人用华文。」",
+    "en": "“Nobody close to me uses Chinese outside class.”"
   }
 }

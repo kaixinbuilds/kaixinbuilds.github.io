@@ -131,6 +131,8 @@ META = {
                               "Resources for the 28 August 2026 AI in Sec CL NLC workshop: the five pieces of technology behind VocabSummit, and a starter game to adapt for your own unit."),
     "20261028NuwaGamificationWorkshop.html": ("Nüwa Mends the Sky - Chun Kai Xin",
                               "Resources for the 28 October 2026 workshop: how game-based learning drives self-directed learning, and a starter game to adapt for your own unit."),
+    "VocabClimbGuide.html": ("VocabClimb step-by-step guide - Chun Kai Xin",
+                             "Make your own vocabulary climbing game on GitHub, step by step with screenshots, and what to do when something goes wrong."),
     "contact.html": ("Contact - Chun Kai Xin",
                      "Get in touch about adapting any of these tools, or about building "
                      "something together."),
@@ -842,6 +844,7 @@ https://www.learning.moe.edu.sg/teacher-user-guide/author/html5-content-developm
                  data-i18n="nlc26.handsCta" target="_blank" rel="noopener">Open the starter</a>
               <a class="btn btn-ghost" href="https://claude.ai" data-i18n="nlc26.handsClaude"
                  target="_blank" rel="noopener">claude.ai</a>
+              <a class="btn btn-ghost" href="VocabClimbGuide.html" data-i18n="nlc26.handsGuide">Step-by-step guide</a>
             </p>
 
             <ol class="loop">
@@ -1112,12 +1115,13 @@ def _nuwa_body():
 
     # The one block this workshop adds, taken from the SPMC deck: the three
     # gaps students name, the need each one is (SDT, ARC), and what the
-    # platform does about it. The need names, quotes and questions are the
-    # Practice page's own keys, so the two pages cannot drift apart.
+    # platform does about it. The need names and questions are the Practice
+    # page's own keys. The quotes are not: this audience is all CL-trained,
+    # so here the students say 华文 where the Practice page says 母语.
     cards = "".join("""\
               <article class="need">
                 <p class="need-name"><span data-i18n="nw26.gap%(n)s"></span> → <span data-i18n="approach.need%(n)sName"></span></p>
-                <p class="need-voice" data-i18n="approach.need%(n)sVoice"></p>
+                <p class="need-voice" data-i18n="nw26.voice%(n)s"></p>
                 <p data-i18n="nw26.need%(n)s"></p>
                 <h3 data-i18n="approach.need%(n)sQ"></h3>
                 <span class="label" data-i18n="nw26.fill%(n)s"></span>
@@ -1249,6 +1253,104 @@ def _nuwa_body():
 
 
 PAGES["20261028NuwaGamificationWorkshop.html"] = ("page.nw26.title", _nuwa_body())
+
+
+# ── VocabClimb guide ───────────────────────────────────────
+# For after the workshop: Pangu participants said they could not redo the
+# hands-on alone, mostly because they got lost in GitHub. So every step that
+# happens on a screen shows that screen, and the GitHub trouble gets a part
+# of its own. Screenshots are of the real starter repo, captured Oct 2026.
+def _guide_step(key, shot=None, link=None, extra=""):
+    out = '            <li>\n              <span data-i18n="guide.%s"></span>\n' % key
+    if link:
+        out += ('              <a class="tool-link" href="%s" target="_blank" rel="noopener">%s</a>\n'
+                % (link, link.split("//")[1]))
+    if shot:
+        out += """\
+              <figure class="shot step-shot guide-shot">
+                <div class="screen-bezel">
+                  <div class="screen-inner" data-missing="assets/screenshots/guide/%(s)s">
+                    <img src="assets/screenshots/guide/%(s)s" alt="" loading="lazy"
+                         data-i18n="guide.%(k)sShot" data-i18n-attr="alt" decoding="async">
+                  </div>
+                </div>
+                <figcaption data-i18n="guide.%(k)sShot"></figcaption>
+              </figure>
+""" % {"s": shot, "k": key}
+    return out + extra + "            </li>\n"
+
+
+def _guide_part(pid, steps):
+    return """\
+          <div class="doc-block" id="%(id)s">
+            <h2 class="section-title" data-i18n="guide.%(id)sTitle"></h2>
+            <p class="section-sub" data-i18n="guide.%(id)sLede"></p>
+            <ol class="loop-points loop-points-num">
+%(steps)s            </ol>
+          </div>
+""" % {"id": pid, "steps": "".join(steps)}
+
+
+def _guide_body():
+    # the prompt is the NLC page's own, so the two can never disagree
+    prompt = re.search(r'<div class="copy-block">\s*<span class="cap" data-i18n="nlc26.promptCap"></span>'
+                       r'\s*<pre lang="zh-Hans">我是中学华文老师.*?</div>\n',
+                       PAGES["2026AIinSecCLNLC.html"][1], re.S).group(0)
+    publish = _guide_part("publish", [
+        _guide_step("pub1", "02-use-template.jpg", "https://github.com/kaixinbuilds/VocabClimbStarter"),
+        _guide_step("pub2", "03-new-repo-form.jpg"),
+        _guide_step("pub3", "04-settings-pages.jpg"),
+        _guide_step("pub4"),
+    ])
+    words = _guide_part("words", [
+        _guide_step("words1", "05-download-zip.jpg"),
+        _guide_step("words2"),
+        _guide_step("words3", "06-claude-new-project.jpg", "https://claude.ai",
+                    extra="              " + prompt.strip() + "\n"),
+        _guide_step("words4"),
+        _guide_step("words5", "07-file-pencil.jpg"),
+        _guide_step("words6", "08-edit-commit.jpg"),
+        _guide_step("words7"),
+    ])
+    art = _guide_part("art", [_guide_step("art1"), _guide_step("art2")])
+    fix = _guide_part("fix", [
+        _guide_step("fix1"),
+        _guide_step("fix2"),
+        _guide_step("fix3", "09-actions.jpg"),
+        _guide_step("fix4"),
+    ])
+    rollback = _guide_part("rollback", [
+        _guide_step("back1", "10-history.jpg"),
+        _guide_step("back2", "11-old-version.jpg"),
+        _guide_step("back3"),
+        _guide_step("back4"),
+    ])
+    nav = "\n".join('            <li><a href="#%s" data-i18n="guide.%sNav"></a></li>' % (p, p)
+                    for p in ("publish", "words", "art", "fix", "rollback"))
+    return """\
+  <section class="section" id="guide">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="guide.eyebrow">VocabClimb starter</p>
+      <h1 class="page-title" data-i18n="guide.title">Step-by-step guide</h1>
+      <p class="page-sub" data-i18n="guide.sub"></p>
+
+      <div class="work-layout">
+        <nav class="project-nav" aria-label="On this page">
+          <ul>
+%s
+          </ul>
+        </nav>
+
+        <div class="project-detail">
+
+%s
+        </div>
+      </div>
+    </div>
+  </section>""" % (nav, "\n".join([publish, words, art, fix, rollback]))
+
+
+PAGES["VocabClimbGuide.html"] = ("page.guide.title", _guide_body())
 
 
 def render(page):
