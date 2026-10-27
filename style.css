@@ -1513,3 +1513,31 @@ pre.is-typing::after {
   to   { opacity: 1; transform: none; }
 }
 @keyframes ray-draw { to { stroke-dashoffset: 0; } }
+
+/* The two firings, each bar as wide as its commit count. */
+.evo-phases { display: flex; gap: .5rem; margin: 1.4rem 0 0; padding: 0; list-style: none; }
+.evo-phases li { flex: var(--n) 1 0; min-width: 0; }
+.evo-phase-bar { display: block; height: .55rem; margin-bottom: .55rem; border-radius: 0 4px 4px 0; background: var(--ink); transform-origin: left; }
+.evo-phases li + li .evo-phase-bar { background: var(--ochre); }
+.evo-phases b { display: block; font-size: .82rem; font-weight: 600; color: var(--ink); }
+.evo-phases .value, .evo-total .value {
+  display: block; margin-top: .15rem;
+  font-family: var(--font-serif); font-size: clamp(1.35rem, 3vw, 1.7rem);
+  font-variant-numeric: tabular-nums; letter-spacing: -.02em;
+}
+.evo-phases .label, .evo-total .label { display: block; font-size: .76rem; letter-spacing: .04em; color: var(--ink-faint); }
+.evo-total { margin: .9rem 0 1.4rem; padding-top: .7rem; border-top: 1px solid var(--rule); }
+.evo-phases.reveal .evo-phase-bar { transform: scaleX(0); }
+.evo-phases.reveal.is-in .evo-phase-bar { animation: phase-grow .9s ease .2s forwards; }
+.evo-phases.reveal.is-in li + li .evo-phase-bar { animation-delay: .9s; }
+@keyframes phase-grow { to { transform: scaleX(1); } }
+
+/* The ending: the next crack is already open, and the next stone rising. */
+.mended .stone-next { transform-box: fill-box; transform-origin: center; }
+.mended.reveal.is-in .stone-next { animation: stone-rise 3.2s ease-in-out 2.2s infinite alternate; }
+@keyframes stone-rise { to { transform: translateY(-34px) rotate(10deg); } }
+.mend-on { max-width: 34rem; margin: 1.6rem 0 0; font-size: .95rem; line-height: 1.8; color: var(--ink-soft); }
+@media (prefers-reduced-motion: reduce) {
+  .evo-phases.reveal .evo-phase-bar { transform: none; animation: none; }
+  .mended .stone-next { animation: none; }
+}

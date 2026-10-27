@@ -949,8 +949,36 @@
     "zh": "今天。同一个版式、同一副对联、同一个页脚，只是画好了。上面那张和这张之间，隔的不是灵感，是两百多次修改。"
   },
   "nw26.evoClose": {
-    "en": "Had I waited until I knew what I was doing, none of this would exist. Nüwa, the story goes, fired her stones eighty-one times. From the first version on 10 April to today, this one has been fired 378 times: 171 as the G3 vocabulary trainer, 207 as VocabSummit.",
-    "zh": "如果我等到想清楚了才动手，这个东西到今天还不存在。传说女娲炼了九九八十一炉；从 4 月 10 日的第一版到今天，这块石头炼了 378 炉：词王训练营 171 次，词山学海 207 次。"
+    "en": "Had I waited until I knew what I was doing, none of this would exist. Nüwa, the story goes, fired her stones eighty-one times. This one has been fired 378 times so far, and the fire is still going.",
+    "zh": "如果我等到想清楚了才动手，这个东西到今天还不存在。传说女娲炼了九九八十一炉；这块石头，到今天炼了 378 炉，炉火还没熄。"
+  },
+  "nw26.evoLede": {
+    "zh": "分两段炼成：先做 G3 词语训练器，再长成词山学海。下面四张图，前两张是第一段，后两张是第二段。第一张丑得很实在，但它能用，所以学生用了，所以我知道下一步该改哪里。",
+    "en": "Fired in two stages: first a G3 vocabulary trainer, then VocabSummit. Of the four pictures below, the first two are stage one and the last two stage two. The first is honestly ugly. But it ran, so students used it, so I knew what to fix next."
+  },
+  "nw26.phase1": {
+    "zh": "第一段 · G3 词语训练器",
+    "en": "Stage one · G3 vocabulary trainer"
+  },
+  "nw26.phase1Note": {
+    "zh": "次提交 · 2026.04.10 至 06.25",
+    "en": "commits · 10 Apr to 25 Jun 2026"
+  },
+  "nw26.phase2": {
+    "zh": "第二段 · 词山学海",
+    "en": "Stage two · VocabSummit"
+  },
+  "nw26.phase2Note": {
+    "zh": "次提交 · 2026.08.08 至 10.10",
+    "en": "commits · 8 Aug to 10 Oct 2026"
+  },
+  "nw26.phaseTotal": {
+    "zh": "次提交，两段加起来",
+    "en": "commits across both stages"
+  },
+  "nw26.mendOn": {
+    "zh": "现实里的天，永远补不完：这里刚补上，那里又裂开。我们是女娲的后人，接着炼石，接着补天。",
+    "en": "The sky in our world will never be fully mended: one crack closes, another opens. We are Nüwa's descendants; we keep firing the stones, and keep mending."
   },
   "nw26.statShips": {
     "en": "deployments, as of 28 Oct 2026",

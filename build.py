@@ -1365,7 +1365,26 @@ def _nuwa_body():
     # revision count is both repos, the G3 trainer's 171 and VocabSummit's
     # 207, counted on the day; the NLC page keeps its 27 August figure.
     story = _swap(b["how-it-started"], ('nlc26.storyTitle', 'nw26.storyTitle'))
+    # The two firings, said up front: the G3 trainer, then VocabSummit,
+    # each bar as wide as its commit count, then the sum.
+    phases = """
+            <ol class="evo-phases">
+              <li style="--n: 171">
+                <span class="evo-phase-bar"></span>
+                <b data-i18n="nw26.phase1"></b>
+                <span class="value">171</span><span class="label" data-i18n="nw26.phase1Note"></span>
+              </li>
+              <li style="--n: 207">
+                <span class="evo-phase-bar"></span>
+                <b data-i18n="nw26.phase2"></b>
+                <span class="value">207</span><span class="label" data-i18n="nw26.phase2Note"></span>
+              </li>
+            </ol>
+            <p class="evo-total"><span class="value">378</span><span class="label" data-i18n="nw26.phaseTotal"></span></p>
+"""
     evolution = _swap(b["evolution"],
+        ('<p class="section-sub" data-i18n="nlc26.evoLede"></p>\n',
+         '<p class="section-sub" data-i18n="nw26.evoLede"></p>\n' + phases),
         ('<h2 class="section-title" data-i18n="nlc26.evoTitle">', '<h2 class="section-title" data-i18n="nw26.evoTitle">'),
         ('data-i18n-aria-label="nlc26.evoTitle"', 'data-i18n-aria-label="nw26.evoTitle"'),
         ('data-i18n="nlc26.evo6" data-i18n-attr', 'data-i18n="nw26.evo6" data-i18n-attr'),
@@ -1554,6 +1573,10 @@ def _nuwa_dress(body):
                 <path class="och-w" d="M500 4 H700 L680 40 L700 70 L660 104 L540 104 L500 70 L520 40 Z"/>
                 <g class="line-o rays">%s</g>
                 %s
+                <!-- and a new crack already opening further along, with the
+                     next stone on its way up: the mending does not end -->
+                <path class="och-w crack-new" d="M934 0 H984 L970 16 L986 30 L958 46 L948 26 Z"/>
+                <path class="och stone-next" d="M944 132 L966 126 L974 142 L958 152 L940 146 Z"/>
                 <path class="ink" d="M-20 225 L190 150 L330 196 L470 142 L620 225 Z"/>
                 <path class="ink" d="M560 225 L760 132 L930 188 L1080 150 L1220 225 Z"/>
                 <g class="line">
@@ -1562,6 +1585,8 @@ def _nuwa_dress(body):
                 </g>
               </svg>
             </div>
+
+            <p class="mend-on" data-i18n="nw26.mendOn"></p>
 
             <p class="epigraph colophon">
               <span class="zh" lang="zh-Hans">人之所以能，是因为相信能</span>
