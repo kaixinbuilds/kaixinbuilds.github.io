@@ -59,8 +59,6 @@ sources = "".join((HERE / f).read_text() for f in
                    "connect.html", "practice.html", "contact.html"))
 dynamic = sorted(k for k in i18n
                  if k != "_comment" and (f"'{k}'" in sources or f'"{k}"' in sources))
-dynamic += [k for k in ("connect.upcoming", "connect.completed")
-            if k in i18n and k not in dynamic]
 
 out = []
 def w(x=""): out.append(x)

@@ -1469,7 +1469,8 @@ def _nuwa_body():
         ('data-i18n-aria-label="nlc26.evoTitle"', 'data-i18n-aria-label="nw26.evoTitle"'),
         ('data-i18n="nlc26.evo6" data-i18n-attr', 'data-i18n="nw26.evo6" data-i18n-attr'),
         ('class="evo-note" data-i18n="nlc26.evo6"', 'class="evo-note" data-i18n="nw26.evo6"'),
-        ('nlc26.evoClose', 'nw26.evoClose'))
+        ('nlc26.evoClose', 'nw26.evoClose'),
+        ('\n              <p class="embed-note" data-i18n="nlc26.evoPlayNote"></p>', ''))
     vocabsummit = _swap(b["vocabsummit"],
         ('<span class="value">353</span><span class="label" data-i18n="nlc26.statShips">',
          '<span class="value">378</span><span class="label" data-i18n="nw26.statShips">'))
@@ -1558,7 +1559,18 @@ def _nuwa_body():
     hands = re.sub(r'(<img src="(assets/screenshots/hands/[^"]+)"[^>]*>)',
                    r'<a class="shot-full" href="\2" target="_blank" rel="noopener">\1</a>', hands)
 
-    concerns = _swap(b["concerns"], ('\n            <li data-i18n="nlc26.q3B"></li>', ''))
+    # The data question is held back here until the platform's sign-in and
+    # user management are cleared; the NLC page keeps it.
+    concerns = _swap(b["concerns"], ('\n            <li data-i18n="nlc26.q3B"></li>', ''),
+                     ('''        <li>
+          <h3 data-i18n="nlc26.q1"></h3>
+          <ul class="loop-points">
+            <li data-i18n="nlc26.q1A"></li>
+            <li data-i18n="nlc26.q1B"></li>
+            <li data-i18n="nlc26.q1C"></li>
+          </ul>
+        </li>
+''', ''))
 
     # The NLC block with this workshop's own form, and without the NLC
     # community's motto, which is theirs.

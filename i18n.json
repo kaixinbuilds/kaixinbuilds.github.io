@@ -64,14 +64,6 @@
     "en": "Connect",
     "zh": "并肩同行"
   },
-  "connect.upcoming": {
-    "en": "Upcoming",
-    "zh": "即将进行"
-  },
-  "connect.completed": {
-    "en": "Completed",
-    "zh": "已完成"
-  },
   "connect.viewLink": {
     "en": "View",
     "zh": "查看"
@@ -147,14 +139,6 @@
   "status.live": {
     "en": "LIVE",
     "zh": "上线中"
-  },
-  "connect.groupUpcoming": {
-    "en": "Upcoming",
-    "zh": "即将进行"
-  },
-  "connect.groupCompleted": {
-    "en": "Completed",
-    "zh": "已完成"
   },
   "specimen.artist": {
     "en": "Chun Kai Xin",
@@ -381,12 +365,12 @@
     "zh": "一个静态网页（就是 HTML 加图片）几乎不用维护。放在 GitHub Pages 上，几年不动它也照样能开。"
   },
   "nlc26.q2B": {
-    "en": "The kind that needs maintaining is the other kind: accounts, a database, sign-in. That is the practical reason not to add them unless you must.",
-    "zh": "需要维护的是另一类：有账号、有数据库、要登录的。这正是「能不加就不加」的现实理由。"
+    "en": "Accounts, a database and sign-in, on the other hand, need someone to keep maintaining them.",
+    "zh": "账号、数据库、登录则需要有人持续维持。"
   },
   "nlc26.q2C": {
     "en": "With the code on GitHub rather than on your laptop, a colleague can pick it up after you transfer. Far safer than a folder on your own desktop.",
-    "zh": "代码放在 GitHub 上而不是你的手提电脑里，你调职了同事也接得下去。这比存在自己桌面上的文件夹安全得多。"
+    "zh": "代码存在 GitHub 上而不是你的手提电脑里，你调职了同事也接得下去。这比存在自己桌面上的文件夹安全得多。"
   },
   "nlc26.q3": {
     "en": "Will this work on a school-issued laptop?",
@@ -401,16 +385,16 @@
     "zh": "要安装软件的那一步（在本机跑 Claude Code）在受管制的设备上可能装不了。可以改用网页版，或者用自己的设备。"
   },
   "nlc26.q3C": {
-    "en": "School networks sometimes block github.com. Known in advance it is just a different route; discovered on the spot it is a panic.",
-    "zh": "学校网络有时候会挡 github.com。事先知道，就只是换个方法；当场才发现，就会慌。"
+    "en": "School networks sometimes block github.com; ask your ICT colleagues to add it to the whitelist.",
+    "zh": "学校网络有时候会挡 github.com，可以请 ICT 同事帮忙把它加入白名单（whitelist）。"
   },
   "nlc26.q4": {
     "en": "I cannot code at all. Can I really do this?",
     "zh": "我完全不会编码，真的做得到吗？"
   },
   "nlc26.q4A": {
-    "en": "Today's hands-on, yes. It was designed from the start for someone who cannot code.",
-    "zh": "今天这个动手环节可以。它从一开始就是照着「不会编码的人」来设计的。"
+    "en": "Yes! Today's hands-on, for example, was designed from the start for someone who cannot code.",
+    "zh": "可以！例如今天的动手环节从一开始就是为「不会编码的人」来设计的。"
   },
   "nlc26.q4B": {
     "en": "Building something the size of VocabSummit does not need coding ability either. It needs the willingness to keep saying clearly what you want, and the judgment to tell whether what came back is right. Teachers do both every day.",
@@ -553,8 +537,8 @@
     "zh": "「我身边的人，下了课没人用母语。」"
   },
   "approach.need3Q": {
-    "en": "How does practising stop being something you do on your own?",
-    "zh": "怎样让练习不再是一个人的事？"
+    "en": "How does practising stop being lonely?",
+    "zh": "怎样让练习不再孤独？"
   },
   "approach.needsClose": {
     "en": "This is the argument I put to the school leadership in August 2026.",
@@ -773,16 +757,16 @@
     "en": "Four pictures, four months, one thing. The first is honestly ugly. But it ran, so students used it, so I knew what to fix next."
   },
   "nlc26.evo2": {
-    "zh": "主页。992 个词语，四张年级卡片，没有插图，没有关卡，什么都没有。但进度条是真的会动的。",
-    "en": "The home screen. 992 words, four year-level cards, no art, no levels, nothing. But the progress bar was real."
+    "zh": "主页。992 个词语，四张年级卡片 + 进度条，没有插图，没有关卡。",
+    "en": "The home screen. 992 words, four year-level cards and a progress bar, no art, no levels."
   },
   "nlc26.evo4": {
-    "zh": "第十天。改名「词王淬炼坊」，加了成就、排行榜、身份分流。词语从 992 涨到 1068，因为学生开始提意见了。",
-    "en": "Day ten. Renamed, with badges, a leaderboard and separate roles. The word count had grown from 992 to 1,068, because students had started asking for words."
+    "zh": "第十天。改名「词王淬炼坊」，加了成就、排行榜、用户身份。词语从 992 涨到 1068",
+    "en": "Day ten. Renamed, with badges, a leaderboard and user roles. The word count had grown from 992 to 1,068."
   },
   "nlc26.evo5": {
-    "zh": "四个月后重起炉灶：「词山学海」的第一天。四座山峰对应四个课程源流，山还是纯色块画的。但结构已经是今天这一版的结构了。",
-    "en": "Four months on, rebuilt from nothing: VocabSummit, day one. Four peaks for four course streams, the mountains still drawn in flat colour. The structure is already today's structure."
+    "zh": "四个月后重起炉灶：「词山学海」的第一天。四座山峰对应四个课程源流",
+    "en": "Four months on, rebuilt from nothing: VocabSummit, day one. Four peaks for four course streams."
   },
   "nlc26.evo6": {
     "zh": "今天。同一个版式、同一副对联、同一个页脚，只是画好了。上面那张和这张之间，隔的不是灵感，是一百七十多次修改。",
@@ -821,8 +805,8 @@
     "en": "Decisions"
   },
   "nlc26.rosterNote": {
-    "zh": "它们做得很快，但它们不认识你的学生，不知道他们的需求。教师必须不断在创建过程中运用专业知识进行判断。",
-    "en": "They work fast, but they do not know your students, or what those students need. All the way through the building, the teacher has to keep applying professional judgement."
+    "zh": "AI 工具速度很快，但它不认识我们的学生，不知道他们的需求。教师必须不断在创建过程中运用专业知识进行判断。",
+    "en": "AI tools work fast, but they do not know our students, or what those students need. All the way through the building, the teacher has to keep applying professional judgement."
   },
   "nlc26.statShips": {
     "zh": "次改版上线 · 自 2026.04.10",
@@ -901,16 +885,16 @@
     "zh": "没有同伴"
   },
   "nw26.need1": {
-    "en": "I have real choices here.",
-    "zh": "我在这里真的有选择。"
+    "en": "I have autonomy over my learning.",
+    "zh": "我在学习方面拥有自主权。"
   },
   "nw26.need2": {
     "en": "I can see myself getting better.",
     "zh": "我看得见自己在进步。"
   },
   "nw26.need3": {
-    "en": "I'm not doing this alone.",
-    "zh": "我不是一个人在练。"
+    "en": "I'm not alone; I'm part of a community.",
+    "zh": "我不独行，我是社群的一部分。"
   },
   "nw26.fill1": {
     "zh": "自主 · 一切由自己选",
@@ -929,8 +913,8 @@
     "zh": "理论支撑"
   },
   "nw26.research": {
-    "en": "Game elements are not effective in themselves. Different elements satisfy different psychological needs: autonomy, competence, relatedness.",
-    "zh": "游戏元素本身不会产生效果。不同的元素满足不同的心理需求：自主、胜任、关联。"
+    "en": "Different game elements satisfy different psychological needs: autonomy, competence, relatedness.",
+    "zh": "不同的游戏元素满足不同的心理需求：自主、胜任、关联。"
   },
   "nw26.theory1": {
     "en": "Ryan & Deci, 2000 · Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being · American Psychologist · the three basic needs",
@@ -953,32 +937,32 @@
     "en": "The slides in English (PDF)"
   },
   "nw26.partTwo": {
-    "en": "Mending the sky: building learning games with AI tools, without a coding background",
-    "zh": "补天：不会编码，也能用 AI 工具做学习游戏"
+    "en": "Mending the sky: even without coding, teachers can create learning games with AI tools!",
+    "zh": "补天：即便不会编码，教师也能用 AI 工具创作学习游戏！"
   },
   "nw26.stackLede": {
-    "en": "Nüwa also had to raise four pillars to hold up the sky. A development team of one: which four pillars hold up its five roles?",
-    "zh": "女娲补天，还得立起四根天柱。一人开发团队，靠哪四根柱子撑起五个岗位？"
+    "en": "Nüwa also had to raise four pillars to hold up the sky. Which pillars hold up the making of VocabSummit?",
+    "zh": "女娲补天，还得立起四根天柱。词山学海的创作背后是有哪些柱子撑起来的？"
   },
   "nw26.storyTitle": {
-    "en": "Gathering the stones: when you can do none of it, where do you begin?",
-    "zh": "寻找五色石：什么都不会的时候，从哪里开始？"
+    "en": "Gathering the stones: when you can do none of it, where do you actually begin?",
+    "zh": "寻找五色石：什么都不会的时候，到底该从哪里开始？"
   },
   "nw26.evoTitle": {
     "en": "The stones were not fired in one go",
     "zh": "五色石，不是一炉炼成的"
   },
   "nw26.evo6": {
-    "en": "Today. Same layout, same couplet, same footer as the frame before it. Only the drawing changed. What sits between the two is not inspiration; it is more than two hundred revisions.",
-    "zh": "今天。同一个版式、同一副对联、同一个页脚，只是画好了。上面那张和这张之间，隔的不是灵感，是两百多次修改。"
+    "en": "What sits between the frame above and this one is not inspiration; it is more than two hundred iterations.",
+    "zh": "上面那张和这张之间，隔的不是灵感，是两百多次迭代。"
   },
   "nw26.evoClose": {
-    "en": "Had I waited until I knew what I was doing, none of this would exist. Nüwa, the story goes, fired her stones eighty-one times. This one has been fired 378 times so far, and the fire is still going.",
-    "zh": "如果我等到想清楚了才动手，这个东西到今天还不存在。传说女娲炼了九九八十一炉；这块石头，到今天炼了 378 炉，炉火还没熄。"
+    "en": "Had I waited until I felt fully confident, VocabSummit would not exist today. Nüwa, the story goes, fired her stones eighty-one times. VocabSummit has been fired 378 times so far, and the fire is still going.",
+    "zh": "如果等到有十足的信心才开始，就不会有今天的词山学海。传说女娲炼了九九八十一炉；词山学海至今炼了 378 次，炉火尚未熄灭。"
   },
   "nw26.evoLede": {
-    "zh": "分两段炼成：先做 G3 词语训练器，再长成词山学海。下面四张图，前两张是第一段，后两张是第二段。第一张丑得很实在，但它能用，所以学生用了，所以我知道下一步该改哪里。",
-    "en": "Fired in two stages: first a G3 vocabulary trainer, then VocabSummit. Of the four pictures below, the first two are stage one and the last two stage two. The first is honestly ugly. But it ran, so students used it, so I knew what to fix next."
+    "zh": "分两段炼成：先做 G3 词语训练器，再长成词山学海",
+    "en": "Fired in two stages: first a G3 vocabulary trainer, then VocabSummit."
   },
   "nw26.phase1": {
     "zh": "第一段 · G3 词语训练器",
@@ -993,16 +977,16 @@
     "en": "Stage two · VocabSummit"
   },
   "nw26.phase2Note": {
-    "zh": "次提交 · 2026.08.08 至 10.10",
-    "en": "commits · 8 Aug to 10 Oct 2026"
+    "zh": "迭代次数 · 2026.08.08 至 10.10",
+    "en": "iterations · 8 Aug to 10 Oct 2026"
   },
   "nw26.phaseTotal": {
-    "zh": "次提交，两段加起来",
-    "en": "commits across both stages"
+    "zh": "两段加起来的总迭代次数",
+    "en": "iterations across both stages"
   },
   "nw26.mendOn": {
-    "zh": "现实里的天，永远补不完：这里刚补上，那里又裂开。我们是女娲的后人，接着炼石，接着补天。",
-    "en": "The sky in our world will never be fully mended: one crack closes, another opens. We are Nüwa's descendants; we keep firing the stones, and keep mending."
+    "zh": "现实里的天，永远补不完：这里刚补上，那里又裂开。我们是女娲的后人，补天之任务由我们传承。",
+    "en": "The sky in our world will never be fully mended: one crack closes, another opens. We are Nüwa's descendants, and the task of mending the sky passes to us."
   },
   "nw26.statShips": {
     "en": "deployments, as of 28 Oct 2026",
@@ -1313,36 +1297,36 @@
     "en": "How VocabSummit fills each gap"
   },
   "nw26.zodiacCap": {
-    "zh": "十二生肖攀登者：注册即送，人人自选，不分配。",
-    "en": "Twelve zodiac climbers, free at registration. Everyone picks their own; nothing is assigned."
+    "zh": "十二生肖攀登者：开局头像，人人自选，不分配。",
+    "en": "Twelve zodiac climbers, the starting avatars. Everyone picks their own; nothing is assigned."
   },
   "nw26.storyCap": {
-    "zh": "五位故事攀登者：300 至 600 游戏币，游戏币只能靠练习和获胜赚取。",
-    "en": "Five story climbers, 300 to 600 in game currency, which only comes from practising and winning."
+    "zh": "游戏币靠练习和获胜赚取。",
+    "en": "Game currency is earned by practising and winning."
   },
   "nw26.mythicCap": {
-    "zh": "四只神兽：不卖。每通过一次年度考验，解锁一只，中一至中四。",
-    "en": "Four mythic beasts, not for sale: clear one annual trial, unlock one, Sec 1 to 4."
+    "zh": "四只神兽：每通过一次年度考验，解锁一只，中一至中四。",
+    "en": "Four mythic beasts: clear one annual trial, unlock one, Sec 1 to 4."
   },
   "nw26.learnMode": {
     "zh": "学习模式",
     "en": "Learn mode"
   },
   "nw26.learnModeNote": {
-    "zh": "按自己的步调自学，不计时，不计分。",
-    "en": "Self-study at your own pace: no clock, no score."
+    "zh": "按自己的步调自学",
+    "en": "Self-study at your own pace."
   },
   "nw26.gameMode": {
     "zh": "游戏模式",
     "en": "Game mode"
   },
   "nw26.gameModeNote": {
-    "zh": "同一批词语，在挑战和竞速里再见。随时切换。",
-    "en": "The same words, met again in challenges and races. Switch any time."
+    "zh": "学生能在各项游戏中复习教材中的词语。游戏模式能够自选。",
+    "en": "Students revise the words from their textbook across the different games, and choose the game mode themselves."
   },
   "nw26.xpNote": {
-    "zh": "经验值只升不降：答错，不扣已经赚到的。",
-    "en": "Experience points never go down: a wrong answer costs nothing already earned."
+    "zh": "经验值只升不降，让努力可视化",
+    "en": "Experience points only go up, so effort becomes visible."
   },
   "nw26.badge1": {
     "zh": "生活",
@@ -1365,8 +1349,8 @@
     "en": "Culture"
   },
   "nw26.badgeCap": {
-    "zh": "每个单元板块一枚徽章：学完那个板块的词语就拿到。",
-    "en": "One badge per chapter component, earned by finishing its words."
+    "zh": "每个单元板块一枚徽章。",
+    "en": "One badge per chapter component."
   },
   "nw26.power1": {
     "zh": "糖葫芦 · 多一条命",
@@ -1429,12 +1413,12 @@
     "en": "Open VocabSummit"
   },
   "nw26.skyAll": {
-    "zh": "不只是华文：在家最常讲马来语的从 14.1% 降到 7.0%，淡米尔语从 3.2% 降到 2.2%。下面是统计局的互动图表，可以自己点开各族群看看。",
-    "en": "Not only Chinese: Malay as the main home language fell from 14.1% to 7.0%, Tamil from 3.2% to 2.2%. Below is SingStat’s own interactive dashboard; explore each group yourself."
+    "zh": "不只是华文：在家最常讲马来语的从 14.1% 降到 7.0%，淡米尔语从 3.2% 降到 2.2%。",
+    "en": "Not only Chinese: Malay as the main home language fell from 14.1% to 7.0%, Tamil from 3.2% to 2.2%."
   },
   "nw26.resTitle": {
-    "zh": "研究怎么说（2024 至 2026）",
-    "en": "What the research says (2024 to 2026)"
+    "zh": "研究发现（2024 至 2026）",
+    "en": "What the research found (2024 to 2026)"
   },
   "nw26.resLede": {
     "zh": "只收 2021 年以后发表的资料。2021 年以后还没有专门针对中学生的公开调查，以下是最接近的，每条都注明问的是谁。",
@@ -1485,20 +1469,20 @@
     "en": "The vocabulary handbook: read, then forgotten"
   },
   "nw26.hole1": {
-    "zh": "学生把《词语手册》读过一遍，测验一过就忘，连背都谈不上。词汇要反复用才记得住，单靠一本手册撑不起这份反复。",
-    "en": "Students read through the vocabulary handbook and forget it once the test is over; most never get as far as memorising it. Words stay only with repeated use, and a handbook alone cannot carry that repetition."
+    "zh": "学生不愿意自发使用《词语手册》，即便愿意读，测验一过就忘了。",
+    "en": "Students do not reach for the vocabulary handbook on their own, and those who do read it forget it once the test is over."
   },
   "nw26.hole2T": {
-    "zh": "G1 的词语表，老师各自编",
-    "en": "G1 word lists, each teacher compiling their own"
+    "zh": "G1 的词语表的创造目前依赖老师的个人努力",
+    "en": "G1 word lists depend on individual teachers' effort"
   },
   "nw26.hole2": {
-    "zh": "市面上还没有出版社为 G1 编过《词语手册》。G1 华文老师一直在自己编词语表，各编各的。",
-    "en": "No publisher has made a vocabulary handbook for G1 yet. G1 Chinese Language teachers have been compiling their own word lists, each separately."
+    "zh": "市面上还没有出版社为 G1 编过《词语手册》。G1 华文老师一直在耗费大量备课时间自己编写词语表。",
+    "en": "No publisher has made a vocabulary handbook for G1 yet. G1 Chinese Language teachers have been spending a great deal of preparation time compiling their own word lists."
   },
   "nw26.hole3T": {
-    "zh": "碎片式练习，进度追踪不了",
-    "en": "Fragments nobody can track"
+    "zh": "碎片式练习，追踪不了学生整体的词汇掌握进度",
+    "en": "Fragmented practice, no view of students' overall vocabulary progress"
   },
   "nw26.hole3": {
     "zh": "全国的老师都在 Quizlet、Kahoot、Blooket、Wayground、Gimkit 上辛苦自制练习。可是学生的学习散落在一个个平台里，没有一处看得到他们整体学到了哪里。",
@@ -1509,8 +1493,8 @@
     "en": "Open resources, uneven and incomplete"
   },
   "nw26.hole4": {
-    "zh": "网上公开的词汇小测，G3 和大部分高级华文都找得到；G2、G1 却很难找齐，要么没人做，要么没公开分享。教师笔记也多，质量和结构却参差不齐，不一定贴合我们学生的程度和需要。",
-    "en": "Public vocabulary quizzes are easy to find for G3 and most of Higher Chinese, but hard to find in full for G2 and G1: either nobody has built them, or nobody has shared them. Teachers' notes are plentiful too, but their quality and structure vary, and they do not always fit our own learners' level and needs."
+    "zh": "网上公开的词汇小测：G3 和大部分高级华文都找得到；G2、G1 却很难找齐。教师笔记虽多，质量和结构却参差不齐，不一定贴合我们学生的程度和需要。",
+    "en": "Public vocabulary quizzes online: easy to find for G3 and most of Higher Chinese, but hard to find in full for G2 and G1. Teachers' notes are plentiful, but their quality and structure vary, and they do not always fit our own learners' level and needs."
   },
   "nw26.navMend": {
     "zh": "炼石补天",
@@ -1521,20 +1505,20 @@
     "en": "Mending the sky: how VocabSummit fills each hole"
   },
   "nw26.mendLede": {
-    "zh": "一个窟窿，一块石头。先想清楚补哪里，再动手炼。",
-    "en": "One stone for each hole. Work out where it goes first, then fire it."
+    "zh": "先想要补哪里，再动手炼石。",
+    "en": "Work out where to mend first, then fire the stone."
   },
   "nw26.m0H": {
     "zh": "家里少讲华语",
     "en": "Little Mandarin at home"
   },
   "nw26.m0T": {
-    "zh": "练的时候，不是一个人",
-    "en": "Nobody practises alone"
+    "zh": "结伴学习",
+    "en": "Learning together"
   },
   "nw26.m0": {
-    "zh": "老师用六位数房间码开班级挑战，学生也能自己开对战（2 至 8 人），还有校内和跨校排行榜。家里没人讲，至少练的时候有人一起。",
-    "en": "Teachers open class challenges with a six-digit room code, students host their own (2 to 8 players), and there are school and cross-school leaderboards. If nobody speaks it at home, at least someone practises with you."
+    "zh": "老师用六位数房间码开班级挑战，学生也能自己开对战（2 至 8 人），还有校内和跨校排行榜。家里没人讲华语，那就让学生在自主学习时有社区参与感。",
+    "en": "Teachers open class challenges with a six-digit room code, students host their own (2 to 8 players), and there are school and cross-school leaderboards. If nobody speaks Chinese at home, students can still feel part of a community while they learn on their own."
   },
   "nw26.m1H": {
     "zh": "词语手册，读了就忘",
@@ -1545,28 +1529,28 @@
     "en": "The same words, practised again in different games"
   },
   "nw26.m1": {
-    "zh": "填空、攀山快答、词雨灵露、组字成词，都围着同一份词语表转。每个词对每个学生都有状态：已掌握、待巩固、未学，复习只练自己还没掌握的词。历练值只加不扣。",
-    "en": "Cloze, Quick Climb, Word Rain and Build the Word all run on the same word list. Every word has a state for every learner (mastered, needs consolidating, not yet), so revision covers only the words that learner has not mastered. Experience points are never deducted."
+    "zh": "填空、攀山快答、词雨灵露、组字成词，都围着同一份词语表转。每个词对都标出学习状态：已掌握、待巩固、未学。学生可以针对弱项加强练习。",
+    "en": "Cloze, Quick Climb, Word Rain and Build the Word all run on the same word list. Every word is marked with a learning state (mastered, needs consolidating, not yet), so students can target their weak spots."
   },
   "nw26.m2H": {
-    "zh": "G1 的词语表，老师各自编",
-    "en": "G1 word lists, each teacher their own"
+    "zh": "G1 的词语表散落各处，绝大部分并未公开共享。",
+    "en": "G1 word lists are scattered, and most are never shared publicly"
   },
   "nw26.m2T": {
-    "zh": "G1 有了自己的一座岛",
-    "en": "G1 gets an island of its own"
+    "zh": "G1 有了自己的一座岛：一本完整的《词语手册》",
+    "en": "G1 gets an island of its own: a complete vocabulary handbook"
   },
   "nw26.m2": {
     "zh": "G1 岛收了 426 个词条，按课文分单元编好，和 G2、G3、高级华文同一个结构。零起点的学生还有出发码头：156 个日常词语，分 8 个主题。",
     "en": "The G1 island holds 426 entries, arranged in units by text, in the same structure as G2, G3 and Higher Chinese. Students starting from zero have the Beginner's Pier: 156 everyday words in 8 themes."
   },
   "nw26.m3H": {
-    "zh": "碎片式练习，进度追踪不了",
-    "en": "Fragments nobody can track"
+    "zh": "碎片式练习，无法追踪学生的词语掌握进度",
+    "en": "Fragmented practice, no way to track students' vocabulary progress"
   },
   "nw26.m3T": {
-    "zh": "一个平台，一份进度",
-    "en": "One platform, one record of progress"
+    "zh": "一个平台，一份进度总览",
+    "en": "One platform, one overview of progress"
   },
   "nw26.m3": {
     "zh": "所有玩法都记进同一份学习档案：每个词练过几次、掌握了没有。海拔就是掌握的词数（一个词一米）。老师后台看得到全班的进度，也能导出。",
@@ -1581,8 +1565,8 @@
     "en": "All four streams equally complete, in one structure"
   },
   "nw26.m4": {
-    "zh": "G1、G2、G3、高级华文四个源流，词语一样齐全。每个词条同一个格式：词语、拼音、词性、华文解释、英文、例句。每个词和每个例句都经老师审定，平台上不会临时生成任何内容。",
-    "en": "G1, G2, G3 and Higher Chinese are equally complete. Every entry has the same shape: word, pinyin, part of speech, Chinese explanation, English and an example sentence. Every word and sentence was checked by a teacher, and nothing on the platform is generated on the fly."
+    "zh": "G1、G2、G3、高级华文四个源流，词语一样齐全。每个词条同一个格式：词语、拼音、词性、华文解释、英文、例句。",
+    "en": "G1, G2, G3 and Higher Chinese are equally complete. Every entry has the same shape: word, pinyin, part of speech, Chinese explanation, English and an example sentence."
   },
   "nlc26.stuckGuide": {
     "zh": "完整排错步骤（附截图）· 课后教程",

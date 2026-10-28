@@ -265,7 +265,6 @@
   }
 
   function connectEntry(entry, open) {
-    const status = entry.status === 'upcoming' ? 'upcoming' : 'completed';
     const body = [
       entry.venueUrl
         ? `<p class="connect-venue"><a href="${esc(entry.venueUrl)}" target="_blank" rel="noopener">${bi(entry.venue)}</a></p>`
@@ -287,7 +286,6 @@
           <summary class="connect-head">
             <span class="connect-date">${esc(pick(entry.dateLabel) || entry.date)}</span>
             <span class="connect-title">${bi(entry.title)}</span>
-            <span class="connect-status ${status}">${esc(t('connect.' + status))}</span>
             <span class="connect-chevron" aria-hidden="true"></span>
           </summary>
           <div class="connect-body">${body}</div>
@@ -302,7 +300,6 @@
     // Grouped by body of work, not by date. Chronology says almost nothing
     // across a handful of entries, whereas grouping shows the thing that
     // matters: the same piece of work taken to several different audiences.
-    // The upcoming/completed distinction survives as the badge on each entry.
     const ORDER = ['vocabsummit', 'hub', 'lesson'];
     const LABEL = {
       vocabsummit: 'connect.groupVocabSummit',
