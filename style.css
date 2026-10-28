@@ -386,6 +386,7 @@ main > .section + .section { border-top: 1px solid var(--rule); }
 .highlight-box p { margin: 0; color: var(--ink-soft); font-size: .97rem; }
 .theory-refs { margin: .8rem 0 0; padding-left: 1.1rem; display: grid; gap: .45rem; font-size: .86rem; line-height: 1.5; color: var(--ink-soft); }
 .theory-refs a { overflow-wrap: anywhere; }
+.theory-note { display: block; color: var(--ink-faint); }
 
 .featured-cta { margin: 2rem 0 0; }
 

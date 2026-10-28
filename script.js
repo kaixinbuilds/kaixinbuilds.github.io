@@ -56,7 +56,9 @@
     if (typeof pair === 'string') return esc(pair);
     if (lang !== 'both') return esc(pick(pair));
     const zh = pair.zh, en = pair.en;
-    if (!zh || !en || zh === en) return esc(zh || en || '');
+    // A Chinese line that already carries the English (自主 · Autonomy) would
+    // print it twice, so it stands alone.
+    if (!zh || !en || zh === en || zh.toLowerCase().includes(en.toLowerCase())) return esc(zh || en || '');
     return `<span class="bi-zh" lang="zh-Hans">${esc(zh)}</span>`
          + `<span class="bi-en" lang="en">${esc(en)}</span>`;
   };
@@ -89,6 +91,12 @@
 
   /* ── i18n application ────────────────────────────────── */
 
+  /** Hands-on steps and their screenshot captions. The Chinese already names
+      every GitHub and Claude button in English, so in bilingual mode the
+      English line only repeated the same clicks. These show Chinese alone;
+      the English page still has them in full. */
+  const SINGLE_IN_BOTH = /^(nlc26\.s\dP\d|nw26\.s\d(T\d|P\d|Zip)|guide\.(pub|words|art|fix|back)\d+(Shot)?|nlc26\.s\dShot|nw26\.shot(GitHub|Claude)|nlc26\.handsLede)$/;
+
   function applyI18n() {
     document.documentElement.lang = lang === 'en' ? 'en' : 'zh-Hans';
     document.documentElement.dataset.langMode = lang;
@@ -111,7 +119,7 @@
       }
       if (attr) { if (known) el.setAttribute(attr, t(key)); return; }
       if (el.tagName === 'TITLE') { if (known) el.textContent = t(key); return; }
-      el.innerHTML = tb(key);
+      el.innerHTML = SINGLE_IN_BOTH.test(key) ? bi(t(key)) : tb(key);
     });
 
     // The wordmark is a brand, not copy: it shows one form, not a stacked
