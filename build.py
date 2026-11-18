@@ -1481,9 +1481,9 @@ def _nuwa_body():
         '<h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>',
         '<p class="eyebrow" data-i18n="nw26.partTwo"></p>\n'
         '            <h2 class="section-title" data-i18n="nlc26.vsTitle"></h2>\n'
-        '            <p class="featured-cta vs-direct"><a class="btn btn-primary" href="https://for.edu.sg/vocabsummit"\n'
+        '            <p class="featured-cta vs-direct"><a class="btn btn-primary" href="https://btvssclunit.github.io/VocabSummit/"\n'
         '               target="_blank" rel="noopener" data-i18n="nw26.vsDirect">Open VocabSummit</a>\n'
-        '              <a class="tool-link" href="https://for.edu.sg/vocabsummit" target="_blank" rel="noopener">for.edu.sg/vocabsummit</a></p>'))
+        '              <a class="tool-link" href="https://btvssclunit.github.io/VocabSummit/" target="_blank" rel="noopener">for.edu.sg/vocabsummit</a></p>'))
 
     # Four hires instead of five: the fan is redrawn for four columns, with
     # the endpoints over the column centres at the same .7rem gap.
