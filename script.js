@@ -308,10 +308,11 @@
     // Grouped by body of work, not by date. Chronology says almost nothing
     // across a handful of entries, whereas grouping shows the thing that
     // matters: the same piece of work taken to several different audiences.
-    const ORDER = ['vocabsummit', 'hub', 'lesson'];
+    const ORDER = ['vocabsummit', 'hub', 'curriculum', 'lesson'];
     const LABEL = {
       vocabsummit: 'connect.groupVocabSummit',
       hub:         'connect.groupHub',
+      curriculum:  'connect.groupCurriculum',
       lesson:      'connect.groupLesson',
     };
 

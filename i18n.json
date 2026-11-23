@@ -716,6 +716,10 @@
     "en": "The Resource Hub",
     "zh": "华文资源站"
   },
+  "connect.groupCurriculum": {
+    "en": "Curriculum mapping",
+    "zh": "课程对照"
+  },
   "connect.groupLesson": {
     "en": "Classroom design",
     "zh": "课堂设计"

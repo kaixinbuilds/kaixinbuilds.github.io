@@ -212,5 +212,37 @@
       }
     ],
     "venueUrl": "https://www.facebook.com/groups/sglearningdesigners"
+  },
+  {
+    "id": "spmc-2026-e21cc-mapping",
+    "status": "completed",
+    "category": "curriculum",
+    "date": "2026-11-05",
+    "dateLabel": {
+      "en": "5 November 2026",
+      "zh": "2026年11月5日"
+    },
+    "title": {
+      "en": "E21CC Mapping with AI — From a Scheme of Work to a Dashboard, in Any Subject",
+      "zh": "用 AI 对照课程与 E21CC —— 从教学进度表到数据面板，适用于任何科目"
+    },
+    "venue": {
+      "en": "Sharing with BVSS SPMC, the School Planning and Management Committee of Bukit View Secondary School",
+      "zh": "面向百德中学校务规划与管理委员会（BVSS SPMC）的分享"
+    },
+    "summary": {
+      "en": "Five steps to see where a scheme of work gives students real practice in 21st century competencies, and where the gaps are. The teacher checks and corrects what AI drafts.",
+      "zh": "五个步骤，看清教学进度表在哪里让学生真正锻炼 21 世纪技能、哪里还有空白；AI 起草，老师核对修正。"
+    },
+    "link": "",
+    "links": [
+      {
+        "label": {
+          "en": "The idea in slides (PDF)",
+          "zh": "理念幻灯片（PDF）"
+        },
+        "url": "assets/slides/spmc-2026-e21cc-mapping.pdf"
+      }
+    ]
   }
 ]
