@@ -1647,5 +1647,153 @@
   "guide.back5": {
     "zh": "注意：删掉最新的 commit 或删掉文件，都不会退回旧版本。GitHub 网页不能删除 commit，删文件只会多一次「删除」的改动。退回的方法只有上面这一种：把旧版本复制回来，再 Commit。",
     "en": "Note: deleting the latest commit, or deleting the file, does not bring the old version back. The GitHub website cannot delete commits, and deleting a file only adds a deletion. The way back is the one above: copy the old version in and commit again."
+  },
+  "nav.accolades": {
+    "en": "Accolades",
+    "zh": "荣誉"
+  },
+  "page.accolades.title": {
+    "en": "Accolades · Chun Kai Xin",
+    "zh": "荣誉 · 郑凯欣"
+  },
+  "accolades.ast26Date": {
+    "en": "Nov 2026",
+    "zh": "2026年11月"
+  },
+  "accolades.ast26Title": {
+    "en": "Associate of Academy of Singapore Teachers Award, Innovator (Technology for Learning)",
+    "zh": "Associate of Academy of Singapore Teachers Award, Innovator (Technology for Learning)"
+  },
+  "accolades.ast26Issuer": {
+    "en": "Academy of Singapore Teachers",
+    "zh": "新加坡教师学院"
+  },
+  "accolades.ast26Text": {
+    "en": "Featured in the Academy Awards 2026 Recipients Spotlight for e-pedagogy: an AI-integrated lesson in which students question chatbot personas of Confucius, Laozi and Mozi.",
+    "zh": "课例入选 Academy Awards 2026 Recipients Spotlight（电子教学法）：学生向孔子、老子、墨子化身的聊天机器人提问，思考当代的伦理难题。"
+  },
+  "accolades.ocai26Date": {
+    "en": "Nov 2026",
+    "zh": "2026年11月"
+  },
+  "accolades.ocai26Title": {
+    "en": "MOE Outstanding Contribution Award 2026 (Individual)",
+    "zh": "MOE Outstanding Contribution Award 2026 (Individual)"
+  },
+  "accolades.ocai26Issuer": {
+    "en": "Bukit View Secondary School",
+    "zh": "百德中学"
+  },
+  "accolades.ocai26Text": {
+    "en": "For combining educational innovation with people leadership, including creating VocabSummit, sharing the practice beyond the school, and developing teachers in the department.",
+    "zh": "表彰教学创新与团队领导，包括创建词山学海、与校外同道分享，以及培育母语部教师。"
+  },
+  "accolades.ocas26Date": {
+    "en": "Nov 2026",
+    "zh": "2026年11月"
+  },
+  "accolades.ocas26Title": {
+    "en": "MOE Outstanding Contribution Award 2026 (Team): Strategic Planning Team",
+    "zh": "MOE Outstanding Contribution Award 2026 (Team): Strategic Planning Team"
+  },
+  "accolades.ocas26Issuer": {
+    "en": "Bukit View Secondary School",
+    "zh": "百德中学"
+  },
+  "accolades.ocas26Text": {
+    "en": "Team award, as a member of the team that led whole-school strategic planning for 2027 to 2029.",
+    "zh": "团队奖项。以成员身份参与全校 2027 至 2029 年战略规划。"
+  },
+  "accolades.ocac26Date": {
+    "en": "Nov 2026",
+    "zh": "2026年11月"
+  },
+  "accolades.ocac26Title": {
+    "en": "MOE Outstanding Contribution Award 2026 (Team): CNY Celebration Team (CL Unit)",
+    "zh": "MOE Outstanding Contribution Award 2026 (Team): CNY Celebration Team (CL Unit)"
+  },
+  "accolades.ocac26Issuer": {
+    "en": "Bukit View Secondary School",
+    "zh": "百德中学"
+  },
+  "accolades.ocac26Text": {
+    "en": "Team award, as advisor and stage manager for a whole-school Chinese New Year celebration led with students.",
+    "zh": "团队奖项。担任全校新春庆典的顾问与舞台监督，与学生一同策划演出。"
+  },
+  "accolades.msea26Date": {
+    "en": "Nov 2026",
+    "zh": "2026年11月"
+  },
+  "accolades.msea26Title": {
+    "en": "MOE Service Excellence Award 2026, Gold",
+    "zh": "MOE Service Excellence Award 2026, Gold"
+  },
+  "accolades.msea26Issuer": {
+    "en": "Ministry of Education, Singapore",
+    "zh": "新加坡教育部"
+  },
+  "accolades.msea26Text": {
+    "en": "For Outstanding Contributions in Pursuit of Service Excellence.",
+    "zh": "表彰在追求卓越服务方面的杰出贡献。"
+  },
+  "accolades.conn26Date": {
+    "en": "May to Oct 2026",
+    "zh": "2026年5月至10月"
+  },
+  "accolades.conn26Title": {
+    "en": "SgLDC Connector Badge",
+    "zh": "SgLDC Connector Badge"
+  },
+  "accolades.conn26Issuer": {
+    "en": "Educational Technology Division, Ministry of Education, Singapore",
+    "zh": "新加坡教育部教育技术司"
+  },
+  "accolades.conn26Text": {
+    "en": "For sharing teaching practices and school ICT resources, including the BVSS Chinese Language Resource Hub.",
+    "zh": "表彰分享教学实践与校内资讯科技资源，包括百德中学华文资源站。"
+  },
+  "accolades.des26Date": {
+    "en": "Nov 2025 to Apr 2026",
+    "zh": "2025年11月至2026年4月"
+  },
+  "accolades.des26Title": {
+    "en": "SgLDC Designer Badge",
+    "zh": "SgLDC Designer Badge"
+  },
+  "accolades.des26Issuer": {
+    "en": "Educational Technology Division, Ministry of Education, Singapore",
+    "zh": "新加坡教育部教育技术司"
+  },
+  "accolades.des26Text": {
+    "en": "For contributing lesson design and reflection to the Singapore Learning Designers Circle.",
+    "zh": "表彰在新加坡学习设计者社群分享教学设计与反思。"
+  },
+  "accolades.ocai24Date": {
+    "en": "Nov 2024",
+    "zh": "2024年11月"
+  },
+  "accolades.ocai24Title": {
+    "en": "MOE Outstanding Contribution Award 2024 (Individual)",
+    "zh": "MOE Outstanding Contribution Award 2024 (Individual)"
+  },
+  "accolades.ocai24Issuer": {
+    "en": "Ministry of Education, Singapore",
+    "zh": "新加坡教育部"
+  },
+  "accolades.ocai24Text": {
+    "en": "For people and operational leadership as Subject Head, Chinese Language (Internal), including mentoring new and adjunct teachers.",
+    "zh": "表彰担任华文学科主任（校内）期间的团队与行政领导，包括指导新教师与兼职教师。"
+  },
+  "accolades.msea24Date": {
+    "en": "Nov 2024",
+    "zh": "2024年11月"
+  },
+  "accolades.msea24Title": {
+    "en": "MOE Service Excellence Award 2024, Gold",
+    "zh": "MOE Service Excellence Award 2024, Gold"
+  },
+  "accolades.msea24Issuer": {
+    "en": "Ministry of Education, Singapore",
+    "zh": "新加坡教育部"
   }
 }

@@ -585,6 +585,22 @@ main > .section + .section { border-top: 1px solid var(--rule); }
   .connect-body { padding-left: .25rem; padding-right: .25rem; }
 }
 
+/* ── accolades ─────────────────────────────────────────── */
+/* The Connect rows without the accordion: an award has nothing to unfold. */
+#accolades .connect-group:first-of-type { margin-top: clamp(2rem, 5vw, 3rem); }
+.accolade-list li {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: .3rem 1.25rem;
+  padding: 1.15rem .25rem;
+}
+.accolade-list .connect-date,
+.accolade-list .connect-title { margin: 0; }
+/* In bilingual mode the issuer is two lines, which strands the diamond. */
+.accolade-list .connect-award::before { content: none; }
+.accolade-list .connect-summary { max-width: 46rem; }
+@media (max-width: 660px) { .accolade-list li { grid-template-columns: 1fr; } }
+
 /* ── approach ──────────────────────────────────────────── */
 .lede { margin: 1.1rem 0 0; color: var(--ink-soft); }
 .approach .epigraph { margin-bottom: 2rem; }

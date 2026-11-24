@@ -37,6 +37,7 @@ NAV = [
     ("work.html", "nav.work", "Work"),
     ("connect.html", "nav.connect", "Connect"),
     ("practice.html", "nav.approach", "Practice"),
+    ("accolades.html", "nav.accolades", "Accolades"),
     ("contact.html", "nav.contact", "Contact"),
 ]
 
@@ -133,6 +134,9 @@ META = {
                               "Resources for the 28 October 2026 workshop: how game-based learning drives self-directed learning, and a starter game to adapt for your own unit."),
     "VocabClimbGuide.html": ("VocabClimb step-by-step guide - Chun Kai Xin",
                              "Make your own vocabulary climbing game on GitHub, step by step with screenshots, and what to do when something goes wrong."),
+    "accolades.html": ("Accolades - Chun Kai Xin",
+                       "Awards and badges received by Chun Kai Xin, Chinese Language educator "
+                       "and learning designer in Singapore."),
     "contact.html": ("Contact - Chun Kai Xin",
                      "Get in touch about adapting any of these tools, or about building "
                      "something together."),
@@ -184,6 +188,93 @@ PAGES = {
         <nav id="connect-nav" class="project-nav" aria-label="Connect"></nav>
         <div id="connect-list"></div>
       </div>
+    </div>
+  </section>"""),
+    "accolades.html": ("page.accolades.title", """\
+  <section class="section" id="accolades">
+    <div class="wrap">
+      <h1 class="page-title" data-i18n="nav.accolades">Accolades</h1>
+      <section class="connect-group">
+        <h2 class="connect-group-title">2026</h2>
+        <ol class="connect-list accolade-list">
+          <li>
+            <p class="connect-date" data-i18n="accolades.ast26Date">Nov 2026</p>
+            <div>
+              <h3 class="connect-title" data-i18n="accolades.ast26Title">Associate of Academy of Singapore Teachers Award, Innovator (Technology for Learning)</h3>
+              <p class="connect-award" data-i18n="accolades.ast26Issuer">Academy of Singapore Teachers</p>
+              <p class="connect-summary" data-i18n="accolades.ast26Text">Featured in the Academy Awards 2026 Recipients Spotlight for e-pedagogy: an AI-integrated lesson in which students question chatbot personas of Confucius, Laozi and Mozi.</p>
+            </div>
+          </li>
+          <li>
+            <p class="connect-date" data-i18n="accolades.ocai26Date">Nov 2026</p>
+            <div>
+              <h3 class="connect-title" data-i18n="accolades.ocai26Title">MOE Outstanding Contribution Award 2026 (Individual)</h3>
+              <p class="connect-award" data-i18n="accolades.ocai26Issuer">Bukit View Secondary School</p>
+              <p class="connect-summary" data-i18n="accolades.ocai26Text">For combining educational innovation with people leadership, including creating VocabSummit, sharing the practice beyond the school, and developing teachers in the department.</p>
+            </div>
+          </li>
+          <li>
+            <p class="connect-date" data-i18n="accolades.ocas26Date">Nov 2026</p>
+            <div>
+              <h3 class="connect-title" data-i18n="accolades.ocas26Title">MOE Outstanding Contribution Award 2026 (Team): Strategic Planning Team</h3>
+              <p class="connect-award" data-i18n="accolades.ocas26Issuer">Bukit View Secondary School</p>
+              <p class="connect-summary" data-i18n="accolades.ocas26Text">Team award, as a member of the team that led whole-school strategic planning for 2027 to 2029.</p>
+            </div>
+          </li>
+          <li>
+            <p class="connect-date" data-i18n="accolades.ocac26Date">Nov 2026</p>
+            <div>
+              <h3 class="connect-title" data-i18n="accolades.ocac26Title">MOE Outstanding Contribution Award 2026 (Team): CNY Celebration Team (CL Unit)</h3>
+              <p class="connect-award" data-i18n="accolades.ocac26Issuer">Bukit View Secondary School</p>
+              <p class="connect-summary" data-i18n="accolades.ocac26Text">Team award, as advisor and stage manager for a whole-school Chinese New Year celebration led with students.</p>
+            </div>
+          </li>
+          <li>
+            <p class="connect-date" data-i18n="accolades.msea26Date">Nov 2026</p>
+            <div>
+              <h3 class="connect-title" data-i18n="accolades.msea26Title">MOE Service Excellence Award 2026, Gold</h3>
+              <p class="connect-award" data-i18n="accolades.msea26Issuer">Ministry of Education, Singapore</p>
+              <p class="connect-summary" data-i18n="accolades.msea26Text">For Outstanding Contributions in Pursuit of Service Excellence.</p>
+            </div>
+          </li>
+          <li>
+            <p class="connect-date" data-i18n="accolades.conn26Date">May to Oct 2026</p>
+            <div>
+              <h3 class="connect-title" data-i18n="accolades.conn26Title">SgLDC Connector Badge</h3>
+              <p class="connect-award" data-i18n="accolades.conn26Issuer">Educational Technology Division, Ministry of Education, Singapore</p>
+              <p class="connect-summary" data-i18n="accolades.conn26Text">For sharing teaching practices and school ICT resources, including the BVSS Chinese Language Resource Hub.</p>
+            </div>
+          </li>
+          <li>
+            <p class="connect-date" data-i18n="accolades.des26Date">Nov 2025 to Apr 2026</p>
+            <div>
+              <h3 class="connect-title" data-i18n="accolades.des26Title">SgLDC Designer Badge</h3>
+              <p class="connect-award" data-i18n="accolades.des26Issuer">Educational Technology Division, Ministry of Education, Singapore</p>
+              <p class="connect-summary" data-i18n="accolades.des26Text">For contributing lesson design and reflection to the Singapore Learning Designers Circle.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section class="connect-group">
+        <h2 class="connect-group-title">2024</h2>
+        <ol class="connect-list accolade-list">
+          <li>
+            <p class="connect-date" data-i18n="accolades.ocai24Date">Nov 2024</p>
+            <div>
+              <h3 class="connect-title" data-i18n="accolades.ocai24Title">MOE Outstanding Contribution Award 2024 (Individual)</h3>
+              <p class="connect-award" data-i18n="accolades.ocai24Issuer">Ministry of Education, Singapore</p>
+              <p class="connect-summary" data-i18n="accolades.ocai24Text">For people and operational leadership as Subject Head, Chinese Language (Internal), including mentoring new and adjunct teachers.</p>
+            </div>
+          </li>
+          <li>
+            <p class="connect-date" data-i18n="accolades.msea24Date">Nov 2024</p>
+            <div>
+              <h3 class="connect-title" data-i18n="accolades.msea24Title">MOE Service Excellence Award 2024, Gold</h3>
+              <p class="connect-award" data-i18n="accolades.msea24Issuer">Ministry of Education, Singapore</p>
+            </div>
+          </li>
+        </ol>
+      </section>
     </div>
   </section>"""),
     "practice.html": ("page.approach.title", """  <section class="section" id="approach">
