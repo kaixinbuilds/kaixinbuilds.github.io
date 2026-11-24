@@ -11,8 +11,8 @@
       "zh": "中学华文词汇平台"
     },
     "summary": {
-      "en": "3,889 vocabulary items across G1, G2, G3, Higher Chinese and the beginner pier.",
-      "zh": "3,889 个词条，涵盖 G1、G2、G3、高级华文与出发码头。"
+      "en": "3,897 vocabulary items across G1, G2, G3, Higher Chinese and the beginner pier.",
+      "zh": "3,897 个词条，涵盖 G1、G2、G3、高级华文与出发码头。"
     },
     "highlight": {
       "en": "Built with Claude Code on Firebase. Artwork by ChatGPT; vocabulary vetted by hand.",
@@ -20,7 +20,7 @@
     },
     "stats": [
       {
-        "value": "3,889",
+        "value": "3,897",
         "label": {
           "en": "vocabulary items",
           "zh": "词条总数"
